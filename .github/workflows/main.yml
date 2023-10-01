@@ -70,6 +70,9 @@ jobs:
 
           npx nx affected -t build --parallel=4 & 
           pids+=($!)
+          
+          npx nx affected -t size --parallel=4 & 
+          pids+=($!)
 
           # run all commands in parallel and bail if one of them fails
           for pid in ${pids[*]}; do
@@ -79,9 +82,6 @@ jobs:
           done
 
           exit 0
-
-      - name: Check sizes
-        run: npx nx affected -t size --parallel=4
 
       - name: Stop all running agents for this CI run
         # It's important that we always run this step, otherwise in the case of any failures in preceding non-Nx steps, the agents will keep running and waste billable minutes

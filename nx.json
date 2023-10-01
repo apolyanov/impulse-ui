@@ -21,7 +21,7 @@
       "dependsOn": ["^test"]
     },
     "size": {
-      "dependsOn": ["^size"]
+      "dependsOn": ["build"]
     }
   },
   "affected": {
