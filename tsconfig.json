@@ -7,13 +7,8 @@
       "moduleResolution": "Node"
     }
   },
-  "include": [
-    "src",
-    "types"
-  ],
-  "exclude": [
-    "dist"
-  ],
+  "include": ["src", "types"],
+  "exclude": ["dist"],
   "references": [
     {
       "path": "./packages/impulse-ui-types"
