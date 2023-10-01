@@ -1,0 +1,72 @@
+{
+  "name": "@impulse-ui/core",
+  "version": "0.1.0",
+  "license": "MIT",
+  "author": "Alexander Polyanov",
+  "main": "dist/index.js",
+  "module": "dist/core.esm.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "analyze": "size-limit --why",
+    "build": "dts build",
+    "lint": "dts lint",
+    "size": "size-limit",
+    "start": "dts watch",
+    "test": "dts test --passWithNoTests"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "dts lint"
+    }
+  },
+  "prettier": {
+    "semi": true,
+    "tabWidth": 2,
+    "printWidth": 120,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "jsxSingleQuote": true,
+    "bracketSameLine": false,
+    "endOfLine": "auto",
+    "bracketSpacing": true
+  },
+  "jest": {
+    "testEnvironment": "jsdom"
+  },
+  "peerDependencies": {
+    "react": ">=16"
+  },
+  "engines": {
+    "node": ">=12"
+  },
+  "size-limit": [
+    {
+      "path": "dist/impulse-ui-core.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/impulse-ui-core.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "dependencies": {
+    "@impulse-ui/types": "*",
+    "@fortawesome/fontawesome-svg-core": "6.4.2",
+    "@fortawesome/free-brands-svg-icons": "6.4.2",
+    "@fortawesome/free-regular-svg-icons": "6.4.2",
+    "@fortawesome/free-solid-svg-icons": "6.4.2",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@popperjs/core": "^2.11.8",
+    "@tanstack/react-table": "^8.9.7",
+    "@tanstack/react-virtual": "^3.0.0-beta.60",
+    "lodash": "^4.17.21",
+    "lodash-es": "^4.17.21",
+    "react-popper": "^2.3.0",
+    "styled-components": "6.0.8",
+    "stylis": "^4.3.0"
+  }
+}
