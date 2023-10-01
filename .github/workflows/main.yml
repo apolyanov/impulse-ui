@@ -52,6 +52,9 @@ jobs:
       - name: Initialize the Nx Cloud distributed CI run
         run: npx nx-cloud start-ci-run
 
+      - name: Formatting
+        run: npx nx format:write
+
       - name: Run commands in parallel
         run: |
           pids=()
