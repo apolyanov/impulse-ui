@@ -1,6 +1,6 @@
 {
   "name": "@impulse-ui/types",
-  "version": "2.0.0-alpha.0",
+  "version": "2.0.1-alpha.0",
   "license": "MIT",
   "author": "Alexander Polyanov",
   "main": "dist/index.js",
@@ -52,5 +52,6 @@
       "path": "dist/types.esm.js",
       "limit": "1000 KB"
     }
-  ]
+  ],
+  "gitHead": "e5f0ac196f1ba4ac2a4af0c6b02135101076b12c"
 }
