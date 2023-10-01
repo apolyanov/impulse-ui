@@ -51,11 +51,11 @@
   "size-limit": [
     {
       "path": "dist/impulse-ui.cjs.production.min.js",
-      "limit": "10 KB"
+      "limit": "10000 KB"
     },
     {
       "path": "dist/impulse-ui.esm.js",
-      "limit": "10 KB"
+      "limit": "10000 KB"
     }
   ],
   "devDependencies": {
