@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2.0.1 (2023-10-01)
+
+**Note:** Version bump only for package @impulse-ui/layout
+
+
+
+
+
 ## [2.0.1-beta.3](https://github.com/apolyanov/impulse-ui/compare/v2.0.1-beta.2...v2.0.1-beta.3) (2023-10-01)
 
 **Note:** Version bump only for package @impulse-ui/layout
