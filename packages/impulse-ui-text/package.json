@@ -1,0 +1,63 @@
+{
+  "name": "@impulse-ui/text",
+  "version": "0.1.0",
+  "license": "MIT",
+  "author": "Alexander Polyanov",
+  "main": "dist/index.js",
+  "module": "dist/text.esm.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "analyze": "size-limit --why",
+    "build": "dts build",
+    "lint": "dts lint",
+    "size": "size-limit",
+    "start": "dts watch",
+    "test": "dts test --passWithNoTests"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "dts lint"
+    }
+  },
+  "prettier": {
+    "semi": true,
+    "tabWidth": 2,
+    "printWidth": 120,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "jsxSingleQuote": true,
+    "bracketSameLine": false,
+    "endOfLine": "auto",
+    "bracketSpacing": true
+  },
+  "jest": {
+    "testEnvironment": "jsdom"
+  },
+  "dependencies": {
+    "@impulse-ui/types": "*",
+    "@impulse-ui/core": "*",
+    "@impulse-ui/layout": "*",
+    "@impulse-ui/colours": "*",
+    "@impulse-ui/icon": "*"
+  },
+  "peerDependencies": {
+    "react": ">=16"
+  },
+  "engines": {
+    "node": ">=12"
+  },
+  "size-limit": [
+    {
+      "path": "dist/impulse-ui-text.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/impulse-ui-text.esm.js",
+      "limit": "10 KB"
+    }
+  ]
+}
