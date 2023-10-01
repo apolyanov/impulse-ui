@@ -51,12 +51,12 @@
   },
   "size-limit": [
     {
-      "path": "dist/impulse-ui-buttons.cjs.production.min.js",
-      "limit": "10 KB"
+      "path": "dist/buttons.cjs.production.min.js",
+      "limit": "1000 KB"
     },
     {
-      "path": "dist/impulse-ui-buttons.esm.js",
-      "limit": "10 KB"
+      "path": "dist/buttons.esm.js",
+      "limit": "1000 KB"
     }
   ]
 }

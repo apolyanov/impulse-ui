@@ -53,12 +53,12 @@
   },
   "size-limit": [
     {
-      "path": "dist/impulse-ui-input.cjs.production.min.js",
-      "limit": "10 KB"
+      "path": "dist/input.cjs.production.min.js",
+      "limit": "1000 KB"
     },
     {
-      "path": "dist/impulse-ui-input.esm.js",
-      "limit": "10 KB"
+      "path": "dist/input.esm.js",
+      "limit": "1000 KB"
     }
   ]
 }

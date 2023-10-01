@@ -1,9 +1,5 @@
 module.exports = {
-  extends: [
-    './node_modules\\dts-cli\\conf\\eslint-config-react-app\\index.js',
-    './node_modules\\eslint-config-prettier\\index.js',
-    'plugin:prettier/recommended',
-  ],
+  extends: ['./.eslintrc-base.js', './.eslintrc-prettier.js', 'plugin:prettier/recommended'],
   plugins: ['simple-import-sort', 'react-hooks'],
   rules: {
     camelcase: 'error',

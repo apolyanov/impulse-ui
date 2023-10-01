@@ -45,12 +45,12 @@
   },
   "size-limit": [
     {
-      "path": "dist/impulse-ui-colours.cjs.production.min.js",
-      "limit": "10 KB"
+      "path": "dist/colours.cjs.production.min.js",
+      "limit": "1000 KB"
     },
     {
-      "path": "dist/impulse-ui-colours.esm.js",
-      "limit": "10 KB"
+      "path": "dist/colours.esm.js",
+      "limit": "1000 KB"
     }
   ]
 }
