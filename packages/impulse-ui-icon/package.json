@@ -1,6 +1,6 @@
 {
   "name": "@impulse-ui/icon",
-  "version": "2.0.1-beta.2",
+  "version": "2.0.1-beta.3",
   "license": "MIT",
   "author": "Alexander Polyanov",
   "main": "dist/index.js",
@@ -39,7 +39,7 @@
   },
   "dependencies": {
     "@impulse-ui/colours": "^2.0.1-beta.2",
-    "@impulse-ui/core": "^2.0.1-beta.2",
+    "@impulse-ui/core": "^2.0.1-beta.3",
     "@impulse-ui/types": "^2.0.1-beta.2"
   },
   "peerDependencies": {
