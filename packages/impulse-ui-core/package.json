@@ -1,6 +1,6 @@
 {
   "name": "@impulse-ui/core",
-  "version": "0.1.0",
+  "version": "2.0.1-beta.3",
   "license": "MIT",
   "author": "Alexander Polyanov",
   "main": "dist/index.js",
@@ -45,21 +45,21 @@
   },
   "size-limit": [
     {
-      "path": "dist/impulse-ui-core.cjs.production.min.js",
-      "limit": "10 KB"
+      "path": "dist/core.cjs.production.min.js",
+      "limit": "1000 KB"
     },
     {
-      "path": "dist/impulse-ui-core.esm.js",
-      "limit": "10 KB"
+      "path": "dist/core.esm.js",
+      "limit": "1000 KB"
     }
   ],
   "dependencies": {
-    "@impulse-ui/types": "*",
     "@fortawesome/fontawesome-svg-core": "6.4.2",
     "@fortawesome/free-brands-svg-icons": "6.4.2",
     "@fortawesome/free-regular-svg-icons": "6.4.2",
     "@fortawesome/free-solid-svg-icons": "6.4.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@impulse-ui/types": "^2.0.1-beta.2",
     "@popperjs/core": "^2.11.8",
     "@tanstack/react-table": "^8.9.7",
     "@tanstack/react-virtual": "^3.0.0-beta.60",
@@ -68,5 +68,6 @@
     "react-popper": "^2.3.0",
     "styled-components": "6.0.8",
     "stylis": "^4.3.0"
-  }
+  },
+  "gitHead": "82ece656f5271be949d5e3eff27201cc83ef6555"
 }

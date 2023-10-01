@@ -7,7 +7,7 @@ on:
 
 env:
   NX_CLOUD_DISTRIBUTED_EXECUTION: true # this enables DTE
-  NX_CLOUD_DISTRIBUTED_EXECUTION_AGENT_COUNT: 3 # expected number of agents
+  NX_CLOUD_DISTRIBUTED_EXECUTION_AGENT_COUNT: 4 # expected number of agents
   NX_BRANCH: ${{ github.event.number || github.ref_name }}
   NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
   NPM_TOKEN: ${{ secrets.NPM_TOKEN }} # this is needed if our pipeline publishes to npm
@@ -55,20 +55,23 @@ jobs:
       - name: Formatting
         run: npx nx format:write
 
-      - name: Run commands in parallel
+      - name: Run commands in parallel (lint, build, test)
         run: |
           pids=()
           # list of commands to be run on main has env flag NX_CLOUD_DISTRIBUTED_EXECUTION set to false
           NX_CLOUD_DISTRIBUTED_EXECUTION=false npx nx-cloud record -- npx nx format:check & pids+=($!)
 
           # list of commands to be run on agents
-          npx nx affected -t lint --parallel=3 & 
+          npx nx affected -t lint --parallel=4 & 
           pids+=($!)
 
-          npx nx affected -t test --parallel=3 & 
+          npx nx affected -t test --parallel=4 & 
           pids+=($!)
 
-          npx nx affected -t build --parallel=3 & 
+          npx nx affected -t build --parallel=4 & 
+          pids+=($!)
+          
+          npx nx affected -t size --parallel=4 & 
           pids+=($!)
 
           # run all commands in parallel and bail if one of them fails
@@ -90,7 +93,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        agent: [1, 2, 3]
+        agent: [1, 2, 3, 4]
     steps:
       - name: Checkout
         uses: actions/checkout@v3

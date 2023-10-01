@@ -1,6 +1,6 @@
 {
   "name": "@impulse-ui/buttons",
-  "version": "0.1.0",
+  "version": "2.0.1-beta.3",
   "license": "MIT",
   "author": "Alexander Polyanov",
   "main": "dist/index.js",
@@ -38,10 +38,10 @@
     "testEnvironment": "jsdom"
   },
   "dependencies": {
-    "@impulse-ui/core": "*",
-    "@impulse-ui/types": "*",
-    "@impulse-ui/colours": "*",
-    "@impulse-ui/icon": "*"
+    "@impulse-ui/colours": "^2.0.1-beta.2",
+    "@impulse-ui/core": "^2.0.1-beta.3",
+    "@impulse-ui/icon": "^2.0.1-beta.3",
+    "@impulse-ui/types": "^2.0.1-beta.2"
   },
   "peerDependencies": {
     "react": ">=16"
@@ -51,12 +51,13 @@
   },
   "size-limit": [
     {
-      "path": "dist/impulse-ui-buttons.cjs.production.min.js",
-      "limit": "10 KB"
+      "path": "dist/buttons.cjs.production.min.js",
+      "limit": "1000 KB"
     },
     {
-      "path": "dist/impulse-ui-buttons.esm.js",
-      "limit": "10 KB"
+      "path": "dist/buttons.esm.js",
+      "limit": "1000 KB"
     }
-  ]
+  ],
+  "gitHead": "82ece656f5271be949d5e3eff27201cc83ef6555"
 }
