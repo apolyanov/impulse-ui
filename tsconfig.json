@@ -1,0 +1,38 @@
+{
+  // see https://www.typescriptlang.org/tsconfig to better understand tsconfigs
+  "extends": "@tsconfig/vite-react/tsconfig.json",
+  "ts-node": {
+    "compilerOptions": {
+      "module": "ESNext",
+      "moduleResolution": "Node"
+    }
+  },
+  "include": ["src", "types"],
+  "exclude": ["dist"],
+  "references": [
+    {
+      "path": "./packages/impulse-ui-types"
+    },
+    {
+      "path": "./packages/impulse-ui-core"
+    },
+    {
+      "path": "./packages/impulse-ui-buttons"
+    },
+    {
+      "path": "./packages/impulse-ui-colours"
+    },
+    {
+      "path": "./packages/impulse-ui-icon"
+    },
+    {
+      "path": "./packages/impulse-ui-layout"
+    },
+    {
+      "path": "./packages/impulse-ui-text"
+    },
+    {
+      "path": "./packages/impulse-ui-input"
+    }
+  ]
+}

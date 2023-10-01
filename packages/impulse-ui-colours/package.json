@@ -1,0 +1,57 @@
+{
+  "name": "@impulse-ui/colours",
+  "version": "2.0.1",
+  "license": "MIT",
+  "author": "Alexander Polyanov",
+  "main": "dist/index.js",
+  "module": "dist/colours.esm.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "analyze": "size-limit --why",
+    "build": "dts build",
+    "lint": "dts lint ./src",
+    "size": "size-limit",
+    "start": "dts watch",
+    "test": "dts test --passWithNoTests"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "dts lint"
+    }
+  },
+  "prettier": {
+    "semi": true,
+    "tabWidth": 2,
+    "printWidth": 120,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "jsxSingleQuote": true,
+    "bracketSameLine": false,
+    "endOfLine": "auto",
+    "bracketSpacing": true
+  },
+  "jest": {
+    "testEnvironment": "jsdom"
+  },
+  "peerDependencies": {
+    "react": ">=16"
+  },
+  "engines": {
+    "node": ">=12"
+  },
+  "size-limit": [
+    {
+      "path": "dist/colours.cjs.production.min.js",
+      "limit": "1000 KB"
+    },
+    {
+      "path": "dist/colours.esm.js",
+      "limit": "1000 KB"
+    }
+  ],
+  "gitHead": "82ece656f5271be949d5e3eff27201cc83ef6555"
+}

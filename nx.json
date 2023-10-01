@@ -1,0 +1,30 @@
+{
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "nx-cloud",
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "size"],
+        "parallel": 4,
+        "accessToken": "ZTU1MDkyZWMtMGM2MC00OWEyLWJiMjAtYWVhYWRjNzRhNjkxfHJlYWQtd3JpdGU="
+      }
+    }
+  },
+  "targetDefaults": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["{projectRoot}/dist"]
+    },
+    "lint": {
+      "dependsOn": ["^lint"]
+    },
+    "test": {
+      "dependsOn": ["^test"]
+    },
+    "size": {
+      "dependsOn": ["build"]
+    }
+  },
+  "affected": {
+    "defaultBase": "origin/main"
+  }
+}
