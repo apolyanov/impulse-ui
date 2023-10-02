@@ -21,8 +21,13 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18'
+          
+      - name: "Setup npm"
+        run: |
+          npm set @apolyanov:registry=https://npm.pkg.github.com/apolyanov
+          npm set "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}"
 
-      - name: "Version and publish" # Interesting step
+      - name: "Version and publish"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
