@@ -1,6 +1,6 @@
 import { cpSync as copy, readFileSync, rmSync as remove, writeFileSync } from 'fs';
 
-const templateDir = './packages/template-package';
+const templateDir = './scripts/assets/template-package';
 const packageName = process.argv[2];
 const packageDir = `./packages/impulse-ui-${packageName}`;
 const nameArgRegex = /name-arg/gi;
