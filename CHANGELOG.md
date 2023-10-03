@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2.0.3 (2023-10-03)
+
+
+### Bug Fixes
+
+* Moving template to assets folder outside the workspace packages ([156f2ae](https://github.com/apolyanov/impulse-ui/commit/156f2ae6ed9b370347ff26463fe5d1f52d29d6e2))
+
+
+
+
+
 ## 2.0.3-beta.9 (2023-10-03)
 
 
