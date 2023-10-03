@@ -1,6 +1,6 @@
 {
   "name": "@impulse-ui/input",
-  "version": "2.0.4-beta.0",
+  "version": "2.0.4",
   "license": "MIT",
   "author": "Alexander Polyanov",
   "main": "dist/index.js",
@@ -38,11 +38,11 @@
     "testEnvironment": "jsdom"
   },
   "dependencies": {
-    "@impulse-ui/buttons": "^2.0.4-beta.0",
+    "@impulse-ui/buttons": "^2.0.4",
     "@impulse-ui/colours": "^2.0.3",
-    "@impulse-ui/core": "^2.0.4-beta.0",
-    "@impulse-ui/layout": "^2.0.4-beta.0",
-    "@impulse-ui/text": "^2.0.4-beta.0",
+    "@impulse-ui/core": "^2.0.4",
+    "@impulse-ui/layout": "^2.0.4",
+    "@impulse-ui/text": "^2.0.4",
     "@impulse-ui/types": "^2.0.3"
   },
   "peerDependencies": {
