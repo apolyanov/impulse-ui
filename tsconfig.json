@@ -2,12 +2,13 @@
   // see https://www.typescriptlang.org/tsconfig to better understand tsconfigs
   "extends": "@tsconfig/vite-react/tsconfig.json",
   "ts-node": {
+    "esm": true,
     "compilerOptions": {
-      "module": "ESNext",
+      "module": "NodeNext",
       "moduleResolution": "Node"
     }
   },
-  "include": ["src", "types"],
+  "include": ["src", "types", "scripts"],
   "exclude": ["dist"],
   "references": [
     {
