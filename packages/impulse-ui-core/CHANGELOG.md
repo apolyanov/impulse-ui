@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.6-beta.2](https://github.com/apolyanov/impulse-ui/compare/v2.0.6-beta.1...v2.0.6-beta.2) (2023-10-05)
+
+
+### Bug Fixes
+
+* Changing font-weight to 500 for readability ([1a9b1d3](https://github.com/apolyanov/impulse-ui/commit/1a9b1d3fa4802ef0e5d3cb475d8797aa9a1e2928))
+
+
+
+
+
 ## [2.0.6-beta.1](https://github.com/apolyanov/impulse-ui/compare/v2.0.6-beta.0...v2.0.6-beta.1) (2023-10-05)
 
 
