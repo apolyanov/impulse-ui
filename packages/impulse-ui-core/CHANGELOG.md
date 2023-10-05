@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.6-beta.3](https://github.com/apolyanov/impulse-ui/compare/v2.0.6-beta.2...v2.0.6-beta.3) (2023-10-05)
+
+
+### Bug Fixes
+
+* Fixing index ([29bc2f1](https://github.com/apolyanov/impulse-ui/commit/29bc2f104d806057a507b583cb4873e9088ac018))
+
+
+
+
+
 ## [2.0.6-beta.2](https://github.com/apolyanov/impulse-ui/compare/v2.0.6-beta.1...v2.0.6-beta.2) (2023-10-05)
 
 
