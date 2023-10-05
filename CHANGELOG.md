@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.6](https://github.com/apolyanov/impulse-ui/compare/v2.0.5...v2.0.6) (2023-10-05)
+
+
+### Bug Fixes
+
+* Attempting to fix github actions for publishing ([f251b14](https://github.com/apolyanov/impulse-ui/commit/f251b14c89f68130624d546dd83984e5557c468d))
+* Changing font-weight to 500 for readability ([b1ad3fa](https://github.com/apolyanov/impulse-ui/commit/b1ad3fa616b72333360a3b0388400bfdfbb8aca4))
+* Reverting publish ([96f163a](https://github.com/apolyanov/impulse-ui/commit/96f163a43dce8029ddc32e9fd34f4efaeebc95e7))
+* Updating lerna to always publish new versions ([8593e32](https://github.com/apolyanov/impulse-ui/commit/8593e3268125b641614f8f1a3f352ed7e2434fb9))
+* Updating packages to only publish the dist folders ([1dff524](https://github.com/apolyanov/impulse-ui/commit/1dff524ce43de3a7535b0ba2536e16dc0f1c8182))
+
+
+
+
+
 ## [2.0.6-beta.2](https://github.com/apolyanov/impulse-ui/compare/v2.0.6-beta.1...v2.0.6-beta.2) (2023-10-05)
 
 
