@@ -26,6 +26,10 @@ jobs:
         run:
           npm set "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}"
 
+      - name: Bulding packages
+        run:
+          npx lerna run build
+
       - name: "Version and publish"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
