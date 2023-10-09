@@ -21,7 +21,7 @@
     "start": "dts watch",
     "storybook": "storybook dev -p 6006",
     "test": "dts test --passWithNoTests",
-    "create-package": "npx ts-node ./scripts/createPackage.ts"
+    "create-package": "bun run ./scripts/createPackage.ts"
   },
   "husky": {
     "hooks": {

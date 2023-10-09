@@ -1,4 +1,4 @@
-import { ChangeEvent, DetailedHTMLProps, InputHTMLAttributes, RefObject } from 'react';
+import { ChangeEvent, DetailedHTMLProps, InputHTMLAttributes } from 'react';
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
 import { IconButtonStyle, IconButtonStyleProps } from '../../buttons';
@@ -33,7 +33,6 @@ interface TextInputRestProps {
   clearable?: boolean;
   onClear?: () => void;
   icon?: IconDefinition;
-  ref?: RefObject<HTMLInputElement>;
   clearIcon?: IconDefinition;
   isClearIconFocusable?: boolean;
   error?: boolean;

@@ -9,7 +9,7 @@
     "build": "vite build"
   },
   "dependencies": {
-     "react-app-polyfill": "^3.0.0",
+    "react-app-polyfill": "^3.0.0",
     "react-router-dom": "6.14.2",
     "styled-components": "6.0.7"
   },
