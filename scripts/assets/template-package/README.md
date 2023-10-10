@@ -5,4 +5,5 @@
 ```bash
 bun run create-package package-name #where `package-name` is the name of the package that will be prefixed with @impulse-ui/
 ```
+
 > IMPORTANT - This package should not be changed!

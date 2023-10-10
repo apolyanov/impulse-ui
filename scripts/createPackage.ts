@@ -28,7 +28,7 @@ const copyTemplate = () => {
 
   const endTime = performance.now();
 
-  console.log(`Creating the package took ${endTime - startTime}ms to complete.`)
+  console.log(`Creating the package took ${endTime - startTime}ms to complete.`);
 };
 
 copyTemplate();
