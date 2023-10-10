@@ -1,10 +1,10 @@
 {
-  "name": "@impulse-ui/name-arg",
+  "name": "@impulse-ui/toolkit",
   "version": "0.1.0",
   "license": "MIT",
   "author": "Alexander Polyanov",
   "main": "dist/index.js",
-  "module": "dist/name-arg.esm.js",
+  "module": "dist/toolkit.esm.js",
   "typings": "dist/index.d.ts",
   "files": [
     "dist"
@@ -33,6 +33,16 @@
     "endOfLine": "auto",
     "bracketSpacing": true
   },
+  "dependencies": {
+    "@impulse-ui/colours": "^2.0.7-beta.0",
+    "@impulse-ui/core": "^2.0.7-beta.0",
+    "@impulse-ui/icon": "^2.0.7-beta.0",
+    "@impulse-ui/layout": "^2.0.7-beta.0",
+    "@impulse-ui/input": "^2.0.7-beta.0",
+    "@impulse-ui/text": "^2.0.7-beta.0",
+    "@impulse-ui/buttons": "^2.0.7-beta.0",
+    "@impulse-ui/types": "^2.0.7-beta.0"
+  },
   "jest": {
     "testEnvironment": "jsdom"
   },
@@ -44,11 +54,11 @@
   },
   "size-limit": [
     {
-      "path": "dist/name-arg.cjs.production.min.js",
+      "path": "dist/toolkit.cjs.production.min.js",
       "limit": "1000 KB"
     },
     {
-      "path": "dist/name-arg.esm.js",
+      "path": "dist/toolkit.esm.js",
       "limit": "1000 KB"
     }
   ]

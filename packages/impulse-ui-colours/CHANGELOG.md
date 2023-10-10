@@ -7,39 +7,21 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 **Note:** Version bump only for package @impulse-ui/colours
 
-
-
-
-
 ## [2.0.6](https://github.com/apolyanov/impulse-ui/compare/v2.0.5...v2.0.6) (2023-10-05)
-
 
 ### Bug Fixes
 
-* Updating packages to only publish the dist folders ([1dff524](https://github.com/apolyanov/impulse-ui/commit/1dff524ce43de3a7535b0ba2536e16dc0f1c8182))
-
-
-
-
+- Updating packages to only publish the dist folders ([1dff524](https://github.com/apolyanov/impulse-ui/commit/1dff524ce43de3a7535b0ba2536e16dc0f1c8182))
 
 ## [2.0.6-beta.1](https://github.com/apolyanov/impulse-ui/compare/v2.0.6-beta.0...v2.0.6-beta.1) (2023-10-05)
 
-
 ### Bug Fixes
 
-* Updating packages to only publish the dist folders ([e44a015](https://github.com/apolyanov/impulse-ui/commit/e44a015986c16c624c112e89642ee95360c20d1b))
-
-
-
-
+- Updating packages to only publish the dist folders ([e44a015](https://github.com/apolyanov/impulse-ui/commit/e44a015986c16c624c112e89642ee95360c20d1b))
 
 ## 2.0.3 (2023-10-03)
 
 **Note:** Version bump only for package @impulse-ui/colours
-
-
-
-
 
 ## 2.0.3-beta.9 (2023-10-03)
 
