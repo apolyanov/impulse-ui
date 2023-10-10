@@ -34,6 +34,9 @@
     },
     {
       "path": "./packages/impulse-ui-input"
+    },
+    {
+      "path": "./packages/impulse-ui-toolkit"
     }
   ]
 }
