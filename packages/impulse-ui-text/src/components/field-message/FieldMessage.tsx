@@ -1,13 +1,14 @@
 import React, { FunctionComponent } from 'react';
 import { Icon } from '@impulse-ui/icon';
 import { Container } from '@impulse-ui/layout';
-import { FieldMessageProps, FieldMessageType } from '@impulse-ui/types';
+import { FieldMessageProps } from '@impulse-ui/types';
 
 import { useFieldMessageStyle } from '../../hooks';
+import { INFO } from '../../utils';
 import { Typography } from '../typography';
 
 const FieldMessage: FunctionComponent<FieldMessageProps> = ({ iStyle, iProps, ...rest }) => {
-  const { type = FieldMessageType.INFO, icon, message } = rest;
+  const { type = INFO, icon, message } = rest;
 
   const {
     mainContainerStyle,
