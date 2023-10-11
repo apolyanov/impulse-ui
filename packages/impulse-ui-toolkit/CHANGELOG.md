@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0-beta.4](https://github.com/apolyanov/impulse-ui/compare/v2.1.0-beta.3...v2.1.0-beta.4) (2023-10-11)
+
+
+### Bug Fixes
+
+* Fixing "Can't resolve '@impulse-ui/types' in '/home/apolyanov/WebstormProjects/test/node_modules/@impulse-ui/toolkit/dist'" ([206977f](https://github.com/apolyanov/impulse-ui/commit/206977f54ee5526bd2de69ab8085ea974b11b898))
+
+
+
+
+
 # [2.1.0-beta.3](https://github.com/apolyanov/impulse-ui/compare/v2.1.0-beta.2...v2.1.0-beta.3) (2023-10-11)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
