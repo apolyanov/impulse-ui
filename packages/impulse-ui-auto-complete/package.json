@@ -1,6 +1,6 @@
 {
   "name": "@impulse-ui/auto-complete",
-  "version": "2.1.0-beta.1",
+  "version": "2.1.0-beta.2",
   "license": "MIT",
   "author": "Alexander Polyanov",
   "main": "dist/index.js",
@@ -38,13 +38,13 @@
   },
   "dependencies": {
     "@impulse-ui/colours": "^2.1.0-beta.1",
-    "@impulse-ui/core": "^2.1.0-beta.1",
-    "@impulse-ui/input": "^2.1.0-beta.1",
-    "@impulse-ui/layout": "^2.1.0-beta.1",
-    "@impulse-ui/text": "^2.1.0-beta.1"
+    "@impulse-ui/core": "^2.1.0-beta.2",
+    "@impulse-ui/input": "^2.1.0-beta.2",
+    "@impulse-ui/layout": "^2.1.0-beta.2",
+    "@impulse-ui/text": "^2.1.0-beta.2"
   },
   "devDependencies": {
-    "@impulse-ui/types": "^2.1.0-beta.1"
+    "@impulse-ui/types": "^2.1.0-beta.2"
   },
   "peerDependencies": {
     "react": ">=16"
