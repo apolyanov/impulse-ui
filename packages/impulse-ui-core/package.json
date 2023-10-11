@@ -1,6 +1,6 @@
 {
   "name": "@impulse-ui/core",
-  "version": "2.1.0-beta.0",
+  "version": "2.1.0-beta.1",
   "license": "MIT",
   "author": "Alexander Polyanov",
   "main": "dist/index.js",
@@ -58,7 +58,7 @@
     "@fortawesome/free-regular-svg-icons": "6.4.2",
     "@fortawesome/free-solid-svg-icons": "6.4.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
-    "@impulse-ui/types": "^2.1.0-beta.0",
+    "@impulse-ui/types": "^2.1.0-beta.1",
     "@popperjs/core": "^2.11.8",
     "@tanstack/react-table": "^8.10.3",
     "@tanstack/react-virtual": "^3.0.0-beta.61",
