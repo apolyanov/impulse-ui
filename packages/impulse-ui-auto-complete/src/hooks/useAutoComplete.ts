@@ -1,6 +1,11 @@
 import { ChangeEvent, KeyboardEvent, MouseEvent, useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { usePopper } from 'react-popper';
-import { useElementDimensions, useItemSelection, useOutsideClick, useVirtualizedList } from '@impulse-ui/core';
+import {
+  useElementDimensions,
+  useItemSelection,
+  useOutsideClick,
+  usePopover,
+  useVirtualizedList,
+} from '@impulse-ui/core';
 import { AutoCompleteRestProps, InnerSimpleOption, InputValue } from '@impulse-ui/types';
 
 import { dropdownModifiers, processOptions } from '../helpers';
@@ -61,7 +66,7 @@ const useAutoComplete = (rest: AutoCompleteRestProps) => {
     autoScroll: true,
   });
 
-  const { styles, attributes } = usePopper(containerRef, dropdownRef, {
+  const { styles, attributes } = usePopover(containerRef, dropdownRef, {
     placement: 'bottom',
     modifiers: dropdownModifiers,
   });
