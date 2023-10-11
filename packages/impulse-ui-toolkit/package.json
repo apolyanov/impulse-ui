@@ -45,9 +45,6 @@
     "@impulse-ui/sidebar": "^2.1.0-beta.3",
     "@impulse-ui/text": "^2.1.0-beta.3"
   },
-  "devDependencies": {
-    "@impulse-ui/types": "^2.1.0-beta.3"
-  },
   "jest": {
     "testEnvironment": "jsdom"
   },
