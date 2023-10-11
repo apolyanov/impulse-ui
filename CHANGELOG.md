@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0-beta.3](https://github.com/apolyanov/impulse-ui/compare/v2.1.0-beta.2...v2.1.0-beta.3) (2023-10-11)
+
+
+### Bug Fixes
+
+* Fixing types package from being included in the bundles ([21b8589](https://github.com/apolyanov/impulse-ui/commit/21b8589e49a0dc7a4694b7f3401fdbe9f3a03872))
+
+
+
+
+
 # [2.1.0-beta.2](https://github.com/apolyanov/impulse-ui/compare/v2.1.0-beta.1...v2.1.0-beta.2) (2023-10-11)
 
 
