@@ -1,0 +1,63 @@
+{
+  "name": "@impulse-ui/auto-complete",
+  "version": "0.1.0",
+  "license": "MIT",
+  "author": "Alexander Polyanov",
+  "main": "dist/index.js",
+  "module": "dist/auto-complete.esm.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "analyze": "size-limit --why",
+    "build": "dts build",
+    "lint": "dts lint src",
+    "size": "size-limit",
+    "start": "dts watch",
+    "test": "dts test --passWithNoTests"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "dts lint"
+    }
+  },
+  "prettier": {
+    "semi": true,
+    "tabWidth": 2,
+    "printWidth": 120,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "jsxSingleQuote": true,
+    "bracketSameLine": false,
+    "endOfLine": "auto",
+    "bracketSpacing": true
+  },
+  "jest": {
+    "testEnvironment": "jsdom"
+  },
+  "dependencies": {
+    "@impulse-ui/types": "2.1.0-beta.0",
+    "@impulse-ui/core": "2.1.0-beta.0",
+    "@impulse-ui/colours": "2.1.0-beta.0",
+    "@impulse-ui/input": "2.1.0-beta.0",
+    "@impulse-ui/layout": "2.1.0-beta.0",
+    "@impulse-ui/text": "2.1.0-beta.0"
+  },
+  "peerDependencies": {
+    "react": ">=16"
+  },
+  "engines": {
+    "node": ">=12"
+  },
+  "size-limit": [
+    {
+      "path": "dist/auto-complete.cjs.production.min.js",
+      "limit": "1000 KB"
+    },
+    {
+      "path": "dist/auto-complete.esm.js",
+      "limit": "1000 KB"
+    }
+  ]
+}

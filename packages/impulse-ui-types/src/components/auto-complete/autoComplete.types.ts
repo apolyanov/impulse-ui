@@ -5,16 +5,16 @@ import { ContainerStyleProps } from '../layout';
 import { TypographyStyleProps } from '../text';
 import { IOProps, IOStyle } from '../theme';
 
-import { BasicAutoCompleteItemStyle } from './basicAutoCompleteItem.types';
+import { AutoCompleteItemStyle } from './autoCompleteItem.types';
 
 type SimpleOptionValue = string | number | Object | Object[];
 
-interface BasicAutoCompleteProps extends BasicAutoCompleteRestProps {
-  iStyle?: Partial<BasicAutoCompleteStyle>;
-  iProps?: Partial<BasicAutoCompleteStyleProps>;
+interface AutoCompleteProps extends AutoCompleteRestProps {
+  iStyle?: Partial<AutoCompleteStyle>;
+  iProps?: Partial<AutoCompleteStyleProps>;
 }
 
-interface BasicAutoCompleteRestProps<T extends object = any> extends HTMLAttributes<HTMLDivElement> {
+interface AutoCompleteRestProps<T extends object = any> extends HTMLAttributes<HTMLDivElement> {
   selectOnBlur?: boolean;
   loading?: boolean;
   disableAutoFiltering?: boolean;
@@ -42,44 +42,32 @@ interface InnerSimpleOption extends SimpleOption {
   uuid: number;
 }
 
-interface BasicAutoCompleteStyle {
-  mainContainerStyle: IOStyle<ContainerStyleProps, BasicAutoCompleteRestProps>;
+interface AutoCompleteStyle {
+  mainContainerStyle: IOStyle<ContainerStyleProps, AutoCompleteRestProps>;
   textInputStyle: Partial<TextInputStyle>;
-  autoCompleteItemsContainerStyle: IOStyle<ContainerStyleProps, BasicAutoCompleteRestProps>;
-  autoCompleteItemStyle: Partial<BasicAutoCompleteItemStyle>;
-  loadingTypographyStyle: IOStyle<TypographyStyleProps, BasicAutoCompleteRestProps>;
-  noOptionsTypographyStyle: IOStyle<TypographyStyleProps, BasicAutoCompleteRestProps>;
+  autoCompleteItemsContainerStyle: IOStyle<ContainerStyleProps, AutoCompleteRestProps>;
+  autoCompleteItemStyle: Partial<AutoCompleteItemStyle>;
+  loadingTypographyStyle: IOStyle<TypographyStyleProps, AutoCompleteRestProps>;
+  noOptionsTypographyStyle: IOStyle<TypographyStyleProps, AutoCompleteRestProps>;
 }
 
-interface BasicAutoCompleteStyleProps {
+interface AutoCompleteStyleProps {
   mainContainerStyleProps: IOProps<ContainerStyleProps>;
   textInputStyleProps: Partial<TextInputStyleProps>;
   autoCompleteItemsContainerStyleProps: IOProps<ContainerStyleProps>;
-  autoCompleteItemStyleProps: Partial<BasicAutoCompleteStyleProps>;
+  autoCompleteItemStyleProps: Partial<AutoCompleteStyleProps>;
   loadingTypographyStyleProps: IOProps<TypographyStyleProps>;
   noOptionsTypographyStyleProps: IOProps<TypographyStyleProps>;
 }
 
-type UseBasicAutoCompleteStyleFnProps = Partial<BasicAutoCompleteStyle & BasicAutoCompleteStyleProps>;
-
-interface UseBasicAutoCompleteStyleFn {
-  (
-    rest: BasicAutoCompleteRestProps,
-    iStyle?: Partial<BasicAutoCompleteStyle>,
-    iProps?: Partial<BasicAutoCompleteStyleProps>,
-  ): UseBasicAutoCompleteStyleFnProps;
-}
-
 export type {
-  BasicAutoCompleteProps,
-  BasicAutoCompleteRestProps,
-  BasicAutoCompleteStyle,
-  BasicAutoCompleteStyleProps,
+  AutoCompleteProps,
+  AutoCompleteRestProps,
+  AutoCompleteStyle,
+  AutoCompleteStyleProps,
   ExtractSimpleOptionFn,
   FormatOptionTextFn,
   InnerSimpleOption,
   SimpleOption,
   SimpleOptionValue,
-  UseBasicAutoCompleteStyleFn,
-  UseBasicAutoCompleteStyleFnProps,
 };

@@ -2,17 +2,16 @@ import { DividerStyleProps } from '../divider';
 import { IOProps, IOStyle } from '../theme';
 
 interface SidebarSectionDividerProps {
-  iStyle?: IOStyle;
-  iProps?: IOProps<DividerStyleProps>;
+  iStyle?: Partial<SidebarSectionDividerStyle>;
+  iProps?: Partial<SidebarSectionDividerStyleProps>;
 }
 
-interface UseSidebarSectionDividerFn {
-  (iStyle?: IOStyle, iProps?: IOProps<DividerStyleProps>): Partial<UseSidebarSectionDividerFnProps>;
+interface SidebarSectionDividerStyle {
+  dividerStyle: IOStyle<DividerStyleProps>;
 }
 
-interface UseSidebarSectionDividerFnProps {
-  dividerStyle: IOStyle;
+interface SidebarSectionDividerStyleProps {
   dividerStyleProps: IOProps<DividerStyleProps>;
 }
 
-export type { SidebarSectionDividerProps, UseSidebarSectionDividerFn, UseSidebarSectionDividerFnProps };
+export type { SidebarSectionDividerProps, SidebarSectionDividerStyle, SidebarSectionDividerStyleProps };
