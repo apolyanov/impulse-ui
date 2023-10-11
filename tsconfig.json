@@ -1,5 +1,4 @@
 {
-  // see https://www.typescriptlang.org/tsconfig to better understand tsconfigs
   "extends": "@tsconfig/vite-react/tsconfig.json",
   "ts-node": {
     "esm": true,
@@ -8,8 +7,14 @@
       "moduleResolution": "Node"
     }
   },
-  "include": ["src", "types", "scripts"],
-  "exclude": ["dist"],
+  "include": [
+    "src",
+    "types",
+    "scripts"
+  ],
+  "exclude": [
+    "dist"
+  ],
   "references": [
     {
       "path": "./packages/impulse-ui-types"
@@ -37,6 +42,15 @@
     },
     {
       "path": "./packages/impulse-ui-toolkit"
+    },
+    {
+      "path": "./packages/impulse-ui-auto-complete"
+    },
+    {
+      "path": "./packages/impulse-ui-sidebar"
+    },
+    {
+      "path": "./packages/impulse-ui-avatar"
     }
   ]
 }

@@ -1,5 +1,5 @@
+export * from './auto-complete';
 export * from './avatar';
-export * from './basic-auto-complete';
 export * from './buttons';
 export * from './checkbox';
 export * from './divider';
