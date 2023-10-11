@@ -14,26 +14,17 @@ interface SidebarProps {
 }
 
 interface SidebarStyle {
-  sidebarContainerStyle: IOStyle;
-  sidebarHeaderStyle: Partial<SidebarHeaderStyle>;
-  sidebarDividerStyle: IOStyle;
-  sidebarItemStyle: Partial<SidebarItemStyle>;
+  containerStyle: IOStyle<ContainerStyleProps>;
+  headerStyle: Partial<SidebarHeaderStyle>;
+  sectionDividerStyle: IOStyle<DividerStyleProps>;
+  itemStyle: Partial<SidebarItemStyle>;
 }
 
 interface SidebarStyleProps {
-  sidebarContainerStyleProps: IOProps<ContainerStyleProps>;
-  sidebarHeaderStyleProps: IOProps<SidebarHeaderStyleProps>;
-  sidebarDividerStyleProps: IOProps<DividerStyleProps>;
-  sidebarItemStyleProps: IOProps<SidebarItemStyleProps>;
-}
-
-interface UseSidebarStyleFn {
-  (iStyle?: IOStyle, iProps?: IOProps<ContainerStyleProps>): Partial<UseSidebarStyleFnProps>;
-}
-
-interface UseSidebarStyleFnProps {
-  containerStyle: IOStyle;
   containerStyleProps: IOProps<ContainerStyleProps>;
+  headerStyleProps: IOProps<SidebarHeaderStyleProps>;
+  sectionDividerStyleProps: IOProps<DividerStyleProps>;
+  itemStyleProps: IOProps<SidebarItemStyleProps>;
 }
 
-export type { SidebarProps, SidebarStyle, SidebarStyleProps, UseSidebarStyleFn, UseSidebarStyleFnProps };
+export type { SidebarProps, SidebarStyle, SidebarStyleProps };

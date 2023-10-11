@@ -28,7 +28,28 @@ const copyTemplate = () => {
 
   const endTime = performance.now();
 
+  updateTsConfig();
+
   console.log(`Creating the package took ${endTime - startTime}ms to complete.`);
+};
+
+const updateTsConfig = () => {
+  const startTime = performance.now();
+
+  console.log('Reading root tsconfig.json...');
+  const tsConfig = JSON.parse(readFileSync('./tsconfig.json', 'utf8'));
+
+  console.log('Updating tsconfig.json...');
+  tsConfig.references.push({
+    path: `./packages/impulse-ui-${packageName}`,
+  });
+
+  console.log('Saving tsconfig.json...');
+  writeFileSync('./tsconfig.json', JSON.stringify(tsConfig, null, 2));
+
+  const endTime = performance.now();
+
+  console.log(`Updating tsconfig.json took ${endTime - startTime}ms to complete.`);
 };
 
 copyTemplate();
