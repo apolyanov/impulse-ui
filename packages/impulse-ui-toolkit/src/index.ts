@@ -8,4 +8,3 @@ export * from '@impulse-ui/input';
 export * from '@impulse-ui/layout';
 export * from '@impulse-ui/sidebar';
 export * from '@impulse-ui/text';
-export * from '@impulse-ui/types';
