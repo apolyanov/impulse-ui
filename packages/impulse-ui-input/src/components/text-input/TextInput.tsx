@@ -13,8 +13,8 @@ import { IconButton } from '@impulse-ui/buttons';
 import { useComponentStyle } from '@impulse-ui/core';
 import { Icon } from '@impulse-ui/icon';
 import { Container } from '@impulse-ui/layout';
-import { FieldMessage } from '@impulse-ui/text';
-import { FieldMessageType, HandleInputFn, InputValue, TextInputProps } from '@impulse-ui/types';
+import { ERROR, FieldMessage } from '@impulse-ui/text';
+import { HandleInputFn, InputValue, TextInputProps } from '@impulse-ui/types';
 import debounce from 'lodash/debounce';
 import isNil from 'lodash/isNil';
 
@@ -137,7 +137,7 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
           <FieldMessage
             iStyle={fieldMessageStyle}
             iProps={fieldMessageStyleProps}
-            type={FieldMessageType.ERROR}
+            type={ERROR}
             message={errorMessage}
           />
         )}

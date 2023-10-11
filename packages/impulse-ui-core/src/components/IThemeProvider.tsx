@@ -3,10 +3,13 @@ import { IThemeContext, IThemeProviderProps, ThemeMode } from '@impulse-ui/types
 import { ThemeProvider } from 'styled-components';
 
 import '../css/index.css';
+
+import { LIGHT } from '../utils';
+
 const ITheme = createContext<IThemeContext | undefined>(undefined);
 
 const IThemeProvider: FunctionComponent<IThemeProviderProps> = ({ children, themes, themeMode }) => {
-  const [currentThemeMode, setCurrentThemeMode] = useState<ThemeMode>(themeMode ?? ThemeMode.LIGHT);
+  const [currentThemeMode, setCurrentThemeMode] = useState<ThemeMode>(themeMode ?? LIGHT);
 
   return (
     <ITheme.Provider value={{ setCurrentThemeMode, currentThemeMode }}>

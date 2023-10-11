@@ -10,12 +10,7 @@ import { ComponentStyleProps, IOProps, IOStyle } from '../theme';
 type InputStyleProps = ComponentStyleProps;
 type InputValue = InputHTMLAttributes<HTMLInputElement>['value'];
 
-enum InputType {
-  TEXT = 'text',
-  PASSWORD = 'password',
-  EMAIL = 'email',
-  NUMBER = 'number',
-}
+type InputType = 'text' | 'password' | 'email' | 'number';
 
 interface TextInputProps extends TextInputCompositeProps {
   iStyle?: Partial<TextInputStyle>;
@@ -75,6 +70,7 @@ interface UseTextInputStyleFn {
 export type {
   HandleInputFn,
   InputStyleProps,
+  InputType,
   InputValue,
   TextInputCompositeProps,
   TextInputProps,
@@ -84,4 +80,3 @@ export type {
   UseTextInputStyleFn,
   UseTextInputStyleFnProps,
 };
-export { InputType };

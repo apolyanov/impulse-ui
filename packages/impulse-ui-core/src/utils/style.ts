@@ -1,6 +1,8 @@
 import { MergePartialPropsFn, MergePartialThemesFn, MergePropsFn, MergeThemesFn, ThemeMode } from '@impulse-ui/types';
 import merge from 'lodash/merge';
 
+import { LIGHT } from './constants';
+
 const shouldRenderCssProp = <T>(shouldRender: boolean | undefined, cssProp: T): T | undefined => {
   if (shouldRender) return cssProp;
 };
@@ -76,6 +78,6 @@ const mergePartialProps: MergePartialPropsFn = (overridingProps, componentDefaul
   }
 };
 
-const getThemeMode = (mode: ThemeMode) => mode || ThemeMode.LIGHT;
+const getThemeMode = (mode: ThemeMode) => mode || LIGHT;
 
 export { getThemeMode, mergePartialProps, mergePartialThemes, mergeProps, mergeThemes, shouldRenderCssProp };
