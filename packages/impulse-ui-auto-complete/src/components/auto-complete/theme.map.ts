@@ -1,4 +1,4 @@
-import { textInputComponentMap } from '@impulse-ui/input/src/components/text-input/theme.map';
+import { textInputComponentMap } from '@impulse-ui/input';
 import { ComponentMap } from '@impulse-ui/types';
 
 import { autoCompleteItemComponentMap } from './auto-complete-item';

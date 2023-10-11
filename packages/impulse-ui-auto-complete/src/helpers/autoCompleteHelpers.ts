@@ -1,5 +1,4 @@
-import { Modifier } from 'react-popper';
-import { ExtractSimpleOptionFn, FormatOptionTextFn, InnerSimpleOption } from '@impulse-ui/types';
+import { ExtractSimpleOptionFn, FormatOptionTextFn, InnerSimpleOption, PopoverModifier } from '@impulse-ui/types';
 
 const getItemText = (option: any, formatOptionText?: FormatOptionTextFn<any>): string | number => {
   if (formatOptionText) {
@@ -52,7 +51,7 @@ const processOptions = (
   return [];
 };
 
-const dropdownModifiers: ReadonlyArray<Modifier<string>> = [
+const dropdownModifiers: ReadonlyArray<PopoverModifier<string>> = [
   {
     name: 'flip',
     options: {

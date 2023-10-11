@@ -1,5 +1,5 @@
 import { neutral5 } from '@impulse-ui/colours';
-import { SidebarSectionDividerStyle } from '@impulse-ui/types/src';
+import { SidebarSectionDividerStyle } from '@impulse-ui/types';
 
 const defaultSidebarSectionDividerStyle: Partial<SidebarSectionDividerStyle> = {
   dividerStyle: {
