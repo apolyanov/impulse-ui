@@ -1,12 +1,5 @@
 {
   "extends": "@tsconfig/vite-react/tsconfig.json",
-  "ts-node": {
-    "esm": true,
-    "compilerOptions": {
-      "module": "NodeNext",
-      "moduleResolution": "Node"
-    }
-  },
   "include": [
     "src",
     "types",

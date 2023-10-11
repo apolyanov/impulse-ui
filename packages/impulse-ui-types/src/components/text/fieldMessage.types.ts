@@ -6,12 +6,7 @@ import { IOProps, IOStyle } from '../theme';
 
 import { TypographyStyleProps } from './typography.types';
 
-enum FieldMessageType {
-  SUCCESS = 'success',
-  WARNING = 'warning',
-  INFO = 'info',
-  ERROR = 'error',
-}
+type FieldMessageType = 'success' | 'warning' | 'info' | 'error';
 
 interface FieldMessageProps extends FieldMessageRestProps {
   iStyle?: Partial<FieldMessageStyle>;
@@ -78,9 +73,8 @@ export type {
   FieldMessageProps,
   FieldMessageStyle,
   FieldMessageStyleProps,
+  FieldMessageType,
   GetFieldMessageIcon,
   UseFieldMessageStyleFn,
   UseFieldMessageStyleFnProps,
 };
-
-export { FieldMessageType };

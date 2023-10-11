@@ -10,15 +10,17 @@ import {
 } from '@impulse-ui/types';
 import { Property } from 'csstype';
 
+import { ERROR, INFO, SUCCESS, WARNING } from '../utils';
+
 const fieldMessageColor = (type: FieldMessageType): Property.Color => {
   switch (type) {
-    case FieldMessageType.SUCCESS:
+    case SUCCESS:
       return polarGreen8;
-    case FieldMessageType.WARNING:
+    case WARNING:
       return sunriseYellow7;
-    case FieldMessageType.ERROR:
+    case ERROR:
       return dustRed8;
-    case FieldMessageType.INFO:
+    case INFO:
       return geekBlue6;
     default:
       return geekBlue6;
@@ -57,17 +59,17 @@ const defaultFieldMessageContainerStyle: FieldMessageComponentStyle<ContainerSty
 };
 
 const defaultFieldMessageIconStyle: FieldMessageComponentStyle<IconStyleProps> = {
-  error: defaultIconStyle(FieldMessageType.ERROR),
-  info: defaultIconStyle(FieldMessageType.INFO),
-  success: defaultIconStyle(FieldMessageType.SUCCESS),
-  warning: defaultIconStyle(FieldMessageType.WARNING),
+  error: defaultIconStyle(ERROR),
+  info: defaultIconStyle(INFO),
+  success: defaultIconStyle(SUCCESS),
+  warning: defaultIconStyle(WARNING),
 };
 
 const defaultFieldMessageTypographyStyle: FieldMessageComponentStyle<TypographyStyleProps> = {
-  error: defaultTypographyStyle(FieldMessageType.ERROR),
-  info: defaultTypographyStyle(FieldMessageType.INFO),
-  success: defaultTypographyStyle(FieldMessageType.SUCCESS),
-  warning: defaultTypographyStyle(FieldMessageType.WARNING),
+  error: defaultTypographyStyle(ERROR),
+  info: defaultTypographyStyle(INFO),
+  success: defaultTypographyStyle(SUCCESS),
+  warning: defaultTypographyStyle(WARNING),
 };
 
 const defaultFieldMessageStyle: Partial<FieldMessageStyle> = {

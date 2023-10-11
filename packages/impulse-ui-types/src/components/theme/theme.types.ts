@@ -9,10 +9,7 @@ import { TypographyStyleProps } from '../text';
 
 import { IStyle } from './components.types';
 
-enum ThemeMode {
-  LIGHT = 'light',
-  DARK = 'dark',
-}
+type ThemeMode = 'light' | 'dark';
 
 type CompositeComponentColors = ComponentColors & ComponentColorsHover;
 
@@ -75,7 +72,6 @@ export type {
   CustomITheme,
   IThemeContext,
   IThemeProviderProps,
+  ThemeMode,
   UseIThemeContextFn,
 };
-
-export { ThemeMode };
