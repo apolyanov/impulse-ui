@@ -3,41 +3,22 @@
   "version": "1.0.0",
   "license": "MIT",
   "author": "Alexander Polyanov",
-  "main": "dist/index.js",
-  "module": "dist/impulse-ui.esm.js",
-  "typings": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
   "workspaces": [
     "packages/*"
   ],
   "scripts": {
-    "analyze": "size-limit --why",
-    "build": "dts build",
+    "build": "bun lerna run build",
     "build-storybook": "storybook build",
-    "lint": "dts lint",
-    "size": "size-limit",
-    "start": "dts watch",
+    "lint": "bun lerna run lint",
+    "size": "bun lerna run size",
     "storybook": "storybook dev -p 6006",
-    "test": "dts test --passWithNoTests",
+    "test": "bun lerna run test",
     "create-package": "bun run ./scripts/createPackage.ts"
   },
   "husky": {
     "hooks": {
       "pre-commit": "dts lint"
     }
-  },
-  "prettier": {
-    "semi": true,
-    "tabWidth": 2,
-    "printWidth": 120,
-    "singleQuote": true,
-    "trailingComma": "all",
-    "jsxSingleQuote": true,
-    "bracketSameLine": false,
-    "endOfLine": "auto",
-    "bracketSpacing": true
   },
   "jest": {
     "testEnvironment": "jsdom"
@@ -48,19 +29,6 @@
   },
   "engines": {
     "node": ">=12"
-  },
-  "size-limit": [
-    {
-      "path": "dist/impulse-ui.cjs.production.min.js",
-      "limit": "10000 KB"
-    },
-    {
-      "path": "dist/impulse-ui.esm.js",
-      "limit": "10000 KB"
-    }
-  ],
-  "publishConfig": {
-    "@apolyanov:registry": "https://npm.pkg.github.com"
   },
   "devDependencies": {
     "@babel/core": "^7.21.8",
