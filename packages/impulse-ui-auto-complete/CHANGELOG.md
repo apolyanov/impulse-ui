@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0-beta.6](https://github.com/apolyanov/impulse-ui/compare/v2.1.0-beta.5...v2.1.0-beta.6) (2023-10-13)
+
+
+### Features
+
+* Fixing type dependencies ([4f9180d](https://github.com/apolyanov/impulse-ui/commit/4f9180d887333a5645fe68c6ee1a92ad30a090b6))
+
+
+
+
+
 # [2.1.0-beta.5](https://github.com/apolyanov/impulse-ui/compare/v2.1.0-beta.4...v2.1.0-beta.5) (2023-10-13)
 
 **Note:** Version bump only for package @impulse-ui/auto-complete
