@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0-beta.5](https://github.com/apolyanov/impulse-ui/compare/v2.1.0-beta.4...v2.1.0-beta.5) (2023-10-13)
+
+
+### Features
+
+* Modernizing styled function syntax. ([d505b6f](https://github.com/apolyanov/impulse-ui/commit/d505b6fb046e7bf3da82525b7e1fdd3141abd820))
+
+
+
+
+
 # [2.1.0-beta.3](https://github.com/apolyanov/impulse-ui/compare/v2.1.0-beta.2...v2.1.0-beta.3) (2023-10-11)
 
 
