@@ -2,6 +2,7 @@ export * from './auto-complete';
 export * from './avatar';
 export * from './buttons';
 export * from './checkbox';
+export * from './css';
 export * from './divider';
 export * from './icon';
 export * from './input';
