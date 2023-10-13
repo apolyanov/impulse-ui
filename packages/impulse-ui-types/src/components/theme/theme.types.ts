@@ -1,7 +1,7 @@
 import { Dispatch, ReactNode, SetStateAction } from 'react';
-import { Property } from 'csstype';
 
 import { ButtonStyleProps, LinkStyleProps, TextButtonStyleProps } from '../buttons';
+import { BackgroundColor, BorderColor, Color } from '../css';
 import { IconStyleProps } from '../icon';
 import { InputStyleProps } from '../input';
 import { ContainerStyleProps } from '../layout';
@@ -14,15 +14,15 @@ type ThemeMode = 'light' | 'dark';
 type CompositeComponentColors = ComponentColors & ComponentColorsHover;
 
 interface ComponentColors {
-  backgroundColor: Property.BackgroundColor;
-  borderColor: Property.BorderColor;
-  color: Property.Color;
+  backgroundColor: BackgroundColor;
+  borderColor: BorderColor;
+  color: Color;
 }
 
 interface ComponentColorsHover {
-  backgroundColorHover: Property.BackgroundColor;
-  borderColorHover: Property.BorderColor;
-  colorHover: Property.Color;
+  backgroundColorHover: BackgroundColor;
+  borderColorHover: BorderColor;
+  colorHover: Color;
 }
 
 interface ComponentTheme<T> {

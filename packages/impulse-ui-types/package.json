@@ -36,6 +36,9 @@
   "jest": {
     "testEnvironment": "jsdom"
   },
+  "dependencies": {
+    "csstype": "^3.1.2"
+  },
   "peerDependencies": {
     "react": ">=16"
   },
