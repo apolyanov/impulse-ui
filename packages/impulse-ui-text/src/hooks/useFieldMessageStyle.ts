@@ -5,7 +5,7 @@ import { faTriangleExclamation } from '@fortawesome/free-solid-svg-icons/faTrian
 import { useComponentStyle } from '@impulse-ui/core';
 import { GetFieldMessageIcon, UseFieldMessageStyleFn } from '@impulse-ui/types';
 
-import { fieldMessageComponentMap } from '../components/field-message/theme.map';
+import { fieldMessageComponentMap } from '../components';
 import { defaultFieldMessageStyle } from '../styles';
 
 const useFieldMessageStyle: UseFieldMessageStyleFn = (rest, iStyle, iProps) => {

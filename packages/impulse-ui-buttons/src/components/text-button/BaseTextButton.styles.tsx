@@ -4,14 +4,13 @@ import styled, { css } from 'styled-components';
 
 import { textButton } from '../../styles';
 
-const BaseTextButton = styled.button<BaseIComponent<TextButtonStyleProps>>`
-  ${({ theme: { mode, themes }, $iStyle, $iProps, $parentProps }) => {
+const BaseTextButton = styled.button<BaseIComponent<TextButtonStyleProps>>(
+  ({ theme: { mode, themes }, $iStyle, $iProps, $parentProps }) => {
     const { iColorTheme, iCss } = mergeThemes(themes?.textButton?.iStyle ?? textButton.iStyle, $iStyle, $parentProps);
     const themeMode = getThemeMode(mode);
     const iProps = mergeProps(themes?.textButton?.iStyleProps ?? textButton.iStyleProps, $iProps);
 
     return css(iCss(iColorTheme[themeMode], iProps));
-  }}
-`;
-
+  },
+);
 export default BaseTextButton;

@@ -5,14 +5,14 @@ import styled, { css } from 'styled-components';
 
 import { icon } from '../styles';
 
-const BaseIcon = styled(FontAwesomeIcon)<BaseIComponent<IconStyleProps>>`
-  ${({ theme: { mode, themes }, $iStyle, $iProps, $parentProps }) => {
+const BaseIcon = styled(FontAwesomeIcon)<BaseIComponent<IconStyleProps>>(
+  ({ theme: { mode, themes }, $iStyle, $iProps, $parentProps }) => {
     const { iColorTheme, iCss } = mergeThemes(themes?.icon?.iStyle ?? icon.iStyle, $iStyle, $parentProps);
     const themeMode = getThemeMode(mode);
     const iProps = mergeProps(themes?.icon?.iStyleProps ?? icon.iStyleProps, $iProps);
 
     return css(iCss(iColorTheme[themeMode], iProps));
-  }}
-`;
+  },
+);
 
 export default BaseIcon;
