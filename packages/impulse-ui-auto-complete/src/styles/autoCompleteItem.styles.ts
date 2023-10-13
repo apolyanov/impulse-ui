@@ -1,6 +1,5 @@
 import { neutral3, neutral5 } from '@impulse-ui/colours';
-import { AutoCompleteItemStyle, AutoCompleteItemStyleProps } from '@impulse-ui/types';
-import { Property } from 'csstype';
+import { AutoCompleteItemStyle, AutoCompleteItemStyleProps, BackgroundColor } from '@impulse-ui/types';
 
 const defaultAutoCompleteItemStyle: Partial<AutoCompleteItemStyle> = {
   mainContainerStyle: {
@@ -31,7 +30,7 @@ const getItemBackgroundHoverColor = (selected?: boolean) => {
   return neutral3;
 };
 
-const getItemBackgroundColor = (selected?: boolean, highlighted?: boolean): Property.BackgroundColor => {
+const getItemBackgroundColor = (selected?: boolean, highlighted?: boolean): BackgroundColor => {
   if (selected) {
     return neutral5;
   }
