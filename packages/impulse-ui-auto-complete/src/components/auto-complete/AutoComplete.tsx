@@ -6,10 +6,10 @@ import { Typography } from '@impulse-ui/text';
 import { AutoCompleteProps } from '@impulse-ui/types';
 
 import { useAutoComplete } from '../../hooks';
+import { autoCompleteComponentMap } from '../../maps';
 import { defaultAutoCompleteStyle, defaultAutoCompleteStyleProps, removeSpacing } from '../../styles';
 
 import { AutoCompleteItem } from './auto-complete-item';
-import { autoCompleteComponentMap } from './theme.map';
 
 const AutoComplete: FunctionComponent<AutoCompleteProps> = memo(({ iStyle, iProps, ...rest }) => {
   const {

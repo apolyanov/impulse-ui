@@ -1,15 +1,14 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, PropsWithChildren } from 'react';
 import { Button } from '@impulse-ui/buttons';
 import { useComponentStyle } from '@impulse-ui/core';
 import { Icon } from '@impulse-ui/icon';
 import { Typography } from '@impulse-ui/text';
 import { SidebarHeaderProps } from '@impulse-ui/types';
 
+import { sidebarHeaderComponentMap } from '../../../maps';
 import { defaultSidebarHeaderStyle, defaultSidebarHeaderStyleProps } from '../../../styles';
 
-import { sidebarHeaderComponentMap } from './theme.map';
-
-const SidebarHeader: FunctionComponent<SidebarHeaderProps> = ({ iStyle, iProps, ...rest }) => {
+const SidebarHeader: FunctionComponent<PropsWithChildren<SidebarHeaderProps>> = ({ iStyle, iProps, ...rest }) => {
   const { onClick, icon, headerText } = rest;
   const { buttonStyle, iconStyle, typographyStyle, buttonStyleProps, iconStyleProps, typographyStyleProps } =
     useComponentStyle(

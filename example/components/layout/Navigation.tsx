@@ -1,8 +1,7 @@
 import { memo } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { faBars, faFolderMinus } from '@fortawesome/free-solid-svg-icons';
-
-import { Sidebar, SidebarHeader, SidebarItem, SidebarSectionDivider } from '../../../src';
+import { Sidebar, SidebarHeader, SidebarItem, SidebarSectionDivider } from '@impulse-ui/sidebar';
 
 const Navigation = memo(() => {
   const location = useLocation();
@@ -44,6 +43,12 @@ const Navigation = memo(() => {
         onClick={() => navigate('/avatar')}
         icon={faFolderMinus}
         itemText={'Avatar'}
+      />
+      <SidebarItem
+        active={isActive('/table')}
+        onClick={() => navigate('/table')}
+        icon={faFolderMinus}
+        itemText={'Table'}
       />
     </Sidebar>
   );

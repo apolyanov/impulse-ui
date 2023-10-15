@@ -1,13 +1,12 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, PropsWithChildren } from 'react';
 import { useComponentStyle } from '@impulse-ui/core';
 import { Container } from '@impulse-ui/layout';
 import { SidebarProps } from '@impulse-ui/types';
 
+import { sidebarComponentMap } from '../../maps';
 import { defaultSidebarStyle, defaultSidebarStyleProps } from '../../styles';
 
-import { sidebarComponentMap } from './theme.map';
-
-const Sidebar: FunctionComponent<SidebarProps> = ({ iStyle, iProps, children, ...rest }) => {
+const Sidebar: FunctionComponent<PropsWithChildren<SidebarProps>> = ({ iStyle, iProps, children, ...rest }) => {
   const { containerStyle, containerStyleProps } = useComponentStyle(
     sidebarComponentMap,
     rest,

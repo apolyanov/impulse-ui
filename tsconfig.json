@@ -44,6 +44,9 @@
     },
     {
       "path": "./packages/impulse-ui-avatar"
+    },
+    {
+      "path": "./packages/impulse-ui-table"
     }
   ]
 }

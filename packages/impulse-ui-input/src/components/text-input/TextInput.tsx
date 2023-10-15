@@ -18,10 +18,10 @@ import { HandleInputFn, InputValue, TextInputProps } from '@impulse-ui/types';
 import debounce from 'lodash/debounce';
 import isNil from 'lodash/isNil';
 
+import { textInputComponentMap } from '../../maps';
 import { textInputStyle, textInputStyleProps } from '../../styles';
 
 import BaseTextInput from './BaseTextInput.styles';
-import { textInputComponentMap } from './theme.map';
 
 const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
   ({ iStyle, iProps, ...rest }, ref?: ForwardedRef<HTMLInputElement>) => {

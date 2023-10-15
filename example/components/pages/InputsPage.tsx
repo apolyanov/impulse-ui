@@ -1,13 +1,13 @@
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-
-import { Container, InputType, TextInput } from '../../../src';
+import { TextInput } from '@impulse-ui/input';
+import { Container } from '@impulse-ui/layout';
 
 const InputsPage = () => {
   return (
     <Container>
       <TextInput
         error
-        type={InputType.EMAIL}
+        type={'email'}
         debounced
         clearable
         onDebouncedChange={(event) => console.log(event.target.value)}

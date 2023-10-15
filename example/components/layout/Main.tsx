@@ -1,7 +1,6 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-
-import { Container } from '../../../src';
+import { Container } from '@impulse-ui/layout';
 
 import Navigation from './Navigation';
 

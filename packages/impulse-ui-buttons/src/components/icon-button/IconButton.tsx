@@ -4,10 +4,9 @@ import { useComponentStyle } from '@impulse-ui/core';
 import { Icon } from '@impulse-ui/icon';
 import { IconButtonProps } from '@impulse-ui/types';
 
+import { iconButtonComponentMap } from '../../maps';
 import { defaultIconButtonStyle } from '../../styles';
 import { Button } from '../button';
-
-import { iconButtonComponentMap } from './theme.map';
 
 const IconButton: FunctionComponent<IconButtonProps> = ({ iStyle, iProps, ...rest }) => {
   const { icon, ...buttonProps } = rest;

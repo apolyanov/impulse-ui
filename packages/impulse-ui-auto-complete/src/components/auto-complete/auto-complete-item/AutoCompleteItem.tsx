@@ -4,9 +4,8 @@ import { Container } from '@impulse-ui/layout';
 import { Typography } from '@impulse-ui/text';
 import { AutoCompleteItemProps } from '@impulse-ui/types';
 
+import { autoCompleteItemComponentMap } from '../../../maps';
 import { defaultAutoCompleteItemStyle, defaultAutoCompleteItemStyleProps } from '../../../styles';
-
-import { autoCompleteItemComponentMap } from './theme.map';
 
 const AutoCompleteItem: FunctionComponent<AutoCompleteItemProps> = ({ iStyle, iProps, ...rest }) => {
   const { itemText, selected, highlighted, externalScroll, ...mainContainerProps } = rest;
