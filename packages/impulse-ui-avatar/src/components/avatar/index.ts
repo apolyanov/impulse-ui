@@ -1,2 +1,2 @@
+export * from '../../maps/avatar.map';
 export * from './Avatar';
-export * from './theme.map';

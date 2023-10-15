@@ -3,9 +3,8 @@ import { useComponentStyle } from '@impulse-ui/core';
 import { Divider } from '@impulse-ui/layout';
 import { SidebarSectionDividerProps } from '@impulse-ui/types';
 
+import { sidebarSectionDividerComponentMap } from '../../../maps';
 import { defaultSidebarSectionDividerStyle } from '../../../styles';
-
-import { sidebarSectionDividerComponentMap } from './theme.map';
 
 const SidebarSectionDivider: FunctionComponent<SidebarSectionDividerProps> = ({ iStyle, iProps, ...rest }) => {
   const { dividerStyle, dividerStyleProps } = useComponentStyle(

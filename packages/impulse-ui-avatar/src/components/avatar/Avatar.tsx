@@ -6,9 +6,8 @@ import { Container } from '@impulse-ui/layout';
 import { Typography } from '@impulse-ui/text';
 import { AvatarProps } from '@impulse-ui/types';
 
+import { avatarComponentMap } from '../../maps';
 import { defaultAvatarStyle } from '../../styles';
-
-import { avatarComponentMap } from './theme.map';
 
 const Avatar: FunctionComponent<AvatarProps> = ({ iStyle, iProps, ...rest }) => {
   const { onClick, imageUrl, name } = rest;

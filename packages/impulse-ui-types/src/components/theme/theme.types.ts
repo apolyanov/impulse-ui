@@ -1,4 +1,4 @@
-import { Dispatch, ReactNode, SetStateAction } from 'react';
+import { Dispatch, SetStateAction } from 'react';
 
 import { ButtonStyleProps, LinkStyleProps, TextButtonStyleProps } from '../buttons';
 import { BackgroundColor, BorderColor, Color } from '../css';
@@ -51,7 +51,6 @@ interface AppTheme {
 interface IThemeProviderProps {
   themeMode?: ThemeMode;
   themes: CustomITheme;
-  children: ReactNode;
 }
 
 interface IThemeContext {

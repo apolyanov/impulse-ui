@@ -1,7 +1,8 @@
 import React from 'react';
 import { faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons';
-
-import { Button, Checkbox, Container, IconButton, Link, TextButton } from '../../../src';
+import { Button, IconButton, Link, TextButton } from '@impulse-ui/buttons';
+import { Checkbox } from '@impulse-ui/input';
+import { Container } from '@impulse-ui/layout';
 
 const ButtonsPage = () => {
   return (

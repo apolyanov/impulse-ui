@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
+import { AutoComplete } from '@impulse-ui/auto-complete';
+import { Button } from '@impulse-ui/buttons';
+import { Container } from '@impulse-ui/layout';
 
-import { BasicAutoComplete, Button, Container } from '../../../src';
 import { AdvancedHuman, humans } from '../mocks/autoCompleteMock';
 
 const AutoCompletePage = () => {
@@ -12,7 +14,7 @@ const AutoCompletePage = () => {
 
   return (
     <Container iStyle={{ iCss: () => ({ flexDirection: 'row', height: '700px', gap: '16px' }) }}>
-      <BasicAutoComplete
+      <AutoComplete
         selectOnBlur
         options={humans}
         extractSimpleOptionValue={(option: AdvancedHuman) => option.name}
