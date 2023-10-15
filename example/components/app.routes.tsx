@@ -6,6 +6,7 @@ import AvatarPage from './pages/AvatarPage';
 import ButtonsPage from './pages/ButtonsPage';
 import InputsPage from './pages/InputsPage';
 import SidebarPage from './pages/SidebarPage';
+import TablePage from './pages/TablePage';
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
       { path: '/auto-complete', element: <AutoCompletePage /> },
       { path: '/sidebar', element: <SidebarPage /> },
       { path: '/avatar', element: <AvatarPage /> },
+      { path: '/table', element: <TablePage /> },
     ],
   },
 ]);

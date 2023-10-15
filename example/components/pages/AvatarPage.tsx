@@ -1,4 +1,5 @@
-import { Avatar, Container } from '../../../src';
+import { Avatar } from '@impulse-ui/avatar';
+import { Container } from '@impulse-ui/layout';
 
 const AvatarPage = () => {
   return (

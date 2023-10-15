@@ -13,7 +13,8 @@
     "size": "bun lerna run size",
     "storybook": "storybook dev -p 6006",
     "test": "bun lerna run test",
-    "create-package": "bun run ./scripts/createPackage.ts"
+    "create-package": "bun run ./scripts/createPackage.ts",
+    "clean-packages": "bun run ./scripts/cleanInstall.ts && bun run build && bun install && npm install"
   },
   "husky": {
     "hooks": {

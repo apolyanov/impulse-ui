@@ -7,9 +7,8 @@ import { CheckboxProps } from '@impulse-ui/types';
 
 import { useCheckbox } from '../../hooks';
 import { checkboxChecked, checkboxUnchecked } from '../../icons';
+import { checkboxComponentMap } from '../../maps';
 import { checkboxStyle, checkboxStyleProps } from '../../styles';
-
-import { checkboxComponentMap } from './theme.map';
 
 const Checkbox: FunctionComponent<CheckboxProps> = ({ iStyle, iProps, children, ...rest }) => {
   const {

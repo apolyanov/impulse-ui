@@ -1,5 +1,5 @@
 import { ComponentMap } from '@impulse-ui/types';
 
-const sidebarComponentMap: ComponentMap[] = [{ key: 'containerStyle' }];
+const sidebarComponentMap: ComponentMap[] = [{ key: 'container' }];
 
 export { sidebarComponentMap };
