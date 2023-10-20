@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0-beta.8](https://github.com/apolyanov/impulse-ui/compare/v2.1.0-beta.7...v2.1.0-beta.8) (2023-10-20)
+
+
+### Features
+
+* Exporting only ready packages ([900c088](https://github.com/apolyanov/impulse-ui/commit/900c088ae0d3489ac2819f2764291d9bb6615d4b))
+
+
+
+
+
 # [2.1.0-beta.7](https://github.com/apolyanov/impulse-ui/compare/v2.1.0-beta.6...v2.1.0-beta.7) (2023-10-15)
 
 
