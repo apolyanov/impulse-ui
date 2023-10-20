@@ -1,2 +1,2 @@
 export * from './checkbox.map';
-export * from './textInput';
+export * from './textInput.map';

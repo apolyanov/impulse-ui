@@ -5,6 +5,7 @@ import AutoCompletePage from './pages/AutoCompletePage';
 import AvatarPage from './pages/AvatarPage';
 import ButtonsPage from './pages/ButtonsPage';
 import InputsPage from './pages/InputsPage';
+import { MuiTable } from './pages/MuiTable';
 import SidebarPage from './pages/SidebarPage';
 import TablePage from './pages/TablePage';
 
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
       { path: '/sidebar', element: <SidebarPage /> },
       { path: '/avatar', element: <AvatarPage /> },
       { path: '/table', element: <TablePage /> },
+      { path: '/mui-table', element: <MuiTable /> },
     ],
   },
 ]);

@@ -8,6 +8,7 @@ export * from './icon';
 export * from './input';
 export * from './layout';
 export * from './sidebar';
+export * from './table';
 export * from './text';
 export * from './theme';
 export * from './utils';

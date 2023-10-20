@@ -1,10 +1,10 @@
 import { Container } from '@impulse-ui/layout';
-import { TempTable } from '@impulse-ui/table/src';
+import { ImpulseTable } from '@impulse-ui/table';
 
 const TablePage = () => {
   return (
     <Container>
-      <TempTable />
+      <ImpulseTable />
     </Container>
   );
 };

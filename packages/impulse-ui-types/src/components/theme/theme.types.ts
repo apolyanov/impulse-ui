@@ -5,6 +5,15 @@ import { BackgroundColor, BorderColor, Color } from '../css';
 import { IconStyleProps } from '../icon';
 import { InputStyleProps } from '../input';
 import { ContainerStyleProps } from '../layout';
+import {
+  TableStyleProps,
+  TBodyStyleProps,
+  TDataStyleProps,
+  TFootStyleProps,
+  THeaderStyleProps,
+  THeadStyleProps,
+  TRowStyleProps,
+} from '../table';
 import { TypographyStyleProps } from '../text';
 
 import { IStyle } from './components.types';
@@ -39,6 +48,13 @@ interface ComponentsThemes {
   link: ComponentTheme<LinkStyleProps>;
   icon: ComponentTheme<IconStyleProps>;
   divider: ComponentTheme<IconStyleProps>;
+  table: ComponentTheme<TableStyleProps>;
+  thead: ComponentTheme<THeadStyleProps>;
+  tfoot: ComponentTheme<TFootStyleProps>;
+  tbody: ComponentTheme<TBodyStyleProps>;
+  trow: ComponentTheme<TRowStyleProps>;
+  theader: ComponentTheme<THeaderStyleProps>;
+  tdata: ComponentTheme<TDataStyleProps>;
 }
 
 type CustomITheme = Partial<ComponentsThemes>;

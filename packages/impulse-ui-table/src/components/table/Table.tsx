@@ -1,6 +1,6 @@
 import React from 'react';
 import { FunctionComponent } from 'react';
-import { TableProps } from '@impulse-ui/types/src/components/table/table.types';
+import { TableProps } from '@impulse-ui/types';
 
 import { BaseTable } from './BaseTable.styles';
 
