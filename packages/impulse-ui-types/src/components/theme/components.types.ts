@@ -1,6 +1,6 @@
-import { StyledObject } from 'styled-components/dist/types';
+import { StyledObject } from 'styled-components';
 
-import { CompositeComponentColors } from './index';
+import { CompositeComponentColors } from './theme.types';
 
 interface BaseIComponent<T, E = any> {
   $iStyle?: IOStyle<T>;
@@ -25,19 +25,30 @@ type BaseComponentStyleProps = {
 
 type IOProps<T> = Partial<T>;
 
+type IOCss<T, K> =
+  | ((iColorTheme: Partial<CompositeComponentColors>, iProps: T, parentProps?: K) => StyledObject<object> | undefined)
+  | StyledObject<object>;
+
+type ICss<T, K> = (iColorTheme: CompositeComponentColors, iProps: T, parentProps?: K) => StyledObject<object>;
+
 interface ComponentMap {
   key: string;
   subKeys?: Array<ComponentMap>;
   prefix?: string;
 }
 
-interface IStyle<T = ComponentStyleProps> {
+interface IStyle<T = ComponentStyleProps, K = any> {
   iColorTheme: IColorTheme;
-  iCss: (iColorTheme: CompositeComponentColors, iProps: T) => StyledObject<object>;
+  iCss: ICss<T, K>;
 }
 
 interface IOStyle<T = ComponentStyleProps, K = any> {
   iColorTheme?: IOColorTheme;
+  iCss?: IOCss<T, K>;
+}
+
+interface BaseIOStyle<T = ComponentStyleProps, K = any> {
+  iColorTheme?: IColorTheme;
   iCss?: (iColorTheme: CompositeComponentColors, iProps: T, parentProps?: K) => StyledObject<object> | undefined;
 }
 
@@ -54,10 +65,14 @@ interface IColorTheme {
 export type {
   BaseComponentStyleProps,
   BaseIComponent,
+  BaseIOStyle,
   ComponentMap,
   ComponentStyleProps,
+  IColorTheme,
   IComponent,
+  ICss,
   IOColorTheme,
+  IOCss,
   IOProps,
   IOStyle,
   IStyle,

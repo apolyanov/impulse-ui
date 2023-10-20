@@ -1,4 +1,12 @@
-import { MergePartialPropsFn, MergePartialThemesFn, MergePropsFn, MergeThemesFn, ThemeMode } from '@impulse-ui/types';
+import {
+  CompositeComponentColors,
+  IOCss,
+  MergePartialPropsFn,
+  MergePartialThemesFn,
+  MergePropsFn,
+  MergeThemesFn,
+  ThemeMode,
+} from '@impulse-ui/types';
 import merge from 'lodash/merge';
 
 import { LIGHT } from './constants';
@@ -7,11 +15,27 @@ const shouldRenderCssProp = <T>(shouldRender: boolean | undefined, cssProp: T): 
   if (shouldRender) return cssProp;
 };
 
-const mergeThemes: MergeThemesFn = (defaultTheme, overridingTheme) => {
+const constructICss = (
+  iColorTheme: CompositeComponentColors | Partial<CompositeComponentColors>,
+  iProps: any,
+  parentProps: any,
+  iCss?: IOCss<any, any>,
+) => {
+  if (typeof iCss === 'function') {
+    return iCss(iColorTheme, iProps, parentProps);
+  }
+
+  return iCss;
+};
+
+const mergeThemes: MergeThemesFn = (defaultTheme, overridingTheme, parentProps) => {
   if (overridingTheme) {
     return {
       iCss: (iColorTheme, iProps) =>
-        merge(defaultTheme.iCss(iColorTheme, iProps), overridingTheme.iCss?.(iColorTheme, iProps)),
+        merge(
+          defaultTheme.iCss(iColorTheme, iProps, parentProps),
+          constructICss(iColorTheme, iProps, parentProps, overridingTheme?.iCss),
+        ),
       iColorTheme: {
         light: { ...defaultTheme.iColorTheme.light, ...overridingTheme.iColorTheme?.light },
         dark: { ...defaultTheme.iColorTheme.dark, ...overridingTheme.iColorTheme?.dark },
@@ -27,7 +51,7 @@ const mergePartialThemes: MergePartialThemesFn = (overridingTheme, componentDefa
     if (parentProps) {
       return {
         ...overridingTheme,
-        iCss: (iColorTheme, iProps) => overridingTheme.iCss?.(iColorTheme, iProps, parentProps),
+        iCss: (iColorTheme, iProps) => constructICss(iColorTheme, iProps, parentProps, overridingTheme?.iCss),
       };
     }
 
@@ -38,7 +62,7 @@ const mergePartialThemes: MergePartialThemesFn = (overridingTheme, componentDefa
     if (parentProps) {
       return {
         ...componentDefaultTheme,
-        iCss: (iColorTheme, iProps) => componentDefaultTheme.iCss?.(iColorTheme, iProps, parentProps),
+        iCss: (iColorTheme, iProps) => constructICss(iColorTheme, iProps, parentProps, componentDefaultTheme?.iCss),
       };
     }
 
@@ -49,8 +73,8 @@ const mergePartialThemes: MergePartialThemesFn = (overridingTheme, componentDefa
     return {
       iCss: (iColorTheme, iProps) =>
         merge(
-          componentDefaultTheme.iCss?.(iColorTheme, iProps, parentProps),
-          overridingTheme.iCss?.(iColorTheme, iProps, parentProps),
+          constructICss(iColorTheme, iProps, parentProps, componentDefaultTheme?.iCss),
+          constructICss(iColorTheme, iProps, parentProps, overridingTheme?.iCss),
         ),
       iColorTheme: {
         light: { ...componentDefaultTheme.iColorTheme?.light, ...overridingTheme.iColorTheme?.light },
