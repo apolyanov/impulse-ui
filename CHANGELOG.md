@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0-beta.9](https://github.com/apolyanov/impulse-ui/compare/v2.1.0-beta.8...v2.1.0-beta.9) (2023-10-20)
+
+
+### Features
+
+* Improving performance and usability by removing the need to create empty functions to style a component ([4a48e64](https://github.com/apolyanov/impulse-ui/commit/4a48e648e2016feb74c6eb6ea7ffec2c106de197))
+
+
+
+
+
 # [2.1.0-beta.8](https://github.com/apolyanov/impulse-ui/compare/v2.1.0-beta.7...v2.1.0-beta.8) (2023-10-20)
 
 
