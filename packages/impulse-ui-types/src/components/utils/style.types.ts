@@ -1,11 +1,13 @@
 import { IOStyle, IStyle } from '../theme';
 
 interface MergeThemesFn {
-  <T = any, E = any>(defaultTheme: IStyle<T>, overridingTheme?: IOStyle<T>, parentProps?: E): IStyle<T>;
+  <T = any, K = any>(defaultTheme: IStyle<T, K>, overridingTheme?: IOStyle<T, K>, parentProps?: K): IStyle<T, K>;
 }
 
 interface MergePartialThemesFn {
-  <T = any, E = any>(overridingTheme?: IOStyle<T>, defaultTheme?: IOStyle<T>, parentProps?: E): IOStyle<T> | undefined;
+  <T = any, K = any>(overridingTheme?: IOStyle<T, K>, defaultTheme?: IOStyle<T, K>, parentProps?: K):
+    | IOStyle<T, K>
+    | undefined;
 }
 
 interface MergePartialPropsFn {
