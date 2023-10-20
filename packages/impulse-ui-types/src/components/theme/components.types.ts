@@ -57,11 +57,6 @@ interface IOStyle<T = ComponentStyleProps, K = any> {
   iCss?: IOCss<T, K>;
 }
 
-interface BaseIOStyle<T = ComponentStyleProps, K = any> {
-  iColorTheme?: IColorTheme;
-  iCss?: (iColorTheme: CompositeComponentColors, iProps: T, parentProps?: K) => StyledObject<object> | undefined;
-}
-
 interface IOColorTheme {
   light?: Partial<CompositeComponentColors>;
   dark?: Partial<CompositeComponentColors>;
@@ -75,7 +70,6 @@ interface IColorTheme {
 export type {
   BaseComponentStyleProps,
   BaseIComponent,
-  BaseIOStyle,
   ComponentMap,
   ComponentStyleProps,
   IColorTheme,

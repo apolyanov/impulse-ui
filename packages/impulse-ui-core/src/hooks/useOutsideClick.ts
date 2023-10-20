@@ -1,12 +1,15 @@
-import { useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 import { UseOutsideClickFn } from '@impulse-ui/types';
 
 const useOutsideClick: UseOutsideClickFn = (callback, htmlDeps) => {
-  useEffect(() => {
-    const isEventContained = (event: MouseEvent) => {
+  const isEventContained = useCallback(
+    (event: MouseEvent) => {
       return htmlDeps?.every((htmlElement) => htmlElement && !htmlElement.contains(event.target as Node));
-    };
+    },
+    [htmlDeps],
+  );
 
+  useEffect(() => {
     const handleClick = (event: MouseEvent) => {
       if (isEventContained(event)) {
         callback();
@@ -18,7 +21,7 @@ const useOutsideClick: UseOutsideClickFn = (callback, htmlDeps) => {
     return () => {
       window.removeEventListener('mousedown', handleClick, true);
     };
-  }, [callback, htmlDeps]);
+  }, [callback, isEventContained]);
 };
 
 export { useOutsideClick };

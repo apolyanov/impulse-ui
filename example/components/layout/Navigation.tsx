@@ -1,6 +1,6 @@
 import { memo } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { faBars, faFolderMinus } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faFolder } from '@fortawesome/free-solid-svg-icons';
 import { Sidebar, SidebarHeader, SidebarItem, SidebarSectionDivider } from '@impulse-ui/sidebar';
 
 const Navigation = memo(() => {
@@ -17,38 +17,39 @@ const Navigation = memo(() => {
       <SidebarItem
         active={isActive('/buttons')}
         onClick={() => navigate('/buttons')}
-        icon={faFolderMinus}
+        icon={faFolder}
         itemText={'Buttons'}
       />
       <SidebarItem
         active={isActive('/inputs')}
         onClick={() => navigate('/inputs')}
-        icon={faFolderMinus}
+        icon={faFolder}
         itemText={'Inputs'}
       />
       <SidebarItem
         active={isActive('/auto-complete')}
         onClick={() => navigate('/auto-complete')}
-        icon={faFolderMinus}
+        icon={faFolder}
         itemText={'Autocomplete'}
       />
       <SidebarItem
         active={isActive('/sidebar')}
         onClick={() => navigate('/sidebar')}
-        icon={faFolderMinus}
+        icon={faFolder}
         itemText={'Sidebar'}
       />
       <SidebarItem
         active={isActive('/avatar')}
         onClick={() => navigate('/avatar')}
-        icon={faFolderMinus}
+        icon={faFolder}
         itemText={'Avatar'}
       />
+      <SidebarItem active={isActive('/table')} onClick={() => navigate('/table')} icon={faFolder} itemText={'Table'} />
       <SidebarItem
-        active={isActive('/table')}
-        onClick={() => navigate('/table')}
-        icon={faFolderMinus}
-        itemText={'Table'}
+        active={isActive('/mui-table')}
+        onClick={() => navigate('/mui-table')}
+        icon={faFolder}
+        itemText={'Mui Table'}
       />
     </Sidebar>
   );

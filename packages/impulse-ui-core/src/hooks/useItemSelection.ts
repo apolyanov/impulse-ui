@@ -37,6 +37,7 @@ const useItemSelection = <T>(items: T[], options?: Partial<UseItemSelectionOptio
     if (selectedItem) {
       return getItemId(item) === getItemId(selectedItem);
     }
+
     return false;
   };
 
