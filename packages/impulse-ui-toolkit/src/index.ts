@@ -7,5 +7,4 @@ export * from '@impulse-ui/icon';
 export * from '@impulse-ui/input';
 export * from '@impulse-ui/layout';
 export * from '@impulse-ui/sidebar';
-export * from '@impulse-ui/table/src';
 export * from '@impulse-ui/text';
