@@ -16,7 +16,7 @@ const shouldRenderCssProp = <T>(shouldRender: boolean | undefined, cssProp: T): 
 };
 
 const constructICss = (
-  iColorTheme: CompositeComponentColors | Partial<CompositeComponentColors>,
+  iColorTheme: Partial<CompositeComponentColors>,
   iProps: any,
   parentProps: any,
   iCss?: IOCss<any, any>,

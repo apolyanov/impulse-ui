@@ -16,6 +16,7 @@ type CompositeCheckboxProps = CheckboxRestProps &
 interface CheckboxRestProps {
   checked?: boolean;
   label?: string;
+  toggleCheckbox?: (value: boolean) => void;
 }
 
 interface CheckboxStyle {
