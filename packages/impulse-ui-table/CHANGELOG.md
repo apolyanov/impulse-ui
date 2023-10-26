@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0](https://github.com/apolyanov/impulse-ui/compare/v2.0.6...v2.1.0) (2023-10-26)
+
+
+### Features
+
+* Fixing table reset css ([2de87d5](https://github.com/apolyanov/impulse-ui/commit/2de87d5689ac6eda3ddd5cb744c4d613cb210ff4))
+
+
+
+
+
 # [2.1.0-beta.10](https://github.com/apolyanov/impulse-ui/compare/v2.1.0-beta.9...v2.1.0-beta.10) (2023-10-26)
 
 **Note:** Version bump only for package @impulse-ui/table

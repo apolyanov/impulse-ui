@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0](https://github.com/apolyanov/impulse-ui/compare/v2.0.6...v2.1.0) (2023-10-26)
+
+
+### Features
+
+* Adding Impulse UI Toolkit package ([7d84033](https://github.com/apolyanov/impulse-ui/commit/7d840330992033e6c905517a0fb69b56340351da))
+
+
+
+
+
 # [2.1.0-beta.1](https://github.com/apolyanov/impulse-ui/compare/v2.1.0-beta.0...v2.1.0-beta.1) (2023-10-11)
 
 **Note:** Version bump only for package @impulse-ui/colours

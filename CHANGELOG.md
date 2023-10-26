@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0](https://github.com/apolyanov/impulse-ui/compare/v2.0.6...v2.1.0) (2023-10-26)
+
+
+### Bug Fixes
+
+* Fixing "Can't resolve '@impulse-ui/types' in '/home/apolyanov/WebstormProjects/test/node_modules/@impulse-ui/toolkit/dist'" ([5eddb9e](https://github.com/apolyanov/impulse-ui/commit/5eddb9e68206ba07459189816621df14ba8ef284))
+* Fixing types package from being included in the bundles ([855764c](https://github.com/apolyanov/impulse-ui/commit/855764c028c71bf5b97c369f4aa8bfb421b2a118))
+
+
+### Features
+
+* Adding Impulse UI Toolkit package ([7d84033](https://github.com/apolyanov/impulse-ui/commit/7d840330992033e6c905517a0fb69b56340351da))
+* Exporting only ready packages ([7fa7a5c](https://github.com/apolyanov/impulse-ui/commit/7fa7a5cbdb38f0e0618b76aee6fe2c0a9a004385))
+* Fixing table reset css ([2de87d5](https://github.com/apolyanov/impulse-ui/commit/2de87d5689ac6eda3ddd5cb744c4d613cb210ff4))
+* Fixing type dependencies ([0d09781](https://github.com/apolyanov/impulse-ui/commit/0d097814ea517427193c87106066f107a49f8fab))
+* Improving performance and usability by removing the need to create empty functions to style a component ([f21feb8](https://github.com/apolyanov/impulse-ui/commit/f21feb80f50500f48a8bfeb100f88179a323390c))
+* Modernizing styled function syntax. ([415ca6e](https://github.com/apolyanov/impulse-ui/commit/415ca6e3e51a1743b050dc2251b0468dd0e4f8a7))
+* Updating impulse-ui/toolkit to include the newly added packages. ([228ea7b](https://github.com/apolyanov/impulse-ui/commit/228ea7b5d8bec9e0f00e3f0e0eb9a902d92a19ec))
+
+
+
+
+
 # [2.1.0-beta.10](https://github.com/apolyanov/impulse-ui/compare/v2.1.0-beta.9...v2.1.0-beta.10) (2023-10-26)
 
 **Note:** Version bump only for package impulse-ui

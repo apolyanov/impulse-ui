@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0](https://github.com/apolyanov/impulse-ui/compare/v2.0.6...v2.1.0) (2023-10-26)
+
+
+### Features
+
+* Adding Impulse UI Toolkit package ([7d84033](https://github.com/apolyanov/impulse-ui/commit/7d840330992033e6c905517a0fb69b56340351da))
+* Fixing table reset css ([2de87d5](https://github.com/apolyanov/impulse-ui/commit/2de87d5689ac6eda3ddd5cb744c4d613cb210ff4))
+* Modernizing styled function syntax. ([415ca6e](https://github.com/apolyanov/impulse-ui/commit/415ca6e3e51a1743b050dc2251b0468dd0e4f8a7))
+* Updating impulse-ui/toolkit to include the newly added packages. ([228ea7b](https://github.com/apolyanov/impulse-ui/commit/228ea7b5d8bec9e0f00e3f0e0eb9a902d92a19ec))
+
+
+
+
+
 # [2.1.0-beta.10](https://github.com/apolyanov/impulse-ui/compare/v2.1.0-beta.9...v2.1.0-beta.10) (2023-10-26)
 
 **Note:** Version bump only for package @impulse-ui/buttons
