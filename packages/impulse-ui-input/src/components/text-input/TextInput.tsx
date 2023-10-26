@@ -45,6 +45,8 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
       ...inputProps
     } = rest;
 
+    console.log(rest);
+
     const {
       mainContainerStyle,
       inputContainerStyle,
@@ -117,6 +119,7 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
             {...inputProps}
             $iStyle={inputStyle}
             $iProps={inputStyleProps}
+            $parentProps={rest}
             name={name}
             value={value ?? innerValue}
             onChange={handleInput}

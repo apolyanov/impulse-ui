@@ -5,7 +5,7 @@ import { AvatarStyle } from '@impulse-ui/types';
 const defaultAvatarStyle: Partial<AvatarStyle> = {
   mainContainerStyle: {
     iColorTheme: { light: { borderColor: volcano6, backgroundColor: volcano1 } },
-    iCss: (iColorTheme, iProps) => ({
+    iCss: ({ iColorTheme, iProps }) => ({
       border: `2px solid ${iColorTheme.borderColor}`,
       filter: shouldRenderCssProp(iProps.hasDropShadow, `drop-shadow(0 2px 2px ${neutral7})`),
       width: '48px',
@@ -24,7 +24,7 @@ const defaultAvatarStyle: Partial<AvatarStyle> = {
     }),
   },
   imageContainerStyle: {
-    iCss: (iColorTheme, iProps, parentProps) => ({
+    iCss: ({ parentProps }) => ({
       margin: 0,
       borderRadius: '50%',
       width: '100%',
@@ -35,18 +35,18 @@ const defaultAvatarStyle: Partial<AvatarStyle> = {
     }),
   },
   typographyStyle: {
-    iCss: () => ({
+    iCss: {
       color: volcano6,
       fontWeight: 'bold',
-    }),
+    },
   },
   iconStyle: {
-    iCss: () => ({
+    iCss: {
       color: volcano6,
       fontWeight: 'bold',
       height: '24px',
       width: '24px',
-    }),
+    },
   },
 };
 

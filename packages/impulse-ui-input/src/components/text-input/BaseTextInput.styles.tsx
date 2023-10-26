@@ -10,7 +10,7 @@ const BaseTextInput = styled.input<BaseIComponent<InputStyleProps>>(
     const themeMode = getThemeMode(mode);
     const iProps = mergeProps(themes?.input?.iStyleProps ?? input.iStyleProps, $iProps);
 
-    return css(iCss(iColorTheme[themeMode], iProps));
+    return css(iCss({ iColorTheme: iColorTheme[themeMode], iProps }));
   },
 );
 export default BaseTextInput;

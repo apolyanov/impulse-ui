@@ -4,7 +4,7 @@ import { AutoCompleteItemStyle, AutoCompleteItemStyleProps, BackgroundColor } fr
 const defaultAutoCompleteItemStyle: Partial<AutoCompleteItemStyle> = {
   mainContainerStyle: {
     iColorTheme: { light: { backgroundColor: 'transparent' } },
-    iCss: (iColorTheme, iProps, parentProps) => ({
+    iCss: ({ parentProps }) => ({
       padding: '6px',
       height: '34px',
       margin: 0,
@@ -14,7 +14,7 @@ const defaultAutoCompleteItemStyle: Partial<AutoCompleteItemStyle> = {
     }),
   },
   typographyStyle: {
-    iCss: () => ({ textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap', lineHeight: 1.5 }),
+    iCss: { textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap', lineHeight: 1.5 },
   },
 };
 

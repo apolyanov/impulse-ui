@@ -10,7 +10,7 @@ const BaseTextButton = styled.button<BaseIComponent<TextButtonStyleProps>>(
     const themeMode = getThemeMode(mode);
     const iProps = mergeProps(themes?.textButton?.iStyleProps ?? textButton.iStyleProps, $iProps);
 
-    return css(iCss(iColorTheme[themeMode], iProps));
+    return css(iCss({ iColorTheme: iColorTheme[themeMode], iProps }));
   },
 );
 export default BaseTextButton;

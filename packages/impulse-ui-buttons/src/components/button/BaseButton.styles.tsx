@@ -10,7 +10,7 @@ const BaseButton = styled.button<BaseIComponent<ButtonStyleProps>>(
     const themeMode = getThemeMode(mode);
     const iProps = mergeProps(themes?.button?.iStyleProps ?? button.iStyleProps, $iProps);
 
-    return css(iCss(iColorTheme[themeMode], iProps));
+    return css(iCss({ iColorTheme: iColorTheme[themeMode], iProps }));
   },
 );
 

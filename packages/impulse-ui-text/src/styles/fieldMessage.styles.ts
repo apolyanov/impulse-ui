@@ -28,7 +28,7 @@ const fieldMessageColor = (type: FieldMessageType): Property.Color => {
 };
 
 const defaultContainerStyle: IOStyle = {
-  iCss: () => ({ margin: '6px', padding: '0', flexDirection: 'row', alignItems: 'center' }),
+  iCss: { margin: '6px', padding: '0', flexDirection: 'row', alignItems: 'center' },
 };
 
 const defaultTypographyStyle = (type: FieldMessageType): IOStyle => {
@@ -37,7 +37,7 @@ const defaultTypographyStyle = (type: FieldMessageType): IOStyle => {
       light: { color: fieldMessageColor(type) },
       dark: { color: fieldMessageColor(type) },
     },
-    iCss: () => ({ fontSize: '14px', margin: '0 4px' }),
+    iCss: { fontSize: '14px', margin: '0 4px' },
   };
 };
 
@@ -47,7 +47,7 @@ const defaultIconStyle = (type: FieldMessageType): IOStyle => {
       light: { color: fieldMessageColor(type) },
       dark: { color: fieldMessageColor(type) },
     },
-    iCss: () => ({ fontSize: '16px', margin: '0' }),
+    iCss: { fontSize: '16px', margin: '0' },
   };
 };
 

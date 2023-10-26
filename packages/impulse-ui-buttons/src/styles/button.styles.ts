@@ -22,7 +22,7 @@ const button: ComponentTheme<ButtonStyleProps> = {
         colorHover: neutral1,
       },
     },
-    iCss: (iColorTheme, iProps) => ({
+    iCss: ({ iColorTheme, iProps }) => ({
       backgroundColor: iColorTheme.backgroundColor,
       color: iColorTheme.color,
       padding: shouldRenderCssProp(iProps.hasPadding, '0px 28px'),

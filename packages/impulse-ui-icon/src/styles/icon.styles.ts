@@ -21,7 +21,7 @@ const icon: ComponentTheme<IconStyleProps> = {
         colorHover: neutral10,
       },
     },
-    iCss: (iColorTheme) => ({
+    iCss: ({ iColorTheme }) => ({
       color: iColorTheme.color,
       fontSize: '16px',
     }),

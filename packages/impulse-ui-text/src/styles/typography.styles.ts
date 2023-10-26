@@ -22,7 +22,7 @@ const typography: ComponentTheme<TypographyStyleProps> = {
         colorHover: neutral12,
       },
     },
-    iCss: (iColorTheme, iProps: TypographyStyleProps) => ({
+    iCss: ({ iColorTheme, iProps }) => ({
       backgroundColor: iColorTheme.backgroundColor,
       color: iColorTheme.color,
       borderRadius: shouldRenderCssProp(iProps.hasBorderRadius, `4px`),
