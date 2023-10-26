@@ -11,7 +11,7 @@ const BaseIcon = styled(FontAwesomeIcon)<BaseIComponent<IconStyleProps>>(
     const themeMode = getThemeMode(mode);
     const iProps = mergeProps(themes?.icon?.iStyleProps ?? icon.iStyleProps, $iProps);
 
-    return css(iCss(iColorTheme[themeMode], iProps));
+    return css(iCss({ iColorTheme: iColorTheme[themeMode], iProps }));
   },
 );
 

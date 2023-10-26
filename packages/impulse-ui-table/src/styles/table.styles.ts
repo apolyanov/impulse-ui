@@ -24,7 +24,7 @@ const table: ComponentTheme<TableStyleProps> = {
         colorHover: neutral12,
       },
     },
-    iCss: (iColorTheme, iProps) => ({
+    iCss: ({ iColorTheme, iProps }) => ({
       backgroundColor: iColorTheme.backgroundColor,
       borderRadius: shouldRenderCssProp(iProps.hasBorderRadius, `4px`),
       padding: shouldRenderCssProp(iProps.hasPadding, '8px'),

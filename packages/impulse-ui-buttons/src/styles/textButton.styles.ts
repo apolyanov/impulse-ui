@@ -22,7 +22,7 @@ const textButton: ComponentTheme<TextButtonStyleProps> = {
         colorHover: volcano5,
       },
     },
-    iCss: (iColorTheme, iProps: TextButtonStyleProps) => ({
+    iCss: ({ iColorTheme, iProps }) => ({
       backgroundColor: iColorTheme.backgroundColor,
       color: iColorTheme.color,
       borderRadius: shouldRenderCssProp(iProps.hasBorderRadius, `8px`),

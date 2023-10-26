@@ -4,7 +4,7 @@ import { IconButtonStyle } from '@impulse-ui/types';
 const defaultIconButtonStyle: Partial<IconButtonStyle> = {
   iconStyle: { iColorTheme: { light: { color: neutral1 } } },
   buttonStyle: {
-    iCss: () => ({
+    iCss: {
       padding: 0,
       minWidth: 'unset',
       height: '38px',
@@ -12,7 +12,7 @@ const defaultIconButtonStyle: Partial<IconButtonStyle> = {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-    }),
+    },
   },
 };
 

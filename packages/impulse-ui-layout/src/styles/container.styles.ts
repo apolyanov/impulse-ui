@@ -22,7 +22,7 @@ const container: ComponentTheme<ContainerStyleProps> = {
         colorHover: neutral12,
       },
     },
-    iCss: (iColorTheme, iProps) => ({
+    iCss: ({ iColorTheme, iProps }) => ({
       backgroundColor: iColorTheme.backgroundColor,
       color: iColorTheme.color,
       borderColor: iColorTheme.borderColor,

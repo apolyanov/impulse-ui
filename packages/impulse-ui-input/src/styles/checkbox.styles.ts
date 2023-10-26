@@ -3,24 +3,24 @@ import { CheckboxStyle, CheckboxStyleProps } from '@impulse-ui/types';
 
 const checkboxStyle: Partial<CheckboxStyle> = {
   mainContainerStyle: {
-    iCss: () => ({
+    iCss: {
       flexDirection: 'row',
       alignItems: 'center',
       padding: 0,
       margin: '8px 0',
-    }),
+    },
   },
   iconButtonStyle: {
     buttonStyle: {
       iColorTheme: { light: { backgroundColor: 'transparent', backgroundColorHover: 'transparent' } },
-      iCss: () => ({
+      iCss: {
         minWidth: 'unset',
         width: 'unset',
         minHeight: 'unset',
         height: 'unset',
         padding: 0,
         margin: 0,
-      }),
+      },
     },
     iconStyle: {
       iColorTheme: {
@@ -28,7 +28,7 @@ const checkboxStyle: Partial<CheckboxStyle> = {
           color: volcano6,
         },
       },
-      iCss: () => ({
+      iCss: {
         fontSize: '26px',
         '--fa-secondary-opacity': 1,
         '--fa-secondary-color': volcano1,
@@ -38,10 +38,10 @@ const checkboxStyle: Partial<CheckboxStyle> = {
         '&:hover': {
           cursor: 'pointer',
         },
-      }),
+      },
     },
   },
-  typographyStyle: { iCss: () => ({ fontSize: '12px', margin: '0 6px' }) },
+  typographyStyle: { iCss: { fontSize: '12px', margin: '0 6px' } },
 };
 
 const checkboxStyleProps: Partial<CheckboxStyleProps> = {

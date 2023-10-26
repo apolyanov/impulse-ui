@@ -4,12 +4,12 @@ import { ComponentTheme, InputStyleProps, TextInputStyle, TextInputStyleProps } 
 
 const textInputStyle: Partial<TextInputStyle> = {
   mainContainerStyle: {
-    iCss: () => ({
+    iCss: {
       width: '100%',
       maxWidth: '250px',
       margin: '8px 0',
       padding: 0,
-    }),
+    },
   },
   inputContainerStyle: {
     iColorTheme: {
@@ -18,7 +18,7 @@ const textInputStyle: Partial<TextInputStyle> = {
         borderColorHover: volcano5,
       },
     },
-    iCss: () => ({
+    iCss: {
       margin: '0',
       flexDirection: 'row',
       alignItems: 'center',
@@ -27,10 +27,10 @@ const textInputStyle: Partial<TextInputStyle> = {
       height: '38px',
       borderRadius: '4px',
       borderWidth: '1px',
-    }),
+    },
   },
   inputStyle: {
-    iCss: (iColorTheme, iProps, parentProps) => ({
+    iCss: ({ parentProps }) => ({
       marginRight: parentProps?.clearable ? '26px' : 0,
     }),
   },
@@ -40,11 +40,11 @@ const textInputStyle: Partial<TextInputStyle> = {
         color: neutral8,
       },
     },
-    iCss: () => ({
+    iCss: {
       fontSize: '20px',
       width: '20px',
       marginRight: '4px',
-    }),
+    },
   },
   clearIconStyle: {
     buttonStyle: {
@@ -54,7 +54,7 @@ const textInputStyle: Partial<TextInputStyle> = {
           backgroundColorHover: neutral4,
         },
       },
-      iCss: (iColorTheme) => ({
+      iCss: ({ iColorTheme }) => ({
         margin: 0,
         position: 'absolute',
         marginRight: 'auto',
@@ -109,7 +109,7 @@ const input: ComponentTheme<InputStyleProps> = {
         colorHover: neutral12,
       },
     },
-    iCss: (iColorTheme, iProps: InputStyleProps) => ({
+    iCss: ({ iColorTheme, iProps }) => ({
       backgroundColor: iColorTheme.backgroundColor,
       color: iColorTheme.color,
       fontSize: '14px',
@@ -118,6 +118,7 @@ const input: ComponentTheme<InputStyleProps> = {
       borderRadius: shouldRenderCssProp(iProps.hasBorderRadius, `8px`),
       filter: shouldRenderCssProp(iProps.hasDropShadow, `drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2))`),
       flex: 1,
+      width: '100%',
       '&::-webkit-input-placeholder': {
         textIndent: '4px',
       },

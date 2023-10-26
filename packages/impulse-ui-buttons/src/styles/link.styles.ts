@@ -22,7 +22,7 @@ const link: ComponentTheme<LinkStyleProps> = {
         colorHover: volcano6,
       },
     },
-    iCss: (iColorTheme, iProps: LinkStyleProps) => ({
+    iCss: ({ iColorTheme, iProps }) => ({
       color: iColorTheme.color,
       backgroundColor: iColorTheme.backgroundColor,
       width: 'fit-content',

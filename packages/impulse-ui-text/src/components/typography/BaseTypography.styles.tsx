@@ -10,7 +10,7 @@ const BaseTypography = styled.p<BaseIComponent<TypographyStyleProps>>(
     const themeMode = getThemeMode(mode);
     const iProps = mergeProps(themes?.typography?.iStyleProps ?? typography.iStyleProps, $iProps);
 
-    return css(iCss(iColorTheme[themeMode], iProps));
+    return css(iCss({ iColorTheme: iColorTheme[themeMode], iProps }));
   },
 );
 

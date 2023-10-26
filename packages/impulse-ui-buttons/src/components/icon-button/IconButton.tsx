@@ -10,6 +10,7 @@ import { Button } from '../button';
 
 const IconButton: FunctionComponent<IconButtonProps> = ({ iStyle, iProps, ...rest }) => {
   const { icon, ...buttonProps } = rest;
+
   const { buttonStyle, iconStyle, buttonStyleProps, iconStyleProps } = useComponentStyle(
     iconButtonComponentMap,
     rest,

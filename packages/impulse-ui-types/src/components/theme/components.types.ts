@@ -25,11 +25,21 @@ type BaseComponentStyleProps = {
 
 type IOProps<T> = Partial<T>;
 
-type IOCss<T, K> =
-  | ((iColorTheme: Partial<CompositeComponentColors>, iProps: T, parentProps?: K) => StyledObject<object> | undefined)
-  | StyledObject<object>;
+interface IOCssArgs<T, K> {
+  iColorTheme: Partial<CompositeComponentColors>;
+  iProps: T;
+  parentProps?: K;
+}
 
-type ICss<T, K> = (iColorTheme: CompositeComponentColors, iProps: T, parentProps?: K) => StyledObject<object>;
+interface ICssArgs<T, K> {
+  iColorTheme: CompositeComponentColors;
+  iProps: T;
+  parentProps?: K;
+}
+
+type IOCss<T, K> = ((args: IOCssArgs<T, K>) => StyledObject<object> | undefined) | StyledObject<object>;
+
+type ICss<T, K> = (args: ICssArgs<T, K>) => StyledObject<object>;
 
 interface ComponentMap {
   key: string;
@@ -71,8 +81,10 @@ export type {
   IColorTheme,
   IComponent,
   ICss,
+  ICssArgs,
   IOColorTheme,
   IOCss,
+  IOCssArgs,
   IOProps,
   IOStyle,
   IStyle,

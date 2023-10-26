@@ -10,7 +10,7 @@ const BaseContainer = styled.div<BaseIComponent<ContainerStyleProps>>(
     const themeMode = getThemeMode(mode);
     const iProps = mergeProps<ContainerStyleProps>(themes?.container?.iStyleProps ?? container.iStyleProps, $iProps);
 
-    return css(iCss(iColorTheme[themeMode], iProps));
+    return css(iCss({ iColorTheme: iColorTheme[themeMode], iProps }));
   },
 );
 

@@ -3,7 +3,7 @@ import { SidebarStyle, SidebarStyleProps } from '@impulse-ui/types';
 
 const defaultSidebarStyle: Partial<SidebarStyle> = {
   containerStyle: {
-    iCss: (iColorTheme, iProps) => ({
+    iCss: ({ iProps }) => ({
       maxWidth: '300px',
       minWidth: '48px',
       width: '220px',
