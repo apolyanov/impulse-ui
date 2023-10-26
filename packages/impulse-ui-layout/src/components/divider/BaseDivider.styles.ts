@@ -10,7 +10,7 @@ const BaseDivider = styled.div<BaseIComponent<DividerStyleProps>>(
     const themeMode = getThemeMode(mode);
     const iProps = mergeProps(divider.iStyleProps, $iProps);
 
-    return css(iCss(iColorTheme[themeMode], iProps));
+    return css(iCss({ iColorTheme: iColorTheme[themeMode], iProps }));
   },
 );
 

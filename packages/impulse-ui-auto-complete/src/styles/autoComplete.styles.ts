@@ -2,16 +2,16 @@ import { AutoCompleteStyle, AutoCompleteStyleProps, ContainerStyleProps, IOProps
 
 const defaultAutoCompleteStyle: Partial<AutoCompleteStyle> = {
   mainContainerStyle: {
-    iCss: () => ({
+    iCss: {
       width: '100%',
       maxWidth: '250px',
       height: 'fit-content',
       display: 'block',
       position: 'relative',
-    }),
+    },
   },
   autoCompleteItemsContainerStyle: {
-    iCss: () => ({
+    iCss: {
       zIndex: 99,
       margin: 0,
       padding: '0 2px',
@@ -22,13 +22,13 @@ const defaultAutoCompleteStyle: Partial<AutoCompleteStyle> = {
         visibility: 'hidden',
         pointerEvents: 'none',
       },
-    }),
+    },
   },
   loadingTypographyStyle: {
-    iCss: () => ({ textAlign: 'center', padding: '4px' }),
+    iCss: { textAlign: 'center', padding: '4px' },
   },
   noOptionsTypographyStyle: {
-    iCss: () => ({ textAlign: 'center', padding: '4px' }),
+    iCss: { textAlign: 'center', padding: '4px' },
   },
 };
 

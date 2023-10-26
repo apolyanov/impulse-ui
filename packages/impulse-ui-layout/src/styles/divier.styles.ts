@@ -1,6 +1,6 @@
 import { neutral10 } from '@impulse-ui/colours';
 import { shouldRenderCssProp } from '@impulse-ui/core';
-import { ComponentTheme, DividerStyleProps, TextButtonStyleProps } from '@impulse-ui/types';
+import { ComponentTheme, DividerStyleProps } from '@impulse-ui/types';
 
 const divider: ComponentTheme<DividerStyleProps> = {
   iStyle: {
@@ -22,7 +22,7 @@ const divider: ComponentTheme<DividerStyleProps> = {
         colorHover: 'transparent',
       },
     },
-    iCss: (iColorTheme, iProps: TextButtonStyleProps) => ({
+    iCss: ({ iColorTheme, iProps }) => ({
       backgroundColor: iColorTheme.backgroundColor,
       color: iColorTheme.color,
       borderRadius: shouldRenderCssProp(iProps.hasBorderRadius, `8px`),

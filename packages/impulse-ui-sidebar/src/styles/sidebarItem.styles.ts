@@ -4,7 +4,7 @@ import { SidebarItemStyle, SidebarItemStyleProps } from '@impulse-ui/types';
 const defaultSidebarItemStyle: Partial<SidebarItemStyle> = {
   buttonStyle: {
     iColorTheme: { light: { backgroundColor: neutral1, backgroundColorHover: neutral5 } },
-    iCss: (iColorTheme, iProps, parentProps) => ({
+    iCss: ({ iColorTheme, parentProps }) => ({
       justifyContent: 'flex-start',
       textTransform: 'capitalize',
       padding: '14px 28px',
@@ -16,11 +16,11 @@ const defaultSidebarItemStyle: Partial<SidebarItemStyle> = {
     }),
   },
   iconStyle: {
-    iCss: () => ({
+    iCss: {
       marginRight: '4px',
-    }),
+    },
   },
-  typographyStyle: { iCss: () => ({ display: 'inline-block' }) },
+  typographyStyle: { iCss: { display: 'inline-block' } },
 };
 
 const defaultSidebarItemStyleProps: Partial<SidebarItemStyleProps> = {

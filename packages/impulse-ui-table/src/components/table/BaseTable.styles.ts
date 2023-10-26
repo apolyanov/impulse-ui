@@ -11,7 +11,7 @@ const BaseTable = styled.table<BaseIComponent<TableStyleProps>>(
     const themeMode = getThemeMode(mode);
     const iProps = mergeProps<ContainerStyleProps>(themes?.table?.iStyleProps ?? table.iStyleProps, $iProps);
 
-    return css(iCss(iColorTheme[themeMode], iProps));
+    return css(iCss({ iColorTheme: iColorTheme[themeMode], iProps }));
   },
 );
 

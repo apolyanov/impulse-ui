@@ -10,7 +10,7 @@ const BaseLink = styled.a<BaseIComponent<LinkStyleProps>>(
     const themeMode = getThemeMode(mode);
     const iProps = mergeProps(themes?.link?.iStyleProps ?? link.iStyleProps, $iProps);
 
-    return css(iCss(iColorTheme[themeMode], iProps));
+    return css(iCss({ iColorTheme: iColorTheme[themeMode], iProps }));
   },
 );
 
