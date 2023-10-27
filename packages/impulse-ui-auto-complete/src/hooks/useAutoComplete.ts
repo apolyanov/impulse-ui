@@ -93,6 +93,7 @@ const useAutoComplete = (rest: AutoCompleteRestProps) => {
       scrollTo(0);
       resetSelection();
       setInputValue('');
+      updateFilteredOptions(filterOptions(''));
     } else {
       setInputValue(selectedItem.label);
       updateFilteredOptions(filterOptions('', selectedItem));
