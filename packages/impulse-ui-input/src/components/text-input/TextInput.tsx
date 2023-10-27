@@ -45,8 +45,6 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
       ...inputProps
     } = rest;
 
-    console.log(rest);
-
     const {
       mainContainerStyle,
       inputContainerStyle,

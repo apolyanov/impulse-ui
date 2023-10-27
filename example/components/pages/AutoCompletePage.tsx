@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { AutoComplete } from '@impulse-ui/auto-complete';
 import { Button } from '@impulse-ui/buttons';
 import { Container } from '@impulse-ui/layout';
@@ -23,6 +24,7 @@ const AutoCompletePage = () => {
         inputProps={{
           clearable: true,
           isClearIconFocusable: true,
+          icon: faSearch,
         }}
       />
       <Button
