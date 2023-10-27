@@ -9,7 +9,6 @@ const InputsPage = () => {
         error
         type={'email'}
         debounced
-        clearable
         onDebouncedChange={(event) => console.log(event.target.value)}
         onChange={(event) => console.log(event.target.value)}
         placeholder={'Email'}
