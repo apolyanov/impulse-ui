@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.1-beta.0](https://github.com/apolyanov/impulse-ui/compare/v2.1.0...v2.1.1-beta.0) (2023-10-27)
+
+
+### Bug Fixes
+
+* Removing console.log() ([73e5c23](https://github.com/apolyanov/impulse-ui/commit/73e5c232c49fd6a38a77d17d2ef5fe1148fa84a8))
+
+
+
+
+
 # [2.1.0](https://github.com/apolyanov/impulse-ui/compare/v2.0.6...v2.1.0) (2023-10-26)
 
 
