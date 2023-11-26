@@ -7,14 +7,14 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "bun lerna run build",
+    "build": "lerna run build",
     "build-storybook": "storybook build",
-    "lint": "bun lerna run lint",
-    "size": "bun lerna run size",
+    "lint": "lerna run lint",
+    "size": "lerna run size",
     "storybook": "storybook dev -p 6006",
-    "test": "bun lerna run test",
-    "create-package": "bun run ./scripts/createPackage.ts",
-    "clean-packages": "bun run ./scripts/cleanInstall.ts && bun run build && bun install && npm install"
+    "test": "lerna run test",
+    "create-package": "npm run ./scripts/createPackage.ts",
+    "clean-packages": "npm run ./scripts/cleanInstall.ts && bun run build && bun install && npm install"
   },
   "husky": {
     "hooks": {
