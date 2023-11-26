@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, DetailedHTMLProps } from 'react';
+import { ButtonHTMLAttributes, DetailedHTMLProps, MouseEvent } from 'react';
 
 import { IconButtonStyle, IconButtonStyleProps } from '../buttons';
 import { ContainerStyleProps } from '../layout';
@@ -16,7 +16,12 @@ type CompositeCheckboxProps = CheckboxRestProps &
 interface CheckboxRestProps {
   checked?: boolean;
   label?: string;
-  toggleCheckbox?: (value: boolean) => void;
+  onClick?: (onClickCheckboxEvent: OnClickCheckboxEvent) => void;
+}
+
+interface OnClickCheckboxEvent {
+  event: MouseEvent<HTMLButtonElement>;
+  value: boolean;
 }
 
 interface CheckboxStyle {

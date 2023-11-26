@@ -11,8 +11,6 @@ import { checkboxComponentMap } from '../../maps';
 import { checkboxStyle, checkboxStyleProps } from '../../styles';
 
 const Checkbox: FunctionComponent<CheckboxProps> = ({ iStyle, iProps, children, ...rest }) => {
-  const { toggleCheckbox } = rest;
-
   const {
     mainContainerStyle,
     iconButtonStyle,
@@ -22,7 +20,7 @@ const Checkbox: FunctionComponent<CheckboxProps> = ({ iStyle, iProps, children, 
     typographyStyleProps,
   } = useComponentStyle(checkboxComponentMap, rest, checkboxStyle, checkboxStyleProps, iStyle, iProps);
 
-  const { isChecked, label, buttonProps } = useCheckbox(rest);
+  const { label, toggleCheckbox, buttonProps, getCheckedState } = useCheckbox(rest);
 
   const renderCheckboxLabel = useMemo(() => {
     if (children) {
@@ -41,10 +39,8 @@ const Checkbox: FunctionComponent<CheckboxProps> = ({ iStyle, iProps, children, 
       <IconButton
         iStyle={iconButtonStyle}
         iProps={iconButtonStyleProps}
-        onClick={() => {
-          toggleCheckbox?.(isChecked);
-        }}
-        icon={isChecked ? checkboxChecked : checkboxUnchecked}
+        onClick={toggleCheckbox}
+        icon={getCheckedState() ? checkboxChecked : checkboxUnchecked}
         {...buttonProps}
       />
       {renderCheckboxLabel}

@@ -29,7 +29,7 @@ const checkboxStyle: Partial<CheckboxStyle> = {
         },
       },
       iCss: {
-        fontSize: '26px',
+        fontSize: '20px',
         '--fa-secondary-opacity': 1,
         '--fa-secondary-color': volcano1,
         '& .fa-secondary': {
