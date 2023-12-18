@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0-beta.0](https://github.com/apolyanov/impulse-ui/compare/v2.2.0...v2.3.0-beta.0) (2023-12-18)
+
+
+### Features
+
+* Refactoring drop shadow styles to use the neutral colors set ([1f85d6e](https://github.com/apolyanov/impulse-ui/commit/1f85d6ed85aaf8f3d36fb13f3c26383b91434b00))
+* Update scripts ([b0250d3](https://github.com/apolyanov/impulse-ui/commit/b0250d347fa7f6d7ed01607ed656539f7bbf2a89))
+
+
+
+
+
 # [2.2.0](https://github.com/apolyanov/impulse-ui/compare/v2.1.0...v2.2.0) (2023-11-26)
 
 
