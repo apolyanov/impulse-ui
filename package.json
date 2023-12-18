@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "author": "Alexander Polyanov",
+  "type": "module",
   "workspaces": [
     "packages/*"
   ],
@@ -13,8 +14,8 @@
     "size": "lerna run size",
     "storybook": "storybook dev -p 6006",
     "test": "lerna run test",
-    "create-package": "npm run ./scripts/createPackage.ts",
-    "clean-packages": "npm run ./scripts/cleanInstall.ts && bun run build && bun install && npm install"
+    "create-package": "node ./scripts/createPackage.js",
+    "clean-packages": "node ./scripts/cleanInstall.js && npm run build && npm install"
   },
   "husky": {
     "hooks": {
