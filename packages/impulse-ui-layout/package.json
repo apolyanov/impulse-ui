@@ -1,6 +1,6 @@
 {
   "name": "@impulse-ui/layout",
-  "version": "2.3.0-beta.0",
+  "version": "2.3.0-beta.1",
   "license": "MIT",
   "author": "Alexander Polyanov",
   "main": "dist/index.js",
@@ -37,7 +37,7 @@
     "testEnvironment": "jsdom"
   },
   "dependencies": {
-    "@impulse-ui/colours": "^2.1.0",
+    "@impulse-ui/colours": "^2.3.0-beta.1",
     "@impulse-ui/core": "^2.2.0"
   },
   "devDependencies": {
