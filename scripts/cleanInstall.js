@@ -1,15 +1,15 @@
-import { readdir as readFolder, rm as removeFolder, RmOptions } from 'fs';
+import { readdir as readFolder, rm as removeFolder } from 'fs';
 
 const PACKAGES_ROOT = './packages';
 const NODE_MODULES = 'node_modules';
 const DIST = 'dist';
 
-const removeOptions: RmOptions = {
+const removeOptions = {
   recursive: true,
   force: true,
 };
 
-const removedFolderCallback = (folder: string, folderType: string, error: NodeJS.ErrnoException | null) => {
+const removedFolderCallback = (folder, folderType, error) => {
   if (error) {
     console.error(error.message);
     return;
