@@ -1,4 +1,4 @@
-import { neutral13, volcano5, volcano6 } from '@impulse-ui/colours';
+import { volcano5, volcano6 } from '@impulse-ui/colours';
 import { shouldRenderCssProp } from '@impulse-ui/core';
 import { ComponentTheme, TextButtonStyleProps } from '@impulse-ui/types';
 
@@ -26,7 +26,7 @@ const textButton: ComponentTheme<TextButtonStyleProps> = {
       backgroundColor: iColorTheme.backgroundColor,
       color: iColorTheme.color,
       borderRadius: shouldRenderCssProp(iProps.hasBorderRadius, `8px`),
-      filter: shouldRenderCssProp(iProps.hasDropShadow, `drop-shadow(0 2px 2px ${neutral13})`),
+      filter: shouldRenderCssProp(iProps.hasDropShadow, `drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2))`),
       fontSize: '14px',
       textDecoration: 'none',
       transition: 'background-color 0.2s ease-in-out',

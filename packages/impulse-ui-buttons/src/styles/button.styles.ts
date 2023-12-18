@@ -1,4 +1,4 @@
-import { neutral1, neutral13, volcano6, volcano7 } from '@impulse-ui/colours';
+import { neutral1, volcano6, volcano7 } from '@impulse-ui/colours';
 import { shouldRenderCssProp } from '@impulse-ui/core';
 import { ButtonStyleProps, ComponentTheme } from '@impulse-ui/types';
 
@@ -37,7 +37,7 @@ const button: ComponentTheme<ButtonStyleProps> = {
       alignItems: 'center',
       justifyContent: 'center',
       fontSize: '14px',
-      filter: shouldRenderCssProp(iProps.hasDropShadow, `drop-shadow(0 2px 2px ${neutral13})`),
+      filter: shouldRenderCssProp(iProps.hasDropShadow, `drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2))`),
       textTransform: 'uppercase',
       borderRadius: shouldRenderCssProp(iProps.hasBorderRadius, `4px`),
       transition: 'background-color 0.2s ease-in-out',
