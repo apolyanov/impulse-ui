@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.2.0](https://github.com/apolyanov/impulse-ui/compare/v2.1.0...v2.2.0) (2023-11-26)
+
+
+### Bug Fixes
+
+* Removing console.log() ([719739e](https://github.com/apolyanov/impulse-ui/commit/719739e157066549163a202aca2c5d6de27add41))
+
+
+
+
+
 # [2.2.0-beta.0](https://github.com/apolyanov/impulse-ui/compare/v2.1.1-beta.1...v2.2.0-beta.0) (2023-11-26)
 
 **Note:** Version bump only for package @impulse-ui/auto-complete

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.2.0](https://github.com/apolyanov/impulse-ui/compare/v2.1.0...v2.2.0) (2023-11-26)
+
+
+### Features
+
+* Checkbox update to be controlled ([8c88d79](https://github.com/apolyanov/impulse-ui/commit/8c88d79a8fc74bc91661fefa7011747dfe7a6059))
+
+
+
+
+
 # [2.2.0-beta.0](https://github.com/apolyanov/impulse-ui/compare/v2.1.1-beta.1...v2.2.0-beta.0) (2023-11-26)
 
 
