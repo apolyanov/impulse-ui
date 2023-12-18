@@ -1,4 +1,4 @@
-import { neutral1, neutral12, neutral13 } from '@impulse-ui/colours';
+import { neutral1, neutral12 } from '@impulse-ui/colours';
 import { shouldRenderCssProp } from '@impulse-ui/core';
 import { ComponentTheme, THeadStyleProps } from '@impulse-ui/types';
 
@@ -27,7 +27,7 @@ const thead: ComponentTheme<THeadStyleProps> = {
       borderRadius: shouldRenderCssProp(iProps.hasBorderRadius, `4px`),
       padding: shouldRenderCssProp(iProps.hasPadding, '8px'),
       margin: shouldRenderCssProp(iProps.hasMargin, '8px'),
-      filter: shouldRenderCssProp(iProps.hasDropShadow, `drop-shadow(0 2px 2px ${neutral13})`),
+      filter: shouldRenderCssProp(iProps.hasDropShadow, `drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2))`),
       '& th:first-of-type': {
         borderRadius: '4px 0 0 4px',
       },

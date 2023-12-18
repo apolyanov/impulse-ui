@@ -1,4 +1,4 @@
-import { neutral12, neutral13 } from '@impulse-ui/colours';
+import { neutral12 } from '@impulse-ui/colours';
 import { shouldRenderCssProp } from '@impulse-ui/core';
 import { ComponentTheme, THeaderStyleProps } from '@impulse-ui/types';
 
@@ -24,7 +24,7 @@ const theader: ComponentTheme<THeaderStyleProps> = {
     },
     iCss: ({ iColorTheme, iProps }) => ({
       backgroundColor: iColorTheme.backgroundColor,
-      filter: shouldRenderCssProp(iProps.hasDropShadow, `drop-shadow(0 1px 1px ${neutral13})`),
+      filter: shouldRenderCssProp(iProps.hasDropShadow, `drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2))`),
       padding: shouldRenderCssProp(iProps.hasPadding, '8px 16px'),
       textAlign: 'start',
     }),

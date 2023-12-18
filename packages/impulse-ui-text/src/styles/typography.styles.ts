@@ -1,4 +1,4 @@
-import { neutral12, neutral13 } from '@impulse-ui/colours';
+import { neutral12 } from '@impulse-ui/colours';
 import { shouldRenderCssProp } from '@impulse-ui/core';
 import { ComponentTheme, TypographyStyleProps } from '@impulse-ui/types';
 
@@ -26,7 +26,7 @@ const typography: ComponentTheme<TypographyStyleProps> = {
       backgroundColor: iColorTheme.backgroundColor,
       color: iColorTheme.color,
       borderRadius: shouldRenderCssProp(iProps.hasBorderRadius, `4px`),
-      filter: shouldRenderCssProp(iProps.hasDropShadow, `drop-shadow(0 2px 2px ${neutral13})`),
+      filter: shouldRenderCssProp(iProps.hasDropShadow, `drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2))`),
       padding: shouldRenderCssProp(iProps.hasPadding, '0 4px'),
       margin: shouldRenderCssProp(iProps.hasMargin, '4px'),
       fontSize: '14px',
