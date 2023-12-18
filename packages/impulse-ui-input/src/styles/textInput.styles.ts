@@ -1,4 +1,4 @@
-import { neutral1, neutral4, neutral6, neutral8, neutral12, volcano5, volcano6 } from '@impulse-ui/colours';
+import { neutral1, neutral4, neutral6, neutral8, neutral12, neutral13, volcano5, volcano6 } from '@impulse-ui/colours';
 import { shouldRenderCssProp } from '@impulse-ui/core';
 import { ComponentTheme, InputStyleProps, TextInputStyle, TextInputStyleProps } from '@impulse-ui/types';
 
@@ -116,7 +116,7 @@ const input: ComponentTheme<InputStyleProps> = {
       height: '32px',
       padding: '4px 0',
       borderRadius: shouldRenderCssProp(iProps.hasBorderRadius, `8px`),
-      filter: shouldRenderCssProp(iProps.hasDropShadow, `drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2))`),
+      filter: shouldRenderCssProp(iProps.hasDropShadow, `drop-shadow(0 2px 2px ${neutral13})`),
       flex: 1,
       width: '100%',
       '&::-webkit-input-placeholder': {

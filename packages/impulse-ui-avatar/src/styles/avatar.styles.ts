@@ -1,4 +1,4 @@
-import { neutral7, volcano1, volcano6 } from '@impulse-ui/colours';
+import { neutral13, volcano1, volcano6 } from '@impulse-ui/colours';
 import { shouldRenderCssProp } from '@impulse-ui/core';
 import { AvatarStyle } from '@impulse-ui/types';
 
@@ -7,7 +7,7 @@ const defaultAvatarStyle: Partial<AvatarStyle> = {
     iColorTheme: { light: { borderColor: volcano6, backgroundColor: volcano1 } },
     iCss: ({ iColorTheme, iProps }) => ({
       border: `2px solid ${iColorTheme.borderColor}`,
-      filter: shouldRenderCssProp(iProps.hasDropShadow, `drop-shadow(0 2px 2px ${neutral7})`),
+      filter: shouldRenderCssProp(iProps.hasDropShadow, `drop-shadow(0 2px 2px ${neutral13})`),
       width: '48px',
       margin: 0,
       height: '48px',
