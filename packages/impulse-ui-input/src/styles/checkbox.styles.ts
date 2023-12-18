@@ -1,4 +1,4 @@
-import { volcano1, volcano6 } from '@impulse-ui/colours';
+import { neutral7, volcano1, volcano6 } from '@impulse-ui/colours';
 import { CheckboxStyle, CheckboxStyleProps } from '@impulse-ui/types';
 
 const checkboxStyle: Partial<CheckboxStyle> = {
@@ -33,7 +33,7 @@ const checkboxStyle: Partial<CheckboxStyle> = {
         '--fa-secondary-opacity': 1,
         '--fa-secondary-color': volcano1,
         '& .fa-secondary': {
-          filter: `drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2))`,
+          filter: `drop-shadow(0 0 36px rgba(0, 0, 0, 0.2))`,
         },
         '&:hover': {
           cursor: 'pointer',
