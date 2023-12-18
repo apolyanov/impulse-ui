@@ -1,4 +1,4 @@
-import { readdir as readFolder, rm as removeFolder } from 'fs';
+const { readdir: readFolder, rm: removeFolder } = require('fs');
 
 const PACKAGES_ROOT = './packages';
 const NODE_MODULES = 'node_modules';
