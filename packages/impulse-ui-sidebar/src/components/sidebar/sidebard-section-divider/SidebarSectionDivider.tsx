@@ -1,3 +1,4 @@
+'use client';
 import React, { FunctionComponent } from 'react';
 import { useComponentStyle } from '@impulse-ui/core';
 import { Divider } from '@impulse-ui/layout';

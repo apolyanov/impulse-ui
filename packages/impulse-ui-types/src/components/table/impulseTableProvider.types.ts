@@ -1,6 +1,8 @@
 import { ReactNode } from 'react';
 
-interface ImpulseTableProviderProps {
+import { ImpulseTableProps } from './impulseTable.types';
+
+interface ImpulseTableProviderProps<T = unknown> extends ImpulseTableProps<T> {
   children: ReactNode;
 }
 

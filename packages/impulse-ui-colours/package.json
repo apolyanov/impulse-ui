@@ -52,8 +52,5 @@
       "limit": "1000 KB"
     }
   ],
-  "gitHead": "82ece656f5271be949d5e3eff27201cc83ef6555",
-  "dependencies": {
-    "colorjs.io": "^0.4.5"
-  }
+  "gitHead": "82ece656f5271be949d5e3eff27201cc83ef6555"
 }

@@ -1,4 +1,4 @@
-import { neutral1, neutral2, neutral12 } from '@impulse-ui/colours';
+import { neutral12 } from '@impulse-ui/colours';
 import { shouldRenderCssProp } from '@impulse-ui/core';
 import { ComponentTheme, ContainerStyleProps } from '@impulse-ui/types';
 
@@ -6,16 +6,16 @@ const container: ComponentTheme<ContainerStyleProps> = {
   iStyle: {
     iColorTheme: {
       light: {
-        backgroundColor: neutral1,
-        backgroundColorHover: neutral1,
+        backgroundColor: 'transparent',
+        backgroundColorHover: 'transparent',
         borderColor: 'transparent',
         borderColorHover: 'transparent',
         color: neutral12,
         colorHover: neutral12,
       },
       dark: {
-        backgroundColor: neutral2,
-        backgroundColorHover: neutral2,
+        backgroundColor: 'transparent',
+        backgroundColorHover: 'transparent',
         borderColor: 'transparent',
         borderColorHover: 'transparent',
         color: neutral12,

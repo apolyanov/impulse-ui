@@ -14,7 +14,7 @@ const AutoCompletePage = () => {
   }, [options]);
 
   return (
-    <Container iStyle={{ iCss: () => ({ flexDirection: 'row', height: '700px', gap: '16px' }) }}>
+    <Container iStyle={{ iCss: { flexDirection: 'row', height: '700px', gap: '16px' } }}>
       <AutoComplete
         selectOnBlur
         options={humans}
