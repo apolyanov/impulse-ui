@@ -1,3 +1,4 @@
+'use client';
 import useIThemeContext from './useIThemeContext';
 
 const useITheme = () => {

@@ -1,3 +1,4 @@
+'use client';
 import { CSSProperties, useCallback, useLayoutEffect } from 'react';
 import { useVirtualizer, VirtualItem } from '@tanstack/react-virtual';
 

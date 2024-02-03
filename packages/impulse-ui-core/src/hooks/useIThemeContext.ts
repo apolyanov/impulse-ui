@@ -1,3 +1,4 @@
+'use client';
 import { useContext } from 'react';
 import { UseIThemeContextFn } from '@impulse-ui/types';
 
