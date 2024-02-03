@@ -1,3 +1,4 @@
+'use client';
 import React, { FunctionComponent } from 'react';
 import { Icon } from '@impulse-ui/icon';
 import { Container } from '@impulse-ui/layout';

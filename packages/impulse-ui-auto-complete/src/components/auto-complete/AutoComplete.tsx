@@ -1,3 +1,4 @@
+'use client';
 import React, { Fragment, FunctionComponent, memo, ReactNode, useMemo } from 'react';
 import { useComponentStyle } from '@impulse-ui/core';
 import { TextInput } from '@impulse-ui/input';

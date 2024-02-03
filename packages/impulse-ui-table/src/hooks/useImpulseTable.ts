@@ -5,11 +5,11 @@ import { ImpulseTableContext } from '../components';
 const useImpulseTable = () => {
   const table = useContext(ImpulseTableContext);
 
-  if (!table) {
+  if (!table?.state) {
     throw new Error('useImpulseTable should be inside ImpulseTableContext');
   }
 
-  return table;
+  return table.state;
 };
 
 export { useImpulseTable };

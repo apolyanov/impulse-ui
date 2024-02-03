@@ -1,3 +1,4 @@
+'use client';
 import React, { FunctionComponent, useMemo } from 'react';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { useComponentStyle } from '@impulse-ui/core';

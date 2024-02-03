@@ -1,3 +1,4 @@
+'use client';
 import React, { FunctionComponent, PropsWithChildren } from 'react';
 import { Button } from '@impulse-ui/buttons';
 import { useComponentStyle } from '@impulse-ui/core';

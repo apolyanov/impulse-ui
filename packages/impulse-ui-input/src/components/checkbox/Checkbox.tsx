@@ -1,3 +1,4 @@
+'use client';
 import React, { FunctionComponent, useMemo } from 'react';
 import { IconButton } from '@impulse-ui/buttons';
 import { useComponentStyle } from '@impulse-ui/core';
