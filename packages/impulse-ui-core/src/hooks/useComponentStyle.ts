@@ -1,3 +1,4 @@
+'use client';
 import { ComponentMap, IOStyle } from '@impulse-ui/types';
 
 import { mergePartialProps, mergePartialThemes } from '../utils';

@@ -1,3 +1,4 @@
+'use client';
 import { useEffect, useState } from 'react';
 import { UseElementDimensionsFn } from '@impulse-ui/types';
 
