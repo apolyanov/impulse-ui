@@ -1,55 +1,32 @@
-import React from 'react';
+'use client';
+import React, { FunctionComponent } from 'react';
+import { neutral1 } from '@impulse-ui/colours';
 import { Container } from '@impulse-ui/layout';
-import { flexRender } from '@tanstack/react-table';
+import { ImpulseTableProps } from '@impulse-ui/types';
 
-import { useImpulseTable } from '../../hooks';
+import { impulseTableContainerProps } from '../../styles/impulseTable.styles';
+import { ImpulseTableProvider } from '../impulse-table-provider';
 import { Table } from '../table';
 import { TableHeader } from '../table-header';
 import { TBody } from '../tbody';
-import { TData } from '../tdata';
 import { TFoot } from '../tfoot';
 import { THead } from '../thead';
-import { THeader } from '../theader';
-import { TRow } from '../trow';
 
-const ImpulseTable = () => {
-  const { getHeaderGroups, getRowModel, getFooterGroups } = useImpulseTable();
-
+const ImpulseTable: FunctionComponent<ImpulseTableProps> = ({ data, columns }) => {
   return (
-    <Container iProps={{ hasDropShadow: true, hasBorderRadius: true }}>
-      <TableHeader />
-      <Table>
-        <THead>
-          {getHeaderGroups().map((headerGroup) => (
-            <TRow key={headerGroup.id}>
-              {headerGroup.headers.map((header) => (
-                <THeader onClick={header.column.getToggleSortingHandler()} key={header.id}>
-                  {flexRender(header.column.columnDef.header, header.getContext())}
-                </THeader>
-              ))}
-            </TRow>
-          ))}
-        </THead>
-        <TBody>
-          {getRowModel().rows.map((row) => (
-            <TRow key={row.id}>
-              {row.getVisibleCells().map((cell) => (
-                <TData key={cell.id}>{flexRender(cell.column.columnDef.cell, cell.getContext())}</TData>
-              ))}
-            </TRow>
-          ))}
-        </TBody>
-        <TFoot>
-          {getFooterGroups().map((footerGroup) => (
-            <TRow key={footerGroup.id}>
-              {footerGroup.headers.map((footer) => (
-                <TData key={footer.id}>{flexRender(footer.column.columnDef.footer, footer.getContext())}</TData>
-              ))}
-            </TRow>
-          ))}
-        </TFoot>
-      </Table>
-    </Container>
+    <ImpulseTableProvider data={data} columns={columns}>
+      <Container
+        iStyle={{ iColorTheme: { light: { backgroundColor: neutral1, backgroundColorHover: neutral1 } } }}
+        iProps={impulseTableContainerProps}
+      >
+        <TableHeader />
+        <Table>
+          <THead />
+          <TBody />
+          <TFoot />
+        </Table>
+      </Container>
+    </ImpulseTableProvider>
   );
 };
 

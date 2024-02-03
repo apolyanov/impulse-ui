@@ -1,3 +1,4 @@
+'use client';
 import React, { FunctionComponent, PropsWithChildren } from 'react';
 import { useComponentStyle } from '@impulse-ui/core';
 import { Container } from '@impulse-ui/layout';

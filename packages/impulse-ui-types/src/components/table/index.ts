@@ -1,3 +1,4 @@
+export * from './impulseTable.types';
 export * from './impulseTableProvider.types';
 export * from './table.types';
 export * from './tableHeader.types';

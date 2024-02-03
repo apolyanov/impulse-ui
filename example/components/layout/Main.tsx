@@ -6,7 +6,7 @@ import Navigation from './Navigation';
 
 const Main = () => {
   return (
-    <Container iStyle={{ iCss: () => ({ margin: 0, padding: 0, flex: 1, flexDirection: 'row' }) }}>
+    <Container iStyle={{ iCss: { margin: 0, padding: 0, flex: 1, flexDirection: 'row' } }}>
       <Navigation />
       <Container>
         <Outlet />

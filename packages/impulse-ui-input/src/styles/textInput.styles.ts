@@ -1,7 +1,6 @@
 import { neutral1, neutral4, neutral6, neutral8, neutral12, volcano5, volcano6 } from '@impulse-ui/colours';
 import { shouldRenderCssProp } from '@impulse-ui/core';
 import { ComponentTheme, InputStyleProps, TextInputStyle, TextInputStyleProps } from '@impulse-ui/types';
-
 const textInputStyle: Partial<TextInputStyle> = {
   mainContainerStyle: {
     iCss: {
@@ -14,6 +13,7 @@ const textInputStyle: Partial<TextInputStyle> = {
   inputContainerStyle: {
     iColorTheme: {
       light: {
+        backgroundColor: neutral1,
         borderColor: volcano6,
         borderColorHover: volcano5,
       },

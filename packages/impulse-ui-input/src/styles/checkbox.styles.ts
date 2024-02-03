@@ -1,4 +1,4 @@
-import { neutral7, volcano1, volcano6 } from '@impulse-ui/colours';
+import { volcano1, volcano6 } from '@impulse-ui/colours';
 import { CheckboxStyle, CheckboxStyleProps } from '@impulse-ui/types';
 
 const checkboxStyle: Partial<CheckboxStyle> = {
@@ -29,7 +29,7 @@ const checkboxStyle: Partial<CheckboxStyle> = {
         },
       },
       iCss: {
-        fontSize: '20px',
+        fontSize: '24px',
         '--fa-secondary-opacity': 1,
         '--fa-secondary-color': volcano1,
         '& .fa-secondary': {
@@ -41,12 +41,12 @@ const checkboxStyle: Partial<CheckboxStyle> = {
       },
     },
   },
-  typographyStyle: { iCss: { fontSize: '12px', margin: '0 6px' } },
+  typographyStyle: { iCss: { fontSize: '14px', margin: '0 6px' } },
 };
 
 const checkboxStyleProps: Partial<CheckboxStyleProps> = {
   iconButtonStyleProps: {
-    buttonStyleProps: { hasDropShadow: false, hasBorderRadius: false },
+    buttonStyleProps: { hasDropShadow: true, hasBorderRadius: false },
   },
 };
 

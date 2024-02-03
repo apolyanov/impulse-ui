@@ -1,3 +1,4 @@
+import { neutral1 } from '@impulse-ui/colours';
 import { AutoCompleteStyle, AutoCompleteStyleProps, ContainerStyleProps, IOProps } from '@impulse-ui/types';
 
 const defaultAutoCompleteStyle: Partial<AutoCompleteStyle> = {
@@ -11,6 +12,11 @@ const defaultAutoCompleteStyle: Partial<AutoCompleteStyle> = {
     },
   },
   autoCompleteItemsContainerStyle: {
+    iColorTheme: {
+      light: {
+        backgroundColor: neutral1,
+      },
+    },
     iCss: {
       zIndex: 99,
       margin: 0,

@@ -1,3 +1,4 @@
+'use client';
 import React, { createContext, FunctionComponent, PropsWithChildren, useState } from 'react';
 import { IThemeContext, IThemeProviderProps, ThemeMode } from '@impulse-ui/types';
 import { ThemeProvider } from 'styled-components';
