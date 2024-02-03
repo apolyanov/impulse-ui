@@ -1,3 +1,4 @@
+'use client';
 import React, { FunctionComponent } from 'react';
 import { TextButtonProps } from '@impulse-ui/types';
 
