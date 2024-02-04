@@ -1,5 +1,6 @@
 const postcss = require('rollup-plugin-postcss');
 const fontMagician = require('postcss-font-magician');
+const banner2 = require('rollup-plugin-banner2');
 
 module.exports = {
   rollup(config) {
@@ -25,6 +26,9 @@ module.exports = {
         ],
       }),
     );
+
+    config.plugins.push(banner2(() => "'use client';"));
+
     return config;
   },
 };
