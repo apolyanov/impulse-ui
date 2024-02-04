@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import { FunctionComponent } from 'react';
 import { DividerProps } from '@impulse-ui/types';

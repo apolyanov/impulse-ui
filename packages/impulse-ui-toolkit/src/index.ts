@@ -1,3 +1,4 @@
+'use client';
 export * from '@impulse-ui/auto-complete';
 export * from '@impulse-ui/avatar';
 export * from '@impulse-ui/buttons';

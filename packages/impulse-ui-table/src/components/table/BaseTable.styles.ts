@@ -1,3 +1,4 @@
+'use client';
 import { getThemeMode, mergeProps, mergeThemes } from '@impulse-ui/core';
 import { BaseIComponent } from '@impulse-ui/types';
 import { TableStyleProps } from '@impulse-ui/types';

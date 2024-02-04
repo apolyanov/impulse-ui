@@ -1,3 +1,4 @@
+'use client';
 import React, { FunctionComponent } from 'react';
 import { TypographyProps } from '@impulse-ui/types';
 

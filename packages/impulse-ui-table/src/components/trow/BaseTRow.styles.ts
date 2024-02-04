@@ -1,3 +1,4 @@
+'use client';
 import { getThemeMode, mergeProps, mergeThemes } from '@impulse-ui/core';
 import { BaseIComponent, TRowStyleProps } from '@impulse-ui/types';
 import styled, { css } from 'styled-components';

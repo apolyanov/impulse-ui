@@ -1,3 +1,4 @@
+'use client';
 import React, { forwardRef, PropsWithChildren } from 'react';
 import { ContainerProps } from '@impulse-ui/types';
 
