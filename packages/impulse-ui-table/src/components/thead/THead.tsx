@@ -1,3 +1,4 @@
+'use client';
 import React, { FunctionComponent } from 'react';
 import { THeadProps } from '@impulse-ui/types';
 import { flexRender } from '@tanstack/react-table';

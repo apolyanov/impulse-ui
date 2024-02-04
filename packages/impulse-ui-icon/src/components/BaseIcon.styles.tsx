@@ -1,3 +1,4 @@
+'use client';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { getThemeMode, mergeProps, mergeThemes } from '@impulse-ui/core';
 import { BaseIComponent, IconStyleProps } from '@impulse-ui/types';
