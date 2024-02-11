@@ -1,6 +1,6 @@
 {
   "name": "@impulse-ui/types",
-  "version": "2.3.0-beta.10",
+  "version": "2.3.0",
   "license": "MIT",
   "author": "Alexander Polyanov",
   "main": "dist/index.js",

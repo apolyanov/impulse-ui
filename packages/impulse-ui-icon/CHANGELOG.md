@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0](https://github.com/apolyanov/impulse-ui/compare/v2.2.0...v2.3.0) (2024-02-11)
+
+
+### Features
+
+* Change font weight and extend icon component types. ([f892344](https://github.com/apolyanov/impulse-ui/commit/f89234456c0b5db3323a73844d96291f6320f716))
+
+
+
+
+
 # [2.3.0-beta.10](https://github.com/apolyanov/impulse-ui/compare/v2.3.0-beta.9...v2.3.0-beta.10) (2024-02-11)
 
 
