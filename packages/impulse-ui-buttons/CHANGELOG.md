@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0-beta.10](https://github.com/apolyanov/impulse-ui/compare/v2.3.0-beta.9...v2.3.0-beta.10) (2024-02-11)
+
+**Note:** Version bump only for package @impulse-ui/buttons
+
+
+
+
+
 # [2.3.0-beta.8](https://github.com/apolyanov/impulse-ui/compare/v2.3.0-beta.7...v2.3.0-beta.8) (2024-02-04)
 
 **Note:** Version bump only for package @impulse-ui/buttons
