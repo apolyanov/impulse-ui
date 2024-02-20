@@ -4,6 +4,7 @@ import { IThemeContext, IThemeProviderProps, ThemeMode } from '@impulse-ui/types
 import { ThemeProvider } from 'styled-components';
 
 import '../css/font.css';
+import '@fortawesome/fontawesome-svg-core/styles.css';
 
 import { LIGHT } from '../utils';
 
