@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.1-beta.0](https://github.com/apolyanov/impulse-ui/compare/v2.3.0...v2.3.1-beta.0) (2024-02-20)
+
+
+### Bug Fixes
+
+* Fixing flash of unstyled content for NextJS projects. ([a5872f9](https://github.com/apolyanov/impulse-ui/commit/a5872f953239dc8a0dab259a56023ddc29c0ae23))
+
+
+
+
+
 # [2.3.0](https://github.com/apolyanov/impulse-ui/compare/v2.2.0...v2.3.0) (2024-02-11)
 
 
