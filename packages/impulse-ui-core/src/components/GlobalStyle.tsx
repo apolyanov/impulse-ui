@@ -1,93 +1,99 @@
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
+import { createGlobalStyle } from 'styled-components';
 
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-figure,
-blockquote,
-dl,
-dd {
+const GlobalStyle = createGlobalStyle`
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  figure,
+  blockquote,
+  dl,
+  dd {
     padding: 0;
     margin: 0;
-}
+  }
 
-table, caption, tbody, tfoot, thead, tr, th, td {
+  table, caption, tbody, tfoot, thead, tr, th, td {
     margin: 0;
     padding: 0;
     border: 0;
     vertical-align: baseline;
-}
+  }
 
-table {
+  table {
     border-spacing: 0;
-}
+  }
 
-ul[role='list'],
-ol[role='list'] {
+  ul[role='list'],
+  ol[role='list'] {
     list-style: none;
-}
+  }
 
-html:focus-within {
+  html:focus-within {
     scroll-behavior: smooth;
-}
+  }
 
-body {
+  body {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     height: 100%;
     display: block;
     text-rendering: auto;
-}
+  }
 
-a:not([class]) {
+  a:not([class]) {
     text-decoration-skip-ink: auto;
-}
+  }
 
-img,
-picture {
+  img,
+  picture {
     max-width: 100%;
     display: block;
-}
+  }
 
-input,
-button,
-textarea,
-select {
+  input,
+  button,
+  textarea,
+  select {
     border-style: none;
     font: inherit;
-}
+  }
 
-*:focus {
+  *:focus {
     outline: none;
-}
+  }
 
-::-webkit-scrollbar {
+  ::-webkit-scrollbar {
     width: 10px;
     border-radius: 4px;
     transition: all 0.2s ease-in-out;
-}
+  }
 
-::-webkit-scrollbar-track {
+  ::-webkit-scrollbar-track {
     background: #f0f0f0;
     border-radius: 4px;
     transition: all 0.2s ease-in-out;
-}
+  }
 
-::-webkit-scrollbar-thumb {
+  ::-webkit-scrollbar-thumb {
     background: #bfbfbf;
     border-radius: 4px;
     transition: all 0.2s ease-in-out;
-}
+  }
 
-::-webkit-scrollbar-thumb:hover {
+  ::-webkit-scrollbar-thumb:hover {
     background: #8c8c8c;
     border-radius: 4px;
     transition: all 0.2s ease-in-out;
-}
+  }
+`;
+
+export { GlobalStyle };

@@ -3,9 +3,11 @@ import React, { createContext, FunctionComponent, PropsWithChildren, useState } 
 import { IThemeContext, IThemeProviderProps, ThemeMode } from '@impulse-ui/types';
 import { ThemeProvider } from 'styled-components';
 
-import '../css/index.css';
+import '../css/font.css';
 
 import { LIGHT } from '../utils';
+
+import { GlobalStyle } from './GlobalStyle';
 
 const ITheme = createContext<IThemeContext | undefined>(undefined);
 
@@ -14,6 +16,7 @@ const IThemeProvider: FunctionComponent<PropsWithChildren<IThemeProviderProps>> 
 
   return (
     <ITheme.Provider value={{ setCurrentThemeMode, currentThemeMode }}>
+      <GlobalStyle />
       <ThemeProvider theme={{ themes: themes, mode: currentThemeMode }}>{children}</ThemeProvider>
     </ITheme.Provider>
   );
