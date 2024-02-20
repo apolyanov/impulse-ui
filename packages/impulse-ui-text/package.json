@@ -1,6 +1,6 @@
 {
   "name": "@impulse-ui/text",
-  "version": "2.3.1-beta.0",
+  "version": "2.3.1-beta.1",
   "license": "MIT",
   "author": "Alexander Polyanov",
   "main": "dist/index.js",
@@ -38,9 +38,9 @@
   },
   "dependencies": {
     "@impulse-ui/colours": "^2.3.0",
-    "@impulse-ui/core": "^2.3.1-beta.0",
-    "@impulse-ui/icon": "^2.3.1-beta.0",
-    "@impulse-ui/layout": "^2.3.1-beta.0"
+    "@impulse-ui/core": "^2.3.1-beta.1",
+    "@impulse-ui/icon": "^2.3.1-beta.1",
+    "@impulse-ui/layout": "^2.3.1-beta.1"
   },
   "devDependencies": {
     "@impulse-ui/types": "^2.3.0"
