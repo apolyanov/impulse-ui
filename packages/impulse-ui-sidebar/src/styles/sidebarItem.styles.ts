@@ -1,9 +1,9 @@
-import { neutral1, neutral5 } from '@impulse-ui/colours';
+import { neutral } from '@impulse-ui/colours';
 import { SidebarItemStyle, SidebarItemStyleProps } from '@impulse-ui/types';
 
 const defaultSidebarItemStyle: Partial<SidebarItemStyle> = {
   buttonStyle: {
-    iColorTheme: { light: { backgroundColor: neutral1, backgroundColorHover: neutral5 } },
+    iColorTheme: { light: { backgroundColor: neutral[10], backgroundColorHover: neutral[50] } },
     iCss: ({ iColorTheme, parentProps }) => ({
       justifyContent: 'flex-start',
       textTransform: 'capitalize',

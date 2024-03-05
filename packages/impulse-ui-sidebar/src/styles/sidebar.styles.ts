@@ -1,4 +1,4 @@
-import { neutral1 } from '@impulse-ui/colours';
+import { neutral } from '@impulse-ui/colours';
 import { shouldRenderCssProp } from '@impulse-ui/core';
 import { SidebarStyle, SidebarStyleProps } from '@impulse-ui/types';
 
@@ -6,14 +6,14 @@ const defaultSidebarStyle: Partial<SidebarStyle> = {
   containerStyle: {
     iColorTheme: {
       light: {
-        backgroundColor: neutral1,
+        backgroundColor: neutral[10],
       },
     },
     iCss: ({ iProps }) => ({
       maxWidth: '300px',
       minWidth: '48px',
       width: '220px',
-      margin: shouldRenderCssProp(iProps.hasMargin, '8px'),
+      margin: shouldRenderCssProp(iProps.hasMargin, 8),
       padding: shouldRenderCssProp(iProps.hasPadding, '2px 8px'),
       alignItems: 'center',
     }),

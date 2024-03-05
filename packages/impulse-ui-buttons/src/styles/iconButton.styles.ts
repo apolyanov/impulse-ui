@@ -1,8 +1,8 @@
-import { neutral1 } from '@impulse-ui/colours';
+import { neutral } from '@impulse-ui/colours';
 import { IconButtonStyle } from '@impulse-ui/types';
 
 const defaultIconButtonStyle: Partial<IconButtonStyle> = {
-  iconStyle: { iColorTheme: { light: { color: neutral1 } } },
+  iconStyle: { iColorTheme: { light: { color: neutral[10] } } },
   buttonStyle: {
     iCss: {
       padding: 0,

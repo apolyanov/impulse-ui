@@ -1,25 +1,16 @@
-import { Property } from 'csstype';
+import { ColorPalette } from '@impulse-ui/types';
 
-const polarGreen1: Property.Color = '#f6ffed';
-const polarGreen2: Property.Color = '#d9f7be';
-const polarGreen3: Property.Color = '#b7eb8f';
-const polarGreen4: Property.Color = '#95de64';
-const polarGreen5: Property.Color = '#73d13d';
-const polarGreen6: Property.Color = '#52c41a';
-const polarGreen7: Property.Color = '#389e0d';
-const polarGreen8: Property.Color = '#237804';
-const polarGreen9: Property.Color = '#135200';
-const polarGreen10: Property.Color = '#092b00';
-
-export {
-  polarGreen1,
-  polarGreen2,
-  polarGreen3,
-  polarGreen4,
-  polarGreen5,
-  polarGreen6,
-  polarGreen7,
-  polarGreen8,
-  polarGreen9,
-  polarGreen10,
+const polarGreen: ColorPalette = {
+  10: '#f6ffed',
+  20: '#d9f7be',
+  30: '#b7eb8f',
+  40: '#95de64',
+  50: '#73d13d',
+  60: '#52c41a',
+  70: '#389e0d',
+  80: '#237804',
+  90: '#135200',
+  100: '#092b00',
 };
+
+export { polarGreen };
