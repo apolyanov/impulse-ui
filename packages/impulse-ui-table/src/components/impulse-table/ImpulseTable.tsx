@@ -1,6 +1,6 @@
 'use client';
 import React, { FunctionComponent } from 'react';
-import { neutral1 } from '@impulse-ui/colours';
+import { neutral } from '@impulse-ui/colours';
 import { Container } from '@impulse-ui/layout';
 import { ImpulseTableProps } from '@impulse-ui/types';
 
@@ -16,7 +16,7 @@ const ImpulseTable: FunctionComponent<ImpulseTableProps> = ({ data, columns }) =
   return (
     <ImpulseTableProvider data={data} columns={columns}>
       <Container
-        iStyle={{ iColorTheme: { light: { backgroundColor: neutral1, backgroundColorHover: neutral1 } } }}
+        iStyle={{ iColorTheme: { light: { backgroundColor: neutral[10], backgroundColorHover: neutral[10] } } }}
         iProps={impulseTableContainerProps}
       >
         <TableHeader />

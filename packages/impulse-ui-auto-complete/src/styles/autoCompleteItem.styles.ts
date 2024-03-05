@@ -1,4 +1,4 @@
-import { neutral3, neutral5 } from '@impulse-ui/colours';
+import { neutral } from '@impulse-ui/colours';
 import { AutoCompleteItemStyle, AutoCompleteItemStyleProps, BackgroundColor } from '@impulse-ui/types';
 
 const defaultAutoCompleteItemStyle: Partial<AutoCompleteItemStyle> = {
@@ -24,19 +24,19 @@ const defaultAutoCompleteItemStyleProps: Partial<AutoCompleteItemStyleProps> = {
 
 const getItemBackgroundHoverColor = (selected?: boolean) => {
   if (selected) {
-    return neutral5;
+    return neutral[50];
   }
 
-  return neutral3;
+  return neutral[30];
 };
 
 const getItemBackgroundColor = (selected?: boolean, highlighted?: boolean): BackgroundColor => {
   if (selected) {
-    return neutral5;
+    return neutral[50];
   }
 
   if (highlighted) {
-    return neutral3;
+    return neutral[30];
   }
 
   return 'transparent';

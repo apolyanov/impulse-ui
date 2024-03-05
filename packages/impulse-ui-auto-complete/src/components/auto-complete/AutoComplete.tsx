@@ -59,8 +59,7 @@ const AutoComplete: FunctionComponent<AutoCompleteProps> = memo(({ iStyle, iProp
     attributes,
   } = useAutoComplete(rest);
 
-  let optionsContainerRenderer: any;
-  optionsContainerRenderer = useMemo((): ReactNode | undefined => {
+  const optionsContainerRenderer = useMemo((): ReactNode | undefined => {
     if (showOptions) {
       if (loading) {
         return (

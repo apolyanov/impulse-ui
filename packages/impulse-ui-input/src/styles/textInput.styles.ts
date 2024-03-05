@@ -1,4 +1,4 @@
-import { neutral1, neutral4, neutral6, neutral8, neutral12, volcano5, volcano6 } from '@impulse-ui/colours';
+import { neutral, volcano } from '@impulse-ui/colours';
 import { shouldRenderCssProp } from '@impulse-ui/core';
 import { ComponentTheme, InputStyleProps, TextInputStyle, TextInputStyleProps } from '@impulse-ui/types';
 const textInputStyle: Partial<TextInputStyle> = {
@@ -13,9 +13,9 @@ const textInputStyle: Partial<TextInputStyle> = {
   inputContainerStyle: {
     iColorTheme: {
       light: {
-        backgroundColor: neutral1,
-        borderColor: volcano6,
-        borderColorHover: volcano5,
+        backgroundColor: neutral[10],
+        borderColor: volcano[60],
+        borderColorHover: volcano[50],
       },
     },
     iCss: {
@@ -37,7 +37,7 @@ const textInputStyle: Partial<TextInputStyle> = {
   iconStyle: {
     iColorTheme: {
       light: {
-        color: neutral8,
+        color: neutral[80],
       },
     },
     iCss: {
@@ -50,8 +50,8 @@ const textInputStyle: Partial<TextInputStyle> = {
     buttonStyle: {
       iColorTheme: {
         light: {
-          backgroundColor: neutral1,
-          backgroundColorHover: neutral4,
+          backgroundColor: neutral[10],
+          backgroundColorHover: neutral[40],
         },
       },
       iCss: ({ iColorTheme }) => ({
@@ -70,8 +70,8 @@ const textInputStyle: Partial<TextInputStyle> = {
     iconStyle: {
       iColorTheme: {
         light: {
-          color: neutral6,
-          colorHover: neutral6,
+          color: neutral[60],
+          colorHover: neutral[60],
         },
       },
     },
@@ -97,16 +97,16 @@ const input: ComponentTheme<InputStyleProps> = {
         backgroundColorHover: 'transparent',
         borderColor: 'transparent',
         borderColorHover: 'transparent',
-        color: neutral12,
-        colorHover: neutral12,
+        color: neutral[200],
+        colorHover: neutral[200],
       },
       dark: {
         backgroundColor: 'transparent',
         backgroundColorHover: 'transparent',
         borderColor: 'transparent',
         borderColorHover: 'transparent',
-        color: neutral12,
-        colorHover: neutral12,
+        color: neutral[200],
+        colorHover: neutral[200],
       },
     },
     iCss: ({ iColorTheme, iProps }) => ({
@@ -115,7 +115,7 @@ const input: ComponentTheme<InputStyleProps> = {
       fontSize: '14px',
       height: '32px',
       padding: '4px 0',
-      borderRadius: shouldRenderCssProp(iProps.hasBorderRadius, `8px`),
+      borderRadius: shouldRenderCssProp(iProps.hasBorderRadius, 8),
       filter: shouldRenderCssProp(iProps.hasDropShadow, `drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2))`),
       flex: 1,
       width: '100%',
