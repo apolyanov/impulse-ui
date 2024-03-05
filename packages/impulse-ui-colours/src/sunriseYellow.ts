@@ -1,25 +1,16 @@
-import { Property } from 'csstype';
+import { ColorPalette } from '@impulse-ui/types';
 
-const sunriseYellow1: Property.Color = '#feffe6';
-const sunriseYellow2: Property.Color = '#ffffb8';
-const sunriseYellow3: Property.Color = '#fffb8f';
-const sunriseYellow4: Property.Color = '#fff566';
-const sunriseYellow5: Property.Color = '#ffec3d';
-const sunriseYellow6: Property.Color = '#fadb14';
-const sunriseYellow7: Property.Color = '#d4b106';
-const sunriseYellow8: Property.Color = '#ad8b00';
-const sunriseYellow9: Property.Color = '#876800';
-const sunriseYellow10: Property.Color = '#614700';
-
-export {
-  sunriseYellow1,
-  sunriseYellow2,
-  sunriseYellow3,
-  sunriseYellow4,
-  sunriseYellow5,
-  sunriseYellow6,
-  sunriseYellow7,
-  sunriseYellow8,
-  sunriseYellow9,
-  sunriseYellow10,
+const sunriseYellow: ColorPalette = {
+  10: '#feffe6',
+  20: '#ffffb8',
+  30: '#fffb8f',
+  40: '#fff566',
+  50: '#ffec3d',
+  60: '#fadb14',
+  70: '#d4b106',
+  80: '#ad8b00',
+  90: '#876800',
+  100: '#614700',
 };
+
+export { sunriseYellow };

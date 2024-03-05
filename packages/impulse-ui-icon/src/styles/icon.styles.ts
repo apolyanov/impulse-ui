@@ -1,4 +1,4 @@
-import { neutral10 } from '@impulse-ui/colours';
+import { neutral } from '@impulse-ui/colours';
 import { ComponentTheme, IconStyleProps } from '@impulse-ui/types';
 
 const icon: ComponentTheme<IconStyleProps> = {
@@ -9,16 +9,16 @@ const icon: ComponentTheme<IconStyleProps> = {
         backgroundColorHover: 'transparent',
         borderColor: 'transparent',
         borderColorHover: 'transparent',
-        color: neutral10,
-        colorHover: neutral10,
+        color: neutral[100],
+        colorHover: neutral[100],
       },
       dark: {
         backgroundColor: 'transparent',
         backgroundColorHover: 'transparent',
         borderColor: 'transparent',
         borderColorHover: 'transparent',
-        color: neutral10,
-        colorHover: neutral10,
+        color: neutral[100],
+        colorHover: neutral[100],
       },
     },
     iCss: ({ iColorTheme }) => ({

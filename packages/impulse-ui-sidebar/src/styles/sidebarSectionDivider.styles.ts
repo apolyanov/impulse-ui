@@ -1,9 +1,9 @@
-import { neutral5 } from '@impulse-ui/colours';
+import { neutral } from '@impulse-ui/colours';
 import { SidebarSectionDividerStyle } from '@impulse-ui/types';
 
 const defaultSidebarSectionDividerStyle: Partial<SidebarSectionDividerStyle> = {
   dividerStyle: {
-    iColorTheme: { light: { borderColor: neutral5 } },
+    iColorTheme: { light: { borderColor: neutral[50] } },
     iCss: { margin: '4px 0' },
   },
 };

@@ -1,4 +1,4 @@
-import { neutral1, volcano6, volcano7 } from '@impulse-ui/colours';
+import { neutral, volcano } from '@impulse-ui/colours';
 import { shouldRenderCssProp } from '@impulse-ui/core';
 import { ButtonStyleProps, ComponentTheme } from '@impulse-ui/types';
 
@@ -6,20 +6,20 @@ const button: ComponentTheme<ButtonStyleProps> = {
   iStyle: {
     iColorTheme: {
       light: {
-        backgroundColor: volcano6,
-        backgroundColorHover: volcano7,
-        borderColor: volcano6,
-        borderColorHover: volcano7,
-        color: neutral1,
-        colorHover: neutral1,
+        backgroundColor: volcano[60],
+        backgroundColorHover: volcano[70],
+        borderColor: volcano[60],
+        borderColorHover: volcano[70],
+        color: neutral[10],
+        colorHover: neutral[10],
       },
       dark: {
-        backgroundColor: volcano6,
-        backgroundColorHover: volcano7,
-        borderColor: volcano6,
-        borderColorHover: volcano7,
-        color: neutral1,
-        colorHover: neutral1,
+        backgroundColor: volcano[60],
+        backgroundColorHover: volcano[70],
+        borderColor: volcano[60],
+        borderColorHover: volcano[70],
+        color: neutral[10],
+        colorHover: neutral[10],
       },
     },
     iCss: ({ iColorTheme, iProps }) => ({
@@ -39,7 +39,7 @@ const button: ComponentTheme<ButtonStyleProps> = {
       fontSize: '14px',
       filter: shouldRenderCssProp(iProps.hasDropShadow, `drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2))`),
       textTransform: 'uppercase',
-      borderRadius: shouldRenderCssProp(iProps.hasBorderRadius, `4px`),
+      borderRadius: shouldRenderCssProp(iProps.hasBorderRadius, 4),
       transition: 'background-color 0.2s ease-in-out',
       '&:hover': {
         backgroundColor: iColorTheme.backgroundColorHover,

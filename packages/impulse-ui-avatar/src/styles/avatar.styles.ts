@@ -1,10 +1,10 @@
-import { volcano1, volcano6 } from '@impulse-ui/colours';
+import { volcano } from '@impulse-ui/colours';
 import { shouldRenderCssProp } from '@impulse-ui/core';
 import { AvatarStyle } from '@impulse-ui/types';
 
 const defaultAvatarStyle: Partial<AvatarStyle> = {
   mainContainerStyle: {
-    iColorTheme: { light: { borderColor: volcano6, backgroundColor: volcano1 } },
+    iColorTheme: { light: { borderColor: volcano[60], backgroundColor: volcano[10] } },
     iCss: ({ iColorTheme, iProps }) => ({
       border: `2px solid ${iColorTheme.borderColor}`,
       filter: shouldRenderCssProp(iProps.hasDropShadow, `drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2))`),
@@ -36,13 +36,13 @@ const defaultAvatarStyle: Partial<AvatarStyle> = {
   },
   typographyStyle: {
     iCss: {
-      color: volcano6,
+      color: volcano[60],
       fontWeight: 'bold',
     },
   },
   iconStyle: {
     iCss: {
-      color: volcano6,
+      color: volcano[60],
       fontWeight: 'bold',
       height: '24px',
       width: '24px',

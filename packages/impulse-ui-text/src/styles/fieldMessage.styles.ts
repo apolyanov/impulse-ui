@@ -1,4 +1,4 @@
-import { dustRed8, geekBlue6, polarGreen8, sunriseYellow7 } from '@impulse-ui/colours';
+import { dustRed, geekBlue, polarGreen, sunriseYellow } from '@impulse-ui/colours';
 import {
   ContainerStyleProps,
   FieldMessageComponentStyle,
@@ -15,15 +15,15 @@ import { ERROR, INFO, SUCCESS, WARNING } from '../utils';
 const fieldMessageColor = (type: FieldMessageType): Property.Color => {
   switch (type) {
     case SUCCESS:
-      return polarGreen8;
+      return polarGreen[80];
     case WARNING:
-      return sunriseYellow7;
+      return sunriseYellow[70];
     case ERROR:
-      return dustRed8;
+      return dustRed[80];
     case INFO:
-      return geekBlue6;
+      return geekBlue[60];
     default:
-      return geekBlue6;
+      return geekBlue[60];
   }
 };
 

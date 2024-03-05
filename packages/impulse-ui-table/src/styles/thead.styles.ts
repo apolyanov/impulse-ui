@@ -1,4 +1,4 @@
-import { neutral1, neutral12 } from '@impulse-ui/colours';
+import { neutral } from '@impulse-ui/colours';
 import { shouldRenderCssProp } from '@impulse-ui/core';
 import { ComponentTheme, THeadStyleProps } from '@impulse-ui/types';
 
@@ -6,27 +6,27 @@ const thead: ComponentTheme<THeadStyleProps> = {
   iStyle: {
     iColorTheme: {
       light: {
-        backgroundColor: neutral1,
-        backgroundColorHover: neutral1,
+        backgroundColor: neutral[10],
+        backgroundColorHover: neutral[10],
         borderColor: 'transparent',
         borderColorHover: 'transparent',
-        color: neutral12,
-        colorHover: neutral12,
+        color: neutral[200],
+        colorHover: neutral[200],
       },
       dark: {
-        backgroundColor: neutral1,
-        backgroundColorHover: neutral1,
+        backgroundColor: neutral[10],
+        backgroundColorHover: neutral[10],
         borderColor: 'transparent',
         borderColorHover: 'transparent',
-        color: neutral12,
-        colorHover: neutral12,
+        color: neutral[200],
+        colorHover: neutral[200],
       },
     },
     iCss: ({ iColorTheme, iProps }) => ({
       backgroundColor: iColorTheme.backgroundColor,
-      borderRadius: shouldRenderCssProp(iProps.hasBorderRadius, `4px`),
-      padding: shouldRenderCssProp(iProps.hasPadding, '8px'),
-      margin: shouldRenderCssProp(iProps.hasMargin, '8px'),
+      borderRadius: shouldRenderCssProp(iProps.hasBorderRadius, 4),
+      padding: shouldRenderCssProp(iProps.hasPadding, 8),
+      margin: shouldRenderCssProp(iProps.hasMargin, 8),
       filter: shouldRenderCssProp(iProps.hasDropShadow, `drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2))`),
       '& th:first-of-type': {
         borderRadius: '4px 0 0 4px',

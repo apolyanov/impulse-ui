@@ -1,14 +1,16 @@
-import { Property } from 'csstype';
+import { ColorPalette } from '@impulse-ui/types';
 
-const lime1: Property.Color = '#fcffe6';
-const lime2: Property.Color = '#f4ffb8';
-const lime3: Property.Color = '#eaff8f';
-const lime4: Property.Color = '#d3f261';
-const lime5: Property.Color = '#bae637';
-const lime6: Property.Color = '#a0d911';
-const lime7: Property.Color = '#7cb305';
-const lime8: Property.Color = '#5b8c00';
-const lime9: Property.Color = '#3f6600';
-const lime10: Property.Color = '#254000';
+const lime: ColorPalette = {
+  10: '#fcffe6',
+  20: '#f4ffb8',
+  30: '#eaff8f',
+  40: '#d3f261',
+  50: '#bae637',
+  60: '#a0d911',
+  70: '#7cb305',
+  80: '#5b8c00',
+  90: '#3f6600',
+  100: '#254000',
+};
 
-export { lime1, lime2, lime3, lime4, lime5, lime6, lime7, lime8, lime9, lime10 };
+export { lime };

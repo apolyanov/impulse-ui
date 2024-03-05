@@ -1,14 +1,16 @@
-import { Property } from 'csstype';
+import { ColorPalette } from '@impulse-ui/types';
 
-const cyan1: Property.Color = '#e6fffb';
-const cyan2: Property.Color = '#b5f5ec';
-const cyan3: Property.Color = '#87e8de';
-const cyan4: Property.Color = '#5cdbd3';
-const cyan5: Property.Color = '#36cfc9';
-const cyan6: Property.Color = '#13c2c2';
-const cyan7: Property.Color = '#08979c';
-const cyan8: Property.Color = '#006d75';
-const cyan9: Property.Color = '#00474f';
-const cyan10: Property.Color = '#002329';
+const cyan: ColorPalette = {
+  10: '#e6fffb',
+  20: '#b5f5ec',
+  30: '#87e8de',
+  40: '#5cdbd3',
+  50: '#36cfc9',
+  60: '#13c2c2',
+  70: '#08979c',
+  80: '#006d75',
+  90: '#00474f',
+  100: '#002329',
+};
 
-export { cyan1, cyan2, cyan3, cyan4, cyan5, cyan6, cyan7, cyan8, cyan9, cyan10 };
+export { cyan };
