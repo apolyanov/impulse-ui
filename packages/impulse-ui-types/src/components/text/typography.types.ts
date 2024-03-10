@@ -1,9 +1,7 @@
 import { HTMLAttributes } from 'react';
 
-import { ComponentStyleProps, IComponent } from '../theme';
+import { IComponent } from '../theme';
 
-type TypographyStyleProps = ComponentStyleProps;
+interface TypographyProps extends IComponent, HTMLAttributes<HTMLParagraphElement> {}
 
-interface TypographyProps extends IComponent<TypographyStyleProps>, HTMLAttributes<HTMLParagraphElement> {}
-
-export type { TypographyProps, TypographyStyleProps };
+export type { TypographyProps };

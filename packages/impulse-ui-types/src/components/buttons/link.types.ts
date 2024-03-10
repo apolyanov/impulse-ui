@@ -1,9 +1,7 @@
 import { AnchorHTMLAttributes } from 'react';
 
-import { ComponentStyleProps, IComponent } from '../theme';
+import { IComponent } from '../theme';
 
-type LinkStyleProps = ComponentStyleProps;
+type LinkProps = IComponent & AnchorHTMLAttributes<HTMLAnchorElement>;
 
-interface LinkProps extends IComponent<LinkStyleProps>, AnchorHTMLAttributes<HTMLAnchorElement> {}
-
-export type { LinkProps, LinkStyleProps };
+export type { LinkProps };

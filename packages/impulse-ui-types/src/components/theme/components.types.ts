@@ -2,44 +2,29 @@ import { StyledObject } from 'styled-components';
 
 import { CompositeComponentColors } from './theme.types';
 
-interface BaseIComponent<T, E = any> {
+interface BaseIComponent<T> {
   $iStyle?: IOStyle<T>;
-  $iProps?: Partial<T>;
-  $parentProps?: E;
+  $parentProps?: T;
 }
 
-interface IComponent<T, E = any> {
+interface IComponent<T = any> {
   iStyle?: IOStyle<T>;
-  iProps?: Partial<T>;
-  parentProps?: E;
+  parentProps?: T;
 }
 
-type ComponentStyleProps<T = BaseComponentStyleProps> = Partial<T & BaseComponentStyleProps>;
-
-type BaseComponentStyleProps = {
-  hasDropShadow: boolean;
-  hasBorderRadius: boolean;
-  hasMargin: boolean;
-  hasPadding: boolean;
-};
-
-type IOProps<T> = Partial<T>;
-
-interface IOCssArgs<T, K> {
+interface IOCssArgs<T> {
   iColorTheme: Partial<CompositeComponentColors>;
-  iProps: T;
-  parentProps?: K;
+  parentProps?: T;
 }
 
-interface ICssArgs<T, K> {
+interface ICssArgs<T> {
   iColorTheme: CompositeComponentColors;
-  iProps: T;
-  parentProps?: K;
+  parentProps?: T;
 }
 
-type IOCss<T, K> = ((args: IOCssArgs<T, K>) => StyledObject<object> | undefined) | StyledObject<object>;
+type IOCss<T> = ((args: IOCssArgs<T>) => StyledObject<object> | undefined) | StyledObject<object>;
 
-type ICss<T, K> = (args: ICssArgs<T, K>) => StyledObject<object>;
+type ICss<T> = (args: ICssArgs<T>) => StyledObject<object>;
 
 interface ComponentMap {
   key: string;
@@ -47,14 +32,14 @@ interface ComponentMap {
   prefix?: string;
 }
 
-interface IStyle<T = ComponentStyleProps, K = any> {
+interface IStyle<T = any> {
   iColorTheme: IColorTheme;
-  iCss: ICss<T, K>;
+  iCss: ICss<T>;
 }
 
-interface IOStyle<T = ComponentStyleProps, K = any> {
+interface IOStyle<T = any> {
   iColorTheme?: IOColorTheme;
-  iCss?: IOCss<T, K>;
+  iCss?: IOCss<T>;
 }
 
 interface IOColorTheme {
@@ -68,10 +53,8 @@ interface IColorTheme {
 }
 
 export type {
-  BaseComponentStyleProps,
   BaseIComponent,
   ComponentMap,
-  ComponentStyleProps,
   IColorTheme,
   IComponent,
   ICss,
@@ -79,7 +62,6 @@ export type {
   IOColorTheme,
   IOCss,
   IOCssArgs,
-  IOProps,
   IOStyle,
   IStyle,
 };

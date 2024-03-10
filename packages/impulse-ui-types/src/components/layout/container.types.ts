@@ -1,10 +1,7 @@
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
 
-import { ComponentStyleProps, IComponent } from '../theme';
+import { IComponent } from '../theme';
 
-type ContainerStyleProps = ComponentStyleProps;
+type ContainerProps = IComponent & DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
 
-type ContainerProps = IComponent<ContainerStyleProps> &
-  DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
-
-export type { ContainerProps, ContainerStyleProps };
+export type { ContainerProps };

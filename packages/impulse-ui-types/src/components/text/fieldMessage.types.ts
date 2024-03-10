@@ -1,16 +1,11 @@
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
-import { IconStyleProps } from '../icon';
-import { ContainerStyleProps } from '../layout';
-import { IOProps, IOStyle } from '../theme';
-
-import { TypographyStyleProps } from './typography.types';
+import { IOStyle } from '../theme';
 
 type FieldMessageType = 'success' | 'warning' | 'info' | 'error';
 
 interface FieldMessageProps extends FieldMessageRestProps {
   iStyle?: Partial<FieldMessageStyle>;
-  iProps?: Partial<FieldMessageStyleProps>;
 }
 
 interface FieldMessageRestProps {
@@ -20,38 +15,22 @@ interface FieldMessageRestProps {
 }
 
 interface FieldMessageStyle {
-  mainContainerStyle: Partial<FieldMessageComponentStyle<ContainerStyleProps>>;
-  iconStyle: Partial<FieldMessageComponentStyle<IconStyleProps>>;
-  typographyStyle: Partial<FieldMessageComponentStyle<TypographyStyleProps>>;
+  mainContainerStyle: Partial<FieldMessageComponentStyle>;
+  iconStyle: Partial<FieldMessageComponentStyle>;
+  typographyStyle: Partial<FieldMessageComponentStyle>;
 }
 
-interface FieldMessageStyleProps {
-  mainContainerStyleProps: Partial<FieldMessageComponentProps<ContainerStyleProps>>;
-  iconStyleProps: Partial<FieldMessageComponentProps<IconStyleProps>>;
-  typographyStyleProps: Partial<FieldMessageComponentProps<TypographyStyleProps>>;
-}
-
-interface FieldMessageComponentStyle<T> {
-  success: IOStyle<T, FieldMessageRestProps>;
-  warning: IOStyle<T, FieldMessageRestProps>;
-  info: IOStyle<T, FieldMessageRestProps>;
-  error: IOStyle<T, FieldMessageRestProps>;
-}
-
-interface FieldMessageComponentProps<T> {
-  success: IOProps<T>;
-  warning: IOProps<T>;
-  info: IOProps<T>;
-  error: IOProps<T>;
+interface FieldMessageComponentStyle {
+  success: IOStyle<FieldMessageRestProps>;
+  warning: IOStyle<FieldMessageRestProps>;
+  info: IOStyle<FieldMessageRestProps>;
+  error: IOStyle<FieldMessageRestProps>;
 }
 
 interface UseFieldMessageStyleFnProps {
   mainContainerStyle?: IOStyle;
   iconStyle?: IOStyle;
   typographyStyle?: IOStyle;
-  mainContainerStyleProps?: IOProps<ContainerStyleProps>;
-  iconStyleProps?: IOProps<IconStyleProps>;
-  typographyStyleProps?: IOProps<IconStyleProps>;
   getFieldMessageIcon: GetFieldMessageIcon;
 }
 
@@ -60,19 +39,13 @@ interface GetFieldMessageIcon {
 }
 
 interface UseFieldMessageStyleFn {
-  (
-    rest: FieldMessageRestProps,
-    iStyle?: Partial<FieldMessageStyle>,
-    iProps?: Partial<FieldMessageStyleProps>,
-  ): UseFieldMessageStyleFnProps;
+  (rest: FieldMessageRestProps, iStyle?: Partial<FieldMessageStyle>): UseFieldMessageStyleFnProps;
 }
 
 export type {
-  FieldMessageComponentProps,
   FieldMessageComponentStyle,
   FieldMessageProps,
   FieldMessageStyle,
-  FieldMessageStyleProps,
   FieldMessageType,
   GetFieldMessageIcon,
   UseFieldMessageStyleFn,

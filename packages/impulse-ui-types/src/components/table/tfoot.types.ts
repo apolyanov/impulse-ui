@@ -1,6 +1,15 @@
-import { TSegmentProps, TSegmentStyleProps } from './tsegment.types';
+import { IOStyle } from '../theme';
 
-type TFootStyleProps = TSegmentStyleProps;
-type TFootProps = TSegmentProps;
+import { TSegmentProps } from './tsegment.types';
 
-export type { TFootProps, TFootStyleProps };
+interface TFootComponentProps extends TSegmentProps {
+  iStyle?: Partial<TFootStyle>;
+}
+
+interface TFootStyle {
+  tfootStyle: IOStyle;
+  trowStyle: IOStyle;
+  tdataStyle: IOStyle;
+}
+
+export type { TFootComponentProps, TFootStyle };
