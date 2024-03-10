@@ -1,7 +1,5 @@
-import { ComponentStyleProps, IComponent } from '../theme';
+import { IComponent } from '../theme';
 
-type DividerStyleProps = ComponentStyleProps;
+type DividerProps = IComponent;
 
-interface DividerProps extends IComponent<DividerStyleProps> {}
-
-export type { DividerProps, DividerStyleProps };
+export type { DividerProps };

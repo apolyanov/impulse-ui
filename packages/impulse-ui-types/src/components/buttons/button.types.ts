@@ -1,9 +1,7 @@
 import React from 'react';
 
-import { ComponentStyleProps, IComponent } from '../theme';
+import { IComponent } from '../theme';
 
-type ButtonStyleProps = ComponentStyleProps;
+type ButtonProps = IComponent & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
-interface ButtonProps extends IComponent<ButtonStyleProps>, React.ButtonHTMLAttributes<HTMLButtonElement> {}
-
-export type { ButtonProps, ButtonStyleProps };
+export type { ButtonProps };

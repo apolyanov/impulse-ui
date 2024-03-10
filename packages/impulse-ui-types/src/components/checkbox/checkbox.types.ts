@@ -1,13 +1,10 @@
 import { ButtonHTMLAttributes, DetailedHTMLProps, MouseEvent } from 'react';
 
-import { IconButtonStyle, IconButtonStyleProps } from '../buttons';
-import { ContainerStyleProps } from '../layout';
-import { TypographyStyleProps } from '../text';
-import { IOProps, IOStyle } from '../theme';
+import { IconButtonStyle } from '../buttons';
+import { IOStyle } from '../theme';
 
 interface CheckboxProps extends CompositeCheckboxProps {
   iStyle?: Partial<CheckboxStyle>;
-  iProps?: Partial<CheckboxStyleProps>;
 }
 
 type CompositeCheckboxProps = CheckboxRestProps &
@@ -25,15 +22,9 @@ interface OnClickCheckboxEvent {
 }
 
 interface CheckboxStyle {
-  mainContainerStyle: IOStyle<ContainerStyleProps, CheckboxRestProps>;
+  mainContainerStyle: IOStyle<CheckboxRestProps>;
   iconButtonStyle: Partial<IconButtonStyle>;
-  typographyStyle: IOStyle<TypographyStyleProps, CheckboxRestProps>;
+  typographyStyle: IOStyle<CheckboxRestProps>;
 }
 
-interface CheckboxStyleProps {
-  mainContainerStyleProps: IOProps<ContainerStyleProps>;
-  iconButtonStyleProps: Partial<IconButtonStyleProps>;
-  typographyStyleProps: IOProps<TypographyStyleProps>;
-}
-
-export type { CheckboxProps, CheckboxRestProps, CheckboxStyle, CheckboxStyleProps, CompositeCheckboxProps };
+export type { CheckboxProps, CheckboxRestProps, CheckboxStyle, CompositeCheckboxProps };

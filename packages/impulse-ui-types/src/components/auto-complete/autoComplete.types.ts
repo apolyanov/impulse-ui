@@ -1,9 +1,7 @@
 import { HTMLAttributes } from 'react';
 
-import { TextInputCompositeProps, TextInputStyle, TextInputStyleProps } from '../input';
-import { ContainerStyleProps } from '../layout';
-import { TypographyStyleProps } from '../text';
-import { IOProps, IOStyle } from '../theme';
+import { TextInputCompositeProps, TextInputStyle } from '../input';
+import { IOStyle } from '../theme';
 
 import { AutoCompleteItemStyle } from './autoCompleteItem.types';
 
@@ -11,7 +9,6 @@ type SimpleOptionValue = string | number | Object | Object[];
 
 interface AutoCompleteProps extends AutoCompleteRestProps {
   iStyle?: Partial<AutoCompleteStyle>;
-  iProps?: Partial<AutoCompleteStyleProps>;
 }
 
 interface AutoCompleteRestProps<T extends object = any> extends HTMLAttributes<HTMLDivElement> {
@@ -43,28 +40,18 @@ interface InnerSimpleOption extends SimpleOption {
 }
 
 interface AutoCompleteStyle {
-  mainContainerStyle: IOStyle<ContainerStyleProps, AutoCompleteRestProps>;
+  mainContainerStyle: IOStyle<AutoCompleteRestProps>;
   textInputStyle: Partial<TextInputStyle>;
-  autoCompleteItemsContainerStyle: IOStyle<ContainerStyleProps, AutoCompleteRestProps>;
+  autoCompleteItemsContainerStyle: IOStyle<AutoCompleteRestProps>;
   autoCompleteItemStyle: Partial<AutoCompleteItemStyle>;
-  loadingTypographyStyle: IOStyle<TypographyStyleProps, AutoCompleteRestProps>;
-  noOptionsTypographyStyle: IOStyle<TypographyStyleProps, AutoCompleteRestProps>;
-}
-
-interface AutoCompleteStyleProps {
-  mainContainerStyleProps: IOProps<ContainerStyleProps>;
-  textInputStyleProps: Partial<TextInputStyleProps>;
-  autoCompleteItemsContainerStyleProps: IOProps<ContainerStyleProps>;
-  autoCompleteItemStyleProps: Partial<AutoCompleteStyleProps>;
-  loadingTypographyStyleProps: IOProps<TypographyStyleProps>;
-  noOptionsTypographyStyleProps: IOProps<TypographyStyleProps>;
+  loadingTypographyStyle: IOStyle<AutoCompleteRestProps>;
+  noOptionsTypographyStyle: IOStyle<AutoCompleteRestProps>;
 }
 
 export type {
   AutoCompleteProps,
   AutoCompleteRestProps,
   AutoCompleteStyle,
-  AutoCompleteStyleProps,
   ExtractSimpleOptionFn,
   FormatOptionTextFn,
   InnerSimpleOption,

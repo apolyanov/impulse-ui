@@ -27,8 +27,6 @@ const typography: ComponentTheme<TypographyStyleProps> = {
       color: iColorTheme.color,
       borderRadius: shouldRenderCssProp(iProps.hasBorderRadius, 4),
       filter: shouldRenderCssProp(iProps.hasDropShadow, `drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2))`),
-      padding: shouldRenderCssProp(iProps.hasPadding, '0 4px'),
-      margin: shouldRenderCssProp(iProps.hasMargin, 4),
       fontSize: '14px',
       '&:hover': {
         cursor: 'inherit',
