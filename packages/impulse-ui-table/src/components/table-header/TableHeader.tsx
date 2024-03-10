@@ -14,11 +14,11 @@ import { tableHeaderStyle } from '../../styles';
 const TableHeader: FunctionComponent<TableHeaderProps> = ({ iStyle, iProps, ...rest }) => {
   const {
     containerStyle,
-    tableNameTypographyStyle,
+    tableNameStyle,
     filtersButtonStyle,
     settingsButtonStyle,
     filtersButtonStyleProps,
-    tableNameTypographyStylesProps,
+    tableNameStylesProps,
     containerStyleProps,
     settingsButtonStyleProps,
     searchInputStyleProps,
@@ -27,7 +27,7 @@ const TableHeader: FunctionComponent<TableHeaderProps> = ({ iStyle, iProps, ...r
 
   return (
     <Container iProps={containerStyleProps} iStyle={containerStyle}>
-      <Typography iProps={tableNameTypographyStylesProps} iStyle={tableNameTypographyStyle}>
+      <Typography iProps={tableNameStylesProps} iStyle={tableNameStyle}>
         Table name
       </Typography>
       <TextInput
@@ -37,8 +37,8 @@ const TableHeader: FunctionComponent<TableHeaderProps> = ({ iStyle, iProps, ...r
         clearable
         icon={faMagnifyingGlass}
       />
-      <IconButton iProps={filtersButtonStyleProps} iStyle={filtersButtonStyle} icon={faFilter} />
-      <IconButton iProps={settingsButtonStyleProps} iStyle={settingsButtonStyle} icon={faSliders} />
+      {/* <IconButton iProps={filtersButtonStyleProps} iStyle={filtersButtonStyle} icon={faFilter} />*/}
+      {/* <IconButton iProps={settingsButtonStyleProps} iStyle={settingsButtonStyle} icon={faSliders} />*/}
     </Container>
   );
 };
