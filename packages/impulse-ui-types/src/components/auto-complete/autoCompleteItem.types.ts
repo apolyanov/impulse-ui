@@ -1,13 +1,9 @@
 import { HTMLAttributes } from 'react';
-import { Property } from 'csstype';
 
-import { ContainerStyleProps } from '../layout';
-import { TypographyStyleProps } from '../text';
-import { CompositeComponentColors, IOProps, IOStyle } from '../theme';
+import { IOStyle } from '../theme';
 
 interface AutoCompleteItemProps extends AutoCompleteItemRestProps {
   iStyle?: Partial<AutoCompleteItemStyle>;
-  iProps?: Partial<AutoCompleteItemStyleProps>;
 }
 
 interface AutoCompleteItemRestProps extends HTMLAttributes<HTMLDivElement> {
@@ -18,35 +14,8 @@ interface AutoCompleteItemRestProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 interface AutoCompleteItemStyle {
-  mainContainerStyle: IOStyle<ContainerStyleProps>;
-  typographyStyle: IOStyle<TypographyStyleProps>;
+  mainContainerStyle: IOStyle;
+  typographyStyle: IOStyle;
 }
 
-interface AutoCompleteItemStyleProps {
-  mainContainerStyleProps: IOProps<ContainerStyleProps>;
-  typographyStyleProps: IOProps<TypographyStyleProps>;
-}
-
-interface GetItemBackground {
-  (iColorTheme: CompositeComponentColors, parentProps: AutoCompleteItemRestProps): Property.BackgroundColor;
-}
-
-type UseAutoCompleteItemStyleFnProps = Partial<AutoCompleteItemStyle & AutoCompleteItemStyleProps>;
-
-interface UseAutoCompleteItemStyleFn {
-  (
-    rest: AutoCompleteItemRestProps,
-    iStyle?: Partial<AutoCompleteItemStyle>,
-    iProps?: Partial<AutoCompleteItemStyleProps>,
-  ): UseAutoCompleteItemStyleFnProps;
-}
-
-export type {
-  AutoCompleteItemProps,
-  AutoCompleteItemRestProps,
-  AutoCompleteItemStyle,
-  AutoCompleteItemStyleProps,
-  GetItemBackground,
-  UseAutoCompleteItemStyleFn,
-  UseAutoCompleteItemStyleFnProps,
-};
+export type { AutoCompleteItemProps, AutoCompleteItemRestProps, AutoCompleteItemStyle };

@@ -1,6 +1,18 @@
-import { TSegmentProps, TSegmentStyleProps } from './tsegment.types';
+import { IconButtonStyle } from '../buttons';
+import { IOStyle } from '../theme';
 
-type THeadStyleProps = TSegmentStyleProps;
-type THeadProps = TSegmentProps;
+import { TSegmentProps } from './tsegment.types';
 
-export type { THeadProps, THeadStyleProps };
+interface THeadComponentProps extends TSegmentProps {
+  iStyle?: Partial<THeadStyle>;
+}
+
+interface THeadStyle {
+  theadStyle: IOStyle;
+  trowStyle: IOStyle;
+  theaderStyle: IOStyle;
+  theaderTypographyStyle: IOStyle;
+  theaderSortButtonStyle: Partial<IconButtonStyle>;
+}
+
+export type { THeadComponentProps, THeadStyle };

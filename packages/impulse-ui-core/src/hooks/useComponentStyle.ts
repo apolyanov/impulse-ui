@@ -1,22 +1,14 @@
 'use client';
 import { ComponentMap, IOStyle } from '@impulse-ui/types';
 
-import { mergePartialProps, mergePartialThemes } from '../utils';
+import { mergePartialThemes } from '../utils';
 
 const useComponentStyle = <T extends object, K extends object, E extends object>(
   componentMap: ComponentMap[],
   rest: E,
   defaultTheme?: T,
-  defaultProps?: K,
   overridingTheme?: T,
-  overridingProps?: K,
-) => {
-  const mergedStyle = constructComplexTheme<T, E>(componentMap, rest, defaultTheme, overridingTheme);
-  const mergedProps = constructComplexProps<K>(componentMap, defaultProps, overridingProps);
-
-  return { ...mergedStyle, ...mergedProps };
-};
-
+) => constructComplexTheme<T, E>(componentMap, rest, defaultTheme, overridingTheme);
 const constructComplexTheme = <T extends object, E extends object>(
   componentMap: ComponentMap[],
   rest: E,
@@ -47,35 +39,6 @@ const constructComplexTheme = <T extends object, E extends object>(
   });
 
   return newObject as T;
-};
-
-const constructComplexProps = <K extends object>(
-  componentMap: ComponentMap[],
-  defaultProps?: K,
-  overridingProps?: K,
-): K => {
-  let newProperties: any = {};
-
-  componentMap.forEach((themeComponent) => {
-    const componentKey = `${themeComponent.key}${themeComponent.prefix ?? 'StyleProps'}`;
-
-    if (!themeComponent.subKeys) {
-      newProperties[componentKey] = mergePartialProps(
-        overridingProps?.[componentKey as keyof K] as K,
-        defaultProps?.[componentKey as keyof K] as K,
-      );
-    }
-
-    if (themeComponent.subKeys) {
-      newProperties[componentKey] = constructComplexProps(
-        themeComponent.subKeys,
-        defaultProps?.[componentKey as keyof K] as K,
-        overridingProps?.[componentKey as keyof K] as K,
-      );
-    }
-  });
-
-  return newProperties as K;
 };
 
 export { useComponentStyle };

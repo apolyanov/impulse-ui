@@ -3,7 +3,6 @@ import {
   IOCss,
   MergePartialPropsFn,
   MergePartialThemesFn,
-  MergePropsFn,
   MergeThemesFn,
   ThemeMode,
 } from '@impulse-ui/types';
@@ -84,24 +83,6 @@ const mergePartialThemes: MergePartialThemesFn = (overridingTheme, componentDefa
   }
 };
 
-const mergeProps: MergePropsFn = (defaultProps, overridingProps) => {
-  return { ...defaultProps, ...overridingProps };
-};
-
-const mergePartialProps: MergePartialPropsFn = (overridingProps, componentDefaultProps) => {
-  if (overridingProps && !componentDefaultProps) {
-    return overridingProps;
-  }
-
-  if (!overridingProps && componentDefaultProps) {
-    return componentDefaultProps;
-  }
-
-  if (overridingProps && componentDefaultProps) {
-    return { ...componentDefaultProps, ...overridingProps };
-  }
-};
-
 const getThemeMode = (mode: ThemeMode) => mode || LIGHT;
 
-export { getThemeMode, mergePartialProps, mergePartialThemes, mergeProps, mergeThemes, shouldRenderCssProp };
+export { getThemeMode, mergePartialThemes, mergeThemes, shouldRenderCssProp };

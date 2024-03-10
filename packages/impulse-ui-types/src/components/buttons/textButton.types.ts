@@ -1,9 +1,7 @@
 import { ButtonHTMLAttributes } from 'react';
 
-import { ComponentStyleProps, IComponent } from '../theme';
+import { IComponent } from '../theme';
 
-type TextButtonStyleProps = ComponentStyleProps;
+type TextButtonProps = IComponent & ButtonHTMLAttributes<HTMLButtonElement>;
 
-interface TextButtonProps extends IComponent<TextButtonStyleProps>, ButtonHTMLAttributes<HTMLButtonElement> {}
-
-export type { TextButtonProps, TextButtonStyleProps };
+export type { TextButtonProps };
