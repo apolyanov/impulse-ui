@@ -26,11 +26,12 @@ const theader: ComponentTheme<THeaderStyleProps> = {
       backgroundColor: iColorTheme.backgroundColor,
       filter: shouldRenderCssProp(iProps.hasDropShadow, `drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2))`),
       padding: shouldRenderCssProp(iProps.hasPadding, '8px 16px'),
+      fontWeight: 'normal',
       textAlign: 'start',
     }),
   },
   iStyleProps: {
-    hasPadding: true,
+    hasPadding: false,
   },
 };
 

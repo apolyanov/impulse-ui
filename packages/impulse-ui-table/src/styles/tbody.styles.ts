@@ -1,8 +1,8 @@
 import { neutral } from '@impulse-ui/colours';
 import { shouldRenderCssProp } from '@impulse-ui/core';
-import { ComponentTheme, TBodyStyleProps } from '@impulse-ui/types';
+import { ComponentTheme, TSegmentStyleProps } from '@impulse-ui/types';
 
-const tbody: ComponentTheme<TBodyStyleProps> = {
+const baseTBody: ComponentTheme<TSegmentStyleProps> = {
   iStyle: {
     iColorTheme: {
       light: {
@@ -32,4 +32,4 @@ const tbody: ComponentTheme<TBodyStyleProps> = {
   },
 };
 
-export { tbody };
+export { baseTBody };

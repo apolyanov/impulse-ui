@@ -1,23 +1,36 @@
 'use client';
 import React, { FunctionComponent } from 'react';
-import { TFootProps } from '@impulse-ui/types';
+import { useComponentStyle } from '@impulse-ui/core';
+import { TFootComponentProps } from '@impulse-ui/types/src';
 import { flexRender } from '@tanstack/react-table';
 
 import { useImpulseTable } from '../../hooks';
+import { tfootComponentMap } from '../../maps/tfoot.map';
 import { TData } from '../tdata';
 import { TRow } from '../trow';
 
 import { BaseTFoot } from './BaseTFoot.styles';
 
-const TFoot: FunctionComponent<TFootProps> = ({ iStyle, iProps, parentProps, ...rest }) => {
+const TFoot: FunctionComponent<TFootComponentProps> = ({ iStyle, iProps, ...rest }) => {
   const { getFooterGroups } = useImpulseTable();
 
+  const { tfootStyle, trowStyle, tdataStyle, tfootStyleProps, trowStyleProps, tdataStyleProps } = useComponentStyle(
+    tfootComponentMap,
+    rest,
+    undefined,
+    undefined,
+    iStyle,
+    iProps,
+  );
+
   return (
-    <BaseTFoot $iStyle={iStyle} $iProps={iProps} $parentProps={parentProps} {...rest}>
+    <BaseTFoot $iStyle={tfootStyle} $iProps={tfootStyleProps} {...rest}>
       {getFooterGroups().map((footerGroup) => (
-        <TRow key={footerGroup.id}>
+        <TRow iStyle={trowStyle} iProps={trowStyleProps} key={footerGroup.id}>
           {footerGroup.headers.map((footer) => (
-            <TData key={footer.id}>{flexRender(footer.column.columnDef.footer, footer.getContext())}</TData>
+            <TData iStyle={tdataStyle} iProps={tdataStyleProps} key={footer.id}>
+              {flexRender(footer.column.columnDef.footer, footer.getContext())}
+            </TData>
           ))}
         </TRow>
       ))}

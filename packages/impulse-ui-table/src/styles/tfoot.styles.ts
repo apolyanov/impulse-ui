@@ -1,8 +1,8 @@
 import { neutral } from '@impulse-ui/colours';
 import { shouldRenderCssProp } from '@impulse-ui/core';
-import { ComponentTheme, TFootStyleProps } from '@impulse-ui/types';
+import { ComponentTheme, TSegmentStyleProps } from '@impulse-ui/types';
 
-const tfoot: ComponentTheme<TFootStyleProps> = {
+const tfoot: ComponentTheme<TSegmentStyleProps> = {
   iStyle: {
     iColorTheme: {
       light: {

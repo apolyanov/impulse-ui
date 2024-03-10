@@ -4,7 +4,7 @@ import { ComponentMap } from '@impulse-ui/types';
 
 const tableHeaderComponentMap: ComponentMap[] = [
   { key: 'container' },
-  { key: 'tableNameTypography' },
+  { key: 'tableName' },
   { key: 'searchInput', subKeys: textInputComponentMap },
   { key: 'filtersButton', subKeys: iconButtonComponentMap },
   { key: 'settingsButton', subKeys: iconButtonComponentMap },
