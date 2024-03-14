@@ -4,10 +4,8 @@ import { ContainerProps } from '@impulse-ui/types';
 
 import BaseContainer from './BaseContainer.styles';
 
-const Container = forwardRef<HTMLDivElement, PropsWithChildren<ContainerProps>>(
-  ({ iStyle, iProps, parentProps, ...rest }, ref) => {
-    return <BaseContainer ref={ref} $parentProps={parentProps} $iProps={iProps} $iStyle={iStyle} {...rest} />;
-  },
-);
+const Container = forwardRef<HTMLDivElement, PropsWithChildren<ContainerProps>>(({ iStyle, ...rest }, ref) => {
+  return <BaseContainer ref={ref} $iStyle={iStyle} {...rest} />;
+});
 
 export { Container };

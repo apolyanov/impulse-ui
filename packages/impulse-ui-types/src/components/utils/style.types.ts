@@ -1,11 +1,28 @@
+import { Property } from 'csstype';
+
 import { IOStyle, IStyle } from '../theme';
 
+type MergeThemesFnArgs = {
+  defaultTheme: IStyle;
+  overridingTheme?: IOStyle;
+  props?: object;
+};
+
+type MergePartialThemesFnArgs = {
+  defaultTheme?: IOStyle;
+  overridingTheme?: IOStyle;
+  props?: object;
+};
+
 interface MergeThemesFn {
-  <T = any>(defaultTheme: IStyle<T>, overridingTheme?: IOStyle<T>, parentProps?: T): IStyle<T>;
+  (args: MergeThemesFnArgs): IStyle;
 }
 
 interface MergePartialThemesFn {
-  <T = any>(overridingTheme?: IOStyle<T>, defaultTheme?: IOStyle<T>, parentProps?: T): IOStyle<T> | undefined;
+  (args: Partial<MergePartialThemesFnArgs>): IOStyle | undefined;
 }
 
-export type { MergePartialThemesFn, MergeThemesFn };
+type Margin = Property.Margin<number>;
+type Padding = Property.Padding<number>;
+
+export type { Margin, MergePartialThemesFn, MergePartialThemesFnArgs, MergeThemesFn, MergeThemesFnArgs, Padding };

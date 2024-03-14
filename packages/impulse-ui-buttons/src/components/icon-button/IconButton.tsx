@@ -9,21 +9,14 @@ import { iconButtonComponentMap } from '../../maps';
 import { defaultIconButtonStyle } from '../../styles';
 import { Button } from '../button';
 
-const IconButton: FunctionComponent<IconButtonProps> = ({ iStyle, iProps, ...rest }) => {
+const IconButton: FunctionComponent<IconButtonProps> = ({ iStyle, ...rest }) => {
   const { icon, ...buttonProps } = rest;
 
-  const { buttonStyle, iconStyle, buttonStyleProps, iconStyleProps } = useComponentStyle(
-    iconButtonComponentMap,
-    rest,
-    defaultIconButtonStyle,
-    undefined,
-    iStyle,
-    iProps,
-  );
+  const { buttonStyle, iconStyle } = useComponentStyle(iconButtonComponentMap, rest, defaultIconButtonStyle, iStyle);
 
   return (
-    <Button iStyle={buttonStyle} iProps={buttonStyleProps} {...buttonProps}>
-      <Icon icon={icon} iStyle={iconStyle} iProps={iconStyleProps} />
+    <Button iStyle={buttonStyle} {...buttonProps}>
+      <Icon icon={icon} iStyle={iconStyle} />
     </Button>
   );
 };

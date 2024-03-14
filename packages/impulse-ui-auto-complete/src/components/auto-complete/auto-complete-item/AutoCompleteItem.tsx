@@ -6,25 +6,21 @@ import { Typography } from '@impulse-ui/text';
 import { AutoCompleteItemProps } from '@impulse-ui/types';
 
 import { autoCompleteItemComponentMap } from '../../../maps';
-import { defaultAutoCompleteItemStyle, defaultAutoCompleteItemStyleProps } from '../../../styles';
+import { defaultAutoCompleteItemStyle } from '../../../styles';
 
-const AutoCompleteItem: FunctionComponent<AutoCompleteItemProps> = ({ iStyle, iProps, ...rest }) => {
+const AutoCompleteItem: FunctionComponent<AutoCompleteItemProps> = ({ iStyle, ...rest }) => {
   const { itemText, selected, highlighted, externalScroll, ...mainContainerProps } = rest;
 
-  const { mainContainerStyle, mainContainerStyleProps, typographyStyleProps, typographyStyle } = useComponentStyle(
+  const { mainContainerStyle, typographyStyle } = useComponentStyle(
     autoCompleteItemComponentMap,
     rest,
     defaultAutoCompleteItemStyle,
-    defaultAutoCompleteItemStyleProps,
     iStyle,
-    iProps,
   );
 
   return (
-    <Container iProps={mainContainerStyleProps} iStyle={mainContainerStyle} {...mainContainerProps}>
-      <Typography iStyle={typographyStyle} iProps={typographyStyleProps}>
-        {itemText}
-      </Typography>
+    <Container iStyle={mainContainerStyle} {...mainContainerProps}>
+      <Typography iStyle={typographyStyle}>{itemText}</Typography>
     </Container>
   );
 };

@@ -5,8 +5,8 @@ import { TableProps } from '@impulse-ui/types';
 
 import { BaseTable } from './BaseTable.styles';
 
-const Table: FunctionComponent<TableProps> = ({ iProps, iStyle, parentProps, ...rest }) => {
-  return <BaseTable $iStyle={iStyle} $iProps={iProps} $parentProps={parentProps} {...rest} />;
+const Table: FunctionComponent<TableProps> = ({ iStyle, ...rest }) => {
+  return <BaseTable $iStyle={iStyle} {...rest} />;
 };
 
 export { Table };

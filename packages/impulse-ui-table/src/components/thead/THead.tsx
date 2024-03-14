@@ -1,35 +1,28 @@
 'use client';
 import React, { FunctionComponent } from 'react';
 import { useComponentStyle } from '@impulse-ui/core';
-import { useHover } from '@impulse-ui/core';
 import { Typography } from '@impulse-ui/text';
 import { THeadComponentProps } from '@impulse-ui/types';
 import { flexRender } from '@tanstack/react-table';
 
 import { useImpulseTable } from '../../hooks';
 import { theadComponentMap } from '../../maps';
-import { thead, theadProps } from '../../styles';
+import { thead } from '../../styles';
 import { SortingButton } from '../sorting-button';
 import { THeader } from '../theader';
 import { TRow } from '../trow';
 
 import { BaseTHead } from './BaseTHead.styles';
 
-const THead: FunctionComponent<THeadComponentProps> = ({ iStyle, iProps, ...rest }) => {
+const THead: FunctionComponent<THeadComponentProps> = ({ iStyle, ...rest }) => {
   const { getHeaderGroups } = useImpulseTable();
 
-  const {
-    theadStyle,
-    theaderStyle,
-    trowStyle,
-    theaderTypographyStyle,
-    theaderSortButtonStyle,
-    theadStyleProps,
-    theaderStyleProps,
-    trowStyleProps,
-    theaderTypographyStyleProps,
-    theaderSortButtonStyleProps,
-  } = useComponentStyle(theadComponentMap, rest, thead, theadProps, iStyle, iProps);
+  const { theadStyle, theaderStyle, trowStyle, theaderTypographyStyle, theaderSortButtonStyle } = useComponentStyle(
+    theadComponentMap,
+    rest,
+    thead,
+    iStyle,
+  );
 
   const isFirstOrLastColumnHeader = (index: number, arrLength: number) => {
     if (index === 0) {
@@ -44,22 +37,17 @@ const THead: FunctionComponent<THeadComponentProps> = ({ iStyle, iProps, ...rest
   };
 
   return (
-    <BaseTHead $iStyle={theadStyle} $iProps={theadStyleProps} {...rest}>
+    <BaseTHead $iStyle={theadStyle} {...rest}>
       {getHeaderGroups().map((headerGroup) => (
-        <TRow iStyle={trowStyle} iProps={trowStyleProps} key={headerGroup.id}>
+        <TRow iStyle={trowStyle} key={headerGroup.id}>
           {headerGroup.headers.map((header, index, array) => (
-            <THeader iStyle={theaderStyle} iProps={theaderStyleProps} key={header.id}>
+            <THeader style={{ width: header.column.getSize() }} iStyle={theaderStyle} key={header.id}>
               <Typography
-                data-table-element={`column-header${isFirstOrLastColumnHeader(index, array.length)}`}
                 iStyle={theaderTypographyStyle}
-                iProps={theaderTypographyStyleProps}
+                data-table-element={`column-header${isFirstOrLastColumnHeader(index, array.length)}`}
               >
                 {flexRender(header.column.columnDef.header, header.getContext())}
-                <SortingButton
-                  iStyle={theaderSortButtonStyle}
-                  iProps={theaderSortButtonStyleProps}
-                  columnId={header.column.id}
-                />
+                <SortingButton iStyle={theaderSortButtonStyle} columnId={header.column.id} />
               </Typography>
             </THeader>
           ))}

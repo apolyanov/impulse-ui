@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { AutoComplete } from '@impulse-ui/auto-complete';
 import { Button } from '@impulse-ui/buttons';
@@ -8,10 +8,6 @@ import { AdvancedHuman, humans } from '../mocks/autoCompleteMock';
 
 const AutoCompletePage = () => {
   const [options, setOptions] = useState<AdvancedHuman[]>([]);
-
-  useEffect(() => {
-    console.log(options);
-  }, [options]);
 
   return (
     <Container iStyle={{ iCss: { flexDirection: 'row', height: '700px', gap: '16px' } }}>

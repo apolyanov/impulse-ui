@@ -1,18 +1,18 @@
 'use client';
-import { getThemeMode, mergeProps, mergeThemes } from '@impulse-ui/core';
-import { BaseIComponent, TypographyStyleProps } from '@impulse-ui/types';
+import { getThemeMode, mergeThemes } from '@impulse-ui/core';
+import { BaseIComponent } from '@impulse-ui/types';
 import styled, { css } from 'styled-components';
 
 import { typography } from '../../styles';
 
-const BaseTypography = styled.p<BaseIComponent<TypographyStyleProps>>(
-  ({ theme: { mode, themes }, $iStyle, $iProps, $parentProps }) => {
-    const { iColorTheme, iCss } = mergeThemes(themes?.typography?.iStyle ?? typography.iStyle, $iStyle, $parentProps);
-    const themeMode = getThemeMode(mode);
-    const iProps = mergeProps(themes?.typography?.iStyleProps ?? typography.iStyleProps, $iProps);
+const BaseTypography = styled.p<BaseIComponent>(({ theme: { mode, themes }, $iStyle, $parentProps }) => {
+  const { iColorTheme, iCss } = mergeThemes({
+    defaultTheme: themes?.typography?.iStyle ?? typography.iStyle,
+    overridingTheme: $iStyle,
+  });
+  const themeMode = getThemeMode(mode);
 
-    return css(iCss({ iColorTheme: iColorTheme[themeMode], iProps }));
-  },
-);
+  return css(iCss({ iColorTheme: iColorTheme[themeMode] }));
+});
 
 export default BaseTypography;

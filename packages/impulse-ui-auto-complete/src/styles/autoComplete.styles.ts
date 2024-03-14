@@ -1,5 +1,5 @@
 import { neutral } from '@impulse-ui/colours';
-import { AutoCompleteStyle, AutoCompleteStyleProps, ContainerStyleProps, IOProps } from '@impulse-ui/types';
+import { AutoCompleteStyle } from '@impulse-ui/types';
 
 const defaultAutoCompleteStyle: Partial<AutoCompleteStyle> = {
   mainContainerStyle: {
@@ -19,11 +19,12 @@ const defaultAutoCompleteStyle: Partial<AutoCompleteStyle> = {
     },
     iCss: {
       zIndex: 99,
-      margin: 0,
       padding: '0 2px',
       display: 'block',
       maxHeight: '304px',
       overflowY: 'auto',
+      borderRadius: 4,
+      filter: 'drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2))',
       '&[data-popper-reference-hidden=true]': {
         visibility: 'hidden',
         pointerEvents: 'none',
@@ -38,12 +39,4 @@ const defaultAutoCompleteStyle: Partial<AutoCompleteStyle> = {
   },
 };
 
-const defaultAutoCompleteStyleProps: Partial<AutoCompleteStyleProps> = {
-  mainContainerStyleProps: { hasPadding: false, hasMargin: false },
-  loadingTypographyStyleProps: { hasPadding: true },
-  autoCompleteItemsContainerStyleProps: { hasDropShadow: true, hasBorderRadius: true },
-};
-
-const removeSpacing: IOProps<ContainerStyleProps> = { hasPadding: false, hasMargin: false };
-
-export { defaultAutoCompleteStyle, defaultAutoCompleteStyleProps, removeSpacing };
+export { defaultAutoCompleteStyle };

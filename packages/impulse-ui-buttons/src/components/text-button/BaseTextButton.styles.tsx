@@ -1,17 +1,17 @@
 'use client';
-import { getThemeMode, mergeProps, mergeThemes } from '@impulse-ui/core';
-import { BaseIComponent, TextButtonStyleProps } from '@impulse-ui/types';
+import { getThemeMode, mergeThemes } from '@impulse-ui/core';
+import { BaseIComponent } from '@impulse-ui/types';
 import styled, { css } from 'styled-components';
 
 import { textButton } from '../../styles';
 
-const BaseTextButton = styled.button<BaseIComponent<TextButtonStyleProps>>(
-  ({ theme: { mode, themes }, $iStyle, $iProps, $parentProps }) => {
-    const { iColorTheme, iCss } = mergeThemes(themes?.textButton?.iStyle ?? textButton.iStyle, $iStyle, $parentProps);
-    const themeMode = getThemeMode(mode);
-    const iProps = mergeProps(themes?.textButton?.iStyleProps ?? textButton.iStyleProps, $iProps);
+const BaseTextButton = styled.button<BaseIComponent>(({ theme: { mode, themes }, $iStyle }) => {
+  const { iColorTheme, iCss } = mergeThemes({
+    defaultTheme: themes?.textButton?.iStyle ?? textButton.iStyle,
+    overridingTheme: $iStyle,
+  });
+  const themeMode = getThemeMode(mode);
 
-    return css(iCss({ iColorTheme: iColorTheme[themeMode], iProps }));
-  },
-);
+  return css(iCss({ iColorTheme: iColorTheme[themeMode] }));
+});
 export default BaseTextButton;

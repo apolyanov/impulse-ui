@@ -1,5 +1,5 @@
 import { neutral } from '@impulse-ui/colours';
-import { AutoCompleteItemStyle, AutoCompleteItemStyleProps, BackgroundColor } from '@impulse-ui/types';
+import { AutoCompleteItemStyle, BackgroundColor } from '@impulse-ui/types';
 
 const defaultAutoCompleteItemStyle: Partial<AutoCompleteItemStyle> = {
   mainContainerStyle: {
@@ -7,8 +7,7 @@ const defaultAutoCompleteItemStyle: Partial<AutoCompleteItemStyle> = {
     iCss: ({ parentProps }) => ({
       padding: '6px',
       height: '34px',
-      margin: 0,
-      justifyContent: 'center',
+      borderRadius: 4,
       backgroundColor: getItemBackgroundColor(parentProps?.selected, parentProps?.highlighted),
       '&:hover': { backgroundColor: getItemBackgroundHoverColor(parentProps?.selected), cursor: 'pointer' },
     }),
@@ -16,10 +15,6 @@ const defaultAutoCompleteItemStyle: Partial<AutoCompleteItemStyle> = {
   typographyStyle: {
     iCss: { textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap', lineHeight: 1.5 },
   },
-};
-
-const defaultAutoCompleteItemStyleProps: Partial<AutoCompleteItemStyleProps> = {
-  mainContainerStyleProps: { hasBorderRadius: true },
 };
 
 const getItemBackgroundHoverColor = (selected?: boolean) => {
@@ -42,4 +37,4 @@ const getItemBackgroundColor = (selected?: boolean, highlighted?: boolean): Back
   return 'transparent';
 };
 
-export { defaultAutoCompleteItemStyle, defaultAutoCompleteItemStyleProps };
+export { defaultAutoCompleteItemStyle };

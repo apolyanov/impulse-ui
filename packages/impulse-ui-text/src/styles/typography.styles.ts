@@ -1,8 +1,7 @@
 import { neutral } from '@impulse-ui/colours';
-import { shouldRenderCssProp } from '@impulse-ui/core';
-import { ComponentTheme, TypographyStyleProps } from '@impulse-ui/types';
+import { ComponentTheme } from '@impulse-ui/types';
 
-const typography: ComponentTheme<TypographyStyleProps> = {
+const typography: ComponentTheme = {
   iStyle: {
     iColorTheme: {
       light: {
@@ -22,18 +21,15 @@ const typography: ComponentTheme<TypographyStyleProps> = {
         colorHover: neutral[200],
       },
     },
-    iCss: ({ iColorTheme, iProps }) => ({
+    iCss: ({ iColorTheme }) => ({
       backgroundColor: iColorTheme.backgroundColor,
       color: iColorTheme.color,
-      borderRadius: shouldRenderCssProp(iProps.hasBorderRadius, 4),
-      filter: shouldRenderCssProp(iProps.hasDropShadow, `drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2))`),
       fontSize: '14px',
       '&:hover': {
         cursor: 'inherit',
       },
     }),
   },
-  iStyleProps: {},
 };
 
 export { typography };

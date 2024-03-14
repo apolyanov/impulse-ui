@@ -1,8 +1,7 @@
 import { volcano } from '@impulse-ui/colours';
-import { shouldRenderCssProp } from '@impulse-ui/core';
-import { ComponentTheme, LinkStyleProps } from '@impulse-ui/types';
+import { ComponentTheme } from '@impulse-ui/types';
 
-const link: ComponentTheme<LinkStyleProps> = {
+const link: ComponentTheme = {
   iStyle: {
     iColorTheme: {
       light: {
@@ -22,14 +21,13 @@ const link: ComponentTheme<LinkStyleProps> = {
         colorHover: volcano[60],
       },
     },
-    iCss: ({ iColorTheme, iProps }) => ({
+    iCss: ({ iColorTheme }) => ({
       color: iColorTheme.color,
       backgroundColor: iColorTheme.backgroundColor,
       width: 'fit-content',
-      padding: shouldRenderCssProp(iProps.hasPadding, 4),
+      padding: 4,
       textTransform: 'none',
-      borderRadius: shouldRenderCssProp(iProps.hasBorderRadius, 8),
-      filter: shouldRenderCssProp(iProps.hasDropShadow, `drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2))`),
+      borderRadius: 8,
       '&:hover': {
         backgroundColor: iColorTheme.backgroundColorHover,
         color: iColorTheme.colorHover,
@@ -37,7 +35,6 @@ const link: ComponentTheme<LinkStyleProps> = {
       },
     }),
   },
-  iStyleProps: {},
 };
 
 export { link };

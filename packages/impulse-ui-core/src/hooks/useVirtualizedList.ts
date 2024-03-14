@@ -32,6 +32,8 @@ const useVirtualizedList = <T extends Element>(options: UseVirtualizedListOption
     left: 0,
     width: '100%',
     height: `${virtualRow.size}px`,
+    display: 'flex',
+    flexDirection: 'column',
     justifyContent: 'center',
     transform: `translateY(${virtualRow.start}px)`,
   });

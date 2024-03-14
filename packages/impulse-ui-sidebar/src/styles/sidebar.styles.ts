@@ -1,6 +1,5 @@
 import { neutral } from '@impulse-ui/colours';
-import { shouldRenderCssProp } from '@impulse-ui/core';
-import { SidebarStyle, SidebarStyleProps } from '@impulse-ui/types';
+import { SidebarStyle } from '@impulse-ui/types';
 
 const defaultSidebarStyle: Partial<SidebarStyle> = {
   containerStyle: {
@@ -9,23 +8,16 @@ const defaultSidebarStyle: Partial<SidebarStyle> = {
         backgroundColor: neutral[10],
       },
     },
-    iCss: ({ iProps }) => ({
-      maxWidth: '300px',
-      minWidth: '48px',
-      width: '220px',
-      margin: shouldRenderCssProp(iProps.hasMargin, 8),
-      padding: shouldRenderCssProp(iProps.hasPadding, '2px 8px'),
+    iCss: {
+      maxWidth: 300,
+      minWidth: 48,
+      width: 220,
+      height: '100vh',
+      padding: '2px 8px',
+      filter: 'drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2))',
       alignItems: 'center',
-    }),
+    },
   },
 };
 
-const defaultSidebarStyleProps: Partial<SidebarStyleProps> = {
-  containerStyleProps: {
-    hasDropShadow: true,
-    hasMargin: false,
-    hasPadding: true,
-  },
-};
-
-export { defaultSidebarStyle, defaultSidebarStyleProps };
+export { defaultSidebarStyle };

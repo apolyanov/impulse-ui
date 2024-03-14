@@ -8,32 +8,19 @@ import { AutoCompleteProps } from '@impulse-ui/types';
 
 import { useAutoComplete } from '../../hooks';
 import { autoCompleteComponentMap } from '../../maps';
-import { defaultAutoCompleteStyle, defaultAutoCompleteStyleProps, removeSpacing } from '../../styles';
+import { defaultAutoCompleteStyle } from '../../styles';
 
 import { AutoCompleteItem } from './auto-complete-item';
 
-const AutoComplete: FunctionComponent<AutoCompleteProps> = memo(({ iStyle, iProps, ...rest }) => {
+const AutoComplete: FunctionComponent<AutoCompleteProps> = memo(({ iStyle, ...rest }) => {
   const {
     mainContainerStyle,
-    mainContainerStyleProps,
     textInputStyle,
-    textInputStyleProps,
     autoCompleteItemsContainerStyle,
-    autoCompleteItemsContainerStyleProps,
     autoCompleteItemStyle,
-    autoCompleteItemStyleProps,
     loadingTypographyStyle,
-    loadingTypographyStyleProps,
-    noOptionsTypographyStyleProps,
     noOptionsTypographyStyle,
-  } = useComponentStyle(
-    autoCompleteComponentMap,
-    rest,
-    defaultAutoCompleteStyle,
-    defaultAutoCompleteStyleProps,
-    iStyle,
-    iProps,
-  );
+  } = useComponentStyle(autoCompleteComponentMap, rest, defaultAutoCompleteStyle, iStyle);
 
   const {
     setContainerRef,
@@ -62,31 +49,22 @@ const AutoComplete: FunctionComponent<AutoCompleteProps> = memo(({ iStyle, iProp
   const optionsContainerRenderer = useMemo((): ReactNode | undefined => {
     if (showOptions) {
       if (loading) {
-        return (
-          <Typography iProps={loadingTypographyStyleProps} iStyle={loadingTypographyStyle}>
-            Loading...
-          </Typography>
-        );
+        return <Typography iStyle={loadingTypographyStyle}>Loading...</Typography>;
       }
 
       if (getOptionsToShow.length === 0) {
-        return (
-          <Typography iProps={noOptionsTypographyStyleProps} iStyle={noOptionsTypographyStyle}>
-            No options
-          </Typography>
-        );
+        return <Typography iStyle={noOptionsTypographyStyle}>No options</Typography>;
       }
 
       return (
-        <Container iProps={removeSpacing} style={{ ...listContainerStyle }}>
+        <Container style={{ ...listContainerStyle }}>
           {getVirtualItems().map((virtualRow) => (
-            <Container iProps={removeSpacing} key={virtualRow.index} style={{ ...listItemStyle(virtualRow) }}>
+            <Container key={virtualRow.index} style={{ ...listItemStyle(virtualRow) }}>
               <AutoCompleteItem
                 highlighted={highlightedIndex === virtualRow.index}
                 selected={isItemSelected(getOptionsToShow[virtualRow.index])}
                 onClick={() => handleOptionSelect(getOptionsToShow[virtualRow.index])}
                 iStyle={autoCompleteItemStyle}
-                iProps={autoCompleteItemStyleProps}
                 itemText={getOptionsToShow[virtualRow.index].label}
               />
             </Container>
@@ -100,26 +78,18 @@ const AutoComplete: FunctionComponent<AutoCompleteProps> = memo(({ iStyle, iProp
     getOptionsToShow,
     listContainerStyle,
     getVirtualItems,
-    loadingTypographyStyleProps,
     loadingTypographyStyle,
-    noOptionsTypographyStyleProps,
     noOptionsTypographyStyle,
     listItemStyle,
     highlightedIndex,
     isItemSelected,
     autoCompleteItemStyle,
-    autoCompleteItemStyleProps,
     handleOptionSelect,
   ]);
 
   return (
     <Fragment>
-      <Container
-        {...mainContainerProps}
-        ref={setContainerRef}
-        iStyle={mainContainerStyle}
-        iProps={mainContainerStyleProps}
-      >
+      <Container {...mainContainerProps} ref={setContainerRef} iStyle={mainContainerStyle}>
         <TextInput
           {...inputProps}
           ref={inputRef}
@@ -129,14 +99,12 @@ const AutoComplete: FunctionComponent<AutoCompleteProps> = memo(({ iStyle, iProp
           onMouseDown={onMouseDown}
           onClear={handleInputClear}
           iStyle={textInputStyle}
-          iProps={textInputStyleProps}
         />
       </Container>
       {showOptions && (
         <Container
           ref={setDropdownRef}
           iStyle={autoCompleteItemsContainerStyle}
-          iProps={autoCompleteItemsContainerStyleProps}
           style={styles.popper}
           {...attributes.popper}
         >

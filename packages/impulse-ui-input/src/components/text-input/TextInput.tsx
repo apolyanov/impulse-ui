@@ -3,6 +3,7 @@ import React, {
   ChangeEvent,
   ForwardedRef,
   forwardRef,
+  InputHTMLAttributes,
   useCallback,
   useImperativeHandle,
   useMemo,
@@ -15,17 +16,17 @@ import { useComponentStyle } from '@impulse-ui/core';
 import { Icon } from '@impulse-ui/icon';
 import { Container } from '@impulse-ui/layout';
 import { ERROR, FieldMessage } from '@impulse-ui/text';
-import { HandleInputFn, InputValue, TextInputProps } from '@impulse-ui/types';
+import { TextInputProps } from '@impulse-ui/types';
 import debounce from 'lodash/debounce';
 import isNil from 'lodash/isNil';
 
 import { textInputComponentMap } from '../../maps';
-import { textInputStyle, textInputStyleProps } from '../../styles';
+import { textInputStyle } from '../../styles';
 
 import BaseTextInput from './BaseTextInput.styles';
 
 const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
-  ({ iStyle, iProps, ...rest }, ref?: ForwardedRef<HTMLInputElement>) => {
+  ({ iStyle, ...rest }, ref?: ForwardedRef<HTMLInputElement>) => {
     const {
       value,
       onChange,
@@ -46,22 +47,10 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
       ...inputProps
     } = rest;
 
-    const {
-      mainContainerStyle,
-      inputContainerStyle,
-      inputStyle,
-      iconStyle,
-      fieldMessageStyle,
-      clearIconStyle,
-      mainContainerStyleProps,
-      inputContainerStyleProps,
-      inputStyleProps,
-      iconStyleProps,
-      fieldMessageStyleProps,
-      clearIconStyleProps,
-    } = useComponentStyle(textInputComponentMap, rest, textInputStyle, textInputStyleProps, iStyle, iProps);
+    const { mainContainerStyle, inputContainerStyle, inputStyle, iconStyle, fieldMessageStyle, clearIconStyle } =
+      useComponentStyle(textInputComponentMap, rest, textInputStyle, iStyle);
 
-    const [innerValue, setInnerValue] = useState<InputValue>(defaultValue ?? '');
+    const [innerValue, setInnerValue] = useState<InputHTMLAttributes<HTMLInputElement>['value']>(defaultValue ?? '');
     const innerRef = useRef<HTMLInputElement>(null);
 
     useImperativeHandle(
@@ -77,7 +66,7 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
       [onDebouncedChange],
     );
 
-    const handleInput: HandleInputFn = (event: ChangeEvent<HTMLInputElement>) => {
+    const handleInput = (event: ChangeEvent<HTMLInputElement>) => {
       if (!value) {
         setInnerValue(event.target.value);
       }
@@ -110,15 +99,13 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
     };
 
     return (
-      <Container iStyle={mainContainerStyle} iProps={mainContainerStyleProps}>
-        <Container iStyle={inputContainerStyle} iProps={inputContainerStyleProps}>
-          {icon && <Icon iStyle={iconStyle} iProps={iconStyleProps} icon={icon} />}
+      <Container iStyle={mainContainerStyle}>
+        <Container iStyle={inputContainerStyle}>
+          {icon && <Icon iStyle={iconStyle} icon={icon} />}
           <BaseTextInput
             ref={innerRef}
             {...inputProps}
             $iStyle={inputStyle}
-            $iProps={inputStyleProps}
-            $parentProps={rest}
             name={name}
             value={value ?? innerValue}
             onChange={handleInput}
@@ -130,19 +117,11 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
               tabIndex={isClearIconFocusable ? 0 : -1}
               onClick={handleClear}
               iStyle={clearIconStyle}
-              iProps={clearIconStyleProps}
               icon={clearIcon ?? faXmark}
             />
           )}
         </Container>
-        {error && (
-          <FieldMessage
-            iStyle={fieldMessageStyle}
-            iProps={fieldMessageStyleProps}
-            type={ERROR}
-            message={errorMessage}
-          />
-        )}
+        {error && <FieldMessage iStyle={fieldMessageStyle} type={ERROR} message={errorMessage} />}
       </Container>
     );
   },
