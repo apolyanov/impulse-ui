@@ -1,13 +1,5 @@
 import { dustRed, geekBlue, polarGreen, sunriseYellow } from '@impulse-ui/colours';
-import {
-  ContainerStyleProps,
-  FieldMessageComponentStyle,
-  FieldMessageStyle,
-  FieldMessageType,
-  IconStyleProps,
-  IOStyle,
-  TypographyStyleProps,
-} from '@impulse-ui/types';
+import { FieldMessageComponentStyle, FieldMessageStyle, FieldMessageType, IOStyle } from '@impulse-ui/types';
 import { Property } from 'csstype';
 
 import { ERROR, INFO, SUCCESS, WARNING } from '../utils';
@@ -28,7 +20,7 @@ const fieldMessageColor = (type: FieldMessageType): Property.Color => {
 };
 
 const defaultContainerStyle: IOStyle = {
-  iCss: { margin: '6px', padding: '0', flexDirection: 'row', alignItems: 'center' },
+  iCss: { margin: '6px', padding: '0', display: 'flex', flexDirection: 'row', alignItems: 'center' },
 };
 
 const defaultTypographyStyle = (type: FieldMessageType): IOStyle => {
@@ -51,21 +43,21 @@ const defaultIconStyle = (type: FieldMessageType): IOStyle => {
   };
 };
 
-const defaultFieldMessageContainerStyle: FieldMessageComponentStyle<ContainerStyleProps> = {
+const defaultFieldMessageContainerStyle: FieldMessageComponentStyle = {
   error: defaultContainerStyle,
   info: defaultContainerStyle,
   success: defaultContainerStyle,
   warning: defaultContainerStyle,
 };
 
-const defaultFieldMessageIconStyle: FieldMessageComponentStyle<IconStyleProps> = {
+const defaultFieldMessageIconStyle: FieldMessageComponentStyle = {
   error: defaultIconStyle(ERROR),
   info: defaultIconStyle(INFO),
   success: defaultIconStyle(SUCCESS),
   warning: defaultIconStyle(WARNING),
 };
 
-const defaultFieldMessageTypographyStyle: FieldMessageComponentStyle<TypographyStyleProps> = {
+const defaultFieldMessageTypographyStyle: FieldMessageComponentStyle = {
   error: defaultTypographyStyle(ERROR),
   info: defaultTypographyStyle(INFO),
   success: defaultTypographyStyle(SUCCESS),

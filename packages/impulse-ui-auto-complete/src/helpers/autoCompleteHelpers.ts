@@ -53,6 +53,12 @@ const processOptions = (
 
 const dropdownModifiers: ReadonlyArray<PopoverModifier<string>> = [
   {
+    name: 'offset',
+    options: {
+      offset: [0, 4],
+    },
+  },
+  {
     name: 'flip',
     options: {
       fallbackPlacements: ['top'],

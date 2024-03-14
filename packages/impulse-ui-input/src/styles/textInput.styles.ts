@@ -1,11 +1,10 @@
 import { neutral, volcano } from '@impulse-ui/colours';
-import { shouldRenderCssProp } from '@impulse-ui/core';
-import { ComponentTheme, InputStyleProps, TextInputStyle, TextInputStyleProps } from '@impulse-ui/types';
+import { ComponentTheme, TextInputStyle } from '@impulse-ui/types';
 const textInputStyle: Partial<TextInputStyle> = {
   mainContainerStyle: {
     iCss: {
       width: '100%',
-      maxWidth: '250px',
+      maxWidth: 250,
       margin: '8px 0',
       padding: 0,
     },
@@ -19,19 +18,20 @@ const textInputStyle: Partial<TextInputStyle> = {
       },
     },
     iCss: {
-      margin: '0',
+      display: 'flex',
       flexDirection: 'row',
       alignItems: 'center',
       padding: '0 8px',
+      filter: 'drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2))',
       borderStyle: 'solid',
-      height: '38px',
-      borderRadius: '4px',
-      borderWidth: '1px',
+      height: 38,
+      borderRadius: 4,
+      borderWidth: 1,
     },
   },
   inputStyle: {
-    iCss: ({ parentProps }) => ({
-      marginRight: parentProps?.clearable ? '26px' : 0,
+    iCss: ({ clearable }) => ({
+      marginRight: clearable ? 26 : 0,
     }),
   },
   iconStyle: {
@@ -41,9 +41,9 @@ const textInputStyle: Partial<TextInputStyle> = {
       },
     },
     iCss: {
-      fontSize: '20px',
-      width: '20px',
-      marginRight: '4px',
+      fontSize: 16,
+      width: 16,
+      marginRight: 4,
     },
   },
   clearIconStyle: {
@@ -55,12 +55,12 @@ const textInputStyle: Partial<TextInputStyle> = {
         },
       },
       iCss: ({ iColorTheme }) => ({
-        margin: 0,
         position: 'absolute',
+        filter: 'unset',
         marginRight: 'auto',
-        height: '24px',
-        right: '8px',
-        width: '24px',
+        height: 20,
+        right: 8,
+        width: 20,
         minHeight: 'unset',
         '&:focus': {
           background: iColorTheme.backgroundColorHover,
@@ -78,18 +78,7 @@ const textInputStyle: Partial<TextInputStyle> = {
   },
 };
 
-const textInputStyleProps: Partial<TextInputStyleProps> = {
-  clearIconStyleProps: {
-    buttonStyleProps: {
-      hasDropShadow: false,
-    },
-  },
-  inputContainerStyleProps: {
-    hasDropShadow: true,
-  },
-};
-
-const input: ComponentTheme<InputStyleProps> = {
+const input: ComponentTheme = {
   iStyle: {
     iColorTheme: {
       light: {
@@ -109,27 +98,26 @@ const input: ComponentTheme<InputStyleProps> = {
         colorHover: neutral[200],
       },
     },
-    iCss: ({ iColorTheme, iProps }) => ({
+    iCss: ({ iColorTheme }) => ({
       backgroundColor: iColorTheme.backgroundColor,
       color: iColorTheme.color,
-      fontSize: '14px',
-      height: '32px',
+      fontSize: 14,
+      height: 32,
       padding: '4px 0',
-      borderRadius: shouldRenderCssProp(iProps.hasBorderRadius, 8),
-      filter: shouldRenderCssProp(iProps.hasDropShadow, `drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2))`),
+      borderRadius: 8,
       flex: 1,
       width: '100%',
       '&::-webkit-input-placeholder': {
-        textIndent: '4px',
+        textIndent: 4,
       },
       '&:-moz-placeholder': {
-        textIndent: '4px',
+        textIndent: 4,
       },
       '&::-moz-placeholder': {
-        textIndent: '4px',
+        textIndent: 4,
       },
       '&:-ms-input-placeholder': {
-        textIndent: '4px',
+        textIndent: 4,
       },
       '&:-webkit-autofill': {
         boxShadow: '0 0 0 100px white inset',
@@ -137,9 +125,6 @@ const input: ComponentTheme<InputStyleProps> = {
       },
     }),
   },
-  iStyleProps: {
-    hasBorderRadius: true,
-  },
 };
 
-export { input, textInputStyle, textInputStyleProps };
+export { input, textInputStyle };

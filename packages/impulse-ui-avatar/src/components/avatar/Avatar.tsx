@@ -10,47 +10,30 @@ import { AvatarProps } from '@impulse-ui/types';
 import { avatarComponentMap } from '../../maps';
 import { defaultAvatarStyle } from '../../styles';
 
-const Avatar: FunctionComponent<AvatarProps> = ({ iStyle, iProps, ...rest }) => {
-  const { onClick, imageUrl, name } = rest;
+const Avatar: FunctionComponent<AvatarProps> = ({ iStyle, ...rest }) => {
+  const { imageUrl, name, ...containerProps } = rest;
 
-  const {
-    mainContainerStyle,
-    imageContainerStyle,
-    typographyStyle,
-    iconStyle,
-    mainContainerStyleProps,
-    imageContainerStyleProps,
-    typographyStyleProps,
-    iconStyleProps,
-  } = useComponentStyle(avatarComponentMap, rest, defaultAvatarStyle, undefined, iStyle, iProps);
+  const { mainContainerStyle, imageContainerStyle, typographyStyle, iconStyle } = useComponentStyle(
+    avatarComponentMap,
+    rest,
+    defaultAvatarStyle,
+    iStyle,
+  );
 
   const renderAvatarContent = useMemo(() => {
     if (imageUrl) {
-      return <Container iProps={imageContainerStyleProps} iStyle={imageContainerStyle} />;
+      return <Container iStyle={imageContainerStyle} />;
     }
 
     if (name) {
-      return (
-        <Typography iStyle={typographyStyle} iProps={typographyStyleProps}>
-          {name}
-        </Typography>
-      );
+      return <Typography iStyle={typographyStyle}>{name}</Typography>;
     }
 
-    return <Icon icon={faUser} iStyle={iconStyle} iProps={iconStyleProps} />;
-  }, [
-    iconStyle,
-    iconStyleProps,
-    imageContainerStyle,
-    imageContainerStyleProps,
-    imageUrl,
-    name,
-    typographyStyle,
-    typographyStyleProps,
-  ]);
+    return <Icon icon={faUser} iStyle={iconStyle} />;
+  }, [iconStyle, imageContainerStyle, imageUrl, name, typographyStyle]);
 
   return (
-    <Container onClick={onClick} iProps={mainContainerStyleProps} iStyle={mainContainerStyle}>
+    <Container iStyle={mainContainerStyle} {...containerProps}>
       {renderAvatarContent}
     </Container>
   );

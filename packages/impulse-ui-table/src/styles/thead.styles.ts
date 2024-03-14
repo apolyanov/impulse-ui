@@ -1,6 +1,6 @@
 import { neutral } from '@impulse-ui/colours';
-import { shouldRenderCssProp } from '@impulse-ui/core';
-import { ComponentTheme, THeadStyle, THeadStyleProps, TSegmentStyleProps } from '@impulse-ui/types';
+import { marginY, paddingX } from '@impulse-ui/core';
+import { ComponentTheme, THeadStyle } from '@impulse-ui/types';
 
 const thead: Partial<THeadStyle> = {
   trowStyle: {
@@ -29,30 +29,31 @@ const thead: Partial<THeadStyle> = {
   },
   theaderTypographyStyle: {
     iCss: {
-      fontSize: 16,
       display: 'flex',
-      flexDirection: 'row',
       alignItems: 'center',
-      paddingRight: 8,
-      paddingLeft: 8,
-      marginTop: 8,
-      marginBottom: 8,
+      fontSize: 16,
+      height: 'calc(100% - 16px)',
+      gap: 4,
+      ...paddingX(8),
+      ...marginY(8),
       border: '1px solid transparent',
-      gap: 8,
     },
   },
   theaderSortButtonStyle: {
     buttonStyle: {
       iColorTheme: {
         light: {
-          backgroundColor: 'transparent',
+          backgroundColor: neutral[10],
           backgroundColorHover: neutral[40],
         },
       },
       iCss: {
+        filter: 'unset',
         margin: 0,
-        height: '24px',
-        width: '24px',
+        height: 20,
+        width: 20,
+        flexShrink: 0,
+        marginLeft: 'auto',
         minHeight: 'unset',
       },
     },
@@ -67,19 +68,7 @@ const thead: Partial<THeadStyle> = {
   },
 };
 
-const theadProps: Partial<THeadStyleProps> = {
-  theaderSortButtonStyleProps: {
-    buttonStyleProps: {
-      hasDropShadow: false,
-    },
-  },
-  theaderTypographyStyleProps: {
-    hasMargin: true,
-    hasPadding: true,
-  },
-};
-
-const baseTHead: ComponentTheme<TSegmentStyleProps> = {
+const baseTHead: ComponentTheme = {
   iStyle: {
     iColorTheme: {
       light: {
@@ -99,10 +88,9 @@ const baseTHead: ComponentTheme<TSegmentStyleProps> = {
         colorHover: neutral[200],
       },
     },
-    iCss: ({ iColorTheme, iProps }) => ({
+    iCss: ({ iColorTheme }) => ({
       backgroundColor: iColorTheme.backgroundColor,
-      borderRadius: shouldRenderCssProp(iProps.hasBorderRadius, 4),
-      filter: shouldRenderCssProp(iProps.hasDropShadow, `drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2))`),
+      filter: 'drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2))',
       '& th:first-of-type': {
         borderRadius: '4px 0 0 4px',
       },
@@ -111,12 +99,6 @@ const baseTHead: ComponentTheme<TSegmentStyleProps> = {
       },
     }),
   },
-  iStyleProps: {
-    hasBorderRadius: true,
-    hasPadding: true,
-    hasMargin: true,
-    hasDropShadow: true,
-  },
 };
 
-export { baseTHead, thead, theadProps };
+export { baseTHead, thead };

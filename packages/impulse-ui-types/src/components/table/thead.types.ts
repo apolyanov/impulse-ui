@@ -1,9 +1,7 @@
 import { IconButtonStyle } from '../buttons';
 import { IOStyle } from '../theme';
 
-import { TSegmentProps } from './tsegment.types';
-
-interface THeadComponentProps extends TSegmentProps {
+interface THeadComponentProps {
   iStyle?: Partial<THeadStyle>;
 }
 

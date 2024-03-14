@@ -1,19 +1,19 @@
 'use client';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { getThemeMode, mergeProps, mergeThemes } from '@impulse-ui/core';
-import { BaseIComponent, IconStyleProps } from '@impulse-ui/types';
+import { getThemeMode, mergeThemes } from '@impulse-ui/core';
+import { BaseIComponent } from '@impulse-ui/types';
 import styled, { css } from 'styled-components';
 
 import { icon } from '../styles';
 
-const BaseIcon = styled(FontAwesomeIcon)<BaseIComponent<IconStyleProps>>(
-  ({ theme: { mode, themes }, $iStyle, $iProps, $parentProps }) => {
-    const { iColorTheme, iCss } = mergeThemes(themes?.icon?.iStyle ?? icon.iStyle, $iStyle, $parentProps);
-    const themeMode = getThemeMode(mode);
-    const iProps = mergeProps(themes?.icon?.iStyleProps ?? icon.iStyleProps, $iProps);
+const BaseIcon = styled(FontAwesomeIcon)<BaseIComponent>(({ theme: { mode, themes }, $iStyle }) => {
+  const { iColorTheme, iCss } = mergeThemes({
+    defaultTheme: themes?.icon?.iStyle ?? icon.iStyle,
+    overridingTheme: $iStyle,
+  });
+  const themeMode = getThemeMode(mode);
 
-    return css(iCss({ iColorTheme: iColorTheme[themeMode], iProps }));
-  },
-);
+  return css(iCss({ iColorTheme: iColorTheme[themeMode] }));
+});
 
 export default BaseIcon;

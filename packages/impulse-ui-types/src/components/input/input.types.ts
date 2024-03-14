@@ -5,6 +5,10 @@ import { IconButtonStyle } from '../buttons';
 import { FieldMessageStyle } from '../text';
 import { IOStyle } from '../theme';
 
+interface TextInputProps extends TextInputCompositeProps {
+  iStyle?: Partial<TextInputStyle>;
+}
+
 type TextInputCompositeProps = TextInputRestProps &
   Omit<DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>, keyof TextInputRestProps>;
 
@@ -32,4 +36,4 @@ interface TextInputStyle {
   fieldMessageStyle: FieldMessageStyle;
 }
 
-export type { TextInputCompositeProps, TextInputRestProps, TextInputStyle };
+export type { TextInputCompositeProps, TextInputProps, TextInputRestProps, TextInputStyle };

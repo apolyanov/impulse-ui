@@ -7,26 +7,21 @@ import { Typography } from '@impulse-ui/text';
 import { SidebarHeaderProps } from '@impulse-ui/types';
 
 import { sidebarHeaderComponentMap } from '../../../maps';
-import { defaultSidebarHeaderStyle, defaultSidebarHeaderStyleProps } from '../../../styles';
+import { defaultSidebarHeaderStyle } from '../../../styles';
 
-const SidebarHeader: FunctionComponent<PropsWithChildren<SidebarHeaderProps>> = ({ iStyle, iProps, ...rest }) => {
+const SidebarHeader: FunctionComponent<PropsWithChildren<SidebarHeaderProps>> = ({ iStyle, ...rest }) => {
   const { onClick, icon, headerText } = rest;
-  const { buttonStyle, iconStyle, typographyStyle, buttonStyleProps, iconStyleProps, typographyStyleProps } =
-    useComponentStyle(
-      sidebarHeaderComponentMap,
-      rest,
-      defaultSidebarHeaderStyle,
-      defaultSidebarHeaderStyleProps,
-      iStyle,
-      iProps,
-    );
+  const { buttonStyle, iconStyle, typographyStyle } = useComponentStyle(
+    sidebarHeaderComponentMap,
+    rest,
+    defaultSidebarHeaderStyle,
+    iStyle,
+  );
 
   return (
-    <Button onClick={onClick} iStyle={buttonStyle} iProps={buttonStyleProps}>
-      {icon && <Icon icon={icon} iStyle={iconStyle} iProps={iconStyleProps} />}
-      <Typography iStyle={typographyStyle} iProps={typographyStyleProps}>
-        {headerText}
-      </Typography>
+    <Button onClick={onClick} iStyle={buttonStyle}>
+      {icon && <Icon icon={icon} iStyle={iconStyle} />}
+      <Typography iStyle={typographyStyle}>{headerText}</Typography>
     </Button>
   );
 };

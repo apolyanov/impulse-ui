@@ -1,18 +1,18 @@
 'use client';
-import { getThemeMode, mergeProps, mergeThemes } from '@impulse-ui/core';
-import { BaseIComponent, TSegmentStyleProps } from '@impulse-ui/types';
+import { getThemeMode, mergeThemes } from '@impulse-ui/core';
+import { BaseIComponent } from '@impulse-ui/types';
 import styled, { css } from 'styled-components';
 
 import { baseTHead } from '../../styles';
 
-const BaseTHead = styled.thead<BaseIComponent<TSegmentStyleProps>>(
-  ({ theme: { mode, themes }, $iStyle, $iProps, $parentProps }) => {
-    const { iColorTheme, iCss } = mergeThemes(themes?.thead?.iStyle ?? baseTHead.iStyle, $iStyle, $parentProps);
-    const themeMode = getThemeMode(mode);
-    const iProps = mergeProps<TSegmentStyleProps>(themes?.thead?.iStyleProps ?? baseTHead.iStyleProps, $iProps);
+const BaseTHead = styled.thead<BaseIComponent>(({ theme: { mode, themes }, $iStyle }) => {
+  const { iColorTheme, iCss } = mergeThemes({
+    defaultTheme: themes?.thead?.iStyle ?? baseTHead.iStyle,
+    overridingTheme: $iStyle,
+  });
+  const themeMode = getThemeMode(mode);
 
-    return css(iCss({ iColorTheme: iColorTheme[themeMode], iProps }));
-  },
-);
+  return css(iCss({ iColorTheme: iColorTheme[themeMode] }));
+});
 
 export { BaseTHead };

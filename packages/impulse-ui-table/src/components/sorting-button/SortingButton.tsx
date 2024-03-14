@@ -1,11 +1,11 @@
 import React, { FunctionComponent } from 'react';
 import { faSort, faSortDown, faSortUp } from '@fortawesome/free-solid-svg-icons';
 import { IconButton } from '@impulse-ui/buttons';
-import { SortingButtonProps } from '@impulse-ui/types/src/components/table/sortingButton.types';
+import { SortingButtonProps } from '@impulse-ui/types';
 
 import { useImpulseTable } from '../../hooks';
 
-const SortingButton: FunctionComponent<SortingButtonProps> = ({ iStyle, iProps, columnId, ...rest }) => {
+const SortingButton: FunctionComponent<SortingButtonProps> = ({ iStyle, columnId, ...rest }) => {
   const { getColumn } = useImpulseTable();
   const column = getColumn(columnId);
 
@@ -28,7 +28,6 @@ const SortingButton: FunctionComponent<SortingButtonProps> = ({ iStyle, iProps, 
       onClick={column?.getToggleSortingHandler()}
       icon={getSortingIcon()}
       iStyle={iStyle}
-      iProps={iProps}
       {...rest}
     />
   );

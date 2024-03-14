@@ -4,8 +4,8 @@ import { IconProps } from '@impulse-ui/types';
 
 import BaseIcon from './BaseIcon.styles';
 
-const Icon: FunctionComponent<IconProps> = ({ icon, iStyle, iProps, parentProps, ...rest }) => {
-  return <BaseIcon $parentProps={parentProps} icon={icon} $iStyle={iStyle} $iProps={iProps} {...rest} />;
+const Icon: FunctionComponent<IconProps> = ({ icon, iStyle, ...rest }) => {
+  return <BaseIcon icon={icon} $iStyle={iStyle} {...rest} />;
 };
 
 export { Icon };

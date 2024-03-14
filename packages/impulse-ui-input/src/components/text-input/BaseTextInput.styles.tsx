@@ -1,17 +1,17 @@
 'use client';
-import { getThemeMode, mergeProps, mergeThemes } from '@impulse-ui/core';
-import { BaseIComponent, InputStyleProps } from '@impulse-ui/types';
+import { getThemeMode, mergeThemes } from '@impulse-ui/core';
+import { BaseIComponent } from '@impulse-ui/types';
 import styled, { css } from 'styled-components';
 
 import { input } from '../../styles';
 
-const BaseTextInput = styled.input<BaseIComponent<InputStyleProps>>(
-  ({ theme: { mode, themes }, $iStyle, $iProps, $parentProps }) => {
-    const { iColorTheme, iCss } = mergeThemes(themes?.input?.iStyle ?? input.iStyle, $iStyle, $parentProps);
-    const themeMode = getThemeMode(mode);
-    const iProps = mergeProps(themes?.input?.iStyleProps ?? input.iStyleProps, $iProps);
+const BaseTextInput = styled.input<BaseIComponent>(({ theme: { mode, themes }, $iStyle }) => {
+  const { iColorTheme, iCss } = mergeThemes({
+    defaultTheme: themes?.input?.iStyle ?? input.iStyle,
+    overridingTheme: $iStyle,
+  });
+  const themeMode = getThemeMode(mode);
 
-    return css(iCss({ iColorTheme: iColorTheme[themeMode], iProps }));
-  },
-);
+  return css(iCss({ iColorTheme: iColorTheme[themeMode] }));
+});
 export default BaseTextInput;

@@ -7,7 +7,7 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "lerna run build",
+    "build": "lerna run build && npm install",
     "build-storybook": "storybook build",
     "lint": "lerna run lint",
     "size": "lerna run size",
@@ -34,6 +34,7 @@
   "devDependencies": {
     "@babel/core": "^7.21.8",
     "@babel/eslint-parser": "^7.18.2",
+    "@faker-js/faker": "^8.4.1",
     "@rushstack/eslint-patch": "^1.1.4",
     "@size-limit/preset-small-lib": "^8.2.4",
     "@storybook/addon-essentials": "^7.0.14",

@@ -4,8 +4,8 @@ import { TypographyProps } from '@impulse-ui/types';
 
 import BaseTypography from './BaseTypography.styles';
 
-const Typography: FunctionComponent<TypographyProps> = ({ iStyle, iProps, parentProps, ...rest }) => {
-  return <BaseTypography $parentProps={parentProps} $iStyle={iStyle} $iProps={iProps} {...rest} />;
+const Typography: FunctionComponent<TypographyProps> = ({ iStyle, ...rest }) => {
+  return <BaseTypography $iStyle={iStyle} {...rest} />;
 };
 
 export { Typography };

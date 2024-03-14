@@ -3,11 +3,11 @@ import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
 import { IOStyle } from '../theme';
 
-interface IconButtonProps extends IconButtonRestProps, ButtonHTMLAttributes<HTMLButtonElement> {
+interface IconButtonProps extends IconButtonRestProps {
   iStyle?: Partial<IconButtonStyle>;
 }
 
-interface IconButtonRestProps {
+interface IconButtonRestProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   icon: IconDefinition;
 }
 

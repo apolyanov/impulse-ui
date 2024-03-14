@@ -4,8 +4,8 @@ import { TRowProps } from '@impulse-ui/types';
 
 import { BaseTRow } from './BaseTRow.styles';
 
-const TRow: FunctionComponent<TRowProps> = ({ iProps, iStyle, parentProps, ...rest }) => {
-  return <BaseTRow $iStyle={iStyle} $iProps={iProps} $parentProps={parentProps} {...rest} />;
+const TRow: FunctionComponent<TRowProps> = ({ iStyle, ...rest }) => {
+  return <BaseTRow $iStyle={iStyle} {...rest} />;
 };
 
 export { TRow };

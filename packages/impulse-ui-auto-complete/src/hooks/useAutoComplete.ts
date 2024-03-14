@@ -1,8 +1,18 @@
 'use client';
-import { ChangeEvent, KeyboardEvent, MouseEvent, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import {
+  ChangeEvent,
+  InputHTMLAttributes,
+  KeyboardEvent,
+  MouseEvent,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import { usePopper } from 'react-popper';
 import { useElementDimensions, useItemSelection, useOutsideClick, useVirtualizedList } from '@impulse-ui/core';
-import { AutoCompleteRestProps, InnerSimpleOption, InputValue } from '@impulse-ui/types';
+import { AutoCompleteRestProps, InnerSimpleOption } from '@impulse-ui/types';
 
 import { dropdownModifiers, processOptions } from '../helpers';
 
@@ -29,7 +39,7 @@ const useAutoComplete = (rest: AutoCompleteRestProps) => {
   const [selectOptions, setSelectOptions] = useState<InnerSimpleOption[]>([]);
   const [filteredOptions, setFilteredOptions] = useState<InnerSimpleOption[]>([]);
 
-  const [inputValue, setInputValue] = useState<InputValue>('');
+  const [inputValue, setInputValue] = useState<InputHTMLAttributes<HTMLInputElement>['value']>('');
 
   const [dropdownRef, setDropdownRef] = useState<HTMLDivElement | null>(null);
   const [containerRef, setContainerRef] = useState<HTMLDivElement | null>(null);

@@ -1,8 +1,8 @@
 import { neutral } from '@impulse-ui/colours';
-import { shouldRenderCssProp } from '@impulse-ui/core';
-import { ComponentTheme, TSegmentStyleProps } from '@impulse-ui/types';
+import { paddingX, paddingY } from '@impulse-ui/core';
+import { ComponentTheme } from '@impulse-ui/types';
 
-const tfoot: ComponentTheme<TSegmentStyleProps> = {
+const tfoot: ComponentTheme = {
   iStyle: {
     iColorTheme: {
       light: {
@@ -22,15 +22,12 @@ const tfoot: ComponentTheme<TSegmentStyleProps> = {
         colorHover: neutral[200],
       },
     },
-    iCss: ({ iColorTheme, iProps }) => ({
+    iCss: ({ iColorTheme }) => ({
       backgroundColor: iColorTheme.backgroundColor,
-      borderRadius: shouldRenderCssProp(iProps.hasBorderRadius, 4),
-      padding: shouldRenderCssProp(iProps.hasPadding, 8),
-      margin: shouldRenderCssProp(iProps.hasMargin, 8),
-      filter: shouldRenderCssProp(iProps.hasDropShadow, `drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2))`),
-      textAlign: 'center',
+      filter: 'drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2))',
       '& td': {
-        padding: '8px 16px',
+        ...paddingY(10),
+        ...paddingX(8),
         textAlign: 'start',
       },
       '& td:first-of-type': {
@@ -40,12 +37,6 @@ const tfoot: ComponentTheme<TSegmentStyleProps> = {
         borderRadius: '0 4px 4px 0',
       },
     }),
-  },
-  iStyleProps: {
-    hasBorderRadius: true,
-    hasPadding: true,
-    hasMargin: true,
-    hasDropShadow: true,
   },
 };
 
