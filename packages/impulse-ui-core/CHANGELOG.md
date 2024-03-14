@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.4.0](https://github.com/apolyanov/impulse-ui/compare/v2.3.0...v2.4.0) (2024-03-14)
+
+
+### Bug Fixes
+
+* Fixing flash of unstyled content for NextJS projects. ([5602973](https://github.com/apolyanov/impulse-ui/commit/560297322ec8816582db9a55b2205e805794573c))
+* Fixing flash of unstyled content from fontawesome package for NextJS projects. ([7211754](https://github.com/apolyanov/impulse-ui/commit/721175439b313a1cb7c444025f7f8c93ebcdee28))
+
+
+### Features
+
+* Adding sorting functionality to the table. ([878416f](https://github.com/apolyanov/impulse-ui/commit/878416f57f37c434b018985d470ceac85fcb9e70))
+* Introducing table ([a10e9d7](https://github.com/apolyanov/impulse-ui/commit/a10e9d7d9cb2240a3e9e1e27ef7a99c6394bb207))
+* Refactoring types and removing iProps ([214a417](https://github.com/apolyanov/impulse-ui/commit/214a4175cdc2d6676ba73c156eab8552cb37e925))
+
+
+
+
+
 # [2.4.0-beta.0](https://github.com/apolyanov/impulse-ui/compare/v2.3.1-beta.2...v2.4.0-beta.0) (2024-03-14)
 
 

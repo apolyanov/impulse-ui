@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.4.0](https://github.com/apolyanov/impulse-ui/compare/v2.3.0...v2.4.0) (2024-03-14)
+
+
+### Features
+
+* Introducing table ([a10e9d7](https://github.com/apolyanov/impulse-ui/commit/a10e9d7d9cb2240a3e9e1e27ef7a99c6394bb207))
+
+
+
+
+
 # [2.4.0-beta.0](https://github.com/apolyanov/impulse-ui/compare/v2.3.1-beta.2...v2.4.0-beta.0) (2024-03-14)
 
 
