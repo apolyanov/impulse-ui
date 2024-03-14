@@ -1,7 +1,7 @@
 import { neutral } from '@impulse-ui/colours';
-import { ComponentTheme, IconStyleProps } from '@impulse-ui/types';
+import { ComponentTheme } from '@impulse-ui/types';
 
-const icon: ComponentTheme<IconStyleProps> = {
+const icon: ComponentTheme = {
   iStyle: {
     iColorTheme: {
       light: {
@@ -25,9 +25,6 @@ const icon: ComponentTheme<IconStyleProps> = {
       color: iColorTheme.color,
       fontSize: '16px',
     }),
-  },
-  iStyleProps: {
-    hasDropShadow: true,
   },
 };
 

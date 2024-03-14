@@ -4,8 +4,8 @@ import { LinkProps } from '@impulse-ui/types';
 
 import BaseLink from './BaseLink.styles';
 
-const Link: FunctionComponent<LinkProps> = ({ iStyle, iProps, parentProps, ...rest }) => {
-  return <BaseLink $parentProps={parentProps} $iStyle={iStyle} $iProps={iProps} {...rest} />;
+const Link: FunctionComponent<LinkProps> = ({ iStyle, ...rest }) => {
+  return <BaseLink $iStyle={iStyle} {...rest} />;
 };
 
 export { Link };

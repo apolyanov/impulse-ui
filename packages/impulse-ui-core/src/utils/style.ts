@@ -1,9 +1,10 @@
 import {
   CompositeComponentColors,
   IOCss,
-  MergePartialPropsFn,
+  Margin,
   MergePartialThemesFn,
   MergeThemesFn,
+  Padding,
   ThemeMode,
 } from '@impulse-ui/types';
 import merge from 'lodash/merge';
@@ -14,27 +15,19 @@ const shouldRenderCssProp = <T>(shouldRender: boolean | undefined, cssProp: T): 
   if (shouldRender) return cssProp;
 };
 
-const constructICss = (
-  iColorTheme: Partial<CompositeComponentColors>,
-  iProps: any,
-  parentProps: any,
-  iCss?: IOCss<any, any>,
-) => {
+const constructICss = (iColorTheme: Partial<CompositeComponentColors>, parentProps: any, iCss?: IOCss<any>) => {
   if (typeof iCss === 'function') {
-    return iCss({ iColorTheme, iProps, parentProps });
+    return iCss({ iColorTheme, parentProps });
   }
 
   return { ...iCss };
 };
 
-const mergeThemes: MergeThemesFn = (defaultTheme, overridingTheme, parentProps) => {
+const mergeThemes: MergeThemesFn = ({ defaultTheme, overridingTheme, props }) => {
   if (overridingTheme) {
     return {
-      iCss: ({ iColorTheme, iProps }) =>
-        merge(
-          defaultTheme.iCss({ iColorTheme, iProps, parentProps }),
-          constructICss(iColorTheme, iProps, parentProps, overridingTheme?.iCss),
-        ),
+      iCss: ({ iColorTheme, ...rest }) =>
+        merge(defaultTheme.iCss({ iColorTheme, ...rest }), constructICss(iColorTheme, props, overridingTheme?.iCss)),
       iColorTheme: {
         light: { ...defaultTheme.iColorTheme.light, ...overridingTheme.iColorTheme?.light },
         dark: { ...defaultTheme.iColorTheme.dark, ...overridingTheme.iColorTheme?.dark },
@@ -45,44 +38,83 @@ const mergeThemes: MergeThemesFn = (defaultTheme, overridingTheme, parentProps) 
   return defaultTheme;
 };
 
-const mergePartialThemes: MergePartialThemesFn = (overridingTheme, componentDefaultTheme, parentProps) => {
-  if (overridingTheme && !componentDefaultTheme) {
-    if (parentProps) {
+const mergePartialThemes: MergePartialThemesFn = ({ defaultTheme, overridingTheme, props }) => {
+  if (overridingTheme && !defaultTheme) {
+    if (props) {
       return {
         ...overridingTheme,
-        iCss: ({ iColorTheme, iProps }) => constructICss(iColorTheme, iProps, parentProps, overridingTheme?.iCss),
+        iCss: ({ iColorTheme }) => constructICss(iColorTheme, props, overridingTheme?.iCss),
       };
     }
 
     return overridingTheme;
   }
 
-  if (!overridingTheme && componentDefaultTheme) {
-    if (parentProps) {
+  if (!overridingTheme && defaultTheme) {
+    if (props) {
       return {
-        ...componentDefaultTheme,
-        iCss: ({ iColorTheme, iProps }) => constructICss(iColorTheme, iProps, parentProps, componentDefaultTheme?.iCss),
+        ...defaultTheme,
+        iCss: ({ iColorTheme }) => constructICss(iColorTheme, props, defaultTheme?.iCss),
       };
     }
 
-    return componentDefaultTheme;
+    return defaultTheme;
   }
 
-  if (overridingTheme && componentDefaultTheme) {
+  if (overridingTheme && defaultTheme) {
     return {
-      iCss: ({ iColorTheme, iProps }) =>
+      iCss: ({ iColorTheme }) =>
         merge(
-          constructICss(iColorTheme, iProps, parentProps, componentDefaultTheme?.iCss),
-          constructICss(iColorTheme, iProps, parentProps, overridingTheme?.iCss),
+          constructICss(iColorTheme, props, defaultTheme?.iCss),
+          constructICss(iColorTheme, props, overridingTheme?.iCss),
         ),
       iColorTheme: {
-        light: { ...componentDefaultTheme.iColorTheme?.light, ...overridingTheme.iColorTheme?.light },
-        dark: { ...componentDefaultTheme.iColorTheme?.dark, ...overridingTheme.iColorTheme?.dark },
+        light: { ...defaultTheme.iColorTheme?.light, ...overridingTheme.iColorTheme?.light },
+        dark: { ...defaultTheme.iColorTheme?.dark, ...overridingTheme.iColorTheme?.dark },
       },
     };
   }
 };
 
+const margin = (value: Margin) => ({
+  margin: value,
+});
+
+const marginX = (value: Margin) => ({
+  marginLeft: value,
+  marginRight: value,
+});
+
+const marginY = (value: Margin) => ({
+  marginTop: value,
+  marginBottom: value,
+});
+
+const padding = (value: Padding) => ({
+  padding: value,
+});
+
+const paddingX = (value: Padding) => ({
+  paddingLeft: value,
+  paddingRight: value,
+});
+
+const paddingY = (value: Padding) => ({
+  paddingTop: value,
+  paddingBottom: value,
+});
+
 const getThemeMode = (mode: ThemeMode) => mode || LIGHT;
 
-export { getThemeMode, mergePartialThemes, mergeThemes, shouldRenderCssProp };
+export {
+  getThemeMode,
+  margin,
+  marginX,
+  marginY,
+  mergePartialThemes,
+  mergeThemes,
+  padding,
+  paddingX,
+  paddingY,
+  shouldRenderCssProp,
+};

@@ -1,12 +1,16 @@
 import { neutral } from '@impulse-ui/colours';
-import { ComponentStyleProps, ContainerStyleProps, IOStyle } from '@impulse-ui/types';
+import { ImpulseTableStyle } from '@impulse-ui/types';
 
-const impulseTableContainerStyle: IOStyle<ContainerStyleProps> = {
-  iColorTheme: { light: { backgroundColor: neutral[10], backgroundColorHover: neutral[10] } },
-};
-const impulseTableContainerProps: ComponentStyleProps<ContainerStyleProps> = {
-  hasDropShadow: true,
-  hasBorderRadius: true,
+const impulseTableStyles: Partial<Pick<ImpulseTableStyle, 'tableContainerStyle' | 'tableStyle'>> = {
+  tableContainerStyle: {
+    iColorTheme: { light: { backgroundColor: neutral[10], backgroundColorHover: neutral[10] } },
+    iCss: {
+      width: 'fit-content',
+      borderRadius: 4,
+      filter: 'drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2))',
+      padding: 8,
+    },
+  },
 };
 
-export { impulseTableContainerProps, impulseTableContainerStyle };
+export { impulseTableStyles };

@@ -1,8 +1,7 @@
 import { neutral, volcano } from '@impulse-ui/colours';
-import { shouldRenderCssProp } from '@impulse-ui/core';
-import { ButtonStyleProps, ComponentTheme } from '@impulse-ui/types';
+import { ComponentTheme } from '@impulse-ui/types';
 
-const button: ComponentTheme<ButtonStyleProps> = {
+const button: ComponentTheme = {
   iStyle: {
     iColorTheme: {
       light: {
@@ -22,11 +21,11 @@ const button: ComponentTheme<ButtonStyleProps> = {
         colorHover: neutral[10],
       },
     },
-    iCss: ({ iColorTheme, iProps }) => ({
+    iCss: ({ iColorTheme }) => ({
       backgroundColor: iColorTheme.backgroundColor,
       color: iColorTheme.color,
-      padding: shouldRenderCssProp(iProps.hasPadding, '0px 28px'),
-      margin: shouldRenderCssProp(iProps.hasMargin, '8px 0'),
+      padding: '0px 28px',
+      margin: '8px 0',
       minWidth: '128px',
       width: 'fit-content',
       maxWidth: '256px',
@@ -37,9 +36,9 @@ const button: ComponentTheme<ButtonStyleProps> = {
       alignItems: 'center',
       justifyContent: 'center',
       fontSize: '14px',
-      filter: shouldRenderCssProp(iProps.hasDropShadow, `drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2))`),
+      filter: 'drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2))',
       textTransform: 'uppercase',
-      borderRadius: shouldRenderCssProp(iProps.hasBorderRadius, 4),
+      borderRadius: 4,
       transition: 'background-color 0.2s ease-in-out',
       '&:hover': {
         backgroundColor: iColorTheme.backgroundColorHover,
@@ -47,12 +46,6 @@ const button: ComponentTheme<ButtonStyleProps> = {
         cursor: 'pointer',
       },
     }),
-  },
-  iStyleProps: {
-    hasDropShadow: true,
-    hasBorderRadius: true,
-    hasPadding: true,
-    hasMargin: true,
   },
 };
 

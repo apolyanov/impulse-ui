@@ -9,17 +9,15 @@ import { CheckboxProps } from '@impulse-ui/types';
 import { useCheckbox } from '../../hooks';
 import { checkboxChecked, checkboxUnchecked } from '../../icons';
 import { checkboxComponentMap } from '../../maps';
-import { checkboxStyle, checkboxStyleProps } from '../../styles';
+import { checkboxStyle } from '../../styles';
 
-const Checkbox: FunctionComponent<CheckboxProps> = ({ iStyle, iProps, children, ...rest }) => {
-  const {
-    mainContainerStyle,
-    iconButtonStyle,
-    typographyStyle,
-    mainContainerStyleProps,
-    iconButtonStyleProps,
-    typographyStyleProps,
-  } = useComponentStyle(checkboxComponentMap, rest, checkboxStyle, checkboxStyleProps, iStyle, iProps);
+const Checkbox: FunctionComponent<CheckboxProps> = ({ iStyle, children, ...rest }) => {
+  const { mainContainerStyle, iconButtonStyle, typographyStyle } = useComponentStyle(
+    checkboxComponentMap,
+    rest,
+    checkboxStyle,
+    iStyle,
+  );
 
   const { label, toggleCheckbox, buttonProps, getCheckedState } = useCheckbox(rest);
 
@@ -28,18 +26,13 @@ const Checkbox: FunctionComponent<CheckboxProps> = ({ iStyle, iProps, children, 
       return children;
     }
 
-    return (
-      <Typography iStyle={typographyStyle} iProps={typographyStyleProps}>
-        {label}
-      </Typography>
-    );
-  }, [children, label, typographyStyle, typographyStyleProps]);
+    return <Typography iStyle={typographyStyle}>{label}</Typography>;
+  }, [children, label, typographyStyle]);
 
   return (
-    <Container iStyle={mainContainerStyle} iProps={mainContainerStyleProps}>
+    <Container iStyle={mainContainerStyle}>
       <IconButton
         iStyle={iconButtonStyle}
-        iProps={iconButtonStyleProps}
         onClick={toggleCheckbox}
         icon={getCheckedState() ? checkboxChecked : checkboxUnchecked}
         {...buttonProps}

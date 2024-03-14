@@ -2,29 +2,25 @@ import { StyledObject } from 'styled-components';
 
 import { CompositeComponentColors } from './theme.types';
 
-interface BaseIComponent<T> {
+type BaseIComponent<T = any> = {
   $iStyle?: IOStyle<T>;
-  $parentProps?: T;
-}
+} & T;
 
 interface IComponent<T = any> {
   iStyle?: IOStyle<T>;
-  parentProps?: T;
 }
 
-interface IOCssArgs<T> {
+type IOCssArgs<T> = {
   iColorTheme: Partial<CompositeComponentColors>;
-  parentProps?: T;
-}
+} & T;
 
-interface ICssArgs<T> {
+type ICssArgs<T = any> = {
   iColorTheme: CompositeComponentColors;
-  parentProps?: T;
-}
+} & T;
 
-type IOCss<T> = ((args: IOCssArgs<T>) => StyledObject<object> | undefined) | StyledObject<object>;
+type IOCss<T = any> = ((args: IOCssArgs<T>) => StyledObject<object> | undefined) | StyledObject<object>;
 
-type ICss<T> = (args: ICssArgs<T>) => StyledObject<object>;
+type ICss<T = any> = (args: ICssArgs<T>) => StyledObject<object>;
 
 interface ComponentMap {
   key: string;

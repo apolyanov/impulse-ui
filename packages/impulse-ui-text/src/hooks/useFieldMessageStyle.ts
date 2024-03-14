@@ -9,7 +9,7 @@ import { GetFieldMessageIcon, UseFieldMessageStyleFn } from '@impulse-ui/types';
 import { fieldMessageComponentMap } from '../maps';
 import { defaultFieldMessageStyle } from '../styles';
 
-const useFieldMessageStyle: UseFieldMessageStyleFn = (rest, iStyle, iProps) => {
+const useFieldMessageStyle: UseFieldMessageStyleFn = (rest, iStyle) => {
   const { type } = rest;
 
   const getFieldMessageIcon: GetFieldMessageIcon = (type, icon) => {
@@ -31,22 +31,17 @@ const useFieldMessageStyle: UseFieldMessageStyleFn = (rest, iStyle, iProps) => {
     }
   };
 
-  const {
-    mainContainerStyle,
-    iconStyle,
-    typographyStyle,
-    mainContainerStyleProps,
-    iconStyleProps,
-    typographyStyleProps,
-  } = useComponentStyle(fieldMessageComponentMap, rest, defaultFieldMessageStyle, undefined, iStyle, iProps);
+  const { mainContainerStyle, iconStyle, typographyStyle } = useComponentStyle(
+    fieldMessageComponentMap,
+    rest,
+    defaultFieldMessageStyle,
+    iStyle,
+  );
 
   return {
     mainContainerStyle: mainContainerStyle?.[type!],
     iconStyle: iconStyle?.[type!],
     typographyStyle: typographyStyle?.[type!],
-    mainContainerStyleProps: mainContainerStyleProps?.[type!],
-    iconStyleProps: iconStyleProps?.[type!],
-    typographyStyleProps: typographyStyleProps?.[type!],
     getFieldMessageIcon,
   };
 };

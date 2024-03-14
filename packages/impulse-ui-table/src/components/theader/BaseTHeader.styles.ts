@@ -1,18 +1,18 @@
 'use client';
-import { getThemeMode, mergeProps, mergeThemes } from '@impulse-ui/core';
-import { BaseIComponent, THeaderStyleProps, TRowStyleProps } from '@impulse-ui/types';
+import { getThemeMode, mergeThemes } from '@impulse-ui/core';
+import { BaseIComponent } from '@impulse-ui/types';
 import styled, { css } from 'styled-components';
 
 import { theader } from '../../styles';
 
-const BaseTHeader = styled.th<BaseIComponent<THeaderStyleProps>>(
-  ({ theme: { mode, themes }, $iStyle, $iProps, $parentProps }) => {
-    const { iColorTheme, iCss } = mergeThemes(themes?.theader?.iStyle ?? theader.iStyle, $iStyle, $parentProps);
-    const themeMode = getThemeMode(mode);
-    const iProps = mergeProps<TRowStyleProps>(themes?.theader?.iStyleProps ?? theader.iStyleProps, $iProps);
+const BaseTHeader = styled.th<BaseIComponent>(({ theme: { mode, themes }, $iStyle }) => {
+  const { iColorTheme, iCss } = mergeThemes({
+    defaultTheme: themes?.theader?.iStyle ?? theader.iStyle,
+    overridingTheme: $iStyle,
+  });
+  const themeMode = getThemeMode(mode);
 
-    return css(iCss({ iColorTheme: iColorTheme[themeMode], iProps }));
-  },
-);
+  return css(iCss({ iColorTheme: iColorTheme[themeMode] }));
+});
 
 export { BaseTHeader };

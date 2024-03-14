@@ -5,8 +5,8 @@ import { DividerProps } from '@impulse-ui/types';
 
 import BaseDivider from './BaseDivider.styles';
 
-const Divider: FunctionComponent<DividerProps> = ({ iStyle, iProps, parentProps }) => {
-  return <BaseDivider $parentProps={parentProps} $iStyle={iStyle} $iProps={iProps} />;
+const Divider: FunctionComponent<DividerProps> = ({ iStyle, ...rest }) => {
+  return <BaseDivider $iStyle={iStyle} {...rest} />;
 };
 
 export { Divider };

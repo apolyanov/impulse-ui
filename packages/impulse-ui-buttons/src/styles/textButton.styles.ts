@@ -1,8 +1,7 @@
 import { volcano } from '@impulse-ui/colours';
-import { shouldRenderCssProp } from '@impulse-ui/core';
-import { ComponentTheme, TextButtonStyleProps } from '@impulse-ui/types';
+import { ComponentTheme } from '@impulse-ui/types';
 
-const textButton: ComponentTheme<TextButtonStyleProps> = {
+const textButton: ComponentTheme = {
   iStyle: {
     iColorTheme: {
       light: {
@@ -22,17 +21,17 @@ const textButton: ComponentTheme<TextButtonStyleProps> = {
         colorHover: volcano[50],
       },
     },
-    iCss: ({ iColorTheme, iProps }) => ({
+    iCss: ({ iColorTheme }) => ({
       backgroundColor: iColorTheme.backgroundColor,
       color: iColorTheme.color,
-      borderRadius: shouldRenderCssProp(iProps.hasBorderRadius, 8),
-      filter: shouldRenderCssProp(iProps.hasDropShadow, `drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2))`),
+      borderRadius: 8,
       fontSize: '14px',
       textDecoration: 'none',
       transition: 'background-color 0.2s ease-in-out',
       textTransform: 'uppercase',
-      padding: shouldRenderCssProp(iProps.hasPadding, '0px 28px'),
-      margin: shouldRenderCssProp(iProps.hasMargin, '8px 0'),
+      textShadow: `0 0 1px ${volcano[50]}`,
+      padding: '0px 28px',
+      margin: '8px 0',
       minWidth: '128px',
       width: 'fit-content',
       maxWidth: '256px',
@@ -48,11 +47,6 @@ const textButton: ComponentTheme<TextButtonStyleProps> = {
         cursor: 'pointer',
       },
     }),
-  },
-  iStyleProps: {
-    hasBorderRadius: true,
-    hasPadding: true,
-    hasMargin: true,
   },
 };
 

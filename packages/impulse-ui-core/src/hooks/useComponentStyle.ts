@@ -3,15 +3,15 @@ import { ComponentMap, IOStyle } from '@impulse-ui/types';
 
 import { mergePartialThemes } from '../utils';
 
-const useComponentStyle = <T extends object, K extends object, E extends object>(
+const useComponentStyle = <T extends object, E extends object>(
   componentMap: ComponentMap[],
-  rest: E,
+  props: E,
   defaultTheme?: T,
   overridingTheme?: T,
-) => constructComplexTheme<T, E>(componentMap, rest, defaultTheme, overridingTheme);
+) => constructComplexTheme<T, E>(componentMap, props, defaultTheme, overridingTheme);
 const constructComplexTheme = <T extends object, E extends object>(
   componentMap: ComponentMap[],
-  rest: E,
+  props: E,
   defaultTheme?: T,
   overridingTheme?: T,
 ) => {
@@ -21,17 +21,17 @@ const constructComplexTheme = <T extends object, E extends object>(
     const componentKey = `${themeComponent.key}${themeComponent.prefix ?? 'Style'}`;
 
     if (!themeComponent.subKeys) {
-      newObject[componentKey] = mergePartialThemes(
-        overridingTheme?.[componentKey as keyof T] as IOStyle,
-        defaultTheme?.[componentKey as keyof T] as IOStyle,
-        rest,
-      );
+      newObject[componentKey] = mergePartialThemes({
+        defaultTheme: defaultTheme?.[componentKey as keyof T] as IOStyle,
+        overridingTheme: overridingTheme?.[componentKey as keyof T] as IOStyle,
+        props,
+      });
     }
 
     if (themeComponent.subKeys) {
       newObject[componentKey] = constructComplexTheme(
         themeComponent.subKeys,
-        rest,
+        props,
         defaultTheme?.[componentKey as keyof T] as T,
         overridingTheme?.[componentKey as keyof T] as T,
       );

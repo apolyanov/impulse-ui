@@ -1,8 +1,7 @@
 import { neutral } from '@impulse-ui/colours';
-import { shouldRenderCssProp } from '@impulse-ui/core';
-import { ComponentTheme, TSegmentStyleProps } from '@impulse-ui/types';
+import { ComponentTheme } from '@impulse-ui/types';
 
-const baseTBody: ComponentTheme<TSegmentStyleProps> = {
+const baseTBody: ComponentTheme = {
   iStyle: {
     iColorTheme: {
       light: {
@@ -22,13 +21,9 @@ const baseTBody: ComponentTheme<TSegmentStyleProps> = {
         colorHover: neutral[200],
       },
     },
-    iCss: ({ iColorTheme, iProps }) => ({
+    iCss: ({ iColorTheme }) => ({
       backgroundColor: iColorTheme.backgroundColor,
-      filter: shouldRenderCssProp(iProps.hasDropShadow, `drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2))`),
     }),
-  },
-  iStyleProps: {
-    hasDropShadow: false,
   },
 };
 

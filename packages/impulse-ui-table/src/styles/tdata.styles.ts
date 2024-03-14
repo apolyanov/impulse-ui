@@ -1,8 +1,7 @@
 import { neutral } from '@impulse-ui/colours';
-import { shouldRenderCssProp } from '@impulse-ui/core';
-import { ComponentTheme, TDataStyleProps } from '@impulse-ui/types';
+import { ComponentTheme } from '@impulse-ui/types';
 
-const tdata: ComponentTheme<TDataStyleProps> = {
+const tdata: ComponentTheme = {
   iStyle: {
     iColorTheme: {
       light: {
@@ -22,13 +21,10 @@ const tdata: ComponentTheme<TDataStyleProps> = {
         colorHover: neutral[200],
       },
     },
-    iCss: ({ iColorTheme, iProps }) => ({
+    iCss: ({ iColorTheme }) => ({
       backgroundColor: iColorTheme.backgroundColor,
-      padding: shouldRenderCssProp(iProps.hasPadding, '8px 16px'),
+      padding: '12px 8px',
     }),
-  },
-  iStyleProps: {
-    hasPadding: true,
   },
 };
 

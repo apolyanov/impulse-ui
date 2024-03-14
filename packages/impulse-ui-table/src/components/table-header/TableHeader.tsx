@@ -1,5 +1,5 @@
 'use client';
-import React, { FunctionComponent } from 'react';
+import React, { ChangeEvent, FunctionComponent } from 'react';
 import { faFilter, faMagnifyingGlass, faSliders } from '@fortawesome/free-solid-svg-icons';
 import { IconButton } from '@impulse-ui/buttons';
 import { useComponentStyle } from '@impulse-ui/core';
@@ -8,37 +8,32 @@ import { Container } from '@impulse-ui/layout';
 import { Typography } from '@impulse-ui/text';
 import { TableHeaderProps } from '@impulse-ui/types';
 
+import { useImpulseTable } from '../../hooks';
 import { tableHeaderComponentMap } from '../../maps';
 import { tableHeaderStyle } from '../../styles';
 
-const TableHeader: FunctionComponent<TableHeaderProps> = ({ iStyle, iProps, ...rest }) => {
-  const {
-    containerStyle,
-    tableNameStyle,
-    filtersButtonStyle,
-    settingsButtonStyle,
-    filtersButtonStyleProps,
-    tableNameStylesProps,
-    containerStyleProps,
-    settingsButtonStyleProps,
-    searchInputStyleProps,
-    searchInputStyle,
-  } = useComponentStyle(tableHeaderComponentMap, rest, iStyle, iProps, tableHeaderStyle);
+const TableHeader: FunctionComponent<TableHeaderProps> = ({ iStyle, ...rest }) => {
+  const { setGlobalFilter } = useImpulseTable();
+  const { containerStyle, tableNameStyle, filtersButtonStyle, settingsButtonStyle, searchInputStyle } =
+    useComponentStyle(tableHeaderComponentMap, rest, iStyle, tableHeaderStyle);
+
+  const handleOnChangeSearch = (event: ChangeEvent<HTMLInputElement>) => setGlobalFilter(event.target.value);
+  const handleOnClearSearch = () => setGlobalFilter('');
 
   return (
-    <Container iProps={containerStyleProps} iStyle={containerStyle}>
-      <Typography iProps={tableNameStylesProps} iStyle={tableNameStyle}>
-        Table name
-      </Typography>
+    <Container iStyle={containerStyle}>
+      <Typography iStyle={tableNameStyle}>Table name</Typography>
       <TextInput
+        debounced
+        onDebouncedChange={handleOnChangeSearch}
+        onClear={handleOnClearSearch}
         iStyle={searchInputStyle}
-        iProps={searchInputStyleProps}
         placeholder={'Search in the table'}
         clearable
         icon={faMagnifyingGlass}
       />
-      {/* <IconButton iProps={filtersButtonStyleProps} iStyle={filtersButtonStyle} icon={faFilter} />*/}
-      {/* <IconButton iProps={settingsButtonStyleProps} iStyle={settingsButtonStyle} icon={faSliders} />*/}
+      {/* <IconButton iStyle={filtersButtonStyle} icon={faFilter} />*/}
+      {/* <IconButton iStyle={settingsButtonStyle} icon={faSliders} />*/}
     </Container>
   );
 };

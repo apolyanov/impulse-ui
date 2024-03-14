@@ -1,4 +1,7 @@
+export * from './impulseTable.styles';
+export * from './pagination.styles';
 export * from './table.styles';
+export * from './tableFooter.styles';
 export * from './tableHeader.styles';
 export * from './tbody.styles';
 export * from './tdata.styles';

@@ -43,7 +43,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
+    font-weight: 500;
     height: 100%;
     display: block;
     text-rendering: auto;

@@ -1,8 +1,7 @@
 import { neutral } from '@impulse-ui/colours';
-import { shouldRenderCssProp } from '@impulse-ui/core';
-import { ComponentTheme, TableStyleProps } from '@impulse-ui/types';
+import { ComponentTheme } from '@impulse-ui/types';
 
-const table: ComponentTheme<TableStyleProps> = {
+const table: ComponentTheme = {
   iStyle: {
     iColorTheme: {
       light: {
@@ -22,19 +21,14 @@ const table: ComponentTheme<TableStyleProps> = {
         colorHover: neutral[200],
       },
     },
-    iCss: ({ iColorTheme, iProps }) => ({
+    iCss: ({ iColorTheme }) => ({
       backgroundColor: iColorTheme.backgroundColor,
-      borderRadius: shouldRenderCssProp(iProps.hasBorderRadius, 4),
-      padding: shouldRenderCssProp(iProps.hasPadding, 8),
-      margin: shouldRenderCssProp(iProps.hasMargin, 8),
-      filter: shouldRenderCssProp(iProps.hasDropShadow, `drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2))`),
+      borderRadius: 4,
+      padding: 8,
+      margin: 8,
+      borderCollapse: 'collapse',
+      tableLayout: 'fixed',
     }),
-  },
-  iStyleProps: {
-    hasBorderRadius: true,
-    hasPadding: true,
-    hasMargin: true,
-    hasDropShadow: false,
   },
 };
 
