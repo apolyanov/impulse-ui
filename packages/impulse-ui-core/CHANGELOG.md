@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.4.0-beta.0](https://github.com/apolyanov/impulse-ui/compare/v2.3.1-beta.2...v2.4.0-beta.0) (2024-03-14)
+
+
+### Features
+
+* Adding sorting functionality to the table. ([1ef3840](https://github.com/apolyanov/impulse-ui/commit/1ef3840c7c1b9857e9da7562219647076215b3a9))
+* Introducing table ([3f591fb](https://github.com/apolyanov/impulse-ui/commit/3f591fb1f768400753c0ee96a9210ed776ba6e03))
+* Refactoring types and removing iProps ([a4327e6](https://github.com/apolyanov/impulse-ui/commit/a4327e61752b6688605c5ee6b34f6000c25cbe14))
+
+
+
+
+
 ## [2.3.1-beta.2](https://github.com/apolyanov/impulse-ui/compare/v2.3.1-beta.1...v2.3.1-beta.2) (2024-03-08)
 
 **Note:** Version bump only for package @impulse-ui/core
