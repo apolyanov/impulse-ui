@@ -4,18 +4,31 @@ import { AutoComplete } from '@impulse-ui/auto-complete';
 import { Button } from '@impulse-ui/buttons';
 import { Container } from '@impulse-ui/layout';
 
-import { AdvancedHuman, humans } from '../mocks/autoCompleteMock';
+import { humans } from '../mocks/autoCompleteMock';
 
 const AutoCompletePage = () => {
-  const [options, setOptions] = useState<AdvancedHuman[]>([]);
+  const [options, setOptions] = useState<{ name: string; gal: string }[]>(() => humans());
 
   return (
-    <Container iStyle={{ iCss: { flexDirection: 'row', height: '700px', gap: '16px' } }}>
+    <Container iStyle={{ iCss: { flexDirection: 'row', height: '700px', width: '100%', gap: '16px' } }}>
       <AutoComplete
-        selectOnBlur
-        options={humans}
-        extractSimpleOptionValue={(option: AdvancedHuman) => option.name}
-        formatOptionText={(option: AdvancedHuman) => option.name}
+        iStyle={{
+          mainContainerStyle: {
+            iCss: {
+              maxWidth: 450,
+            },
+          },
+          textInputStyle: {
+            mainContainerStyle: {
+              iCss: {
+                maxWidth: 450,
+              },
+            },
+          },
+        }}
+        options={options}
+        extractSimpleOptionValue={(option) => option.name}
+        formatOptionText={(option) => option.name}
         onOptionSelect={(optionValue) => console.log(optionValue)}
         inputProps={{
           clearable: true,

@@ -2,20 +2,21 @@ import { HTMLAttributes } from 'react';
 
 import { TextInputCompositeProps, TextInputStyle } from '../input';
 import { IOStyle } from '../theme';
+import { TypeEquality } from '../utils';
 
 import { AutoCompleteItemStyle } from './autoCompleteItem.types';
 
 type SimpleOptionValue = string | number | Object | Object[];
 
-interface AutoCompleteProps extends AutoCompleteRestProps {
-  iStyle?: Partial<AutoCompleteStyle>;
+interface AutoCompleteProps<T> extends AutoCompleteRestProps<T> {
+  iStyle?: Partial<AutoCompleteStyle<T>>;
 }
 
-interface AutoCompleteRestProps<T extends object = any> extends HTMLAttributes<HTMLDivElement> {
+interface AutoCompleteRestProps<T> extends HTMLAttributes<HTMLDivElement> {
   selectOnBlur?: boolean;
   loading?: boolean;
   disableAutoFiltering?: boolean;
-  options: SimpleOption[] | T[];
+  options: TypeEquality<T, SimpleOption> extends true ? SimpleOption[] : T[];
   extractSimpleOptionValue?: ExtractSimpleOptionFn<T>;
   formatOptionText?: FormatOptionTextFn<T>;
   inputProps?: TextInputCompositeProps;
@@ -39,13 +40,13 @@ interface InnerSimpleOption extends SimpleOption {
   uuid: number;
 }
 
-interface AutoCompleteStyle {
-  mainContainerStyle: IOStyle<AutoCompleteRestProps>;
+interface AutoCompleteStyle<T = object> {
+  mainContainerStyle: IOStyle<AutoCompleteRestProps<T>>;
   textInputStyle: Partial<TextInputStyle>;
-  autoCompleteItemsContainerStyle: IOStyle<AutoCompleteRestProps>;
+  autoCompleteItemsContainerStyle: IOStyle<AutoCompleteRestProps<T>>;
   autoCompleteItemStyle: Partial<AutoCompleteItemStyle>;
-  loadingTypographyStyle: IOStyle<AutoCompleteRestProps>;
-  noOptionsTypographyStyle: IOStyle<AutoCompleteRestProps>;
+  loadingTypographyStyle: IOStyle<AutoCompleteRestProps<T>>;
+  noOptionsTypographyStyle: IOStyle<AutoCompleteRestProps<T>>;
 }
 
 export type {
