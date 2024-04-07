@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.5.0-beta.0](https://github.com/apolyanov/impulse-ui/compare/v2.4.0...v2.5.0-beta.0) (2024-04-07)
+
+
+### Features
+
+* Adding auto type inferring for the auto complete ([a4a3f52](https://github.com/apolyanov/impulse-ui/commit/a4a3f52c52505d366bac9ee8fb6ed631df72cd4f))
+
+
+
+
+
 # [2.4.0](https://github.com/apolyanov/impulse-ui/compare/v2.3.0...v2.4.0) (2024-03-14)
 
 
