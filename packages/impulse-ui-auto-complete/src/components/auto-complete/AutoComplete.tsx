@@ -1,5 +1,5 @@
 'use client';
-import React, { Fragment, FunctionComponent, memo, ReactNode, useMemo } from 'react';
+import React, { Fragment, ReactNode, useMemo } from 'react';
 import { useComponentStyle } from '@impulse-ui/core';
 import { TextInput } from '@impulse-ui/input';
 import { Container } from '@impulse-ui/layout';
@@ -12,7 +12,7 @@ import { defaultAutoCompleteStyle } from '../../styles';
 
 import { AutoCompleteItem } from './auto-complete-item';
 
-const AutoComplete: FunctionComponent<AutoCompleteProps> = memo(({ iStyle, ...rest }) => {
+const AutoComplete = <T extends object>({ iStyle, ...rest }: AutoCompleteProps<T>) => {
   const {
     mainContainerStyle,
     textInputStyle,
@@ -44,7 +44,7 @@ const AutoComplete: FunctionComponent<AutoCompleteProps> = memo(({ iStyle, ...re
     styles,
     showOptions,
     attributes,
-  } = useAutoComplete(rest);
+  } = useAutoComplete<T>(rest);
 
   const optionsContainerRenderer = useMemo((): ReactNode | undefined => {
     if (showOptions) {
@@ -55,6 +55,8 @@ const AutoComplete: FunctionComponent<AutoCompleteProps> = memo(({ iStyle, ...re
       if (getOptionsToShow.length === 0) {
         return <Typography iStyle={noOptionsTypographyStyle}>No options</Typography>;
       }
+
+      console.log(getOptionsToShow);
 
       return (
         <Container style={{ ...listContainerStyle }}>
@@ -113,6 +115,6 @@ const AutoComplete: FunctionComponent<AutoCompleteProps> = memo(({ iStyle, ...re
       )}
     </Fragment>
   );
-});
+};
 
 export { AutoComplete };

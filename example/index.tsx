@@ -9,7 +9,7 @@ import router from './components/app.routes';
 
 const App = () => {
   return (
-    <Container iStyle={{ iCss: { margin: 0, padding: 0, minHeight: '100vh' } }}>
+    <Container iStyle={{ iCss: { margin: 0, padding: 0, minHeight: '100vh', width: '100%' } }}>
       <RouterProvider router={router} />
     </Container>
   );

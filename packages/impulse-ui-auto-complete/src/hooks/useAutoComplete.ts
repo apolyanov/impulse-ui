@@ -16,7 +16,7 @@ import { AutoCompleteRestProps, InnerSimpleOption } from '@impulse-ui/types';
 
 import { dropdownModifiers, processOptions } from '../helpers';
 
-const useAutoComplete = (rest: AutoCompleteRestProps) => {
+const useAutoComplete = <T>(rest: AutoCompleteRestProps<T>) => {
   const {
     options,
     extractSimpleOptionValue,
