@@ -17,17 +17,20 @@ interface AutoCompleteRestProps<T> extends HTMLAttributes<HTMLDivElement> {
   loading?: boolean;
   disableAutoFiltering?: boolean;
   options: TypeEquality<T, SimpleOption> extends true ? SimpleOption[] : T[];
-  extractSimpleOptionValue?: ExtractSimpleOptionFn<T>;
-  formatOptionText?: FormatOptionTextFn<T>;
+  getOptionValue?: GetOptionValue<T>;
+  getOptionLabel?: GetOptionLabel<T>;
+  getOptionId?: GetOptionId<T>;
   inputProps?: TextInputCompositeProps;
   onOptionSelect?: (optionValue: SimpleOptionValue | null) => void;
 }
 
-interface FormatOptionTextFn<T> {
+interface GetOptionLabel<T> {
   (option: T): string | number;
 }
 
-interface ExtractSimpleOptionFn<T> {
+type GetOptionId<T> = GetOptionLabel<T>;
+
+interface GetOptionValue<T> {
   (option: T): SimpleOptionValue;
 }
 
@@ -37,7 +40,7 @@ interface SimpleOption {
 }
 
 interface InnerSimpleOption extends SimpleOption {
-  uuid: number;
+  uuid: number | string;
 }
 
 interface AutoCompleteStyle<T = object> {
@@ -53,8 +56,9 @@ export type {
   AutoCompleteProps,
   AutoCompleteRestProps,
   AutoCompleteStyle,
-  ExtractSimpleOptionFn,
-  FormatOptionTextFn,
+  GetOptionId,
+  GetOptionLabel,
+  GetOptionValue,
   InnerSimpleOption,
   SimpleOption,
   SimpleOptionValue,

@@ -1,6 +1,6 @@
-import { ExtractSimpleOptionFn, FormatOptionTextFn, InnerSimpleOption, PopoverModifier } from '@impulse-ui/types';
+import { GetOptionId, GetOptionLabel, GetOptionValue, InnerSimpleOption } from '@impulse-ui/types';
 
-const getItemText = (option: any, formatOptionText?: FormatOptionTextFn<any>): string | number => {
+const getItemText = (option: any, formatOptionText?: GetOptionLabel<any>): string | number => {
   if (formatOptionText) {
     return formatOptionText(option);
   }
@@ -15,18 +15,19 @@ const getItemText = (option: any, formatOptionText?: FormatOptionTextFn<any>): s
 
 const processOptions = (
   unProcessedOptions: any[],
-  extractSimpleOptionValue?: ExtractSimpleOptionFn<any>,
-  formatOptionText?: FormatOptionTextFn<any>,
+  getOptionValue?: GetOptionValue<any>,
+  getOptionLabel?: GetOptionLabel<any>,
+  getOptionId?: GetOptionId<any>,
 ): InnerSimpleOption[] => {
   if (unProcessedOptions) {
     return unProcessedOptions.map((option, index) => {
       let newOption: InnerSimpleOption;
 
-      if (extractSimpleOptionValue) {
+      if (getOptionValue) {
         newOption = {
-          uuid: index,
-          value: extractSimpleOptionValue(option),
-          label: getItemText(option, formatOptionText),
+          uuid: getOptionId?.(option) ?? index,
+          value: getOptionValue(option),
+          label: getItemText(option, getOptionLabel),
         };
 
         return newOption;
@@ -39,9 +40,9 @@ const processOptions = (
       }
 
       newOption = {
-        uuid: index,
-        label: getItemText(option, formatOptionText),
-        value: getItemText(option, formatOptionText),
+        uuid: getOptionId?.(option) ?? index,
+        label: getItemText(option, getOptionLabel),
+        value: getItemText(option, getOptionLabel),
       };
 
       return newOption;
@@ -51,31 +52,4 @@ const processOptions = (
   return [];
 };
 
-const dropdownModifiers: ReadonlyArray<PopoverModifier<string>> = [
-  {
-    name: 'offset',
-    options: {
-      offset: [0, 4],
-    },
-  },
-  {
-    name: 'flip',
-    options: {
-      fallbackPlacements: ['top'],
-    },
-  },
-  {
-    name: 'width',
-    enabled: true,
-    phase: 'beforeWrite',
-    requires: ['computeStyles'],
-    fn: ({ state }) => {
-      state.styles.popper.width = `${state.rects.reference.width}px`;
-    },
-    effect: ({ state }) => {
-      state.elements.popper.style.width = `${state.elements.reference.getBoundingClientRect().width}px`;
-    },
-  },
-];
-
-export { dropdownModifiers, processOptions };
+export { processOptions };
