@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.5.0-beta.1](https://github.com/apolyanov/impulse-ui/compare/v2.5.0-beta.0...v2.5.0-beta.1) (2024-04-08)
+
+
+### Bug Fixes
+
+* Fixing autoscroll of the AutoComplete.tsx component. ([252a017](https://github.com/apolyanov/impulse-ui/commit/252a017a9e73fe6c4ff108feab9e7e135f9c0620))
+
+
+
+
+
 # [2.5.0-beta.0](https://github.com/apolyanov/impulse-ui/compare/v2.4.0...v2.5.0-beta.0) (2024-04-07)
 
 **Note:** Version bump only for package @impulse-ui/core
