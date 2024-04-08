@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { faker } from '@faker-js/faker';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { AutoComplete } from '@impulse-ui/auto-complete';
 import { Button } from '@impulse-ui/buttons';
@@ -8,6 +9,7 @@ import { humans } from '../mocks/autoCompleteMock';
 
 const AutoCompletePage = () => {
   const [options, setOptions] = useState<{ name: string; gal: string }[]>(() => humans());
+  const [state, setState] = useState<string>();
 
   return (
     <Container iStyle={{ iCss: { flexDirection: 'row', height: '700px', width: '100%', gap: '16px' } }}>
@@ -27,9 +29,10 @@ const AutoCompletePage = () => {
           },
         }}
         options={options}
-        extractSimpleOptionValue={(option) => option.name}
-        formatOptionText={(option) => option.name}
-        onOptionSelect={(optionValue) => console.log(optionValue)}
+        getOptionValue={(option) => option.name}
+        getOptionLabel={(option) => option.name}
+        getOptionId={(option) => option.gal}
+        onOptionSelect={(option) => console.log(option)}
         inputProps={{
           clearable: true,
           isClearIconFocusable: true,
@@ -39,6 +42,7 @@ const AutoCompletePage = () => {
       <Button
         onClick={() => {
           const splicedOptions = options.slice(250, 500);
+          setState('splicedOptions');
           setOptions(splicedOptions);
         }}
       >

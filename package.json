@@ -8,6 +8,7 @@
   ],
   "scripts": {
     "build": "lerna run build && npm install",
+    "watch": "lerna run start",
     "build-storybook": "storybook build",
     "lint": "lerna run lint",
     "size": "lerna run size",
@@ -75,6 +76,7 @@
     "storybook": "^7.0.14",
     "tslib": "^2.5.2",
     "typescript": "^5.2.2",
+    "rollup-plugin-banner2": "^1.2.2",
     "vite": "5.2.8"
   },
   "dependencies": {
@@ -84,14 +86,12 @@
     "@fortawesome/free-regular-svg-icons": "6.4.2",
     "@fortawesome/free-solid-svg-icons": "6.4.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
-    "@popperjs/core": "^2.11.8",
-    "@tanstack/react-table": "^8.10.7",
-    "@tanstack/react-virtual": "^3.0.0-beta.65",
+    "@floating-ui/react-dom": "^2.0.8",
+    "@tanstack/react-table": "^8.15.3",
+    "@tanstack/react-virtual": "^3.2.0",
     "lodash": "^4.17.21",
     "lodash-es": "^4.17.21",
-    "react-popper": "^2.3.0",
-    "rollup-plugin-banner2": "^1.2.2",
-    "styled-components": "6.1.0",
-    "stylis": "^4.3.0"
+    "styled-components": "6.1.8",
+    "stylis": "^4.3.1"
   }
 }

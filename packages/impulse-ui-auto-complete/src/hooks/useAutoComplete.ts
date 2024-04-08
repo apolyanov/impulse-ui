@@ -10,18 +10,19 @@ import {
   useRef,
   useState,
 } from 'react';
-import { usePopper } from 'react-popper';
+import { autoUpdate, offset, size, useFloating } from '@floating-ui/react-dom';
 import { useElementDimensions, useItemSelection, useOutsideClick, useVirtualizedList } from '@impulse-ui/core';
 import { AutoCompleteRestProps, InnerSimpleOption } from '@impulse-ui/types';
 
-import { dropdownModifiers, processOptions } from '../helpers';
+import { processOptions } from '../helpers';
 
 const useAutoComplete = <T>(rest: AutoCompleteRestProps<T>) => {
   const {
     options,
-    extractSimpleOptionValue,
+    getOptionValue,
+    getOptionLabel,
+    getOptionId,
     inputProps,
-    formatOptionText,
     onOptionSelect,
     selectOnBlur,
     loading,
@@ -30,8 +31,8 @@ const useAutoComplete = <T>(rest: AutoCompleteRestProps<T>) => {
   } = rest;
 
   const processedOptions = useMemo(
-    () => processOptions(options, extractSimpleOptionValue, formatOptionText),
-    [extractSimpleOptionValue, formatOptionText, options],
+    () => processOptions(options, getOptionValue, getOptionLabel, getOptionId),
+    [getOptionValue, getOptionLabel, getOptionId, options],
   );
 
   const [showOptions, setShowOptions] = useState<boolean>(false);
@@ -40,9 +41,6 @@ const useAutoComplete = <T>(rest: AutoCompleteRestProps<T>) => {
   const [filteredOptions, setFilteredOptions] = useState<InnerSimpleOption[]>([]);
 
   const [inputValue, setInputValue] = useState<InputHTMLAttributes<HTMLInputElement>['value']>('');
-
-  const [dropdownRef, setDropdownRef] = useState<HTMLDivElement | null>(null);
-  const [containerRef, setContainerRef] = useState<HTMLDivElement | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
   const getOptionsToShow = useMemo(
@@ -64,26 +62,34 @@ const useAutoComplete = <T>(rest: AutoCompleteRestProps<T>) => {
     getItemId: (item) => item.uuid,
   });
 
+  const { refs, floatingStyles } = useFloating({
+    placement: 'bottom',
+    middleware: [
+      size({
+        apply({ elements }) {
+          elements.floating.style.width = `${elements.reference.getBoundingClientRect().width}px`;
+        },
+      }),
+      offset(4),
+    ],
+    whileElementsMounted: autoUpdate,
+  });
+
   const { getVirtualItems, listItemStyle, listContainerStyle, scrollTo } = useVirtualizedList({
-    scrollElement: dropdownRef,
+    scrollElement: refs.floating.current as HTMLElement,
     elementHeight: 38,
     elementsCount: getOptionsToShow.length,
     scrollIndex: highlightedIndex,
     autoScroll: true,
   });
 
-  const { styles, attributes } = usePopper(containerRef, dropdownRef, {
-    placement: 'bottom',
-    modifiers: dropdownModifiers,
-  });
-
-  const dimensions = useElementDimensions(containerRef);
+  const dimensions = useElementDimensions(refs.reference.current as HTMLElement);
 
   useOutsideClick(() => {
     handleInputBlur();
 
     setShowOptions(false);
-  }, [containerRef, dropdownRef]);
+  }, [refs.reference.current as HTMLElement, refs.floating.current as HTMLElement]);
 
   const updateFilteredOptions = useCallback(
     (newOptions: InnerSimpleOption[]) => {
@@ -249,21 +255,19 @@ const useAutoComplete = <T>(rest: AutoCompleteRestProps<T>) => {
   const updateAutoSelectOptions = useCallback(() => {
     setSelectOptions(processedOptions);
     updateFilteredOptions(processedOptions);
-
-    resetSelection();
-  }, [processedOptions, resetSelection, updateFilteredOptions]);
+  }, [processedOptions, updateFilteredOptions]);
 
   useEffect(() => {
     updateAutoSelectOptions();
   }, [updateAutoSelectOptions]);
+
+  useEffect(() => resetSelection(), [options, resetSelection]);
 
   return {
     handleOnChange,
     onMouseDown,
     handleInputClear,
     handleOptionSelect,
-    setContainerRef,
-    setDropdownRef,
     handleKeyDown,
     getOptionsToShow,
     mainContainerProps,
@@ -274,16 +278,15 @@ const useAutoComplete = <T>(rest: AutoCompleteRestProps<T>) => {
     scrollTo,
     inputProps,
     loading,
-    dropdownRef,
-    containerRef,
     filteredOptions,
     dimensions,
-    styles,
-    attributes,
     inputValue,
     isItemSelected,
     showOptions,
     highlightedIndex,
+    containerRefSetter: refs.setReference,
+    dropdownRefSetter: refs.setFloating,
+    floatingStyles,
   };
 };
 
