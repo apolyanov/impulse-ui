@@ -1,19 +1,15 @@
 'use client';
-import { useCallback, useState } from 'react';
-import { ScrollToFn } from '@impulse-ui/types';
+import { useCallback, useMemo, useState } from 'react';
+import { UseItemSelectionOptions } from '@impulse-ui/types';
 
 const defaultOptions: UseItemSelectionOptions<any> = {
   getItemId: (item: any) => item.id,
 };
 
-interface UseItemSelectionOptions<T> {
-  getItemId: (item: T) => string | number;
-  scrollToFn?: ScrollToFn;
-}
-
 const useItemSelection = <T>(items: T[], options?: Partial<UseItemSelectionOptions<T>>) => {
-  const { getItemId } = { ...defaultOptions, ...options };
+  const { getItemId, multiple } = useMemo(() => ({ ...defaultOptions, ...options }), [options]);
 
+  const [selectedItems, setSelectedItems] = useState<T[]>([]);
   const [selectedItem, setSelectedItem] = useState<T | null>(null);
   const [highlightedIndex, setHighlightedIndex] = useState<number>(-1);
 
@@ -35,9 +31,13 @@ const useItemSelection = <T>(items: T[], options?: Partial<UseItemSelectionOptio
   };
 
   const isItemSelected = (item: T) => {
-    if (selectedItem) {
-      return getItemId(item) === getItemId(selectedItem);
+    if (multiple) {
+      if (selectedItems.length > 0) return true;
+
+      return selectedItems.some((selectedItem) => getItemId(selectedItem) === getItemId(item));
     }
+
+    if (selectedItem) return getItemId(item) === getItemId(selectedItem);
 
     return false;
   };
@@ -45,17 +45,38 @@ const useItemSelection = <T>(items: T[], options?: Partial<UseItemSelectionOptio
   const selectItem = (item?: T) => {
     const newItem = item ?? items.at(highlightedIndex);
 
-    if (!selectedItem && newItem) {
-      setSelectedItem(newItem);
-    } else {
-      if (newItem && selectedItem && getItemId(newItem) !== getItemId(selectedItem)) {
-        setSelectedItem(newItem);
+    if (newItem) {
+      if (multiple) {
+        selectMultipleItems(newItem);
+      } else {
+        selectSingleItem(newItem);
       }
     }
   };
 
+  const selectSingleItem = (item: T) => {
+    if (!selectedItem) {
+      setSelectedItem(item);
+    } else {
+      if (selectedItem && getItemId(item) !== getItemId(selectedItem)) {
+        setSelectedItem(item);
+      }
+    }
+  };
+
+  const selectMultipleItems = (item: T) => {
+    if (isItemSelected(item)) {
+      const newSelectedItems = selectedItems.filter((selectedItem) => getItemId(selectedItem) !== getItemId(item));
+
+      setSelectedItems(newSelectedItems);
+    } else {
+      const newSelectedItems = [...selectedItems, item];
+      setSelectedItems(newSelectedItems);
+    }
+  };
+
   const getHighlightedItem = () => {
-    return items[highlightedIndex];
+    return items.at(highlightedIndex);
   };
 
   const updateHighlightedIndex = useCallback(
@@ -88,6 +109,7 @@ const useItemSelection = <T>(items: T[], options?: Partial<UseItemSelectionOptio
 
   const resetSelection = useCallback(() => {
     setSelectedItem(null);
+    setSelectedItems([]);
     setHighlightedIndex(-1);
   }, []);
 
@@ -102,6 +124,7 @@ const useItemSelection = <T>(items: T[], options?: Partial<UseItemSelectionOptio
     updateHighlightedIndex,
     highlightedIndex,
     selectedItem,
+    selectedItems,
   };
 };
 

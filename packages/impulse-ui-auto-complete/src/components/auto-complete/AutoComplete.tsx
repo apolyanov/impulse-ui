@@ -23,8 +23,8 @@ const AutoComplete = <T extends object>({ iStyle, ...rest }: AutoCompleteProps<T
   } = useComponentStyle(autoCompleteComponentMap, rest, defaultAutoCompleteStyle, iStyle);
 
   const {
-    setContainerRef,
-    setDropdownRef,
+    containerRefSetter,
+    dropdownRefSetter,
     handleInputClear,
     handleKeyDown,
     handleOptionSelect,
@@ -41,9 +41,8 @@ const AutoComplete = <T extends object>({ iStyle, ...rest }: AutoCompleteProps<T
     isItemSelected,
     highlightedIndex,
     inputValue,
-    styles,
     showOptions,
-    attributes,
+    floatingStyles,
   } = useAutoComplete<T>(rest);
 
   const optionsContainerRenderer = useMemo((): ReactNode | undefined => {
@@ -55,8 +54,6 @@ const AutoComplete = <T extends object>({ iStyle, ...rest }: AutoCompleteProps<T
       if (getOptionsToShow.length === 0) {
         return <Typography iStyle={noOptionsTypographyStyle}>No options</Typography>;
       }
-
-      console.log(getOptionsToShow);
 
       return (
         <Container style={{ ...listContainerStyle }}>
@@ -91,7 +88,7 @@ const AutoComplete = <T extends object>({ iStyle, ...rest }: AutoCompleteProps<T
 
   return (
     <Fragment>
-      <Container {...mainContainerProps} ref={setContainerRef} iStyle={mainContainerStyle}>
+      <Container {...mainContainerProps} ref={containerRefSetter} iStyle={mainContainerStyle}>
         <TextInput
           {...inputProps}
           ref={inputRef}
@@ -104,12 +101,7 @@ const AutoComplete = <T extends object>({ iStyle, ...rest }: AutoCompleteProps<T
         />
       </Container>
       {showOptions && (
-        <Container
-          ref={setDropdownRef}
-          iStyle={autoCompleteItemsContainerStyle}
-          style={styles.popper}
-          {...attributes.popper}
-        >
+        <Container style={{ ...floatingStyles }} ref={dropdownRefSetter} iStyle={autoCompleteItemsContainerStyle}>
           {optionsContainerRenderer}
         </Container>
       )}
