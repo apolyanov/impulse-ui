@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.5.0](https://github.com/apolyanov/impulse-ui/compare/v2.4.0...v2.5.0) (2024-04-09)
+
+
+### Bug Fixes
+
+* Adding check if tfoot style is missing ([964375d](https://github.com/apolyanov/impulse-ui/commit/964375db36fa3232aa12b8ac2e27a2ab568c0182))
+
+
+
+
+
 # [2.5.0-beta.1](https://github.com/apolyanov/impulse-ui/compare/v2.5.0-beta.0...v2.5.0-beta.1) (2024-04-08)
 
 **Note:** Version bump only for package @impulse-ui/table

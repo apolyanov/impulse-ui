@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.5.0](https://github.com/apolyanov/impulse-ui/compare/v2.4.0...v2.5.0) (2024-04-09)
+
+
+### Bug Fixes
+
+* Adding check if tfoot style is missing ([964375d](https://github.com/apolyanov/impulse-ui/commit/964375db36fa3232aa12b8ac2e27a2ab568c0182))
+* Fixing autoscroll of the AutoComplete.tsx component. ([5b3c0fb](https://github.com/apolyanov/impulse-ui/commit/5b3c0fba9a09df1273134b860931bef04bc4e140))
+
+
+### Features
+
+* Adding auto type inferring for the auto complete ([fef8730](https://github.com/apolyanov/impulse-ui/commit/fef8730efa2e4fe7e7394e027137d68036f8809f))
+
+
+
+
+
 # [2.5.0-beta.1](https://github.com/apolyanov/impulse-ui/compare/v2.5.0-beta.0...v2.5.0-beta.1) (2024-04-08)
 
 
