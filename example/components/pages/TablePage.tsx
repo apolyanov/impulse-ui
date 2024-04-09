@@ -41,31 +41,31 @@ const columns = [
   columnHelper.accessor('firstName', {
     cell: (info) => info.getValue(),
     header: 'First Name',
-    footer: (info) => info.column.id,
+    // footer: (info) => info.column.id,
   }),
   columnHelper.accessor('lastName', {
     cell: (info) => <i>{info.getValue()}</i>,
     header: 'Last Name',
-    footer: (info) => info.column.id,
+    // footer: (info) => info.column.id,
   }),
   columnHelper.accessor('age', {
     header: 'Age',
     cell: (info) => info.renderValue(),
-    footer: (info) => info.column.id,
+    // footer: (info) => info.column.id,
     size: 40,
   }),
   columnHelper.accessor('visits', {
     header: 'Visits',
-    footer: (info) => info.column.id,
+    // footer: (info) => info.column.id,
     size: 40,
   }),
   columnHelper.accessor('status', {
     header: 'Status',
-    footer: (info) => info.column.id,
+    // footer: (info) => info.column.id,
   }),
   columnHelper.accessor('progress', {
     header: 'Profile Progress',
-    footer: (info) => info.column.id,
+    // footer: (info) => info.column.id,
     enableSorting: true,
     sortingFn: 'auto',
     size: 40,
