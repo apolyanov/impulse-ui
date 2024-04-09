@@ -2,8 +2,14 @@ import { IconButtonStyle } from '../buttons';
 import { TextInputStyle } from '../input';
 import { IOStyle } from '../theme';
 
-interface TableHeaderProps {
+interface TableHeaderProps extends TableHeaderRestProps {
   iStyle?: Partial<TableHeaderStyle>;
+}
+
+interface TableHeaderRestProps {
+  tableName?: string;
+  showTableControls?: boolean;
+  showTableSearch?: boolean;
 }
 
 interface TableHeaderStyle {
@@ -14,4 +20,4 @@ interface TableHeaderStyle {
   settingsButtonStyle: Partial<IconButtonStyle>;
 }
 
-export type { TableHeaderProps, TableHeaderStyle };
+export type { TableHeaderProps, TableHeaderRestProps, TableHeaderStyle };
