@@ -31,7 +31,7 @@ const thead: Partial<THeadStyle> = {
     iCss: {
       display: 'flex',
       alignItems: 'center',
-      fontSize: 16,
+      fontSize: 14,
       height: 'calc(100% - 16px)',
       gap: 4,
       ...paddingX(8),
