@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.6.0-beta.1](https://github.com/apolyanov/impulse-ui/compare/v2.6.0-beta.0...v2.6.0-beta.1) (2024-04-09)
+
+
+### Features
+
+* Improving table readability ([85cc1c5](https://github.com/apolyanov/impulse-ui/commit/85cc1c59492110c4feaf7e4b09eec9a14e013042))
+
+
+
+
+
 # [2.6.0-beta.0](https://github.com/apolyanov/impulse-ui/compare/v2.5.0...v2.6.0-beta.0) (2024-04-09)
 
 
