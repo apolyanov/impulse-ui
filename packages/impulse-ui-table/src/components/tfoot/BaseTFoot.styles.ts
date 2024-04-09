@@ -7,7 +7,7 @@ import { tfoot } from '../../styles';
 
 const BaseTFoot = styled.tfoot<BaseIComponent>(({ theme: { themes, mode }, $iStyle }) => {
   const { iColorTheme, iCss } = mergeThemes({
-    defaultTheme: themes?.tfoot.iStyle ?? tfoot.iStyle,
+    defaultTheme: themes?.tfoot?.iStyle ?? tfoot.iStyle,
     overridingTheme: $iStyle,
   });
   const themeMode = getThemeMode(mode);
