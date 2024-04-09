@@ -1,5 +1,5 @@
 'use client';
-import React, { Fragment, FunctionComponent } from 'react';
+import React, { Fragment, FunctionComponent, useMemo } from 'react';
 import { useComponentStyle } from '@impulse-ui/core';
 import { TFootComponentProps } from '@impulse-ui/types';
 import { flexRender } from '@tanstack/react-table';
@@ -13,13 +13,20 @@ import { BaseTFoot } from './BaseTFoot.styles';
 
 const TFoot: FunctionComponent<TFootComponentProps> = ({ iStyle, ...rest }) => {
   const { getFooterGroups } = useImpulseTable();
-
-  const shouldRenderFooter = () => getFooterGroups().length > 0;
   const { tfootStyle, trowStyle, tdataStyle } = useComponentStyle(tfootComponentMap, rest, undefined, iStyle);
+
+  const shouldRenderFooter = useMemo(
+    () =>
+      getFooterGroups()
+        .map((group) => group.headers.map((header) => header.column.columnDef.footer))
+        .flat()
+        .filter(Boolean).length > 0,
+    [getFooterGroups],
+  );
 
   return (
     <Fragment>
-      {shouldRenderFooter() && (
+      {shouldRenderFooter && (
         <BaseTFoot $iStyle={tfootStyle} {...rest}>
           {getFooterGroups().map((footerGroup) => (
             <TRow iStyle={trowStyle} key={footerGroup.id}>

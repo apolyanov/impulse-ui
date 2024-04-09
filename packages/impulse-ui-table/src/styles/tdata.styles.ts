@@ -25,6 +25,7 @@ const tdata: ComponentTheme = {
       backgroundColor: iColorTheme.backgroundColor,
       padding: '8px 6px',
       fontSize: 14,
+      verticalAlign: 'middle',
     }),
   },
 };
