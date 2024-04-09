@@ -13,6 +13,7 @@ import { tableHeaderComponentMap } from '../../maps';
 import { tableHeaderStyle } from '../../styles';
 
 const TableHeader: FunctionComponent<TableHeaderProps> = ({ iStyle, ...rest }) => {
+  const { showTableControls, showTableSearch, tableName } = rest;
   const { setGlobalFilter } = useImpulseTable();
   const { containerStyle, tableNameStyle, filtersButtonStyle, settingsButtonStyle, searchInputStyle } =
     useComponentStyle(tableHeaderComponentMap, rest, iStyle, tableHeaderStyle);
@@ -22,18 +23,24 @@ const TableHeader: FunctionComponent<TableHeaderProps> = ({ iStyle, ...rest }) =
 
   return (
     <Container iStyle={containerStyle}>
-      <Typography iStyle={tableNameStyle}>Table name</Typography>
-      <TextInput
-        debounced
-        onDebouncedChange={handleOnChangeSearch}
-        onClear={handleOnClearSearch}
-        iStyle={searchInputStyle}
-        placeholder={'Search in the table'}
-        clearable
-        icon={faMagnifyingGlass}
-      />
-      {/* <IconButton iStyle={filtersButtonStyle} icon={faFilter} />*/}
-      {/* <IconButton iStyle={settingsButtonStyle} icon={faSliders} />*/}
+      <Typography iStyle={tableNameStyle}>{tableName}</Typography>
+      {showTableSearch && (
+        <TextInput
+          debounced
+          onDebouncedChange={handleOnChangeSearch}
+          onClear={handleOnClearSearch}
+          iStyle={searchInputStyle}
+          placeholder={'Search in the table'}
+          clearable
+          icon={faMagnifyingGlass}
+        />
+      )}
+      {showTableControls && (
+        <>
+          <IconButton iStyle={filtersButtonStyle} icon={faFilter} />
+          <IconButton iStyle={settingsButtonStyle} icon={faSliders} />
+        </>
+      )}
     </Container>
   );
 };

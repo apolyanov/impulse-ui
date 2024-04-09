@@ -15,6 +15,8 @@ import { TFoot } from '../tfoot';
 import { THead } from '../thead';
 
 const ImpulseTable: FunctionComponent<ImpulseTableProps> = ({ iStyle, ...tableProps }) => {
+  const { tableHeaderProps, ...tableProviderProps } = tableProps;
+
   const { tableContainerStyle, tableStyle } = useComponentStyle(
     impulseTableComponentMap,
     {},
@@ -23,9 +25,9 @@ const ImpulseTable: FunctionComponent<ImpulseTableProps> = ({ iStyle, ...tablePr
   );
 
   return (
-    <ImpulseTableProvider {...tableProps}>
+    <ImpulseTableProvider {...tableProviderProps}>
       <Container iStyle={tableContainerStyle}>
-        <TableHeader iStyle={iStyle?.tableHeaderStyle} />
+        <TableHeader iStyle={iStyle?.tableHeaderStyle} {...tableHeaderProps} />
         <Table iStyle={tableStyle}>
           <THead iStyle={iStyle?.theadStyle} />
           <TBody iStyle={iStyle?.tbodyStyle} />
