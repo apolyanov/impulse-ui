@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { faker } from '@faker-js/faker';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { AutoComplete } from '@impulse-ui/auto-complete';
 import { Button } from '@impulse-ui/buttons';
