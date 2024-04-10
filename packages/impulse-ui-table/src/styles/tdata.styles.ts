@@ -23,7 +23,7 @@ const tdata: ComponentTheme = {
     },
     iCss: ({ iColorTheme }) => ({
       backgroundColor: iColorTheme.backgroundColor,
-      padding: '8px 6px',
+      padding: '6px 10px',
       fontSize: 14,
       verticalAlign: 'middle',
     }),

@@ -26,8 +26,8 @@ const tfoot: ComponentTheme = {
       backgroundColor: iColorTheme.backgroundColor,
       filter: 'drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2))',
       '& td': {
-        ...paddingY(10),
-        ...paddingX(8),
+        ...paddingY(8),
+        ...paddingX(10),
         textAlign: 'start',
       },
       '& td:first-of-type': {
