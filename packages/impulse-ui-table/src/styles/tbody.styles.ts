@@ -1,5 +1,5 @@
 import { neutral } from '@impulse-ui/colours';
-import { ComponentTheme } from '@impulse-ui/types';
+import { ComponentTheme, TBodyStyle } from '@impulse-ui/types';
 
 const baseTBody: ComponentTheme = {
   iStyle: {
@@ -27,4 +27,16 @@ const baseTBody: ComponentTheme = {
   },
 };
 
-export { baseTBody };
+const tbody: Partial<TBodyStyle> = {
+  noContentTdataStyle: {
+    iCss: {
+      width: '100%',
+      height: 300,
+      textAlign: 'center',
+    },
+  },
+  noContentIconStyle: { iColorTheme: { light: { color: neutral[80] } }, iCss: { fontSize: 56 } },
+  noContentTypographyStyle: { iCss: { marginTop: 8 } },
+};
+
+export { baseTBody, tbody };

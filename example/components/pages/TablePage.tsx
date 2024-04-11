@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { faker } from '@faker-js/faker';
+import { Button } from '@impulse-ui/buttons';
 import { Container } from '@impulse-ui/layout';
 import { ImpulseTable } from '@impulse-ui/table';
 import { createColumnHelper } from '@tanstack/react-table';
@@ -73,9 +74,15 @@ const columns = [
 ];
 
 const TablePage = () => {
+  const [hasData, setHasData] = useState(true);
   return (
     <Container>
-      <ImpulseTable initialState={{ pagination: { pageIndex: 0, pageSize: 20 } }} data={data} columns={columns} />
+      <ImpulseTable
+        initialState={{ pagination: { pageIndex: 0, pageSize: 20 } }}
+        data={hasData ? data : []}
+        columns={columns}
+      />
+      <Button onClick={() => setHasData((prevState) => !prevState)}>Toggle data</Button>
     </Container>
   );
 };
