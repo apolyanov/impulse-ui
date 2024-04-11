@@ -8,7 +8,7 @@ import { TBodyStyle } from './tbody.types';
 import { TFootStyle } from './tfoot.types';
 import { THeadStyle } from './thead.types';
 
-interface ImpulseTableProps<T = any> extends Partial<TableOptions<T>> {
+interface ImpulseTableProps<T = object> extends Partial<TableOptions<T>> {
   iStyle?: Partial<ImpulseTableStyle>;
   data: TableOptions<T>['data'];
   columns: TableOptions<T>['columns'];
