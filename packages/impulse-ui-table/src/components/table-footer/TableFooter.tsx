@@ -11,7 +11,7 @@ import { tableFooterStyles } from '../../styles';
 import { Pagination } from '../pagination';
 
 const TableFooter: FunctionComponent<TableFooterProps> = ({ iStyle, ...rest }) => {
-  const { getState } = useImpulseTable();
+  const { getState, showNoData } = useImpulseTable();
 
   const { containerStyle, selectedRowsStyle, paginationStyle } = useComponentStyle(
     tableFooterComponentMap,
@@ -27,7 +27,7 @@ const TableFooter: FunctionComponent<TableFooterProps> = ({ iStyle, ...rest }) =
       {getSelectedRowsCount() > 0 && (
         <Typography iStyle={selectedRowsStyle}>{`Selected rows ${getSelectedRowsCount()}`}</Typography>
       )}
-      {getState().pagination && <Pagination iStyle={paginationStyle} />}
+      {getState().pagination && !showNoData() && <Pagination iStyle={paginationStyle} />}
     </Container>
   );
 };

@@ -10,6 +10,11 @@ interface TBodyStyle {
   tbodyStyle: IOStyle;
   trowStyle: IOStyle;
   tdataStyle: IOStyle;
+  noContentTrowStyle: IOStyle;
+  noContentTdataStyle: IOStyle;
+  noContentIconStyle: IOStyle;
+  noContentTypographyStyle: IOStyle;
+  noContentTbodyStyle: IOStyle;
 }
 
 export type { TBodyComponentProps, TBodyStyle };

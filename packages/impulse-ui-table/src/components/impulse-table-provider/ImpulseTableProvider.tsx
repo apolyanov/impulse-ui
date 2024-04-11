@@ -14,7 +14,7 @@ import {
 
 import { createTableContext } from '../../contexts';
 
-const ImpulseTableContext = createTableContext<unknown>();
+const ImpulseTableContext = createTableContext();
 const createInitialPaginationState = (pagination?: Partial<PaginationState>) => {
   if (pagination) {
     return {
@@ -40,6 +40,8 @@ const ImpulseTableProvider: FunctionComponent<ImpulseTableProviderProps> = ({ ch
     }
   };
 
+  const showNoData = () => tableState.getRowModel().rows.length === 0;
+
   const tableState = useReactTable({
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
@@ -57,7 +59,7 @@ const ImpulseTableProvider: FunctionComponent<ImpulseTableProviderProps> = ({ ch
     ...props,
   });
 
-  return <ImpulseTableContext.Provider value={{ state: tableState }} children={children} />;
+  return <ImpulseTableContext.Provider value={{ state: { ...tableState, showNoData } }} children={children} />;
 };
 
 export { ImpulseTableContext, ImpulseTableProvider };
