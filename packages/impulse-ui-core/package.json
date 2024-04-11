@@ -1,6 +1,6 @@
 {
   "name": "@impulse-ui/core",
-  "version": "2.6.0-beta.0",
+  "version": "2.6.0-beta.3",
   "license": "MIT",
   "author": "Alexander Polyanov",
   "main": "dist/index.js",
@@ -68,7 +68,7 @@
     "stylis": "^4.3.1"
   },
   "devDependencies": {
-    "@impulse-ui/types": "^2.6.0-beta.0"
+    "@impulse-ui/types": "^2.6.0-beta.3"
   },
   "gitHead": "82ece656f5271be949d5e3eff27201cc83ef6555"
 }
