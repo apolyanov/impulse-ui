@@ -75,6 +75,8 @@ const columns = [
 
 const TablePage = () => {
   const [hasData, setHasData] = useState(true);
+  const [data, setData] = useState(() => generateFakeData(numberOfInstances));
+
   return (
     <Container>
       <ImpulseTable
@@ -83,6 +85,8 @@ const TablePage = () => {
         columns={columns}
       />
       <Button onClick={() => setHasData((prevState) => !prevState)}>Toggle data</Button>
+      <Button onClick={() => setData((prevState) => prevState.slice(0, 2))}>Slice data</Button>
+      <Button onClick={() => setData(generateFakeData(numberOfInstances))}>Full data</Button>
     </Container>
   );
 };

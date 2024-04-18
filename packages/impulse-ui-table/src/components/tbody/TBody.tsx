@@ -33,7 +33,7 @@ const TBody: FunctionComponent<TBodyComponentProps> = ({ iStyle, ...rest }) => {
       return (
         <BaseTBody $iStyle={noContentTbodyStyle} {...rest}>
           <TRow iStyle={noContentTrowStyle}>
-            <TData colSpan={getHeaderGroups()[0].headers.length} iStyle={noContentTdataStyle}>
+            <TData colSpan={getHeaderGroups()?.[0]?.headers?.length ?? 0} iStyle={noContentTdataStyle}>
               <Icon iStyle={noContentIconStyle} icon={faDatabase} />
               <Typography iStyle={noContentTypographyStyle}>No data</Typography>
             </TData>
