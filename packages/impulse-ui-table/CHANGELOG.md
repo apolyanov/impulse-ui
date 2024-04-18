@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.6.0-beta.4](https://github.com/apolyanov/impulse-ui/compare/v2.6.0-beta.3...v2.6.0-beta.4) (2024-04-18)
+
+
+### Bug Fixes
+
+* Adding check if there are any header groups for the no data body ([94caff3](https://github.com/apolyanov/impulse-ui/commit/94caff327f4ce7401922b0363fcab02f10577a9e))
+
+
+
+
+
 # [2.6.0-beta.3](https://github.com/apolyanov/impulse-ui/compare/v2.6.0-beta.2...v2.6.0-beta.3) (2024-04-11)
 
 
