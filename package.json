@@ -14,8 +14,8 @@
     "size": "lerna run size",
     "storybook": "storybook dev -p 6006",
     "test": "lerna run test",
-    "create-package": "node ./scripts/createPackage.js",
-    "clean-packages": "node ./scripts/cleanInstall.js && npm run build && npm install"
+    "create-package": "bun scripts/createPackage.ts",
+    "clean-packages": "bun scripts/cleanInstall.ts && npm run build && npm install"
   },
   "husky": {
     "hooks": {
@@ -81,14 +81,15 @@
   },
   "dependencies": {
     "@dnd-kit/core": "^6.0.8",
+    "@floating-ui/react-dom": "^2.0.8",
     "@fortawesome/fontawesome-svg-core": "6.4.2",
     "@fortawesome/free-brands-svg-icons": "6.4.2",
     "@fortawesome/free-regular-svg-icons": "6.4.2",
     "@fortawesome/free-solid-svg-icons": "6.4.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
-    "@floating-ui/react-dom": "^2.0.8",
     "@tanstack/react-table": "^8.15.3",
     "@tanstack/react-virtual": "^3.2.0",
+    "bun": "^1.1.4",
     "lodash": "^4.17.21",
     "lodash-es": "^4.17.21",
     "styled-components": "6.1.8",

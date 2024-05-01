@@ -56,9 +56,9 @@ const AutoComplete = <T extends object>({ iStyle, ...rest }: AutoCompleteProps<T
       }
 
       return (
-        <Container style={{ ...listContainerStyle }}>
+        <Container as='ul' style={{ ...listContainerStyle }}>
           {getVirtualItems().map((virtualRow) => (
-            <Container key={virtualRow.index} style={{ ...listItemStyle(virtualRow) }}>
+            <Container as='li' key={virtualRow.index} style={{ ...listItemStyle(virtualRow) }}>
               <AutoCompleteItem
                 highlighted={highlightedIndex === virtualRow.index}
                 selected={isItemSelected(getOptionsToShow[virtualRow.index])}
