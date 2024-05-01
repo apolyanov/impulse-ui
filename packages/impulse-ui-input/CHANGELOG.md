@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.6.0-beta.5](https://github.com/apolyanov/impulse-ui/compare/v2.6.0-beta.4...v2.6.0-beta.5) (2024-05-01)
+
+
+### Features
+
+* Adding the ability to polymorph components ([c65ef2d](https://github.com/apolyanov/impulse-ui/commit/c65ef2d54ba49f3b0300bdb9fc4bd16c32398f7a))
+
+
+
+
+
 # [2.6.0-beta.3](https://github.com/apolyanov/impulse-ui/compare/v2.6.0-beta.2...v2.6.0-beta.3) (2024-04-11)
 
 **Note:** Version bump only for package @impulse-ui/input
