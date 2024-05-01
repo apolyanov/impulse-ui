@@ -11,10 +11,9 @@ import {
   useState,
 } from 'react';
 import { autoUpdate, offset, size, useFloating } from '@floating-ui/react-dom';
-import { useElementDimensions, useItemSelection, useOutsideClick, useVirtualizedList } from '@impulse-ui/core';
+import { useItemSelection, useOutsideClick, useVirtualizedList } from '@impulse-ui/core';
+import { useProcessedOptions } from '@impulse-ui/core';
 import { AutoCompleteRestProps, InnerSimpleOption } from '@impulse-ui/types';
-
-import { processOptions } from '../helpers';
 
 const useAutoComplete = <T>(rest: AutoCompleteRestProps<T>) => {
   const {
@@ -30,10 +29,7 @@ const useAutoComplete = <T>(rest: AutoCompleteRestProps<T>) => {
     ...mainContainerProps
   } = rest;
 
-  const processedOptions = useMemo(
-    () => processOptions(options, getOptionValue, getOptionLabel, getOptionId),
-    [getOptionValue, getOptionLabel, getOptionId, options],
-  );
+  const processedOptions = useProcessedOptions({ options, getOptionValue, getOptionLabel, getOptionId });
 
   const [showOptions, setShowOptions] = useState<boolean>(false);
 
@@ -82,8 +78,6 @@ const useAutoComplete = <T>(rest: AutoCompleteRestProps<T>) => {
     scrollIndex: highlightedIndex,
     autoScroll: true,
   });
-
-  const dimensions = useElementDimensions(refs.reference.current as HTMLElement);
 
   useOutsideClick(() => {
     handleInputBlur();
@@ -279,7 +273,6 @@ const useAutoComplete = <T>(rest: AutoCompleteRestProps<T>) => {
     inputProps,
     loading,
     filteredOptions,
-    dimensions,
     inputValue,
     isItemSelected,
     showOptions,

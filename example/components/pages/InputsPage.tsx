@@ -1,8 +1,13 @@
+import { useState } from 'react';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { Select, TextInput } from '@impulse-ui/input';
 import { Container } from '@impulse-ui/layout';
 
+import { humans } from '../mocks/autoCompleteMock';
+
 const InputsPage = () => {
+  const [options] = useState<{ name: string; gal: string }[]>(() => humans());
+
   return (
     <Container>
       <TextInput
@@ -14,7 +19,13 @@ const InputsPage = () => {
         placeholder={'Email'}
         icon={faEnvelope}
       />
-      <Select />
+      <Select
+        options={options}
+        getOptionValue={(option) => option.name}
+        getOptionLabel={(option) => option.name}
+        getOptionId={(option) => option.gal}
+        onOptionSelect={(option) => console.log(option)}
+      />
     </Container>
   );
 };
