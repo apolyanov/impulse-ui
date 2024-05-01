@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.6.0-beta.5](https://github.com/apolyanov/impulse-ui/compare/v2.6.0-beta.4...v2.6.0-beta.5) (2024-05-01)
+
+
+### Bug Fixes
+
+* Adding missing dependency in sidebar package ([1077b30](https://github.com/apolyanov/impulse-ui/commit/1077b30d371169f7a3eab6dc4a2637fb8359bb29))
+
+
+### Features
+
+* Adding the ability to polymorph components ([c65ef2d](https://github.com/apolyanov/impulse-ui/commit/c65ef2d54ba49f3b0300bdb9fc4bd16c32398f7a))
+
+
+
+
+
 # [2.6.0-beta.4](https://github.com/apolyanov/impulse-ui/compare/v2.6.0-beta.3...v2.6.0-beta.4) (2024-04-18)
 
 
