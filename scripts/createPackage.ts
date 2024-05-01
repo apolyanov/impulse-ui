@@ -1,4 +1,4 @@
-const { cpSync: copy, readFileSync, rmSync: remove, writeFileSync } = require('fs');
+const { cpSync: copy, readFileSync, rmSync: remove, writeFileSync } = require('bun');
 
 const templateDir = './scripts/assets/template-package';
 const packageName = process.argv[2];

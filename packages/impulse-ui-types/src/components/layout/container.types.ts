@@ -1,9 +1,5 @@
-import { DetailedHTMLProps, HTMLAttributes } from 'react';
+import { IComponent } from '../theme';
 
-import { IComponent, SpacingProps } from '../theme';
-
-type ContainerProps = IComponent &
-  DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> &
-  Partial<SpacingProps>;
+type ContainerProps = IComponent;
 
 export type { ContainerProps };

@@ -1,4 +1,4 @@
-const { readdir: readFolder, rm: removeFolder } = require('fs');
+import { readdir, rm } from 'node:fs';
 
 const PACKAGES_ROOT = './packages';
 const NODE_MODULES = 'node_modules';
@@ -9,7 +9,7 @@ const removeOptions = {
   force: true,
 };
 
-const removedFolderCallback = (folder, folderType, error) => {
+const removedFolderCallback = (folder: string, folderType: string, error: NodeJS.ErrnoException | null) => {
   if (error) {
     console.error(error.message);
     return;
@@ -19,19 +19,17 @@ const removedFolderCallback = (folder, folderType, error) => {
 };
 
 const cleanNodeModules = () => {
-  readFolder(PACKAGES_ROOT, (err, files) => {
+  readdir(PACKAGES_ROOT, (err, files) => {
     if (err) {
       console.error(err.message);
       return;
     }
 
     files.forEach((folder) => {
-      removeFolder(`${PACKAGES_ROOT}/${folder}/${NODE_MODULES}`, removeOptions, (err) =>
+      rm(`${PACKAGES_ROOT}/${folder}/${NODE_MODULES}`, removeOptions, (err) =>
         removedFolderCallback(folder, NODE_MODULES, err),
       );
-      removeFolder(`${PACKAGES_ROOT}/${folder}/${DIST}`, removeOptions, (err) =>
-        removedFolderCallback(folder, DIST, err),
-      );
+      rm(`${PACKAGES_ROOT}/${folder}/${DIST}`, removeOptions, (err) => removedFolderCallback(folder, DIST, err));
     });
   });
 };
