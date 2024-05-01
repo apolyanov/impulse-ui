@@ -1,38 +1,106 @@
-import React, { Fragment } from 'react';
-import { neutral, volcano } from '@impulse-ui/colours';
+import React, { Fragment, ReactNode, useMemo } from 'react';
+import { useComponentStyle } from '@impulse-ui/core';
 import { Container } from '@impulse-ui/layout';
+import { Typography } from '@impulse-ui/text';
+import { SelectProps } from '@impulse-ui/types';
 
-const Select = () => {
+import { useSelect } from '../../hooks';
+import { selectComponentMap } from '../../maps';
+import { select } from '../../styles';
+
+import { SelectOption } from './select-option';
+
+const Select = <T extends object>({ iStyle, ...rest }: SelectProps<T>) => {
+  const {
+    showOptions,
+    floatingStyles,
+    processedOptions,
+    dropdownRefSetter,
+    getVirtualItems,
+    listItemStyle,
+    isItemSelected,
+    listContainerStyle,
+    containerRefSetter,
+    highlightedIndex,
+    loading,
+    handleOptionSelect,
+    handleKeyDown,
+    onMouseDown,
+    selectedItem,
+    placeholder,
+  } = useSelect(rest);
+
+  const {
+    selectOptionStyle,
+    noOptionsTypographyStyle,
+    loadingTypographyStyle,
+    selectOptionsContainerStyle,
+    mainContainerStyle,
+  } = useComponentStyle(selectComponentMap, rest, iStyle, select);
+
+  const optionsContainerRenderer = useMemo((): ReactNode | undefined => {
+    if (showOptions) {
+      if (loading) {
+        return <Typography iStyle={loadingTypographyStyle}>Loading...</Typography>;
+      }
+
+      if (processedOptions.length === 0) {
+        return <Typography iStyle={noOptionsTypographyStyle}>No options</Typography>;
+      }
+
+      return (
+        <Container as='ul' style={{ ...listContainerStyle }}>
+          {getVirtualItems().map((virtualRow) => (
+            <Container as='li' key={virtualRow.index} style={{ ...listItemStyle(virtualRow) }}>
+              <SelectOption
+                highlighted={highlightedIndex === virtualRow.index}
+                selected={isItemSelected(processedOptions[virtualRow.index])}
+                onClick={() => handleOptionSelect(processedOptions[virtualRow.index])}
+                iStyle={selectOptionStyle}
+                itemText={processedOptions[virtualRow.index].label}
+              />
+            </Container>
+          ))}
+        </Container>
+      );
+    }
+  }, [
+    showOptions,
+    loading,
+    processedOptions,
+    listContainerStyle,
+    getVirtualItems,
+    loadingTypographyStyle,
+    noOptionsTypographyStyle,
+    listItemStyle,
+    highlightedIndex,
+    isItemSelected,
+    selectOptionStyle,
+    handleOptionSelect,
+  ]);
+
+  const getSelectedItem = useMemo(() => {
+    if (selectedItem) return selectedItem.label;
+    if (placeholder) return placeholder;
+
+    return '';
+  }, [placeholder, selectedItem]);
+
   return (
     <Fragment>
       <Container
-        iStyle={{
-          iColorTheme: {
-            light: {
-              backgroundColor: neutral[10],
-              borderColor: volcano[60],
-              borderColorHover: volcano[50],
-            },
-          },
-          iCss: {
-            display: 'flex',
-            flexDirection: 'row',
-            alignItems: 'center',
-            padding: '0 8px',
-            filter: 'drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2))',
-            borderStyle: 'solid',
-            height: 38,
-            maxWidth: 250,
-            borderRadius: 4,
-            borderWidth: 1,
-            '&:hover': {
-              cursor: 'pointer',
-            },
-          },
-        }}
+        onKeyDown={handleKeyDown}
+        onMouseDown={onMouseDown}
+        iStyle={mainContainerStyle}
+        ref={containerRefSetter}
       >
-        Select
+        {getSelectedItem}
       </Container>
+      {showOptions && (
+        <Container style={{ ...floatingStyles }} iStyle={selectOptionsContainerStyle} ref={dropdownRefSetter}>
+          {optionsContainerRenderer}
+        </Container>
+      )}
     </Fragment>
   );
 };
