@@ -1,5 +1,5 @@
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { TextInput } from '@impulse-ui/input';
+import { Select, TextInput } from '@impulse-ui/input';
 import { Container } from '@impulse-ui/layout';
 
 const InputsPage = () => {
@@ -14,6 +14,7 @@ const InputsPage = () => {
         placeholder={'Email'}
         icon={faEnvelope}
       />
+      <Select />
     </Container>
   );
 };

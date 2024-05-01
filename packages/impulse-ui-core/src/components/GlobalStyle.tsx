@@ -8,6 +8,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body,
+  ul,
   h1,
   h2,
   h3,
