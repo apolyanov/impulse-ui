@@ -5,7 +5,7 @@ const defaultAutoCompleteStyle: Partial<AutoCompleteStyle<any>> = {
   mainContainerStyle: {
     iCss: {
       width: '100%',
-      maxWidth: '250px',
+      maxWidth: 250,
       height: 'fit-content',
       display: 'block',
       position: 'relative',
@@ -21,7 +21,7 @@ const defaultAutoCompleteStyle: Partial<AutoCompleteStyle<any>> = {
       zIndex: 99,
       padding: '0 2px',
       display: 'block',
-      maxHeight: '304px',
+      maxHeight: 304,
       overflowY: 'auto',
       borderRadius: 4,
       filter: 'drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2))',

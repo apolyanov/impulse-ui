@@ -5,4 +5,5 @@ export * from './useItemSelection';
 export * from './useITheme';
 export * from './useIThemeContext';
 export * from './useOutsideClick';
+export * from './useProcessedOptions';
 export * from './useVirtualizedList';
