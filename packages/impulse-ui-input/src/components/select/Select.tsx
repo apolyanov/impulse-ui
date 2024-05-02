@@ -1,4 +1,7 @@
 import React, { Fragment, ReactNode, useMemo } from 'react';
+import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
+import { IconButton } from '@impulse-ui/buttons';
+import { neutral } from '@impulse-ui/colours';
 import { useComponentStyle } from '@impulse-ui/core';
 import { Container } from '@impulse-ui/layout';
 import { Typography } from '@impulse-ui/text';
@@ -28,6 +31,8 @@ const Select = <T extends object>({ iStyle, ...rest }: SelectProps<T>) => {
     onMouseDown,
     selectedItem,
     placeholder,
+    getDropdownIcon,
+    ...containerProps
   } = useSelect(rest);
 
   const {
@@ -36,6 +41,8 @@ const Select = <T extends object>({ iStyle, ...rest }: SelectProps<T>) => {
     loadingTypographyStyle,
     selectOptionsContainerStyle,
     mainContainerStyle,
+    selectedItemTypographyStyle,
+    dropdownIconButtonStyle,
   } = useComponentStyle(selectComponentMap, rest, iStyle, select);
 
   const optionsContainerRenderer = useMemo((): ReactNode | undefined => {
@@ -49,9 +56,9 @@ const Select = <T extends object>({ iStyle, ...rest }: SelectProps<T>) => {
       }
 
       return (
-        <Container as='ul' style={{ ...listContainerStyle }}>
+        <Container role={'listbox'} as='ul' style={{ ...listContainerStyle }}>
           {getVirtualItems().map((virtualRow) => (
-            <Container as='li' key={virtualRow.index} style={{ ...listItemStyle(virtualRow) }}>
+            <Container role={'option'} as='li' key={virtualRow.index} style={{ ...listItemStyle(virtualRow) }}>
               <SelectOption
                 highlighted={highlightedIndex === virtualRow.index}
                 selected={isItemSelected(processedOptions[virtualRow.index])}
@@ -89,12 +96,15 @@ const Select = <T extends object>({ iStyle, ...rest }: SelectProps<T>) => {
   return (
     <Fragment>
       <Container
+        {...containerProps}
+        role={'combobox'}
         onKeyDown={handleKeyDown}
         onMouseDown={onMouseDown}
         iStyle={mainContainerStyle}
         ref={containerRefSetter}
       >
-        {getSelectedItem}
+        <Typography iStyle={selectedItemTypographyStyle}>{getSelectedItem}</Typography>
+        <IconButton iStyle={dropdownIconButtonStyle} icon={getDropdownIcon()} />
       </Container>
       {showOptions && (
         <Container style={{ ...floatingStyles }} iStyle={selectOptionsContainerStyle} ref={dropdownRefSetter}>

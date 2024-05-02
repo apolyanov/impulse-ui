@@ -1,14 +1,16 @@
 import { HTMLAttributes } from 'react';
 
-import { AutoCompleteItemStyle, AutoCompleteRestProps } from '../auto-complete';
+import { IconButtonStyle } from '../buttons';
 import { IOStyle } from '../theme';
 import { SimpleOptionValue, UseProcessedoptionsProps } from '../utils';
 
-interface SelectProps<T> extends SelectRestProps<T>, HTMLAttributes<HTMLDivElement> {
+import { SelectOptionStyle } from './select-option.types';
+
+interface SelectProps<T> extends SelectRestProps<T> {
   iStyle?: Partial<SelectStyle<T>>;
 }
 
-interface SelectRestProps<T> extends UseProcessedoptionsProps<T> {
+interface SelectRestProps<T> extends UseProcessedoptionsProps<T>, HTMLAttributes<HTMLDivElement> {
   loading?: boolean;
   selectOnBlur?: boolean;
   onOptionSelect?: (optionValue: SimpleOptionValue | null) => void;
@@ -16,11 +18,13 @@ interface SelectRestProps<T> extends UseProcessedoptionsProps<T> {
 }
 
 interface SelectStyle<T> {
-  mainContainerStyle: IOStyle<AutoCompleteRestProps<T>>;
-  selectOptionsContainerStyle: IOStyle<AutoCompleteRestProps<T>>;
-  selectOptionStyle: Partial<AutoCompleteItemStyle>;
-  loadingTypographyStyle: IOStyle<AutoCompleteRestProps<T>>;
-  noOptionsTypographyStyle: IOStyle<AutoCompleteRestProps<T>>;
+  mainContainerStyle: IOStyle<SelectRestProps<T>>;
+  selectedItemTypographyStyle: IOStyle<SelectRestProps<T>>;
+  dropdownIconButtonStyle: Partial<IconButtonStyle>;
+  selectOptionsContainerStyle: IOStyle<SelectRestProps<T>>;
+  selectOptionStyle: Partial<SelectOptionStyle>;
+  loadingTypographyStyle: IOStyle<SelectRestProps<T>>;
+  noOptionsTypographyStyle: IOStyle<SelectRestProps<T>>;
 }
 
 export type { SelectProps, SelectRestProps, SelectStyle };

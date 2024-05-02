@@ -1,5 +1,6 @@
 import { KeyboardEvent, MouseEvent, useState } from 'react';
 import { autoUpdate, offset, size, useFloating } from '@floating-ui/react-dom';
+import { faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
 import { useItemSelection, useOutsideClick, useProcessedOptions, useVirtualizedList } from '@impulse-ui/core';
 import { InnerSimpleOption, SelectRestProps } from '@impulse-ui/types';
 
@@ -17,7 +18,6 @@ const useSelect = <T>(props: SelectRestProps<T>) => {
     selectedItem,
     getHighlightedItem,
     resetSelection,
-    updateHighlightedIndex,
   } = useItemSelection(processedOptions, {
     getItemId: (item) => item.uuid,
   });
@@ -58,21 +58,30 @@ const useSelect = <T>(props: SelectRestProps<T>) => {
 
   const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
     switch (event.key) {
-      case 'Escape': {
-        if (showOptions) {
-          handleInputBlur();
-
-          setShowOptions(false);
-        }
-
-        break;
-      }
       case 'Tab': {
         const newItem = getHighlightedItem();
 
         if (newItem && showOptions && selectOnBlur) {
           handleOptionSelect(newItem);
         } else {
+          setShowOptions(false);
+        }
+
+        break;
+      }
+      case 'Enter': {
+        const newItem = getHighlightedItem();
+
+        if (newItem && showOptions) {
+          handleOptionSelect(newItem);
+        }
+
+        break;
+      }
+      case 'Escape': {
+        if (showOptions) {
+          handleInputBlur();
+
           setShowOptions(false);
         }
 
@@ -108,15 +117,6 @@ const useSelect = <T>(props: SelectRestProps<T>) => {
 
         break;
       }
-      case 'Enter': {
-        const newItem = getHighlightedItem();
-
-        if (newItem && showOptions) {
-          handleOptionSelect(newItem);
-        }
-
-        break;
-      }
     }
   };
 
@@ -132,14 +132,18 @@ const useSelect = <T>(props: SelectRestProps<T>) => {
   };
 
   const onMouseDown = (event: MouseEvent<HTMLInputElement>) => {
-    if (String(selectedItem).length === 0) {
+    if (!selectedItem) {
       setShowOptions((prevState) => !prevState);
     } else {
       if (!showOptions) {
         setShowOptions(true);
       }
     }
+
+    rest?.onMouseDown?.(event);
   };
+
+  const getDropdownIcon = () => (showOptions ? faAngleUp : faAngleDown);
 
   return {
     processedOptions,
@@ -156,6 +160,7 @@ const useSelect = <T>(props: SelectRestProps<T>) => {
     handleKeyDown,
     onMouseDown,
     selectedItem,
+    getDropdownIcon,
     ...rest,
   };
 };
