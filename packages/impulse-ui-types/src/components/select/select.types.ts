@@ -1,6 +1,5 @@
 import { HTMLAttributes } from 'react';
 
-import { IconButtonStyle } from '../buttons';
 import { IOStyle } from '../theme';
 import { SimpleOptionValue, UseProcessedoptionsProps } from '../utils';
 
@@ -20,7 +19,7 @@ interface SelectRestProps<T> extends UseProcessedoptionsProps<T>, HTMLAttributes
 interface SelectStyle<T> {
   mainContainerStyle: IOStyle<SelectRestProps<T>>;
   selectedItemTypographyStyle: IOStyle<SelectRestProps<T>>;
-  dropdownIconButtonStyle: Partial<IconButtonStyle>;
+  dropdownIconStyle: IOStyle<T>;
   selectOptionsContainerStyle: IOStyle<SelectRestProps<T>>;
   selectOptionStyle: Partial<SelectOptionStyle>;
   loadingTypographyStyle: IOStyle<SelectRestProps<T>>;
