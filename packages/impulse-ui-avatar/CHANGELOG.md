@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.6.0-beta.7](https://github.com/apolyanov/impulse-ui/compare/v2.6.0-beta.6...v2.6.0-beta.7) (2024-05-02)
+
+**Note:** Version bump only for package @impulse-ui/avatar
+
+
+
+
+
 # [2.6.0-beta.6](https://github.com/apolyanov/impulse-ui/compare/v2.6.0-beta.5...v2.6.0-beta.6) (2024-05-02)
 
 **Note:** Version bump only for package @impulse-ui/avatar
