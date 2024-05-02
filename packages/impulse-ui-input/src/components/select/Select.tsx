@@ -1,8 +1,6 @@
 import React, { Fragment, ReactNode, useMemo } from 'react';
-import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
-import { IconButton } from '@impulse-ui/buttons';
-import { neutral } from '@impulse-ui/colours';
 import { useComponentStyle } from '@impulse-ui/core';
+import { Icon } from '@impulse-ui/icon';
 import { Container } from '@impulse-ui/layout';
 import { Typography } from '@impulse-ui/text';
 import { SelectProps } from '@impulse-ui/types';
@@ -42,7 +40,7 @@ const Select = <T extends object>({ iStyle, ...rest }: SelectProps<T>) => {
     selectOptionsContainerStyle,
     mainContainerStyle,
     selectedItemTypographyStyle,
-    dropdownIconButtonStyle,
+    dropdownIconStyle,
   } = useComponentStyle(selectComponentMap, rest, iStyle, select);
 
   const optionsContainerRenderer = useMemo((): ReactNode | undefined => {
@@ -104,7 +102,7 @@ const Select = <T extends object>({ iStyle, ...rest }: SelectProps<T>) => {
         ref={containerRefSetter}
       >
         <Typography iStyle={selectedItemTypographyStyle}>{getSelectedItem}</Typography>
-        <IconButton iStyle={dropdownIconButtonStyle} icon={getDropdownIcon()} />
+        <Icon iStyle={dropdownIconStyle} icon={getDropdownIcon()} />
       </Container>
       {showOptions && (
         <Container style={{ ...floatingStyles }} iStyle={selectOptionsContainerStyle} ref={dropdownRefSetter}>

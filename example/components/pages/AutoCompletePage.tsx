@@ -42,7 +42,7 @@ const AutoCompletePage = () => {
         onClick={() => {
           const splicedOptions = options.slice(250, 500);
           setState('splicedOptions');
-          setOptions(splicedOptions);
+          // setOptions(splicedOptions);
         }}
       >
         Change options

@@ -17,6 +17,7 @@ const useSelect = <T>(props: SelectRestProps<T>) => {
     selectItem,
     selectedItem,
     getHighlightedItem,
+    updateHighlightedIndex,
     resetSelection,
   } = useItemSelection(processedOptions, {
     getItemId: (item) => item.uuid,
@@ -125,6 +126,7 @@ const useSelect = <T>(props: SelectRestProps<T>) => {
   const handleOptionSelect = (item: InnerSimpleOption) => {
     selectItem(item);
     setShowOptions(false);
+    updateHighlightedIndex(processedOptions, item);
 
     if (onOptionSelect && shouldCallOptionSelect(item)) {
       onOptionSelect(item.value);
@@ -132,14 +134,7 @@ const useSelect = <T>(props: SelectRestProps<T>) => {
   };
 
   const onMouseDown = (event: MouseEvent<HTMLInputElement>) => {
-    if (!selectedItem) {
-      setShowOptions((prevState) => !prevState);
-    } else {
-      if (!showOptions) {
-        setShowOptions(true);
-      }
-    }
-
+    setShowOptions((prevState) => !prevState);
     rest?.onMouseDown?.(event);
   };
 
