@@ -26,6 +26,33 @@ const select: Partial<SelectStyle<any>> = {
       },
     },
   },
+  dropdownIconButtonStyle: {
+    buttonStyle: {
+      iColorTheme: {
+        light: {
+          backgroundColor: neutral[10],
+          backgroundColorHover: neutral[40],
+        },
+      },
+      iCss: {
+        position: 'absolute',
+        filter: 'unset',
+        marginRight: 'auto',
+        height: 20,
+        right: 8,
+        width: 20,
+        minHeight: 'unset',
+      },
+    },
+    iconStyle: {
+      iColorTheme: {
+        light: {
+          color: neutral[60],
+          colorHover: neutral[60],
+        },
+      },
+    },
+  },
   selectOptionsContainerStyle: {
     iColorTheme: {
       light: {
