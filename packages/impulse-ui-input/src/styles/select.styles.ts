@@ -22,6 +22,8 @@ const select: Partial<SelectStyle<any>> = {
       borderStyle: 'solid',
       height: 38,
       maxWidth: 250,
+      width: '100%',
+      minWidth: 128,
       borderRadius: 4,
       borderWidth: 1,
       '&:hover': {
