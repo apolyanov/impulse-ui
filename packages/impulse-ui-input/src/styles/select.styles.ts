@@ -1,4 +1,5 @@
 import { neutral, volcano } from '@impulse-ui/colours';
+import { paddingX } from '@impulse-ui/core';
 import { SelectStyle } from '@impulse-ui/types';
 
 const select: Partial<SelectStyle<any>> = {
@@ -14,7 +15,9 @@ const select: Partial<SelectStyle<any>> = {
       display: 'flex',
       flexDirection: 'row',
       alignItems: 'center',
-      padding: '0 8px',
+      paddingLeft: 8,
+      paddingRight: 36,
+      position: 'relative',
       filter: 'drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2))',
       borderStyle: 'solid',
       height: 38,
@@ -25,6 +28,12 @@ const select: Partial<SelectStyle<any>> = {
         cursor: 'pointer',
       },
     },
+  },
+  selectedItemTypographyStyle: {
+    iCss: { textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap', lineHeight: 1.5 },
+  },
+  selectOptionStyle: {
+    typographyStyle: { iCss: { textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap', lineHeight: 1.5 } },
   },
   dropdownIconStyle: {
     iColorTheme: {
