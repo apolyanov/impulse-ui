@@ -1,5 +1,4 @@
 import { neutral, volcano } from '@impulse-ui/colours';
-import { paddingX } from '@impulse-ui/core';
 import { SelectStyle } from '@impulse-ui/types';
 
 const select: Partial<SelectStyle<any>> = {

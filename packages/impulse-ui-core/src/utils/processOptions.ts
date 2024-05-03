@@ -20,36 +20,46 @@ const processOptions = (
   getOptionId?: GetOptionId<any>,
 ): InnerSimpleOption[] => {
   if (unProcessedOptions) {
-    return unProcessedOptions.map((option, index) => {
-      let newOption: InnerSimpleOption;
-
-      if (getOptionValue) {
-        newOption = {
-          uuid: getOptionId?.(option) ?? index,
-          value: getOptionValue(option),
-          label: getItemText(option, getOptionLabel),
-        };
-
-        return newOption;
-      }
-
-      if (!option.value && !getItemText) {
-        console.error(
-          "You must provide a 'extractSimpleOptionValue' and/or 'formatOptionText' function/s when providing custom option objects!",
-        );
-      }
-
-      newOption = {
-        uuid: getOptionId?.(option) ?? index,
-        label: getItemText(option, getOptionLabel),
-        value: getItemText(option, getOptionLabel),
-      };
-
-      return newOption;
-    });
+    return unProcessedOptions.map((option, index) =>
+      optionProcessor(option, index, getOptionValue, getOptionLabel, getOptionId),
+    );
   }
 
   return [];
 };
 
-export { processOptions };
+const optionProcessor = (
+  option: any,
+  index: number,
+  getOptionValue?: GetOptionValue<any>,
+  getOptionLabel?: GetOptionLabel<any>,
+  getOptionId?: GetOptionId<any>,
+) => {
+  let newOption: InnerSimpleOption;
+
+  if (getOptionValue) {
+    newOption = {
+      uuid: getOptionId?.(option) ?? index,
+      value: getOptionValue(option),
+      label: getItemText(option, getOptionLabel),
+    };
+
+    return newOption;
+  }
+
+  if (!option.value && !getItemText) {
+    console.error(
+      "You must provide a 'extractSimpleOptionValue' and/or 'formatOptionText' function/s when providing custom option objects!",
+    );
+  }
+
+  newOption = {
+    uuid: getOptionId?.(option) ?? index,
+    label: getItemText(option, getOptionLabel),
+    value: getItemText(option, getOptionLabel),
+  };
+
+  return newOption;
+};
+
+export { optionProcessor, processOptions };
