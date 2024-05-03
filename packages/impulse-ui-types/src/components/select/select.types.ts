@@ -12,7 +12,7 @@ interface SelectProps<T> extends SelectRestProps<T> {
 interface SelectRestProps<T> extends UseProcessedoptionsProps<T>, HTMLAttributes<HTMLDivElement> {
   loading?: boolean;
   selectOnBlur?: boolean;
-  onOptionSelect?: (optionValue: SimpleOptionValue | null) => void;
+  onOptionSelect?: (optionValue?: SimpleOptionValue) => void;
   placeholder?: string;
 }
 

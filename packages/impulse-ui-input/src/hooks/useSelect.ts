@@ -1,11 +1,17 @@
-import { KeyboardEvent, MouseEvent, useState } from 'react';
+import { KeyboardEvent, MouseEvent, useEffect, useState } from 'react';
 import { autoUpdate, offset, size, useFloating } from '@floating-ui/react-dom';
 import { faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
-import { useItemSelection, useOutsideClick, useProcessedOptions, useVirtualizedList } from '@impulse-ui/core';
+import {
+  optionProcessor,
+  useItemSelection,
+  useOutsideClick,
+  useProcessedOptions,
+  useVirtualizedList,
+} from '@impulse-ui/core';
 import { InnerSimpleOption, SelectRestProps } from '@impulse-ui/types';
 
 const useSelect = <T>(props: SelectRestProps<T>) => {
-  const { options, getOptionValue, getOptionId, getOptionLabel, onOptionSelect, selectOnBlur, ...rest } = props;
+  const { options, getOptionValue, getOptionId, getOptionLabel, onOptionSelect, selectOnBlur, value, ...rest } = props;
   const [showOptions, setShowOptions] = useState<boolean>(false);
 
   const processedOptions = useProcessedOptions<T>({ options, getOptionValue, getOptionId, getOptionLabel });
@@ -139,6 +145,14 @@ const useSelect = <T>(props: SelectRestProps<T>) => {
   };
 
   const getDropdownIcon = () => (showOptions ? faAngleUp : faAngleDown);
+
+  useEffect(() => {
+    if (value) {
+      const processedValue = optionProcessor(value, -1, getOptionValue, getOptionLabel, getOptionId);
+      selectItem(processedValue);
+      updateHighlightedIndex(processedOptions, processedValue);
+    }
+  }, [getOptionId, getOptionLabel, getOptionValue, processedOptions, selectItem, updateHighlightedIndex, value]);
 
   return {
     processedOptions,

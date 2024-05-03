@@ -30,50 +30,62 @@ const useItemSelection = <T>(items: T[], options?: Partial<UseItemSelectionOptio
     return newHighlightedIndex;
   };
 
-  const isItemSelected = (item: T) => {
-    if (multiple) {
-      if (selectedItems.length > 0) return true;
-
-      return selectedItems.some((selectedItem) => getItemId(selectedItem) === getItemId(item));
-    }
-
-    if (selectedItem) return getItemId(item) === getItemId(selectedItem);
-
-    return false;
-  };
-
-  const selectItem = (item?: T) => {
-    const newItem = item ?? items.at(highlightedIndex);
-
-    if (newItem) {
+  const isItemSelected = useCallback(
+    (item: T) => {
       if (multiple) {
-        selectMultipleItems(newItem);
-      } else {
-        selectSingleItem(newItem);
-      }
-    }
-  };
+        if (selectedItems.length > 0) return true;
 
-  const selectSingleItem = (item: T) => {
-    if (!selectedItem) {
-      setSelectedItem(item);
-    } else {
-      if (selectedItem && getItemId(item) !== getItemId(selectedItem)) {
+        return selectedItems.some((selectedItem) => getItemId(selectedItem) === getItemId(item));
+      }
+
+      if (selectedItem) return getItemId(item) === getItemId(selectedItem);
+
+      return false;
+    },
+    [getItemId, multiple, selectedItem, selectedItems],
+  );
+
+  const selectSingleItem = useCallback(
+    (item: T) => {
+      if (!selectedItem) {
         setSelectedItem(item);
+      } else {
+        if (selectedItem && getItemId(item) !== getItemId(selectedItem)) {
+          setSelectedItem(item);
+        }
       }
-    }
-  };
+    },
+    [getItemId, selectedItem],
+  );
 
-  const selectMultipleItems = (item: T) => {
-    if (isItemSelected(item)) {
-      const newSelectedItems = selectedItems.filter((selectedItem) => getItemId(selectedItem) !== getItemId(item));
+  const selectMultipleItems = useCallback(
+    (item: T) => {
+      if (isItemSelected(item)) {
+        const newSelectedItems = selectedItems.filter((selectedItem) => getItemId(selectedItem) !== getItemId(item));
 
-      setSelectedItems(newSelectedItems);
-    } else {
-      const newSelectedItems = [...selectedItems, item];
-      setSelectedItems(newSelectedItems);
-    }
-  };
+        setSelectedItems(newSelectedItems);
+      } else {
+        const newSelectedItems = [...selectedItems, item];
+        setSelectedItems(newSelectedItems);
+      }
+    },
+    [getItemId, isItemSelected, selectedItems],
+  );
+
+  const selectItem = useCallback(
+    (item?: T) => {
+      const newItem = item ?? items.at(highlightedIndex);
+
+      if (newItem) {
+        if (multiple) {
+          selectMultipleItems(newItem);
+        } else {
+          selectSingleItem(newItem);
+        }
+      }
+    },
+    [highlightedIndex, items, multiple, selectMultipleItems, selectSingleItem],
+  );
 
   const getHighlightedItem = () => {
     return items.at(highlightedIndex);
