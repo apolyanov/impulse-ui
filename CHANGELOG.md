@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.6.0-beta.8](https://github.com/apolyanov/impulse-ui/compare/v2.6.0-beta.7...v2.6.0-beta.8) (2024-05-03)
+
+
+### Bug Fixes
+
+* Dropdown arrow position is contained in the dropdown, overflowing options are now fixed ([4ce9e75](https://github.com/apolyanov/impulse-ui/commit/4ce9e759df0eb6ac37c5875641397c6f10e11225))
+
+
+
+
+
 # [2.6.0-beta.7](https://github.com/apolyanov/impulse-ui/compare/v2.6.0-beta.6...v2.6.0-beta.7) (2024-05-02)
 
 
