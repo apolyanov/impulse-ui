@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.6.0-beta.9](https://github.com/apolyanov/impulse-ui/compare/v2.6.0-beta.8...v2.6.0-beta.9) (2024-05-03)
+
+
+### Bug Fixes
+
+* Fixed Select styles ([2a9e8a2](https://github.com/apolyanov/impulse-ui/commit/2a9e8a22b47b147d644eda8b4e067793af88a500))
+
+
+
+
+
 # [2.6.0-beta.8](https://github.com/apolyanov/impulse-ui/compare/v2.6.0-beta.7...v2.6.0-beta.8) (2024-05-03)
 
 
