@@ -1,23 +1,23 @@
-import { ButtonHTMLAttributes } from 'react';
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
+import { ImpulseTableState } from '../table';
 import { IOStyle } from '../theme';
 
+import { ButtonHTMLProps } from './button.types';
+
 interface IconButtonProps extends IconButtonRestProps {
-  iStyle?: Partial<IconButtonStyle>;
+  iStyle?: Partial<IconButtonStyle<ImpulseTableState<any>>>;
 }
 
-interface IconButtonRestProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface IconButtonRestProps extends ButtonHTMLProps {
   icon: IconDefinition;
+  loading?: boolean;
 }
 
-interface UseIconButtonStyleFnProps {
-  iconButtonStyle: Partial<IconButtonStyle>;
+interface IconButtonStyle<T = {}> {
+  buttonStyle: IOStyle<IconButtonRestProps & T>;
+  iconStyle: IOStyle<IconButtonRestProps & T>;
+  loaderStyle: IOStyle<IconButtonRestProps & T>;
 }
 
-interface IconButtonStyle<T = IconButtonRestProps> {
-  buttonStyle: IOStyle<T>;
-  iconStyle: IOStyle<T>;
-}
-
-export type { IconButtonProps, IconButtonStyle, UseIconButtonStyleFnProps };
+export type { IconButtonProps, IconButtonStyle };

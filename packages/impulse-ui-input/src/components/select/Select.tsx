@@ -2,6 +2,7 @@ import React, { Fragment, ReactNode, useMemo } from 'react';
 import { useComponentStyle } from '@impulse-ui/core';
 import { Icon } from '@impulse-ui/icon';
 import { Container } from '@impulse-ui/layout';
+import { Spinner } from '@impulse-ui/loader';
 import { Typography } from '@impulse-ui/text';
 import { SelectProps } from '@impulse-ui/types';
 
@@ -36,7 +37,7 @@ const Select = <T extends object>({ iStyle, ...rest }: SelectProps<T>) => {
   const {
     selectOptionStyle,
     noOptionsTypographyStyle,
-    loadingTypographyStyle,
+    loadingSpinnerStyle,
     selectOptionsContainerStyle,
     mainContainerStyle,
     selectedItemTypographyStyle,
@@ -46,7 +47,7 @@ const Select = <T extends object>({ iStyle, ...rest }: SelectProps<T>) => {
   const optionsContainerRenderer = useMemo((): ReactNode | undefined => {
     if (showOptions) {
       if (loading) {
-        return <Typography iStyle={loadingTypographyStyle}>Loading...</Typography>;
+        return <Spinner iStyle={loadingSpinnerStyle} />;
       }
 
       if (processedOptions.length === 0) {
@@ -75,7 +76,7 @@ const Select = <T extends object>({ iStyle, ...rest }: SelectProps<T>) => {
     processedOptions,
     listContainerStyle,
     getVirtualItems,
-    loadingTypographyStyle,
+    loadingSpinnerStyle,
     noOptionsTypographyStyle,
     listItemStyle,
     highlightedIndex,

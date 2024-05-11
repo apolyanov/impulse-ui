@@ -2,27 +2,32 @@ import { TableOptions } from '@tanstack/react-table';
 
 import { IOStyle } from '../theme';
 
+import { ImpulseTableState } from './impulseTableProvider.types';
 import { TableFooterStyle } from './tableFooter.types';
 import { TableHeaderRestProps, TableHeaderStyle } from './tableHeader.types';
 import { TBodyStyle } from './tbody.types';
 import { TFootStyle } from './tfoot.types';
 import { THeadStyle } from './thead.types';
 
-interface ImpulseTableProps<T = object> extends Partial<TableOptions<T>> {
-  iStyle?: Partial<ImpulseTableStyle>;
+interface ImpulseTableProps<T extends {}> extends ImpulseTableRestProps<T> {
+  iStyle?: Partial<ImpulseTableStyle<T>>;
+}
+
+interface ImpulseTableRestProps<T = {}> extends Partial<TableOptions<T>> {
   data: TableOptions<T>['data'];
   columns: TableOptions<T>['columns'];
   tableHeaderProps?: Partial<TableHeaderRestProps>;
+  loading?: boolean;
 }
 
-interface ImpulseTableStyle {
-  tableContainerStyle: IOStyle;
-  tableHeaderStyle: Partial<TableHeaderStyle>;
-  tableStyle: IOStyle;
-  theadStyle: Partial<THeadStyle>;
-  tbodyStyle: Partial<TBodyStyle>;
-  tfootStyle: Partial<TFootStyle>;
-  tableFooterStyle: Partial<TableFooterStyle>;
+interface ImpulseTableStyle<T = {}> {
+  tableContainerStyle: IOStyle<ImpulseTableState<T>>;
+  tableHeaderStyle: Partial<TableHeaderStyle<T>>;
+  tableStyle: IOStyle<ImpulseTableState<T>>;
+  theadStyle: Partial<THeadStyle<ImpulseTableState<T>>>;
+  tbodyStyle: Partial<TBodyStyle<ImpulseTableState<T>>>;
+  tfootStyle: Partial<TFootStyle<ImpulseTableState<T>>>;
+  tableFooterStyle: Partial<TableFooterStyle<T>>;
 }
 
-export type { ImpulseTableProps, ImpulseTableStyle };
+export type { ImpulseTableProps, ImpulseTableRestProps, ImpulseTableStyle };

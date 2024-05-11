@@ -1,3 +1,4 @@
+import { ContainerHTMLProps } from '../layout';
 import { IOStyle } from '../theme';
 
 interface SidebarSectionDividerProps {
@@ -5,7 +6,7 @@ interface SidebarSectionDividerProps {
 }
 
 interface SidebarSectionDividerStyle {
-  dividerStyle: IOStyle;
+  dividerStyle: IOStyle<ContainerHTMLProps>;
 }
 
 export type { SidebarSectionDividerProps, SidebarSectionDividerStyle };

@@ -1,16 +1,16 @@
-import { volcano } from '@impulse-ui/colours';
-import { ComponentTheme } from '@impulse-ui/types';
+import { neutral, volcano } from '@impulse-ui/colours';
+import { ButtonHTMLProps, ComponentTheme, TextButtonStyle } from '@impulse-ui/types';
 
-const textButton: ComponentTheme = {
+const baseTextButton: ComponentTheme<ButtonHTMLProps> = {
   iStyle: {
     iColorTheme: {
       light: {
         backgroundColor: 'transparent',
-        backgroundColorHover: 'transparent',
+        backgroundColorHover: volcano[10],
         borderColor: 'transparent',
         borderColorHover: 'transparent',
         color: volcano[60],
-        colorHover: volcano[50],
+        colorHover: volcano[70],
       },
       dark: {
         backgroundColor: 'transparent',
@@ -18,16 +18,16 @@ const textButton: ComponentTheme = {
         borderColor: 'transparent',
         borderColorHover: 'transparent',
         color: volcano[60],
-        colorHover: volcano[50],
+        colorHover: volcano[60],
       },
     },
-    iCss: ({ iColorTheme }) => ({
+    iCss: ({ iColorTheme, disabled }) => ({
       backgroundColor: iColorTheme.backgroundColor,
-      color: iColorTheme.color,
-      borderRadius: 8,
+      color: disabled ? volcano[40] : iColorTheme.color,
+      borderRadius: 4,
       fontSize: '14px',
       textDecoration: 'none',
-      transition: 'background-color 0.2s ease-in-out',
+      transition: 'background-color 0.2s ease-in-out, color 0.2s ease-in-out',
       textTransform: 'uppercase',
       textShadow: `0 0 1px ${volcano[50]}`,
       padding: '0px 28px',
@@ -46,8 +46,27 @@ const textButton: ComponentTheme = {
         color: iColorTheme.colorHover,
         cursor: 'pointer',
       },
+      '&:disabled': {
+        cursor: 'not-allowed',
+        color: volcano[40],
+        textShadow: `0 0 1px ${volcano[40]}`,
+      },
     }),
   },
 };
 
-export { textButton };
+const textButton: Partial<TextButtonStyle> = {
+  loaderStyle: {
+    iColorTheme: {
+      light: {
+        borderColor: volcano[60],
+        borderColorHover: neutral[60],
+      },
+    },
+    iCss: ({ iColorTheme, disabled }) => ({
+      borderRightColor: disabled ? volcano[60] : iColorTheme.borderColor,
+    }),
+  },
+};
+
+export { baseTextButton, textButton };

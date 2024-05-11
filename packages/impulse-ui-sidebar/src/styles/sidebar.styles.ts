@@ -10,7 +10,7 @@ const defaultSidebarStyle: Partial<SidebarStyle> = {
     },
     iCss: {
       maxWidth: 300,
-      minWidth: 48,
+      minWidth: 'fit-content',
       width: 220,
       height: '100vh',
       padding: '2px 8px',

@@ -1,7 +1,7 @@
 import { neutral } from '@impulse-ui/colours';
-import { ComponentTheme } from '@impulse-ui/types';
+import { ComponentTheme, TDataHTMLProps } from '@impulse-ui/types';
 
-const tdata: ComponentTheme = {
+const tdata: ComponentTheme<TDataHTMLProps> = {
   iStyle: {
     iColorTheme: {
       light: {

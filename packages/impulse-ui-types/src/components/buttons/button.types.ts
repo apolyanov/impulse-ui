@@ -1,7 +1,20 @@
-import React from 'react';
+import { JSX } from 'react';
 
-import { IComponent } from '../theme';
+import { IOStyle } from '../theme';
 
-type ButtonProps = IComponent & React.ButtonHTMLAttributes<HTMLButtonElement>;
+type ButtonHTMLProps = JSX.IntrinsicElements['button'];
 
-export type { ButtonProps };
+interface ButtonProps extends ButtonRestProps {
+  iStyle?: Partial<ButtonStyle>;
+}
+
+interface ButtonRestProps extends ButtonHTMLProps {
+  loading?: boolean;
+}
+
+interface ButtonStyle {
+  buttonStyle: IOStyle<ButtonRestProps>;
+  loaderStyle: IOStyle<ButtonRestProps>;
+}
+
+export type { ButtonHTMLProps, ButtonProps, ButtonRestProps, ButtonStyle };

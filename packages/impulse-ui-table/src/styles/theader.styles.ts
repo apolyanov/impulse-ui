@@ -1,7 +1,7 @@
 import { neutral } from '@impulse-ui/colours';
-import { ComponentTheme } from '@impulse-ui/types';
+import { ComponentTheme, THeaderHTMLProps } from '@impulse-ui/types';
 
-const theader: ComponentTheme = {
+const theader: ComponentTheme<THeaderHTMLProps> = {
   iStyle: {
     iColorTheme: {
       light: {

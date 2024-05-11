@@ -1,20 +1,30 @@
+import { JSX } from 'react';
+
+import { IconHTMLProps } from '../icon';
+import { ContainerHTMLProps } from '../layout';
+import { TypographyHTMLProps } from '../text';
 import { IOStyle } from '../theme';
 
-import { TSegmentProps } from './tsegment.types';
+import { ImpulseTableState } from './impulseTableProvider.types';
+import { TDataHTMLProps } from './tdata.types';
+import { TRowHTMLProps } from './trow.types';
 
-interface TBodyComponentProps extends TSegmentProps {
-  iStyle?: Partial<TBodyStyle>;
+type TBodyHTMLProps = JSX.IntrinsicElements['tbody'];
+
+interface TBodyComponentProps extends TBodyHTMLProps {
+  iStyle?: Partial<TBodyStyle<ImpulseTableState<any>>>;
 }
 
-interface TBodyStyle {
-  tbodyStyle: IOStyle;
-  trowStyle: IOStyle;
-  tdataStyle: IOStyle;
-  noContentTrowStyle: IOStyle;
-  noContentTdataStyle: IOStyle;
-  noContentIconStyle: IOStyle;
-  noContentTypographyStyle: IOStyle;
-  noContentTbodyStyle: IOStyle;
+interface TBodyStyle<T = {}> {
+  tbodyStyle: IOStyle<TBodyHTMLProps & T>;
+  trowStyle: IOStyle<TRowHTMLProps & T>;
+  tdataStyle: IOStyle<TDataHTMLProps & T>;
+  noContentTrowStyle: IOStyle<TRowHTMLProps & T>;
+  noContentTdataStyle: IOStyle<TDataHTMLProps & T>;
+  noContentIconStyle: IOStyle<IconHTMLProps & T>;
+  noContentTypographyStyle: IOStyle<TypographyHTMLProps & T>;
+  noContentTbodyStyle: IOStyle<TBodyHTMLProps & T>;
+  loaderSpinnerStyle: IOStyle<ContainerHTMLProps & T>;
 }
 
-export type { TBodyComponentProps, TBodyStyle };
+export type { TBodyComponentProps, TBodyHTMLProps, TBodyStyle };

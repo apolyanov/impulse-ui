@@ -1,9 +1,11 @@
 import { IconButtonStyle } from '../buttons';
 import { TextInputStyle } from '../input';
+import { ContainerHTMLProps } from '../layout';
+import { TypographyHTMLProps } from '../text';
 import { IOStyle } from '../theme';
 
-interface TableHeaderProps extends TableHeaderRestProps {
-  iStyle?: Partial<TableHeaderStyle>;
+interface TableHeaderProps<T = {}> extends TableHeaderRestProps {
+  iStyle?: Partial<TableHeaderStyle<T>>;
 }
 
 interface TableHeaderRestProps {
@@ -12,12 +14,12 @@ interface TableHeaderRestProps {
   showTableSearch?: boolean;
 }
 
-interface TableHeaderStyle {
-  containerStyle: IOStyle;
-  tableNameStyle: IOStyle;
-  searchInputStyle: Partial<TextInputStyle>;
-  filtersButtonStyle: Partial<IconButtonStyle>;
-  settingsButtonStyle: Partial<IconButtonStyle>;
+interface TableHeaderStyle<T = {}> {
+  containerStyle: IOStyle<ContainerHTMLProps & T>;
+  tableNameStyle: IOStyle<TypographyHTMLProps & T>;
+  searchInputStyle: Partial<TextInputStyle<T>>;
+  filtersButtonStyle: Partial<IconButtonStyle<T>>;
+  settingsButtonStyle: Partial<IconButtonStyle<T>>;
 }
 
 export type { TableHeaderProps, TableHeaderRestProps, TableHeaderStyle };

@@ -1,11 +1,25 @@
 'use client';
 import React, { FunctionComponent } from 'react';
+import { useComponentStyle } from '@impulse-ui/core';
+import { Spinner } from '@impulse-ui/loader';
 import { ButtonProps } from '@impulse-ui/types';
 
-import BaseButton from './BaseButton.styles';
+import { buttonComponentMap } from '../../maps';
+import { button } from '../../styles';
+
+import { BaseButton } from './BaseButton.styles';
 
 const Button: FunctionComponent<ButtonProps> = ({ iStyle, ...rest }) => {
-  return <BaseButton $iStyle={iStyle} {...rest} />;
+  const { children, loading, ...buttonProps } = rest;
+  const { buttonStyle, loaderStyle } = useComponentStyle(buttonComponentMap, rest, button, iStyle);
+
+  console.log(buttonProps);
+
+  return (
+    <BaseButton $iStyle={buttonStyle} {...buttonProps}>
+      {loading ? <Spinner iStyle={loaderStyle} /> : children}
+    </BaseButton>
+  );
 };
 
 export { Button };

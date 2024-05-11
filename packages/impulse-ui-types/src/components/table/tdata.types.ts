@@ -1,7 +1,8 @@
-import { DetailedHTMLProps, TdHTMLAttributes } from 'react';
+import { JSX } from 'react';
 
 import { IComponent } from '../theme';
 
-type TDataProps = IComponent & DetailedHTMLProps<TdHTMLAttributes<HTMLTableCellElement>, HTMLTableCellElement>;
+type TDataHTMLProps = JSX.IntrinsicElements['td'];
+type TDataProps = IComponent & TDataHTMLProps;
 
-export type { TDataProps };
+export type { TDataHTMLProps, TDataProps };

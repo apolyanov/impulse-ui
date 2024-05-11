@@ -1,5 +1,5 @@
 import { neutral, volcano } from '@impulse-ui/colours';
-import { ComponentTheme, TextInputStyle } from '@impulse-ui/types';
+import { ComponentTheme, TextInputCompositeProps, TextInputStyle } from '@impulse-ui/types';
 const textInputStyle: Partial<TextInputStyle> = {
   mainContainerStyle: {
     iCss: {
@@ -79,7 +79,7 @@ const textInputStyle: Partial<TextInputStyle> = {
   },
 };
 
-const input: ComponentTheme = {
+const input: ComponentTheme<TextInputCompositeProps> = {
   iStyle: {
     iColorTheme: {
       light: {

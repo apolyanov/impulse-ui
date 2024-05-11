@@ -1,8 +1,8 @@
 import { neutral } from '@impulse-ui/colours';
 import { paddingX, paddingY } from '@impulse-ui/core';
-import { ComponentTheme } from '@impulse-ui/types';
+import { ComponentTheme, TFootHTMLProps } from '@impulse-ui/types';
 
-const tfoot: ComponentTheme = {
+const tfoot: ComponentTheme<TFootHTMLProps> = {
   iStyle: {
     iColorTheme: {
       light: {

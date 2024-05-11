@@ -51,6 +51,12 @@ const Navigation = memo(() => {
         icon={faFolder}
         itemText={'Mui Table'}
       />
+      <SidebarItem
+        active={isActive('/styles')}
+        onClick={() => navigate('/styles')}
+        icon={faFolder}
+        itemText={'Styles'}
+      />
     </Sidebar>
   );
 });

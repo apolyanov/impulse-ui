@@ -1,7 +1,18 @@
-import { ButtonHTMLAttributes } from 'react';
+import { IOStyle } from '../theme';
 
-import { IComponent } from '../theme';
+import { ButtonHTMLProps } from './button.types';
 
-type TextButtonProps = IComponent & ButtonHTMLAttributes<HTMLButtonElement>;
+interface TextButtonProps extends TextButtonRestProps {
+  iStyle?: Partial<TextButtonStyle>;
+}
 
-export type { TextButtonProps };
+interface TextButtonRestProps extends ButtonHTMLProps {
+  loading?: boolean;
+}
+
+interface TextButtonStyle {
+  buttonStyle: IOStyle<TextButtonRestProps>;
+  loaderStyle: IOStyle<TextButtonRestProps>;
+}
+
+export type { TextButtonProps, TextButtonRestProps, TextButtonStyle };

@@ -12,7 +12,7 @@ import { paginationComponentMap } from '../../maps';
 import { paginationStyles } from '../../styles';
 
 const Pagination: FunctionComponent<PaginationProps> = ({ iStyle, ...rest }) => {
-  const { getPageCount, getState, setPageIndex, nextPage, getCanNextPage, previousPage, getCanPreviousPage } =
+  const { getPageCount, getState, setPageIndex, nextPage, getCanNextPage, previousPage, getCanPreviousPage, loading } =
     useImpulseTable();
 
   const { containerStyle, pageCounterStyle, pageInputStyle, pageChangeButtonStyle } = useComponentStyle(
@@ -35,18 +35,19 @@ const Pagination: FunctionComponent<PaginationProps> = ({ iStyle, ...rest }) => 
         getState().pagination.pageIndex + 1
       } of ${getPageCount()}`}</Typography>
       <IconButton
-        disabled={!getCanPreviousPage()}
+        disabled={!getCanPreviousPage() || loading}
         onClick={handleClickFirstPage}
         iStyle={pageChangeButtonStyle}
         icon={faAnglesLeft}
       />
       <IconButton
-        disabled={!getCanPreviousPage()}
+        disabled={!getCanPreviousPage() || loading}
         onClick={previousPage}
         iStyle={pageChangeButtonStyle}
         icon={faAngleLeft}
       />
       <TextInput
+        disabled={loading}
         onChange={handleInputChange}
         min={0}
         max={getPageCount()}
@@ -54,9 +55,14 @@ const Pagination: FunctionComponent<PaginationProps> = ({ iStyle, ...rest }) => 
         type={'number'}
         iStyle={pageInputStyle}
       />
-      <IconButton disabled={!getCanNextPage()} onClick={nextPage} iStyle={pageChangeButtonStyle} icon={faAngleRight} />
       <IconButton
-        disabled={!getCanNextPage()}
+        disabled={!getCanNextPage() || loading}
+        onClick={nextPage}
+        iStyle={pageChangeButtonStyle}
+        icon={faAngleRight}
+      />
+      <IconButton
+        disabled={!getCanNextPage() || loading}
         onClick={handleClickLastPage}
         iStyle={pageChangeButtonStyle}
         icon={faAnglesRight}

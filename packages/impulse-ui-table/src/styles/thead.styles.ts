@@ -1,6 +1,6 @@
 import { neutral } from '@impulse-ui/colours';
 import { marginY, paddingX } from '@impulse-ui/core';
-import { ComponentTheme, THeadStyle } from '@impulse-ui/types';
+import { ComponentTheme, THeadHTMLProps, THeadStyle } from '@impulse-ui/types';
 
 const thead: Partial<THeadStyle> = {
   trowStyle: {
@@ -68,7 +68,7 @@ const thead: Partial<THeadStyle> = {
   },
 };
 
-const baseTHead: ComponentTheme = {
+const baseTHead: ComponentTheme<THeadHTMLProps> = {
   iStyle: {
     iColorTheme: {
       light: {

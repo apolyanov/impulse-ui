@@ -1,6 +1,9 @@
 import React, { ButtonHTMLAttributes } from 'react';
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
+import { ButtonHTMLProps } from '../buttons';
+import { IconHTMLProps } from '../icon';
+import { TypographyHTMLProps } from '../text';
 import { IOStyle } from '../theme';
 
 interface SidebarHeaderProps extends SidebarHeaderRestProps {
@@ -14,9 +17,9 @@ interface SidebarHeaderRestProps extends ButtonHTMLAttributes<HTMLButtonElement>
 }
 
 interface SidebarHeaderStyle {
-  buttonStyle: IOStyle;
-  iconStyle: IOStyle;
-  typographyStyle: IOStyle;
+  buttonStyle: IOStyle<ButtonHTMLProps>;
+  iconStyle: IOStyle<IconHTMLProps>;
+  typographyStyle: IOStyle<TypographyHTMLProps>;
 }
 
 export type { SidebarHeaderProps, SidebarHeaderStyle };
