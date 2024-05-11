@@ -1,7 +1,8 @@
-import { DetailedHTMLProps, HTMLAttributes } from 'react';
+import { JSX } from 'react';
 
 import { IComponent } from '../theme';
 
-type TableProps = IComponent & DetailedHTMLProps<HTMLAttributes<HTMLTableElement>, HTMLTableElement>;
+type TableHTMLProps = JSX.IntrinsicElements['table'];
+type TableProps = IComponent & TableHTMLProps;
 
-export type { TableProps };
+export type { TableHTMLProps, TableProps };

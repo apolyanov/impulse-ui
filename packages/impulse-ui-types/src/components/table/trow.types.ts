@@ -1,7 +1,8 @@
-import { DetailedHTMLProps, HTMLAttributes } from 'react';
+import { JSX } from 'react';
 
 import { IComponent } from '../theme';
 
-type TRowProps = IComponent & DetailedHTMLProps<HTMLAttributes<HTMLTableRowElement>, HTMLTableRowElement>;
+type TRowHTMLProps = JSX.IntrinsicElements['tr'];
+type TRowProps = IComponent & TRowHTMLProps;
 
-export type { TRowProps };
+export type { TRowHTMLProps, TRowProps };

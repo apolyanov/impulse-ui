@@ -1,5 +1,5 @@
 'use client';
-import React, { FunctionComponent, PropsWithChildren } from 'react';
+import React, { PropsWithChildren } from 'react';
 import { useComponentStyle } from '@impulse-ui/core';
 import { Container } from '@impulse-ui/layout';
 import { ImpulseTableProps } from '@impulse-ui/types';
@@ -14,12 +14,12 @@ import { TBody } from '../tbody';
 import { TFoot } from '../tfoot';
 import { THead } from '../thead';
 
-const ImpulseTable = <T extends object>({ iStyle, ...tableProps }: PropsWithChildren<ImpulseTableProps<T>>) => {
+const ImpulseTable = <T extends {} = any>({ iStyle, ...tableProps }: PropsWithChildren<ImpulseTableProps<any>>) => {
   const { tableHeaderProps, ...tableProviderProps } = tableProps;
 
   const { tableContainerStyle, tableStyle } = useComponentStyle(
     impulseTableComponentMap,
-    {},
+    tableProviderProps,
     impulseTableStyles,
     iStyle,
   );

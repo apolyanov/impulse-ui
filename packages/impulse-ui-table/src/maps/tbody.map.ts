@@ -9,6 +9,7 @@ const tbodyComponentMap: ComponentMap[] = [
   { key: 'noContentIcon' },
   { key: 'noContentTbody' },
   { key: 'noContentTypography' },
+  { key: 'loaderSpinner' },
 ];
 
 export { tbodyComponentMap };

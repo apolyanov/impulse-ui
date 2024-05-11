@@ -1,0 +1,59 @@
+import { neutral } from '@impulse-ui/colours';
+import { animationHelper } from '@impulse-ui/core';
+import { ComponentTheme, ContainerHTMLProps } from '@impulse-ui/types';
+import { keyframes } from 'styled-components';
+
+const spinnerAnimation = keyframes`100% {transform: rotate(1turn)}`;
+
+const spinnerLoader: ComponentTheme<ContainerHTMLProps> = {
+  iStyle: {
+    iColorTheme: {
+      light: {
+        backgroundColor: neutral[300],
+        backgroundColorHover: neutral[300],
+        borderColor: 'transparent',
+        borderColorHover: 'transparent',
+        color: neutral[100],
+        colorHover: neutral[100],
+      },
+      dark: {
+        backgroundColor: neutral[10],
+        backgroundColorHover: neutral[10],
+        borderColor: 'transparent',
+        borderColorHover: 'transparent',
+        color: neutral[100],
+        colorHover: neutral[100],
+      },
+    },
+    iCss: ({ iColorTheme }) => ({
+      width: 20,
+      aspectRatio: '1',
+      borderRadius: '50%',
+      border: '3px solid #0000',
+      borderRightColor: iColorTheme.borderColor,
+      backgroundRepeat: 'no-repeat',
+      position: 'relative',
+      animation: animationHelper`${spinnerAnimation} 1s infinite linear`,
+      '&:before': {
+        content: "''",
+        position: 'absolute',
+        inset: -3,
+        borderRadius: '50%',
+        border: 'inherit',
+        animation: 'inherit',
+        animationDuration: '2s',
+      },
+      '&:after': {
+        content: "''",
+        position: 'absolute',
+        inset: -3,
+        borderRadius: '50%',
+        border: 'inherit',
+        animation: 'inherit',
+        animationDuration: '4s',
+      },
+    }),
+  },
+};
+
+export { spinnerLoader };

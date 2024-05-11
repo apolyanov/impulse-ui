@@ -1,7 +1,7 @@
 import { neutral } from '@impulse-ui/colours';
-import { ComponentTheme } from '@impulse-ui/types';
+import { ComponentTheme, TypographyHTMLProps } from '@impulse-ui/types';
 
-const typography: ComponentTheme = {
+const typography: ComponentTheme<TypographyHTMLProps> = {
   iStyle: {
     iColorTheme: {
       light: {

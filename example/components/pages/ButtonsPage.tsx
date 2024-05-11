@@ -9,11 +9,13 @@ const ButtonsPage = () => {
 
   return (
     <Container>
-      <Button onClick={() => console.log('clicked')}>Buttons</Button>
-      <TextButton>Hello</TextButton>
+      <Button disabled onClick={() => console.log('clicked')}>
+        Buttons
+      </Button>
+      <TextButton disabled>Hello</TextButton>
       <Link>Hello</Link>
-      <Checkbox checked={check} onClick={({ value }) => setCheck(value)} label={'Click me'} />
-      <IconButton icon={faArrowRightFromBracket} />
+      <Checkbox disabled checked={check} onClick={({ value }) => setCheck(value)} label={'Click me'} />
+      <IconButton disabled icon={faArrowRightFromBracket} />
     </Container>
   );
 };

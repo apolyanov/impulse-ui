@@ -1,5 +1,4 @@
-import { HTMLAttributes } from 'react';
-
+import { ContainerHTMLProps } from '../layout';
 import { IOStyle } from '../theme';
 import { SimpleOptionValue, UseProcessedoptionsProps } from '../utils';
 
@@ -9,7 +8,7 @@ interface SelectProps<T> extends SelectRestProps<T> {
   iStyle?: Partial<SelectStyle<T>>;
 }
 
-interface SelectRestProps<T> extends UseProcessedoptionsProps<T>, HTMLAttributes<HTMLDivElement> {
+interface SelectRestProps<T> extends UseProcessedoptionsProps<T>, ContainerHTMLProps {
   loading?: boolean;
   selectOnBlur?: boolean;
   onOptionSelect?: (optionValue?: SimpleOptionValue) => void;
@@ -19,10 +18,10 @@ interface SelectRestProps<T> extends UseProcessedoptionsProps<T>, HTMLAttributes
 interface SelectStyle<T> {
   mainContainerStyle: IOStyle<SelectRestProps<T>>;
   selectedItemTypographyStyle: IOStyle<SelectRestProps<T>>;
-  dropdownIconStyle: IOStyle<T>;
+  dropdownIconStyle: IOStyle<SelectRestProps<T>>;
   selectOptionsContainerStyle: IOStyle<SelectRestProps<T>>;
   selectOptionStyle: Partial<SelectOptionStyle>;
-  loadingTypographyStyle: IOStyle<SelectRestProps<T>>;
+  loadingSpinnerStyle: IOStyle<SelectRestProps<T>>;
   noOptionsTypographyStyle: IOStyle<SelectRestProps<T>>;
 }
 

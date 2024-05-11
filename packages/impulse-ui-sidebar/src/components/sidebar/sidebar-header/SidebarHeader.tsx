@@ -1,6 +1,6 @@
 'use client';
 import React, { FunctionComponent, PropsWithChildren } from 'react';
-import { Button } from '@impulse-ui/buttons';
+import { BaseButton } from '@impulse-ui/buttons';
 import { useComponentStyle } from '@impulse-ui/core';
 import { Icon } from '@impulse-ui/icon';
 import { Typography } from '@impulse-ui/text';
@@ -19,10 +19,10 @@ const SidebarHeader: FunctionComponent<PropsWithChildren<SidebarHeaderProps>> = 
   );
 
   return (
-    <Button onClick={onClick} iStyle={buttonStyle}>
+    <BaseButton onClick={onClick} $iStyle={buttonStyle}>
       {icon && <Icon icon={icon} iStyle={iconStyle} />}
       <Typography iStyle={typographyStyle}>{headerText}</Typography>
-    </Button>
+    </BaseButton>
   );
 };
 

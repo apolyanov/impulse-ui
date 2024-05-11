@@ -15,4 +15,4 @@ const BaseContainer = styled.div<BaseIComponent>(({ theme: { mode, themes }, $iS
   return css(iCss({ iColorTheme: iColorTheme[themeMode] }));
 });
 
-export default BaseContainer;
+export { BaseContainer };

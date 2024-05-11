@@ -1,12 +1,13 @@
-import React from 'react';
+import { JSX } from 'react';
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIconProps } from '@fortawesome/react-fontawesome';
 
 import { IComponent } from '../theme';
 
+type IconHTMLProps = JSX.IntrinsicElements['svg'];
+
 interface IconProps extends IComponent, FontAwesomeIconProps {
   icon: IconDefinition;
-  onClick?: (event: React.MouseEvent<SVGSVGElement, MouseEvent>) => void;
 }
 
-export type { IconProps };
+export type { IconHTMLProps, IconProps };

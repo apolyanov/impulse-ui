@@ -1,7 +1,7 @@
 import { volcano } from '@impulse-ui/colours';
-import { ComponentTheme } from '@impulse-ui/types';
+import { ComponentTheme, LinkHTMLProps } from '@impulse-ui/types';
 
-const link: ComponentTheme = {
+const link: ComponentTheme<LinkHTMLProps> = {
   iStyle: {
     iColorTheme: {
       light: {

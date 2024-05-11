@@ -10,7 +10,7 @@ interface IComponent<T = any> {
   iStyle?: IOStyle<T>;
 }
 
-type IOCssArgs<T> = {
+type IOCssArgs<T = any> = {
   iColorTheme: Partial<CompositeComponentColors>;
 } & T;
 

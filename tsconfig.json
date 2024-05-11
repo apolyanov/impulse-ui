@@ -47,6 +47,9 @@
     },
     {
       "path": "./packages/impulse-ui-table"
+    },
+    {
+      "path": "./packages/impulse-ui-loader"
     }
   ]
 }

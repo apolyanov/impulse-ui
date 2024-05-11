@@ -4,12 +4,12 @@ import { AutoCompleteItemStyle, BackgroundColor } from '@impulse-ui/types';
 const defaultAutoCompleteItemStyle: Partial<AutoCompleteItemStyle> = {
   mainContainerStyle: {
     iColorTheme: { light: { backgroundColor: 'transparent' } },
-    iCss: ({ parentProps }) => ({
+    iCss: ({ selected, highlighted }) => ({
       padding: '6px',
       height: '34px',
       borderRadius: 4,
-      backgroundColor: getItemBackgroundColor(parentProps?.selected, parentProps?.highlighted),
-      '&:hover': { backgroundColor: getItemBackgroundHoverColor(parentProps?.selected), cursor: 'pointer' },
+      backgroundColor: getItemBackgroundColor(selected, highlighted),
+      '&:hover': { backgroundColor: getItemBackgroundHoverColor(selected), cursor: 'pointer' },
     }),
   },
   typographyStyle: {

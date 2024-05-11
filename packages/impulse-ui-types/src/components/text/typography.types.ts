@@ -1,5 +1,8 @@
+import { JSX } from 'react';
+
 import { IComponent } from '../theme';
 
-type TypographyProps = IComponent;
+type TypographyHTMLProps = JSX.IntrinsicElements['p'];
+type TypographyProps = IComponent & TypographyHTMLProps;
 
-export type { TypographyProps };
+export type { TypographyHTMLProps, TypographyProps };

@@ -1,7 +1,7 @@
 import { neutral } from '@impulse-ui/colours';
-import { ComponentTheme } from '@impulse-ui/types';
+import { ComponentTheme, TableHTMLProps } from '@impulse-ui/types';
 
-const table: ComponentTheme = {
+const table: ComponentTheme<TableHTMLProps> = {
   iStyle: {
     iColorTheme: {
       light: {

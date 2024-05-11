@@ -8,7 +8,7 @@ const autoCompleteComponentMap: ComponentMap[] = [
   { key: 'textInput', subKeys: textInputComponentMap },
   { key: 'autoCompleteItemsContainer' },
   { key: 'autoCompleteItem', subKeys: autoCompleteItemComponentMap },
-  { key: 'loadingTypography' },
+  { key: 'loadingSpinner' },
   { key: 'noOptionsTypography' },
 ];
 

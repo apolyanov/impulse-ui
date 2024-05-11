@@ -1,7 +1,8 @@
-import { DetailedHTMLProps, ThHTMLAttributes } from 'react';
+import { JSX } from 'react';
 
 import { IComponent } from '../theme';
 
-type THeaderProps = IComponent & DetailedHTMLProps<ThHTMLAttributes<HTMLTableCellElement>, HTMLTableCellElement>;
+type THeaderHTMLProps = JSX.IntrinsicElements['th'];
+type THeaderProps = IComponent & THeaderHTMLProps;
 
-export type { THeaderProps };
+export type { THeaderHTMLProps, THeaderProps };

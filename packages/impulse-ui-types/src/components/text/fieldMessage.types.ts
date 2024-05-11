@@ -28,9 +28,9 @@ interface FieldMessageComponentStyle {
 }
 
 interface UseFieldMessageStyleFnProps {
-  mainContainerStyle?: IOStyle;
-  iconStyle?: IOStyle;
-  typographyStyle?: IOStyle;
+  mainContainerStyle?: IOStyle<FieldMessageRestProps>;
+  iconStyle?: IOStyle<FieldMessageRestProps>;
+  typographyStyle?: IOStyle<FieldMessageRestProps>;
   getFieldMessageIcon: GetFieldMessageIcon;
 }
 

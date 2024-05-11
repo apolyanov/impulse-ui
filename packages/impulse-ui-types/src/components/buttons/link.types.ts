@@ -1,7 +1,9 @@
-import { AnchorHTMLAttributes } from 'react';
+import { JSX } from 'react';
 
 import { IComponent } from '../theme';
 
-type LinkProps = IComponent & AnchorHTMLAttributes<HTMLAnchorElement>;
+type LinkHTMLProps = JSX.IntrinsicElements['a'];
 
-export type { LinkProps };
+type LinkProps = IComponent & LinkHTMLProps;
+
+export type { LinkHTMLProps, LinkProps };
