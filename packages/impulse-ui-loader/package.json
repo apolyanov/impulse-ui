@@ -1,6 +1,6 @@
 {
   "name": "@impulse-ui/loader",
-  "version": "0.1.0",
+  "version": "2.6.0-beta.11",
   "license": "MIT",
   "author": "Alexander Polyanov",
   "main": "dist/index.js",
@@ -40,9 +40,9 @@
     "react": ">=16"
   },
   "dependencies": {
-    "@impulse-ui/core": "^2.6.0-beta.10",
-    "@impulse-ui/layout": "^2.6.0-beta.10",
-    "@impulse-ui/colours": "^2.6.0-beta.10"
+    "@impulse-ui/colours": "^2.6.0-beta.11",
+    "@impulse-ui/core": "^2.6.0-beta.11",
+    "@impulse-ui/layout": "^2.6.0-beta.11"
   },
   "engines": {
     "node": ">=12"
