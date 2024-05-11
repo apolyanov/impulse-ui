@@ -3,6 +3,7 @@ import React, { FunctionComponent, useMemo } from 'react';
 import { faDatabase } from '@fortawesome/free-solid-svg-icons';
 import { useComponentStyle } from '@impulse-ui/core';
 import { Icon } from '@impulse-ui/icon';
+import { Spinner } from '@impulse-ui/loader';
 import { Typography } from '@impulse-ui/text';
 import { TBodyComponentProps } from '@impulse-ui/types';
 import { flexRender } from '@tanstack/react-table';
@@ -16,7 +17,7 @@ import { TRow } from '../trow';
 import { BaseTBody } from './BaseTBody.styles';
 
 const TBody: FunctionComponent<TBodyComponentProps> = ({ iStyle, ...rest }) => {
-  const { getRowModel, showNoData, getHeaderGroups } = useImpulseTable();
+  const tableState = useImpulseTable();
   const {
     tbodyStyle,
     trowStyle,
@@ -26,16 +27,22 @@ const TBody: FunctionComponent<TBodyComponentProps> = ({ iStyle, ...rest }) => {
     noContentTrowStyle,
     noContentTypographyStyle,
     noContentTbodyStyle,
-  } = useComponentStyle(tbodyComponentMap, rest, tbody, iStyle);
+    loaderSpinnerStyle,
+  } = useComponentStyle(tbodyComponentMap, { ...tableState, ...rest }, tbody, iStyle);
 
   return useMemo(() => {
-    if (showNoData()) {
+    if (tableState.showNoData()) {
       return (
         <BaseTBody $iStyle={noContentTbodyStyle} {...rest}>
           <TRow iStyle={noContentTrowStyle}>
-            <TData colSpan={getHeaderGroups()?.[0]?.headers?.length ?? 0} iStyle={noContentTdataStyle}>
-              <Icon iStyle={noContentIconStyle} icon={faDatabase} />
-              <Typography iStyle={noContentTypographyStyle}>No data</Typography>
+            <TData colSpan={tableState.getHeaderGroups()?.[0]?.headers?.length ?? 0} iStyle={noContentTdataStyle}>
+              {tableState.loading && <Spinner iStyle={loaderSpinnerStyle} />}
+              {!tableState.loading && (
+                <>
+                  <Icon iStyle={noContentIconStyle} icon={faDatabase} />
+                  <Typography iStyle={noContentTypographyStyle}>No data</Typography>
+                </>
+              )}
             </TData>
           </TRow>
         </BaseTBody>
@@ -44,7 +51,8 @@ const TBody: FunctionComponent<TBodyComponentProps> = ({ iStyle, ...rest }) => {
 
     return (
       <BaseTBody $iStyle={tbodyStyle} {...rest}>
-        {getRowModel().rows.map((row) => (
+        {tableState.loading && <Spinner as='tr' iStyle={loaderSpinnerStyle} />}
+        {tableState.getRowModel().rows.map((row) => (
           <TRow
             aria-selected={row.getIsSelected()}
             data-row-type={'body-row'}
@@ -62,18 +70,17 @@ const TBody: FunctionComponent<TBodyComponentProps> = ({ iStyle, ...rest }) => {
       </BaseTBody>
     );
   }, [
-    getHeaderGroups,
-    getRowModel,
-    noContentIconStyle,
-    noContentTbodyStyle,
-    noContentTdataStyle,
-    noContentTrowStyle,
-    noContentTypographyStyle,
-    rest,
-    showNoData,
+    tableState,
     tbodyStyle,
-    tdataStyle,
+    rest,
+    loaderSpinnerStyle,
+    noContentTbodyStyle,
+    noContentTrowStyle,
+    noContentTdataStyle,
+    noContentIconStyle,
+    noContentTypographyStyle,
     trowStyle,
+    tdataStyle,
   ]);
 };
 

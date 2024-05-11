@@ -7,6 +7,7 @@ export * from './divider';
 export * from './icon';
 export * from './input';
 export * from './layout';
+export * from './loaders';
 export * from './select';
 export * from './sidebar';
 export * from './table';

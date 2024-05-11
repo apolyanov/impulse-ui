@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 
+import { ContainerHTMLProps } from '../layout';
 import { IOStyle } from '../theme';
 
 import { SidebarHeaderStyle } from './sidebarHeader.types';
@@ -11,9 +12,9 @@ interface SidebarProps {
 }
 
 interface SidebarStyle {
-  containerStyle: IOStyle;
+  containerStyle: IOStyle<ContainerHTMLProps>;
   headerStyle: Partial<SidebarHeaderStyle>;
-  sectionDividerStyle: IOStyle;
+  sectionDividerStyle: IOStyle<ContainerHTMLProps>;
   itemStyle: Partial<SidebarItemStyle>;
 }
 

@@ -1,7 +1,7 @@
 import { neutral } from '@impulse-ui/colours';
-import { ComponentTheme } from '@impulse-ui/types';
+import { ComponentTheme, ContainerHTMLProps } from '@impulse-ui/types';
 
-const divider: ComponentTheme = {
+const divider: ComponentTheme<ContainerHTMLProps> = {
   iStyle: {
     iColorTheme: {
       light: {

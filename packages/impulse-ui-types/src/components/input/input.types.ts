@@ -1,16 +1,17 @@
-import { ChangeEvent, DetailedHTMLProps, InputHTMLAttributes, RefObject } from 'react';
+import { ChangeEvent, DetailedHTMLProps, InputHTMLAttributes, JSX, RefObject } from 'react';
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
 import { IconButtonStyle } from '../buttons';
 import { FieldMessageStyle } from '../text';
 import { IOStyle } from '../theme';
 
+type InputHTMLProps = JSX.IntrinsicElements['input'];
+
 interface TextInputProps extends TextInputCompositeProps {
   iStyle?: Partial<TextInputStyle>;
 }
 
-type TextInputCompositeProps = TextInputRestProps &
-  Omit<DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>, keyof TextInputRestProps>;
+type TextInputCompositeProps = TextInputRestProps & Omit<InputHTMLProps, keyof TextInputRestProps>;
 
 interface TextInputRestProps {
   pattern?: string;
@@ -27,13 +28,13 @@ interface TextInputRestProps {
   errorMessage?: string;
 }
 
-interface TextInputStyle {
-  mainContainerStyle: IOStyle<TextInputRestProps>;
-  inputContainerStyle: IOStyle<TextInputRestProps>;
-  iconStyle: IOStyle<TextInputRestProps>;
-  clearIconStyle: Partial<IconButtonStyle>;
-  inputStyle: IOStyle<TextInputRestProps>;
+interface TextInputStyle<T = {}> {
+  mainContainerStyle: IOStyle<TextInputRestProps & T>;
+  inputContainerStyle: IOStyle<TextInputRestProps & T>;
+  iconStyle: IOStyle<TextInputRestProps & T>;
+  clearIconStyle: Partial<IconButtonStyle & T>;
+  inputStyle: IOStyle<TextInputRestProps & T>;
   fieldMessageStyle: FieldMessageStyle;
 }
 
-export type { TextInputCompositeProps, TextInputProps, TextInputRestProps, TextInputStyle };
+export type { InputHTMLProps, TextInputCompositeProps, TextInputProps, TextInputRestProps, TextInputStyle };

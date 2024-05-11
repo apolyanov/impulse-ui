@@ -8,7 +8,7 @@ const selectComponentMap: ComponentMap[] = [
   { key: 'selectedItemTypography' },
   { key: 'dropdownIcon' },
   { key: 'selectOption', subKeys: selectOptionMap },
-  { key: 'loadingTypography' },
+  { key: 'loadingSpinner' },
   { key: 'noOptionsTypography' },
 ];
 

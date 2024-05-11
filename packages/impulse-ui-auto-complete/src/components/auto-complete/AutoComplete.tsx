@@ -3,6 +3,7 @@ import React, { Fragment, ReactNode, useMemo } from 'react';
 import { useComponentStyle } from '@impulse-ui/core';
 import { TextInput } from '@impulse-ui/input';
 import { Container } from '@impulse-ui/layout';
+import { Spinner } from '@impulse-ui/loader';
 import { Typography } from '@impulse-ui/text';
 import { AutoCompleteProps } from '@impulse-ui/types';
 
@@ -18,7 +19,7 @@ const AutoComplete = <T extends object>({ iStyle, ...rest }: AutoCompleteProps<T
     textInputStyle,
     autoCompleteItemsContainerStyle,
     autoCompleteItemStyle,
-    loadingTypographyStyle,
+    loadingSpinnerStyle,
     noOptionsTypographyStyle,
   } = useComponentStyle(autoCompleteComponentMap, rest, defaultAutoCompleteStyle, iStyle);
 
@@ -48,7 +49,7 @@ const AutoComplete = <T extends object>({ iStyle, ...rest }: AutoCompleteProps<T
   const optionsContainerRenderer = useMemo((): ReactNode | undefined => {
     if (showOptions) {
       if (loading) {
-        return <Typography iStyle={loadingTypographyStyle}>Loading...</Typography>;
+        return <Spinner iStyle={loadingSpinnerStyle} />;
       }
 
       if (getOptionsToShow.length === 0) {
@@ -77,7 +78,7 @@ const AutoComplete = <T extends object>({ iStyle, ...rest }: AutoCompleteProps<T
     getOptionsToShow,
     listContainerStyle,
     getVirtualItems,
-    loadingTypographyStyle,
+    loadingSpinnerStyle,
     noOptionsTypographyStyle,
     listItemStyle,
     highlightedIndex,

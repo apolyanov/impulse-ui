@@ -1,11 +1,10 @@
-import { Dispatch, SetStateAction } from 'react';
+import { Dispatch, JSX, SetStateAction } from 'react';
 
 import { BackgroundColor, BorderColor, Color } from '../css';
 
 import { IStyle } from './components.types';
 
 type ThemeMode = 'light' | 'dark';
-
 type CompositeComponentColors = ComponentColors & ComponentColorsHover;
 
 interface ComponentColors {
@@ -20,26 +19,27 @@ interface ComponentColorsHover {
   colorHover: Color;
 }
 
-interface ComponentTheme<T = any> {
+interface ComponentTheme<T extends object> {
   iStyle: IStyle<T>;
 }
 
 interface ComponentsThemes {
-  button: ComponentTheme;
-  container: ComponentTheme;
-  input: ComponentTheme;
-  textButton: ComponentTheme;
-  typography: ComponentTheme;
-  link: ComponentTheme;
-  icon: ComponentTheme;
-  divider: ComponentTheme;
-  table: ComponentTheme;
-  thead: ComponentTheme;
-  tfoot: ComponentTheme;
-  tbody: ComponentTheme;
-  trow: ComponentTheme;
-  theader: ComponentTheme;
-  tdata: ComponentTheme;
+  button: ComponentTheme<JSX.IntrinsicElements['button']>;
+  container: ComponentTheme<JSX.IntrinsicElements['div']>;
+  spinnerLoader: ComponentTheme<JSX.IntrinsicElements['div']>;
+  input: ComponentTheme<JSX.IntrinsicElements['input']>;
+  textButton: ComponentTheme<JSX.IntrinsicElements['button']>;
+  typography: ComponentTheme<JSX.IntrinsicElements['p']>;
+  link: ComponentTheme<JSX.IntrinsicElements['a']>;
+  icon: ComponentTheme<JSX.IntrinsicElements['svg']>;
+  divider: ComponentTheme<JSX.IntrinsicElements['div']>;
+  table: ComponentTheme<JSX.IntrinsicElements['table']>;
+  thead: ComponentTheme<JSX.IntrinsicElements['thead']>;
+  tfoot: ComponentTheme<JSX.IntrinsicElements['tfoot']>;
+  tbody: ComponentTheme<JSX.IntrinsicElements['tbody']>;
+  trow: ComponentTheme<JSX.IntrinsicElements['tr']>;
+  theader: ComponentTheme<JSX.IntrinsicElements['th']>;
+  tdata: ComponentTheme<JSX.IntrinsicElements['td']>;
 }
 
 type CustomITheme = Partial<ComponentsThemes>;
@@ -51,7 +51,7 @@ interface AppTheme {
 
 interface IThemeProviderProps {
   themeMode?: ThemeMode;
-  themes: CustomITheme;
+  themes?: CustomITheme;
 }
 
 interface IThemeContext {

@@ -4,6 +4,7 @@ import Main from './layout/Main';
 import AutoCompletePage from './pages/AutoCompletePage';
 import AvatarPage from './pages/AvatarPage';
 import ButtonsPage from './pages/ButtonsPage';
+import ComponentStyle from './pages/ComponentStyle';
 import InputsPage from './pages/InputsPage';
 import { MuiTable } from './pages/MuiTable';
 import SidebarPage from './pages/SidebarPage';
@@ -22,6 +23,7 @@ const router = createBrowserRouter([
       { path: '/avatar', element: <AvatarPage /> },
       { path: '/table', element: <TablePage /> },
       { path: '/mui-table', element: <MuiTable /> },
+      { path: '/styles', element: <ComponentStyle /> },
     ],
   },
 ]);

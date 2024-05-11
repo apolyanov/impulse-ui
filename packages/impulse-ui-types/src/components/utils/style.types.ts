@@ -1,28 +1,28 @@
 import { Property } from 'csstype';
+import { Interpolation, StyledObject, StyleFunction } from 'styled-components';
 
 import { IOStyle, IStyle } from '../theme';
 
-type MergeThemesFnArgs = {
-  defaultTheme: IStyle;
-  overridingTheme?: IOStyle;
-  props?: object;
+type MergeThemesFnArgs<T = any> = {
+  defaultTheme: IStyle<T>;
+  overridingTheme?: IOStyle<T>;
+  props?: T;
 };
 
-type MergePartialThemesFnArgs = {
-  defaultTheme?: IOStyle;
-  overridingTheme?: IOStyle;
-  props?: object;
+type MergePartialThemesFnArgs<T = any> = {
+  defaultTheme?: IOStyle<T>;
+  overridingTheme?: IOStyle<T>;
+  props?: T;
 };
-
-interface MergeThemesFn {
-  (args: MergeThemesFnArgs): IStyle;
-}
-
-interface MergePartialThemesFn {
-  (args: Partial<MergePartialThemesFnArgs>): IOStyle | undefined;
-}
 
 type Margin = Property.Margin<number>;
 type Padding = Property.Padding<number>;
 
-export type { Margin, MergePartialThemesFn, MergePartialThemesFnArgs, MergeThemesFn, MergeThemesFnArgs, Padding };
+interface AnimationHelper {
+  (
+    styles: NoInfer<TemplateStringsArray | StyledObject<object> | StyleFunction<object>>,
+    ...interpolations: Interpolation<object>[]
+  ): Property.Animation<string & {}> | undefined;
+}
+
+export type { AnimationHelper, Margin, MergePartialThemesFnArgs, MergeThemesFnArgs, Padding };

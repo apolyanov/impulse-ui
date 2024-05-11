@@ -1,12 +1,11 @@
-import { HTMLAttributes } from 'react';
-
+import { ContainerHTMLProps } from '../layout';
 import { IOStyle } from '../theme';
 
 interface AutoCompleteItemProps extends AutoCompleteItemRestProps {
   iStyle?: Partial<AutoCompleteItemStyle>;
 }
 
-interface AutoCompleteItemRestProps extends HTMLAttributes<HTMLDivElement> {
+interface AutoCompleteItemRestProps extends ContainerHTMLProps {
   externalScroll?: boolean;
   highlighted?: boolean;
   selected?: boolean;
@@ -14,8 +13,8 @@ interface AutoCompleteItemRestProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 interface AutoCompleteItemStyle {
-  mainContainerStyle: IOStyle;
-  typographyStyle: IOStyle;
+  mainContainerStyle: IOStyle<AutoCompleteItemRestProps>;
+  typographyStyle: IOStyle<AutoCompleteItemRestProps>;
 }
 
 export type { AutoCompleteItemProps, AutoCompleteItemRestProps, AutoCompleteItemStyle };

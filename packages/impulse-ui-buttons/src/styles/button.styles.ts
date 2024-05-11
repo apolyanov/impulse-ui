@@ -1,7 +1,7 @@
 import { neutral, volcano } from '@impulse-ui/colours';
-import { ComponentTheme } from '@impulse-ui/types';
+import { ButtonHTMLProps, ButtonStyle, ComponentTheme } from '@impulse-ui/types';
 
-const button: ComponentTheme = {
+const baseButton: ComponentTheme<ButtonHTMLProps> = {
   iStyle: {
     iColorTheme: {
       light: {
@@ -21,9 +21,9 @@ const button: ComponentTheme = {
         colorHover: neutral[10],
       },
     },
-    iCss: ({ iColorTheme }) => ({
+    iCss: ({ iColorTheme, disabled }) => ({
       backgroundColor: iColorTheme.backgroundColor,
-      color: iColorTheme.color,
+      color: disabled ? volcano[40] : iColorTheme.color,
       padding: '0px 28px',
       margin: '8px 0',
       minWidth: '128px',
@@ -45,8 +45,27 @@ const button: ComponentTheme = {
         color: iColorTheme.colorHover,
         cursor: 'pointer',
       },
+      '&:disabled': {
+        backgroundColor: volcano[10],
+        color: volcano[40],
+        cursor: 'not-allowed',
+      },
     }),
   },
 };
 
-export { button };
+const button: Partial<ButtonStyle> = {
+  loaderStyle: {
+    iColorTheme: {
+      light: {
+        borderColor: volcano[60],
+        borderColorHover: neutral[60],
+      },
+    },
+    iCss: ({ iColorTheme, disabled }) => ({
+      borderRightColor: disabled ? volcano[60] : iColorTheme.borderColor,
+    }),
+  },
+};
+
+export { baseButton, button };

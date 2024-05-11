@@ -1,6 +1,5 @@
-import { HTMLAttributes } from 'react';
-
 import { TextInputCompositeProps, TextInputStyle } from '../input';
+import { ContainerHTMLProps } from '../layout';
 import { IOStyle } from '../theme';
 import { SimpleOptionValue, UseProcessedoptionsProps } from '../utils';
 
@@ -10,7 +9,7 @@ interface AutoCompleteProps<T> extends AutoCompleteRestProps<T> {
   iStyle?: Partial<AutoCompleteStyle<T>>;
 }
 
-interface AutoCompleteRestProps<T> extends HTMLAttributes<HTMLDivElement>, UseProcessedoptionsProps<T> {
+interface AutoCompleteRestProps<T> extends ContainerHTMLProps, UseProcessedoptionsProps<T> {
   selectOnBlur?: boolean;
   loading?: boolean;
   disableAutoFiltering?: boolean;
@@ -23,7 +22,7 @@ interface AutoCompleteStyle<T> {
   textInputStyle: Partial<TextInputStyle>;
   autoCompleteItemsContainerStyle: IOStyle<AutoCompleteRestProps<T>>;
   autoCompleteItemStyle: Partial<AutoCompleteItemStyle>;
-  loadingTypographyStyle: IOStyle<AutoCompleteRestProps<T>>;
+  loadingSpinnerStyle: IOStyle<AutoCompleteRestProps<T>>;
   noOptionsTypographyStyle: IOStyle<AutoCompleteRestProps<T>>;
 }
 

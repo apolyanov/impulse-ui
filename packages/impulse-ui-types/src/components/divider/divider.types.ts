@@ -1,5 +1,6 @@
+import { ContainerHTMLProps } from '../layout';
 import { IComponent } from '../theme';
 
-type DividerProps = IComponent;
+type DividerProps = IComponent<ContainerHTMLProps> & ContainerHTMLProps;
 
 export type { DividerProps };

@@ -1,5 +1,5 @@
 'use client';
-import React, { FunctionComponent, useState } from 'react';
+import React, { FunctionComponent, PropsWithChildren, useState } from 'react';
 import { ImpulseTableProviderProps } from '@impulse-ui/types';
 import {
   getCoreRowModel,
@@ -24,8 +24,8 @@ const createInitialPaginationState = (pagination?: Partial<PaginationState>) => 
   }
 };
 
-const ImpulseTableProvider: FunctionComponent<ImpulseTableProviderProps> = ({ children, ...props }) => {
-  const { initialState } = props;
+const ImpulseTableProvider = ({ children, ...props }: PropsWithChildren<ImpulseTableProviderProps<any>>) => {
+  const { initialState, loading } = props;
 
   const [rowSelection, setRowSelection] = useState<RowSelectionState>({});
   const [innerPagination, setInnerPagination] = useState<PaginationState | undefined>(
@@ -59,7 +59,7 @@ const ImpulseTableProvider: FunctionComponent<ImpulseTableProviderProps> = ({ ch
     ...props,
   });
 
-  return <ImpulseTableContext.Provider value={{ state: { ...tableState, showNoData } }} children={children} />;
+  return <ImpulseTableContext.Provider value={{ state: { ...tableState, showNoData, loading } }} children={children} />;
 };
 
 export { ImpulseTableContext, ImpulseTableProvider };

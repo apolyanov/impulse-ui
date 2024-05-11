@@ -1,13 +1,17 @@
 import {
+  AnimationHelper,
   CompositeComponentColors,
   IOCss,
+  IOStyle,
+  IStyle,
   Margin,
-  MergePartialThemesFn,
-  MergeThemesFn,
+  MergePartialThemesFnArgs,
+  MergeThemesFnArgs,
   Padding,
   ThemeMode,
 } from '@impulse-ui/types';
 import merge from 'lodash/merge';
+import { css } from 'styled-components';
 
 import { LIGHT } from './constants';
 
@@ -15,19 +19,24 @@ const shouldRenderCssProp = <T>(shouldRender: boolean | undefined, cssProp: T): 
   if (shouldRender) return cssProp;
 };
 
-const constructICss = (iColorTheme: Partial<CompositeComponentColors>, parentProps: any, iCss?: IOCss<any>) => {
+const constructICss = <T>(iColorTheme: Partial<CompositeComponentColors>, props?: T | any, iCss?: IOCss<T>) => {
   if (typeof iCss === 'function') {
-    return iCss({ iColorTheme, parentProps });
+    return iCss({ iColorTheme, ...props });
   }
 
   return { ...iCss };
 };
 
-const mergeThemes: MergeThemesFn = ({ defaultTheme, overridingTheme, props }) => {
+const mergeThemes = <T>({ defaultTheme, overridingTheme, props }: MergeThemesFnArgs<T>): IStyle => {
   if (overridingTheme) {
     return {
-      iCss: ({ iColorTheme, ...rest }) =>
-        merge(defaultTheme.iCss({ iColorTheme, ...rest }), constructICss(iColorTheme, props, overridingTheme?.iCss)),
+      iCss: ({ iColorTheme, ...rest }) => {
+        console.log(rest);
+        return merge(
+          defaultTheme.iCss({ iColorTheme, ...rest, ...props }),
+          constructICss(iColorTheme, props, overridingTheme?.iCss),
+        );
+      },
       iColorTheme: {
         light: { ...defaultTheme.iColorTheme.light, ...overridingTheme.iColorTheme?.light },
         dark: { ...defaultTheme.iColorTheme.dark, ...overridingTheme.iColorTheme?.dark },
@@ -38,7 +47,11 @@ const mergeThemes: MergeThemesFn = ({ defaultTheme, overridingTheme, props }) =>
   return defaultTheme;
 };
 
-const mergePartialThemes: MergePartialThemesFn = ({ defaultTheme, overridingTheme, props }) => {
+const mergePartialThemes = <T>({
+  defaultTheme,
+  overridingTheme,
+  props,
+}: MergePartialThemesFnArgs<T>): IOStyle<T> | undefined => {
   if (overridingTheme && !defaultTheme) {
     if (props) {
       return {
@@ -104,9 +117,12 @@ const paddingY = (value: Padding) => ({
   paddingBottom: value,
 });
 
+const animationHelper = css as unknown as AnimationHelper;
+
 const getThemeMode = (mode: ThemeMode) => mode || LIGHT;
 
 export {
+  animationHelper,
   getThemeMode,
   margin,
   marginX,

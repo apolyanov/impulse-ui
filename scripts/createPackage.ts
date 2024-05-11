@@ -1,4 +1,4 @@
-const { cpSync: copy, readFileSync, rmSync: remove, writeFileSync } = require('bun');
+import { cpSync as copy, readFileSync, rmSync as remove, writeFileSync } from 'node:fs';
 
 const templateDir = './scripts/assets/template-package';
 const packageName = process.argv[2];

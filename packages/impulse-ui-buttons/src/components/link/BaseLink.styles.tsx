@@ -15,4 +15,4 @@ const BaseLink = styled.a<BaseIComponent>(({ theme: { mode, themes }, $iStyle })
   return css(iCss({ iColorTheme: iColorTheme[themeMode] }));
 });
 
-export default BaseLink;
+export { BaseLink };

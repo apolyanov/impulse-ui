@@ -38,6 +38,7 @@
   },
   "dependencies": {
     "@impulse-ui/colours": "^2.6.0-beta.10",
+    "@impulse-ui/loader": "^0.1.0",
     "@impulse-ui/core": "^2.6.0-beta.10",
     "@impulse-ui/icon": "^2.6.0-beta.10"
   },

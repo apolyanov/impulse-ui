@@ -1,7 +1,7 @@
 import { neutral } from '@impulse-ui/colours';
 import { ImpulseTableStyle } from '@impulse-ui/types';
 
-const impulseTableStyles: Partial<Pick<ImpulseTableStyle, 'tableContainerStyle' | 'tableStyle'>> = {
+const impulseTableStyles: Partial<ImpulseTableStyle> = {
   tableContainerStyle: {
     iColorTheme: { light: { backgroundColor: neutral[10], backgroundColorHover: neutral[10] } },
     iCss: {

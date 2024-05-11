@@ -1,12 +1,11 @@
-import { HTMLAttributes } from 'react';
-
+import { ContainerHTMLProps } from '../layout';
 import { IOStyle } from '../theme';
 
 interface SelectOptionProps extends SelectOptionRestProps {
   iStyle?: Partial<SelectOptionStyle>;
 }
 
-interface SelectOptionRestProps extends HTMLAttributes<HTMLDivElement> {
+interface SelectOptionRestProps extends ContainerHTMLProps {
   externalScroll?: boolean;
   highlighted?: boolean;
   selected?: boolean;
@@ -14,8 +13,8 @@ interface SelectOptionRestProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 interface SelectOptionStyle {
-  mainContainerStyle: IOStyle;
-  typographyStyle: IOStyle;
+  mainContainerStyle: IOStyle<SelectOptionRestProps>;
+  typographyStyle: IOStyle<SelectOptionRestProps>;
 }
 
 export type { SelectOptionProps, SelectOptionRestProps, SelectOptionStyle };
