@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.6.0](https://github.com/apolyanov/impulse-ui/compare/v2.5.0...v2.6.0) (2024-05-13)
+
+
+### Features
+
+* Added disabled and loading states to some of the components ([c396f95](https://github.com/apolyanov/impulse-ui/commit/c396f9505412ceb3b3cea2ddb4d9e1eab4cef6c8))
+* Adding the ability to polymorph components ([d8a29aa](https://github.com/apolyanov/impulse-ui/commit/d8a29aa8aa97db5f01ab8d21690ccbd35bd3afd1))
+* Improving the component themes types, structure and more. Added new getThemeColor function to get the desired color with automatic theme context ([12ea431](https://github.com/apolyanov/impulse-ui/commit/12ea4310022cccd1522f2a81a2ef683033577e35))
+
+
+
+
+
 # [2.6.0-beta.12](https://github.com/apolyanov/impulse-ui/compare/v2.6.0-beta.11...v2.6.0-beta.12) (2024-05-13)
 
 

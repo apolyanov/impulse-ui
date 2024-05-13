@@ -3,6 +3,43 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.6.0](https://github.com/apolyanov/impulse-ui/compare/v2.5.0...v2.6.0) (2024-05-13)
+
+
+### Bug Fixes
+
+* Adding check if there are any header groups for the no data body ([bb21c6a](https://github.com/apolyanov/impulse-ui/commit/bb21c6a6a44fbbe8407b689a8cbf745586073b7f))
+* Adding missing dependency in sidebar package ([5715f22](https://github.com/apolyanov/impulse-ui/commit/5715f22ea5f9ee6bcbf20cada878f5e8b53f7b17))
+* Dropdown arrow position is contained in the dropdown, overflowing options are now fixed ([14f4a1b](https://github.com/apolyanov/impulse-ui/commit/14f4a1ba3a911e447c04d35bd747df0024eeb480))
+* Fixed Select styles ([fd71526](https://github.com/apolyanov/impulse-ui/commit/fd715269138f072c53e59e510e722a68c1b5315b))
+* Fixing Button styles ([7c166c5](https://github.com/apolyanov/impulse-ui/commit/7c166c5d6244b407b35caea3562d28e48a060bd8))
+* Fixing Checkbox disabled styles ([65ff487](https://github.com/apolyanov/impulse-ui/commit/65ff48726967f624e21db8bb6b3bcb660a530bb2))
+* Fixing controlled state ([c59567e](https://github.com/apolyanov/impulse-ui/commit/c59567e5e0f3cd7e1b65deb754da9160500dbc9f))
+* Fixing IconButton loading styles ([69eb128](https://github.com/apolyanov/impulse-ui/commit/69eb12854c9e1d01f0dc6967414ae0d8fa5a96ea))
+* Fixing Select auto scroll ([4e86e17](https://github.com/apolyanov/impulse-ui/commit/4e86e175dc853ede3348f95344689b70cbbaa487))
+* Fixing table sort buttons loading and disabled styles ([70d3f1d](https://github.com/apolyanov/impulse-ui/commit/70d3f1d6e7d2eb8231cf48a7d12af598c47d6f24))
+* Fixing TableBody loading styles ([c4b3f18](https://github.com/apolyanov/impulse-ui/commit/c4b3f185b4be129fc03e917e0e161a3407525633))
+* Fixing TextButton disabled styles ([831093a](https://github.com/apolyanov/impulse-ui/commit/831093adcde2aa38773bead08a379be0a20b4ede))
+* Fixing TextButton loading styles ([85f9584](https://github.com/apolyanov/impulse-ui/commit/85f958436e3c17a03284d58cb04d07a91c5bad35))
+* Fixing TextInput disabled styles ([9dd7b3e](https://github.com/apolyanov/impulse-ui/commit/9dd7b3e7d19882ae1403210cf5ce4b91c02de274))
+
+
+### Features
+
+* Added disabled and loading states to some of the components ([c396f95](https://github.com/apolyanov/impulse-ui/commit/c396f9505412ceb3b3cea2ddb4d9e1eab4cef6c8))
+* Adding dropdown icon for the Select ([9a8fa1b](https://github.com/apolyanov/impulse-ui/commit/9a8fa1b01f140829daa87667dc9b382ced11d0f8))
+* Adding no data tbody style to the Table component ([02d0ccd](https://github.com/apolyanov/impulse-ui/commit/02d0ccd3155d746e9118ecbbb02a23ef801b2f79))
+* Adding select v1 ([d1b8927](https://github.com/apolyanov/impulse-ui/commit/d1b89275dd79de1ac8ce47b3a5e1fbb635ece9ae))
+* Adding the ability to polymorph components ([d8a29aa](https://github.com/apolyanov/impulse-ui/commit/d8a29aa8aa97db5f01ab8d21690ccbd35bd3afd1))
+* Improving table cell aligment ([a1eff1d](https://github.com/apolyanov/impulse-ui/commit/a1eff1dcae75d7059cda6bad055e2a0c7776f101))
+* Improving table readability ([1e71916](https://github.com/apolyanov/impulse-ui/commit/1e71916834fda25121268af9ba6e1a351c85c761))
+* Improving table readability ([7689f79](https://github.com/apolyanov/impulse-ui/commit/7689f79b26d1bd17fc03389b74aec2db47e387de))
+* Improving the component themes types, structure and more. Added new getThemeColor function to get the desired color with automatic theme context ([12ea431](https://github.com/apolyanov/impulse-ui/commit/12ea4310022cccd1522f2a81a2ef683033577e35))
+
+
+
+
+
 # [2.6.0-beta.12](https://github.com/apolyanov/impulse-ui/compare/v2.6.0-beta.11...v2.6.0-beta.12) (2024-05-13)
 
 

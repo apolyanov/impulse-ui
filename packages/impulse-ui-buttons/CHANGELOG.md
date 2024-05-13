@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.6.0](https://github.com/apolyanov/impulse-ui/compare/v2.5.0...v2.6.0) (2024-05-13)
+
+
+### Bug Fixes
+
+* Fixing Button styles ([7c166c5](https://github.com/apolyanov/impulse-ui/commit/7c166c5d6244b407b35caea3562d28e48a060bd8))
+* Fixing IconButton loading styles ([69eb128](https://github.com/apolyanov/impulse-ui/commit/69eb12854c9e1d01f0dc6967414ae0d8fa5a96ea))
+* Fixing table sort buttons loading and disabled styles ([70d3f1d](https://github.com/apolyanov/impulse-ui/commit/70d3f1d6e7d2eb8231cf48a7d12af598c47d6f24))
+* Fixing TextButton disabled styles ([831093a](https://github.com/apolyanov/impulse-ui/commit/831093adcde2aa38773bead08a379be0a20b4ede))
+* Fixing TextButton loading styles ([85f9584](https://github.com/apolyanov/impulse-ui/commit/85f958436e3c17a03284d58cb04d07a91c5bad35))
+
+
+### Features
+
+* Added disabled and loading states to some of the components ([c396f95](https://github.com/apolyanov/impulse-ui/commit/c396f9505412ceb3b3cea2ddb4d9e1eab4cef6c8))
+* Improving the component themes types, structure and more. Added new getThemeColor function to get the desired color with automatic theme context ([12ea431](https://github.com/apolyanov/impulse-ui/commit/12ea4310022cccd1522f2a81a2ef683033577e35))
+
+
+
+
+
 # [2.6.0-beta.12](https://github.com/apolyanov/impulse-ui/compare/v2.6.0-beta.11...v2.6.0-beta.12) (2024-05-13)
 
 

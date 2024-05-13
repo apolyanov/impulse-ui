@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.6.0](https://github.com/apolyanov/impulse-ui/compare/v2.5.0...v2.6.0) (2024-05-13)
+
+
+### Bug Fixes
+
+* Dropdown arrow position is contained in the dropdown, overflowing options are now fixed ([14f4a1b](https://github.com/apolyanov/impulse-ui/commit/14f4a1ba3a911e447c04d35bd747df0024eeb480))
+* Fixed Select styles ([fd71526](https://github.com/apolyanov/impulse-ui/commit/fd715269138f072c53e59e510e722a68c1b5315b))
+* Fixing Checkbox disabled styles ([65ff487](https://github.com/apolyanov/impulse-ui/commit/65ff48726967f624e21db8bb6b3bcb660a530bb2))
+* Fixing controlled state ([c59567e](https://github.com/apolyanov/impulse-ui/commit/c59567e5e0f3cd7e1b65deb754da9160500dbc9f))
+* Fixing Select auto scroll ([4e86e17](https://github.com/apolyanov/impulse-ui/commit/4e86e175dc853ede3348f95344689b70cbbaa487))
+* Fixing TextInput disabled styles ([9dd7b3e](https://github.com/apolyanov/impulse-ui/commit/9dd7b3e7d19882ae1403210cf5ce4b91c02de274))
+
+
+### Features
+
+* Added disabled and loading states to some of the components ([c396f95](https://github.com/apolyanov/impulse-ui/commit/c396f9505412ceb3b3cea2ddb4d9e1eab4cef6c8))
+* Adding dropdown icon for the Select ([9a8fa1b](https://github.com/apolyanov/impulse-ui/commit/9a8fa1b01f140829daa87667dc9b382ced11d0f8))
+* Adding select v1 ([d1b8927](https://github.com/apolyanov/impulse-ui/commit/d1b89275dd79de1ac8ce47b3a5e1fbb635ece9ae))
+* Adding the ability to polymorph components ([d8a29aa](https://github.com/apolyanov/impulse-ui/commit/d8a29aa8aa97db5f01ab8d21690ccbd35bd3afd1))
+* Improving the component themes types, structure and more. Added new getThemeColor function to get the desired color with automatic theme context ([12ea431](https://github.com/apolyanov/impulse-ui/commit/12ea4310022cccd1522f2a81a2ef683033577e35))
+
+
+
+
+
 # [2.6.0-beta.12](https://github.com/apolyanov/impulse-ui/compare/v2.6.0-beta.11...v2.6.0-beta.12) (2024-05-13)
 
 

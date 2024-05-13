@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.6.0](https://github.com/apolyanov/impulse-ui/compare/v2.5.0...v2.6.0) (2024-05-13)
+
+
+### Bug Fixes
+
+* Adding check if there are any header groups for the no data body ([bb21c6a](https://github.com/apolyanov/impulse-ui/commit/bb21c6a6a44fbbe8407b689a8cbf745586073b7f))
+* Fixing table sort buttons loading and disabled styles ([70d3f1d](https://github.com/apolyanov/impulse-ui/commit/70d3f1d6e7d2eb8231cf48a7d12af598c47d6f24))
+* Fixing TableBody loading styles ([c4b3f18](https://github.com/apolyanov/impulse-ui/commit/c4b3f185b4be129fc03e917e0e161a3407525633))
+
+
+### Features
+
+* Added disabled and loading states to some of the components ([c396f95](https://github.com/apolyanov/impulse-ui/commit/c396f9505412ceb3b3cea2ddb4d9e1eab4cef6c8))
+* Adding no data tbody style to the Table component ([02d0ccd](https://github.com/apolyanov/impulse-ui/commit/02d0ccd3155d746e9118ecbbb02a23ef801b2f79))
+* Improving table cell aligment ([a1eff1d](https://github.com/apolyanov/impulse-ui/commit/a1eff1dcae75d7059cda6bad055e2a0c7776f101))
+* Improving table readability ([1e71916](https://github.com/apolyanov/impulse-ui/commit/1e71916834fda25121268af9ba6e1a351c85c761))
+* Improving table readability ([7689f79](https://github.com/apolyanov/impulse-ui/commit/7689f79b26d1bd17fc03389b74aec2db47e387de))
+* Improving the component themes types, structure and more. Added new getThemeColor function to get the desired color with automatic theme context ([12ea431](https://github.com/apolyanov/impulse-ui/commit/12ea4310022cccd1522f2a81a2ef683033577e35))
+
+
+
+
+
 # [2.6.0-beta.12](https://github.com/apolyanov/impulse-ui/compare/v2.6.0-beta.11...v2.6.0-beta.12) (2024-05-13)
 
 
