@@ -15,7 +15,7 @@ import { TRow } from '../trow';
 import { BaseTHead } from './BaseTHead.styles';
 
 const THead: FunctionComponent<THeadComponentProps> = ({ iStyle, ...rest }) => {
-  const { getHeaderGroups } = useImpulseTable();
+  const { getHeaderGroups, loading } = useImpulseTable();
 
   const { theadStyle, theaderStyle, trowStyle, theaderTypographyStyle, theaderSortButtonStyle } = useComponentStyle(
     theadComponentMap,
@@ -47,7 +47,7 @@ const THead: FunctionComponent<THeadComponentProps> = ({ iStyle, ...rest }) => {
                 data-table-element={`column-header${isFirstOrLastColumnHeader(index, array.length)}`}
               >
                 {flexRender(header.column.columnDef.header, header.getContext())}
-                <SortingButton iStyle={theaderSortButtonStyle} columnId={header.column.id} />
+                <SortingButton disabled={loading} iStyle={theaderSortButtonStyle} columnId={header.column.id} />
               </Typography>
             </THeader>
           ))}

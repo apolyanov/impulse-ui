@@ -13,8 +13,6 @@ const Button: FunctionComponent<ButtonProps> = ({ iStyle, ...rest }) => {
   const { children, loading, ...buttonProps } = rest;
   const { buttonStyle, loaderStyle } = useComponentStyle(buttonComponentMap, rest, button, iStyle);
 
-  console.log(buttonProps);
-
   return (
     <BaseButton $iStyle={buttonStyle} {...buttonProps}>
       {loading ? <Spinner data-disabled={buttonProps.disabled} iStyle={loaderStyle} /> : children}
