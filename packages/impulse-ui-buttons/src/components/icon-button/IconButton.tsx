@@ -22,7 +22,11 @@ const IconButton: FunctionComponent<IconButtonProps> = ({ iStyle, ...rest }) => 
 
   return (
     <BaseButton $iStyle={buttonStyle} {...buttonProps}>
-      {loading ? <Spinner iStyle={loaderStyle} /> : <Icon icon={icon} iStyle={iconStyle} />}
+      {loading ? (
+        <Spinner data-disabled={buttonProps.disabled} iStyle={loaderStyle} />
+      ) : (
+        <Icon data-disabled={buttonProps.disabled} icon={icon} iStyle={iconStyle} />
+      )}
     </BaseButton>
   );
 };
