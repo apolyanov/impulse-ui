@@ -3,10 +3,10 @@ import { IconButtonStyle } from '@impulse-ui/types';
 
 const defaultIconButtonStyle: Partial<IconButtonStyle> = {
   iconStyle: {
-    iColorTheme: { light: { color: neutral[10], ':disabled': { color: neutral[40] } } },
+    iColorTheme: { light: { color: neutral[10], ':disabled': { color: volcano[40] } } },
     iCss: ({ getThemeColor }) => ({
       color: getThemeColor('color'),
-      '&:disabled': { color: getThemeColor('color', ':disabled') },
+      '&[data-disabled="true"]': { color: getThemeColor('color', ':disabled') },
     }),
   },
   buttonStyle: {
@@ -23,16 +23,16 @@ const defaultIconButtonStyle: Partial<IconButtonStyle> = {
   loaderStyle: {
     iColorTheme: {
       light: {
-        borderRightColor: volcano[10],
+        borderRightColor: neutral[10],
         ':disabled': {
-          borderRightColor: volcano[60],
+          borderRightColor: volcano[40],
         },
       },
     },
     iCss: ({ getThemeColor }) => ({
-      borderRightColor: getThemeColor('backgroundColor'),
+      borderRightColor: getThemeColor('borderRightColor'),
       '&[data-disabled="true"]': {
-        borderRightColor: getThemeColor('backgroundColor', ':disabled'),
+        borderRightColor: getThemeColor('borderRightColor', ':disabled'),
       },
     }),
   },
