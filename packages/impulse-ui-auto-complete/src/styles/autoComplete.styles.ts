@@ -35,7 +35,6 @@ const defaultAutoCompleteStyle: Partial<AutoCompleteStyle<any>> = {
     iColorTheme: {
       light: {
         borderColor: volcano[60],
-        borderColorHover: volcano[60],
       },
     },
     iCss: {

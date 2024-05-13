@@ -1,23 +1,31 @@
 import { Dispatch, JSX, SetStateAction } from 'react';
+import { SimplePseudos } from 'csstype';
 
-import { BackgroundColor, BorderColor, Color } from '../css';
+import { BackgroundColor, BorderColor, Color, OutlineColor } from '../css';
 
 import { IStyle } from './components.types';
 
 type ThemeMode = 'light' | 'dark';
-type CompositeComponentColors = ComponentColors & ComponentColorsHover;
 
-interface ComponentColors {
+type ColorsKeysValues = {
+  color: Color;
   backgroundColor: BackgroundColor;
   borderColor: BorderColor;
-  color: Color;
-}
+  outlineColor: OutlineColor;
+  borderRightColor: BorderColor;
+  borderLeftColor: BorderColor;
+  borderTopColor: BorderColor;
+  borderBottomColor: BorderColor;
+  textShadowColor: Color;
+  iconPrimaryColor: Color;
+  iconSecondaryColor: Color;
+};
 
-interface ComponentColorsHover {
-  backgroundColorHover: BackgroundColor;
-  borderColorHover: BorderColor;
-  colorHover: Color;
-}
+type ComponentColors = Partial<
+  ColorsKeysValues & {
+    [T in SimplePseudos]: Partial<ColorsKeysValues>;
+  }
+>;
 
 interface ComponentTheme<T extends object> {
   iStyle: IStyle<T>;
@@ -65,10 +73,10 @@ interface UseIThemeContextFn {
 
 export type {
   AppTheme,
+  ColorsKeysValues,
   ComponentColors,
   ComponentsThemes,
   ComponentTheme,
-  CompositeComponentColors,
   CustomITheme,
   IThemeContext,
   IThemeProviderProps,

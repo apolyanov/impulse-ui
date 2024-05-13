@@ -10,27 +10,19 @@ const spinnerLoader: ComponentTheme<ContainerHTMLProps> = {
     iColorTheme: {
       light: {
         backgroundColor: neutral[300],
-        backgroundColorHover: neutral[300],
-        borderColor: 'transparent',
-        borderColorHover: 'transparent',
         color: neutral[100],
-        colorHover: neutral[100],
       },
       dark: {
         backgroundColor: neutral[10],
-        backgroundColorHover: neutral[10],
-        borderColor: 'transparent',
-        borderColorHover: 'transparent',
         color: neutral[100],
-        colorHover: neutral[100],
       },
     },
-    iCss: ({ iColorTheme }) => ({
+    iCss: ({ getThemeColor }) => ({
       width: 20,
       aspectRatio: '1',
       borderRadius: '50%',
       border: '3px solid #0000',
-      borderRightColor: iColorTheme.borderColor,
+      borderRightColor: getThemeColor('borderRightColor'),
       backgroundRepeat: 'no-repeat',
       position: 'relative',
       animation: animationHelper`${spinnerAnimation} 1s infinite linear`,

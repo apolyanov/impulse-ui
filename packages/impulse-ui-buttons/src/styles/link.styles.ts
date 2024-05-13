@@ -6,32 +6,34 @@ const link: ComponentTheme<LinkHTMLProps> = {
     iColorTheme: {
       light: {
         backgroundColor: 'transparent',
-        backgroundColorHover: 'transparent',
-        borderColor: 'transparent',
-        borderColorHover: 'transparent',
         color: volcano[60],
-        colorHover: volcano[60],
+        ':disabled': {
+          backgroundColor: 'transparent',
+          color: volcano[40],
+        },
       },
       dark: {
         backgroundColor: 'transparent',
-        backgroundColorHover: 'transparent',
         borderColor: 'transparent',
-        borderColorHover: 'transparent',
         color: volcano[60],
-        colorHover: volcano[60],
       },
     },
-    iCss: ({ iColorTheme }) => ({
-      color: iColorTheme.color,
-      backgroundColor: iColorTheme.backgroundColor,
+    iCss: ({ getThemeColor }) => ({
+      color: getThemeColor('color'),
+      backgroundColor: getThemeColor('backgroundColor'),
       width: 'fit-content',
       padding: 4,
       textTransform: 'none',
       borderRadius: 8,
       '&:hover': {
-        backgroundColor: iColorTheme.backgroundColorHover,
-        color: iColorTheme.colorHover,
+        backgroundColor: getThemeColor('backgroundColor', ':hover'),
+        color: getThemeColor('color', ':hover'),
         cursor: 'pointer',
+      },
+      '&:disabled': {
+        backgroundColor: getThemeColor('backgroundColor', ':disabled'),
+        color: getThemeColor('color', ':disabled'),
+        cursor: 'not-allowed',
       },
     }),
   },

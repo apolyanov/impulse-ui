@@ -1,4 +1,4 @@
-import { getThemeMode, mergeThemes } from '@impulse-ui/core';
+import { getThemeColor, getThemeMode, mergeThemes } from '@impulse-ui/core';
 import { BaseContainer } from '@impulse-ui/layout';
 import styled, { css } from 'styled-components';
 
@@ -11,7 +11,7 @@ const BaseSpinner = styled(BaseContainer)(({ theme: { mode, themes }, $iStyle })
   });
   const themeMode = getThemeMode(mode);
 
-  return css(iCss({ iColorTheme: iColorTheme[themeMode] }));
+  return css(iCss({ iColorTheme: iColorTheme[themeMode], getThemeColor: getThemeColor(iColorTheme[themeMode]) }));
 });
 
 export default BaseSpinner;

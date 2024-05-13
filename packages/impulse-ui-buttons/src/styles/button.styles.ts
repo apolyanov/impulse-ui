@@ -6,24 +6,26 @@ const baseButton: ComponentTheme<ButtonHTMLProps> = {
     iColorTheme: {
       light: {
         backgroundColor: volcano[60],
-        backgroundColorHover: volcano[70],
         borderColor: volcano[60],
-        borderColorHover: volcano[70],
         color: neutral[10],
-        colorHover: neutral[10],
+        ':hover': {
+          backgroundColor: volcano[70],
+          color: neutral[10],
+        },
+        ':disabled': {
+          backgroundColor: volcano[10],
+          color: volcano[40],
+        },
       },
       dark: {
         backgroundColor: volcano[60],
-        backgroundColorHover: volcano[70],
         borderColor: volcano[60],
-        borderColorHover: volcano[70],
         color: neutral[10],
-        colorHover: neutral[10],
       },
     },
-    iCss: ({ iColorTheme, disabled }) => ({
-      backgroundColor: iColorTheme.backgroundColor,
-      color: disabled ? volcano[40] : iColorTheme.color,
+    iCss: ({ getThemeColor }) => ({
+      backgroundColor: getThemeColor('backgroundColor'),
+      color: getThemeColor('color'),
       padding: '0px 28px',
       margin: '8px 0',
       minWidth: '128px',
@@ -41,13 +43,13 @@ const baseButton: ComponentTheme<ButtonHTMLProps> = {
       borderRadius: 4,
       transition: 'background-color 0.2s ease-in-out',
       '&:hover': {
-        backgroundColor: iColorTheme.backgroundColorHover,
-        color: iColorTheme.colorHover,
+        backgroundColor: getThemeColor('backgroundColor', ':hover'),
+        color: getThemeColor('color', ':hover'),
         cursor: 'pointer',
       },
       '&:disabled': {
-        backgroundColor: volcano[10],
-        color: volcano[40],
+        backgroundColor: getThemeColor('backgroundColor', ':disabled'),
+        color: getThemeColor('color', ':disabled'),
         cursor: 'not-allowed',
       },
     }),
@@ -58,12 +60,17 @@ const button: Partial<ButtonStyle> = {
   loaderStyle: {
     iColorTheme: {
       light: {
-        borderColor: volcano[60],
-        borderColorHover: neutral[60],
+        borderRightColor: volcano[60],
+        ':disabled': {
+          borderRightColor: volcano[60],
+        },
       },
     },
-    iCss: ({ iColorTheme, disabled }) => ({
-      borderRightColor: disabled ? volcano[60] : iColorTheme.borderColor,
+    iCss: ({ getThemeColor }) => ({
+      borderRightColor: getThemeColor('backgroundColor'),
+      '&[data-disabled="true"]': {
+        borderRightColor: getThemeColor('backgroundColor', ':disabled'),
+      },
     }),
   },
 };

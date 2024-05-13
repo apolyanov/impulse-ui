@@ -5,20 +5,10 @@ const icon: ComponentTheme<IconHTMLProps> = {
   iStyle: {
     iColorTheme: {
       light: {
-        backgroundColor: 'transparent',
-        backgroundColorHover: 'transparent',
-        borderColor: 'transparent',
-        borderColorHover: 'transparent',
         color: neutral[100],
-        colorHover: neutral[100],
       },
       dark: {
-        backgroundColor: 'transparent',
-        backgroundColorHover: 'transparent',
-        borderColor: 'transparent',
-        borderColorHover: 'transparent',
         color: neutral[100],
-        colorHover: neutral[100],
       },
     },
     iCss: ({ iColorTheme }) => ({

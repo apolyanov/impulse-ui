@@ -3,7 +3,7 @@ import { ImpulseTableStyle } from '@impulse-ui/types';
 
 const impulseTableStyles: Partial<ImpulseTableStyle> = {
   tableContainerStyle: {
-    iColorTheme: { light: { backgroundColor: neutral[10], backgroundColorHover: neutral[10] } },
+    iColorTheme: { light: { backgroundColor: neutral[10] } },
     iCss: {
       width: 'fit-content',
       borderRadius: 4,

@@ -6,19 +6,13 @@ const container: ComponentTheme<ContainerHTMLProps> = {
     iColorTheme: {
       light: {
         backgroundColor: 'transparent',
-        backgroundColorHover: 'transparent',
         borderColor: 'transparent',
-        borderColorHover: 'transparent',
         color: neutral[200],
-        colorHover: neutral[200],
       },
       dark: {
         backgroundColor: 'transparent',
-        backgroundColorHover: 'transparent',
         borderColor: 'transparent',
-        borderColorHover: 'transparent',
         color: neutral[200],
-        colorHover: neutral[200],
       },
     },
     iCss: ({ iColorTheme }) => ({

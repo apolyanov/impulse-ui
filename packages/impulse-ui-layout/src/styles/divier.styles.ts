@@ -6,19 +6,13 @@ const divider: ComponentTheme<ContainerHTMLProps> = {
     iColorTheme: {
       light: {
         backgroundColor: 'transparent',
-        backgroundColorHover: 'transparent',
         borderColor: neutral[100],
-        borderColorHover: neutral[100],
         color: 'transparent',
-        colorHover: 'transparent',
       },
       dark: {
         backgroundColor: 'transparent',
-        backgroundColorHover: 'transparent',
         borderColor: neutral[100],
-        borderColorHover: neutral[100],
         color: 'transparent',
-        colorHover: 'transparent',
       },
     },
     iCss: ({ iColorTheme }) => ({

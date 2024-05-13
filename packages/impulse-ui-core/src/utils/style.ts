@@ -1,6 +1,6 @@
 import {
   AnimationHelper,
-  CompositeComponentColors,
+  ComponentColors,
   IOCss,
   IOStyle,
   IStyle,
@@ -10,6 +10,8 @@ import {
   Padding,
   ThemeMode,
 } from '@impulse-ui/types';
+import { ColorsKeysValues } from '@impulse-ui/types';
+import { SimplePseudos } from 'csstype';
 import merge from 'lodash/merge';
 import { css } from 'styled-components';
 
@@ -19,9 +21,16 @@ const shouldRenderCssProp = <T>(shouldRender: boolean | undefined, cssProp: T): 
   if (shouldRender) return cssProp;
 };
 
-const constructICss = <T>(iColorTheme: Partial<CompositeComponentColors>, props?: T | any, iCss?: IOCss<T>) => {
+const getThemeColor =
+  (componentColors?: ComponentColors) => (colorKey: keyof ColorsKeysValues, stateKey?: SimplePseudos) => {
+    if (stateKey) return componentColors?.[stateKey]?.[colorKey];
+
+    return componentColors?.[colorKey];
+  };
+
+const constructICss = <T>(iColorTheme: ComponentColors, props?: T | any, iCss?: IOCss<T>) => {
   if (typeof iCss === 'function') {
-    return iCss({ iColorTheme, ...props });
+    return iCss({ iColorTheme, getThemeColor: getThemeColor(iColorTheme), ...props });
   }
 
   return { ...iCss };
@@ -30,13 +39,11 @@ const constructICss = <T>(iColorTheme: Partial<CompositeComponentColors>, props?
 const mergeThemes = <T>({ defaultTheme, overridingTheme, props }: MergeThemesFnArgs<T>): IStyle => {
   if (overridingTheme) {
     return {
-      iCss: ({ iColorTheme, ...rest }) => {
-        console.log(rest);
-        return merge(
-          defaultTheme.iCss({ iColorTheme, ...rest, ...props }),
+      iCss: ({ iColorTheme, ...rest }) =>
+        merge(
+          defaultTheme.iCss({ iColorTheme, getThemeColor: getThemeColor(iColorTheme), ...rest, ...props }),
           constructICss(iColorTheme, props, overridingTheme?.iCss),
-        );
-      },
+        ),
       iColorTheme: {
         light: { ...defaultTheme.iColorTheme.light, ...overridingTheme.iColorTheme?.light },
         dark: { ...defaultTheme.iColorTheme.dark, ...overridingTheme.iColorTheme?.dark },
@@ -123,6 +130,7 @@ const getThemeMode = (mode: ThemeMode) => mode || LIGHT;
 
 export {
   animationHelper,
+  getThemeColor,
   getThemeMode,
   margin,
   marginX,

@@ -6,23 +6,17 @@ const baseTBody: ComponentTheme<ImpulseTableState<any>> = {
     iColorTheme: {
       light: {
         backgroundColor: 'transparent',
-        backgroundColorHover: 'transparent',
         borderColor: 'transparent',
-        borderColorHover: 'transparent',
         color: neutral[200],
-        colorHover: neutral[200],
       },
       dark: {
         backgroundColor: 'transparent',
-        backgroundColorHover: 'transparent',
         borderColor: 'transparent',
-        borderColorHover: 'transparent',
         color: neutral[200],
-        colorHover: neutral[200],
       },
     },
-    iCss: ({ iColorTheme }) => ({
-      backgroundColor: iColorTheme.backgroundColor,
+    iCss: ({ getThemeColor }) => ({
+      backgroundColor: getThemeColor('backgroundColor'),
     }),
   },
 };
@@ -49,7 +43,6 @@ const tbody: Partial<TBodyStyle<ImpulseTableState<any>>> = {
     iColorTheme: {
       light: {
         borderColor: volcano[60],
-        borderColorHover: neutral[60],
       },
     },
     iCss: {
