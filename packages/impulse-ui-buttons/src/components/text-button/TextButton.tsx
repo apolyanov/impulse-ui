@@ -15,7 +15,7 @@ const TextButton: FunctionComponent<TextButtonProps> = ({ iStyle, ...rest }) => 
 
   return (
     <BaseTextButton $iStyle={buttonStyle} {...buttonProps}>
-      {loading ? <Spinner iStyle={loaderStyle} /> : children}
+      {loading ? <Spinner data-disabled={buttonProps.disabled} iStyle={loaderStyle} /> : children}
     </BaseTextButton>
   );
 };
