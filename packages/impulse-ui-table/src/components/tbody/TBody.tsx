@@ -34,17 +34,15 @@ const TBody: FunctionComponent<TBodyComponentProps> = ({ iStyle, ...rest }) => {
     if (tableState.showNoData()) {
       return (
         <BaseTBody $iStyle={noContentTbodyStyle} {...rest}>
-          <TRow iStyle={noContentTrowStyle}>
-            <TData colSpan={tableState.getHeaderGroups()?.[0]?.headers?.length ?? 0} iStyle={noContentTdataStyle}>
-              {tableState.loading && <Spinner iStyle={loaderSpinnerStyle} />}
-              {!tableState.loading && (
-                <>
-                  <Icon iStyle={noContentIconStyle} icon={faDatabase} />
-                  <Typography iStyle={noContentTypographyStyle}>No data</Typography>
-                </>
-              )}
-            </TData>
-          </TRow>
+          {tableState.loading && <Spinner as='tr' iStyle={loaderSpinnerStyle} />}
+          {!tableState.loading && (
+            <TRow iStyle={noContentTrowStyle}>
+              <TData colSpan={tableState.getHeaderGroups()?.[0]?.headers?.length ?? 0} iStyle={noContentTdataStyle}>
+                <Icon iStyle={noContentIconStyle} icon={faDatabase} />
+                <Typography iStyle={noContentTypographyStyle}>No data</Typography>
+              </TData>
+            </TRow>
+          )}
         </BaseTBody>
       );
     }
