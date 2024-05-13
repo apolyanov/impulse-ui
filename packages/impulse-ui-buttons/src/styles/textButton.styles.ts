@@ -1,35 +1,33 @@
-import { neutral, volcano } from '@impulse-ui/colours';
+import { volcano } from '@impulse-ui/colours';
 import { ButtonHTMLProps, ComponentTheme, TextButtonStyle } from '@impulse-ui/types';
 
 const baseTextButton: ComponentTheme<ButtonHTMLProps> = {
   iStyle: {
     iColorTheme: {
       light: {
-        backgroundColor: 'transparent',
-        backgroundColorHover: volcano[10],
-        borderColor: 'transparent',
-        borderColorHover: 'transparent',
         color: volcano[60],
-        colorHover: volcano[70],
+        textShadowColor: volcano[50],
+        ':hover': {
+          backgroundColor: volcano[10],
+          color: volcano[70],
+        },
+        ':disabled': {
+          color: volcano[40],
+        },
       },
       dark: {
-        backgroundColor: 'transparent',
-        backgroundColorHover: 'transparent',
-        borderColor: 'transparent',
-        borderColorHover: 'transparent',
         color: volcano[60],
-        colorHover: volcano[60],
       },
     },
-    iCss: ({ iColorTheme, disabled }) => ({
-      backgroundColor: iColorTheme.backgroundColor,
-      color: disabled ? volcano[40] : iColorTheme.color,
+    iCss: ({ getThemeColor }) => ({
+      backgroundColor: getThemeColor('backgroundColor'),
+      color: getThemeColor('color'),
       borderRadius: 4,
       fontSize: '14px',
       textDecoration: 'none',
       transition: 'background-color 0.2s ease-in-out, color 0.2s ease-in-out',
       textTransform: 'uppercase',
-      textShadow: `0 0 1px ${volcano[50]}`,
+      textShadow: `0 0 1px ${getThemeColor('textShadowColor')}`,
       padding: '0px 28px',
       margin: '8px 0',
       minWidth: '128px',
@@ -42,8 +40,8 @@ const baseTextButton: ComponentTheme<ButtonHTMLProps> = {
       alignItems: 'center',
       justifyContent: 'center',
       '&:hover': {
-        backgroundColor: iColorTheme.backgroundColorHover,
-        color: iColorTheme.colorHover,
+        backgroundColor: getThemeColor('backgroundColor', ':hover'),
+        color: getThemeColor('color', ':hover'),
         cursor: 'pointer',
       },
       '&:disabled': {
@@ -59,12 +57,17 @@ const textButton: Partial<TextButtonStyle> = {
   loaderStyle: {
     iColorTheme: {
       light: {
-        borderColor: volcano[60],
-        borderColorHover: neutral[60],
+        borderRightColor: volcano[60],
+        ':disabled': {
+          borderRightColor: volcano[60],
+        },
       },
     },
-    iCss: ({ iColorTheme, disabled }) => ({
-      borderRightColor: disabled ? volcano[60] : iColorTheme.borderColor,
+    iCss: ({ getThemeColor }) => ({
+      borderRightColor: getThemeColor('backgroundColor'),
+      '&[data-disabled="true"]': {
+        borderRightColor: getThemeColor('backgroundColor', ':disabled'),
+      },
     }),
   },
 };

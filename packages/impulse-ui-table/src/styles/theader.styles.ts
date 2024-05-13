@@ -6,23 +6,17 @@ const theader: ComponentTheme<THeaderHTMLProps> = {
     iColorTheme: {
       light: {
         backgroundColor: 'transparent',
-        backgroundColorHover: 'transparent',
         borderColor: 'transparent',
-        borderColorHover: 'transparent',
         color: neutral[200],
-        colorHover: neutral[200],
       },
       dark: {
         backgroundColor: 'transparent',
-        backgroundColorHover: 'transparent',
         borderColor: 'transparent',
-        borderColorHover: 'transparent',
         color: neutral[200],
-        colorHover: neutral[200],
       },
     },
-    iCss: ({ iColorTheme }) => ({
-      backgroundColor: iColorTheme.backgroundColor,
+    iCss: ({ getThemeColor }) => ({
+      backgroundColor: getThemeColor('backgroundColor'),
       fontWeight: 500,
       height: 38,
       maxHeight: 76,

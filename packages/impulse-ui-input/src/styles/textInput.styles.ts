@@ -1,5 +1,6 @@
 import { neutral, volcano } from '@impulse-ui/colours';
 import { ComponentTheme, TextInputCompositeProps, TextInputStyle } from '@impulse-ui/types';
+
 const textInputStyle: Partial<TextInputStyle> = {
   mainContainerStyle: {
     iCss: {
@@ -15,7 +16,9 @@ const textInputStyle: Partial<TextInputStyle> = {
       light: {
         backgroundColor: neutral[10],
         borderColor: volcano[60],
-        borderColorHover: volcano[50],
+        ':disabled': {
+          borderColor: volcano[50],
+        },
       },
     },
     iCss: {
@@ -52,10 +55,12 @@ const textInputStyle: Partial<TextInputStyle> = {
       iColorTheme: {
         light: {
           backgroundColor: neutral[10],
-          backgroundColorHover: neutral[40],
+          ':focus': {
+            backgroundColor: neutral[40],
+          },
         },
       },
-      iCss: ({ iColorTheme }) => ({
+      iCss: ({ getThemeColor }) => ({
         position: 'absolute',
         filter: 'unset',
         marginRight: 'auto',
@@ -64,7 +69,7 @@ const textInputStyle: Partial<TextInputStyle> = {
         width: 20,
         minHeight: 'unset',
         '&:focus': {
-          background: iColorTheme.backgroundColorHover,
+          background: getThemeColor('backgroundColor', ':focus'),
         },
       }),
     },
@@ -72,7 +77,6 @@ const textInputStyle: Partial<TextInputStyle> = {
       iColorTheme: {
         light: {
           color: neutral[60],
-          colorHover: neutral[60],
         },
       },
     },
@@ -84,24 +88,18 @@ const input: ComponentTheme<TextInputCompositeProps> = {
     iColorTheme: {
       light: {
         backgroundColor: 'transparent',
-        backgroundColorHover: 'transparent',
         borderColor: 'transparent',
-        borderColorHover: 'transparent',
         color: neutral[200],
-        colorHover: neutral[200],
       },
       dark: {
         backgroundColor: 'transparent',
-        backgroundColorHover: 'transparent',
         borderColor: 'transparent',
-        borderColorHover: 'transparent',
         color: neutral[200],
-        colorHover: neutral[200],
       },
     },
-    iCss: ({ iColorTheme }) => ({
-      backgroundColor: iColorTheme.backgroundColor,
-      color: iColorTheme.color,
+    iCss: ({ getThemeColor }) => ({
+      backgroundColor: getThemeColor('backgroundColor'),
+      color: getThemeColor('color'),
       fontSize: 14,
       height: 32,
       padding: '4px 0',
@@ -122,7 +120,7 @@ const input: ComponentTheme<TextInputCompositeProps> = {
       },
       '&:-webkit-autofill': {
         boxShadow: '0 0 0 100px white inset',
-        '-webkit-text-fill-color': iColorTheme.color,
+        '-webkit-text-fill-color': getThemeColor('color'),
       },
     }),
   },

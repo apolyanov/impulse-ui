@@ -1,6 +1,7 @@
+import { SimplePseudos } from 'csstype';
 import { StyledObject } from 'styled-components';
 
-import { CompositeComponentColors } from './theme.types';
+import { ColorsKeysValues, ComponentColors } from './theme.types';
 
 type BaseIComponent<T = any> = {
   $iStyle?: IOStyle<T>;
@@ -10,17 +11,22 @@ interface IComponent<T = any> {
   iStyle?: IOStyle<T>;
 }
 
-type IOCssArgs<T = any> = {
-  iColorTheme: Partial<CompositeComponentColors>;
-} & T;
-
 type ICssArgs<T = any> = {
-  iColorTheme: CompositeComponentColors;
+  iColorTheme: ComponentColors;
+  getThemeColor: GetThemeColorInnerFn;
 } & T;
 
-type IOCss<T = any> = ((args: IOCssArgs<T>) => StyledObject<object> | undefined) | StyledObject<object>;
+type IOCss<T = any> = ((args: ICssArgs<T>) => StyledObject<object> | undefined) | StyledObject<object>;
 
 type ICss<T = any> = (args: ICssArgs<T>) => StyledObject<object>;
+
+interface GetThemeColorInnerFn {
+  (colorKey: keyof ColorsKeysValues, stateKey?: SimplePseudos): string;
+}
+
+interface GetThemeColorFn {
+  (componentColors?: ComponentColors): GetThemeColorInnerFn;
+}
 
 interface ComponentMap {
   key: string;
@@ -34,30 +40,25 @@ interface IStyle<T = any> {
 }
 
 interface IOStyle<T = any> {
-  iColorTheme?: IOColorTheme;
+  iColorTheme?: IColorTheme;
   iCss?: IOCss<T>;
 }
 
-interface IOColorTheme {
-  light?: Partial<CompositeComponentColors>;
-  dark?: Partial<CompositeComponentColors>;
-}
-
 interface IColorTheme {
-  light: CompositeComponentColors;
-  dark: CompositeComponentColors;
+  light?: ComponentColors;
+  dark?: ComponentColors;
 }
 
 export type {
   BaseIComponent,
   ComponentMap,
+  GetThemeColorFn,
+  GetThemeColorInnerFn,
   IColorTheme,
   IComponent,
   ICss,
   ICssArgs,
-  IOColorTheme,
   IOCss,
-  IOCssArgs,
   IOStyle,
   IStyle,
 };

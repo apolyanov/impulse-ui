@@ -7,7 +7,6 @@ const select: Partial<SelectStyle<any>> = {
       light: {
         backgroundColor: neutral[10],
         borderColor: volcano[60],
-        borderColorHover: volcano[50],
       },
     },
     iCss: {
@@ -40,9 +39,7 @@ const select: Partial<SelectStyle<any>> = {
     iColorTheme: {
       light: {
         color: neutral[60],
-        colorHover: neutral[60],
         backgroundColor: neutral[10],
-        backgroundColorHover: neutral[40],
       },
     },
     iCss: {
@@ -78,8 +75,7 @@ const select: Partial<SelectStyle<any>> = {
   loadingSpinnerStyle: {
     iColorTheme: {
       light: {
-        borderColor: volcano[60],
-        borderColorHover: volcano[60],
+        borderRightColor: volcano[60],
       },
     },
     iCss: {

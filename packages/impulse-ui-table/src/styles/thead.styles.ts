@@ -44,7 +44,9 @@ const thead: Partial<THeadStyle> = {
       iColorTheme: {
         light: {
           backgroundColor: neutral[10],
-          backgroundColorHover: neutral[40],
+          ':hover': {
+            backgroundColor: neutral[40],
+          },
         },
       },
       iCss: {
@@ -61,7 +63,9 @@ const thead: Partial<THeadStyle> = {
       iColorTheme: {
         light: {
           color: neutral[60],
-          colorHover: neutral[60],
+          ':hover': {
+            color: neutral[60],
+          },
         },
       },
     },
@@ -73,23 +77,17 @@ const baseTHead: ComponentTheme<THeadHTMLProps> = {
     iColorTheme: {
       light: {
         backgroundColor: neutral[10],
-        backgroundColorHover: neutral[10],
         borderColor: 'transparent',
-        borderColorHover: 'transparent',
         color: neutral[200],
-        colorHover: neutral[200],
       },
       dark: {
         backgroundColor: neutral[10],
-        backgroundColorHover: neutral[10],
         borderColor: 'transparent',
-        borderColorHover: 'transparent',
         color: neutral[200],
-        colorHover: neutral[200],
       },
     },
-    iCss: ({ iColorTheme }) => ({
-      backgroundColor: iColorTheme.backgroundColor,
+    iCss: ({ getThemeColor }) => ({
+      backgroundColor: getThemeColor('backgroundColor'),
       filter: 'drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2))',
       '& th:first-of-type': {
         borderRadius: '4px 0 0 4px',
