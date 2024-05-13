@@ -23,6 +23,16 @@ const InputsPage = () => {
         placeholder={'Email'}
         icon={faEnvelope}
       />
+      <TextInput
+        disabled
+        error
+        type={'password'}
+        debounced
+        onDebouncedChange={(event) => console.log(event.target.value)}
+        onChange={(event) => console.log(event.target.value)}
+        placeholder={'Email'}
+        icon={faEnvelope}
+      />
       <Select
         loading
         value={value}

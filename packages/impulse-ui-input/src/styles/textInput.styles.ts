@@ -17,11 +17,11 @@ const textInputStyle: Partial<TextInputStyle> = {
         backgroundColor: neutral[10],
         borderColor: volcano[60],
         ':disabled': {
-          borderColor: volcano[50],
+          borderColor: volcano[40],
         },
       },
     },
-    iCss: {
+    iCss: ({ getThemeColor }) => ({
       display: 'flex',
       flexDirection: 'row',
       alignItems: 'center',
@@ -31,7 +31,10 @@ const textInputStyle: Partial<TextInputStyle> = {
       height: 38,
       borderRadius: 4,
       borderWidth: 1,
-    },
+      '&[data-disabled="true"]': {
+        borderColor: getThemeColor('borderColor', ':disabled'),
+      },
+    }),
   },
   inputStyle: {
     iCss: ({ clearable }) => ({
@@ -42,13 +45,19 @@ const textInputStyle: Partial<TextInputStyle> = {
     iColorTheme: {
       light: {
         color: neutral[80],
+        ':disabled': {
+          color: neutral[60],
+        },
       },
     },
-    iCss: {
+    iCss: ({ getThemeColor }) => ({
       fontSize: 16,
       width: 16,
       marginRight: 4,
-    },
+      '&[data-disabled="true"]': {
+        color: getThemeColor('color', ':disabled'),
+      },
+    }),
   },
   clearIconStyle: {
     buttonStyle: {
