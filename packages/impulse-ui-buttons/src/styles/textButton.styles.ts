@@ -13,6 +13,8 @@ const baseTextButton: ComponentTheme<ButtonHTMLProps> = {
         },
         ':disabled': {
           color: volcano[40],
+          backgroundColor: 'transparent',
+          textShadowColor: volcano[50],
         },
       },
       dark: {
@@ -46,8 +48,9 @@ const baseTextButton: ComponentTheme<ButtonHTMLProps> = {
       },
       '&:disabled': {
         cursor: 'not-allowed',
-        color: volcano[40],
-        textShadow: `0 0 1px ${volcano[40]}`,
+        color: getThemeColor('color', ':disabled'),
+        backgroundColor: getThemeColor('backgroundColor', ':disabled'),
+        textShadow: `0 0 1px ${getThemeColor('textShadowColor', ':disabled')}`,
       },
     }),
   },
