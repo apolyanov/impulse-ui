@@ -60,16 +60,16 @@ const button: Partial<ButtonStyle> = {
   loaderStyle: {
     iColorTheme: {
       light: {
-        borderRightColor: volcano[60],
+        borderRightColor: neutral[10],
         ':disabled': {
-          borderRightColor: volcano[60],
+          borderRightColor: volcano[40],
         },
       },
     },
     iCss: ({ getThemeColor }) => ({
-      borderRightColor: getThemeColor('backgroundColor'),
+      borderRightColor: getThemeColor('borderRightColor'),
       '&[data-disabled="true"]': {
-        borderRightColor: getThemeColor('backgroundColor', ':disabled'),
+        borderRightColor: getThemeColor('borderRightColor', ':disabled'),
       },
     }),
   },
