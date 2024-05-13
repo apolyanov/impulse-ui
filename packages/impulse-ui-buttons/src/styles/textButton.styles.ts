@@ -6,15 +6,17 @@ const baseTextButton: ComponentTheme<ButtonHTMLProps> = {
     iColorTheme: {
       light: {
         color: volcano[60],
-        textShadowColor: volcano[50],
+        backgroundColor: 'transparent',
+        textShadowColor: volcano[60],
         ':hover': {
           backgroundColor: volcano[10],
           color: volcano[70],
+          textShadowColor: volcano[70],
         },
         ':disabled': {
           color: volcano[40],
           backgroundColor: 'transparent',
-          textShadowColor: volcano[50],
+          textShadowColor: volcano[40],
         },
       },
       dark: {
@@ -44,6 +46,7 @@ const baseTextButton: ComponentTheme<ButtonHTMLProps> = {
       '&:hover': {
         backgroundColor: getThemeColor('backgroundColor', ':hover'),
         color: getThemeColor('color', ':hover'),
+        textShadow: `0 0 1px ${getThemeColor('textShadowColor', ':hover')}`,
         cursor: 'pointer',
       },
       '&:disabled': {
@@ -62,14 +65,14 @@ const textButton: Partial<TextButtonStyle> = {
       light: {
         borderRightColor: volcano[60],
         ':disabled': {
-          borderRightColor: volcano[60],
+          borderRightColor: volcano[40],
         },
       },
     },
     iCss: ({ getThemeColor }) => ({
-      borderRightColor: getThemeColor('backgroundColor'),
+      borderRightColor: getThemeColor('borderRightColor'),
       '&[data-disabled="true"]': {
-        borderRightColor: getThemeColor('backgroundColor', ':disabled'),
+        borderRightColor: getThemeColor('borderRightColor', ':disabled'),
       },
     }),
   },

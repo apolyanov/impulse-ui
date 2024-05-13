@@ -23,9 +23,7 @@ const ButtonsPage = () => {
       </Button>
       <Typography>Text Button</Typography>
       <TextButton>Hello</TextButton>
-      <TextButton loading disabled>
-        Hello
-      </TextButton>
+      <TextButton loading>Hello</TextButton>
       <TextButton disabled>Hello</TextButton>
       <TextButton loading disabled>
         Hello
