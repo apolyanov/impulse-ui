@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.6.0-beta.12](https://github.com/apolyanov/impulse-ui/compare/v2.6.0-beta.11...v2.6.0-beta.12) (2024-05-13)
+
+**Note:** Version bump only for package @impulse-ui/toolkit
+
+
+
+
+
 # [2.6.0-beta.11](https://github.com/apolyanov/impulse-ui/compare/v2.6.0-beta.10...v2.6.0-beta.11) (2024-05-11)
 
 **Note:** Version bump only for package @impulse-ui/toolkit

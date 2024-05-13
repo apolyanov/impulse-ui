@@ -1,6 +1,6 @@
 {
   "name": "@impulse-ui/text",
-  "version": "2.6.0-beta.11",
+  "version": "2.6.0-beta.12",
   "license": "MIT",
   "author": "Alexander Polyanov",
   "main": "dist/index.js",
@@ -37,13 +37,13 @@
     "testEnvironment": "jsdom"
   },
   "dependencies": {
-    "@impulse-ui/colours": "^2.6.0-beta.11",
-    "@impulse-ui/core": "^2.6.0-beta.11",
-    "@impulse-ui/icon": "^2.6.0-beta.11",
-    "@impulse-ui/layout": "^2.6.0-beta.11"
+    "@impulse-ui/colours": "^2.6.0-beta.12",
+    "@impulse-ui/core": "^2.6.0-beta.12",
+    "@impulse-ui/icon": "^2.6.0-beta.12",
+    "@impulse-ui/layout": "^2.6.0-beta.12"
   },
   "devDependencies": {
-    "@impulse-ui/types": "^2.6.0-beta.11"
+    "@impulse-ui/types": "^2.6.0-beta.12"
   },
   "peerDependencies": {
     "react": ">=16"

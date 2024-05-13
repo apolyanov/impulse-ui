@@ -1,6 +1,6 @@
 {
   "name": "@impulse-ui/toolkit",
-  "version": "2.6.0-beta.11",
+  "version": "2.6.0-beta.12",
   "license": "MIT",
   "author": "Alexander Polyanov",
   "main": "dist/index.js",
@@ -34,17 +34,17 @@
     "bracketSpacing": true
   },
   "dependencies": {
-    "@impulse-ui/auto-complete": "^2.6.0-beta.11",
-    "@impulse-ui/avatar": "^2.6.0-beta.11",
-    "@impulse-ui/buttons": "^2.6.0-beta.11",
-    "@impulse-ui/colours": "^2.6.0-beta.11",
-    "@impulse-ui/core": "^2.6.0-beta.11",
-    "@impulse-ui/icon": "^2.6.0-beta.11",
-    "@impulse-ui/input": "^2.6.0-beta.11",
-    "@impulse-ui/layout": "^2.6.0-beta.11",
-    "@impulse-ui/sidebar": "^2.6.0-beta.11",
-    "@impulse-ui/table": "^2.6.0-beta.11",
-    "@impulse-ui/text": "^2.6.0-beta.11"
+    "@impulse-ui/auto-complete": "^2.6.0-beta.12",
+    "@impulse-ui/avatar": "^2.6.0-beta.12",
+    "@impulse-ui/buttons": "^2.6.0-beta.12",
+    "@impulse-ui/colours": "^2.6.0-beta.12",
+    "@impulse-ui/core": "^2.6.0-beta.12",
+    "@impulse-ui/icon": "^2.6.0-beta.12",
+    "@impulse-ui/input": "^2.6.0-beta.12",
+    "@impulse-ui/layout": "^2.6.0-beta.12",
+    "@impulse-ui/sidebar": "^2.6.0-beta.12",
+    "@impulse-ui/table": "^2.6.0-beta.12",
+    "@impulse-ui/text": "^2.6.0-beta.12"
   },
   "jest": {
     "testEnvironment": "jsdom"
