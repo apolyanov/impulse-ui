@@ -13,11 +13,12 @@ const checkboxStyle: Partial<CheckboxStyle> = {
   },
   iconButtonStyle: {
     buttonStyle: {
-      iColorTheme: { light: { backgroundColor: 'transparent' } },
+      iColorTheme: { light: { backgroundColor: 'transparent', ':hover': { backgroundColor: 'transparent' } } },
       iCss: {
         backgroundColor: 'unset',
         '&:disabled': {
           backgroundColor: 'unset',
+          cursor: 'not-allowed',
         },
         minWidth: 'unset',
         width: 'unset',
@@ -33,8 +34,8 @@ const checkboxStyle: Partial<CheckboxStyle> = {
           iconPrimaryColor: volcano[60],
           iconSecondaryColor: volcano[10],
           ':disabled': {
-            iconSecondaryColor: volcano[40],
-            iconPrimaryColor: volcano[10],
+            iconPrimaryColor: volcano[40],
+            iconSecondaryColor: volcano[10],
           },
         },
       },
@@ -47,11 +48,7 @@ const checkboxStyle: Partial<CheckboxStyle> = {
         '& .fa-secondary': {
           filter: `drop-shadow(0 0 36px rgba(0, 0, 0, 0.2))`,
         },
-        '&:hover': {
-          cursor: 'pointer',
-        },
-        '&:disabled': {
-          cursor: 'not-allowed',
+        '&[data-disabled="true"]': {
           '--fa-primary-color': getThemeColor('iconPrimaryColor', ':disabled'),
           '--fa-secondary-color': getThemeColor('iconSecondaryColor', ':disabled'),
         },

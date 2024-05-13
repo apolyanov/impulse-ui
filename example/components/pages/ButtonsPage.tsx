@@ -29,7 +29,7 @@ const ButtonsPage = () => {
         Hello
       </TextButton>
       <Link>Hello</Link>
-      <Checkbox disabled checked={check} onClick={({ value }) => setCheck(value)} label={'Click me'} />
+      <Checkbox checked={check} onClick={({ value }) => setCheck(value)} label={'Click me'} />
       <IconButton icon={faArrowRightFromBracket} />
       <IconButton loading icon={faArrowRightFromBracket} />
       <IconButton disabled icon={faArrowRightFromBracket} />
