@@ -7,23 +7,17 @@ const tfoot: ComponentTheme<TFootHTMLProps> = {
     iColorTheme: {
       light: {
         backgroundColor: neutral[10],
-        backgroundColorHover: neutral[10],
         borderColor: 'transparent',
-        borderColorHover: 'transparent',
         color: neutral[200],
-        colorHover: neutral[200],
       },
       dark: {
         backgroundColor: neutral[10],
-        backgroundColorHover: neutral[10],
         borderColor: 'transparent',
-        borderColorHover: 'transparent',
         color: neutral[200],
-        colorHover: neutral[200],
       },
     },
-    iCss: ({ iColorTheme }) => ({
-      backgroundColor: iColorTheme.backgroundColor,
+    iCss: ({ getThemeColor }) => ({
+      backgroundColor: getThemeColor('backgroundColor'),
       filter: 'drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2))',
       '& td': {
         ...paddingY(8),

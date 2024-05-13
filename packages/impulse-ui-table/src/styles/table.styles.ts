@@ -6,23 +6,17 @@ const table: ComponentTheme<TableHTMLProps> = {
     iColorTheme: {
       light: {
         backgroundColor: neutral[10],
-        backgroundColorHover: neutral[10],
         borderColor: 'transparent',
-        borderColorHover: 'transparent',
         color: neutral[200],
-        colorHover: neutral[200],
       },
       dark: {
         backgroundColor: neutral[10],
-        backgroundColorHover: neutral[10],
         borderColor: 'transparent',
-        borderColorHover: 'transparent',
         color: neutral[200],
-        colorHover: neutral[200],
       },
     },
-    iCss: ({ iColorTheme }) => ({
-      backgroundColor: iColorTheme.backgroundColor,
+    iCss: ({ getThemeColor }) => ({
+      backgroundColor: getThemeColor('backgroundColor'),
       borderRadius: 4,
       padding: 8,
       margin: 8,

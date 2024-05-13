@@ -6,23 +6,17 @@ const tdata: ComponentTheme<TDataHTMLProps> = {
     iColorTheme: {
       light: {
         backgroundColor: 'transparent',
-        backgroundColorHover: 'transparent',
         borderColor: 'transparent',
-        borderColorHover: 'transparent',
         color: neutral[200],
-        colorHover: neutral[200],
       },
       dark: {
         backgroundColor: 'transparent',
-        backgroundColorHover: 'transparent',
         borderColor: 'transparent',
-        borderColorHover: 'transparent',
         color: neutral[200],
-        colorHover: neutral[200],
       },
     },
-    iCss: ({ iColorTheme }) => ({
-      backgroundColor: iColorTheme.backgroundColor,
+    iCss: ({ getThemeColor }) => ({
+      backgroundColor: getThemeColor('backgroundColor'),
       padding: '6px 10px',
       fontSize: 14,
       verticalAlign: 'middle',
