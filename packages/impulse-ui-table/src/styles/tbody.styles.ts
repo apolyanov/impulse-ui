@@ -42,7 +42,7 @@ const tbody: Partial<TBodyStyle<ImpulseTableState<any>>> = {
   loaderSpinnerStyle: {
     iColorTheme: {
       light: {
-        borderColor: volcano[60],
+        borderRightColor: volcano[60],
       },
     },
     iCss: {
