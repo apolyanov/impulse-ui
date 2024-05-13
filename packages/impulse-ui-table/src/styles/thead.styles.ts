@@ -47,6 +47,9 @@ const thead: Partial<THeadStyle> = {
           ':hover': {
             backgroundColor: neutral[40],
           },
+          ':disabled': {
+            backgroundColor: neutral[40],
+          },
         },
       },
       iCss: {
@@ -64,6 +67,9 @@ const thead: Partial<THeadStyle> = {
         light: {
           color: neutral[60],
           ':hover': {
+            color: neutral[60],
+          },
+          ':disabled': {
             color: neutral[60],
           },
         },

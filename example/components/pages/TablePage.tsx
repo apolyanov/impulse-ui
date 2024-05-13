@@ -80,7 +80,6 @@ const TablePage = () => {
   return (
     <Container>
       <ImpulseTable
-        loading
         initialState={{ pagination: { pageIndex: 0, pageSize: 20 } }}
         data={hasData ? data : []}
         columns={columns}
