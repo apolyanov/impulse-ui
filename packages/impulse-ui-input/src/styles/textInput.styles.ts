@@ -17,7 +17,7 @@ const textInputStyle: Partial<TextInputStyle> = {
         backgroundColor: neutral[10],
         borderColor: volcano[60],
         ':disabled': {
-          borderColor: volcano[40],
+          borderColor: volcano[20],
         },
       },
     },
@@ -65,6 +65,9 @@ const textInputStyle: Partial<TextInputStyle> = {
         light: {
           backgroundColor: neutral[10],
           ':focus': {
+            backgroundColor: neutral[40],
+          },
+          ':hover': {
             backgroundColor: neutral[40],
           },
         },
