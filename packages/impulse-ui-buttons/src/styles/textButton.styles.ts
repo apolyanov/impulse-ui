@@ -18,6 +18,9 @@ const baseTextButton: ComponentTheme<ButtonHTMLProps> = {
           backgroundColor: 'transparent',
           textShadowColor: volcano[40],
         },
+        'data-component="spinner"': {
+          borderRightColor: volcano[70],
+        },
       },
       dark: {
         color: volcano[60],
@@ -48,6 +51,9 @@ const baseTextButton: ComponentTheme<ButtonHTMLProps> = {
         color: getThemeColor('color', ':hover'),
         textShadow: `0 0 1px ${getThemeColor('textShadowColor', ':hover')}`,
         cursor: 'pointer',
+        '&:not([disabled]) > [data-component="spinner"]': {
+          borderRightColor: getThemeColor('borderRightColor', 'data-component="spinner"'),
+        },
       },
       '&:disabled': {
         cursor: 'not-allowed',

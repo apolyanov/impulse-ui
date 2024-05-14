@@ -5,7 +5,7 @@ import { SpinnerLoaderProps } from '@impulse-ui/types';
 import BaseSpinner from './BaseSpinner.styles';
 
 const Spinner = polymorphicForwardRef<'div', PropsWithChildren<SpinnerLoaderProps>>(({ iStyle, ...rest }, ref) => (
-  <BaseSpinner ref={ref} $iStyle={iStyle} {...rest} />
+  <BaseSpinner data-component='spinner' ref={ref} $iStyle={iStyle} {...rest} />
 ));
 
 export { Spinner };

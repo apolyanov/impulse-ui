@@ -1,7 +1,7 @@
 import { SimplePseudos } from 'csstype';
 import { StyledObject } from 'styled-components';
 
-import { ColorsKeysValues, ComponentColors } from './theme.types';
+import { ColorsKeysValues, ComponentColors, DataAttribute } from './theme.types';
 
 type BaseIComponent<T = any> = {
   $iStyle?: IOStyle<T>;
@@ -21,7 +21,7 @@ type IOCss<T = any> = ((args: ICssArgs<T>) => StyledObject<object> | undefined) 
 type ICss<T = any> = (args: ICssArgs<T>) => StyledObject<object>;
 
 interface GetThemeColorInnerFn {
-  (colorKey: keyof ColorsKeysValues, stateKey?: SimplePseudos): string;
+  (colorKey: keyof ColorsKeysValues, stateKey?: SimplePseudos | DataAttribute): string;
 }
 
 interface GetThemeColorFn {

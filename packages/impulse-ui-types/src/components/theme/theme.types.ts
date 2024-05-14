@@ -7,6 +7,8 @@ import { IStyle } from './components.types';
 
 type ThemeMode = 'light' | 'dark';
 
+type DataAttribute = `data-${string}`;
+
 type ColorsKeysValues = {
   color: Color;
   backgroundColor: BackgroundColor;
@@ -24,7 +26,7 @@ type ColorsKeysValues = {
 type ComponentColors = Partial<
   ColorsKeysValues & {
     [T in SimplePseudos]: Partial<ColorsKeysValues>;
-  }
+  } & { [T in DataAttribute]: Partial<ColorsKeysValues> }
 >;
 
 interface ComponentTheme<T extends object> {
@@ -78,6 +80,7 @@ export type {
   ComponentsThemes,
   ComponentTheme,
   CustomITheme,
+  DataAttribute,
   IThemeContext,
   IThemeProviderProps,
   ThemeMode,
