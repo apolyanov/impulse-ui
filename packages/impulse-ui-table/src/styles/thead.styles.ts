@@ -48,7 +48,7 @@ const thead: Partial<THeadStyle> = {
             backgroundColor: neutral[40],
           },
           ':disabled': {
-            backgroundColor: neutral[40],
+            backgroundColor: 'transparent',
           },
         },
       },
