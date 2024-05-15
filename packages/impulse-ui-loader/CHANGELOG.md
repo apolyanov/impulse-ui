@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.6.1](https://github.com/apolyanov/impulse-ui/compare/v2.6.0...v2.6.1) (2024-05-15)
+
+
+### Bug Fixes
+
+* Fixing disabled styles for buttons and input ([72c1250](https://github.com/apolyanov/impulse-ui/commit/72c12502d92e9f714054a9df928fc1baad69f931))
+
+
+
+
+
 ## [2.6.1-beta.0](https://github.com/apolyanov/impulse-ui/compare/v2.6.0...v2.6.1-beta.0) (2024-05-14)
 
 

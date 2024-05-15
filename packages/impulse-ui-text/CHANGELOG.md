@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.6.1](https://github.com/apolyanov/impulse-ui/compare/v2.6.0...v2.6.1) (2024-05-15)
+
+
+### Bug Fixes
+
+* Missing getThemeColor function in BaseTypograhy component ([6ec8f4b](https://github.com/apolyanov/impulse-ui/commit/6ec8f4be8bc981cbe1b8d8c099f4dbafff0b91db))
+
+
+
+
+
 ## [2.6.1-beta.0](https://github.com/apolyanov/impulse-ui/compare/v2.6.0...v2.6.1-beta.0) (2024-05-14)
 
 **Note:** Version bump only for package @impulse-ui/text
