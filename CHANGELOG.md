@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.7.2](https://github.com/apolyanov/impulse-ui/compare/v2.7.1...v2.7.2) (2024-05-17)
+
+
+### Bug Fixes
+
+* Adding missing dependencies to toolkit package ([1a80f9a](https://github.com/apolyanov/impulse-ui/commit/1a80f9a853a8ea139ef1da2bc2d194dc9c3030c2))
+
+
+
+
+
 ## [2.7.1](https://github.com/apolyanov/impulse-ui/compare/v2.7.0...v2.7.1) (2024-05-17)
 
 
