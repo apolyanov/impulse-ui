@@ -1,6 +1,6 @@
 {
   "name": "@impulse-ui/qr",
-  "version": "2.7.0",
+  "version": "2.7.1",
   "license": "MIT",
   "author": "Alexander Polyanov",
   "main": "dist/index.js",

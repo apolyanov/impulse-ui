@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.7.1](https://github.com/apolyanov/impulse-ui/compare/v2.7.0...v2.7.1) (2024-05-17)
+
+
+### Bug Fixes
+
+* Fixing wrong props passed to useComponentStyle ([fa68b5c](https://github.com/apolyanov/impulse-ui/commit/fa68b5c3a04067db0bcbbbe6a084b1da8baaa86f))
+
+
+
+
+
 # [2.7.0](https://github.com/apolyanov/impulse-ui/compare/v2.6.1...v2.7.0) (2024-05-17)
 
 
