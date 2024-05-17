@@ -1,12 +1,11 @@
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
-import { ImpulseTableState } from '../table';
 import { IOStyle } from '../theme';
 
 import { ButtonHTMLProps } from './button.types';
 
 interface IconButtonProps extends IconButtonRestProps {
-  iStyle?: Partial<IconButtonStyle<ImpulseTableState<any>>>;
+  iStyle?: Partial<IconButtonStyle<any>>;
 }
 
 interface IconButtonRestProps extends ButtonHTMLProps {
