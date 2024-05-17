@@ -17,6 +17,7 @@ const QRScanner = ({ iStyle, onDecode, onError, readerOptions, ...rest }: QRScan
     readerOptions,
   });
   const { isScanning, toggleScanning, toggleTorch, canUseTorch, videoElement } = qrScannerProps;
+  const stylesProps = { ...rest, ...qrScannerProps };
 
   const {
     mainContainerStyle,
@@ -30,7 +31,7 @@ const QRScanner = ({ iStyle, onDecode, onError, readerOptions, ...rest }: QRScan
     buttonsContainerStyle,
     toggleScanningButtonStyle,
     toggleTorchButtonStyle,
-  } = useComponentStyle(qrScannerComponentMap, rest, iStyle, qrScannerStyle);
+  } = useComponentStyle(qrScannerComponentMap, stylesProps, iStyle, qrScannerStyle);
 
   return (
     <Container iStyle={mainContainerStyle}>
