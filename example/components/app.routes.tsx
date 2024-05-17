@@ -7,6 +7,7 @@ import ButtonsPage from './pages/ButtonsPage';
 import ComponentStyle from './pages/ComponentStyle';
 import InputsPage from './pages/InputsPage';
 import { MuiTable } from './pages/MuiTable';
+import QRScannerPage from './pages/QRScannerPage';
 import SidebarPage from './pages/SidebarPage';
 import TablePage from './pages/TablePage';
 
@@ -23,6 +24,7 @@ const router = createBrowserRouter([
       { path: '/avatar', element: <AvatarPage /> },
       { path: '/table', element: <TablePage /> },
       { path: '/mui-table', element: <MuiTable /> },
+      { path: '/qr', element: <QRScannerPage /> },
       { path: '/styles', element: <ComponentStyle /> },
     ],
   },

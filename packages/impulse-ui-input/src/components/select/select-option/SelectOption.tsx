@@ -8,7 +8,7 @@ import { selectOptionMap } from '../../../maps';
 import { selectOption } from '../../../styles';
 
 const SelectOption: FunctionComponent<SelectOptionProps> = ({ iStyle, ...rest }) => {
-  const { itemText, selected, highlighted, externalScroll, ...mainContainerProps } = rest;
+  const { itemText, selected, highlighted, ...mainContainerProps } = rest;
 
   const { mainContainerStyle, typographyStyle } = useComponentStyle(selectOptionMap, rest, selectOption, iStyle);
 
