@@ -13,6 +13,7 @@
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.14.13",
     "@mui/x-data-grid": "^6.16.2",
+    "@vitejs/plugin-basic-ssl": "^1.1.0",
     "react-app-polyfill": "^3.0.0",
     "react-router-dom": "6.17.0",
     "styled-components": "6.1.0"

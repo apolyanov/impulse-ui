@@ -50,6 +50,9 @@
     },
     {
       "path": "./packages/impulse-ui-loader"
+    },
+    {
+      "path": "./packages/impulse-ui-qr"
     }
   ]
 }

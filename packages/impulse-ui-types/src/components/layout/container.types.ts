@@ -1,8 +1,8 @@
-import { JSX } from 'react';
+import { JSX, PropsWithoutRef } from 'react';
 
 import { IComponent } from '../theme';
 
-type ContainerHTMLProps = JSX.IntrinsicElements['div'];
-type ContainerProps = IComponent & ContainerHTMLProps;
+type ContainerHTMLProps = PropsWithoutRef<JSX.IntrinsicElements['div']>;
+type ContainerProps = IComponent;
 
 export type { ContainerHTMLProps, ContainerProps };
