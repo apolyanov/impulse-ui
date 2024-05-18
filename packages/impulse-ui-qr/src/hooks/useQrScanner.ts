@@ -8,7 +8,7 @@ const useQrScanner = (options: QRScannerRestProps) => {
   const videoElement = useRef<HTMLVideoElement>(null);
   const cameraControls = useRef<IScannerControls>();
   const qrScanner = useRef(
-    new BrowserQRCodeReader(hints, { delayBetweenScanAttempts: 50, delayBetweenScanSuccess: 50 }),
+    new BrowserQRCodeReader(hints, { delayBetweenScanAttempts: 250, delayBetweenScanSuccess: 250 }),
   );
 
   const [isScanning, setIsScanning] = useState<boolean>(false);

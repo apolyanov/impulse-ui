@@ -3,10 +3,11 @@ import { Container } from '@impulse-ui/layout';
 import { QRScanner } from '@impulse-ui/qr';
 import { Typography } from '@impulse-ui/text';
 import { IScannerControls } from '@zxing/browser';
-import { Result } from '@zxing/library';
+import { Exception, Result } from '@zxing/library';
 
 const TablePage = () => {
   const [result, setResult] = useState<Result>();
+  const [error, setError] = useState<Exception>();
   const [controls, setControls] = useState<IScannerControls>();
 
   return (
@@ -16,9 +17,12 @@ const TablePage = () => {
           setResult(result);
           setControls(controls);
         }}
+        onError={(error, controls) => {
+          setError(error);
+          setControls(controls);
+        }}
       />
-      <Typography as='pre'>{JSON.stringify(result, null, 2)}</Typography>
-      <Typography as='pre'>{JSON.stringify(controls, null, 2)}</Typography>
+      <Typography>{result?.getTimestamp()}</Typography>
     </Container>
   );
 };
