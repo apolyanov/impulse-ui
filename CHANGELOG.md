@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.7.3](https://github.com/apolyanov/impulse-ui/compare/v2.7.2...v2.7.3) (2024-05-18)
+
+
+### Bug Fixes
+
+* Tuning down scanning rate until zxing exception handling is fixed. ([544c58f](https://github.com/apolyanov/impulse-ui/commit/544c58fdcb9300326c931633422a8a17d305643b))
+
+
+
+
+
 ## [2.7.2](https://github.com/apolyanov/impulse-ui/compare/v2.7.1...v2.7.2) (2024-05-17)
 
 
