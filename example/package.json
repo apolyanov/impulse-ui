@@ -16,7 +16,8 @@
     "@vitejs/plugin-basic-ssl": "^1.1.0",
     "react-app-polyfill": "^3.0.0",
     "react-router-dom": "6.17.0",
-    "styled-components": "6.1.0"
+    "styled-components": "6.1.0",
+    "vite-plugin-eruda": "^1.0.1"
   },
   "alias": {
     "react": "../node_modules/react",
