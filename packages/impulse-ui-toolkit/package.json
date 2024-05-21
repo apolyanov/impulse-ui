@@ -46,7 +46,8 @@
     "@impulse-ui/qr": "^2.7.3",
     "@impulse-ui/sidebar": "^2.7.0",
     "@impulse-ui/table": "^2.7.0",
-    "@impulse-ui/text": "^2.7.0"
+    "@impulse-ui/text": "^2.7.0",
+    "@impulse-ui/qr-core": "^0.1.0"
   },
   "jest": {
     "testEnvironment": "jsdom"

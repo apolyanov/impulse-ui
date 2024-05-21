@@ -11,7 +11,7 @@ const Main = () => {
       iStyle={{ iCss: { margin: 0, padding: 0, display: 'flex', flex: 1, width: '100%', flexDirection: 'row' } }}
     >
       <Navigation />
-      <Container iStyle={{ iCss: { padding: 16, width: '100%', minWidth: 0 } }}>
+      <Container iStyle={{ iCss: { padding: 16, minWidth: 'fit-content', width: '100%' } }}>
         <GlobalStyle />
         <Outlet />
       </Container>
