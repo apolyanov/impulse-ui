@@ -2,7 +2,7 @@ export class NoVideoElement extends Error {
   private readonly _name: string;
 
   constructor() {
-    super('No video element is attached.');
+    super('No video element is attached!');
     this._name = 'NoVideoElement';
   }
 

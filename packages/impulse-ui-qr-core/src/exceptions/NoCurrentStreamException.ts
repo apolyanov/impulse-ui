@@ -2,7 +2,7 @@ export class NoCurrentStreamException extends Error {
   private readonly _name: string;
 
   constructor() {
-    super('No current stream.');
+    super('No current stream!');
     this._name = 'NoCurrentStreamException';
   }
 
