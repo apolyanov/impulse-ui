@@ -55,9 +55,6 @@
       "path": "./packages/impulse-ui-qr"
     },
     {
-      "path": "./packages/impulse-ui-qrcore"
-    },
-    {
       "path": "./packages/impulse-ui-qr-core"
     }
   ]
