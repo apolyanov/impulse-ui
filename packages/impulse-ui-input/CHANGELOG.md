@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.8.0](https://github.com/apolyanov/impulse-ui/compare/v2.7.3...v2.8.0) (2024-05-21)
+
+**Note:** Version bump only for package @impulse-ui/input
+
+
+
+
+
 # [2.7.0](https://github.com/apolyanov/impulse-ui/compare/v2.6.1...v2.7.0) (2024-05-17)
 
 
