@@ -2,16 +2,16 @@ import { QRScannerRestProps } from '@impulse-ui/types';
 import jsQR from 'jsqr-es6';
 
 import { NotFoundException } from '../exceptions';
-import { NavigatorSupportException } from '../exceptions/NavigatorSupportException';
+import { NavigatorSupportException } from '../exceptions';
 
 import { CanvasContext } from './CanvasContext';
 import { VideoContext } from './VideoContext';
 
 export class Scanner {
   private _scanningLoopId?: NodeJS.Timeout;
+  private _scanningInterval: number;
   private _videoContext: VideoContext = new VideoContext();
   private _canvasContext: CanvasContext = new CanvasContext();
-  private _scanningInterval: number;
 
   constructor(scanningInterval: number) {
     this._scanningInterval = scanningInterval;
@@ -20,14 +20,14 @@ export class Scanner {
   async scan(
     videoElement: HTMLVideoElement,
     onSuccess: QRScannerRestProps['onSuccess'],
-    onError: QRScannerRestProps['onError'],
+    onError?: QRScannerRestProps['onError'],
   ) {
     this.videoContext.attachVideoElement(videoElement);
 
     try {
       await this.videoContext.getVideoStream();
     } catch (e) {
-      onError(new NavigatorSupportException());
+      onError?.(new NavigatorSupportException());
     }
 
     this.scanningLoopId = setInterval(() => {
@@ -37,9 +37,11 @@ export class Scanner {
       try {
         onSuccess(this.decode(image, imageData.width, imageData.height));
       } catch (e) {
-        onError(e as NotFoundException);
+        onError?.(e as NotFoundException);
       }
     }, this.scanningInterval);
+
+    return this.videoContext.cameraCapabilities;
   }
 
   private decode(image: Uint8ClampedArray, width: number, height: number) {

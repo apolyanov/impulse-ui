@@ -11,7 +11,7 @@ interface QRScannerProps extends QRScannerRestProps {
 interface QRScannerRestProps {
   scanningInterval: number;
   onSuccess: (result: QRCode) => void;
-  onError: (error: Error) => void;
+  onError?: (error: Error) => void;
 }
 
 interface QRScannerStyle {

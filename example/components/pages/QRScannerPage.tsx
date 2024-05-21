@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container } from '@impulse-ui/layout';
-import { NotFoundException, QRScanner } from '@impulse-ui/qr';
+import { QRScanner } from '@impulse-ui/qr';
 import { Typography } from '@impulse-ui/text';
 import { QRCode } from 'jsqr-es6';
 
@@ -13,9 +13,6 @@ const TablePage = () => {
         scanningInterval={50}
         onSuccess={(result) => {
           setResult(result);
-        }}
-        onError={(error) => {
-          console.error(error instanceof NotFoundException);
         }}
       />
       <Typography as='pre'>{JSON.stringify(result?.location, null, 2)}</Typography>

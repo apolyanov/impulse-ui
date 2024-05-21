@@ -1,9 +1,10 @@
 import { NoCurrentStreamException, NoVideoElement } from '../exceptions';
 
-export class VideoContext {
+import { CameraControls } from './CameraControls';
+
+export class VideoContext extends CameraControls {
   private _videoElement?: HTMLVideoElement;
   private _videoStream?: MediaStream;
-  private _videoTracks: MediaStreamTrack[] = [];
 
   async getVideoStream() {
     const stream = await navigator.mediaDevices.getUserMedia({
@@ -12,7 +13,7 @@ export class VideoContext {
 
     await this.prepareVideoElement(stream);
     this.videoStream = stream;
-    this.videoTracks = stream.getVideoTracks();
+    this.videoTrack = stream.getVideoTracks()[0];
   }
 
   attachVideoElement(videoElement: HTMLVideoElement) {
@@ -37,11 +38,7 @@ export class VideoContext {
   }
 
   private releaseVideoTracks() {
-    this.videoTracks.forEach((track) => {
-      track.stop();
-      this.videoStream.removeTrack(track);
-    });
-
+    this.videoStream.removeTrack(this.videoTrack);
     this.videoStream = undefined;
   }
 
@@ -51,25 +48,17 @@ export class VideoContext {
     throw new NoVideoElement();
   }
 
-  set videoElement(value: HTMLVideoElement | undefined) {
+  private set videoElement(value: HTMLVideoElement | undefined) {
     this._videoElement = value;
   }
 
-  get videoTracks(): MediaStreamTrack[] {
-    return this._videoTracks;
-  }
-
-  set videoTracks(value: MediaStreamTrack[]) {
-    this._videoTracks = value;
-  }
-
-  get videoStream(): MediaStream {
+  private get videoStream(): MediaStream {
     if (this._videoStream) return this._videoStream;
 
     throw new NoCurrentStreamException();
   }
 
-  set videoStream(value: MediaStream | undefined) {
+  private set videoStream(value: MediaStream | undefined) {
     this._videoStream = value;
   }
 }
