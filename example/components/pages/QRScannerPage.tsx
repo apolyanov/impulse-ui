@@ -1,28 +1,24 @@
 import React, { useState } from 'react';
 import { Container } from '@impulse-ui/layout';
-import { QRScanner } from '@impulse-ui/qr';
+import { NotFoundException, QRScanner } from '@impulse-ui/qr';
 import { Typography } from '@impulse-ui/text';
-import { IScannerControls } from '@zxing/browser';
-import { Exception, Result } from '@zxing/library';
+import { QRCode } from 'jsqr-es6';
 
 const TablePage = () => {
-  const [result, setResult] = useState<Result>();
-  const [error, setError] = useState<Exception>();
-  const [controls, setControls] = useState<IScannerControls>();
+  const [result, setResult] = useState<QRCode>();
 
   return (
     <Container iStyle={{ iCss: { display: 'flex', alignItems: 'center', flexDirection: 'column', padding: 4 } }}>
       <QRScanner
-        onDecode={(result, controls) => {
+        scanningInterval={50}
+        onSuccess={(result) => {
           setResult(result);
-          setControls(controls);
         }}
-        onError={(error, controls) => {
-          setError(error);
-          setControls(controls);
+        onError={(error) => {
+          console.error(error instanceof NotFoundException);
         }}
       />
-      <Typography>{result?.getTimestamp()}</Typography>
+      <Typography as='pre'>{JSON.stringify(result?.location, null, 2)}</Typography>
     </Container>
   );
 };

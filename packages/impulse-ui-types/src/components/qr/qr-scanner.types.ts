@@ -1,7 +1,5 @@
 import { RefObject } from 'react';
-import { IBrowserCodeReaderOptions } from '@zxing/browser';
-import { IScannerControls } from '@zxing/browser/esm/common/IScannerControls';
-import { Exception, Result } from '@zxing/library';
+import { QRCode } from 'jsqr-es6';
 
 import { IconButtonStyle } from '../buttons';
 import { IOStyle } from '../theme';
@@ -11,9 +9,9 @@ interface QRScannerProps extends QRScannerRestProps {
 }
 
 interface QRScannerRestProps {
-  onDecode?: (result: Result, controls: IScannerControls) => void;
-  onError?: (error: Exception, controls: IScannerControls) => void;
-  readerOptions?: IBrowserCodeReaderOptions;
+  scanningInterval: number;
+  onSuccess: (result: QRCode) => void;
+  onError: (error: Error) => void;
 }
 
 interface QRScannerStyle {
