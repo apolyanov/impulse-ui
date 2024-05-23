@@ -7,7 +7,7 @@ import { baseTBody } from '../../styles';
 
 const BaseTBody = styled.tbody<BaseIComponent>(({ theme: { mode, themes }, $iStyle }) => {
   const { iColorTheme, iCss } = mergeThemes({
-    defaultTheme: themes?.tbody?.iStyle ?? baseTBody.iStyle,
+    defaultTheme: themes?.tbody?.iStyle ?? baseTBody,
     overridingTheme: $iStyle,
   });
   const themeMode = getThemeMode(mode);

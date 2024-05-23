@@ -1,5 +1,5 @@
 import { neutral, volcano } from '@impulse-ui/colours';
-import { ComponentTheme, TextInputCompositeProps, TextInputStyle } from '@impulse-ui/types';
+import { IStyle, TextInputCompositeProps, TextInputStyle } from '@impulse-ui/types';
 
 const textInputStyle: Partial<TextInputStyle> = {
   mainContainerStyle: {
@@ -95,47 +95,45 @@ const textInputStyle: Partial<TextInputStyle> = {
   },
 };
 
-const input: ComponentTheme<TextInputCompositeProps> = {
-  iStyle: {
-    iColorTheme: {
-      light: {
-        backgroundColor: 'transparent',
-        borderColor: 'transparent',
-        color: neutral[200],
-      },
-      dark: {
-        backgroundColor: 'transparent',
-        borderColor: 'transparent',
-        color: neutral[200],
-      },
+const input: IStyle<TextInputCompositeProps> = {
+  iColorTheme: {
+    light: {
+      backgroundColor: 'transparent',
+      borderColor: 'transparent',
+      color: neutral[200],
     },
-    iCss: ({ getThemeColor }) => ({
-      backgroundColor: getThemeColor('backgroundColor'),
-      color: getThemeColor('color'),
-      fontSize: 14,
-      height: 32,
-      padding: '4px 0',
-      borderRadius: 8,
-      flex: 1,
-      width: '100%',
-      '&::-webkit-input-placeholder': {
-        textIndent: 4,
-      },
-      '&:-moz-placeholder': {
-        textIndent: 4,
-      },
-      '&::-moz-placeholder': {
-        textIndent: 4,
-      },
-      '&:-ms-input-placeholder': {
-        textIndent: 4,
-      },
-      '&:-webkit-autofill': {
-        boxShadow: '0 0 0 100px white inset',
-        '-webkit-text-fill-color': getThemeColor('color'),
-      },
-    }),
+    dark: {
+      backgroundColor: 'transparent',
+      borderColor: 'transparent',
+      color: neutral[200],
+    },
   },
+  iCss: ({ getThemeColor }) => ({
+    backgroundColor: getThemeColor('backgroundColor'),
+    color: getThemeColor('color'),
+    fontSize: 14,
+    height: 32,
+    padding: '4px 0',
+    borderRadius: 8,
+    flex: 1,
+    width: '100%',
+    '&::-webkit-input-placeholder': {
+      textIndent: 4,
+    },
+    '&:-moz-placeholder': {
+      textIndent: 4,
+    },
+    '&::-moz-placeholder': {
+      textIndent: 4,
+    },
+    '&:-ms-input-placeholder': {
+      textIndent: 4,
+    },
+    '&:-webkit-autofill': {
+      boxShadow: '0 0 0 100px white inset',
+      '-webkit-text-fill-color': getThemeColor('color'),
+    },
+  }),
 };
 
 export { input, textInputStyle };

@@ -3,7 +3,7 @@ import { SimplePseudos } from 'csstype';
 
 import { BackgroundColor, BorderColor, Color, OutlineColor } from '../css';
 
-import { IStyle } from './components.types';
+import { IOStyle } from './components.types';
 
 type ThemeMode = 'light' | 'dark';
 
@@ -29,27 +29,23 @@ type ComponentColors = Partial<
   } & { [T in DataAttribute]: Partial<ColorsKeysValues> }
 >;
 
-interface ComponentTheme<T extends object> {
-  iStyle: IStyle<T>;
-}
-
 interface ComponentsThemes {
-  button: ComponentTheme<JSX.IntrinsicElements['button']>;
-  container: ComponentTheme<JSX.IntrinsicElements['div']>;
-  spinnerLoader: ComponentTheme<JSX.IntrinsicElements['div']>;
-  input: ComponentTheme<JSX.IntrinsicElements['input']>;
-  textButton: ComponentTheme<JSX.IntrinsicElements['button']>;
-  typography: ComponentTheme<JSX.IntrinsicElements['p']>;
-  link: ComponentTheme<JSX.IntrinsicElements['a']>;
-  icon: ComponentTheme<JSX.IntrinsicElements['svg']>;
-  divider: ComponentTheme<JSX.IntrinsicElements['div']>;
-  table: ComponentTheme<JSX.IntrinsicElements['table']>;
-  thead: ComponentTheme<JSX.IntrinsicElements['thead']>;
-  tfoot: ComponentTheme<JSX.IntrinsicElements['tfoot']>;
-  tbody: ComponentTheme<JSX.IntrinsicElements['tbody']>;
-  trow: ComponentTheme<JSX.IntrinsicElements['tr']>;
-  theader: ComponentTheme<JSX.IntrinsicElements['th']>;
-  tdata: ComponentTheme<JSX.IntrinsicElements['td']>;
+  button: IOStyle<JSX.IntrinsicElements['button']>;
+  container: IOStyle<JSX.IntrinsicElements['div']>;
+  spinnerLoader: IOStyle<JSX.IntrinsicElements['div']>;
+  input: IOStyle<JSX.IntrinsicElements['input']>;
+  textButton: IOStyle<JSX.IntrinsicElements['button']>;
+  typography: IOStyle<JSX.IntrinsicElements['p']>;
+  link: IOStyle<JSX.IntrinsicElements['a']>;
+  icon: IOStyle<JSX.IntrinsicElements['svg']>;
+  divider: IOStyle<JSX.IntrinsicElements['div']>;
+  table: IOStyle<JSX.IntrinsicElements['table']>;
+  thead: IOStyle<JSX.IntrinsicElements['thead']>;
+  tfoot: IOStyle<JSX.IntrinsicElements['tfoot']>;
+  tbody: IOStyle<JSX.IntrinsicElements['tbody']>;
+  trow: IOStyle<JSX.IntrinsicElements['tr']>;
+  theader: IOStyle<JSX.IntrinsicElements['th']>;
+  tdata: IOStyle<JSX.IntrinsicElements['td']>;
 }
 
 type CustomITheme = Partial<ComponentsThemes>;
@@ -78,7 +74,6 @@ export type {
   ColorsKeysValues,
   ComponentColors,
   ComponentsThemes,
-  ComponentTheme,
   CustomITheme,
   DataAttribute,
   IThemeContext,
