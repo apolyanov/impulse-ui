@@ -7,7 +7,7 @@ import { divider } from '../../styles';
 
 const BaseDivider = styled.div<BaseIComponent>(({ theme: { themes, mode }, $iStyle }) => {
   const { iColorTheme, iCss } = mergeThemes({
-    defaultTheme: themes?.divider?.iStyle ?? divider.iStyle,
+    defaultTheme: themes?.divider?.iStyle ?? divider,
     overridingTheme: $iStyle,
   });
   const themeMode = getThemeMode(mode);

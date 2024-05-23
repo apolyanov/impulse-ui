@@ -1,24 +1,22 @@
 import { neutral, volcano } from '@impulse-ui/colours';
-import { ComponentTheme, ImpulseTableState, TBodyStyle } from '@impulse-ui/types';
+import { ImpulseTableState, IStyle, TBodyStyle } from '@impulse-ui/types';
 
-const baseTBody: ComponentTheme<ImpulseTableState<any>> = {
-  iStyle: {
-    iColorTheme: {
-      light: {
-        backgroundColor: 'transparent',
-        borderColor: 'transparent',
-        color: neutral[200],
-      },
-      dark: {
-        backgroundColor: 'transparent',
-        borderColor: 'transparent',
-        color: neutral[200],
-      },
+const baseTBody: IStyle<ImpulseTableState<any>> = {
+  iColorTheme: {
+    light: {
+      backgroundColor: 'transparent',
+      borderColor: 'transparent',
+      color: neutral[200],
     },
-    iCss: ({ getThemeColor }) => ({
-      backgroundColor: getThemeColor('backgroundColor'),
-    }),
+    dark: {
+      backgroundColor: 'transparent',
+      borderColor: 'transparent',
+      color: neutral[200],
+    },
   },
+  iCss: ({ getThemeColor }) => ({
+    backgroundColor: getThemeColor('backgroundColor'),
+  }),
 };
 
 const tbody: Partial<TBodyStyle<ImpulseTableState<any>>> = {

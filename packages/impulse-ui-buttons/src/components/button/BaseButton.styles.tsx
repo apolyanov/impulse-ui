@@ -7,7 +7,7 @@ import { baseButton } from '../../styles';
 
 const BaseButton = styled.button<BaseIComponent>(({ theme: { mode, themes }, $iStyle, ...props }) => {
   const { iColorTheme, iCss } = mergeThemes({
-    defaultTheme: themes?.button?.iStyle ?? baseButton.iStyle,
+    defaultTheme: themes?.button?.iStyle ?? baseButton,
     overridingTheme: $iStyle,
     props,
   });

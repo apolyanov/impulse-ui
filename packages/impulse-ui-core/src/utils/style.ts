@@ -1,6 +1,7 @@
 import {
   AnimationHelper,
   ComponentColors,
+  CreateBaseComponentStyle,
   IOCss,
   IOStyle,
   IStyle,
@@ -16,6 +17,16 @@ import merge from 'lodash/merge';
 import { css } from 'styled-components';
 
 import { LIGHT } from './constants';
+
+const createBaseComponentStyle: CreateBaseComponentStyle = ({ baseTheme, overridingTheme, globalTheme, mode }) => {
+  const { iColorTheme, iCss } = mergeThemes({
+    defaultTheme: mergeThemes({ defaultTheme: baseTheme, overridingTheme: globalTheme }),
+    overridingTheme: overridingTheme,
+  });
+  const themeMode = getThemeMode(mode);
+
+  return css(iCss({ iColorTheme: iColorTheme[themeMode], getThemeColor: getThemeColor(iColorTheme[themeMode]) }));
+};
 
 const shouldRenderCssProp = <T>(shouldRender: boolean | undefined, cssProp: T): T | undefined => {
   if (shouldRender) return cssProp;
@@ -130,6 +141,7 @@ const getThemeMode = (mode: ThemeMode) => mode || LIGHT;
 
 export {
   animationHelper,
+  createBaseComponentStyle,
   getThemeColor,
   getThemeMode,
   margin,

@@ -7,7 +7,7 @@ import { link } from '../../styles';
 
 const BaseLink = styled.a<BaseIComponent>(({ theme: { mode, themes }, $iStyle }) => {
   const { iColorTheme, iCss } = mergeThemes({
-    defaultTheme: themes?.link?.iStyle ?? link.iStyle,
+    defaultTheme: themes?.link?.iStyle ?? link,
     overridingTheme: $iStyle,
   });
   const themeMode = getThemeMode(mode);

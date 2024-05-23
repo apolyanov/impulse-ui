@@ -8,7 +8,7 @@ import { icon } from '../styles';
 
 const BaseIcon = styled(FontAwesomeIcon)<BaseIComponent>(({ theme: { mode, themes }, $iStyle }) => {
   const { iColorTheme, iCss } = mergeThemes({
-    defaultTheme: themes?.icon?.iStyle ?? icon.iStyle,
+    defaultTheme: themes?.icon?.iStyle ?? icon,
     overridingTheme: $iStyle,
   });
   const themeMode = getThemeMode(mode);
