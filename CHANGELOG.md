@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.9.0](https://github.com/apolyanov/impulse-ui/compare/v2.8.0...v2.9.0) (2024-05-23)
+
+
+### Features
+
+* Refactoring buttons package to use the generic createBaseComponentStyle function ([a636ccc](https://github.com/apolyanov/impulse-ui/commit/a636ccc7ec83c2e26eddb1a066c70b0161eada7a))
+* Refactoring icon package to use the generic createBaseComponentStyle function ([e818b87](https://github.com/apolyanov/impulse-ui/commit/e818b8768e6bd3664c7e2747633cfe8ba9c51939))
+* Refactoring input and layout packages to use the generic createBaseComponentStyle function ([105879a](https://github.com/apolyanov/impulse-ui/commit/105879a15f777ce4202cd6a35e5dab7a7645befa))
+* Refactoring loader package to use the generic createBaseComponentStyle function ([7275b2c](https://github.com/apolyanov/impulse-ui/commit/7275b2cfd02efc4bdb19ee6dfe6f464d6f36a0a2))
+* Refactoring table package to use the generic createBaseComponentStyle function ([e74e137](https://github.com/apolyanov/impulse-ui/commit/e74e1373b06ff142d8d4ca4679d122f6f091e398))
+* Removing unused ComponentTheme type and fixing build issues related to it ([6306266](https://github.com/apolyanov/impulse-ui/commit/63062667403b30e18a6abd776a5211a625c91409))
+
+
+
+
+
 # [2.8.0](https://github.com/apolyanov/impulse-ui/compare/v2.7.3...v2.8.0) (2024-05-21)
 
 
