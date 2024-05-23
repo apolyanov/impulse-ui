@@ -7,7 +7,7 @@ import { input } from '../../styles';
 
 const BaseTextInput = styled.input<BaseIComponent>(({ theme: { mode, themes }, $iStyle }) => {
   const { iColorTheme, iCss } = mergeThemes({
-    defaultTheme: themes?.input?.iStyle ?? input.iStyle,
+    defaultTheme: themes?.input?.iStyle ?? input,
     overridingTheme: $iStyle,
   });
   const themeMode = getThemeMode(mode);

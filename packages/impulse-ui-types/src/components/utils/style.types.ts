@@ -1,7 +1,18 @@
 import { Property } from 'csstype';
 import { Interpolation, StyledObject, StyleFunction } from 'styled-components';
 
-import { IOStyle, IStyle } from '../theme';
+import { IOStyle, IStyle, ThemeMode } from '../theme';
+
+type CreateBaseComponentStyleArgs = {
+  globalTheme?: IOStyle;
+  baseTheme: IStyle;
+  overridingTheme?: IOStyle;
+  mode: ThemeMode;
+};
+
+interface CreateBaseComponentStyle {
+  (args: CreateBaseComponentStyleArgs): Interpolation<object>[];
+}
 
 type MergeThemesFnArgs<T = any> = {
   defaultTheme: IStyle<T>;
@@ -25,4 +36,4 @@ interface AnimationHelper {
   ): Property.Animation<string & {}> | undefined;
 }
 
-export type { AnimationHelper, Margin, MergePartialThemesFnArgs, MergeThemesFnArgs, Padding };
+export type { AnimationHelper, CreateBaseComponentStyle, Margin, MergePartialThemesFnArgs, MergeThemesFnArgs, Padding };

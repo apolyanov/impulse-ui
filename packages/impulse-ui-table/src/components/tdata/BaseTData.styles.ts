@@ -7,7 +7,7 @@ import { tdata } from '../../styles';
 
 const BaseTData = styled.td<BaseIComponent>(({ theme: { mode, themes }, $iStyle }) => {
   const { iColorTheme, iCss } = mergeThemes({
-    defaultTheme: themes?.tdata?.iStyle ?? tdata.iStyle,
+    defaultTheme: themes?.tdata?.iStyle ?? tdata,
     overridingTheme: $iStyle,
   });
   const themeMode = getThemeMode(mode);

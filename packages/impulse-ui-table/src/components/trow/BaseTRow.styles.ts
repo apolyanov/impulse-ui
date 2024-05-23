@@ -7,7 +7,7 @@ import { trow } from '../../styles';
 
 const BaseTRow = styled.tr<BaseIComponent>(({ theme: { mode, themes }, $iStyle }) => {
   const { iColorTheme, iCss } = mergeThemes({
-    defaultTheme: themes?.trow?.iStyle ?? trow.iStyle,
+    defaultTheme: themes?.trow?.iStyle ?? trow,
     overridingTheme: $iStyle,
   });
   const themeMode = getThemeMode(mode);

@@ -7,7 +7,7 @@ import { table } from '../../styles';
 
 const BaseTable = styled.table<BaseIComponent>(({ theme: { mode, themes }, $iStyle }) => {
   const { iColorTheme, iCss } = mergeThemes({
-    defaultTheme: themes?.table?.iStyle ?? table.iStyle,
+    defaultTheme: themes?.table?.iStyle ?? table,
     overridingTheme: $iStyle,
   });
   const themeMode = getThemeMode(mode);

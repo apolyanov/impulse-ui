@@ -7,7 +7,7 @@ import { typography } from '../../styles';
 
 const BaseTypography = styled.p<BaseIComponent>(({ theme: { mode, themes }, $iStyle, $parentProps }) => {
   const { iColorTheme, iCss } = mergeThemes({
-    defaultTheme: themes?.typography?.iStyle ?? typography.iStyle,
+    defaultTheme: themes?.typography?.iStyle ?? typography,
     overridingTheme: $iStyle,
   });
   const themeMode = getThemeMode(mode);

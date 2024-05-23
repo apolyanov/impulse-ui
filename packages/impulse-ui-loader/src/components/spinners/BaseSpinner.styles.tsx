@@ -6,7 +6,7 @@ import { spinnerLoader } from '../../styles';
 
 const BaseSpinner = styled(BaseContainer)(({ theme: { mode, themes }, $iStyle }) => {
   const { iColorTheme, iCss } = mergeThemes({
-    defaultTheme: themes?.spinnerLoader?.iStyle ?? spinnerLoader.iStyle,
+    defaultTheme: themes?.spinnerLoader?.iStyle ?? spinnerLoader,
     overridingTheme: $iStyle,
   });
   const themeMode = getThemeMode(mode);

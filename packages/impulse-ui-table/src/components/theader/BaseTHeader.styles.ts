@@ -7,7 +7,7 @@ import { theader } from '../../styles';
 
 const BaseTHeader = styled.th<BaseIComponent>(({ theme: { mode, themes }, $iStyle }) => {
   const { iColorTheme, iCss } = mergeThemes({
-    defaultTheme: themes?.theader?.iStyle ?? theader.iStyle,
+    defaultTheme: themes?.theader?.iStyle ?? theader,
     overridingTheme: $iStyle,
   });
   const themeMode = getThemeMode(mode);
