@@ -21,8 +21,10 @@ export class VideoContext extends CameraControls {
   }
 
   cleanVideoContext() {
-    this.detachVideoElement();
     this.releaseVideoTracks();
+    this.detachVideoElement();
+    console.log(this._videoElement);
+    console.log(this._videoStream);
   }
 
   private async prepareVideoElement(stream: MediaStream | MediaSource | Blob) {
@@ -38,8 +40,10 @@ export class VideoContext extends CameraControls {
   }
 
   private releaseVideoTracks() {
-    this.videoStream.removeTrack(this.videoTrack);
+    console.log('changed');
+    this.videoStream.getTracks().forEach((track) => track.stop());
     this.videoStream = undefined;
+    this.videoTrack = undefined;
   }
 
   get videoElement(): HTMLVideoElement {
