@@ -7,6 +7,8 @@ export * from '@impulse-ui/core';
 export * from '@impulse-ui/icon';
 export * from '@impulse-ui/input';
 export * from '@impulse-ui/layout';
+export * from '@impulse-ui/qr';
+export * from '@impulse-ui/qr-core';
 export * from '@impulse-ui/sidebar';
 export * from '@impulse-ui/table';
 export * from '@impulse-ui/text';
