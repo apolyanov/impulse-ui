@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.10.0](https://github.com/apolyanov/impulse-ui/compare/v2.9.0...v2.10.0) (2024-05-24)
+
+
+### Features
+
+* Adding spacing props logic in the input package ([5dbd5b2](https://github.com/apolyanov/impulse-ui/commit/5dbd5b27ce264a156c5b0a5741d86e9e8a045914))
+* Adding spacing props logic in the table package ([5018485](https://github.com/apolyanov/impulse-ui/commit/501848568673cbda8420f0200bb26d1f67e2804b))
+
+
+
+
+
 # [2.9.0](https://github.com/apolyanov/impulse-ui/compare/v2.8.0...v2.9.0) (2024-05-23)
 
 
