@@ -16,16 +16,51 @@ import { SimplePseudos } from 'csstype';
 import merge from 'lodash/merge';
 import { css } from 'styled-components';
 
-import { LIGHT } from './constants';
+import { cssPropsMap, LIGHT } from './constants';
 
-const createBaseComponentStyle: CreateBaseComponentStyle = ({ baseTheme, overridingTheme, globalTheme, mode }) => {
+const extractCssProps = (props: any) => {
+  const cssProps: any = {};
+
+  if (props) {
+    Object.entries(props).forEach(([key, value]) => {
+      const newCssPropData = cssPropsMap[key as keyof typeof cssPropsMap]?.(value, key);
+
+      if (newCssPropData) {
+        delete props[key];
+
+        if (Array.isArray(newCssPropData)) {
+          newCssPropData.forEach(([key, value]: [string, string | number]) => (cssProps[key] = value));
+        } else {
+          cssProps[key] = value;
+        }
+      }
+    });
+  }
+
+  return cssProps;
+};
+
+const createBaseComponentStyle: CreateBaseComponentStyle = ({
+  baseTheme,
+  overridingTheme,
+  globalTheme,
+  mode,
+  rest,
+}) => {
+  const cssProps = rest?.$cssProps;
   const { iColorTheme, iCss } = mergeThemes({
     defaultTheme: mergeThemes({ defaultTheme: baseTheme, overridingTheme: globalTheme }),
     overridingTheme: overridingTheme,
   });
   const themeMode = getThemeMode(mode);
 
-  return css(iCss({ iColorTheme: iColorTheme[themeMode], getThemeColor: getThemeColor(iColorTheme[themeMode]) }));
+  return css({
+    ...iCss({
+      iColorTheme: iColorTheme[themeMode],
+      getThemeColor: getThemeColor(iColorTheme[themeMode]),
+    }),
+    ...cssProps,
+  });
 };
 
 const shouldRenderCssProp = <T>(shouldRender: boolean | undefined, cssProp: T): T | undefined => {
@@ -142,6 +177,7 @@ const getThemeMode = (mode: ThemeMode) => mode || LIGHT;
 export {
   animationHelper,
   createBaseComponentStyle,
+  extractCssProps,
   getThemeColor,
   getThemeMode,
   margin,

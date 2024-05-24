@@ -5,12 +5,13 @@ import styled from 'styled-components';
 
 import { container } from '../../styles';
 
-const BaseContainer = styled.div<BaseIComponent>(({ theme: { mode, themes }, $iStyle }) =>
+const BaseContainer = styled.div<BaseIComponent>(({ theme: { mode, themes }, $iStyle, ...rest }) =>
   createBaseComponentStyle({
     baseTheme: container,
     globalTheme: themes?.container?.iStyle,
     overridingTheme: $iStyle,
     mode,
+    rest,
   }),
 );
 

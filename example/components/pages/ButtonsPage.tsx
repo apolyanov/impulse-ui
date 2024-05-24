@@ -9,7 +9,7 @@ const ButtonsPage = () => {
   const [check, setCheck] = useState<boolean>(false);
 
   return (
-    <Container>
+    <Container margin={4} mx={4}>
       <Typography>Button</Typography>
       <Button onClick={() => console.log('clicked')}>Buttons</Button>
       <Button loading onClick={() => console.log('clicked')}>

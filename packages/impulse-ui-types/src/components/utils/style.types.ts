@@ -8,6 +8,7 @@ type CreateBaseComponentStyleArgs = {
   baseTheme: IStyle;
   overridingTheme?: IOStyle;
   mode: ThemeMode;
+  rest?: any;
 };
 
 interface CreateBaseComponentStyle {
