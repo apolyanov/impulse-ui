@@ -8,7 +8,7 @@ import { container } from '../../styles';
 const BaseContainer = styled.div<BaseIComponent>(({ theme: { mode, themes }, $iStyle, ...rest }) =>
   createBaseComponentStyle({
     baseTheme: container,
-    globalTheme: themes?.container?.iStyle,
+    globalTheme: themes?.container,
     overridingTheme: $iStyle,
     mode,
     rest,

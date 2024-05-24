@@ -8,7 +8,7 @@ import { baseTextButton } from '../../styles';
 const BaseTextButton = styled.button<BaseIComponent>(({ theme: { mode, themes }, $iStyle, ...rest }) =>
   createBaseComponentStyle({
     baseTheme: baseTextButton,
-    globalTheme: themes?.textButton?.iStyle,
+    globalTheme: themes?.textButton,
     overridingTheme: $iStyle,
     mode,
     rest,

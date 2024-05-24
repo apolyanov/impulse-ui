@@ -9,7 +9,7 @@ import { icon } from '../styles';
 const BaseIcon = styled(FontAwesomeIcon)<BaseIComponent>(({ theme: { mode, themes }, $iStyle, ...rest }) =>
   createBaseComponentStyle({
     baseTheme: icon,
-    globalTheme: themes?.icon?.iStyle,
+    globalTheme: themes?.icon,
     overridingTheme: $iStyle,
     mode,
     rest,

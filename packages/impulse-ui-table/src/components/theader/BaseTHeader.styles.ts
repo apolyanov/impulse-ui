@@ -5,12 +5,13 @@ import styled from 'styled-components';
 
 import { theader } from '../../styles';
 
-const BaseTHeader = styled.th<BaseIComponent>(({ theme: { mode, themes }, $iStyle }) =>
+const BaseTHeader = styled.th<BaseIComponent>(({ theme: { mode, themes }, $iStyle, ...rest }) =>
   createBaseComponentStyle({
     baseTheme: theader,
-    globalTheme: themes?.theader?.iStyle,
+    globalTheme: themes?.theader,
     overridingTheme: $iStyle,
     mode,
+    rest,
   }),
 );
 

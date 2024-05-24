@@ -8,7 +8,7 @@ import { link } from '../../styles';
 const BaseLink = styled.a<BaseIComponent>(({ theme: { mode, themes }, $iStyle, ...rest }) =>
   createBaseComponentStyle({
     baseTheme: link,
-    globalTheme: themes?.link?.iStyle,
+    globalTheme: themes?.link,
     overridingTheme: $iStyle,
     mode,
     rest,
