@@ -6,12 +6,13 @@ import styled from 'styled-components';
 
 import { icon } from '../styles';
 
-const BaseIcon = styled(FontAwesomeIcon)<BaseIComponent>(({ theme: { mode, themes }, $iStyle }) =>
+const BaseIcon = styled(FontAwesomeIcon)<BaseIComponent>(({ theme: { mode, themes }, $iStyle, ...rest }) =>
   createBaseComponentStyle({
     baseTheme: icon,
     globalTheme: themes?.icon?.iStyle,
     overridingTheme: $iStyle,
     mode,
+    rest,
   }),
 );
 
