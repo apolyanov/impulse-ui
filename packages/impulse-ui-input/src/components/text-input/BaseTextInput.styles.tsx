@@ -5,12 +5,13 @@ import styled from 'styled-components';
 
 import { input } from '../../styles';
 
-const BaseTextInput = styled.input<BaseIComponent>(({ theme: { mode, themes }, $iStyle }) =>
+const BaseTextInput = styled.input<BaseIComponent>(({ theme: { mode, themes }, $iStyle, ...rest }) =>
   createBaseComponentStyle({
     baseTheme: input,
     globalTheme: themes?.input?.iStyle,
     overridingTheme: $iStyle,
     mode,
+    rest,
   }),
 );
 export default BaseTextInput;
