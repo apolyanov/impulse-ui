@@ -3,13 +3,13 @@ import { faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 import { Button, IconButton, Link, TextButton } from '@impulse-ui/buttons';
 import { Checkbox } from '@impulse-ui/input';
 import { Container } from '@impulse-ui/layout';
-import { Typography } from '@mui/material';
+import { Typography } from '@impulse-ui/text';
 
 const ButtonsPage = () => {
   const [check, setCheck] = useState<boolean>(false);
 
   return (
-    <Container margin={4} mx={4}>
+    <Container>
       <Typography>Button</Typography>
       <Button onClick={() => console.log('clicked')}>Buttons</Button>
       <Button loading onClick={() => console.log('clicked')}>

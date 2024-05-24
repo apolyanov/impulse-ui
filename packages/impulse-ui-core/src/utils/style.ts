@@ -30,8 +30,10 @@ const extractCssProps = (props: any) => {
 
         if (Array.isArray(newCssPropData)) {
           newCssPropData.forEach(([key, value]: [string, string | number]) => (cssProps[key] = value));
+        } else if (typeof newCssPropData === 'object') {
+          cssProps[newCssPropData.key] = newCssPropData.value;
         } else {
-          cssProps[key] = value;
+          cssProps[key] = newCssPropData;
         }
       }
     });
