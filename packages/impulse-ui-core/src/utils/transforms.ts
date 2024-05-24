@@ -17,7 +17,7 @@ const spacingTransform = (value: string | number, alias: SpacingAliases) => {
     return spacingProps.map((propName) => [propName, value]);
   }
 
-  return value;
+  return { key: spacingProps, value };
 };
 
 const noTransform = (value: string | number) => value;
