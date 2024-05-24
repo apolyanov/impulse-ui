@@ -8,7 +8,7 @@ import { input } from '../../styles';
 const BaseTextInput = styled.input<BaseIComponent>(({ theme: { mode, themes }, $iStyle, ...rest }) =>
   createBaseComponentStyle({
     baseTheme: input,
-    globalTheme: themes?.input?.iStyle,
+    globalTheme: themes?.input,
     overridingTheme: $iStyle,
     mode,
     rest,

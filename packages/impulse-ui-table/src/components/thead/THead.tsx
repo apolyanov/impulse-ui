@@ -1,6 +1,6 @@
 'use client';
 import React, { FunctionComponent } from 'react';
-import { useComponentStyle } from '@impulse-ui/core';
+import { extractCssProps, useComponentStyle } from '@impulse-ui/core';
 import { Typography } from '@impulse-ui/text';
 import { THeadComponentProps } from '@impulse-ui/types';
 import { flexRender } from '@tanstack/react-table';
@@ -37,7 +37,7 @@ const THead: FunctionComponent<THeadComponentProps> = ({ iStyle, ...rest }) => {
   };
 
   return (
-    <BaseTHead $iStyle={theadStyle} {...rest}>
+    <BaseTHead $iStyle={theadStyle} $cssProps={extractCssProps(rest)} {...rest}>
       {getHeaderGroups().map((headerGroup) => (
         <TRow iStyle={trowStyle} key={headerGroup.id}>
           {headerGroup.headers.map((header, index, array) => (
