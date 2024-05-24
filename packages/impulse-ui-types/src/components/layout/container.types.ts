@@ -1,8 +1,8 @@
 import { JSX, PropsWithoutRef } from 'react';
 
-import { IComponent } from '../theme';
+import { IComponent, SpacingAliasCssProps, SpacingCssProps } from '../theme';
 
 type ContainerHTMLProps = PropsWithoutRef<JSX.IntrinsicElements['div']>;
-type ContainerProps = IComponent;
+type ContainerProps = IComponent & Partial<SpacingCssProps> & Partial<SpacingAliasCssProps>;
 
 export type { ContainerHTMLProps, ContainerProps };

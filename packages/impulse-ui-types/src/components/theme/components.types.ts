@@ -5,6 +5,7 @@ import { ColorsKeysValues, ComponentColors, DataAttribute } from './theme.types'
 
 type BaseIComponent<T = any> = {
   $iStyle?: IOStyle<T>;
+  $cssProps?: StyledObject;
 } & T;
 
 interface IComponent<T = any> {

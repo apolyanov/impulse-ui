@@ -3,6 +3,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { AutoComplete } from '@impulse-ui/auto-complete';
 import { Button } from '@impulse-ui/buttons';
 import { Container } from '@impulse-ui/layout';
+import { Box } from '@mui/material';
 
 import { humans } from '../mocks/autoCompleteMock';
 
@@ -12,6 +13,7 @@ const AutoCompletePage = () => {
 
   return (
     <Container iStyle={{ iCss: { flexDirection: 'row', height: '700px', width: '100%', gap: '16px' } }}>
+      <Box />
       <AutoComplete
         iStyle={{
           mainContainerStyle: {

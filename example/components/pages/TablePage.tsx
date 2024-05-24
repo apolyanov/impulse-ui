@@ -33,8 +33,7 @@ const generateFakeData = (count: number) => {
   return fakeData as Person[];
 };
 
-const numberOfInstances = 10_000;
-const data = generateFakeData(numberOfInstances);
+const numberOfInstances = 1000;
 
 const columnHelper = createColumnHelper<Person>();
 
@@ -80,7 +79,6 @@ const TablePage = () => {
   return (
     <Container>
       <ImpulseTable
-        loading
         initialState={{ pagination: { pageIndex: 0, pageSize: 20 } }}
         data={hasData ? data : []}
         columns={columns}
