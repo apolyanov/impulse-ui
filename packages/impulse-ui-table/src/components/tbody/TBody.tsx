@@ -1,7 +1,7 @@
 'use client';
 import React, { FunctionComponent, useMemo } from 'react';
 import { faDatabase } from '@fortawesome/free-solid-svg-icons';
-import { useComponentStyle } from '@impulse-ui/core';
+import { extractCssProps, useComponentStyle } from '@impulse-ui/core';
 import { Icon } from '@impulse-ui/icon';
 import { Spinner } from '@impulse-ui/loader';
 import { Typography } from '@impulse-ui/text';
@@ -33,7 +33,7 @@ const TBody: FunctionComponent<TBodyComponentProps> = ({ iStyle, ...rest }) => {
   return useMemo(() => {
     if (tableState.showNoData()) {
       return (
-        <BaseTBody $iStyle={noContentTbodyStyle} {...rest}>
+        <BaseTBody $iStyle={noContentTbodyStyle} $cssProps={extractCssProps(rest)} {...rest}>
           {tableState.loading && <Spinner as='tr' iStyle={loaderSpinnerStyle} />}
           {!tableState.loading && (
             <TRow iStyle={noContentTrowStyle}>
@@ -48,7 +48,7 @@ const TBody: FunctionComponent<TBodyComponentProps> = ({ iStyle, ...rest }) => {
     }
 
     return (
-      <BaseTBody $iStyle={tbodyStyle} {...rest}>
+      <BaseTBody $iStyle={tbodyStyle} $cssProps={extractCssProps(rest)} {...rest}>
         {tableState.loading && <Spinner as='tr' iStyle={loaderSpinnerStyle} />}
         {tableState.getRowModel().rows.map((row) => (
           <TRow

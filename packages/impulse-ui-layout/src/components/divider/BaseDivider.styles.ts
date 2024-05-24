@@ -8,7 +8,7 @@ import { divider } from '../../styles';
 const BaseDivider = styled.div<BaseIComponent>(({ theme: { themes, mode }, $iStyle, ...rest }) =>
   createBaseComponentStyle({
     baseTheme: divider,
-    globalTheme: themes?.divider?.iStyle,
+    globalTheme: themes?.divider,
     overridingTheme: $iStyle,
     mode,
     rest,
