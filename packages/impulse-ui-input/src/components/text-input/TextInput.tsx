@@ -12,7 +12,7 @@ import React, {
 } from 'react';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { IconButton } from '@impulse-ui/buttons';
-import { useComponentStyle } from '@impulse-ui/core';
+import { extractCssProps, useComponentStyle } from '@impulse-ui/core';
 import { Icon } from '@impulse-ui/icon';
 import { Container } from '@impulse-ui/layout';
 import { ERROR, FieldMessage } from '@impulse-ui/text';
@@ -106,6 +106,7 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
             ref={innerRef}
             {...inputProps}
             $iStyle={inputStyle}
+            $cssProps={extractCssProps(inputProps)}
             name={name}
             value={value ?? innerValue}
             onChange={handleInput}
