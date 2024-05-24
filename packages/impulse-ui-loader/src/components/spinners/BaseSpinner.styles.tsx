@@ -4,12 +4,13 @@ import styled from 'styled-components';
 
 import { spinnerLoader } from '../../styles';
 
-const BaseSpinner = styled(BaseContainer)(({ theme: { mode, themes }, $iStyle }) =>
+const BaseSpinner = styled(BaseContainer)(({ theme: { mode, themes }, $iStyle, ...rest }) =>
   createBaseComponentStyle({
     baseTheme: spinnerLoader,
     globalTheme: themes?.spinnerLoader?.iStyle,
     overridingTheme: $iStyle,
     mode,
+    rest,
   }),
 );
 
