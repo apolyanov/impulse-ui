@@ -44,7 +44,7 @@ export class CameraControls {
     return this.videoTrack.getSettings() as CameraCapabilities;
   }
 
-  set videoTrack(value: MediaStreamTrack) {
+  set videoTrack(value: MediaStreamTrack | undefined) {
     this._videoTrack = value;
     this.cameraCapabilities = value;
   }
