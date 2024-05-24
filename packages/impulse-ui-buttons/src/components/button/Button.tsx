@@ -1,6 +1,6 @@
 'use client';
 import React, { FunctionComponent } from 'react';
-import { useComponentStyle } from '@impulse-ui/core';
+import { extractCssProps, useComponentStyle } from '@impulse-ui/core';
 import { Spinner } from '@impulse-ui/loader';
 import { ButtonProps } from '@impulse-ui/types';
 
@@ -14,7 +14,7 @@ const Button: FunctionComponent<ButtonProps> = ({ iStyle, ...rest }) => {
   const { buttonStyle, loaderStyle } = useComponentStyle(buttonComponentMap, rest, button, iStyle);
 
   return (
-    <BaseButton $iStyle={buttonStyle} {...buttonProps}>
+    <BaseButton $iStyle={buttonStyle} $cssProps={extractCssProps(rest)} {...buttonProps}>
       {loading ? <Spinner data-disabled={buttonProps.disabled} iStyle={loaderStyle} /> : children}
     </BaseButton>
   );
