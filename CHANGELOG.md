@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.11.0-beta.1](https://github.com/apolyanov/impulse-ui/compare/v2.11.0-beta.0...v2.11.0-beta.1) (2024-05-25)
+
+
+### Bug Fixes
+
+* Hiding torch button when not scanning. ([f52cf86](https://github.com/apolyanov/impulse-ui/commit/f52cf86eeba8d195e0cdcc887ff33f1d67d6c40f))
+
+
+
+
+
 # [2.11.0-beta.0](https://github.com/apolyanov/impulse-ui/compare/v2.8.0...v2.11.0-beta.0) (2024-05-25)
 
 
