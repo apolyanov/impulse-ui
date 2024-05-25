@@ -31,7 +31,6 @@ export class Scanner {
     }
 
     this.scanningLoopId = setInterval(() => {
-      console.log('scanning');
       const imageData = this.canvasContext.drawImageOnCanvas(this.videoContext.videoElement);
       const image = imageData.data;
 
