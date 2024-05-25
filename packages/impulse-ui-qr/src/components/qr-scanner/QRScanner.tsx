@@ -30,23 +30,22 @@ const QRScanner = ({ iStyle, ...rest }: QRScannerProps) => {
   } = useComponentStyle(qrScannerComponentMap, stylesProps, iStyle, qrScannerStyle);
 
   return (
-    <>
-      <Container iStyle={mainContainerStyle}>
-        <Container iStyle={qrScannerContainerStyle}>
-          <Container iStyle={topLeftQRCornerStyle} />
-          <Container iStyle={topRightQRCornerStyle} />
-          <Container iStyle={bottomLeftQRCornerStyle} />
-          <Container iStyle={bottomRightQRCornerStyle} />
-          {!isScanning && <Icon iStyle={placeholderIconStyle} icon={faQrcode} />}
-          <Container iStyle={videoStyle} as='video' ref={videoElement} />
-        </Container>
-        <Container iStyle={buttonsContainerStyle}>
-          <IconButton iStyle={toggleScanningButtonStyle} onClick={toggleScanning} icon={faQrcode} />
-          {canUseTorch && <IconButton iStyle={toggleTorchButtonStyle} onClick={toggleTorch} icon={faLightbulb} />}
-        </Container>
+    <Container iStyle={mainContainerStyle}>
+      <Container iStyle={qrScannerContainerStyle}>
+        <Container iStyle={topLeftQRCornerStyle} />
+        <Container iStyle={topRightQRCornerStyle} />
+        <Container iStyle={bottomLeftQRCornerStyle} />
+        <Container iStyle={bottomRightQRCornerStyle} />
+        {!isScanning && <Icon iStyle={placeholderIconStyle} icon={faQrcode} />}
+        <Container iStyle={videoStyle} as='video' ref={videoElement} />
       </Container>
-      {/* <Container iStyle={{ iCss: { margin: 8 } }} id='preview' as='canvas' width={1280} height={1280} />*/}
-    </>
+      <Container iStyle={buttonsContainerStyle}>
+        <IconButton iStyle={toggleScanningButtonStyle} onClick={toggleScanning} icon={faQrcode} />
+        {canUseTorch && isScanning && (
+          <IconButton iStyle={toggleTorchButtonStyle} onClick={toggleTorch} icon={faLightbulb} />
+        )}
+      </Container>
+    </Container>
   );
 };
 
