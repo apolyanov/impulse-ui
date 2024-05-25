@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.11.0-beta.0](https://github.com/apolyanov/impulse-ui/compare/v2.8.0...v2.11.0-beta.0) (2024-05-25)
+
+
+### Bug Fixes
+
+* Adding types to the components that will support direct css props ([6ae0fe9](https://github.com/apolyanov/impulse-ui/commit/6ae0fe99819159727417267d275126c74c942eeb))
+* Fixing aliases not being processed correctly ([6efcba9](https://github.com/apolyanov/impulse-ui/commit/6efcba90cb1e2ec02a774eeb6a1ed6b678f2e1b0))
+
+
+### Features
+
+* Adding spacing props logic in the core package ([f50a8d8](https://github.com/apolyanov/impulse-ui/commit/f50a8d8b242852865eda16e586cab0e3cdacd3a3))
+* Removing unused ComponentTheme type and fixing build issues related to it ([e9a0a48](https://github.com/apolyanov/impulse-ui/commit/e9a0a487c345183128405924527cc563f52bf0a4))
+
+
+
+
+
 # [2.10.0](https://github.com/apolyanov/impulse-ui/compare/v2.9.0...v2.10.0) (2024-05-24)
 
 

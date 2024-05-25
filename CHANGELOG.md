@@ -3,6 +3,38 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.11.0-beta.0](https://github.com/apolyanov/impulse-ui/compare/v2.8.0...v2.11.0-beta.0) (2024-05-25)
+
+
+### Bug Fixes
+
+* Adding types to the components that will support direct css props ([6ae0fe9](https://github.com/apolyanov/impulse-ui/commit/6ae0fe99819159727417267d275126c74c942eeb))
+* Fixing aliases not being processed correctly ([6efcba9](https://github.com/apolyanov/impulse-ui/commit/6efcba90cb1e2ec02a774eeb6a1ed6b678f2e1b0))
+* Including QR packages in the toolkit ([2165c1a](https://github.com/apolyanov/impulse-ui/commit/2165c1a266ac7fe5d8ee8023d2a862a0bf7ae844))
+* Including QR packages in the toolkit ([f325eaf](https://github.com/apolyanov/impulse-ui/commit/f325eafcf42c97f5eb60e4471319e4acba919f3e))
+* QR tracks not being released. ([654d133](https://github.com/apolyanov/impulse-ui/commit/654d13339e8fa0f8a639ad9441a43004701b30ed))
+
+
+### Features
+
+* Adding spacing props logic in the buttons package ([e6f9aeb](https://github.com/apolyanov/impulse-ui/commit/e6f9aeb9a13c36ab9077d28cd1ce183a10a2e0e5))
+* Adding spacing props logic in the core package ([f50a8d8](https://github.com/apolyanov/impulse-ui/commit/f50a8d8b242852865eda16e586cab0e3cdacd3a3))
+* Adding spacing props logic in the icon package ([116128f](https://github.com/apolyanov/impulse-ui/commit/116128f7b5c59a113bc80271d28e311b84935bd8))
+* Adding spacing props logic in the input package ([1c3aa28](https://github.com/apolyanov/impulse-ui/commit/1c3aa28a9d7034e158a36f7889d8c2bcdf4f571c))
+* Adding spacing props logic in the layout package ([137cc1c](https://github.com/apolyanov/impulse-ui/commit/137cc1cb70645c5245675ea7c92f406f5988442a))
+* Adding spacing props logic in the loader package ([d814e05](https://github.com/apolyanov/impulse-ui/commit/d814e055847feb8503b0f0c51741ac133b09f410))
+* Adding spacing props logic in the table package ([9f26d2e](https://github.com/apolyanov/impulse-ui/commit/9f26d2e938909c870f34356841438cc3d15bbeb8))
+* Refactoring buttons package to use the generic createBaseComponentStyle function ([2b76622](https://github.com/apolyanov/impulse-ui/commit/2b766221fa592a3b041a25f76ec98660e4cf89e6))
+* Refactoring icon package to use the generic createBaseComponentStyle function ([f89760a](https://github.com/apolyanov/impulse-ui/commit/f89760a22febec6a0a896193727ecaeffb8a398c))
+* Refactoring input and layout packages to use the generic createBaseComponentStyle function ([b34e61a](https://github.com/apolyanov/impulse-ui/commit/b34e61a94c54e74f44cc432f7a354b2c041e7768))
+* Refactoring loader package to use the generic createBaseComponentStyle function ([fc32381](https://github.com/apolyanov/impulse-ui/commit/fc3238180472fb2a9add35010a8e4f02e9cba6f2))
+* Refactoring table package to use the generic createBaseComponentStyle function ([98966d9](https://github.com/apolyanov/impulse-ui/commit/98966d9c5b5f251a47273a714c973bd4a68c5ced))
+* Removing unused ComponentTheme type and fixing build issues related to it ([e9a0a48](https://github.com/apolyanov/impulse-ui/commit/e9a0a487c345183128405924527cc563f52bf0a4))
+
+
+
+
+
 ## [2.10.1](https://github.com/apolyanov/impulse-ui/compare/v2.10.0...v2.10.1) (2024-05-24)
 
 
