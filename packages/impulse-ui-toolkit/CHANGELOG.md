@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.11.0-beta.0](https://github.com/apolyanov/impulse-ui/compare/v2.8.0...v2.11.0-beta.0) (2024-05-25)
+
+
+### Bug Fixes
+
+* Including QR packages in the toolkit ([f325eaf](https://github.com/apolyanov/impulse-ui/commit/f325eafcf42c97f5eb60e4471319e4acba919f3e))
+
+
+
+
+
 ## [2.10.1](https://github.com/apolyanov/impulse-ui/compare/v2.10.0...v2.10.1) (2024-05-24)
 
 

@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.11.0-beta.0](https://github.com/apolyanov/impulse-ui/compare/v2.8.0...v2.11.0-beta.0) (2024-05-25)
+
+
+### Features
+
+* Adding spacing props logic in the input package ([1c3aa28](https://github.com/apolyanov/impulse-ui/commit/1c3aa28a9d7034e158a36f7889d8c2bcdf4f571c))
+* Adding spacing props logic in the table package ([9f26d2e](https://github.com/apolyanov/impulse-ui/commit/9f26d2e938909c870f34356841438cc3d15bbeb8))
+* Refactoring input and layout packages to use the generic createBaseComponentStyle function ([b34e61a](https://github.com/apolyanov/impulse-ui/commit/b34e61a94c54e74f44cc432f7a354b2c041e7768))
+* Removing unused ComponentTheme type and fixing build issues related to it ([e9a0a48](https://github.com/apolyanov/impulse-ui/commit/e9a0a487c345183128405924527cc563f52bf0a4))
+
+
+
+
+
 # [2.10.0](https://github.com/apolyanov/impulse-ui/compare/v2.9.0...v2.10.0) (2024-05-24)
 
 
