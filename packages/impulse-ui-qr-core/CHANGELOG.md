@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.11.0-beta.0](https://github.com/apolyanov/impulse-ui/compare/v2.8.0...v2.11.0-beta.0) (2024-05-25)
+
+
+### Bug Fixes
+
+* QR tracks not being released. ([654d133](https://github.com/apolyanov/impulse-ui/commit/654d13339e8fa0f8a639ad9441a43004701b30ed))
+
+
+
+
+
 # [2.10.0](https://github.com/apolyanov/impulse-ui/compare/v2.9.0...v2.10.0) (2024-05-24)
 
 **Note:** Version bump only for package @impulse-ui/qr-core
