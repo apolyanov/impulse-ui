@@ -4,7 +4,7 @@ import { CameraCapabilities, QRScannerRestProps } from '@impulse-ui/types';
 import { Scanner } from '../scanner';
 
 const useQrScanner = (options: QRScannerRestProps) => {
-  const videoElement = useRef<HTMLVideoElement>(null);
+  const videoElement = useRef<HTMLVideoElement | null>(null);
   const qrScanner = useRef(new Scanner(options.scanningInterval));
 
   const [cameraCapabilities, setCameraCapabilities] = useState<CameraCapabilities>();
@@ -35,7 +35,22 @@ const useQrScanner = (options: QRScannerRestProps) => {
 
   const canUseTorch = cameraCapabilities?.torch;
 
-  return { videoElement, toggleScanning, toggleTorch, cameraCapabilities, canUseTorch, isScanning, isTorchOn };
+  const mountVideoElement = (element: HTMLVideoElement | null) => {
+    if (!element && isScanning) qrScanner.current.stop();
+
+    videoElement.current = element;
+  };
+
+  return {
+    videoElement,
+    toggleScanning,
+    toggleTorch,
+    cameraCapabilities,
+    canUseTorch,
+    isScanning,
+    isTorchOn,
+    mountVideoElement,
+  };
 };
 
 export { useQrScanner };

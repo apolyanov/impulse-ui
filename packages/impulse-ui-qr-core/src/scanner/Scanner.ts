@@ -1,13 +1,13 @@
 import { QRScannerRestProps } from '@impulse-ui/types';
 import jsQR from 'jsqr-es6';
 
-import { NotFoundException } from '../exceptions';
-import { NavigatorSupportException } from '../exceptions';
+import { NavigatorSupportException, NotFoundException } from '../exceptions';
 
 import { CanvasContext } from './CanvasContext';
 import { VideoContext } from './VideoContext';
 
 export class Scanner {
+  private _isScanning: boolean = false;
   private _scanningLoopId?: NodeJS.Timeout;
   private _scanningInterval: number;
   private _videoContext: VideoContext = new VideoContext();
@@ -30,7 +30,9 @@ export class Scanner {
       onError?.(new NavigatorSupportException());
     }
 
+    this.isScanning = true;
     this.scanningLoopId = setInterval(() => {
+      console.log('scanning');
       const imageData = this.canvasContext.drawImageOnCanvas(this.videoContext.videoElement);
       const image = imageData.data;
 
@@ -53,9 +55,12 @@ export class Scanner {
   }
 
   stop() {
-    clearInterval(this.scanningLoopId);
-    this.videoContext.cleanVideoContext();
-    this.canvasContext.cleanCanvasContext();
+    if (this.isScanning) {
+      this.isScanning = false;
+      clearInterval(this.scanningLoopId);
+      this.videoContext.cleanVideoContext();
+      this.canvasContext.cleanCanvasContext();
+    }
   }
 
   get scanningLoopId(): NodeJS.Timeout | undefined {
@@ -80,5 +85,13 @@ export class Scanner {
 
   get videoContext(): VideoContext {
     return this._videoContext;
+  }
+
+  private get isScanning(): boolean {
+    return this._isScanning;
+  }
+
+  private set isScanning(value: boolean) {
+    this._isScanning = value;
   }
 }
