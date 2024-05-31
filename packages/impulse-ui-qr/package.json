@@ -1,6 +1,6 @@
 {
   "name": "@impulse-ui/qr",
-  "version": "2.11.0-beta.1",
+  "version": "2.11.0-beta.2",
   "license": "MIT",
   "author": "Alexander Polyanov",
   "main": "dist/index.js",
@@ -53,11 +53,11 @@
     }
   ],
   "dependencies": {
-    "@impulse-ui/buttons": "^2.11.0-beta.0",
-    "@impulse-ui/colours": "^2.11.0-beta.0",
-    "@impulse-ui/core": "^2.11.0-beta.0",
-    "@impulse-ui/icon": "^2.11.0-beta.0",
-    "@impulse-ui/layout": "^2.11.0-beta.0",
-    "@impulse-ui/qr-core": "^2.11.0-beta.1"
+    "@impulse-ui/buttons": "^2.11.0-beta.2",
+    "@impulse-ui/colours": "^2.11.0-beta.2",
+    "@impulse-ui/core": "^2.11.0-beta.2",
+    "@impulse-ui/icon": "^2.11.0-beta.2",
+    "@impulse-ui/layout": "^2.11.0-beta.2",
+    "@impulse-ui/qr-core": "^2.11.0-beta.2"
   }
 }

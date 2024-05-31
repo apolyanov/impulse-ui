@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.11.0-beta.2](https://github.com/apolyanov/impulse-ui/compare/v2.10.1...v2.11.0-beta.2) (2024-05-31)
+
+
+### Bug Fixes
+
+* Hiding torch button when not scanning. ([2051607](https://github.com/apolyanov/impulse-ui/commit/2051607257efd59e8e9fe432fae9dbebf8e315c1))
+* QR tracks not being released. ([49c0f20](https://github.com/apolyanov/impulse-ui/commit/49c0f20e66c1a07eb13f7309c43bb978c4e87fc3))
+
+
+
+
+
 # [2.11.0-beta.1](https://github.com/apolyanov/impulse-ui/compare/v2.11.0-beta.0...v2.11.0-beta.1) (2024-05-25)
 
 
