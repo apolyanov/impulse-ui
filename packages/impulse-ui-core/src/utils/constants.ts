@@ -105,6 +105,9 @@ const cssPropsMap: Record<CssMapKeys, Function> = {
   whiteSpace: noTransform,
   width: noTransform,
   zIndex: noTransform,
+  borderColor: noTransform,
+  backgroundColor: noTransform,
+  color: noTransform,
 };
 
 const spacingAliasesMap: Record<SpacingAliases, Spacing | Spacing[]> = {
