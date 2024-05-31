@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.11.0-beta.2](https://github.com/apolyanov/impulse-ui/compare/v2.10.1...v2.11.0-beta.2) (2024-05-31)
+
+
+### Bug Fixes
+
+* Adding missing props and loader package in toolkit. ([81fd304](https://github.com/apolyanov/impulse-ui/commit/81fd30432c593c5c3d39b15b964a3c85f005bb28))
+
+
+
+
+
 # [2.11.0-beta.0](https://github.com/apolyanov/impulse-ui/compare/v2.8.0...v2.11.0-beta.0) (2024-05-25)
 
 
