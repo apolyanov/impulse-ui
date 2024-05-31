@@ -12,7 +12,7 @@ import { qrScannerStyle } from '../../styles';
 
 const QRScanner = ({ iStyle, ...rest }: QRScannerProps) => {
   const qrScannerProps = useQrScanner(rest);
-  const { isScanning, toggleScanning, toggleTorch, canUseTorch, videoElement } = qrScannerProps;
+  const { isScanning, toggleScanning, toggleTorch, canUseTorch, mountVideoElement } = qrScannerProps;
   const stylesProps = { ...rest, ...qrScannerProps };
 
   const {
@@ -37,7 +37,7 @@ const QRScanner = ({ iStyle, ...rest }: QRScannerProps) => {
         <Container iStyle={bottomLeftQRCornerStyle} />
         <Container iStyle={bottomRightQRCornerStyle} />
         {!isScanning && <Icon iStyle={placeholderIconStyle} icon={faQrcode} />}
-        <Container iStyle={videoStyle} as='video' ref={videoElement} />
+        <Container iStyle={videoStyle} as='video' ref={mountVideoElement} />
       </Container>
       <Container iStyle={buttonsContainerStyle}>
         <IconButton iStyle={toggleScanningButtonStyle} onClick={toggleScanning} icon={faQrcode} />
