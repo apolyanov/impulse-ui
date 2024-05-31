@@ -23,7 +23,15 @@ export interface AliasesCSSProperties {
   paddingY?: StandardCSSProperties['paddingTop'];
 }
 
-type Borders = 'border' | 'borderTop' | 'borderRight' | 'borderBottom' | 'borderLeft' | 'borderRadius';
+type Colors = 'backgroundColor' | 'color';
+
+type ColorsKeys = Extract<Colors, keyof StandardCSSProperties>;
+
+type ColorsCssProps = {
+  [K in ColorsKeys]: StandardCSSProperties[K];
+};
+
+type Borders = 'border' | 'borderTop' | 'borderRight' | 'borderBottom' | 'borderLeft' | 'borderRadius' | 'borderColor';
 
 type BordersKeys = Extract<Borders, keyof StandardCSSProperties>;
 
@@ -176,12 +184,25 @@ type TypographyCssProps = {
   [K in TypographyKeys]: StandardCSSProperties[K];
 };
 
-type CssMapKeys = Borders | Display | Flexbox | Grid | Positions | Sizing | Spacing | SpacingAliases | Typography;
+type CssMapKeys =
+  | Borders
+  | Display
+  | Flexbox
+  | Grid
+  | Positions
+  | Sizing
+  | Spacing
+  | SpacingAliases
+  | Typography
+  | Colors;
 
 export type {
   Borders,
   BordersCssProps,
   BordersKeys,
+  Colors,
+  ColorsCssProps,
+  ColorsKeys,
   CssMapKeys,
   Display,
   DisplayCssProps,
