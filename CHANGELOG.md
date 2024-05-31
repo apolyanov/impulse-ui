@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.11.1](https://github.com/apolyanov/impulse-ui/compare/v2.11.0...v2.11.1) (2024-05-31)
+
+
+### Bug Fixes
+
+* Fixing memory leak from not stopping the scanning after an unmount. ([48d2901](https://github.com/apolyanov/impulse-ui/commit/48d29013c04a54f713bd0e737c91213d967ff400))
+
+
+
+
+
 # [2.11.0](https://github.com/apolyanov/impulse-ui/compare/v2.10.1...v2.11.0) (2024-05-31)
 
 
