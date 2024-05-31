@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.11.0](https://github.com/apolyanov/impulse-ui/compare/v2.10.1...v2.11.0) (2024-05-31)
+
+**Note:** Version bump only for package @impulse-ui/table
+
+
+
+
+
 # [2.11.0-beta.2](https://github.com/apolyanov/impulse-ui/compare/v2.10.1...v2.11.0-beta.2) (2024-05-31)
 
 **Note:** Version bump only for package @impulse-ui/table
