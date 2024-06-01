@@ -2,14 +2,18 @@ import { QRScannerRestProps } from '@impulse-ui/types';
 import jsQR from 'jsqr-es6';
 
 import { NavigatorSupportException, NotFoundException } from '../exceptions';
+import { NoOnSuccessCallbackException } from '../exceptions/NoOnSuccessCallbackException';
 
 import { CanvasContext } from './CanvasContext';
 import { VideoContext } from './VideoContext';
 
 export class Scanner {
   private _isScanning: boolean = false;
+  private _paused: boolean = false;
   private _scanningLoopId?: NodeJS.Timeout;
   private _scanningInterval: number;
+  private _onSuccess?: QRScannerRestProps['onSuccess'];
+  private _onError?: QRScannerRestProps['onError'];
   private _videoContext: VideoContext = new VideoContext();
   private _canvasContext: CanvasContext = new CanvasContext();
 
@@ -22,6 +26,8 @@ export class Scanner {
     onSuccess: QRScannerRestProps['onSuccess'],
     onError?: QRScannerRestProps['onError'],
   ) {
+    this.onSuccess = onSuccess;
+    this.onError = onError;
     this.videoContext.attachVideoElement(videoElement);
 
     try {
@@ -31,17 +37,7 @@ export class Scanner {
     }
 
     this.isScanning = true;
-    this.scanningLoopId = setInterval(() => {
-      console.log('scanning');
-      const imageData = this.canvasContext.drawImageOnCanvas(this.videoContext.videoElement);
-      const image = imageData.data;
-
-      try {
-        onSuccess(this.decode(image, imageData.width, imageData.height));
-      } catch (e) {
-        onError?.(e as NotFoundException);
-      }
-    }, this.scanningInterval);
+    this.startScanLoop();
 
     return this.videoContext.cameraCapabilities;
   }
@@ -54,13 +50,37 @@ export class Scanner {
     throw new NotFoundException();
   }
 
+  private startScanLoop() {
+    this.scanningLoopId = setInterval(() => {
+      const imageData = this.canvasContext.drawImageOnCanvas(this.videoContext.videoElement);
+      const image = imageData.data;
+
+      try {
+        this.onSuccess(this.decode(image, imageData.width, imageData.height));
+      } catch (e) {
+        this.onError?.(e as NotFoundException);
+      }
+    }, this.scanningInterval);
+  }
+
   stop() {
     if (this.isScanning) {
+      this.paused = false;
       this.isScanning = false;
       clearInterval(this.scanningLoopId);
       this.videoContext.cleanVideoContext();
       this.canvasContext.cleanCanvasContext();
     }
+  }
+
+  pauseScanning() {
+    this.paused = true;
+    clearInterval(this.scanningInterval);
+  }
+
+  resumeScanning() {
+    this.paused = false;
+    this.startScanLoop();
   }
 
   get scanningLoopId(): NodeJS.Timeout | undefined {
@@ -93,5 +113,31 @@ export class Scanner {
 
   private set isScanning(value: boolean) {
     this._isScanning = value;
+  }
+
+  get onSuccess(): QRScannerRestProps['onSuccess'] {
+    if (this._onSuccess) return this._onSuccess;
+
+    throw new NoOnSuccessCallbackException();
+  }
+
+  set onSuccess(value: QRScannerRestProps['onSuccess']) {
+    this._onSuccess = value;
+  }
+
+  get onError(): QRScannerRestProps['onError'] {
+    return this._onError;
+  }
+
+  set onError(value: QRScannerRestProps['onError']) {
+    this._onError = value;
+  }
+
+  get paused(): boolean {
+    return this._paused;
+  }
+
+  set paused(value: boolean) {
+    this._paused = value;
   }
 }

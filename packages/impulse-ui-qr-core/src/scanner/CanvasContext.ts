@@ -1,4 +1,4 @@
-import { NoCanvasContext } from '../exceptions';
+import { NoCanvasContextException } from '../exceptions';
 
 export class CanvasContext {
   private _canvasElement = document.createElement('canvas');
@@ -55,7 +55,7 @@ export class CanvasContext {
   get canvasContext(): CanvasRenderingContext2D {
     if (this._canvasContext) return this._canvasContext;
 
-    throw new NoCanvasContext();
+    throw new NoCanvasContextException();
   }
 
   set canvasContext(value: CanvasRenderingContext2D | null) {

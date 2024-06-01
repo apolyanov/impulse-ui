@@ -1,4 +1,3 @@
-'use client';
 import React, { ChangeEvent, FunctionComponent } from 'react';
 import { faFilter, faMagnifyingGlass, faSliders } from '@fortawesome/free-solid-svg-icons';
 import { IconButton } from '@impulse-ui/buttons';

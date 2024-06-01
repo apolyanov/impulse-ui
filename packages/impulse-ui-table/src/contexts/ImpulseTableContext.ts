@@ -6,4 +6,6 @@ import { Table } from '@tanstack/react-table';
 const createTableContext = <T = any>() =>
   createContext<{ state: Table<T> & ImpulseTableProviderUtils } | undefined>(undefined);
 
-export { createTableContext };
+const ImpulseTableContext = createTableContext();
+
+export { createTableContext, ImpulseTableContext };

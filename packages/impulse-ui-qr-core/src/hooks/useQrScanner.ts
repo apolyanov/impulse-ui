@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import { CameraCapabilities, QRScannerRestProps } from '@impulse-ui/types';
 
 import { Scanner } from '../scanner';
@@ -35,11 +35,11 @@ const useQrScanner = (options: QRScannerRestProps) => {
 
   const canUseTorch = cameraCapabilities?.torch;
 
-  const mountVideoElement = (element: HTMLVideoElement | null) => {
-    if (!element && isScanning) qrScanner.current.stop();
+  const mountVideoElement = useCallback((element: HTMLVideoElement | null) => {
+    if (!element) qrScanner.current.stop();
 
     videoElement.current = element;
-  };
+  }, []);
 
   return {
     videoElement,

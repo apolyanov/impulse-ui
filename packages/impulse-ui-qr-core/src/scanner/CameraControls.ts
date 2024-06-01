@@ -1,6 +1,6 @@
 import { CameraCapabilities } from '@impulse-ui/types';
 
-import { NoCameraCapabilitiesAvailable, NoMediaTrack } from '../exceptions';
+import { NoCameraCapabilitiesAvailableException, NoMediaTrackException } from '../exceptions';
 
 export class CameraControls {
   private _cameraCapabilities?: CameraCapabilities;
@@ -33,7 +33,7 @@ export class CameraControls {
   get videoTrack(): MediaStreamTrack {
     if (this._videoTrack) return this._videoTrack;
 
-    throw new NoMediaTrack();
+    throw new NoMediaTrackException();
   }
 
   private getConstraints() {
@@ -52,7 +52,7 @@ export class CameraControls {
   get cameraCapabilities(): CameraCapabilities {
     if (this._cameraCapabilities) return this._cameraCapabilities;
 
-    throw new NoCameraCapabilitiesAvailable();
+    throw new NoCameraCapabilitiesAvailableException();
   }
 
   private set cameraCapabilities(track: MediaStreamTrack | undefined) {

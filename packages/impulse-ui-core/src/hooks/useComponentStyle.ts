@@ -1,4 +1,5 @@
 'use client';
+import { useMemo } from 'react';
 import { ComponentMap, IOStyle } from '@impulse-ui/types';
 
 import { mergePartialThemes } from '../utils';
@@ -8,7 +9,11 @@ const useComponentStyle = <T extends object, E extends object>(
   props: E,
   defaultTheme?: T,
   overridingTheme?: T,
-) => constructComplexTheme<T, E>(componentMap, props, defaultTheme, overridingTheme);
+) =>
+  useMemo(
+    () => constructComplexTheme<T, E>(componentMap, props, defaultTheme, overridingTheme),
+    [componentMap, defaultTheme, overridingTheme, props],
+  );
 const constructComplexTheme = <T extends object, E extends object>(
   componentMap: ComponentMap[],
   props: E,

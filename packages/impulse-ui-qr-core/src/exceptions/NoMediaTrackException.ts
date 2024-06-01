@@ -1,9 +1,9 @@
-export class NoMediaTrack extends Error {
+export class NoMediaTrackException extends Error {
   private readonly _name: string;
 
   constructor() {
     super('No media track is attached!');
-    this._name = 'NoMediaTrack';
+    this._name = 'NoMediaTrackException';
   }
 
   get name(): string {

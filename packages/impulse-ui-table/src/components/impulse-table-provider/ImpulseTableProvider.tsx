@@ -1,5 +1,5 @@
 'use client';
-import React, { FunctionComponent, PropsWithChildren, useState } from 'react';
+import React, { PropsWithChildren, useState } from 'react';
 import { ImpulseTableProviderProps } from '@impulse-ui/types';
 import {
   getCoreRowModel,
@@ -12,9 +12,8 @@ import {
   useReactTable,
 } from '@tanstack/react-table';
 
-import { createTableContext } from '../../contexts';
+import { ImpulseTableContext } from '../../contexts';
 
-const ImpulseTableContext = createTableContext();
 const createInitialPaginationState = (pagination?: Partial<PaginationState>) => {
   if (pagination) {
     return {
