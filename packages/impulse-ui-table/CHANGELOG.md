@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.11.2](https://github.com/apolyanov/impulse-ui/compare/v2.11.1...v2.11.2) (2024-06-01)
+
+
+### Bug Fixes
+
+* Fixing memory leak from not stopping the scanning after an unmount. ([37d33b7](https://github.com/apolyanov/impulse-ui/commit/37d33b79fe9229c0976b45b5cd22015f9a06050a))
+
+
+
+
+
 # [2.11.0](https://github.com/apolyanov/impulse-ui/compare/v2.10.1...v2.11.0) (2024-05-31)
 
 **Note:** Version bump only for package @impulse-ui/table
