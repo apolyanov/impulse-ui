@@ -22,7 +22,7 @@ const ButtonsPage = () => {
         Buttons
       </Button>
       <Typography>Text Button</Typography>
-      <TextButton>Hello</TextButton>
+      <TextButton m={4}>Hello</TextButton>
       <TextButton loading>Hello</TextButton>
       <TextButton disabled>Hello</TextButton>
       <TextButton loading disabled>

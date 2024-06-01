@@ -14,7 +14,7 @@ const Button: FunctionComponent<ButtonProps> = ({ iStyle, ...rest }) => {
   const { buttonStyle, loaderStyle } = useComponentStyle(buttonComponentMap, rest, button, iStyle);
 
   return (
-    <BaseButton $iStyle={buttonStyle} $cssProps={extractCssProps(rest)} {...buttonProps}>
+    <BaseButton $iStyle={buttonStyle} $cssProps={extractCssProps(buttonProps)} {...buttonProps}>
       {loading ? <Spinner data-disabled={buttonProps.disabled} iStyle={loaderStyle} /> : children}
     </BaseButton>
   );
