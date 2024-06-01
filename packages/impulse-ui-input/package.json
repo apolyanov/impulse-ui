@@ -1,6 +1,6 @@
 {
   "name": "@impulse-ui/input",
-  "version": "2.11.2",
+  "version": "2.11.3",
   "license": "MIT",
   "author": "Alexander Polyanov",
   "main": "dist/index.js",
@@ -37,7 +37,7 @@
     "testEnvironment": "jsdom"
   },
   "dependencies": {
-    "@impulse-ui/buttons": "^2.11.2",
+    "@impulse-ui/buttons": "^2.11.3",
     "@impulse-ui/colours": "^2.11.0",
     "@impulse-ui/core": "^2.11.2",
     "@impulse-ui/icon": "^2.11.2",

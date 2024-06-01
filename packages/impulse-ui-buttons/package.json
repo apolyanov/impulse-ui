@@ -1,6 +1,6 @@
 {
   "name": "@impulse-ui/buttons",
-  "version": "2.11.2",
+  "version": "2.11.3",
   "license": "MIT",
   "author": "Alexander Polyanov",
   "main": "dist/index.js",
