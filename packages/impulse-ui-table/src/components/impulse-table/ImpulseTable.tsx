@@ -1,10 +1,9 @@
-'use client';
 import React, { PropsWithChildren } from 'react';
 import { useComponentStyle } from '@impulse-ui/core';
 import { Container } from '@impulse-ui/layout';
 import { ImpulseTableProps } from '@impulse-ui/types';
 
-import { impulseTableComponentMap } from '../../maps/impulseTable.map';
+import { impulseTableComponentMap } from '../../maps';
 import { impulseTableStyles } from '../../styles';
 import { ImpulseTableProvider } from '../impulse-table-provider';
 import { Table } from '../table';

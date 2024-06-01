@@ -1,7 +1,6 @@
-'use client';
 import { useContext } from 'react';
 
-import { ImpulseTableContext } from '../components';
+import { ImpulseTableContext } from '../contexts';
 
 const useImpulseTable = () => {
   const table = useContext(ImpulseTableContext);

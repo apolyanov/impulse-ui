@@ -12,8 +12,8 @@ import { qrScannerStyle } from '../../styles';
 
 const QRScanner = ({ iStyle, ...rest }: QRScannerProps) => {
   const qrScannerProps = useQrScanner(rest);
-  const { isScanning, toggleScanning, toggleTorch, canUseTorch, mountVideoElement } = qrScannerProps;
-  const stylesProps = { ...rest, ...qrScannerProps };
+  const { isScanning, toggleScanning, toggleTorch, canUseTorch, isTorchOn, mountVideoElement } = qrScannerProps;
+  const stylesProps = { ...rest, isScanning, canUseTorch, isTorchOn };
 
   const {
     mainContainerStyle,

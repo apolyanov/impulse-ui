@@ -1,4 +1,4 @@
-import { NoCurrentStreamException, NoVideoElement } from '../exceptions';
+import { NoCurrentStreamException, NoVideoElementException } from '../exceptions';
 
 import { CameraControls } from './CameraControls';
 
@@ -46,7 +46,7 @@ export class VideoContext extends CameraControls {
   get videoElement(): HTMLVideoElement {
     if (this._videoElement) return this._videoElement;
 
-    throw new NoVideoElement();
+    throw new NoVideoElementException();
   }
 
   private set videoElement(value: HTMLVideoElement | undefined) {
