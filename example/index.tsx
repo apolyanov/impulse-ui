@@ -11,7 +11,7 @@ import router from './components/app.routes';
 const App = () => {
   return (
     <Container iStyle={{ iCss: { margin: 0, padding: 0, minHeight: '100vh', width: '100%' } }}>
-      <IThemeProvider themes={{}}>
+      <IThemeProvider>
         <RouterProvider router={router} />
       </IThemeProvider>
     </Container>

@@ -1,7 +1,7 @@
 import { TypeEquality } from './polymorphic.types';
 
 interface UseProcessedoptionsProps<T> {
-  value?: SimpleOptionValue;
+  value?: SimpleOption;
   options: TypeEquality<T, SimpleOption> extends true ? SimpleOption[] : T[];
   getOptionValue?: GetOptionValue<T>;
   getOptionLabel?: GetOptionLabel<T>;
@@ -21,20 +21,9 @@ interface GetOptionValue<T> {
 }
 
 interface SimpleOption {
+  id?: number | string;
   value: SimpleOptionValue;
   label: string | number;
 }
 
-interface InnerSimpleOption extends SimpleOption {
-  uuid: number | string;
-}
-
-export type {
-  GetOptionId,
-  GetOptionLabel,
-  GetOptionValue,
-  InnerSimpleOption,
-  SimpleOption,
-  SimpleOptionValue,
-  UseProcessedoptionsProps,
-};
+export type { GetOptionId, GetOptionLabel, GetOptionValue, SimpleOption, SimpleOptionValue, UseProcessedoptionsProps };

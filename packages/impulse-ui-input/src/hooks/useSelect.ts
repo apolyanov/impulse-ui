@@ -8,7 +8,7 @@ import {
   useProcessedOptions,
   useVirtualizedList,
 } from '@impulse-ui/core';
-import { InnerSimpleOption, SelectRestProps } from '@impulse-ui/types';
+import { SelectRestProps, SimpleOption } from '@impulse-ui/types';
 
 const useSelect = <T>(props: SelectRestProps<T>) => {
   const { options, getOptionValue, getOptionId, getOptionLabel, onOptionSelect, selectOnBlur, value, ...rest } = props;
@@ -26,7 +26,7 @@ const useSelect = <T>(props: SelectRestProps<T>) => {
     updateHighlightedIndex,
     resetSelection,
   } = useItemSelection(processedOptions, {
-    getItemId: (item) => item.uuid,
+    getItemId: (item) => item.id,
   });
 
   const { refs, floatingStyles } = useFloating({
@@ -127,15 +127,15 @@ const useSelect = <T>(props: SelectRestProps<T>) => {
     }
   };
 
-  const shouldCallOptionSelect = (item: InnerSimpleOption): boolean => item.uuid !== selectedItem?.uuid;
+  const shouldCallOptionSelect = (item: SimpleOption): boolean => item.id !== selectedItem?.id;
 
-  const handleOptionSelect = (item: InnerSimpleOption) => {
+  const handleOptionSelect = (item: SimpleOption) => {
     selectItem(item);
     setShowOptions(false);
     updateHighlightedIndex(processedOptions, item);
 
     if (onOptionSelect && shouldCallOptionSelect(item)) {
-      onOptionSelect(item.value);
+      onOptionSelect(item);
     }
   };
 
@@ -148,11 +148,13 @@ const useSelect = <T>(props: SelectRestProps<T>) => {
 
   useEffect(() => {
     if (value) {
-      const processedValue = optionProcessor(value, -1, getOptionValue, getOptionLabel, getOptionId);
+      const processedValue = optionProcessor(value, value?.id ?? -1, getOptionValue, getOptionLabel, getOptionId);
       selectItem(processedValue);
       updateHighlightedIndex(processedOptions, processedValue);
     }
   }, [getOptionId, getOptionLabel, getOptionValue, processedOptions, selectItem, updateHighlightedIndex, value]);
+
+  useEffect(() => resetSelection(), [options, resetSelection]);
 
   return {
     processedOptions,

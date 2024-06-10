@@ -8,6 +8,7 @@ import { Box } from '@mui/material';
 import { humans } from '../mocks/autoCompleteMock';
 
 const AutoCompletePage = () => {
+  const [selectedState, setSelectedState] = useState();
   const [options, setOptions] = useState<{ name: string; gal: string }[]>(() => humans());
   const [state, setState] = useState<string>();
 
