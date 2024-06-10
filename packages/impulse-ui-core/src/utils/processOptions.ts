@@ -1,4 +1,4 @@
-import { GetOptionId, GetOptionLabel, GetOptionValue, InnerSimpleOption } from '@impulse-ui/types';
+import { GetOptionId, GetOptionLabel, GetOptionValue, SimpleOption } from '@impulse-ui/types';
 
 const getItemText = (option: any, formatOptionText?: GetOptionLabel<any>): string | number => {
   if (formatOptionText) {
@@ -18,7 +18,7 @@ const processOptions = (
   getOptionValue?: GetOptionValue<any>,
   getOptionLabel?: GetOptionLabel<any>,
   getOptionId?: GetOptionId<any>,
-): InnerSimpleOption[] => {
+): SimpleOption[] => {
   if (unProcessedOptions) {
     return unProcessedOptions.map((option, index) =>
       optionProcessor(option, index, getOptionValue, getOptionLabel, getOptionId),
@@ -30,16 +30,16 @@ const processOptions = (
 
 const optionProcessor = (
   option: any,
-  index: number,
+  id: number | string,
   getOptionValue?: GetOptionValue<any>,
   getOptionLabel?: GetOptionLabel<any>,
   getOptionId?: GetOptionId<any>,
 ) => {
-  let newOption: InnerSimpleOption;
+  let newOption: SimpleOption;
 
   if (getOptionValue) {
     newOption = {
-      uuid: getOptionId?.(option) ?? index,
+      id: getOptionId?.(option) ?? id,
       value: getOptionValue(option),
       label: getItemText(option, getOptionLabel),
     };
@@ -54,7 +54,7 @@ const optionProcessor = (
   }
 
   newOption = {
-    uuid: getOptionId?.(option) ?? index,
+    id: getOptionId?.(option) ?? id,
     label: getItemText(option, getOptionLabel),
     value: getItemText(option, getOptionLabel),
   };

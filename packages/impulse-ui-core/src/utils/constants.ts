@@ -1,4 +1,4 @@
-import { CssMapKeys, Spacing, SpacingAliases, ThemeMode } from '@impulse-ui/types';
+import { CssMapKeys, ThemeMode } from '@impulse-ui/types';
 
 import { borderTransform, noTransform, spacingTransform } from './transforms';
 
@@ -110,25 +110,4 @@ const cssPropsMap: Record<CssMapKeys, Function> = {
   color: noTransform,
 };
 
-const spacingAliasesMap: Record<SpacingAliases, Spacing | Spacing[]> = {
-  m: 'margin',
-  marginX: ['marginLeft', 'marginRight'],
-  marginY: ['marginTop', 'marginBottom'],
-  mb: 'marginBottom',
-  ml: 'marginLeft',
-  mr: 'marginRight',
-  mt: 'marginTop',
-  mx: ['marginLeft', 'marginRight'],
-  my: ['marginTop', 'marginBottom'],
-  p: 'padding',
-  paddingX: ['paddingLeft', 'paddingRight'],
-  paddingY: ['paddingTop', 'paddingBottom'],
-  pb: 'paddingBottom',
-  pl: 'paddingLeft',
-  pr: 'paddingRight',
-  pt: 'paddingTop',
-  px: ['paddingLeft', 'paddingRight'],
-  py: ['paddingTop', 'paddingBottom'],
-};
-
-export { cssPropsMap, DARK, LIGHT, spacingAliasesMap };
+export { cssPropsMap, DARK, LIGHT };

@@ -18,7 +18,7 @@ const IThemeProvider: FunctionComponent<PropsWithChildren<IThemeProviderProps>> 
   return (
     <ITheme.Provider value={{ setCurrentThemeMode, currentThemeMode }}>
       <GlobalStyle />
-      <ThemeProvider theme={{ themes: themes, mode: currentThemeMode }}>{children}</ThemeProvider>
+      <ThemeProvider theme={{ themes, mode: currentThemeMode }}>{children}</ThemeProvider>
     </ITheme.Provider>
   );
 };

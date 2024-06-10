@@ -13,4 +13,17 @@ const humans = () => {
   return data;
 };
 
-export { humans };
+const humans2 = () => {
+  const data: any[] = [];
+
+  for (let i = 0; i < 10_000; i++) {
+    data.push({
+      label: faker.person.fullName(),
+      value: `GAL-${i}`,
+    });
+  }
+
+  return data;
+};
+
+export { humans, humans2 };

@@ -12,7 +12,8 @@ const defaultIconButtonStyle: Partial<IconButtonStyle> = {
   buttonStyle: {
     iCss: {
       padding: 0,
-      minWidth: '38px',
+      minWidth: 'unset',
+      aspectRatio: '1',
       height: '38px',
       width: '38px',
       display: 'flex',

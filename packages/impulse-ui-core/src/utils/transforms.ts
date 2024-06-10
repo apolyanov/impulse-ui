@@ -1,6 +1,25 @@
-import { SpacingAliases } from '@impulse-ui/types';
+import { Spacing, SpacingAliases } from '@impulse-ui/types';
 
-import { spacingAliasesMap } from './constants';
+const spacingAliasesMap: Record<SpacingAliases, Spacing | Spacing[]> = {
+  m: 'margin',
+  marginX: ['marginLeft', 'marginRight'],
+  marginY: ['marginTop', 'marginBottom'],
+  mb: 'marginBottom',
+  ml: 'marginLeft',
+  mr: 'marginRight',
+  mt: 'marginTop',
+  mx: ['marginLeft', 'marginRight'],
+  my: ['marginTop', 'marginBottom'],
+  p: 'padding',
+  paddingX: ['paddingLeft', 'paddingRight'],
+  paddingY: ['paddingTop', 'paddingBottom'],
+  pb: 'paddingBottom',
+  pl: 'paddingLeft',
+  pr: 'paddingRight',
+  pt: 'paddingTop',
+  px: ['paddingLeft', 'paddingRight'],
+  py: ['paddingTop', 'paddingBottom'],
+};
 
 const borderTransform = (value: string | number) => {
   if (typeof value !== 'number') {

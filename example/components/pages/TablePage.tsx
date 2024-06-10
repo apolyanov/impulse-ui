@@ -79,6 +79,11 @@ const TablePage = () => {
   return (
     <Container>
       <ImpulseTable
+        tableHeaderProps={{
+          tableName: 'Impulse Table',
+          showTableControls: true,
+          showTableSearch: true,
+        }}
         initialState={{ pagination: { pageIndex: 0, pageSize: 20 } }}
         data={hasData ? data : []}
         columns={columns}

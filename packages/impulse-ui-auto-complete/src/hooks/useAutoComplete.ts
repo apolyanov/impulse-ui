@@ -11,9 +11,9 @@ import {
   useState,
 } from 'react';
 import { autoUpdate, offset, size, useFloating } from '@floating-ui/react-dom';
-import { useItemSelection, useOutsideClick, useVirtualizedList } from '@impulse-ui/core';
+import { optionProcessor, useItemSelection, useOutsideClick, useVirtualizedList } from '@impulse-ui/core';
 import { useProcessedOptions } from '@impulse-ui/core';
-import { AutoCompleteRestProps, InnerSimpleOption } from '@impulse-ui/types';
+import { AutoCompleteRestProps, SimpleOption } from '@impulse-ui/types';
 
 const useAutoComplete = <T>(rest: AutoCompleteRestProps<T>) => {
   const {
@@ -26,6 +26,7 @@ const useAutoComplete = <T>(rest: AutoCompleteRestProps<T>) => {
     selectOnBlur,
     loading,
     disableAutoFiltering,
+    value,
     ...mainContainerProps
   } = rest;
 
@@ -33,8 +34,8 @@ const useAutoComplete = <T>(rest: AutoCompleteRestProps<T>) => {
 
   const [showOptions, setShowOptions] = useState<boolean>(false);
 
-  const [selectOptions, setSelectOptions] = useState<InnerSimpleOption[]>([]);
-  const [filteredOptions, setFilteredOptions] = useState<InnerSimpleOption[]>([]);
+  const [selectOptions, setSelectOptions] = useState<SimpleOption[]>([]);
+  const [filteredOptions, setFilteredOptions] = useState<SimpleOption[]>([]);
 
   const [inputValue, setInputValue] = useState<InputHTMLAttributes<HTMLInputElement>['value']>('');
   const inputRef = useRef<HTMLInputElement>(null);
@@ -55,7 +56,7 @@ const useAutoComplete = <T>(rest: AutoCompleteRestProps<T>) => {
     resetSelection,
     updateHighlightedIndex,
   } = useItemSelection(getOptionsToShow, {
-    getItemId: (item) => item.uuid,
+    getItemId: (item) => item.id,
   });
 
   const { refs, floatingStyles } = useFloating({
@@ -86,7 +87,7 @@ const useAutoComplete = <T>(rest: AutoCompleteRestProps<T>) => {
   }, [refs.reference.current as HTMLElement, refs.floating.current as HTMLElement]);
 
   const updateFilteredOptions = useCallback(
-    (newOptions: InnerSimpleOption[]) => {
+    (newOptions: SimpleOption[]) => {
       if (!disableAutoFiltering) {
         setFilteredOptions(newOptions);
       }
@@ -173,7 +174,7 @@ const useAutoComplete = <T>(rest: AutoCompleteRestProps<T>) => {
   };
 
   const filterOptions = useCallback(
-    (query: string, item?: InnerSimpleOption) => {
+    (query: string, item?: SimpleOption) => {
       const newFilteredItems = selectOptions.filter(
         (option) => String(option.label).toLowerCase().includes(query.toLowerCase()),
         [],
@@ -198,9 +199,9 @@ const useAutoComplete = <T>(rest: AutoCompleteRestProps<T>) => {
     inputProps?.onMouseDown?.(event);
   };
 
-  const shouldCallOptionSelect = (item: InnerSimpleOption): boolean => item.uuid !== selectedItem?.uuid;
+  const shouldCallOptionSelect = (item: SimpleOption): boolean => item.id !== selectedItem?.id;
 
-  const handleOptionSelect = (item: InnerSimpleOption) => {
+  const handleOptionSelect = (item: SimpleOption) => {
     selectItem(item);
     setInputValue(item.label);
     setShowOptions(false);
@@ -256,6 +257,15 @@ const useAutoComplete = <T>(rest: AutoCompleteRestProps<T>) => {
   }, [updateAutoSelectOptions]);
 
   useEffect(() => resetSelection(), [options, resetSelection]);
+
+  useEffect(() => {
+    if (value) {
+      const processedValue = optionProcessor(value, value?.id ?? -1, getOptionValue, getOptionLabel, getOptionId);
+      selectItem(processedValue);
+      setInputValue(value.label);
+      updateHighlightedIndex(processedOptions, processedValue);
+    }
+  }, [getOptionId, getOptionLabel, getOptionValue, processedOptions, selectItem, updateHighlightedIndex, value]);
 
   return {
     handleOnChange,

@@ -59,5 +59,8 @@
     "@impulse-ui/icon": "^2.11.2",
     "@impulse-ui/layout": "^2.11.2",
     "@impulse-ui/qr-core": "^2.11.2"
+  },
+  "devDependencies": {
+    "@impulse-ui/types": "^2.11.0"
   }
 }
