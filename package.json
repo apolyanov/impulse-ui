@@ -54,7 +54,7 @@
     "babel-loader": "^9.1.2",
     "babel-preset-react-app": "^10.0.1",
     "confusing-browser-globals": "^1.0.11",
-    "dts-cli": "^2.0.3",
+    "dts-cli": "^2.0.5",
     "eslint-import-resolver-typescript": "^3.5.5",
     "eslint-plugin-flowtype": "^8.0.3",
     "eslint-plugin-import": "^2.27.5",
