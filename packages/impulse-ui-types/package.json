@@ -1,6 +1,6 @@
 {
   "name": "@impulse-ui/types",
-  "version": "2.11.4",
+  "version": "2.11.5",
   "license": "MIT",
   "author": "Alexander Polyanov",
   "main": "dist/index.js",

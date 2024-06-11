@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.11.5](https://github.com/apolyanov/impulse-ui/compare/v2.11.4...v2.11.5) (2024-06-11)
+
+
+### Bug Fixes
+
+* Select and AutoComplete types. ([5b486c7](https://github.com/apolyanov/impulse-ui/commit/5b486c72174dad7e2ec96ae0a0e8e0eaa79adaa9))
+
+
+
+
+
 ## [2.11.4](https://github.com/apolyanov/impulse-ui/compare/v2.11.3...v2.11.4) (2024-06-10)
 
 
