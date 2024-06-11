@@ -210,7 +210,7 @@ const useAutoComplete = <T>(rest: AutoCompleteRestProps<T>) => {
     updateFilteredOptions(filterOptions('', item));
 
     if (onOptionSelect && shouldCallOptionSelect(item)) {
-      onOptionSelect(item.value);
+      onOptionSelect(item);
     }
   };
 

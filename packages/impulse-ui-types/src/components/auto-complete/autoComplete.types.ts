@@ -1,7 +1,7 @@
 import { TextInputCompositeProps, TextInputStyle } from '../input';
 import { ContainerHTMLProps } from '../layout';
 import { IOStyle } from '../theme';
-import { SimpleOptionValue, UseProcessedoptionsProps } from '../utils';
+import { SimpleOption, UseProcessedoptionsProps } from '../utils';
 
 import { AutoCompleteItemStyle } from './autoCompleteItem.types';
 
@@ -14,7 +14,7 @@ interface AutoCompleteRestProps<T> extends ContainerHTMLProps, UseProcessedoptio
   loading?: boolean;
   disableAutoFiltering?: boolean;
   inputProps?: TextInputCompositeProps;
-  onOptionSelect?: (optionValue: SimpleOptionValue | null) => void;
+  onOptionSelect?: (optionValue: SimpleOption | null) => void;
 }
 
 interface AutoCompleteStyle<T> {
