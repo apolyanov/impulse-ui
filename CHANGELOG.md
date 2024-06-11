@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.11.6](https://github.com/apolyanov/impulse-ui/compare/v2.11.5...v2.11.6) (2024-06-11)
+
+
+### Bug Fixes
+
+* DTS-CLI update. ([1cb1f3d](https://github.com/apolyanov/impulse-ui/commit/1cb1f3d9e3f89a824fab1a41e30d1844309ec37f))
+
+
+
+
+
 ## [2.11.5](https://github.com/apolyanov/impulse-ui/compare/v2.11.4...v2.11.5) (2024-06-11)
 
 
