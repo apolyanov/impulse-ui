@@ -1,6 +1,6 @@
 import { ContainerHTMLProps } from '../layout';
 import { IOStyle } from '../theme';
-import { SimpleOptionValue, UseProcessedoptionsProps } from '../utils';
+import { SimpleOption, UseProcessedoptionsProps } from '../utils';
 
 import { SelectOptionStyle } from './select-option.types';
 
@@ -11,7 +11,7 @@ interface SelectProps<T> extends SelectRestProps<T> {
 interface SelectRestProps<T> extends UseProcessedoptionsProps<T>, ContainerHTMLProps {
   loading?: boolean;
   selectOnBlur?: boolean;
-  onOptionSelect?: (optionValue?: SimpleOptionValue) => void;
+  onOptionSelect?: (optionValue?: SimpleOption) => void;
   placeholder?: string;
 }
 
