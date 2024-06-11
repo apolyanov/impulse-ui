@@ -11,7 +11,7 @@ interface SelectProps<T> extends SelectRestProps<T> {
 interface SelectRestProps<T> extends UseProcessedoptionsProps<T>, ContainerHTMLProps {
   loading?: boolean;
   selectOnBlur?: boolean;
-  onOptionSelect?: (optionValue?: SimpleOption) => void;
+  onOptionSelect?: (optionValue: SimpleOption) => void;
   placeholder?: string;
 }
 
