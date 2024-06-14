@@ -149,6 +149,9 @@ const useSelect = <T>(props: SelectRestProps<T>) => {
   useEffect(() => {
     if (value) {
       const processedValue = optionProcessor(value, value?.id ?? -1, getOptionValue, getOptionLabel, getOptionId);
+
+      console.log(processedValue);
+
       selectItem(processedValue);
       updateHighlightedIndex(processedOptions, processedValue);
     }
