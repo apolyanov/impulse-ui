@@ -4,14 +4,13 @@ import { Button } from '@impulse-ui/buttons';
 import { Select, TextInput } from '@impulse-ui/input';
 import { Container } from '@impulse-ui/layout';
 import { FieldMessage, Typography } from '@impulse-ui/text';
-import { SimpleOption } from '@impulse-ui/types';
 
-import { humans, humans2 } from '../mocks/autoCompleteMock';
+import { humans2 } from '../mocks/autoCompleteMock';
 
 const InputsPage = () => {
-  const [options] = useState<{ name: string; gal: string }[]>(() => humans());
-  const [options2] = useState<{ name: string; gal: string }[]>(() => humans2());
-  const [value, setValue] = useState<SimpleOption>();
+  const [raw] = useState(() => humans2());
+  const [options2] = useState<{ gal: string; name: string }[]>(raw);
+  const [value, setValue] = useState<{ gal: string; name: string }>();
 
   return (
     <Container>
@@ -38,12 +37,14 @@ const InputsPage = () => {
         value={value}
         options={options2}
         getOptionId={(option) => option.gal}
+        getOptionLabel={(option) => option.name}
+        getOptionValue={(option) => option.gal}
         onOptionSelect={(option) => setValue(option)}
       />
       <Button
         onClick={() => {
-          console.log('clicked');
-          setValue(options2[16]);
+          console.log('clicked asdasd');
+          setValue({ sasho: 'Alex Polyanov', value: '123456' });
         }}
       >
         Change select value

@@ -14,12 +14,12 @@ const humans = () => {
 };
 
 const humans2 = () => {
-  const data: any[] = [];
+  const data: { gal: string; name: string }[] = [];
 
   for (let i = 0; i < 10_000; i++) {
     data.push({
-      label: faker.person.fullName(),
-      value: `GAL-${i}`,
+      name: faker.person.fullName(),
+      gal: `GAL-${i}`,
     });
   }
 

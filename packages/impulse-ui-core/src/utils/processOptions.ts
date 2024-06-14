@@ -1,18 +1,5 @@
 import { GetOptionId, GetOptionLabel, GetOptionValue, SimpleOption } from '@impulse-ui/types';
 
-const getItemText = (option: any, formatOptionText?: GetOptionLabel<any>): string | number => {
-  if (formatOptionText) {
-    return formatOptionText(option);
-  }
-
-  if (option.label) {
-    return option.label;
-  }
-
-  console.error("You must provide 'getItemText' function!");
-  return option.toString();
-};
-
 const processOptions = (
   unProcessedOptions: any[],
   getOptionValue?: GetOptionValue<any>,
@@ -37,27 +24,23 @@ const optionProcessor = (
 ) => {
   let newOption: SimpleOption;
 
-  if (getOptionValue) {
-    newOption = {
-      id: getOptionId?.(option) ?? id,
-      value: getOptionValue(option),
-      label: getItemText(option, getOptionLabel),
-    };
+  newOption = {
+    id: getOptionId?.(option) ?? id,
+    value: getOptionValue?.(option) ?? option?.value,
+    label: getOptionLabel?.(option) ?? option?.label,
+  };
 
-    return newOption;
-  }
-
-  if (!option.value && !getItemText) {
+  if (!newOption.value) {
     console.error(
-      "You must provide a 'extractSimpleOptionValue' and/or 'formatOptionText' function/s when providing custom option objects!",
+      "You must provide a 'getOptionValue' function when providing object that does not have value property!",
     );
   }
 
-  newOption = {
-    id: getOptionId?.(option) ?? id,
-    label: getItemText(option, getOptionLabel),
-    value: getItemText(option, getOptionLabel),
-  };
+  if (!newOption.label) {
+    console.error(
+      "You must provide a 'getOptionLabel' and/or function when providing object that does not have label property!",
+    );
+  }
 
   return newOption;
 };
