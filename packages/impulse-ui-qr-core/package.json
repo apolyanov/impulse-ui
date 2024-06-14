@@ -1,6 +1,6 @@
 {
   "name": "@impulse-ui/qr-core",
-  "version": "2.11.6",
+  "version": "2.11.7",
   "license": "MIT",
   "author": "Alexander Polyanov",
   "main": "dist/index.js",
@@ -56,6 +56,6 @@
     }
   ],
   "devDependencies": {
-    "@impulse-ui/types": "^2.11.6"
+    "@impulse-ui/types": "^2.11.7"
   }
 }

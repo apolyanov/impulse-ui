@@ -1,6 +1,6 @@
 {
   "name": "@impulse-ui/colours",
-  "version": "2.11.6",
+  "version": "2.11.7",
   "license": "MIT",
   "author": "Alexander Polyanov",
   "main": "dist/index.js",
@@ -40,7 +40,7 @@
     "react": ">=16"
   },
   "devDependencies": {
-    "@impulse-ui/types": "^2.11.6"
+    "@impulse-ui/types": "^2.11.7"
   },
   "engines": {
     "node": ">=12"
