@@ -6,7 +6,6 @@ const defaultAvatarStyle: Partial<AvatarStyle> = {
     iColorTheme: { light: { borderColor: volcano[60], backgroundColor: volcano[10] } },
     iCss: ({ iColorTheme }) => ({
       border: `2px solid ${iColorTheme.borderColor}`,
-      filter: 'drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2))',
       width: '48px',
       margin: 0,
       height: '48px',

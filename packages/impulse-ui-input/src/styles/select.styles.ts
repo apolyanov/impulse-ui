@@ -16,7 +16,6 @@ const select: Partial<SelectStyle<any>> = {
       paddingLeft: 8,
       paddingRight: 36,
       position: 'relative',
-      filter: 'drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2))',
       borderStyle: 'solid',
       height: 38,
       maxWidth: 250,
