@@ -26,7 +26,6 @@ const textInputStyle: Partial<TextInputStyle> = {
       flexDirection: 'row',
       alignItems: 'center',
       padding: '0 8px',
-      filter: 'drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2))',
       borderStyle: 'solid',
       height: 38,
       borderRadius: 4,
