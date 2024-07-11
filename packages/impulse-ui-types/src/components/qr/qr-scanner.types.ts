@@ -1,18 +1,15 @@
 import { RefObject } from 'react';
-import { QRCode } from 'jsqr-es6';
 
 import { IconButtonStyle } from '../buttons';
+import { ScannerRestProps } from '../scanner';
 import { IOStyle } from '../theme';
 
 interface QRScannerProps extends QRScannerRestProps {
   iStyle?: Partial<QRScannerStyle>;
 }
 
-interface QRScannerRestProps {
-  scanningInterval: number;
-  onSuccess: (result: QRCode) => void;
-  onError?: (error: Error) => void;
-}
+interface QRScannerRestProps extends Omit<ScannerRestProps, 'scanningFn'> {}
+interface UseQrScannerProps extends Omit<ScannerRestProps, 'scanningFn'> {}
 
 interface QRScannerStyle {
   mainContainerStyle: IOStyle<QRScannerRestProps & UseQrScannerReturnProps>;
@@ -55,5 +52,6 @@ export type {
   QRScannerProps,
   QRScannerRestProps,
   QRScannerStyle,
+  UseQrScannerProps,
   UseQrScannerReturnProps,
 };
