@@ -51,5 +51,8 @@
       "path": "dist/scanner-core.esm.js",
       "limit": "1000 KB"
     }
-  ]
+  ],
+  "devDependencies": {
+    "@impulse-ui/types": "^2.11.7"
+  }
 }

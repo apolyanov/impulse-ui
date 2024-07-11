@@ -3,7 +3,7 @@ import { CameraCapabilities, QRScannerRestProps } from '@impulse-ui/types';
 
 import { Scanner } from '../scanner';
 
-const useQrScanner = (options: QRScannerRestProps) => {
+const useScanner = (options: QRScannerRestProps) => {
   const videoElement = useRef<HTMLVideoElement | null>(null);
   const qrScanner = useRef(new Scanner(options.scanningInterval));
 
@@ -53,4 +53,4 @@ const useQrScanner = (options: QRScannerRestProps) => {
   };
 };
 
-export { useQrScanner };
+export { useScanner };
