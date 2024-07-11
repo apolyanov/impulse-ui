@@ -1,11 +1,12 @@
 import { useCallback, useRef, useState } from 'react';
-import { CameraCapabilities, QRScannerRestProps } from '@impulse-ui/types';
+import { CameraCapabilities, UseScannerProps } from '@impulse-ui/types';
 
 import { Scanner } from '../scanner';
 
-const useScanner = (options: QRScannerRestProps) => {
+const useScanner = <T>(options: UseScannerProps<T>) => {
+  const { scanningInterval, scanningFn, onSuccess, onError } = options;
   const videoElement = useRef<HTMLVideoElement | null>(null);
-  const qrScanner = useRef(new Scanner(options.scanningInterval));
+  const qrScanner = useRef(new Scanner(scanningInterval));
 
   const [cameraCapabilities, setCameraCapabilities] = useState<CameraCapabilities>();
   const [isScanning, setIsScanning] = useState<boolean>(false);
@@ -13,7 +14,7 @@ const useScanner = (options: QRScannerRestProps) => {
 
   const toggleScanning = async () => {
     if (!isScanning && videoElement.current) {
-      qrScanner.current.scan(videoElement.current, options.onSuccess, options.onError).then((camera) => {
+      qrScanner.current.scan(videoElement.current, scanningFn, onSuccess, onError).then((camera) => {
         setCameraCapabilities(camera);
         setIsScanning(true);
       });

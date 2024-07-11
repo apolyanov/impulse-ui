@@ -1,6 +1,11 @@
-import { QRScannerRestProps } from '@impulse-ui/types';
+import { QRScannerRestProps, ScanningFn } from '@impulse-ui/types';
 
-import { NavigatorSupportException, NoOnSuccessCallbackException, NotFoundException } from '../exceptions';
+import {
+  NavigatorSupportException,
+  NoOnSuccessCallbackException,
+  NoScanningFunctionException,
+  NotFoundException,
+} from '../exceptions';
 
 import { CanvasContext } from './CanvasContext';
 import { VideoContext } from './VideoContext';
@@ -14,18 +19,21 @@ export class Scanner {
   private _onError?: QRScannerRestProps['onError'];
   private _videoContext: VideoContext = new VideoContext();
   private _canvasContext: CanvasContext = new CanvasContext();
+  private _scanningFn?: ScanningFn;
 
   constructor(scanningInterval: number) {
     this._scanningInterval = scanningInterval;
   }
 
-  async scan(
+  async scan<T = unknown>(
     videoElement: HTMLVideoElement,
+    scanningFn: ScanningFn<T>,
     onSuccess: QRScannerRestProps['onSuccess'],
     onError?: QRScannerRestProps['onError'],
   ) {
     this.onSuccess = onSuccess;
     this.onError = onError;
+    this.scanningFn = scanningFn;
     this.videoContext.attachVideoElement(videoElement);
 
     try {
@@ -43,10 +51,9 @@ export class Scanner {
   private startScanLoop() {
     this.scanningLoopId = setInterval(() => {
       const imageData = this.canvasContext.drawImageOnCanvas(this.videoContext.videoElement);
-      const image = imageData.data;
 
       try {
-        this.onSuccess(this.decode(image, imageData.width, imageData.height));
+        this.onSuccess(this.scanningFn({ imageData, canvasData: this.canvasContext, videoData: this.videoContext }));
       } catch (e) {
         this.onError?.(e as NotFoundException);
       }
@@ -129,5 +136,15 @@ export class Scanner {
 
   set paused(value: boolean) {
     this._paused = value;
+  }
+
+  get scanningFn(): ScanningFn {
+    if (this._scanningFn) return this._scanningFn;
+
+    throw new NoScanningFunctionException();
+  }
+
+  set scanningFn(value: ScanningFn) {
+    this._scanningFn = value;
   }
 }

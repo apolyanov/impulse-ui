@@ -9,6 +9,7 @@ export * from './input';
 export * from './layout';
 export * from './loaders';
 export * from './qr';
+export * from './scanner';
 export * from './select';
 export * from './sidebar';
 export * from './table';

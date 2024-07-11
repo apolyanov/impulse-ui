@@ -53,7 +53,7 @@ export class VideoContext extends CameraControls {
     this._videoElement = value;
   }
 
-  private get videoStream(): MediaStream {
+  get videoStream(): MediaStream {
     if (this._videoStream) return this._videoStream;
 
     throw new NoCurrentStreamException();
