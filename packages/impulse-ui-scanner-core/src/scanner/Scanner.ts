@@ -1,8 +1,6 @@
 import { QRScannerRestProps } from '@impulse-ui/types';
-import jsQR from 'jsqr-es6';
 
-import { NavigatorSupportException, NotFoundException } from '../exceptions';
-import { NoOnSuccessCallbackException } from '../exceptions/NoOnSuccessCallbackException';
+import { NavigatorSupportException, NoOnSuccessCallbackException, NotFoundException } from '../exceptions';
 
 import { CanvasContext } from './CanvasContext';
 import { VideoContext } from './VideoContext';
@@ -42,14 +40,6 @@ export class Scanner {
     return this.videoContext.cameraCapabilities;
   }
 
-  private decode(image: Uint8ClampedArray, width: number, height: number) {
-    const code = jsQR(image, width, height);
-
-    if (code) return code;
-
-    throw new NotFoundException();
-  }
-
   private startScanLoop() {
     this.scanningLoopId = setInterval(() => {
       const imageData = this.canvasContext.drawImageOnCanvas(this.videoContext.videoElement);
@@ -73,12 +63,12 @@ export class Scanner {
     }
   }
 
-  pauseScanning() {
+  pause() {
     this.paused = true;
-    clearInterval(this.scanningInterval);
+    clearInterval(this.scanningLoopId);
   }
 
-  resumeScanning() {
+  resume() {
     this.paused = false;
     this.startScanLoop();
   }
