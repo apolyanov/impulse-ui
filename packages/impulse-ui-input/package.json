@@ -1,6 +1,6 @@
 {
   "name": "@impulse-ui/input",
-  "version": "2.11.8",
+  "version": "2.11.9",
   "license": "MIT",
   "author": "Alexander Polyanov",
   "main": "dist/index.js",

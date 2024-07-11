@@ -1,6 +1,6 @@
 {
   "name": "@impulse-ui/avatar",
-  "version": "2.11.7",
+  "version": "2.11.9",
   "license": "MIT",
   "author": "Alexander Polyanov",
   "main": "dist/index.js",
