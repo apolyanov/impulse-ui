@@ -56,6 +56,12 @@
     },
     {
       "path": "./packages/impulse-ui-qr-core"
+    },
+    {
+      "path": "./packages/impulse-ui-scanner-core"
+    },
+    {
+      "path": "./packages/impulse-ui-scanner-core"
     }
   ]
 }
