@@ -1,11 +1,10 @@
-'use client';
-import React, { Fragment, ReactNode, useMemo } from 'react';
 import { useComponentStyle } from '@impulse-ui/core';
 import { TextInput } from '@impulse-ui/input';
 import { Container } from '@impulse-ui/layout';
 import { Spinner } from '@impulse-ui/loader';
 import { Typography } from '@impulse-ui/text';
 import { AutoCompleteProps } from '@impulse-ui/types';
+import React, { Fragment, ReactNode, useMemo } from 'react';
 
 import { useAutoComplete } from '../../hooks';
 import { autoCompleteComponentMap } from '../../maps';

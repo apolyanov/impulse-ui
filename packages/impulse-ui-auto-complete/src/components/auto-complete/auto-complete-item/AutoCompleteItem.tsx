@@ -1,9 +1,8 @@
-'use client';
-import React, { FunctionComponent } from 'react';
 import { useComponentStyle } from '@impulse-ui/core';
 import { Container } from '@impulse-ui/layout';
 import { Typography } from '@impulse-ui/text';
 import { AutoCompleteItemProps } from '@impulse-ui/types';
+import React, { FunctionComponent } from 'react';
 
 import { autoCompleteItemComponentMap } from '../../../maps';
 import { defaultAutoCompleteItemStyle } from '../../../styles';

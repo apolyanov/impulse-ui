@@ -1,5 +1,5 @@
-import { CSSProperties } from 'react';
 import { VirtualItem } from '@tanstack/react-virtual';
+import { CSSProperties } from 'react';
 
 type ScrollAlignment = 'start' | 'center' | 'end' | 'auto';
 

@@ -1,6 +1,5 @@
-'use client';
-import { useCallback, useMemo, useState } from 'react';
 import { UseItemSelectionOptions } from '@impulse-ui/types';
+import { useCallback, useMemo, useState } from 'react';
 
 const defaultOptions: UseItemSelectionOptions<any> = {
   getItemId: (item: any) => item.id,

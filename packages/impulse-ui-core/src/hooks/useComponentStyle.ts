@@ -1,6 +1,5 @@
-'use client';
-import { useMemo } from 'react';
 import { ComponentMap, IOStyle } from '@impulse-ui/types';
+import { useMemo } from 'react';
 
 import { mergePartialThemes } from '../utils';
 

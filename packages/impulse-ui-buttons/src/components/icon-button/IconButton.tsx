@@ -1,10 +1,9 @@
-'use client';
-import React from 'react';
-import { FunctionComponent } from 'react';
 import { extractCssProps, useComponentStyle } from '@impulse-ui/core';
 import { Icon } from '@impulse-ui/icon';
 import { Spinner } from '@impulse-ui/loader';
 import { IconButtonProps } from '@impulse-ui/types';
+import React from 'react';
+import { FunctionComponent } from 'react';
 
 import { iconButtonComponentMap } from '../../maps';
 import { defaultIconButtonStyle } from '../../styles';

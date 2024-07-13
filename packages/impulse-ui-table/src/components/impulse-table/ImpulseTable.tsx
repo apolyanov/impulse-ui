@@ -1,7 +1,7 @@
-import React, { PropsWithChildren } from 'react';
 import { useComponentStyle } from '@impulse-ui/core';
 import { Container } from '@impulse-ui/layout';
 import { ImpulseTableProps } from '@impulse-ui/types';
+import React, { PropsWithChildren } from 'react';
 
 import { impulseTableComponentMap } from '../../maps';
 import { impulseTableStyles } from '../../styles';

@@ -1,6 +1,5 @@
-'use client';
-import { useEffect, useState } from 'react';
 import { UseElementDimensionsFn } from '@impulse-ui/types';
+import { useEffect, useState } from 'react';
 
 const useElementDimensions: UseElementDimensionsFn = (element) => {
   const [width, setWidth] = useState<number>(0);

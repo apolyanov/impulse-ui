@@ -1,8 +1,7 @@
-'use client';
-import React, { Fragment, FunctionComponent, useMemo } from 'react';
 import { extractCssProps, useComponentStyle } from '@impulse-ui/core';
 import { TFootComponentProps } from '@impulse-ui/types';
 import { flexRender } from '@tanstack/react-table';
+import React, { Fragment, FunctionComponent, useMemo } from 'react';
 
 import { useImpulseTable } from '../../hooks';
 import { tfootComponentMap } from '../../maps';

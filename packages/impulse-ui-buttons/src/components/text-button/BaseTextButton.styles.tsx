@@ -1,4 +1,3 @@
-'use client';
 import { createBaseComponentStyle } from '@impulse-ui/core';
 import { BaseIComponent } from '@impulse-ui/types';
 import styled from 'styled-components';

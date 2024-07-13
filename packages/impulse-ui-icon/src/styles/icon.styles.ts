@@ -1,5 +1,5 @@
 import { neutral } from '@impulse-ui/colours';
-import { IconHTMLProps, IStyle } from '@impulse-ui/types';
+import { IStyle, IconHTMLProps } from '@impulse-ui/types';
 
 const icon: IStyle<IconHTMLProps> = {
   iColorTheme: {

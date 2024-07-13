@@ -1,8 +1,7 @@
-'use client';
-import React from 'react';
-import { FunctionComponent } from 'react';
 import { extractCssProps } from '@impulse-ui/core';
 import { TableProps } from '@impulse-ui/types';
+import React from 'react';
+import { FunctionComponent } from 'react';
 
 import { BaseTable } from './BaseTable.styles';
 
