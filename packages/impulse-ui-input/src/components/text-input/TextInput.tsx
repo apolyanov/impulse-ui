@@ -1,4 +1,12 @@
-'use client';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
+import { IconButton } from '@impulse-ui/buttons';
+import { extractCssProps, useComponentStyle } from '@impulse-ui/core';
+import { Icon } from '@impulse-ui/icon';
+import { Container } from '@impulse-ui/layout';
+import { ERROR, FieldMessage } from '@impulse-ui/text';
+import { TextInputProps } from '@impulse-ui/types';
+import debounce from 'lodash/debounce';
+import isNil from 'lodash/isNil';
 import React, {
   ChangeEvent,
   ForwardedRef,
@@ -10,15 +18,6 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { faXmark } from '@fortawesome/free-solid-svg-icons';
-import { IconButton } from '@impulse-ui/buttons';
-import { extractCssProps, useComponentStyle } from '@impulse-ui/core';
-import { Icon } from '@impulse-ui/icon';
-import { Container } from '@impulse-ui/layout';
-import { ERROR, FieldMessage } from '@impulse-ui/text';
-import { TextInputProps } from '@impulse-ui/types';
-import debounce from 'lodash/debounce';
-import isNil from 'lodash/isNil';
 
 import { textInputComponentMap } from '../../maps';
 import { textInputStyle } from '../../styles';

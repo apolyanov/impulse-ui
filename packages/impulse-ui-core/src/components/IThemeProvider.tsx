@@ -1,6 +1,5 @@
-'use client';
-import React, { createContext, FunctionComponent, PropsWithChildren, useState } from 'react';
 import { IThemeContext, IThemeProviderProps, ThemeMode } from '@impulse-ui/types';
+import React, { createContext, FunctionComponent, PropsWithChildren, useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 
 import '../css/font.css';

@@ -3,8 +3,8 @@ import { NoCurrentStreamException, NoVideoElementException } from '../exceptions
 import { CameraControls } from './CameraControls';
 
 export class VideoContext extends CameraControls {
-  private _videoElement?: HTMLVideoElement;
-  private _videoStream?: MediaStream;
+  private _element?: HTMLVideoElement;
+  private _stream?: MediaStream;
 
   async getVideoStream() {
     const stream = await navigator.mediaDevices.getUserMedia({
@@ -12,12 +12,12 @@ export class VideoContext extends CameraControls {
     });
 
     await this.prepareVideoElement(stream);
-    this.videoStream = stream;
+    this.stream = stream;
     this.videoTrack = stream.getVideoTracks()[0];
   }
 
   attachVideoElement(videoElement: HTMLVideoElement) {
-    this.videoElement = videoElement;
+    this.element = videoElement;
   }
 
   cleanVideoContext() {
@@ -26,40 +26,40 @@ export class VideoContext extends CameraControls {
   }
 
   private async prepareVideoElement(stream: MediaStream | MediaSource | Blob) {
-    this.videoElement.srcObject = stream;
-    this.videoElement.autoplay = true;
-    this.videoElement.playsInline = true;
-    await this.videoElement.play();
+    this.element.srcObject = stream;
+    this.element.autoplay = true;
+    this.element.playsInline = true;
+    await this.element.play();
   }
 
   private detachVideoElement() {
-    this.videoElement.srcObject = null;
-    this.videoElement = undefined;
+    this.element.srcObject = null;
+    this.element = undefined;
   }
 
   private releaseVideoTracks() {
-    this.videoStream.getTracks().forEach((track) => track.stop());
-    this.videoStream = undefined;
+    this.stream.getTracks().forEach((track) => track.stop());
+    this.stream = undefined;
     this.videoTrack = undefined;
   }
 
-  get videoElement(): HTMLVideoElement {
-    if (this._videoElement) return this._videoElement;
+  get element(): HTMLVideoElement {
+    if (this._element) return this._element;
 
     throw new NoVideoElementException();
   }
 
-  private set videoElement(value: HTMLVideoElement | undefined) {
-    this._videoElement = value;
+  private set element(value: HTMLVideoElement | undefined) {
+    this._element = value;
   }
 
-  get videoStream(): MediaStream {
-    if (this._videoStream) return this._videoStream;
+  get stream(): MediaStream {
+    if (this._stream) return this._stream;
 
     throw new NoCurrentStreamException();
   }
 
-  private set videoStream(value: MediaStream | undefined) {
-    this._videoStream = value;
+  private set stream(value: MediaStream | undefined) {
+    this._stream = value;
   }
 }

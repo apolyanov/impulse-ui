@@ -1,4 +1,3 @@
-import React, { ChangeEvent, FunctionComponent } from 'react';
 import { faFilter, faMagnifyingGlass, faSliders } from '@fortawesome/free-solid-svg-icons';
 import { IconButton } from '@impulse-ui/buttons';
 import { useComponentStyle } from '@impulse-ui/core';
@@ -6,6 +5,7 @@ import { TextInput } from '@impulse-ui/input';
 import { Container } from '@impulse-ui/layout';
 import { Typography } from '@impulse-ui/text';
 import { TableHeaderProps } from '@impulse-ui/types';
+import React, { ChangeEvent, FunctionComponent } from 'react';
 
 import { useImpulseTable } from '../../hooks';
 import { tableHeaderComponentMap } from '../../maps';
@@ -18,7 +18,7 @@ const TableHeader: FunctionComponent<TableHeaderProps> = ({ iStyle, ...rest }) =
     useComponentStyle(tableHeaderComponentMap, rest, iStyle, tableHeaderStyle);
 
   const handleOnChangeSearch = (event: ChangeEvent<HTMLInputElement>) => setGlobalFilter(event.target.value);
-  const handleOnClearSearch = () => setGlobalFilter('');
+  const handleOnClearSearch = () => setGlobalFilter;
 
   return (
     <Container iStyle={containerStyle}>

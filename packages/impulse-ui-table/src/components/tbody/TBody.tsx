@@ -1,4 +1,3 @@
-import React, { FunctionComponent, useMemo } from 'react';
 import { faDatabase } from '@fortawesome/free-solid-svg-icons';
 import { extractCssProps, useComponentStyle } from '@impulse-ui/core';
 import { Icon } from '@impulse-ui/icon';
@@ -6,6 +5,7 @@ import { Spinner } from '@impulse-ui/loader';
 import { Typography } from '@impulse-ui/text';
 import { TBodyComponentProps } from '@impulse-ui/types';
 import { flexRender } from '@tanstack/react-table';
+import React, { FunctionComponent, useMemo } from 'react';
 
 import { useImpulseTable } from '../../hooks';
 import { tbodyComponentMap } from '../../maps';

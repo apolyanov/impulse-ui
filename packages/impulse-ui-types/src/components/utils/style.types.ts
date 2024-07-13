@@ -1,5 +1,5 @@
 import { Property } from 'csstype';
-import { Interpolation, StyledObject, StyleFunction } from 'styled-components';
+import { Interpolation, StyleFunction, StyledObject } from 'styled-components';
 
 import { IOStyle, IStyle, ThemeMode } from '../theme';
 

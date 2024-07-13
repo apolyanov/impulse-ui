@@ -10,8 +10,6 @@ interface UseProcessedoptionsProps<T> {
 
 type SimpleOptionValue = string | number | Object | Object[];
 
-type WithId<T> = T & { id?: number | string };
-
 interface GetOptionLabel<T> {
   (option: T): string | number;
 }

@@ -1,6 +1,5 @@
-'use client';
-import { useCallback, useEffect } from 'react';
 import { UseOutsideClickFn } from '@impulse-ui/types';
+import { useCallback, useEffect } from 'react';
 
 const useOutsideClick: UseOutsideClickFn = (callback, htmlDeps) => {
   const isEventContained = useCallback(

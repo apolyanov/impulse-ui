@@ -1,19 +1,19 @@
 import { QRCode } from 'jsqr-es6';
 
 interface VideoData {
-  videoElement: HTMLVideoElement;
-  videoStream: MediaStream;
+  element: HTMLVideoElement;
+  stream: MediaStream;
 }
 
 interface CanvasData {
-  canvasElement: HTMLCanvasElement;
-  canvasContext: CanvasRenderingContext2D;
+  element: HTMLCanvasElement;
+  context: CanvasRenderingContext2D;
 }
 
 interface ScanningFnArgs {
-  imageData: ImageData;
-  canvasData: CanvasData;
-  videoData: VideoData;
+  image: ImageData;
+  canvas: CanvasData;
+  video: VideoData;
 }
 
 interface ScanningFn<T = any> {

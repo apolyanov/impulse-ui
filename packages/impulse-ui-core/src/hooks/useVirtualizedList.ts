@@ -1,6 +1,5 @@
-'use client';
+import { VirtualItem, useVirtualizer } from '@tanstack/react-virtual';
 import { CSSProperties, useCallback, useLayoutEffect } from 'react';
-import { useVirtualizer, VirtualItem } from '@tanstack/react-virtual';
 
 interface UseVirtualizedListOptions<T extends Element> {
   scrollElement: T | null;
