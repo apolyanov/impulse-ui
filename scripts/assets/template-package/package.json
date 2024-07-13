@@ -6,14 +6,10 @@
   "main": "dist/index.js",
   "module": "dist/name-arg.esm.js",
   "typings": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "scripts": {
-    "analyze": "size-limit --why",
     "build": "dts build",
-    "lint": "biome check ./src --write",
-    "size": "size-limit",
+    "lint": "biome check src --write",
     "start": "dts watch",
     "test": "dts test --passWithNoTests"
   },
@@ -41,15 +37,5 @@
   },
   "engines": {
     "node": ">=12"
-  },
-  "size-limit": [
-    {
-      "path": "dist/name-arg.cjs.production.min.js",
-      "limit": "1000 KB"
-    },
-    {
-      "path": "dist/name-arg.esm.js",
-      "limit": "1000 KB"
-    }
-  ]
+  }
 }

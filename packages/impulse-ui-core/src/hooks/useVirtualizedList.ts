@@ -25,7 +25,7 @@ const useVirtualizedList = <T extends Element>(options: UseVirtualizedListOption
     position: 'relative',
   };
 
-  const listItemStyle = (virtualRow: VirtualItem): CSSProperties => ({
+  const listItemStyle = (virtualRow: VirtualItem<T>): CSSProperties => ({
     position: 'absolute',
     top: 0,
     left: 0,
