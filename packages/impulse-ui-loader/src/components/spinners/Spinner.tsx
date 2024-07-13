@@ -1,6 +1,6 @@
-import React, { PropsWithChildren } from 'react';
 import { extractCssProps, polymorphicForwardRef } from '@impulse-ui/core';
 import { SpinnerLoaderProps } from '@impulse-ui/types';
+import React, { PropsWithChildren } from 'react';
 
 import BaseSpinner from './BaseSpinner.styles';
 

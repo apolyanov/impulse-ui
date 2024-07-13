@@ -1,5 +1,5 @@
-import { useCallback, useRef, useState } from 'react';
 import { CameraCapabilities, UseScannerProps } from '@impulse-ui/types';
+import { useCallback, useRef, useState } from 'react';
 
 import { Scanner } from '../scanner';
 
@@ -13,6 +13,11 @@ const useScanner = <T>(options: UseScannerProps<T>) => {
   const [isTorchOn, setIsTorchOn] = useState<boolean>(false);
 
   const toggleScanning = async () => {
+    if (qrScanner.current.paused) {
+      setIsScanning(true);
+      return qrScanner.current.resume();
+    }
+
     if (!isScanning && videoElement.current) {
       qrScanner.current.scan(videoElement.current, scanningFn, onSuccess, onError).then((camera) => {
         setCameraCapabilities(camera);
@@ -24,14 +29,14 @@ const useScanner = <T>(options: UseScannerProps<T>) => {
   };
 
   const stopScanning = () => {
-    qrScanner.current.stop();
+    qrScanner.current.pause();
     setIsScanning(false);
   };
 
   const toggleTorch = () => {
     const newTorchState = !isTorchOn;
 
-    qrScanner.current.videoContext.toggleTorch().then(() => setIsTorchOn(newTorchState));
+    qrScanner.current.video.toggleTorch().then(() => setIsTorchOn(newTorchState));
   };
 
   const canUseTorch = cameraCapabilities?.torch;

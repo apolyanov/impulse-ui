@@ -1,5 +1,5 @@
-import { PropsWithChildren } from 'react';
 import { Table } from '@tanstack/react-table';
+import { PropsWithChildren } from 'react';
 
 import { ImpulseTableProps } from './impulseTable.types';
 

@@ -1,4 +1,3 @@
-'use client';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { createBaseComponentStyle } from '@impulse-ui/core';
 import { BaseIComponent } from '@impulse-ui/types';

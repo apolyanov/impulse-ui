@@ -1,5 +1,5 @@
-import { Dispatch, JSX, SetStateAction } from 'react';
 import { SimplePseudos } from 'csstype';
+import { Dispatch, JSX, SetStateAction } from 'react';
 
 import { BackgroundColor, BorderColor, Color, OutlineColor } from '../css';
 

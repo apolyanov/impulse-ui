@@ -16,7 +16,7 @@ import { SimplePseudos } from 'csstype';
 import merge from 'lodash/merge';
 import { css } from 'styled-components';
 
-import { cssPropsMap, LIGHT } from './constants';
+import { LIGHT, cssPropsMap } from './constants';
 
 const extractCssProps = (props: any) => {
   const cssProps: any = {};

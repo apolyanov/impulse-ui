@@ -1,6 +1,6 @@
-import { JSX } from 'react';
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIconProps } from '@fortawesome/react-fontawesome';
+import { JSX } from 'react';
 
 import { IComponent, PositionsCssProps, SpacingAliasCssProps, SpacingCssProps } from '../theme';
 

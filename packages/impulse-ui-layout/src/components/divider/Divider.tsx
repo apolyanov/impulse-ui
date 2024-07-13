@@ -1,8 +1,7 @@
-'use client';
-import React from 'react';
-import { FunctionComponent } from 'react';
 import { extractCssProps } from '@impulse-ui/core';
 import { DividerProps } from '@impulse-ui/types';
+import React from 'react';
+import { FunctionComponent } from 'react';
 
 import BaseDivider from './BaseDivider.styles';
 

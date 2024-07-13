@@ -1,4 +1,3 @@
-import { KeyboardEvent, MouseEvent, useEffect, useState } from 'react';
 import { autoUpdate, offset, size, useFloating } from '@floating-ui/react-dom';
 import { faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
 import {
@@ -9,6 +8,7 @@ import {
   useVirtualizedList,
 } from '@impulse-ui/core';
 import { SelectRestProps, SimpleOption } from '@impulse-ui/types';
+import { KeyboardEvent, MouseEvent, useEffect, useState } from 'react';
 
 const useSelect = <T>(props: SelectRestProps<T>) => {
   const { options, getOptionValue, getOptionId, getOptionLabel, onOptionSelect, selectOnBlur, value, ...rest } = props;
