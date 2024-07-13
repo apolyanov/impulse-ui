@@ -1,8 +1,7 @@
-'use client';
-import React, { FunctionComponent } from 'react';
 import { extractCssProps, useComponentStyle } from '@impulse-ui/core';
 import { Spinner } from '@impulse-ui/loader';
 import { ButtonProps } from '@impulse-ui/types';
+import React, { FunctionComponent } from 'react';
 
 import { buttonComponentMap } from '../../maps';
 import { button } from '../../styles';

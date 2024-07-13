@@ -3,17 +3,15 @@
   "version": "0.1.0",
   "license": "MIT",
   "author": "Alexander Polyanov",
-  "main": "dist/index.js",
-  "module": "dist/scanner-core.esm.js",
-  "typings": "dist/index.d.ts",
+  "main": "dist/index.mjs",
+  "module": "dist/index.mjs",
+  "typings": "dist/index.d.mts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "analyze": "size-limit --why",
-    "build": "dts build",
-    "lint": "dts lint src",
-    "size": "size-limit",
+    "build": "tsup",
+    "lint": "biome check ./src --write",
     "start": "dts watch",
     "test": "dts test --passWithNoTests"
   },
@@ -42,16 +40,6 @@
   "engines": {
     "node": ">=12"
   },
-  "size-limit": [
-    {
-      "path": "dist/scanner-core.cjs.production.min.js",
-      "limit": "1000 KB"
-    },
-    {
-      "path": "dist/scanner-core.esm.js",
-      "limit": "1000 KB"
-    }
-  ],
   "devDependencies": {
     "@impulse-ui/types": "^2.11.7"
   }

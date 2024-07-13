@@ -1,16 +1,15 @@
-'use client';
-import React, { PropsWithChildren, useState } from 'react';
 import { ImpulseTableProviderProps } from '@impulse-ui/types';
 import {
+  PaginationState,
+  RowSelectionState,
+  Updater,
   getCoreRowModel,
   getFilteredRowModel,
   getPaginationRowModel,
   getSortedRowModel,
-  PaginationState,
-  RowSelectionState,
-  Updater,
   useReactTable,
 } from '@tanstack/react-table';
+import React, { PropsWithChildren, useState } from 'react';
 
 import { ImpulseTableContext } from '../../contexts';
 

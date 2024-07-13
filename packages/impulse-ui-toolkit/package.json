@@ -3,17 +3,15 @@
   "version": "2.11.9",
   "license": "MIT",
   "author": "Alexander Polyanov",
-  "main": "dist/index.js",
-  "module": "dist/toolkit.esm.js",
-  "typings": "dist/index.d.ts",
+  "main": "dist/index.mjs",
+  "module": "dist/index.mjs",
+  "typings": "dist/index.d.mts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "analyze": "size-limit --why",
-    "build": "dts build",
-    "lint": "dts lint src",
-    "size": "size-limit",
+    "build": "tsup",
+    "lint": "biome check ./src --write",
     "start": "dts watch",
     "test": "dts test --passWithNoTests"
   },
@@ -44,7 +42,7 @@
     "@impulse-ui/layout": "^2.11.7",
     "@impulse-ui/loader": "^2.11.7",
     "@impulse-ui/qr": "^2.11.7",
-    "@impulse-ui/qr-core": "^2.11.7",
+    "@impulse-ui/scanner-core": "^0.1.0",
     "@impulse-ui/sidebar": "^2.11.7",
     "@impulse-ui/table": "^2.11.9",
     "@impulse-ui/text": "^2.11.7"
@@ -57,15 +55,5 @@
   },
   "engines": {
     "node": ">=12"
-  },
-  "size-limit": [
-    {
-      "path": "dist/toolkit.cjs.production.min.js",
-      "limit": "1000 KB"
-    },
-    {
-      "path": "dist/toolkit.esm.js",
-      "limit": "1000 KB"
-    }
-  ]
+  }
 }

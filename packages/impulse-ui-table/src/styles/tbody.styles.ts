@@ -1,5 +1,5 @@
 import { neutral, volcano } from '@impulse-ui/colours';
-import { ImpulseTableState, IStyle, TBodyStyle } from '@impulse-ui/types';
+import { IStyle, ImpulseTableState, TBodyStyle } from '@impulse-ui/types';
 
 const baseTBody: IStyle<ImpulseTableState<any>> = {
   iColorTheme: {

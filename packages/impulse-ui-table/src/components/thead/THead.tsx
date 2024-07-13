@@ -1,9 +1,8 @@
-'use client';
-import React, { FunctionComponent } from 'react';
 import { extractCssProps, useComponentStyle } from '@impulse-ui/core';
 import { Typography } from '@impulse-ui/text';
 import { THeadComponentProps } from '@impulse-ui/types';
 import { flexRender } from '@tanstack/react-table';
+import React, { FunctionComponent } from 'react';
 
 import { useImpulseTable } from '../../hooks';
 import { theadComponentMap } from '../../maps';

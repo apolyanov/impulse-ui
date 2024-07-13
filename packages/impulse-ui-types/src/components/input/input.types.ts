@@ -1,5 +1,5 @@
-import { ChangeEvent, DetailedHTMLProps, InputHTMLAttributes, JSX, RefObject } from 'react';
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
+import { ChangeEvent, DetailedHTMLProps, InputHTMLAttributes, JSX, RefObject } from 'react';
 
 import { IconButtonStyle } from '../buttons';
 import { FieldMessageStyle } from '../text';

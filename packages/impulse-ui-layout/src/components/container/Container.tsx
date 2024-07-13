@@ -1,7 +1,6 @@
-'use client';
-import React, { PropsWithChildren } from 'react';
 import { extractCssProps, polymorphicForwardRef } from '@impulse-ui/core';
 import { ContainerProps } from '@impulse-ui/types';
+import React, { PropsWithChildren } from 'react';
 
 import { BaseContainer } from './BaseContainer.styles';
 

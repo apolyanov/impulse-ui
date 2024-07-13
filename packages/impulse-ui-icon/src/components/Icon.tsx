@@ -1,7 +1,6 @@
-'use client';
-import React, { FunctionComponent } from 'react';
 import { extractCssProps } from '@impulse-ui/core';
 import { IconProps } from '@impulse-ui/types';
+import React, { FunctionComponent } from 'react';
 
 import BaseIcon from './BaseIcon.styles';
 

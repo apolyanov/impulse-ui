@@ -17,8 +17,8 @@ export class Scanner {
   private _scanningInterval: number;
   private _onSuccess?: QRScannerRestProps['onSuccess'];
   private _onError?: QRScannerRestProps['onError'];
-  private _videoContext: VideoContext = new VideoContext();
-  private _canvasContext: CanvasContext = new CanvasContext();
+  private _video: VideoContext = new VideoContext();
+  private _canvas: CanvasContext = new CanvasContext();
   private _scanningFn?: ScanningFn;
 
   constructor(scanningInterval: number) {
@@ -34,10 +34,10 @@ export class Scanner {
     this.onSuccess = onSuccess;
     this.onError = onError;
     this.scanningFn = scanningFn;
-    this.videoContext.attachVideoElement(videoElement);
+    this.video.attachVideoElement(videoElement);
 
     try {
-      await this.videoContext.getVideoStream();
+      await this.video.getVideoStream();
     } catch (e) {
       onError?.(new NavigatorSupportException());
     }
@@ -45,15 +45,15 @@ export class Scanner {
     this.isScanning = true;
     this.startScanLoop();
 
-    return this.videoContext.cameraCapabilities;
+    return this.video.cameraCapabilities;
   }
 
   private startScanLoop() {
     this.scanningLoopId = setInterval(() => {
-      const imageData = this.canvasContext.drawImageOnCanvas(this.videoContext.videoElement);
+      const image = this.canvas.drawImageOnCanvas(this.video.element);
 
       try {
-        this.onSuccess(this.scanningFn({ imageData, canvasData: this.canvasContext, videoData: this.videoContext }));
+        this.onSuccess(this.scanningFn({ image, canvas: this.canvas, video: this.video }));
       } catch (e) {
         this.onError?.(e as NotFoundException);
       }
@@ -65,8 +65,8 @@ export class Scanner {
       this.paused = false;
       this.isScanning = false;
       clearInterval(this.scanningLoopId);
-      this.videoContext.cleanVideoContext();
-      this.canvasContext.cleanCanvasContext();
+      this.video.cleanVideoContext();
+      this.canvas.cleanCanvasContext();
     }
   }
 
@@ -96,12 +96,12 @@ export class Scanner {
     this._scanningInterval = value;
   }
 
-  get canvasContext(): CanvasContext {
-    return this._canvasContext;
+  get canvas(): CanvasContext {
+    return this._canvas;
   }
 
-  get videoContext(): VideoContext {
-    return this._videoContext;
+  get video(): VideoContext {
+    return this._video;
   }
 
   private get isScanning(): boolean {

@@ -1,13 +1,13 @@
 import { NoCanvasContextException } from '../exceptions';
 
 export class CanvasContext {
-  private _canvasElement = document.createElement('canvas');
-  private _canvasContext = this.canvasElement.getContext('2d', { willReadFrequently: true });
+  private _element = document.createElement('canvas');
+  private _context = this.element.getContext('2d', { willReadFrequently: true });
 
   cleanCanvasContext() {
     const newCanvasElement = document.createElement('canvas');
-    this.canvasElement = newCanvasElement;
-    this.canvasContext = newCanvasElement.getContext('2d', { willReadFrequently: true });
+    this.element = newCanvasElement;
+    this.context = newCanvasElement.getContext('2d', { willReadFrequently: true });
   }
 
   drawImageOnCanvas(videoElement: HTMLVideoElement) {
@@ -24,41 +24,31 @@ export class CanvasContext {
 
     this.updateCanvasSize(canvasSize);
 
-    this.canvasContext.drawImage(
-      videoElement,
-      clipStartX,
-      clipStartY,
-      canvasSize,
-      canvasSize,
-      0,
-      0,
-      canvasSize,
-      canvasSize,
-    );
+    this.context.drawImage(videoElement, clipStartX, clipStartY, canvasSize, canvasSize, 0, 0, canvasSize, canvasSize);
 
-    return this.canvasContext.getImageData(0, 0, this.canvasElement.width, this.canvasElement.height);
+    return this.context.getImageData(0, 0, this.element.width, this.element.height);
   }
 
   private updateCanvasSize(size: number) {
-    this.canvasElement.width = size;
-    this.canvasElement.height = size;
+    this.element.width = size;
+    this.element.height = size;
   }
 
-  get canvasElement(): HTMLCanvasElement {
-    return this._canvasElement;
+  get element(): HTMLCanvasElement {
+    return this._element;
   }
 
-  set canvasElement(value: HTMLCanvasElement) {
-    this._canvasElement = value;
+  set element(value: HTMLCanvasElement) {
+    this._element = value;
   }
 
-  get canvasContext(): CanvasRenderingContext2D {
-    if (this._canvasContext) return this._canvasContext;
+  get context(): CanvasRenderingContext2D {
+    if (this._context) return this._context;
 
     throw new NoCanvasContextException();
   }
 
-  set canvasContext(value: CanvasRenderingContext2D | null) {
-    this._canvasContext = value;
+  set context(value: CanvasRenderingContext2D | null) {
+    this._context = value;
   }
 }
