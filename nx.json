@@ -5,26 +5,15 @@
       "options": {
         "cacheableOperations": ["build", "lint", "test", "size"],
         "parallel": 4,
-        "accessToken": "ZTU1MDkyZWMtMGM2MC00OWEyLWJiMjAtYWVhYWRjNzRhNjkxfHJlYWQtd3JpdGU="
+        "accessToken": "YjNkZDQyNmEtMmY5Mi00NThlLTllODMtMTVmNDg2ZDRmY2M2fHJlYWQtd3JpdGU="
       }
     }
   },
   "targetDefaults": {
-    "build": {
-      "dependsOn": ["^build"],
-      "outputs": ["{projectRoot}/dist"]
-    },
-    "lint": {
-      "dependsOn": ["^lint"]
-    },
-    "test": {
-      "dependsOn": ["^test"]
-    },
-    "size": {
-      "dependsOn": ["build"]
-    }
+    "build": { "dependsOn": ["^build"], "outputs": ["{projectRoot}/dist"] },
+    "lint": { "dependsOn": ["^lint"] },
+    "test": { "dependsOn": ["^test"] },
+    "size": { "dependsOn": ["build"] }
   },
-  "affected": {
-    "defaultBase": "origin/main"
-  }
+  "affected": { "defaultBase": "origin/main" }
 }
