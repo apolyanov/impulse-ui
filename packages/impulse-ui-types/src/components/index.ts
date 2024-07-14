@@ -8,6 +8,7 @@ export * from './icon';
 export * from './input';
 export * from './layout';
 export * from './loaders';
+export * from './ocr';
 export * from './qr';
 export * from './scanner';
 export * from './select';

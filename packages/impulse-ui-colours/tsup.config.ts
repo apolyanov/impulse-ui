@@ -1,8 +1,4 @@
 import { defineConfig } from 'tsup';
+import { baseOptions } from '../../tsup.base';
 
-export default defineConfig({
-  entry: ['src/**/*.ts'],
-  format: ['esm'],
-  clean: true,
-  dts: true,
-});
+export default defineConfig(baseOptions);

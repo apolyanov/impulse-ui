@@ -1,5 +1,7 @@
 import { readdir, rm } from 'node:fs';
 
+const TURBO_ROOT = './.turbo';
+const TURBO_CACHE = 'cache';
 const PACKAGES_ROOT = './packages';
 const NODE_MODULES = 'node_modules';
 const DIST = 'dist';
@@ -19,6 +21,8 @@ const removedFolderCallback = (folder: string, folderType: string, error: NodeJS
 };
 
 const cleanNodeModules = () => {
+  rm(`${TURBO_ROOT}/${TURBO_CACHE}`, removeOptions, () => console.info('Cleaned packages cache!'));
+
   readdir(PACKAGES_ROOT, (err, files) => {
     if (err) {
       console.error(err.message);

@@ -1,4 +1,4 @@
-import useIThemeContext from './useIThemeContext';
+import { useIThemeContext } from './useIThemeContext';
 
 const useITheme = () => {
   const { setCurrentThemeMode, currentThemeMode } = useIThemeContext();
@@ -6,4 +6,4 @@ const useITheme = () => {
   return { setCurrentThemeMode, currentThemeMode };
 };
 
-export default useITheme;
+export { useITheme };

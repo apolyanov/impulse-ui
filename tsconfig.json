@@ -4,10 +4,17 @@
     "strict": true,
     "noUnusedLocals": false,
     "noUnusedParameters": false,
-    "noFallthroughCasesInSwitch": false
+    "noFallthroughCasesInSwitch": false,
+    "noEmit": false
   },
-  "include": ["src", "types", "scripts"],
-  "exclude": ["dist"],
+  "include": [
+    "src",
+    "types",
+    "scripts"
+  ],
+  "exclude": [
+    "dist"
+  ],
   "references": [
     {
       "path": "./packages/impulse-ui-types"
@@ -62,6 +69,9 @@
     },
     {
       "path": "./packages/impulse-ui-scanner-core"
+    },
+    {
+      "path": "./packages/impulse-ui-ocr"
     }
   ]
 }
