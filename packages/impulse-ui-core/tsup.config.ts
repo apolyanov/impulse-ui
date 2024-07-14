@@ -6,6 +6,7 @@ export default defineConfig({
   dts: true,
   clean: true,
   injectStyle: true,
+  external: ['lodash-es'],
   banner: {
     js: '"use client"',
   },

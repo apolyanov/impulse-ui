@@ -5,8 +5,7 @@ import { Icon } from '@impulse-ui/icon';
 import { Container } from '@impulse-ui/layout';
 import { ERROR, FieldMessage } from '@impulse-ui/text';
 import { TextInputProps } from '@impulse-ui/types';
-import debounce from 'lodash/debounce';
-import isNil from 'lodash/isNil';
+import { debounce, isNil } from 'lodash-es';
 import React, {
   ChangeEvent,
   ForwardedRef,
@@ -50,7 +49,7 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
       useComponentStyle(textInputComponentMap, rest, textInputStyle, iStyle);
 
     const [innerValue, setInnerValue] = useState<InputHTMLAttributes<HTMLInputElement>['value']>(defaultValue ?? '');
-    const innerRef = useRef<HTMLInputElement>(null);
+    const innerRef = useRef<HTMLInputElement | null>(null);
 
     useImperativeHandle(
       ref,

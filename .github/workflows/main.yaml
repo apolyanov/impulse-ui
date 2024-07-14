@@ -11,6 +11,9 @@ jobs:
     name: Build and Test
     timeout-minutes: 15
     runs-on: ubuntu-latest
+    container:
+      image: node:20-buster
+      options: --memory=4g
 
     steps:
       - name: Check out code
