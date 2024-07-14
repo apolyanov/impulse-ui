@@ -4,7 +4,8 @@
     "strict": true,
     "noUnusedLocals": false,
     "noUnusedParameters": false,
-    "noFallthroughCasesInSwitch": false
+    "noFallthroughCasesInSwitch": false,
+    "noEmit": false
   },
   "include": ["src", "types", "scripts"],
   "exclude": ["dist"],

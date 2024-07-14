@@ -4,11 +4,9 @@
   "license": "MIT",
   "author": "Alexander Polyanov",
   "typings": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "scripts": {
-    "build": "tsup",
+    "build": "tsc --emitDeclarationOnly --declaration",
     "lint": "biome check ./src --write",
     "start": "dts watch",
     "test": "dts test --passWithNoTests"
