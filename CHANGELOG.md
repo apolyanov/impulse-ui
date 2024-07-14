@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.12.0-beta.0](https://github.com/apolyanov/impulse-ui/compare/v2.11.9...v2.12.0-beta.0) (2024-07-14)
+
+
+### Bug Fixes
+
+* Adding lodash/merge as external. ([9268ec3](https://github.com/apolyanov/impulse-ui/commit/9268ec319f4e920ddbce5636e746703a44170e64))
+* Fix out of memory error ([87cff49](https://github.com/apolyanov/impulse-ui/commit/87cff4944b538b932c7586f5aa4a1a98d3ec3b48))
+* Removing access token from codebase and updating github actions ([87412a5](https://github.com/apolyanov/impulse-ui/commit/87412a591b87ce0798b6aeefa0b245778be14d40))
+* Removing size task ([9d2ae5e](https://github.com/apolyanov/impulse-ui/commit/9d2ae5e3ad49c81624f71fe7d06867040f4dcf42))
+* Removing unused cache operation. ([5fc0ee0](https://github.com/apolyanov/impulse-ui/commit/5fc0ee083ea0266d3895826716fcaf7ecc44bc37))
+
+
+### Features
+
+* Moving to faster tools for linting and bundling ([e8ab84c](https://github.com/apolyanov/impulse-ui/commit/e8ab84c7666a2b396b19c5a30376b8891f2d9938))
+* Updating workflows ([278ede8](https://github.com/apolyanov/impulse-ui/commit/278ede8afbbc5b5a34204abc381b58a0b2b2c929))
+
+
+
+
+
 ## [2.11.9](https://github.com/apolyanov/impulse-ui/compare/v2.11.8...v2.11.9) (2024-07-11)
 
 
