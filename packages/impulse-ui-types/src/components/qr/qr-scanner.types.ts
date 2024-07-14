@@ -1,57 +1,28 @@
-import { RefObject } from 'react';
-
 import { IconButtonStyle } from '../buttons';
-import { ScannerRestProps } from '../scanner';
+import { ScannerRestProps, UseScannerReturnProps } from '../scanner';
 import { IOStyle } from '../theme';
+import { QRCode } from 'jsqr-es6';
 
 interface QRScannerProps extends QRScannerRestProps {
   iStyle?: Partial<QRScannerStyle>;
 }
 
-interface QRScannerRestProps extends Omit<ScannerRestProps, 'scanningFn'> {}
-interface UseQrScannerProps extends Omit<ScannerRestProps, 'scanningFn'> {}
+interface QRScannerRestProps extends Omit<ScannerRestProps<QRCode>, 'scanningFn'> {}
+interface UseQrScannerProps extends Omit<ScannerRestProps<QRCode>, 'scanningFn'> {}
+interface UseQrScannerReturnProp extends UseScannerReturnProps {}
 
 interface QRScannerStyle {
-  mainContainerStyle: IOStyle<QRScannerRestProps & UseQrScannerReturnProps>;
-  qrScannerContainerStyle: IOStyle<QRScannerRestProps & UseQrScannerReturnProps>;
-  buttonsContainerStyle: IOStyle<QRScannerRestProps & UseQrScannerReturnProps>;
-  toggleScanningButtonStyle: Partial<IconButtonStyle<QRScannerRestProps & UseQrScannerReturnProps>>;
-  toggleTorchButtonStyle: Partial<IconButtonStyle<QRScannerRestProps & UseQrScannerReturnProps>>;
-  topLeftQRCornerStyle: IOStyle<QRScannerRestProps & UseQrScannerReturnProps>;
-  topRightQRCornerStyle: IOStyle<QRScannerRestProps & UseQrScannerReturnProps>;
-  bottomLeftQRCornerStyle: IOStyle<QRScannerRestProps & UseQrScannerReturnProps>;
-  bottomRightQRCornerStyle: IOStyle<QRScannerRestProps & UseQrScannerReturnProps>;
-  placeholderIconStyle: IOStyle<QRScannerRestProps & UseQrScannerReturnProps>;
-  videoStyle: IOStyle<QRScannerRestProps & UseQrScannerReturnProps>;
+  mainContainerStyle: IOStyle<QRScannerRestProps & UseScannerReturnProps>;
+  qrScannerContainerStyle: IOStyle<QRScannerRestProps & UseScannerReturnProps>;
+  buttonsContainerStyle: IOStyle<QRScannerRestProps & UseScannerReturnProps>;
+  toggleScanningButtonStyle: Partial<IconButtonStyle<QRScannerRestProps & UseScannerReturnProps>>;
+  toggleTorchButtonStyle: Partial<IconButtonStyle<QRScannerRestProps & UseScannerReturnProps>>;
+  topLeftQRCornerStyle: IOStyle<QRScannerRestProps & UseScannerReturnProps>;
+  topRightQRCornerStyle: IOStyle<QRScannerRestProps & UseScannerReturnProps>;
+  bottomLeftQRCornerStyle: IOStyle<QRScannerRestProps & UseScannerReturnProps>;
+  bottomRightQRCornerStyle: IOStyle<QRScannerRestProps & UseScannerReturnProps>;
+  placeholderIconStyle: IOStyle<QRScannerRestProps & UseScannerReturnProps>;
+  videoStyle: IOStyle<QRScannerRestProps & UseScannerReturnProps>;
 }
 
-interface UseQrScannerReturnProps {
-  videoElement: RefObject<HTMLVideoElement>;
-  toggleScanning: () => Promise<void>;
-  toggleTorch: () => void;
-  cameraCapabilities: CameraCapabilities | undefined;
-  canUseTorch: boolean | undefined;
-  isScanning: boolean;
-  isTorchOn: boolean;
-}
-
-interface CameraCapabilities extends MediaTrackCapabilities {
-  torch?: boolean;
-  zoom?: MinMaxCapability;
-  focusDistance?: MinMaxCapability;
-}
-
-interface MinMaxCapability {
-  min?: number;
-  max?: number;
-}
-
-export type {
-  CameraCapabilities,
-  MinMaxCapability,
-  QRScannerProps,
-  QRScannerRestProps,
-  QRScannerStyle,
-  UseQrScannerProps,
-  UseQrScannerReturnProps,
-};
+export type { QRScannerProps, QRScannerRestProps, QRScannerStyle, UseQrScannerProps, UseQrScannerReturnProp };

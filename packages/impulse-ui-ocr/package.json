@@ -1,0 +1,49 @@
+{
+  "name": "@impulse-ui/ocr",
+  "version": "0.1.0",
+  "license": "MIT",
+  "author": "Alexander Polyanov",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup",
+    "lint": "biome check src --write",
+    "start": "dts watch",
+    "test": "dts test --passWithNoTests"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "dts lint"
+    }
+  },
+  "prettier": {
+    "semi": true,
+    "tabWidth": 2,
+    "printWidth": 120,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "jsxSingleQuote": true,
+    "bracketSameLine": false,
+    "endOfLine": "auto",
+    "bracketSpacing": true
+  },
+  "jest": {
+    "testEnvironment": "jsdom"
+  },
+  "dependencies": {
+    "@impulse-ui/buttons": "^2.11.7",
+    "@impulse-ui/colours": "^2.11.7",
+    "@impulse-ui/core": "^2.11.7",
+    "@impulse-ui/icon": "^2.11.7",
+    "@impulse-ui/layout": "^2.11.7",
+    "@impulse-ui/scanner-core": "^0.1.0"
+  },
+  "peerDependencies": {
+    "react": ">=16"
+  },
+  "engines": {
+    "node": ">=12"
+  }
+}

@@ -5,7 +5,8 @@ import { Icon } from '@impulse-ui/icon';
 import { Container } from '@impulse-ui/layout';
 import { ERROR, FieldMessage } from '@impulse-ui/text';
 import { TextInputProps } from '@impulse-ui/types';
-import { debounce, isNil } from 'lodash-es';
+import debounce from 'lodash-es/debounce';
+import isNil from 'lodash-es/isNil';
 import React, {
   ChangeEvent,
   ForwardedRef,

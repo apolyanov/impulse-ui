@@ -3,12 +3,10 @@
   "version": "2.11.9",
   "license": "MIT",
   "author": "Alexander Polyanov",
-  "main": "dist/index.mjs",
-  "module": "dist/index.mjs",
-  "typings": "dist/index.d.mts",
-  "files": [
-    "dist"
-  ],
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": ["dist"],
   "scripts": {
     "build": "tsup",
     "lint": "biome check ./src --write",
@@ -43,6 +41,7 @@
     "@impulse-ui/loader": "^2.11.7",
     "@impulse-ui/qr": "^2.11.7",
     "@impulse-ui/scanner-core": "^0.1.0",
+    "@impulse-ui/ocr": "^0.1.0",
     "@impulse-ui/sidebar": "^2.11.7",
     "@impulse-ui/table": "^2.11.9",
     "@impulse-ui/text": "^2.11.7"

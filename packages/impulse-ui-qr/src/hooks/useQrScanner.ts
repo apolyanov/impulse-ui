@@ -1,15 +1,25 @@
 import { NotFoundException, useScanner } from '@impulse-ui/scanner-core';
 import { QRScannerRestProps, ScanningFn } from '@impulse-ui/types';
-import jsQR from 'jsqr-es6';
+import { createWorkerFactory, useWorker } from '@shopify/react-web-worker';
+import { useCallback } from 'react';
 
-const decode: ScanningFn = ({ image }) => {
-  const code = jsQR(image.data, image.width, image.height);
+const createWorker = createWorkerFactory(() => import('./jsQR'));
 
-  if (code) return code;
+const useQrScanner = (options: QRScannerRestProps) => {
+  const worker = useWorker(createWorker);
 
-  throw new NotFoundException();
+  const decode: ScanningFn = useCallback(
+    async ({ image }) => {
+      const code = await worker.jsQR(image.data, image.width, image.height);
+
+      if (code) return code;
+
+      throw new NotFoundException();
+    },
+    [worker],
+  );
+
+  return useScanner({ ...options, scanningFn: decode });
 };
-
-const useQrScanner = (options: QRScannerRestProps) => useScanner({ ...options, scanningFn: decode });
 
 export { useQrScanner };

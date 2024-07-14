@@ -3,12 +3,10 @@
   "version": "2.11.7",
   "license": "MIT",
   "author": "Alexander Polyanov",
-  "main": "dist/index.mjs",
-  "module": "dist/index.mjs",
-  "typings": "dist/index.d.mts",
-  "files": [
-    "dist"
-  ],
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": ["dist"],
   "scripts": {
     "build": "tsup",
     "lint": "biome check ./src --write",
@@ -46,6 +44,5 @@
   },
   "engines": {
     "node": ">=12"
-  },
-  "gitHead": "82ece656f5271be949d5e3eff27201cc83ef6555"
+  }
 }

@@ -1,4 +1,4 @@
-import { QRScannerRestProps, ScanningFn } from '@impulse-ui/types';
+import { ScannerRestProps, ScanningFn } from '@impulse-ui/types';
 
 import {
   NavigatorSupportException,
@@ -15,8 +15,8 @@ export class Scanner {
   private _paused: boolean = false;
   private _scanningLoopId?: NodeJS.Timeout;
   private _scanningInterval: number;
-  private _onSuccess?: QRScannerRestProps['onSuccess'];
-  private _onError?: QRScannerRestProps['onError'];
+  private _onSuccess?: ScannerRestProps['onSuccess'];
+  private _onError?: ScannerRestProps['onError'];
   private _video: VideoContext = new VideoContext();
   private _canvas: CanvasContext = new CanvasContext();
   private _scanningFn?: ScanningFn;
@@ -28,8 +28,8 @@ export class Scanner {
   async scan<T = unknown>(
     videoElement: HTMLVideoElement,
     scanningFn: ScanningFn<T>,
-    onSuccess: QRScannerRestProps['onSuccess'],
-    onError?: QRScannerRestProps['onError'],
+    onSuccess: ScannerRestProps['onSuccess'],
+    onError?: ScannerRestProps['onError'],
   ) {
     this.onSuccess = onSuccess;
     this.onError = onError;
@@ -38,7 +38,7 @@ export class Scanner {
 
     try {
       await this.video.getVideoStream();
-    } catch (e) {
+    } catch {
       onError?.(new NavigatorSupportException());
     }
 
@@ -49,11 +49,11 @@ export class Scanner {
   }
 
   private startScanLoop() {
-    this.scanningLoopId = setInterval(() => {
+    this.scanningLoopId = setInterval(async () => {
       const image = this.canvas.drawImageOnCanvas(this.video.element);
 
       try {
-        this.onSuccess(this.scanningFn({ image, canvas: this.canvas, video: this.video }));
+        this.onSuccess(await this.scanningFn({ image, canvas: this.canvas, video: this.video }));
       } catch (e) {
         this.onError?.(e as NotFoundException);
       }
@@ -112,21 +112,21 @@ export class Scanner {
     this._isScanning = value;
   }
 
-  get onSuccess(): QRScannerRestProps['onSuccess'] {
+  get onSuccess(): ScannerRestProps['onSuccess'] {
     if (this._onSuccess) return this._onSuccess;
 
     throw new NoOnSuccessCallbackException();
   }
 
-  set onSuccess(value: QRScannerRestProps['onSuccess']) {
+  set onSuccess(value: ScannerRestProps['onSuccess']) {
     this._onSuccess = value;
   }
 
-  get onError(): QRScannerRestProps['onError'] {
+  get onError(): ScannerRestProps['onError'] {
     return this._onError;
   }
 
-  set onError(value: QRScannerRestProps['onError']) {
+  set onError(value: ScannerRestProps['onError']) {
     this._onError = value;
   }
 

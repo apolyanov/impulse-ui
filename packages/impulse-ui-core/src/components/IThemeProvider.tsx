@@ -1,12 +1,11 @@
 import { IThemeContext, IThemeProviderProps, ThemeMode } from '@impulse-ui/types';
-import React, { createContext, FunctionComponent, PropsWithChildren, useState } from 'react';
+import { createContext, FunctionComponent, PropsWithChildren, useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 
 import '../css/font.css';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 
 import { LIGHT } from '../utils';
-
 import { GlobalStyle } from './GlobalStyle';
 
 const ITheme = createContext<IThemeContext | undefined>(undefined);
@@ -22,5 +21,4 @@ const IThemeProvider: FunctionComponent<PropsWithChildren<IThemeProviderProps>> 
   );
 };
 
-export { IThemeProvider };
-export { ITheme };
+export { IThemeProvider, ITheme };

@@ -12,4 +12,4 @@ const useIThemeContext: UseIThemeContextFn = () => {
   return context;
 };
 
-export default useIThemeContext;
+export { useIThemeContext };

@@ -1,11 +1,4 @@
 import { defineConfig } from 'tsup';
+import { baseOptions } from '../../tsup.base';
 
-export default defineConfig({
-  entry: ['src/**/*@(ts|tsx)'],
-  format: ['esm'],
-  dts: true,
-  clean: true,
-  banner: {
-    js: '"use client"',
-  },
-});
+export default defineConfig(baseOptions);
