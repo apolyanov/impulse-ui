@@ -13,7 +13,7 @@ import {
 } from '@impulse-ui/types';
 import { ColorsKeysValues } from '@impulse-ui/types';
 import { SimplePseudos } from 'csstype';
-import merge from 'lodash/merge';
+import { merge } from 'lodash-es';
 import { css } from 'styled-components';
 
 import { LIGHT, cssPropsMap } from './constants';
