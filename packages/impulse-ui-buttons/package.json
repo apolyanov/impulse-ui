@@ -1,12 +1,14 @@
 {
   "name": "@impulse-ui/buttons",
-  "version": "2.11.7",
+  "version": "2.12.0",
   "license": "MIT",
   "author": "Alexander Polyanov",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "typings": "dist/index.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsup",
     "lint": "biome check ./src --write",
@@ -33,13 +35,13 @@
     "testEnvironment": "jsdom"
   },
   "dependencies": {
-    "@impulse-ui/colours": "^2.11.7",
-    "@impulse-ui/core": "^2.11.7",
-    "@impulse-ui/icon": "^2.11.7",
-    "@impulse-ui/loader": "^2.11.7"
+    "@impulse-ui/colours": "^2.12.0",
+    "@impulse-ui/core": "^2.12.0",
+    "@impulse-ui/icon": "^2.12.0",
+    "@impulse-ui/loader": "^2.12.0"
   },
   "devDependencies": {
-    "@impulse-ui/types": "^2.11.7"
+    "@impulse-ui/types": "^2.12.0"
   },
   "peerDependencies": {
     "react": ">=16"
