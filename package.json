@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "author": "Alexander Polyanov",
-  "workspaces": [
-    "packages/*"
-  ],
+  "workspaces": ["packages/*"],
   "packageManager": "npm@10.8.1",
   "scripts": {
     "build": "turbo build",
@@ -14,6 +12,7 @@
     "lint": "lerna run lint",
     "storybook": "storybook dev -p 6006",
     "test": "lerna run test",
+    "release": "npm run build && changeset publish",
     "create-package": "bun scripts/createPackage.ts",
     "clean-packages": "bun scripts/cleanInstall.ts && npm run build"
   },
