@@ -1,5 +1,30 @@
 # Change Log
 
+## 2.12.0
+
+### Minor Changes
+
+- [#109](https://github.com/apolyanov/impulse-ui/pull/109) [`da4cb66`](https://github.com/apolyanov/impulse-ui/commit/da4cb66e9b0b20b092e880f62a8e56b2208aee5a) Thanks [@apolyanov](https://github.com/apolyanov)! - Releasing @impulse-ui/ocr, @impulse-ui/qr, @impulse-ui/scanner-core.
+
+### Patch Changes
+
+- Updated dependencies [[`da4cb66`](https://github.com/apolyanov/impulse-ui/commit/da4cb66e9b0b20b092e880f62a8e56b2208aee5a)]:
+  - @impulse-ui/auto-complete@2.12.0
+  - @impulse-ui/avatar@2.12.0
+  - @impulse-ui/buttons@2.12.0
+  - @impulse-ui/colours@2.12.0
+  - @impulse-ui/core@2.12.0
+  - @impulse-ui/icon@2.12.0
+  - @impulse-ui/input@2.12.0
+  - @impulse-ui/layout@2.12.0
+  - @impulse-ui/loader@2.12.0
+  - @impulse-ui/ocr@2.12.0
+  - @impulse-ui/qr@2.12.0
+  - @impulse-ui/scanner-core@2.12.0
+  - @impulse-ui/sidebar@2.12.0
+  - @impulse-ui/table@2.12.0
+  - @impulse-ui/text@2.12.0
+
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
@@ -7,624 +32,322 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 **Note:** Version bump only for package @impulse-ui/toolkit
 
-
-
-
-
 ## [2.11.8](https://github.com/apolyanov/impulse-ui/compare/v2.11.7...v2.11.8) (2024-06-15)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
-
-
-
-
 
 ## [2.11.7](https://github.com/apolyanov/impulse-ui/compare/v2.11.6...v2.11.7) (2024-06-14)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
 
-
-
-
-
 ## [2.11.6](https://github.com/apolyanov/impulse-ui/compare/v2.11.5...v2.11.6) (2024-06-11)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
-
-
-
-
 
 ## [2.11.5](https://github.com/apolyanov/impulse-ui/compare/v2.11.4...v2.11.5) (2024-06-11)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
 
-
-
-
-
 ## [2.11.4](https://github.com/apolyanov/impulse-ui/compare/v2.11.3...v2.11.4) (2024-06-10)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
-
-
-
-
 
 ## [2.11.3](https://github.com/apolyanov/impulse-ui/compare/v2.11.2...v2.11.3) (2024-06-01)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
 
-
-
-
-
 ## [2.11.2](https://github.com/apolyanov/impulse-ui/compare/v2.11.1...v2.11.2) (2024-06-01)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
-
-
-
-
 
 ## [2.11.1](https://github.com/apolyanov/impulse-ui/compare/v2.11.0...v2.11.1) (2024-05-31)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
 
-
-
-
-
 # [2.11.0](https://github.com/apolyanov/impulse-ui/compare/v2.10.1...v2.11.0) (2024-05-31)
-
 
 ### Bug Fixes
 
-* Adding missing props and loader package in toolkit. ([df6aad3](https://github.com/apolyanov/impulse-ui/commit/df6aad3b7eb68e0f143a1e288a99a2efdcf779f0))
-
-
-
-
+- Adding missing props and loader package in toolkit. ([df6aad3](https://github.com/apolyanov/impulse-ui/commit/df6aad3b7eb68e0f143a1e288a99a2efdcf779f0))
 
 # [2.11.0-beta.2](https://github.com/apolyanov/impulse-ui/compare/v2.10.1...v2.11.0-beta.2) (2024-05-31)
 
-
 ### Bug Fixes
 
-* Adding missing props and loader package in toolkit. ([81fd304](https://github.com/apolyanov/impulse-ui/commit/81fd30432c593c5c3d39b15b964a3c85f005bb28))
-
-
-
-
+- Adding missing props and loader package in toolkit. ([81fd304](https://github.com/apolyanov/impulse-ui/commit/81fd30432c593c5c3d39b15b964a3c85f005bb28))
 
 # [2.11.0-beta.1](https://github.com/apolyanov/impulse-ui/compare/v2.11.0-beta.0...v2.11.0-beta.1) (2024-05-25)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
 
-
-
-
-
 # [2.11.0-beta.0](https://github.com/apolyanov/impulse-ui/compare/v2.8.0...v2.11.0-beta.0) (2024-05-25)
-
 
 ### Bug Fixes
 
-* Including QR packages in the toolkit ([f325eaf](https://github.com/apolyanov/impulse-ui/commit/f325eafcf42c97f5eb60e4471319e4acba919f3e))
-
-
-
-
+- Including QR packages in the toolkit ([f325eaf](https://github.com/apolyanov/impulse-ui/commit/f325eafcf42c97f5eb60e4471319e4acba919f3e))
 
 ## [2.10.1](https://github.com/apolyanov/impulse-ui/compare/v2.10.0...v2.10.1) (2024-05-24)
 
-
 ### Bug Fixes
 
-* Including QR packages in the toolkit ([7af89bd](https://github.com/apolyanov/impulse-ui/commit/7af89bddace72821cc603781ea59bd6acbcc215a))
-
-
-
-
+- Including QR packages in the toolkit ([7af89bd](https://github.com/apolyanov/impulse-ui/commit/7af89bddace72821cc603781ea59bd6acbcc215a))
 
 # [2.10.0](https://github.com/apolyanov/impulse-ui/compare/v2.9.0...v2.10.0) (2024-05-24)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
 
-
-
-
-
 # [2.9.0](https://github.com/apolyanov/impulse-ui/compare/v2.8.0...v2.9.0) (2024-05-23)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
 
-
-
-
-
 # [2.8.0](https://github.com/apolyanov/impulse-ui/compare/v2.7.3...v2.8.0) (2024-05-21)
-
 
 ### Features
 
-* Adding new QR package containing the core logic for QR Scanning and moving to jsqr-es6 ([db41478](https://github.com/apolyanov/impulse-ui/commit/db41478ccaadae0104d000cf9a17754ef27cf353))
-
-
-
-
+- Adding new QR package containing the core logic for QR Scanning and moving to jsqr-es6 ([db41478](https://github.com/apolyanov/impulse-ui/commit/db41478ccaadae0104d000cf9a17754ef27cf353))
 
 ## [2.7.3](https://github.com/apolyanov/impulse-ui/compare/v2.7.2...v2.7.3) (2024-05-18)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
 
-
-
-
-
 ## [2.7.2](https://github.com/apolyanov/impulse-ui/compare/v2.7.1...v2.7.2) (2024-05-17)
-
 
 ### Bug Fixes
 
-* Adding missing dependencies to toolkit package ([1a80f9a](https://github.com/apolyanov/impulse-ui/commit/1a80f9a853a8ea139ef1da2bc2d194dc9c3030c2))
-
-
-
-
+- Adding missing dependencies to toolkit package ([1a80f9a](https://github.com/apolyanov/impulse-ui/commit/1a80f9a853a8ea139ef1da2bc2d194dc9c3030c2))
 
 # [2.7.0](https://github.com/apolyanov/impulse-ui/compare/v2.6.1...v2.7.0) (2024-05-17)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
 
-
-
-
-
 # [2.7.0-beta.0](https://github.com/apolyanov/impulse-ui/compare/v2.6.1...v2.7.0-beta.0) (2024-05-17)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
-
-
-
-
 
 ## [2.6.1](https://github.com/apolyanov/impulse-ui/compare/v2.6.0...v2.6.1) (2024-05-15)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
 
-
-
-
-
 ## [2.6.1-beta.0](https://github.com/apolyanov/impulse-ui/compare/v2.6.0...v2.6.1-beta.0) (2024-05-14)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
-
-
-
-
 
 # [2.6.0](https://github.com/apolyanov/impulse-ui/compare/v2.5.0...v2.6.0) (2024-05-13)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
 
-
-
-
-
 # [2.6.0-beta.12](https://github.com/apolyanov/impulse-ui/compare/v2.6.0-beta.11...v2.6.0-beta.12) (2024-05-13)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
-
-
-
-
 
 # [2.6.0-beta.11](https://github.com/apolyanov/impulse-ui/compare/v2.6.0-beta.10...v2.6.0-beta.11) (2024-05-11)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
 
-
-
-
-
 # [2.6.0-beta.10](https://github.com/apolyanov/impulse-ui/compare/v2.6.0-beta.9...v2.6.0-beta.10) (2024-05-03)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
-
-
-
-
 
 # [2.6.0-beta.9](https://github.com/apolyanov/impulse-ui/compare/v2.6.0-beta.8...v2.6.0-beta.9) (2024-05-03)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
 
-
-
-
-
 # [2.6.0-beta.8](https://github.com/apolyanov/impulse-ui/compare/v2.6.0-beta.7...v2.6.0-beta.8) (2024-05-03)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
-
-
-
-
 
 # [2.6.0-beta.7](https://github.com/apolyanov/impulse-ui/compare/v2.6.0-beta.6...v2.6.0-beta.7) (2024-05-02)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
 
-
-
-
-
 # [2.6.0-beta.6](https://github.com/apolyanov/impulse-ui/compare/v2.6.0-beta.5...v2.6.0-beta.6) (2024-05-02)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
-
-
-
-
 
 # [2.6.0-beta.5](https://github.com/apolyanov/impulse-ui/compare/v2.6.0-beta.4...v2.6.0-beta.5) (2024-05-01)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
 
-
-
-
-
 # [2.6.0-beta.4](https://github.com/apolyanov/impulse-ui/compare/v2.6.0-beta.3...v2.6.0-beta.4) (2024-04-18)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
-
-
-
-
 
 # [2.6.0-beta.3](https://github.com/apolyanov/impulse-ui/compare/v2.6.0-beta.2...v2.6.0-beta.3) (2024-04-11)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
 
-
-
-
-
 # [2.6.0-beta.2](https://github.com/apolyanov/impulse-ui/compare/v2.6.0-beta.1...v2.6.0-beta.2) (2024-04-10)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
-
-
-
-
 
 # [2.6.0-beta.1](https://github.com/apolyanov/impulse-ui/compare/v2.6.0-beta.0...v2.6.0-beta.1) (2024-04-09)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
 
-
-
-
-
 # [2.6.0-beta.0](https://github.com/apolyanov/impulse-ui/compare/v2.5.0...v2.6.0-beta.0) (2024-04-09)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
-
-
-
-
 
 # [2.5.0](https://github.com/apolyanov/impulse-ui/compare/v2.4.0...v2.5.0) (2024-04-09)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
 
-
-
-
-
 # [2.5.0-beta.1](https://github.com/apolyanov/impulse-ui/compare/v2.5.0-beta.0...v2.5.0-beta.1) (2024-04-08)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
-
-
-
-
 
 # [2.5.0-beta.0](https://github.com/apolyanov/impulse-ui/compare/v2.4.0...v2.5.0-beta.0) (2024-04-07)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
 
-
-
-
-
 # [2.4.0](https://github.com/apolyanov/impulse-ui/compare/v2.3.0...v2.4.0) (2024-03-14)
-
 
 ### Features
 
-* Introducing table ([a10e9d7](https://github.com/apolyanov/impulse-ui/commit/a10e9d7d9cb2240a3e9e1e27ef7a99c6394bb207))
-
-
-
-
+- Introducing table ([a10e9d7](https://github.com/apolyanov/impulse-ui/commit/a10e9d7d9cb2240a3e9e1e27ef7a99c6394bb207))
 
 # [2.4.0-beta.0](https://github.com/apolyanov/impulse-ui/compare/v2.3.1-beta.2...v2.4.0-beta.0) (2024-03-14)
 
-
 ### Features
 
-* Introducing table ([3f591fb](https://github.com/apolyanov/impulse-ui/commit/3f591fb1f768400753c0ee96a9210ed776ba6e03))
-
-
-
-
+- Introducing table ([3f591fb](https://github.com/apolyanov/impulse-ui/commit/3f591fb1f768400753c0ee96a9210ed776ba6e03))
 
 ## [2.3.1-beta.2](https://github.com/apolyanov/impulse-ui/compare/v2.3.1-beta.1...v2.3.1-beta.2) (2024-03-08)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
 
-
-
-
-
 ## [2.3.1-beta.1](https://github.com/apolyanov/impulse-ui/compare/v2.3.1-beta.0...v2.3.1-beta.1) (2024-02-20)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
-
-
-
-
 
 ## [2.3.1-beta.0](https://github.com/apolyanov/impulse-ui/compare/v2.3.0...v2.3.1-beta.0) (2024-02-20)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
 
-
-
-
-
 # [2.3.0](https://github.com/apolyanov/impulse-ui/compare/v2.2.0...v2.3.0) (2024-02-11)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
-
-
-
-
 
 # [2.3.0-beta.10](https://github.com/apolyanov/impulse-ui/compare/v2.3.0-beta.9...v2.3.0-beta.10) (2024-02-11)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
 
-
-
-
-
 # [2.3.0-beta.9](https://github.com/apolyanov/impulse-ui/compare/v2.3.0-beta.8...v2.3.0-beta.9) (2024-02-04)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
-
-
-
-
 
 # [2.3.0-beta.8](https://github.com/apolyanov/impulse-ui/compare/v2.3.0-beta.7...v2.3.0-beta.8) (2024-02-04)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
 
-
-
-
-
 # [2.3.0-beta.7](https://github.com/apolyanov/impulse-ui/compare/v2.3.0-beta.6...v2.3.0-beta.7) (2024-02-04)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
-
-
-
-
 
 # [2.3.0-beta.6](https://github.com/apolyanov/impulse-ui/compare/v2.3.0-beta.5...v2.3.0-beta.6) (2024-02-04)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
 
-
-
-
-
 # [2.3.0-beta.5](https://github.com/apolyanov/impulse-ui/compare/v2.3.0-beta.4...v2.3.0-beta.5) (2024-02-03)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
-
-
-
-
 
 # [2.3.0-beta.4](https://github.com/apolyanov/impulse-ui/compare/v2.3.0-beta.3...v2.3.0-beta.4) (2024-02-03)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
 
-
-
-
-
 # [2.3.0-beta.3](https://github.com/apolyanov/impulse-ui/compare/v2.3.0-beta.2...v2.3.0-beta.3) (2024-02-03)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
-
-
-
-
 
 # [2.3.0-beta.2](https://github.com/apolyanov/impulse-ui/compare/v2.3.0-beta.1...v2.3.0-beta.2) (2023-12-18)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
 
-
-
-
-
 # [2.3.0-beta.1](https://github.com/apolyanov/impulse-ui/compare/v2.3.0-beta.0...v2.3.0-beta.1) (2023-12-18)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
-
-
-
-
 
 # [2.3.0-beta.0](https://github.com/apolyanov/impulse-ui/compare/v2.2.0...v2.3.0-beta.0) (2023-12-18)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
 
-
-
-
-
 # [2.2.0](https://github.com/apolyanov/impulse-ui/compare/v2.1.0...v2.2.0) (2023-11-26)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
-
-
-
-
 
 # [2.2.0-beta.0](https://github.com/apolyanov/impulse-ui/compare/v2.1.1-beta.1...v2.2.0-beta.0) (2023-11-26)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
 
-
-
-
-
 ## [2.1.1-beta.1](https://github.com/apolyanov/impulse-ui/compare/v2.1.1-beta.0...v2.1.1-beta.1) (2023-11-21)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
-
-
-
-
 
 ## [2.1.1-beta.0](https://github.com/apolyanov/impulse-ui/compare/v2.1.0...v2.1.1-beta.0) (2023-10-27)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
 
-
-
-
-
 # [2.1.0](https://github.com/apolyanov/impulse-ui/compare/v2.0.6...v2.1.0) (2023-10-26)
-
 
 ### Bug Fixes
 
-* Fixing "Can't resolve '@impulse-ui/types' in '/home/apolyanov/WebstormProjects/test/node_modules/@impulse-ui/toolkit/dist'" ([5eddb9e](https://github.com/apolyanov/impulse-ui/commit/5eddb9e68206ba07459189816621df14ba8ef284))
-
+- Fixing "Can't resolve '@impulse-ui/types' in '/home/apolyanov/WebstormProjects/test/node_modules/@impulse-ui/toolkit/dist'" ([5eddb9e](https://github.com/apolyanov/impulse-ui/commit/5eddb9e68206ba07459189816621df14ba8ef284))
 
 ### Features
 
-* Adding Impulse UI Toolkit package ([7d84033](https://github.com/apolyanov/impulse-ui/commit/7d840330992033e6c905517a0fb69b56340351da))
-* Exporting only ready packages ([7fa7a5c](https://github.com/apolyanov/impulse-ui/commit/7fa7a5cbdb38f0e0618b76aee6fe2c0a9a004385))
-* Fixing table reset css ([2de87d5](https://github.com/apolyanov/impulse-ui/commit/2de87d5689ac6eda3ddd5cb744c4d613cb210ff4))
-* Updating impulse-ui/toolkit to include the newly added packages. ([228ea7b](https://github.com/apolyanov/impulse-ui/commit/228ea7b5d8bec9e0f00e3f0e0eb9a902d92a19ec))
-
-
-
-
+- Adding Impulse UI Toolkit package ([7d84033](https://github.com/apolyanov/impulse-ui/commit/7d840330992033e6c905517a0fb69b56340351da))
+- Exporting only ready packages ([7fa7a5c](https://github.com/apolyanov/impulse-ui/commit/7fa7a5cbdb38f0e0618b76aee6fe2c0a9a004385))
+- Fixing table reset css ([2de87d5](https://github.com/apolyanov/impulse-ui/commit/2de87d5689ac6eda3ddd5cb744c4d613cb210ff4))
+- Updating impulse-ui/toolkit to include the newly added packages. ([228ea7b](https://github.com/apolyanov/impulse-ui/commit/228ea7b5d8bec9e0f00e3f0e0eb9a902d92a19ec))
 
 # [2.1.0-beta.10](https://github.com/apolyanov/impulse-ui/compare/v2.1.0-beta.9...v2.1.0-beta.10) (2023-10-26)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
 
-
-
-
-
 # [2.1.0-beta.9](https://github.com/apolyanov/impulse-ui/compare/v2.1.0-beta.8...v2.1.0-beta.9) (2023-10-20)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
 
-
-
-
-
 # [2.1.0-beta.8](https://github.com/apolyanov/impulse-ui/compare/v2.1.0-beta.7...v2.1.0-beta.8) (2023-10-20)
-
 
 ### Features
 
-* Exporting only ready packages ([900c088](https://github.com/apolyanov/impulse-ui/commit/900c088ae0d3489ac2819f2764291d9bb6615d4b))
-
-
-
-
+- Exporting only ready packages ([900c088](https://github.com/apolyanov/impulse-ui/commit/900c088ae0d3489ac2819f2764291d9bb6615d4b))
 
 # [2.1.0-beta.7](https://github.com/apolyanov/impulse-ui/compare/v2.1.0-beta.6...v2.1.0-beta.7) (2023-10-15)
 
-
 ### Features
 
-* Fixing table reset css ([b8c511e](https://github.com/apolyanov/impulse-ui/commit/b8c511ede979aa1408fd25551aa74a8592ee2540))
-
-
-
-
+- Fixing table reset css ([b8c511e](https://github.com/apolyanov/impulse-ui/commit/b8c511ede979aa1408fd25551aa74a8592ee2540))
 
 # [2.1.0-beta.6](https://github.com/apolyanov/impulse-ui/compare/v2.1.0-beta.5...v2.1.0-beta.6) (2023-10-13)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
 
-
-
-
-
 # [2.1.0-beta.5](https://github.com/apolyanov/impulse-ui/compare/v2.1.0-beta.4...v2.1.0-beta.5) (2023-10-13)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
 
-
-
-
-
 # [2.1.0-beta.4](https://github.com/apolyanov/impulse-ui/compare/v2.1.0-beta.3...v2.1.0-beta.4) (2023-10-11)
-
 
 ### Bug Fixes
 
-* Fixing "Can't resolve '@impulse-ui/types' in '/home/apolyanov/WebstormProjects/test/node_modules/@impulse-ui/toolkit/dist'" ([206977f](https://github.com/apolyanov/impulse-ui/commit/206977f54ee5526bd2de69ab8085ea974b11b898))
-
-
-
-
+- Fixing "Can't resolve '@impulse-ui/types' in '/home/apolyanov/WebstormProjects/test/node_modules/@impulse-ui/toolkit/dist'" ([206977f](https://github.com/apolyanov/impulse-ui/commit/206977f54ee5526bd2de69ab8085ea974b11b898))
 
 # [2.1.0-beta.3](https://github.com/apolyanov/impulse-ui/compare/v2.1.0-beta.2...v2.1.0-beta.3) (2023-10-11)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
 
-
-
-
-
 # [2.1.0-beta.2](https://github.com/apolyanov/impulse-ui/compare/v2.1.0-beta.1...v2.1.0-beta.2) (2023-10-11)
-
 
 ### Features
 
-* Updating impulse-ui/toolkit to include the newly added packages. ([8398b67](https://github.com/apolyanov/impulse-ui/commit/8398b6778289efeff1cf658b88595e736ecadad9))
-
-
-
-
+- Updating impulse-ui/toolkit to include the newly added packages. ([8398b67](https://github.com/apolyanov/impulse-ui/commit/8398b6778289efeff1cf658b88595e736ecadad9))
 
 # [2.1.0-beta.1](https://github.com/apolyanov/impulse-ui/compare/v2.1.0-beta.0...v2.1.0-beta.1) (2023-10-11)
 
 **Note:** Version bump only for package @impulse-ui/toolkit
-
-
-
-
 
 # [2.1.0-beta.0](https://github.com/apolyanov/impulse-ui/compare/v2.0.7-beta.0...v2.1.0-beta.0) (2023-10-10)
 
