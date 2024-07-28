@@ -1,5 +1,19 @@
 # Change Log
 
+## 2.12.0
+
+### Minor Changes
+
+- [#109](https://github.com/apolyanov/impulse-ui/pull/109) [`da4cb66`](https://github.com/apolyanov/impulse-ui/commit/da4cb66e9b0b20b092e880f62a8e56b2208aee5a) Thanks [@apolyanov](https://github.com/apolyanov)! - Releasing @impulse-ui/ocr, @impulse-ui/qr, @impulse-ui/scanner-core.
+
+### Patch Changes
+
+- Updated dependencies [[`da4cb66`](https://github.com/apolyanov/impulse-ui/commit/da4cb66e9b0b20b092e880f62a8e56b2208aee5a)]:
+  - @impulse-ui/colours@2.12.0
+  - @impulse-ui/core@2.12.0
+  - @impulse-ui/icon@2.12.0
+  - @impulse-ui/layout@2.12.0
+
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
@@ -7,493 +21,262 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 **Note:** Version bump only for package @impulse-ui/text
 
-
-
-
-
 ## [2.11.6](https://github.com/apolyanov/impulse-ui/compare/v2.11.5...v2.11.6) (2024-06-11)
 
 **Note:** Version bump only for package @impulse-ui/text
-
-
-
-
 
 ## [2.11.5](https://github.com/apolyanov/impulse-ui/compare/v2.11.4...v2.11.5) (2024-06-11)
 
 **Note:** Version bump only for package @impulse-ui/text
 
-
-
-
-
 ## [2.11.4](https://github.com/apolyanov/impulse-ui/compare/v2.11.3...v2.11.4) (2024-06-10)
 
 **Note:** Version bump only for package @impulse-ui/text
-
-
-
-
 
 ## [2.11.2](https://github.com/apolyanov/impulse-ui/compare/v2.11.1...v2.11.2) (2024-06-01)
 
 **Note:** Version bump only for package @impulse-ui/text
 
-
-
-
-
 # [2.11.0](https://github.com/apolyanov/impulse-ui/compare/v2.10.1...v2.11.0) (2024-05-31)
 
 **Note:** Version bump only for package @impulse-ui/text
-
-
-
-
 
 # [2.11.0-beta.2](https://github.com/apolyanov/impulse-ui/compare/v2.10.1...v2.11.0-beta.2) (2024-05-31)
 
 **Note:** Version bump only for package @impulse-ui/text
 
-
-
-
-
 # [2.11.0-beta.0](https://github.com/apolyanov/impulse-ui/compare/v2.8.0...v2.11.0-beta.0) (2024-05-25)
-
 
 ### Features
 
-* Adding spacing props logic in the table package ([9f26d2e](https://github.com/apolyanov/impulse-ui/commit/9f26d2e938909c870f34356841438cc3d15bbeb8))
-* Removing unused ComponentTheme type and fixing build issues related to it ([e9a0a48](https://github.com/apolyanov/impulse-ui/commit/e9a0a487c345183128405924527cc563f52bf0a4))
-
-
-
-
+- Adding spacing props logic in the table package ([9f26d2e](https://github.com/apolyanov/impulse-ui/commit/9f26d2e938909c870f34356841438cc3d15bbeb8))
+- Removing unused ComponentTheme type and fixing build issues related to it ([e9a0a48](https://github.com/apolyanov/impulse-ui/commit/e9a0a487c345183128405924527cc563f52bf0a4))
 
 # [2.10.0](https://github.com/apolyanov/impulse-ui/compare/v2.9.0...v2.10.0) (2024-05-24)
 
-
 ### Features
 
-* Adding spacing props logic in the table package ([5018485](https://github.com/apolyanov/impulse-ui/commit/501848568673cbda8420f0200bb26d1f67e2804b))
-
-
-
-
+- Adding spacing props logic in the table package ([5018485](https://github.com/apolyanov/impulse-ui/commit/501848568673cbda8420f0200bb26d1f67e2804b))
 
 # [2.9.0](https://github.com/apolyanov/impulse-ui/compare/v2.8.0...v2.9.0) (2024-05-23)
 
-
 ### Features
 
-* Removing unused ComponentTheme type and fixing build issues related to it ([6306266](https://github.com/apolyanov/impulse-ui/commit/63062667403b30e18a6abd776a5211a625c91409))
-
-
-
-
+- Removing unused ComponentTheme type and fixing build issues related to it ([6306266](https://github.com/apolyanov/impulse-ui/commit/63062667403b30e18a6abd776a5211a625c91409))
 
 # [2.8.0](https://github.com/apolyanov/impulse-ui/compare/v2.7.3...v2.8.0) (2024-05-21)
 
 **Note:** Version bump only for package @impulse-ui/text
 
-
-
-
-
 # [2.7.0](https://github.com/apolyanov/impulse-ui/compare/v2.6.1...v2.7.0) (2024-05-17)
 
 **Note:** Version bump only for package @impulse-ui/text
-
-
-
-
 
 # [2.7.0-beta.0](https://github.com/apolyanov/impulse-ui/compare/v2.6.1...v2.7.0-beta.0) (2024-05-17)
 
 **Note:** Version bump only for package @impulse-ui/text
 
-
-
-
-
 ## [2.6.1](https://github.com/apolyanov/impulse-ui/compare/v2.6.0...v2.6.1) (2024-05-15)
-
 
 ### Bug Fixes
 
-* Missing getThemeColor function in BaseTypograhy component ([6ec8f4b](https://github.com/apolyanov/impulse-ui/commit/6ec8f4be8bc981cbe1b8d8c099f4dbafff0b91db))
-
-
-
-
+- Missing getThemeColor function in BaseTypograhy component ([6ec8f4b](https://github.com/apolyanov/impulse-ui/commit/6ec8f4be8bc981cbe1b8d8c099f4dbafff0b91db))
 
 ## [2.6.1-beta.0](https://github.com/apolyanov/impulse-ui/compare/v2.6.0...v2.6.1-beta.0) (2024-05-14)
 
 **Note:** Version bump only for package @impulse-ui/text
 
-
-
-
-
 # [2.6.0](https://github.com/apolyanov/impulse-ui/compare/v2.5.0...v2.6.0) (2024-05-13)
-
 
 ### Features
 
-* Added disabled and loading states to some of the components ([c396f95](https://github.com/apolyanov/impulse-ui/commit/c396f9505412ceb3b3cea2ddb4d9e1eab4cef6c8))
-* Adding the ability to polymorph components ([d8a29aa](https://github.com/apolyanov/impulse-ui/commit/d8a29aa8aa97db5f01ab8d21690ccbd35bd3afd1))
-* Improving the component themes types, structure and more. Added new getThemeColor function to get the desired color with automatic theme context ([12ea431](https://github.com/apolyanov/impulse-ui/commit/12ea4310022cccd1522f2a81a2ef683033577e35))
-
-
-
-
+- Added disabled and loading states to some of the components ([c396f95](https://github.com/apolyanov/impulse-ui/commit/c396f9505412ceb3b3cea2ddb4d9e1eab4cef6c8))
+- Adding the ability to polymorph components ([d8a29aa](https://github.com/apolyanov/impulse-ui/commit/d8a29aa8aa97db5f01ab8d21690ccbd35bd3afd1))
+- Improving the component themes types, structure and more. Added new getThemeColor function to get the desired color with automatic theme context ([12ea431](https://github.com/apolyanov/impulse-ui/commit/12ea4310022cccd1522f2a81a2ef683033577e35))
 
 # [2.6.0-beta.12](https://github.com/apolyanov/impulse-ui/compare/v2.6.0-beta.11...v2.6.0-beta.12) (2024-05-13)
 
-
 ### Features
 
-* Improving the component themes types, structure and more. Added new getThemeColor function to get the desired color with automatic theme context ([74c64f5](https://github.com/apolyanov/impulse-ui/commit/74c64f5184b3d471406c24de09afa0d449206228))
-
-
-
-
+- Improving the component themes types, structure and more. Added new getThemeColor function to get the desired color with automatic theme context ([74c64f5](https://github.com/apolyanov/impulse-ui/commit/74c64f5184b3d471406c24de09afa0d449206228))
 
 # [2.6.0-beta.11](https://github.com/apolyanov/impulse-ui/compare/v2.6.0-beta.10...v2.6.0-beta.11) (2024-05-11)
 
-
 ### Features
 
-* Added disabled and loading states to some of the components ([f10a6fb](https://github.com/apolyanov/impulse-ui/commit/f10a6fb13cbf5c1151040c75379ffc7de11489c1))
-
-
-
-
+- Added disabled and loading states to some of the components ([f10a6fb](https://github.com/apolyanov/impulse-ui/commit/f10a6fb13cbf5c1151040c75379ffc7de11489c1))
 
 # [2.6.0-beta.10](https://github.com/apolyanov/impulse-ui/compare/v2.6.0-beta.9...v2.6.0-beta.10) (2024-05-03)
 
 **Note:** Version bump only for package @impulse-ui/text
 
-
-
-
-
 # [2.6.0-beta.7](https://github.com/apolyanov/impulse-ui/compare/v2.6.0-beta.6...v2.6.0-beta.7) (2024-05-02)
 
 **Note:** Version bump only for package @impulse-ui/text
-
-
-
-
 
 # [2.6.0-beta.6](https://github.com/apolyanov/impulse-ui/compare/v2.6.0-beta.5...v2.6.0-beta.6) (2024-05-02)
 
 **Note:** Version bump only for package @impulse-ui/text
 
-
-
-
-
 # [2.6.0-beta.5](https://github.com/apolyanov/impulse-ui/compare/v2.6.0-beta.4...v2.6.0-beta.5) (2024-05-01)
-
 
 ### Features
 
-* Adding the ability to polymorph components ([c65ef2d](https://github.com/apolyanov/impulse-ui/commit/c65ef2d54ba49f3b0300bdb9fc4bd16c32398f7a))
-
-
-
-
+- Adding the ability to polymorph components ([c65ef2d](https://github.com/apolyanov/impulse-ui/commit/c65ef2d54ba49f3b0300bdb9fc4bd16c32398f7a))
 
 # [2.6.0-beta.3](https://github.com/apolyanov/impulse-ui/compare/v2.6.0-beta.2...v2.6.0-beta.3) (2024-04-11)
 
 **Note:** Version bump only for package @impulse-ui/text
 
-
-
-
-
 # [2.6.0-beta.0](https://github.com/apolyanov/impulse-ui/compare/v2.5.0...v2.6.0-beta.0) (2024-04-09)
 
 **Note:** Version bump only for package @impulse-ui/text
-
-
-
-
 
 # [2.5.0](https://github.com/apolyanov/impulse-ui/compare/v2.4.0...v2.5.0) (2024-04-09)
 
 **Note:** Version bump only for package @impulse-ui/text
 
-
-
-
-
 # [2.5.0-beta.1](https://github.com/apolyanov/impulse-ui/compare/v2.5.0-beta.0...v2.5.0-beta.1) (2024-04-08)
 
 **Note:** Version bump only for package @impulse-ui/text
-
-
-
-
 
 # [2.5.0-beta.0](https://github.com/apolyanov/impulse-ui/compare/v2.4.0...v2.5.0-beta.0) (2024-04-07)
 
 **Note:** Version bump only for package @impulse-ui/text
 
-
-
-
-
 # [2.4.0](https://github.com/apolyanov/impulse-ui/compare/v2.3.0...v2.4.0) (2024-03-14)
-
 
 ### Features
 
-* Introducing table ([a10e9d7](https://github.com/apolyanov/impulse-ui/commit/a10e9d7d9cb2240a3e9e1e27ef7a99c6394bb207))
-* Refactoring types and removing iProps ([214a417](https://github.com/apolyanov/impulse-ui/commit/214a4175cdc2d6676ba73c156eab8552cb37e925))
-
-
-
-
+- Introducing table ([a10e9d7](https://github.com/apolyanov/impulse-ui/commit/a10e9d7d9cb2240a3e9e1e27ef7a99c6394bb207))
+- Refactoring types and removing iProps ([214a417](https://github.com/apolyanov/impulse-ui/commit/214a4175cdc2d6676ba73c156eab8552cb37e925))
 
 # [2.4.0-beta.0](https://github.com/apolyanov/impulse-ui/compare/v2.3.1-beta.2...v2.4.0-beta.0) (2024-03-14)
 
-
 ### Features
 
-* Introducing table ([3f591fb](https://github.com/apolyanov/impulse-ui/commit/3f591fb1f768400753c0ee96a9210ed776ba6e03))
-* Refactoring types and removing iProps ([a4327e6](https://github.com/apolyanov/impulse-ui/commit/a4327e61752b6688605c5ee6b34f6000c25cbe14))
-
-
-
-
+- Introducing table ([3f591fb](https://github.com/apolyanov/impulse-ui/commit/3f591fb1f768400753c0ee96a9210ed776ba6e03))
+- Refactoring types and removing iProps ([a4327e6](https://github.com/apolyanov/impulse-ui/commit/a4327e61752b6688605c5ee6b34f6000c25cbe14))
 
 ## [2.3.1-beta.2](https://github.com/apolyanov/impulse-ui/compare/v2.3.1-beta.1...v2.3.1-beta.2) (2024-03-08)
 
 **Note:** Version bump only for package @impulse-ui/text
 
-
-
-
-
 ## [2.3.1-beta.1](https://github.com/apolyanov/impulse-ui/compare/v2.3.1-beta.0...v2.3.1-beta.1) (2024-02-20)
 
 **Note:** Version bump only for package @impulse-ui/text
-
-
-
-
 
 ## [2.3.1-beta.0](https://github.com/apolyanov/impulse-ui/compare/v2.3.0...v2.3.1-beta.0) (2024-02-20)
 
 **Note:** Version bump only for package @impulse-ui/text
 
-
-
-
-
 # [2.3.0](https://github.com/apolyanov/impulse-ui/compare/v2.2.0...v2.3.0) (2024-02-11)
-
 
 ### Features
 
-* Refactoring drop shadow styles ([6222df5](https://github.com/apolyanov/impulse-ui/commit/6222df52abcb4abd54788d2b15f9e2cc706f7b4b))
-* Refactoring drop shadow styles to use the neutral colors set ([33c9d74](https://github.com/apolyanov/impulse-ui/commit/33c9d7485cd2fbb6880c44c2a512d8a3312359df))
-
-
-
-
+- Refactoring drop shadow styles ([6222df5](https://github.com/apolyanov/impulse-ui/commit/6222df52abcb4abd54788d2b15f9e2cc706f7b4b))
+- Refactoring drop shadow styles to use the neutral colors set ([33c9d74](https://github.com/apolyanov/impulse-ui/commit/33c9d7485cd2fbb6880c44c2a512d8a3312359df))
 
 # [2.3.0-beta.10](https://github.com/apolyanov/impulse-ui/compare/v2.3.0-beta.9...v2.3.0-beta.10) (2024-02-11)
 
 **Note:** Version bump only for package @impulse-ui/text
 
-
-
-
-
 # [2.3.0-beta.8](https://github.com/apolyanov/impulse-ui/compare/v2.3.0-beta.7...v2.3.0-beta.8) (2024-02-04)
 
 **Note:** Version bump only for package @impulse-ui/text
-
-
-
-
 
 # [2.3.0-beta.7](https://github.com/apolyanov/impulse-ui/compare/v2.3.0-beta.6...v2.3.0-beta.7) (2024-02-04)
 
 **Note:** Version bump only for package @impulse-ui/text
 
-
-
-
-
 # [2.3.0-beta.6](https://github.com/apolyanov/impulse-ui/compare/v2.3.0-beta.5...v2.3.0-beta.6) (2024-02-04)
 
 **Note:** Version bump only for package @impulse-ui/text
-
-
-
-
 
 # [2.3.0-beta.5](https://github.com/apolyanov/impulse-ui/compare/v2.3.0-beta.4...v2.3.0-beta.5) (2024-02-03)
 
 **Note:** Version bump only for package @impulse-ui/text
 
-
-
-
-
 # [2.3.0-beta.3](https://github.com/apolyanov/impulse-ui/compare/v2.3.0-beta.2...v2.3.0-beta.3) (2024-02-03)
 
 **Note:** Version bump only for package @impulse-ui/text
 
-
-
-
-
 # [2.3.0-beta.1](https://github.com/apolyanov/impulse-ui/compare/v2.3.0-beta.0...v2.3.0-beta.1) (2023-12-18)
-
 
 ### Features
 
-* Refactoring drop shadow styles ([7e2b801](https://github.com/apolyanov/impulse-ui/commit/7e2b8019c6d3a875ba51103ef575953e84e094a0))
-
-
-
-
+- Refactoring drop shadow styles ([7e2b801](https://github.com/apolyanov/impulse-ui/commit/7e2b8019c6d3a875ba51103ef575953e84e094a0))
 
 # [2.3.0-beta.0](https://github.com/apolyanov/impulse-ui/compare/v2.2.0...v2.3.0-beta.0) (2023-12-18)
 
-
 ### Features
 
-* Refactoring drop shadow styles to use the neutral colors set ([1f85d6e](https://github.com/apolyanov/impulse-ui/commit/1f85d6ed85aaf8f3d36fb13f3c26383b91434b00))
-
-
-
-
+- Refactoring drop shadow styles to use the neutral colors set ([1f85d6e](https://github.com/apolyanov/impulse-ui/commit/1f85d6ed85aaf8f3d36fb13f3c26383b91434b00))
 
 # [2.2.0](https://github.com/apolyanov/impulse-ui/compare/v2.1.0...v2.2.0) (2023-11-26)
 
 **Note:** Version bump only for package @impulse-ui/text
 
-
-
-
-
 # [2.2.0-beta.0](https://github.com/apolyanov/impulse-ui/compare/v2.1.1-beta.1...v2.2.0-beta.0) (2023-11-26)
 
 **Note:** Version bump only for package @impulse-ui/text
-
-
-
-
 
 ## [2.1.1-beta.1](https://github.com/apolyanov/impulse-ui/compare/v2.1.1-beta.0...v2.1.1-beta.1) (2023-11-21)
 
 **Note:** Version bump only for package @impulse-ui/text
 
-
-
-
-
 # [2.1.0](https://github.com/apolyanov/impulse-ui/compare/v2.0.6...v2.1.0) (2023-10-26)
-
 
 ### Bug Fixes
 
-* Fixing types package from being included in the bundles ([855764c](https://github.com/apolyanov/impulse-ui/commit/855764c028c71bf5b97c369f4aa8bfb421b2a118))
-
+- Fixing types package from being included in the bundles ([855764c](https://github.com/apolyanov/impulse-ui/commit/855764c028c71bf5b97c369f4aa8bfb421b2a118))
 
 ### Features
 
-* Adding Impulse UI Toolkit package ([7d84033](https://github.com/apolyanov/impulse-ui/commit/7d840330992033e6c905517a0fb69b56340351da))
-* Fixing table reset css ([2de87d5](https://github.com/apolyanov/impulse-ui/commit/2de87d5689ac6eda3ddd5cb744c4d613cb210ff4))
-* Modernizing styled function syntax. ([415ca6e](https://github.com/apolyanov/impulse-ui/commit/415ca6e3e51a1743b050dc2251b0468dd0e4f8a7))
-* Updating impulse-ui/toolkit to include the newly added packages. ([228ea7b](https://github.com/apolyanov/impulse-ui/commit/228ea7b5d8bec9e0f00e3f0e0eb9a902d92a19ec))
-
-
-
-
+- Adding Impulse UI Toolkit package ([7d84033](https://github.com/apolyanov/impulse-ui/commit/7d840330992033e6c905517a0fb69b56340351da))
+- Fixing table reset css ([2de87d5](https://github.com/apolyanov/impulse-ui/commit/2de87d5689ac6eda3ddd5cb744c4d613cb210ff4))
+- Modernizing styled function syntax. ([415ca6e](https://github.com/apolyanov/impulse-ui/commit/415ca6e3e51a1743b050dc2251b0468dd0e4f8a7))
+- Updating impulse-ui/toolkit to include the newly added packages. ([228ea7b](https://github.com/apolyanov/impulse-ui/commit/228ea7b5d8bec9e0f00e3f0e0eb9a902d92a19ec))
 
 # [2.1.0-beta.10](https://github.com/apolyanov/impulse-ui/compare/v2.1.0-beta.9...v2.1.0-beta.10) (2023-10-26)
 
 **Note:** Version bump only for package @impulse-ui/text
 
-
-
-
-
 # [2.1.0-beta.9](https://github.com/apolyanov/impulse-ui/compare/v2.1.0-beta.8...v2.1.0-beta.9) (2023-10-20)
 
 **Note:** Version bump only for package @impulse-ui/text
 
-
-
-
-
 # [2.1.0-beta.7](https://github.com/apolyanov/impulse-ui/compare/v2.1.0-beta.6...v2.1.0-beta.7) (2023-10-15)
-
 
 ### Features
 
-* Fixing table reset css ([b8c511e](https://github.com/apolyanov/impulse-ui/commit/b8c511ede979aa1408fd25551aa74a8592ee2540))
-
-
-
-
+- Fixing table reset css ([b8c511e](https://github.com/apolyanov/impulse-ui/commit/b8c511ede979aa1408fd25551aa74a8592ee2540))
 
 # [2.1.0-beta.6](https://github.com/apolyanov/impulse-ui/compare/v2.1.0-beta.5...v2.1.0-beta.6) (2023-10-13)
 
 **Note:** Version bump only for package @impulse-ui/text
 
-
-
-
-
 # [2.1.0-beta.5](https://github.com/apolyanov/impulse-ui/compare/v2.1.0-beta.4...v2.1.0-beta.5) (2023-10-13)
-
 
 ### Features
 
-* Modernizing styled function syntax. ([d505b6f](https://github.com/apolyanov/impulse-ui/commit/d505b6fb046e7bf3da82525b7e1fdd3141abd820))
-
-
-
-
+- Modernizing styled function syntax. ([d505b6f](https://github.com/apolyanov/impulse-ui/commit/d505b6fb046e7bf3da82525b7e1fdd3141abd820))
 
 # [2.1.0-beta.3](https://github.com/apolyanov/impulse-ui/compare/v2.1.0-beta.2...v2.1.0-beta.3) (2023-10-11)
 
-
 ### Bug Fixes
 
-* Fixing types package from being included in the bundles ([21b8589](https://github.com/apolyanov/impulse-ui/commit/21b8589e49a0dc7a4694b7f3401fdbe9f3a03872))
-
-
-
-
+- Fixing types package from being included in the bundles ([21b8589](https://github.com/apolyanov/impulse-ui/commit/21b8589e49a0dc7a4694b7f3401fdbe9f3a03872))
 
 # [2.1.0-beta.2](https://github.com/apolyanov/impulse-ui/compare/v2.1.0-beta.1...v2.1.0-beta.2) (2023-10-11)
 
-
 ### Features
 
-* Updating impulse-ui/toolkit to include the newly added packages. ([8398b67](https://github.com/apolyanov/impulse-ui/commit/8398b6778289efeff1cf658b88595e736ecadad9))
-
-
-
-
+- Updating impulse-ui/toolkit to include the newly added packages. ([8398b67](https://github.com/apolyanov/impulse-ui/commit/8398b6778289efeff1cf658b88595e736ecadad9))
 
 # [2.1.0-beta.1](https://github.com/apolyanov/impulse-ui/compare/v2.1.0-beta.0...v2.1.0-beta.1) (2023-10-11)
 
 **Note:** Version bump only for package @impulse-ui/text
-
-
-
-
 
 # [2.1.0-beta.0](https://github.com/apolyanov/impulse-ui/compare/v2.0.7-beta.0...v2.1.0-beta.0) (2023-10-10)
 
