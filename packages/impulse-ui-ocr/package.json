@@ -1,6 +1,6 @@
 {
   "name": "@impulse-ui/ocr",
-  "version": "2.12.0",
+  "version": "2.12.1",
   "license": "MIT",
   "author": "Alexander Polyanov",
   "main": "dist/index.js",
@@ -35,12 +35,12 @@
     "testEnvironment": "jsdom"
   },
   "dependencies": {
-    "@impulse-ui/buttons": "^2.12.0",
-    "@impulse-ui/colours": "^2.12.0",
-    "@impulse-ui/core": "^2.12.0",
-    "@impulse-ui/icon": "^2.12.0",
-    "@impulse-ui/layout": "^2.12.0",
-    "@impulse-ui/scanner-core": "^2.12.0"
+    "@impulse-ui/buttons": "^2.12.1",
+    "@impulse-ui/colours": "^2.12.1",
+    "@impulse-ui/core": "^2.12.1",
+    "@impulse-ui/icon": "^2.12.1",
+    "@impulse-ui/layout": "^2.12.1",
+    "@impulse-ui/scanner-core": "^2.12.1"
   },
   "peerDependencies": {
     "react": ">=16"

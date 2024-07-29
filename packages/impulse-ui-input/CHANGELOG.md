@@ -1,5 +1,19 @@
 # Change Log
 
+## 2.12.1
+
+### Patch Changes
+
+- [`306b75b`](https://github.com/apolyanov/impulse-ui/commit/306b75b858143a6ee8bf328c77343ad9758e0336) Thanks [@apolyanov](https://github.com/apolyanov)! - Adding clear button for the select component.
+
+- Updated dependencies [[`306b75b`](https://github.com/apolyanov/impulse-ui/commit/306b75b858143a6ee8bf328c77343ad9758e0336)]:
+  - @impulse-ui/buttons@2.12.1
+  - @impulse-ui/colours@2.12.1
+  - @impulse-ui/layout@2.12.1
+  - @impulse-ui/core@2.12.1
+  - @impulse-ui/icon@2.12.1
+  - @impulse-ui/text@2.12.1
+
 ## 2.12.0
 
 ### Minor Changes

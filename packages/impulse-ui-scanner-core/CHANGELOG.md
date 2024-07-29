@@ -1,5 +1,11 @@
 # @impulse-ui/scanner-core
 
+## 2.12.1
+
+### Patch Changes
+
+- [`306b75b`](https://github.com/apolyanov/impulse-ui/commit/306b75b858143a6ee8bf328c77343ad9758e0336) Thanks [@apolyanov](https://github.com/apolyanov)! - Adding clear button for the select component.
+
 ## 2.12.0
 
 ### Minor Changes
