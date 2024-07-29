@@ -1,6 +1,6 @@
 {
   "name": "@impulse-ui/scanner-core",
-  "version": "2.12.0",
+  "version": "2.12.1",
   "license": "MIT",
   "author": "Alexander Polyanov",
   "main": "dist/index.js",
@@ -41,6 +41,6 @@
     "node": ">=12"
   },
   "devDependencies": {
-    "@impulse-ui/types": "^2.12.0"
+    "@impulse-ui/types": "^2.12.1"
   }
 }
