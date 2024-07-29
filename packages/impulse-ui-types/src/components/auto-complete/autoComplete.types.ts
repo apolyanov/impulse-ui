@@ -1,6 +1,6 @@
 import { TextInputCompositeProps, TextInputStyle } from '../input';
-import { ContainerHTMLProps } from '../layout';
-import { IOStyle } from '../theme';
+import { ContainerProps } from '../layout';
+import { IComponent, IOStyle } from '../theme';
 import { SimpleOption, UseProcessedoptionsProps } from '../utils';
 
 import { AutoCompleteItemStyle } from './autoCompleteItem.types';
@@ -9,7 +9,7 @@ interface AutoCompleteProps<T> extends AutoCompleteRestProps<T> {
   iStyle?: Partial<AutoCompleteStyle<T>>;
 }
 
-interface AutoCompleteRestProps<T> extends ContainerHTMLProps, UseProcessedoptionsProps<T> {
+interface AutoCompleteRestProps<T> extends Omit<ContainerProps, keyof IComponent>, UseProcessedoptionsProps<T> {
   selectOnBlur?: boolean;
   loading?: boolean;
   disableAutoFiltering?: boolean;

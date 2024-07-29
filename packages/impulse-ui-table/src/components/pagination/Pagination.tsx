@@ -5,7 +5,7 @@ import { TextInput } from '@impulse-ui/input';
 import { Container } from '@impulse-ui/layout';
 import { Typography } from '@impulse-ui/text';
 import { PaginationProps } from '@impulse-ui/types';
-import React, { ChangeEvent, FunctionComponent } from 'react';
+import { ChangeEvent, FunctionComponent } from 'react';
 
 import { useImpulseTable } from '../../hooks';
 import { paginationComponentMap } from '../../maps';

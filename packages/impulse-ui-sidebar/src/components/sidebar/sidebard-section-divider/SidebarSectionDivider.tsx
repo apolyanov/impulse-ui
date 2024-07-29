@@ -1,7 +1,7 @@
 import { useComponentStyle } from '@impulse-ui/core';
 import { Divider } from '@impulse-ui/layout';
 import { SidebarSectionDividerProps } from '@impulse-ui/types';
-import React, { FunctionComponent } from 'react';
+import { FunctionComponent } from 'react';
 
 import { sidebarSectionDividerComponentMap } from '../../../maps';
 import { defaultSidebarSectionDividerStyle } from '../../../styles';

@@ -3,7 +3,7 @@ import { useComponentStyle } from '@impulse-ui/core';
 import { Icon } from '@impulse-ui/icon';
 import { Typography } from '@impulse-ui/text';
 import { SidebarItemProps } from '@impulse-ui/types';
-import React, { FunctionComponent, PropsWithChildren } from 'react';
+import { FunctionComponent, PropsWithChildren } from 'react';
 
 import { sidebarItemComponentMap } from '../../../maps';
 import { defaultSidebarItemStyle } from '../../../styles';

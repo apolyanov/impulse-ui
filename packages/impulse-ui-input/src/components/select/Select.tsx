@@ -4,7 +4,7 @@ import { Container } from '@impulse-ui/layout';
 import { Spinner } from '@impulse-ui/loader';
 import { Typography } from '@impulse-ui/text';
 import { SelectProps } from '@impulse-ui/types';
-import React, { Fragment, ReactNode, useMemo } from 'react';
+import { Fragment, ReactNode, useMemo } from 'react';
 
 import { useSelect } from '../../hooks';
 import { selectComponentMap } from '../../maps';

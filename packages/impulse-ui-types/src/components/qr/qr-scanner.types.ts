@@ -1,7 +1,7 @@
+import { QRCode } from 'jsqr-es6';
 import { IconButtonStyle } from '../buttons';
 import { ScannerRestProps, UseScannerReturnProps } from '../scanner';
 import { IOStyle } from '../theme';
-import { QRCode } from 'jsqr-es6';
 
 interface QRScannerProps extends QRScannerRestProps {
   iStyle?: Partial<QRScannerStyle>;
