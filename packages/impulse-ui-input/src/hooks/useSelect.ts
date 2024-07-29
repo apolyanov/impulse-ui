@@ -8,10 +8,21 @@ import {
   useVirtualizedList,
 } from '@impulse-ui/core';
 import { SelectRestProps, SimpleOption } from '@impulse-ui/types';
-import { KeyboardEvent, MouseEvent, useEffect, useState } from 'react';
+import { KeyboardEvent, MouseEvent, MouseEventHandler, useEffect, useState } from 'react';
+import isNil from 'lodash-es/isNil';
 
 const useSelect = <T>(props: SelectRestProps<T>) => {
-  const { options, getOptionValue, getOptionId, getOptionLabel, onOptionSelect, selectOnBlur, value, ...rest } = props;
+  const {
+    options,
+    getOptionValue,
+    getOptionId,
+    getOptionLabel,
+    onOptionSelect,
+    selectOnBlur,
+    value,
+    clearable,
+    ...rest
+  } = props;
   const [showOptions, setShowOptions] = useState<boolean>(false);
 
   const processedOptions = useProcessedOptions<T>({ options, getOptionValue, getOptionId, getOptionLabel });
@@ -140,6 +151,8 @@ const useSelect = <T>(props: SelectRestProps<T>) => {
   };
 
   const onMouseDown = (event: MouseEvent<HTMLInputElement>) => {
+    event.stopPropagation();
+
     setShowOptions((prevState) => !prevState);
     rest?.onMouseDown?.(event);
   };
@@ -154,6 +167,16 @@ const useSelect = <T>(props: SelectRestProps<T>) => {
       updateHighlightedIndex(processedOptions, processedValue);
     }
   }, [getOptionId, getOptionLabel, getOptionValue, processedOptions, selectItem, updateHighlightedIndex, value]);
+
+  const handleSelectClear: MouseEventHandler<HTMLButtonElement> = (event) => {
+    event.stopPropagation();
+    onOptionSelect?.(null);
+    resetSelection();
+  };
+
+  const isInputClearable = (): boolean => {
+    return Boolean(clearable && selectedItem);
+  };
 
   useEffect(() => resetSelection(), [options, resetSelection]);
 
@@ -172,7 +195,10 @@ const useSelect = <T>(props: SelectRestProps<T>) => {
     handleKeyDown,
     onMouseDown,
     selectedItem,
+    resetSelection,
     getDropdownIcon,
+    isInputClearable,
+    handleSelectClear,
     ...rest,
   };
 };

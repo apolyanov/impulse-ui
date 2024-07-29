@@ -11,6 +11,7 @@ import { selectComponentMap } from '../../maps';
 import { select } from '../../styles';
 
 import { SelectOption } from './select-option';
+import { ClearButton } from '../common';
 
 const Select = <T extends object>({ iStyle, ...rest }: SelectProps<T>) => {
   const {
@@ -31,6 +32,10 @@ const Select = <T extends object>({ iStyle, ...rest }: SelectProps<T>) => {
     selectedItem,
     placeholder,
     getDropdownIcon,
+    isInputClearable,
+    clearButtonProps,
+    resetSelection,
+    handleSelectClear,
     ...containerProps
   } = useSelect(rest);
 
@@ -39,9 +44,11 @@ const Select = <T extends object>({ iStyle, ...rest }: SelectProps<T>) => {
     noOptionsTypographyStyle,
     loadingSpinnerStyle,
     selectOptionsContainerStyle,
+    selectPlaceholderStyle,
     mainContainerStyle,
     selectedItemTypographyStyle,
     dropdownIconStyle,
+    clearIconStyle,
   } = useComponentStyle(selectComponentMap, rest, iStyle, select);
 
   const optionsContainerRenderer = useMemo((): ReactNode | undefined => {
@@ -85,13 +92,6 @@ const Select = <T extends object>({ iStyle, ...rest }: SelectProps<T>) => {
     handleOptionSelect,
   ]);
 
-  const getSelectedItem = useMemo(() => {
-    if (selectedItem) return selectedItem.label;
-    if (placeholder) return placeholder;
-
-    return '';
-  }, [placeholder, selectedItem]);
-
   return (
     <Fragment>
       <Container
@@ -102,7 +102,15 @@ const Select = <T extends object>({ iStyle, ...rest }: SelectProps<T>) => {
         iStyle={mainContainerStyle}
         ref={containerRefSetter}
       >
-        <Typography iStyle={selectedItemTypographyStyle}>{getSelectedItem}</Typography>
+        {placeholder && !selectedItem && <Typography iStyle={selectPlaceholderStyle}>{placeholder}</Typography>}
+        {selectedItem && <Typography iStyle={selectedItemTypographyStyle}>{selectedItem.label}</Typography>}
+        <ClearButton
+          onMouseDown={handleSelectClear}
+          iStyle={clearIconStyle}
+          clearable={isInputClearable()}
+          focusable={clearButtonProps?.focusable}
+          clearIcon={clearButtonProps?.clearIcon}
+        />
         <Icon iStyle={dropdownIconStyle} icon={getDropdownIcon()} />
       </Container>
       {showOptions && (

@@ -6,6 +6,7 @@ export * from './css';
 export * from './divider';
 export * from './icon';
 export * from './input';
+export * from './inputs-common';
 export * from './layout';
 export * from './loaders';
 export * from './ocr';
