@@ -14,7 +14,7 @@ const select: Partial<SelectStyle<any>> = {
       flexDirection: 'row',
       alignItems: 'center',
       paddingLeft: 8,
-      paddingRight: 36,
+      paddingRight: 28,
       position: 'relative',
       borderStyle: 'solid',
       height: 38,
@@ -28,8 +28,58 @@ const select: Partial<SelectStyle<any>> = {
       },
     },
   },
+  clearIconStyle: {
+    buttonStyle: {
+      iColorTheme: {
+        light: {
+          backgroundColor: neutral[10],
+          ':focus': {
+            backgroundColor: neutral[40],
+          },
+          ':hover': {
+            backgroundColor: neutral[40],
+          },
+        },
+      },
+      iCss: ({ getThemeColor }) => ({
+        filter: 'unset',
+        height: 20,
+        marginLeft: 'auto',
+        width: 20,
+        minHeight: 'unset',
+        '&:focus': {
+          background: getThemeColor('backgroundColor', ':focus'),
+        },
+      }),
+    },
+    iconStyle: {
+      iColorTheme: {
+        light: {
+          color: neutral[60],
+        },
+      },
+    },
+  },
   selectedItemTypographyStyle: {
-    iCss: { textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap', lineHeight: 1.5 },
+    iCss: {
+      textOverflow: 'ellipsis',
+      overflow: 'hidden',
+      whiteSpace: `nowrap`,
+      lineHeight: 1.5,
+    },
+  },
+  selectPlaceholderStyle: {
+    iColorTheme: {
+      light: {
+        color: neutral[80],
+      },
+    },
+    iCss: {
+      textOverflow: 'ellipsis',
+      overflow: 'hidden',
+      whiteSpace: `nowrap`,
+      lineHeight: 1.5,
+    },
   },
   selectOptionStyle: {
     typographyStyle: { iCss: { textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap', lineHeight: 1.5 } },
@@ -45,9 +95,9 @@ const select: Partial<SelectStyle<any>> = {
       position: 'absolute',
       filter: 'unset',
       marginRight: 'auto',
-      height: 20,
+      height: 16,
       right: 8,
-      width: 20,
+      width: 16,
       minHeight: 'unset',
     },
   },

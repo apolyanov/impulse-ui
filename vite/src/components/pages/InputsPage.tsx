@@ -10,7 +10,7 @@ import { humans2 } from '../mocks/autoCompleteMock';
 const InputsPage = () => {
   const [raw] = useState(() => humans2());
   const [options2] = useState<{ gal: string; name: string }[]>(raw);
-  const [value, setValue] = useState<{ gal: string; name: string }>();
+  const [value, setValue] = useState<{ gal: string; name: string } | null>(null);
 
   return (
     <Container>
@@ -36,11 +36,12 @@ const InputsPage = () => {
       <Select
         value={value}
         placeholder={'Player'}
+        clearable
         options={options2}
         getOptionId={(option) => option.gal}
         getOptionLabel={(option) => option.name}
         getOptionValue={(option) => option.gal}
-        onOptionSelect={(option) => setValue({ gal: String(option.value.toString), name: option.label })}
+        onOptionSelect={(option) => setValue(option && { gal: String(option.value), name: String(option.label) })}
       />
       <Button
         onClick={() => {
