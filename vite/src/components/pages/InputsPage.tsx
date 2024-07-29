@@ -35,16 +35,17 @@ const InputsPage = () => {
       />
       <Select
         value={value}
+        placeholder={'Player'}
         options={options2}
         getOptionId={(option) => option.gal}
         getOptionLabel={(option) => option.name}
         getOptionValue={(option) => option.gal}
-        onOptionSelect={(option) => setValue(option)}
+        onOptionSelect={(option) => setValue({ gal: String(option.value.toString), name: option.label })}
       />
       <Button
         onClick={() => {
           console.log('clicked asdasd');
-          setValue({ sasho: 'Alex Polyanov', value: '123456' });
+          setValue({ gal: 'Alex Polyanov', name: '123456' });
         }}
       >
         Change select value

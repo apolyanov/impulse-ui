@@ -2,7 +2,7 @@ import { useComponentStyle } from '@impulse-ui/core';
 import { Container } from '@impulse-ui/layout';
 import { Typography } from '@impulse-ui/text';
 import { SelectOptionProps } from '@impulse-ui/types';
-import React, { FunctionComponent } from 'react';
+import { FunctionComponent } from 'react';
 
 import { selectOptionMap } from '../../../maps';
 import { selectOption } from '../../../styles';

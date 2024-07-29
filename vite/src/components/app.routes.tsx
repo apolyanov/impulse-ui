@@ -7,10 +7,10 @@ import ButtonsPage from './pages/ButtonsPage';
 import ComponentStyle from './pages/ComponentStyle';
 import InputsPage from './pages/InputsPage';
 import { MuiTable } from './pages/MuiTable';
+import OCRScannerPage from './pages/OCRScannerPage.tsx';
 import QRScannerPage from './pages/QRScannerPage';
 import SidebarPage from './pages/SidebarPage';
 import TablePage from './pages/TablePage';
-import OCRScannerPage from './pages/OCRScannerPage.tsx';
 
 const router = createBrowserRouter([
   {

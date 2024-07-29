@@ -1,6 +1,6 @@
 import { extractCssProps } from '@impulse-ui/core';
 import { IconProps } from '@impulse-ui/types';
-import React, { FunctionComponent } from 'react';
+import { FunctionComponent } from 'react';
 
 import BaseIcon from './BaseIcon.styles';
 

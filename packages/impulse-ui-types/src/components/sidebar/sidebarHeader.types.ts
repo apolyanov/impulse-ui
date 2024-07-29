@@ -1,5 +1,5 @@
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
-import React, { ButtonHTMLAttributes } from 'react';
+import { ButtonHTMLAttributes, MouseEventHandler } from 'react';
 
 import { ButtonHTMLProps } from '../buttons';
 import { IconHTMLProps } from '../icon';
@@ -12,7 +12,7 @@ interface SidebarHeaderProps extends SidebarHeaderRestProps {
 
 interface SidebarHeaderRestProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   headerText: string;
-  onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
   icon?: IconDefinition;
 }
 
