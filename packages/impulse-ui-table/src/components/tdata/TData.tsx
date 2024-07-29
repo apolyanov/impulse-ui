@@ -1,6 +1,6 @@
 import { extractCssProps } from '@impulse-ui/core';
 import { TDataProps } from '@impulse-ui/types';
-import React, { FunctionComponent } from 'react';
+import { FunctionComponent } from 'react';
 
 import { BaseTData } from './BaseTData.styles';
 

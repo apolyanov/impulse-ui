@@ -1,8 +1,8 @@
 import { Container } from '@impulse-ui/layout';
+import { OCRScanner } from '@impulse-ui/ocr';
 import { Typography } from '@impulse-ui/text';
 import { QRCode } from 'jsqr-es6';
 import { useCallback, useState } from 'react';
-import { OCRScanner } from '@impulse-ui/ocr';
 
 const OCRScannerPage = () => {
   const [result, setResult] = useState<QRCode>();

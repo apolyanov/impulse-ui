@@ -3,7 +3,7 @@ import { useComponentStyle } from '@impulse-ui/core';
 import { Container } from '@impulse-ui/layout';
 import { Typography } from '@impulse-ui/text';
 import { CheckboxProps } from '@impulse-ui/types';
-import React, { FunctionComponent, useMemo } from 'react';
+import { FunctionComponent, useMemo } from 'react';
 
 import { useCheckbox } from '../../hooks';
 import { checkboxChecked, checkboxUnchecked } from '../../icons';

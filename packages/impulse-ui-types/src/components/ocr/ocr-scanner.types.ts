@@ -1,7 +1,7 @@
+import { RecognizeResult } from 'tesseract.js';
 import { IconButtonStyle } from '../buttons';
 import { ScannerRestProps, UseScannerReturnProps } from '../scanner';
 import { IOStyle } from '../theme';
-import { RecognizeResult } from 'tesseract.js';
 
 interface OCRScannerProps extends OCRScannerRestProps {
   iStyle?: Partial<OCRScannerStyle>;

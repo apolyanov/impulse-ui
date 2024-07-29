@@ -7,11 +7,11 @@ import { ERROR, FieldMessage } from '@impulse-ui/text';
 import { TextInputProps } from '@impulse-ui/types';
 import debounce from 'lodash-es/debounce';
 import isNil from 'lodash-es/isNil';
-import React, {
+import {
   ChangeEvent,
   ForwardedRef,
-  forwardRef,
   InputHTMLAttributes,
+  forwardRef,
   useCallback,
   useImperativeHandle,
   useMemo,

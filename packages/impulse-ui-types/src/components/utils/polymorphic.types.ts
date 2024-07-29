@@ -6,7 +6,7 @@ import {
   ReactElement,
 } from 'react';
 
-type TypeEquality<T, U> = keyof T extends keyof U ? (keyof U extends keyof T ? true : false) : false;
+type TypeEquality<T, U> = T extends U ? (U extends T ? true : false) : false;
 
 type DistributiveOmit<T, K extends keyof any> = T extends any ? Omit<T, K> : never;
 

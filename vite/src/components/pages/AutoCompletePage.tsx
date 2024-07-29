@@ -8,9 +8,8 @@ import { useState } from 'react';
 import { humans } from '../mocks/autoCompleteMock';
 
 const AutoCompletePage = () => {
-  const [selectedState, setSelectedState] = useState();
-  const [options, setOptions] = useState<{ name: string; gal: string }[]>(() => humans());
-  const [state, setState] = useState<string>();
+  const [options] = useState<{ name: string; gal: string }[]>(() => humans());
+  const [_, setState] = useState<string>();
 
   return (
     <Container iStyle={{ iCss: { flexDirection: 'row', height: '700px', width: '100%', gap: '16px' } }}>
@@ -43,7 +42,6 @@ const AutoCompletePage = () => {
       />
       <Button
         onClick={() => {
-          const splicedOptions = options.slice(250, 500);
           setState('splicedOptions');
           // setOptions(splicedOptions);
         }}

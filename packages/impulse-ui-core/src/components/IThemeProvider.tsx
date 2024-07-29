@@ -1,5 +1,5 @@
 import { IThemeContext, IThemeProviderProps, ThemeMode } from '@impulse-ui/types';
-import { createContext, FunctionComponent, PropsWithChildren, useState } from 'react';
+import { FunctionComponent, PropsWithChildren, createContext, useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 
 import '../css/font.css';
