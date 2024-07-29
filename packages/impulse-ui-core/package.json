@@ -10,7 +10,7 @@
   "scripts": {
     "build": "tsup",
     "lint": "biome check ./src --write",
-    "start": "dts watch",
+    "start": "tsup --watch",
     "test": "dts test --passWithNoTests"
   },
   "husky": {
