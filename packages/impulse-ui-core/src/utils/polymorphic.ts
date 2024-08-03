@@ -1,4 +1,4 @@
-import { PolyRefFunction } from '@impulse-ui/types';
+import { PolyRefFunction } from '../types';
 import { forwardRef } from 'react';
 
 const polymorphicForwardRef = forwardRef as PolyRefFunction;

@@ -1,6 +1,6 @@
 import { volcano } from '@impulse-ui/colours';
 import { padding } from '@impulse-ui/core';
-import { QRScannerStyle } from '@impulse-ui/types';
+import { QRScannerStyle } from '../types';
 
 const qrScannerStyle: Partial<QRScannerStyle> = {
   mainContainerStyle: {

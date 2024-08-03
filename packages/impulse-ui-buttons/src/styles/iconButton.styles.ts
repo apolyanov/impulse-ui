@@ -1,5 +1,5 @@
 import { neutral, volcano } from '@impulse-ui/colours';
-import { IconButtonStyle } from '@impulse-ui/types';
+import { IconButtonStyle } from '../types';
 
 const defaultIconButtonStyle: Partial<IconButtonStyle> = {
   iconStyle: {

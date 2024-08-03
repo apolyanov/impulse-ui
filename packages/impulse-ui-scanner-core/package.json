@@ -6,9 +6,7 @@
   "main": "dist/index.js",
   "module": "dist/index.js",
   "typings": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "scripts": {
     "build": "tsup",
     "lint": "biome check ./src --write",
@@ -39,8 +37,5 @@
   },
   "engines": {
     "node": ">=12"
-  },
-  "devDependencies": {
-    "@impulse-ui/types": "^2.12.1"
   }
 }

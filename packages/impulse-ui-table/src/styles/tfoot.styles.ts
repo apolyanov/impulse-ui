@@ -1,6 +1,6 @@
 import { neutral } from '@impulse-ui/colours';
-import { paddingX, paddingY } from '@impulse-ui/core';
-import { IStyle, TFootHTMLProps } from '@impulse-ui/types';
+import { IStyle, paddingX, paddingY } from '@impulse-ui/core';
+import { TFootHTMLProps } from '../types';
 
 const tfoot: IStyle<TFootHTMLProps> = {
   iColorTheme: {

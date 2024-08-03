@@ -1,7 +1,7 @@
-import { NotFoundException, useScanner } from '@impulse-ui/scanner-core';
-import { QRScannerRestProps, ScanningFn } from '@impulse-ui/types';
+import { NotFoundException, ScanningFn, useScanner } from '@impulse-ui/scanner-core';
 import { createWorkerFactory, useWorker } from '@shopify/react-web-worker';
 import { useCallback } from 'react';
+import { QRScannerRestProps } from '../types';
 
 const createWorker = createWorkerFactory(() => import('./jsQR'));
 

@@ -1,7 +1,7 @@
 import { neutral } from '@impulse-ui/colours';
-import { animationHelper } from '@impulse-ui/core';
-import { ContainerHTMLProps, IStyle } from '@impulse-ui/types';
+import { animationHelper, IStyle } from '@impulse-ui/core';
 import { keyframes } from 'styled-components';
+import { ContainerHTMLProps } from '@impulse-ui/layout';
 
 const spinnerAnimation = keyframes`100% {transform: rotate(1turn)}`;
 

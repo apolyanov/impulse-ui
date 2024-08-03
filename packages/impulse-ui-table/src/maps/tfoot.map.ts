@@ -1,4 +1,4 @@
-import { ComponentMap } from '@impulse-ui/types';
+import { ComponentMap } from '@impulse-ui/core';
 
 const tfootComponentMap: ComponentMap[] = [{ key: 'tfoot' }, { key: 'trow' }, { key: 'tdata' }];
 

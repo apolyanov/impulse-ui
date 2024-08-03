@@ -1,6 +1,6 @@
 import { volcano } from '@impulse-ui/colours';
 import { padding } from '@impulse-ui/core';
-import { OCRScannerStyle } from '@impulse-ui/types';
+import { OCRScannerStyle } from '../types';
 
 const ocrScannerStyle: Partial<OCRScannerStyle> = {
   mainContainerStyle: {

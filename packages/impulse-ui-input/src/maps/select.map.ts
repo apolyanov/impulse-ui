@@ -1,4 +1,4 @@
-import { ComponentMap } from '@impulse-ui/types';
+import { ComponentMap } from '@impulse-ui/core';
 
 import { selectOptionMap } from './selectOption.map';
 import { iconButtonComponentMap } from '@impulse-ui/buttons';

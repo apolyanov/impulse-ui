@@ -1,5 +1,6 @@
 import { neutral } from '@impulse-ui/colours';
-import { IStyle, THeaderHTMLProps } from '@impulse-ui/types';
+import { IStyle } from '@impulse-ui/core';
+import { THeaderHTMLProps } from '../types';
 
 const theader: IStyle<THeaderHTMLProps> = {
   iColorTheme: {

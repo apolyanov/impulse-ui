@@ -1,5 +1,6 @@
 import { neutral } from '@impulse-ui/colours';
-import { IStyle, TRowHTMLProps } from '@impulse-ui/types';
+import { IStyle } from '@impulse-ui/core';
+import { TRowHTMLProps } from '../types';
 
 const trow: IStyle<TRowHTMLProps> = {
   iColorTheme: {

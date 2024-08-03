@@ -1,4 +1,4 @@
-import { UseElementDimensionsFn } from '@impulse-ui/types';
+import { UseElementDimensionsFn } from '../types';
 import { useEffect, useState } from 'react';
 
 const useElementDimensions: UseElementDimensionsFn = (element) => {

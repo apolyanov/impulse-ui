@@ -12,9 +12,6 @@
   "exclude": ["dist"],
   "references": [
     {
-      "path": "./packages/impulse-ui-types"
-    },
-    {
       "path": "./packages/impulse-ui-core"
     },
     {
@@ -55,12 +52,6 @@
     },
     {
       "path": "./packages/impulse-ui-qr"
-    },
-    {
-      "path": "./packages/impulse-ui-qr-core"
-    },
-    {
-      "path": "./packages/impulse-ui-scanner-core"
     },
     {
       "path": "./packages/impulse-ui-scanner-core"

@@ -3,7 +3,6 @@ import { Icon } from '@impulse-ui/icon';
 import { Container } from '@impulse-ui/layout';
 import { Spinner } from '@impulse-ui/loader';
 import { Typography } from '@impulse-ui/text';
-import { SelectProps } from '@impulse-ui/types';
 import { Fragment, ReactNode, useMemo } from 'react';
 
 import { useSelect } from '../../hooks';
@@ -12,6 +11,7 @@ import { select } from '../../styles';
 
 import { SelectOption } from './select-option';
 import { ClearButton } from '../common';
+import { SelectProps } from '../../types';
 
 const Select = <T extends object>({ iStyle, ...rest }: SelectProps<T>) => {
   const {
@@ -33,7 +33,7 @@ const Select = <T extends object>({ iStyle, ...rest }: SelectProps<T>) => {
     placeholder,
     getDropdownIcon,
     isInputClearable,
-    clearButtonProps,
+    clearButton,
     resetSelection,
     handleSelectClear,
     ...containerProps
@@ -48,7 +48,7 @@ const Select = <T extends object>({ iStyle, ...rest }: SelectProps<T>) => {
     mainContainerStyle,
     selectedItemTypographyStyle,
     dropdownIconStyle,
-    clearIconStyle,
+    clearButtonStyle,
   } = useComponentStyle(selectComponentMap, rest, iStyle, select);
 
   const optionsContainerRenderer = useMemo((): ReactNode | undefined => {
@@ -106,10 +106,10 @@ const Select = <T extends object>({ iStyle, ...rest }: SelectProps<T>) => {
         {selectedItem && <Typography iStyle={selectedItemTypographyStyle}>{selectedItem.label}</Typography>}
         <ClearButton
           onMouseDown={handleSelectClear}
-          iStyle={clearIconStyle}
+          iStyle={clearButtonStyle}
           clearable={isInputClearable()}
-          focusable={clearButtonProps?.focusable}
-          clearIcon={clearButtonProps?.clearIcon}
+          focusable={clearButton?.focusable}
+          clearIcon={clearButton?.clearIcon}
         />
         <Icon iStyle={dropdownIconStyle} icon={getDropdownIcon()} />
       </Container>

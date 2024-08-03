@@ -1,4 +1,4 @@
-import { UseIThemeContextFn } from '@impulse-ui/types';
+import { UseIThemeContextFn } from '../types';
 import { useContext } from 'react';
 
 import { ITheme } from '../components';

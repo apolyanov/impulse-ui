@@ -1,6 +1,6 @@
 import { Icon } from '@impulse-ui/icon';
 import { Container } from '@impulse-ui/layout';
-import { FieldMessageProps } from '@impulse-ui/types';
+import { FieldMessageProps } from '../../types';
 import { FunctionComponent } from 'react';
 
 import { useFieldMessageStyle } from '../../hooks';

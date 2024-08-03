@@ -1,4 +1,4 @@
-import { ColorPalette } from '@impulse-ui/types';
+import { ColorPalette } from './types';
 
 const sunriseYellow: ColorPalette = {
   10: '#feffe6',

@@ -1,5 +1,5 @@
-import { CompositeCheckboxProps } from '@impulse-ui/types';
 import { MouseEvent, useState } from 'react';
+import { CompositeCheckboxProps } from '../types';
 
 const useCheckbox = (rest: CompositeCheckboxProps) => {
   const { checked, label, onClick, ...buttonProps } = rest;

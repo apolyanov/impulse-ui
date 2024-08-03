@@ -1,4 +1,4 @@
-import { ComponentMap } from '@impulse-ui/types';
+import { ComponentMap } from '@impulse-ui/core';
 
 const buttonComponentMap: ComponentMap[] = [{ key: 'button' }, { key: 'loader' }];
 

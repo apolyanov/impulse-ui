@@ -1,21 +1,22 @@
 import { faFilter, faMagnifyingGlass, faSliders } from '@fortawesome/free-solid-svg-icons';
-import { IconButton } from '@impulse-ui/buttons';
-import { useComponentStyle } from '@impulse-ui/core';
-import { TextInput } from '@impulse-ui/input';
-import { Container } from '@impulse-ui/layout';
-import { Typography } from '@impulse-ui/text';
-import { TableHeaderProps } from '@impulse-ui/types';
-import { ChangeEvent, FunctionComponent } from 'react';
+import { ChangeEvent } from 'react';
 
 import { useImpulseTable } from '../../hooks';
 import { tableHeaderComponentMap } from '../../maps';
 import { tableHeaderStyle } from '../../styles';
+import { TableHeaderProps } from '../../types';
+import { Container } from '@impulse-ui/layout';
+import { Typography } from '@impulse-ui/text';
+import { TextInput } from '@impulse-ui/input';
+import { useComponentStyle } from '@impulse-ui/core';
+import { IconButton } from '@impulse-ui/buttons';
 
-const TableHeader: FunctionComponent<TableHeaderProps> = ({ iStyle, ...rest }) => {
+const TableHeader = <T extends object>({ iStyle, ...rest }: TableHeaderProps<T>) => {
+  const tableState = useImpulseTable();
   const { showTableControls, showTableSearch, tableName } = rest;
-  const { setGlobalFilter } = useImpulseTable();
+  const { setGlobalFilter } = tableState;
   const { containerStyle, tableNameStyle, filtersButtonStyle, settingsButtonStyle, searchInputStyle } =
-    useComponentStyle(tableHeaderComponentMap, rest, iStyle, tableHeaderStyle);
+    useComponentStyle(tableHeaderComponentMap, tableState, tableHeaderStyle<T>(), iStyle);
 
   const handleOnChangeSearch = (event: ChangeEvent<HTMLInputElement>) => setGlobalFilter(event.target.value);
   const handleOnClearSearch = () => setGlobalFilter;

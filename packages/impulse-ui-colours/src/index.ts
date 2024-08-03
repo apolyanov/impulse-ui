@@ -11,3 +11,4 @@ export * from './orange';
 export * from './polarGreen';
 export * from './sunriseYellow';
 export * from './volcano';
+export * from './types';

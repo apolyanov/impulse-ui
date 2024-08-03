@@ -1,5 +1,5 @@
 import { neutral } from '@impulse-ui/colours';
-import { SidebarHeaderStyle } from '@impulse-ui/types';
+import { SidebarHeaderStyle } from '../types';
 
 const defaultSidebarHeaderStyle: Partial<SidebarHeaderStyle> = {
   buttonStyle: {

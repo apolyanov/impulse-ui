@@ -1,4 +1,4 @@
-import { CameraCapabilities } from '@impulse-ui/types';
+import { CameraCapabilities } from '../types';
 
 import { NoCameraCapabilitiesAvailableException, NoMediaTrackException } from '../exceptions';
 

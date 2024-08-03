@@ -4,7 +4,6 @@ import { extractCssProps, useComponentStyle } from '@impulse-ui/core';
 import { Icon } from '@impulse-ui/icon';
 import { Container } from '@impulse-ui/layout';
 import { ERROR, FieldMessage } from '@impulse-ui/text';
-import { TextInputProps } from '@impulse-ui/types';
 import debounce from 'lodash-es/debounce';
 import isNil from 'lodash-es/isNil';
 import {
@@ -23,6 +22,7 @@ import { textInputComponentMap } from '../../maps';
 import { textInputStyle } from '../../styles';
 
 import BaseTextInput from './BaseTextInput.styles';
+import { TextInputProps } from '../../types';
 
 const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
   ({ iStyle, ...rest }, ref?: ForwardedRef<HTMLInputElement>) => {

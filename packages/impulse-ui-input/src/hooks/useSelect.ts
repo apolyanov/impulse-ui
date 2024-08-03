@@ -2,14 +2,14 @@ import { autoUpdate, offset, size, useFloating } from '@floating-ui/react-dom';
 import { faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
 import {
   optionProcessor,
+  SimpleOption,
   useItemSelection,
   useOutsideClick,
   useProcessedOptions,
   useVirtualizedList,
 } from '@impulse-ui/core';
-import { SelectRestProps, SimpleOption } from '@impulse-ui/types';
 import { KeyboardEvent, MouseEvent, MouseEventHandler, useEffect, useState } from 'react';
-import isNil from 'lodash-es/isNil';
+import { SelectRestProps } from '../types';
 
 const useSelect = <T>(props: SelectRestProps<T>) => {
   const {
@@ -20,7 +20,7 @@ const useSelect = <T>(props: SelectRestProps<T>) => {
     onOptionSelect,
     selectOnBlur,
     value,
-    clearable,
+    clearButton,
     ...rest
   } = props;
   const [showOptions, setShowOptions] = useState<boolean>(false);
@@ -175,7 +175,7 @@ const useSelect = <T>(props: SelectRestProps<T>) => {
   };
 
   const isInputClearable = (): boolean => {
-    return Boolean(clearable && selectedItem);
+    return Boolean(clearButton?.clearable && selectedItem);
   };
 
   useEffect(() => resetSelection(), [options, resetSelection]);
@@ -199,6 +199,7 @@ const useSelect = <T>(props: SelectRestProps<T>) => {
     getDropdownIcon,
     isInputClearable,
     handleSelectClear,
+    clearButton,
     ...rest,
   };
 };

@@ -1,4 +1,4 @@
-import { ColorPalette } from '@impulse-ui/types';
+import { ColorPalette } from './types';
 
 const daybreakBlue: ColorPalette = {
   10: '#e6f4ff',

@@ -1,4 +1,4 @@
-import { ColorPalette } from '@impulse-ui/types';
+import { ColorPalette } from './types';
 
 const polarGreen: ColorPalette = {
   10: '#f6ffed',

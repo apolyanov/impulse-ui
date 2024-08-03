@@ -1,4 +1,4 @@
-import { ColorPalette } from '@impulse-ui/types';
+import { ColorPalette } from './types';
 
 const goldenPurple: ColorPalette = {
   10: '#f9f0ff',

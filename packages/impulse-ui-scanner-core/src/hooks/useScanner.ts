@@ -1,4 +1,4 @@
-import { CameraCapabilities, UseScannerProps } from '@impulse-ui/types';
+import { CameraCapabilities, UseScannerProps } from '../types';
 import { useCallback, useRef, useState } from 'react';
 
 import { Scanner } from '../scanner';
