@@ -1,4 +1,4 @@
-import { ColorPalette } from '@impulse-ui/types';
+import { ColorPalette } from './types';
 
 const geekBlue: ColorPalette = {
   10: '#f0f5ff',

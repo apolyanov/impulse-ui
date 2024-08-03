@@ -1,7 +1,7 @@
 import { neutral } from '@impulse-ui/colours';
-import { ImpulseTableStyle } from '@impulse-ui/types';
+import { ImpulseTableRestProps, ImpulseTableState, ImpulseTableStyle } from '../types';
 
-const impulseTableStyles: Partial<ImpulseTableStyle> = {
+const impulseTableStyles = <T>(): Partial<ImpulseTableStyle<ImpulseTableState<T>>> => ({
   tableContainerStyle: {
     iColorTheme: { light: { backgroundColor: neutral[10] } },
     iCss: {
@@ -11,6 +11,6 @@ const impulseTableStyles: Partial<ImpulseTableStyle> = {
       padding: 8,
     },
   },
-};
+});
 
 export { impulseTableStyles };

@@ -1,4 +1,4 @@
-import { ColorPalette } from '@impulse-ui/types';
+import { ColorPalette } from './types';
 
 const cyan: ColorPalette = {
   10: '#e6fffb',

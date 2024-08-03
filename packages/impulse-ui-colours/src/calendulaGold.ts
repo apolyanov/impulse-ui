@@ -1,4 +1,4 @@
-import { ColorPalette } from '@impulse-ui/types';
+import { ColorPalette } from './types';
 
 const calendulaGold: ColorPalette = {
   10: '#fffbe6',

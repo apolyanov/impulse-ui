@@ -4,21 +4,23 @@ import { useComponentStyle } from '@impulse-ui/core';
 import { TextInput } from '@impulse-ui/input';
 import { Container } from '@impulse-ui/layout';
 import { Typography } from '@impulse-ui/text';
-import { PaginationProps } from '@impulse-ui/types';
-import { ChangeEvent, FunctionComponent } from 'react';
+import { ChangeEvent } from 'react';
 
 import { useImpulseTable } from '../../hooks';
 import { paginationComponentMap } from '../../maps';
 import { paginationStyles } from '../../styles';
+import { PaginationProps } from '../../types';
 
-const Pagination: FunctionComponent<PaginationProps> = ({ iStyle, ...rest }) => {
+const Pagination = <T extends object>({ iStyle }: PaginationProps<T>) => {
+  const tableState = useImpulseTable();
+
   const { getPageCount, getState, setPageIndex, nextPage, getCanNextPage, previousPage, getCanPreviousPage, loading } =
-    useImpulseTable();
+    tableState;
 
   const { containerStyle, pageCounterStyle, pageInputStyle, pageChangeButtonStyle } = useComponentStyle(
     paginationComponentMap,
-    rest,
-    paginationStyles,
+    tableState,
+    paginationStyles<T>(),
     iStyle,
   );
 

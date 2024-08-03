@@ -1,5 +1,6 @@
 import { neutral, volcano } from '@impulse-ui/colours';
-import { IStyle, ImpulseTableState, TBodyStyle } from '@impulse-ui/types';
+import { IStyle } from '@impulse-ui/core';
+import { ImpulseTableState, TBodyStyle } from '../types';
 
 const baseTBody: IStyle<ImpulseTableState<any>> = {
   iColorTheme: {
@@ -19,7 +20,7 @@ const baseTBody: IStyle<ImpulseTableState<any>> = {
   }),
 };
 
-const tbody: Partial<TBodyStyle<ImpulseTableState<any>>> = {
+const tbody: Partial<TBodyStyle<any>> = {
   noContentTdataStyle: {
     iCss: {
       width: '100%',
@@ -31,7 +32,7 @@ const tbody: Partial<TBodyStyle<ImpulseTableState<any>>> = {
     iCss: { position: 'relative' },
   },
   noContentTbodyStyle: {
-    iCss: { position: 'relative' },
+    iCss: ({ loading }) => ({ position: 'relative', height: loading ? '300px' : 'unset' }),
   },
   noContentTrowStyle: { iCss: ({ loading }) => ({ opacity: loading ? 0.2 : 1 }) },
   trowStyle: { iCss: ({ loading }) => ({ opacity: loading ? 0.2 : 1 }) },

@@ -1,4 +1,4 @@
-import { ScannerRestProps, ScanningFn } from '@impulse-ui/types';
+import { ScannerRestProps, ScanningFn } from '../types';
 
 import {
   NavigatorSupportException,

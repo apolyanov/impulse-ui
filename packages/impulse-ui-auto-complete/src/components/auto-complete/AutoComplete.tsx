@@ -1,9 +1,7 @@
 import { useComponentStyle } from '@impulse-ui/core';
-import { TextInput } from '@impulse-ui/input';
 import { Container } from '@impulse-ui/layout';
 import { Spinner } from '@impulse-ui/loader';
 import { Typography } from '@impulse-ui/text';
-import { AutoCompleteProps } from '@impulse-ui/types';
 import { Fragment, ReactNode, useMemo } from 'react';
 
 import { useAutoComplete } from '../../hooks';
@@ -11,6 +9,8 @@ import { autoCompleteComponentMap } from '../../maps';
 import { defaultAutoCompleteStyle } from '../../styles';
 
 import { AutoCompleteItem } from './auto-complete-item';
+import { AutoCompleteProps } from '../../types';
+import { TextInput } from '@impulse-ui/input';
 
 const AutoComplete = <T extends object>({ iStyle, ...rest }: AutoCompleteProps<T>) => {
   const {

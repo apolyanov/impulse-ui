@@ -1,4 +1,4 @@
-import { ColorPalette } from '@impulse-ui/types';
+import { ColorPalette } from './types';
 
 const orange: ColorPalette = {
   10: '#fff7e6',

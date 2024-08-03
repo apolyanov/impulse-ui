@@ -1,4 +1,4 @@
-import { ExtendedPalette } from '@impulse-ui/types';
+import { ExtendedPalette } from './types';
 
 const neutral: ExtendedPalette = {
   10: '#ffffff',

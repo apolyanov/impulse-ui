@@ -3,3 +3,4 @@ export * from './hooks';
 export * from './icons';
 export * from './maps';
 export * from './styles';
+export * from './types';

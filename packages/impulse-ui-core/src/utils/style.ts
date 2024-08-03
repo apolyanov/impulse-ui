@@ -1,5 +1,6 @@
 import {
   AnimationHelper,
+  ColorsKeysValues,
   ComponentColors,
   CreateBaseComponentStyle,
   IOCss,
@@ -10,13 +11,12 @@ import {
   MergeThemesFnArgs,
   Padding,
   ThemeMode,
-} from '@impulse-ui/types';
-import { ColorsKeysValues } from '@impulse-ui/types';
+} from '../types';
 import { SimplePseudos } from 'csstype';
 import merge from 'lodash-es/merge';
 import { css } from 'styled-components';
 
-import { LIGHT, cssPropsMap } from './constants';
+import { LIGHT, cssPropsMap } from '../utils';
 
 const extractCssProps = (props: any) => {
   const cssProps: any = {};

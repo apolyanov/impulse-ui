@@ -1,5 +1,6 @@
 import { neutral, volcano } from '@impulse-ui/colours';
-import { ButtonHTMLProps, ButtonStyle, IStyle } from '@impulse-ui/types';
+import { IStyle } from '@impulse-ui/core';
+import { ButtonHTMLProps, ButtonStyle } from '../types';
 
 const baseButton: IStyle<ButtonHTMLProps> = {
   iColorTheme: {

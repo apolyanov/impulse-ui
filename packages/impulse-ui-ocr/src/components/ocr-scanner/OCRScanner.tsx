@@ -3,11 +3,11 @@ import { IconButton } from '@impulse-ui/buttons';
 import { useComponentStyle } from '@impulse-ui/core';
 import { Icon } from '@impulse-ui/icon';
 import { Container } from '@impulse-ui/layout';
-import { OCRScannerProps } from '@impulse-ui/types';
 
 import { useOcrScanner } from '../../hooks';
 import { ocrScannerComponentMap } from '../../maps';
 import { ocrScannerStyle } from '../../styles';
+import { OCRScannerProps } from '../../types';
 
 const OCRScanner = ({ iStyle, ...rest }: OCRScannerProps) => {
   const ocrScannerProps = useOcrScanner(rest);

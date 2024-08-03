@@ -1,4 +1,4 @@
-import { UseOutsideClickFn } from '@impulse-ui/types';
+import { UseOutsideClickFn } from '../types';
 import { useCallback, useEffect } from 'react';
 
 const useOutsideClick: UseOutsideClickFn = (callback, htmlDeps) => {

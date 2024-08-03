@@ -1,9 +1,9 @@
 import { faSort, faSortDown, faSortUp } from '@fortawesome/free-solid-svg-icons';
 import { IconButton } from '@impulse-ui/buttons';
-import { SortingButtonProps } from '@impulse-ui/types';
 import { FunctionComponent } from 'react';
 
 import { useImpulseTable } from '../../hooks';
+import { SortingButtonProps } from '../../types';
 
 const SortingButton: FunctionComponent<SortingButtonProps> = ({ iStyle, columnId, ...rest }) => {
   const { getColumn } = useImpulseTable();

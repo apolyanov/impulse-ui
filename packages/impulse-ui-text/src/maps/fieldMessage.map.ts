@@ -1,4 +1,4 @@
-import { ComponentMap } from '@impulse-ui/types';
+import { ComponentMap } from '@impulse-ui/core';
 
 const variantSubKeys: ComponentMap[] = [
   { key: 'success', prefix: '' },

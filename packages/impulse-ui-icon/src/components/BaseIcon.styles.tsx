@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { createBaseComponentStyle } from '@impulse-ui/core';
-import { BaseIComponent } from '@impulse-ui/types';
+import { createBaseComponentStyle, BaseIComponent } from '@impulse-ui/core';
 import styled from 'styled-components';
 
 import { icon } from '../styles';
@@ -15,4 +14,4 @@ const BaseIcon = styled(FontAwesomeIcon)<BaseIComponent>(({ theme: { mode, theme
   }),
 );
 
-export default BaseIcon;
+export { BaseIcon };

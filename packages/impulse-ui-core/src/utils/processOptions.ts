@@ -1,4 +1,4 @@
-import { GetOptionId, GetOptionLabel, GetOptionValue, SimpleOption } from '@impulse-ui/types';
+import { GetOptionId, GetOptionLabel, GetOptionValue, SimpleOption } from '../types';
 
 const processOptions = (
   unProcessedOptions: any[],

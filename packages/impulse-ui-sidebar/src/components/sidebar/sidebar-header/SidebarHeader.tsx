@@ -2,11 +2,11 @@ import { BaseButton } from '@impulse-ui/buttons';
 import { useComponentStyle } from '@impulse-ui/core';
 import { Icon } from '@impulse-ui/icon';
 import { Typography } from '@impulse-ui/text';
-import { SidebarHeaderProps } from '@impulse-ui/types';
 import { FunctionComponent, PropsWithChildren } from 'react';
 
 import { sidebarHeaderComponentMap } from '../../../maps';
 import { defaultSidebarHeaderStyle } from '../../../styles';
+import { SidebarHeaderProps } from '../../../types';
 
 const SidebarHeader: FunctionComponent<PropsWithChildren<SidebarHeaderProps>> = ({ iStyle, ...rest }) => {
   const { onClick, icon, headerText } = rest;

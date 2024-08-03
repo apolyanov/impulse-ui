@@ -3,12 +3,12 @@ import { IconButton } from '@impulse-ui/buttons';
 import { useComponentStyle } from '@impulse-ui/core';
 import { Icon } from '@impulse-ui/icon';
 import { Container } from '@impulse-ui/layout';
-import { QRScannerProps } from '@impulse-ui/types';
 import React from 'react';
 
 import { useQrScanner } from '../../hooks';
 import { qrScannerComponentMap } from '../../maps';
 import { qrScannerStyle } from '../../styles';
+import { QRScannerProps } from '../../types';
 
 const QRScanner = ({ iStyle, ...rest }: QRScannerProps) => {
   const qrScannerProps = useQrScanner(rest);

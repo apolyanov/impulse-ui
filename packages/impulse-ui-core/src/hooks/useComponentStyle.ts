@@ -1,4 +1,4 @@
-import { ComponentMap, IOStyle } from '@impulse-ui/types';
+import { ComponentMap, IOStyle } from '../types';
 import { useMemo } from 'react';
 
 import { mergePartialThemes } from '../utils';
@@ -6,8 +6,8 @@ import { mergePartialThemes } from '../utils';
 const useComponentStyle = <T extends object, E extends object>(
   componentMap: ComponentMap[],
   props: E,
-  defaultTheme?: T,
-  overridingTheme?: T,
+  defaultTheme?: Partial<T>,
+  overridingTheme?: Partial<T>,
 ) =>
   useMemo(
     () => constructComplexTheme<T, E>(componentMap, props, defaultTheme, overridingTheme),
@@ -16,8 +16,8 @@ const useComponentStyle = <T extends object, E extends object>(
 const constructComplexTheme = <T extends object, E extends object>(
   componentMap: ComponentMap[],
   props: E,
-  defaultTheme?: T,
-  overridingTheme?: T,
+  defaultTheme?: Partial<T>,
+  overridingTheme?: Partial<T>,
 ) => {
   let newObject: any = {};
 
