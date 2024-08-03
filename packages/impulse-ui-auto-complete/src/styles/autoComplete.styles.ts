@@ -1,5 +1,5 @@
 import { neutral, volcano } from '@impulse-ui/colours';
-import { AutoCompleteStyle } from '@impulse-ui/types';
+import { AutoCompleteStyle } from '../types';
 
 const defaultAutoCompleteStyle: Partial<AutoCompleteStyle<any>> = {
   mainContainerStyle: {

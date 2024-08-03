@@ -2,7 +2,7 @@ import { IconButton } from '@impulse-ui/buttons';
 import { useComponentStyle } from '@impulse-ui/core';
 import { Container } from '@impulse-ui/layout';
 import { Typography } from '@impulse-ui/text';
-import { CheckboxProps } from '@impulse-ui/types';
+import { CheckboxProps } from '../../types';
 import { FunctionComponent, useMemo } from 'react';
 
 import { useCheckbox } from '../../hooks';

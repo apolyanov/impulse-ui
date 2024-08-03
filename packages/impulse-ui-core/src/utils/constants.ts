@@ -1,6 +1,6 @@
-import { CssMapKeys, ThemeMode } from '@impulse-ui/types';
+import { CssMapKeys, ThemeMode } from '../types';
 
-import { borderTransform, noTransform, spacingTransform } from './transforms';
+import { borderTransform, noTransform, spacingTransform } from '../utils';
 
 const LIGHT: ThemeMode = 'light';
 const DARK: ThemeMode = 'dark';

@@ -1,5 +1,5 @@
 import { volcano } from '@impulse-ui/colours';
-import { CheckboxStyle } from '@impulse-ui/types';
+import { CheckboxStyle } from '../types';
 
 const checkboxStyle: Partial<CheckboxStyle> = {
   mainContainerStyle: {

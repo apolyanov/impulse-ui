@@ -1,7 +1,7 @@
 import { paddingX } from '@impulse-ui/core';
-import { TableHeaderStyle } from '@impulse-ui/types';
+import { ImpulseTableState, TableHeaderStyle } from '../types';
 
-const tableHeaderStyle: Partial<TableHeaderStyle> = {
+const tableHeaderStyle = <T>(): Partial<TableHeaderStyle<ImpulseTableState<T>>> => ({
   containerStyle: {
     iCss: {
       display: 'flex',
@@ -12,6 +12,6 @@ const tableHeaderStyle: Partial<TableHeaderStyle> = {
     },
   },
   tableNameStyle: { iCss: { marginRight: 'auto', fontSize: '18px' } },
-};
+});
 
 export { tableHeaderStyle };

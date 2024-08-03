@@ -1,5 +1,5 @@
 import { extractCssProps } from '@impulse-ui/core';
-import { LinkProps } from '@impulse-ui/types';
+import { LinkProps } from '../../types';
 import { FunctionComponent } from 'react';
 
 import { BaseLink } from './BaseLink.styles';

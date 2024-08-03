@@ -1,4 +1,4 @@
-import { FieldMessageType } from '@impulse-ui/types';
+import { FieldMessageType } from '../types';
 
 const INFO: FieldMessageType = 'info';
 const WARNING: FieldMessageType = 'warning';

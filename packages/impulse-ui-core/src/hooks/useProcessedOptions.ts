@@ -1,4 +1,4 @@
-import { UseProcessedoptionsProps } from '@impulse-ui/types';
+import { UseProcessedoptionsProps } from '../types';
 import { useMemo } from 'react';
 
 import { processOptions } from '../utils';

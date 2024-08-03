@@ -3,7 +3,6 @@ import { extractCssProps, useComponentStyle } from '@impulse-ui/core';
 import { Icon } from '@impulse-ui/icon';
 import { Spinner } from '@impulse-ui/loader';
 import { Typography } from '@impulse-ui/text';
-import { TBodyComponentProps } from '@impulse-ui/types';
 import { flexRender } from '@tanstack/react-table';
 import { FunctionComponent } from 'react';
 
@@ -14,8 +13,9 @@ import { TData } from '../tdata';
 import { TRow } from '../trow';
 
 import { BaseTBody } from './BaseTBody.styles';
+import { TBodyComponentProps } from '../../types';
 
-const TBody: FunctionComponent<TBodyComponentProps> = ({ iStyle, ...rest }) => {
+const TBody = <T extends object>({ iStyle, ...rest }: TBodyComponentProps<T>) => {
   const tableState = useImpulseTable();
   const {
     tbodyStyle,
@@ -27,7 +27,7 @@ const TBody: FunctionComponent<TBodyComponentProps> = ({ iStyle, ...rest }) => {
     noContentTypographyStyle,
     noContentTbodyStyle,
     loaderSpinnerStyle,
-  } = useComponentStyle(tbodyComponentMap, { ...tableState, ...rest }, tbody, iStyle);
+  } = useComponentStyle(tbodyComponentMap, tableState, tbody, iStyle);
 
   if (tableState.showNoData()) {
     return (

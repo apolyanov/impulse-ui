@@ -1,8 +1,6 @@
 import { extractCssProps, useComponentStyle } from '@impulse-ui/core';
 import { Typography } from '@impulse-ui/text';
-import { THeadComponentProps } from '@impulse-ui/types';
 import { flexRender } from '@tanstack/react-table';
-import { FunctionComponent } from 'react';
 
 import { useImpulseTable } from '../../hooks';
 import { theadComponentMap } from '../../maps';
@@ -12,14 +10,16 @@ import { THeader } from '../theader';
 import { TRow } from '../trow';
 
 import { BaseTHead } from './BaseTHead.styles';
+import { THeadComponentProps } from '../../types';
 
-const THead: FunctionComponent<THeadComponentProps> = ({ iStyle, ...rest }) => {
-  const { getHeaderGroups, loading } = useImpulseTable();
+const THead = <T extends object>({ iStyle, ...rest }: THeadComponentProps<T>) => {
+  const tableState = useImpulseTable();
+  const { getHeaderGroups, loading } = tableState;
 
   const { theadStyle, theaderStyle, trowStyle, theaderTypographyStyle, theaderSortButtonStyle } = useComponentStyle(
     theadComponentMap,
-    rest,
-    thead,
+    tableState,
+    thead<T>(),
     iStyle,
   );
 

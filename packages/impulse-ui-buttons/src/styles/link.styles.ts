@@ -1,5 +1,6 @@
 import { volcano } from '@impulse-ui/colours';
-import { IStyle, LinkHTMLProps } from '@impulse-ui/types';
+import { LinkHTMLProps } from '../types';
+import { IStyle } from '@impulse-ui/core';
 
 const link: IStyle<LinkHTMLProps> = {
   iColorTheme: {

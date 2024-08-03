@@ -1,5 +1,6 @@
 import { neutral } from '@impulse-ui/colours';
-import { AutoCompleteItemStyle, BackgroundColor } from '@impulse-ui/types';
+import { AutoCompleteItemStyle } from '../types';
+import { BackgroundColor } from '@impulse-ui/core';
 
 const defaultAutoCompleteItemStyle: Partial<AutoCompleteItemStyle> = {
   mainContainerStyle: {

@@ -3,10 +3,10 @@ import { faCircleExclamation } from '@fortawesome/free-solid-svg-icons/faCircleE
 import { faCircleInfo } from '@fortawesome/free-solid-svg-icons/faCircleInfo';
 import { faTriangleExclamation } from '@fortawesome/free-solid-svg-icons/faTriangleExclamation';
 import { useComponentStyle } from '@impulse-ui/core';
-import { GetFieldMessageIcon, UseFieldMessageStyleFn } from '@impulse-ui/types';
 
 import { fieldMessageComponentMap } from '../maps';
 import { defaultFieldMessageStyle } from '../styles';
+import { GetFieldMessageIcon, UseFieldMessageStyleFn } from '../types';
 
 const useFieldMessageStyle: UseFieldMessageStyleFn = (rest, iStyle) => {
   const { type } = rest;

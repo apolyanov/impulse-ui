@@ -1,4 +1,4 @@
-import { UseItemSelectionOptions } from '@impulse-ui/types';
+import { UseItemSelectionOptions } from '../types';
 import { useCallback, useMemo, useState } from 'react';
 
 const defaultOptions: UseItemSelectionOptions<any> = {

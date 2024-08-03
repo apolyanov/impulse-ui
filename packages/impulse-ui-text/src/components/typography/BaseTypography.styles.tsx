@@ -1,5 +1,4 @@
-import { createBaseComponentStyle } from '@impulse-ui/core';
-import { BaseIComponent } from '@impulse-ui/types';
+import { createBaseComponentStyle, BaseIComponent } from '@impulse-ui/core';
 import styled from 'styled-components';
 
 import { typography } from '../../styles';

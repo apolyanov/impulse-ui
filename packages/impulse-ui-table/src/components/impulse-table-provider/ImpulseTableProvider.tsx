@@ -1,4 +1,3 @@
-import { ImpulseTableProviderProps } from '@impulse-ui/types';
 import {
   PaginationState,
   RowSelectionState,
@@ -12,6 +11,7 @@ import {
 import { PropsWithChildren, useState } from 'react';
 
 import { ImpulseTableContext } from '../../contexts';
+import { ImpulseTableProviderProps } from '../../types';
 
 const createInitialPaginationState = (pagination?: Partial<PaginationState>) => {
   if (pagination) {
@@ -22,7 +22,10 @@ const createInitialPaginationState = (pagination?: Partial<PaginationState>) => 
   }
 };
 
-const ImpulseTableProvider = ({ children, ...props }: PropsWithChildren<ImpulseTableProviderProps<any>>) => {
+const ImpulseTableProvider = <T extends object>({
+  children,
+  ...props
+}: PropsWithChildren<ImpulseTableProviderProps<T>>) => {
   const { initialState, loading } = props;
 
   const [rowSelection, setRowSelection] = useState<RowSelectionState>({});

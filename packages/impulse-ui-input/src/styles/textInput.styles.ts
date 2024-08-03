@@ -1,7 +1,8 @@
 import { neutral, volcano } from '@impulse-ui/colours';
-import { IStyle, TextInputCompositeProps, TextInputStyle } from '@impulse-ui/types';
+import { TextInputCompositeProps, TextInputStyle } from '../types';
+import { IStyle } from '@impulse-ui/core';
 
-const textInputStyle: Partial<TextInputStyle> = {
+const textInputStyle: Partial<TextInputStyle<{}>> = {
   mainContainerStyle: {
     iCss: {
       width: '100%',

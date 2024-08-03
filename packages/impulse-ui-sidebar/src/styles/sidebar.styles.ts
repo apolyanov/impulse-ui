@@ -1,5 +1,5 @@
 import { neutral } from '@impulse-ui/colours';
-import { SidebarStyle } from '@impulse-ui/types';
+import { SidebarStyle } from '../types';
 
 const defaultSidebarStyle: Partial<SidebarStyle> = {
   containerStyle: {

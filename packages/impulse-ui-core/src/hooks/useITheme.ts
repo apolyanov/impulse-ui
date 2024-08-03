@@ -1,4 +1,4 @@
-import { useIThemeContext } from './useIThemeContext';
+import { useIThemeContext } from '../hooks';
 
 const useITheme = () => {
   const { setCurrentThemeMode, currentThemeMode } = useIThemeContext();

@@ -1,4 +1,4 @@
-import { IThemeContext, IThemeProviderProps, ThemeMode } from '@impulse-ui/types';
+import { IThemeContext, IThemeProviderProps, ThemeMode } from '../types';
 import { FunctionComponent, PropsWithChildren, createContext, useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 
@@ -6,7 +6,7 @@ import '../css/font.css';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 
 import { LIGHT } from '../utils';
-import { GlobalStyle } from './GlobalStyle';
+import { GlobalStyle } from '../components';
 
 const ITheme = createContext<IThemeContext | undefined>(undefined);
 

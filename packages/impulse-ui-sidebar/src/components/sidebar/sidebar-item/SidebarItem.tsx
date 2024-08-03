@@ -2,11 +2,11 @@ import { BaseButton } from '@impulse-ui/buttons';
 import { useComponentStyle } from '@impulse-ui/core';
 import { Icon } from '@impulse-ui/icon';
 import { Typography } from '@impulse-ui/text';
-import { SidebarItemProps } from '@impulse-ui/types';
 import { FunctionComponent, PropsWithChildren } from 'react';
 
 import { sidebarItemComponentMap } from '../../../maps';
 import { defaultSidebarItemStyle } from '../../../styles';
+import { SidebarItemProps } from '../../../types';
 
 const SidebarItem: FunctionComponent<PropsWithChildren<SidebarItemProps>> = ({ iStyle, ...rest }) => {
   const { itemText, onClick, icon } = rest;

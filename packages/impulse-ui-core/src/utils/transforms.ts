@@ -1,4 +1,4 @@
-import { Spacing, SpacingAliases } from '@impulse-ui/types';
+import { Spacing, SpacingAliases } from '../types';
 
 const spacingAliasesMap: Record<SpacingAliases, Spacing | Spacing[]> = {
   m: 'margin',

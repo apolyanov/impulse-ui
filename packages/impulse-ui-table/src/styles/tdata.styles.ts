@@ -1,5 +1,6 @@
 import { neutral } from '@impulse-ui/colours';
-import { IStyle, TDataHTMLProps } from '@impulse-ui/types';
+import { IStyle } from '@impulse-ui/core';
+import { TDataHTMLProps } from '../types';
 
 const tdata: IStyle<TDataHTMLProps> = {
   iColorTheme: {

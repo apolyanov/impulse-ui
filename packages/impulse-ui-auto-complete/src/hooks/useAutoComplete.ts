@@ -1,7 +1,6 @@
 import { autoUpdate, offset, size, useFloating } from '@floating-ui/react-dom';
-import { optionProcessor, useItemSelection, useOutsideClick, useVirtualizedList } from '@impulse-ui/core';
+import { optionProcessor, SimpleOption, useItemSelection, useOutsideClick, useVirtualizedList } from '@impulse-ui/core';
 import { useProcessedOptions } from '@impulse-ui/core';
-import { AutoCompleteRestProps, SimpleOption } from '@impulse-ui/types';
 import {
   ChangeEvent,
   InputHTMLAttributes,
@@ -13,6 +12,7 @@ import {
   useRef,
   useState,
 } from 'react';
+import { AutoCompleteRestProps } from '../types';
 
 const useAutoComplete = <T>(rest: AutoCompleteRestProps<T>) => {
   const {

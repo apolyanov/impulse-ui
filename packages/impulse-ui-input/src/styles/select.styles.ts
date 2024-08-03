@@ -1,5 +1,5 @@
 import { neutral, volcano } from '@impulse-ui/colours';
-import { SelectStyle } from '@impulse-ui/types';
+import { SelectStyle } from '../types';
 
 const select: Partial<SelectStyle<any>> = {
   mainContainerStyle: {
@@ -28,7 +28,7 @@ const select: Partial<SelectStyle<any>> = {
       },
     },
   },
-  clearIconStyle: {
+  clearButtonStyle: {
     buttonStyle: {
       iColorTheme: {
         light: {

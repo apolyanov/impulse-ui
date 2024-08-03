@@ -3,7 +3,7 @@ import { Button } from '@impulse-ui/buttons';
 import { Container } from '@impulse-ui/layout';
 import { ImpulseTable } from '@impulse-ui/table';
 import { createColumnHelper } from '@tanstack/react-table';
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 type Person = {
   firstName: string;
@@ -75,10 +75,12 @@ const columns = [
 const TablePage = () => {
   const [hasData, setHasData] = useState(true);
   const [data, setData] = useState(() => generateFakeData(numberOfInstances));
+  const [loading, setLoading] = useState<boolean>(false);
 
   return (
     <Container>
       <ImpulseTable
+        loading={loading}
         tableHeaderProps={{
           tableName: 'Impulse Table',
           showTableControls: true,
@@ -91,6 +93,7 @@ const TablePage = () => {
       <Button onClick={() => setHasData((prevState) => !prevState)}>Toggle data</Button>
       <Button onClick={() => setData((prevState) => prevState.slice(0, 2))}>Slice data</Button>
       <Button onClick={() => setData(generateFakeData(numberOfInstances))}>Full data</Button>
+      <Button onClick={() => setLoading((prevState) => !prevState)}>Toggle loading</Button>
     </Container>
   );
 };

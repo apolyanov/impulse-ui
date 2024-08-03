@@ -1,5 +1,5 @@
 import { neutral } from '@impulse-ui/colours';
-import { SidebarItemStyle } from '@impulse-ui/types';
+import { SidebarItemStyle } from '../types';
 
 const defaultSidebarItemStyle: Partial<SidebarItemStyle> = {
   buttonStyle: {

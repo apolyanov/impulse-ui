@@ -1,5 +1,5 @@
 import { volcano } from '@impulse-ui/colours';
-import { AvatarStyle } from '@impulse-ui/types';
+import { AvatarStyle } from '../types';
 
 const defaultAvatarStyle: Partial<AvatarStyle> = {
   mainContainerStyle: {

@@ -1,7 +1,7 @@
-import { NotFoundException, useScanner } from '@impulse-ui/scanner-core';
-import { OCRScannerRestProps, ScanningFn } from '@impulse-ui/types';
+import { NotFoundException, ScanningFn, useScanner } from '@impulse-ui/scanner-core';
 import { useCallback, useEffect, useState } from 'react';
 import { Worker, createWorker } from 'tesseract.js';
+import { OCRScannerRestProps } from '../types';
 
 const useOcrScanner = (options: OCRScannerRestProps) => {
   const [worker, setWorker] = useState<Worker>();
