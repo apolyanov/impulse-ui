@@ -1,12 +1,14 @@
 {
   "name": "@impulse-ui/scanner-core",
-  "version": "2.12.1",
+  "version": "3.0.0",
   "license": "MIT",
   "author": "Alexander Polyanov",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "typings": "dist/index.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsup",
     "lint": "biome check ./src --write",

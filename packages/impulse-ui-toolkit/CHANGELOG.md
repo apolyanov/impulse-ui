@@ -1,5 +1,26 @@
 # Change Log
 
+## 3.0.0
+
+### Patch Changes
+
+- Updated dependencies [[`ac93f5d`](https://github.com/apolyanov/impulse-ui/commit/ac93f5d050723558b797374713b44718e3a23db5)]:
+  - @impulse-ui/auto-complete@3.0.0
+  - @impulse-ui/scanner-core@3.0.0
+  - @impulse-ui/buttons@3.0.0
+  - @impulse-ui/colours@3.0.0
+  - @impulse-ui/sidebar@3.0.0
+  - @impulse-ui/avatar@3.0.0
+  - @impulse-ui/layout@3.0.0
+  - @impulse-ui/loader@3.0.0
+  - @impulse-ui/input@3.0.0
+  - @impulse-ui/table@3.0.0
+  - @impulse-ui/core@3.0.0
+  - @impulse-ui/icon@3.0.0
+  - @impulse-ui/text@3.0.0
+  - @impulse-ui/ocr@3.0.0
+  - @impulse-ui/qr@3.0.0
+
 ## 2.12.1
 
 ### Patch Changes

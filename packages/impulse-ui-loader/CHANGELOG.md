@@ -1,5 +1,18 @@
 # Change Log
 
+## 3.0.0
+
+### Major Changes
+
+- [#117](https://github.com/apolyanov/impulse-ui/pull/117) [`ac93f5d`](https://github.com/apolyanov/impulse-ui/commit/ac93f5d050723558b797374713b44718e3a23db5) Thanks [@apolyanov](https://github.com/apolyanov)! - @impulse-ui/types package has been deprecated, each package now features it's own type definitions.
+
+### Patch Changes
+
+- Updated dependencies [[`ac93f5d`](https://github.com/apolyanov/impulse-ui/commit/ac93f5d050723558b797374713b44718e3a23db5)]:
+  - @impulse-ui/colours@3.0.0
+  - @impulse-ui/layout@3.0.0
+  - @impulse-ui/core@3.0.0
+
 ## 2.12.1
 
 ### Patch Changes
