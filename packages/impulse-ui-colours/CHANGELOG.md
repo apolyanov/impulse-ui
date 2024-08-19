@@ -1,5 +1,11 @@
 # Change Log
 
+## 3.0.1
+
+### Patch Changes
+
+- [`cfd15ad`](https://github.com/apolyanov/impulse-ui/commit/cfd15ad592a351cf39d794ce628e897b126dcaf7) Thanks [@apolyanov](https://github.com/apolyanov)! - Fixing tanstack versions
+
 ## 3.0.0
 
 ### Major Changes
