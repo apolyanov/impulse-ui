@@ -1,6 +1,6 @@
 {
   "name": "@impulse-ui/sidebar",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "license": "MIT",
   "author": "Alexander Polyanov",
   "main": "dist/index.js",
@@ -35,11 +35,11 @@
     "testEnvironment": "jsdom"
   },
   "dependencies": {
-    "@impulse-ui/buttons": "^3.0.0",
-    "@impulse-ui/colours": "^3.0.0",
-    "@impulse-ui/core": "^3.0.0",
-    "@impulse-ui/layout": "^3.0.0",
-    "@impulse-ui/text": "^3.0.0"
+    "@impulse-ui/buttons": "^3.0.1",
+    "@impulse-ui/colours": "^3.0.1",
+    "@impulse-ui/core": "^3.0.1",
+    "@impulse-ui/layout": "^3.0.1",
+    "@impulse-ui/text": "^3.0.1"
   },
   "peerDependencies": {
     "react": ">=16"
