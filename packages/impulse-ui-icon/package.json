@@ -1,6 +1,6 @@
 {
   "name": "@impulse-ui/icon",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "license": "MIT",
   "author": "Alexander Polyanov",
   "main": "dist/index.js",
@@ -35,8 +35,8 @@
     "testEnvironment": "jsdom"
   },
   "dependencies": {
-    "@impulse-ui/colours": "^3.0.1",
-    "@impulse-ui/core": "^3.0.1"
+    "@impulse-ui/colours": "^3.0.2",
+    "@impulse-ui/core": "^3.0.2"
   },
   "peerDependencies": {
     "react": ">=16"
