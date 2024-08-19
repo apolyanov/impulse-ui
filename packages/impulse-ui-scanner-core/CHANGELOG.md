@@ -1,5 +1,11 @@
 # @impulse-ui/scanner-core
 
+## 3.0.0
+
+### Major Changes
+
+- [#116](https://github.com/apolyanov/impulse-ui/pull/116) [`c9d48d0`](https://github.com/apolyanov/impulse-ui/commit/c9d48d099d4137ea5fba5b35e97a4e947095f257) Thanks [@apolyanov](https://github.com/apolyanov)! - @impulse-ui/types package has been deprecated, each package now features it's own type definitions.
+
 ## 2.12.1
 
 ### Patch Changes
