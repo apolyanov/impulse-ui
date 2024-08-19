@@ -1,5 +1,28 @@
 # Change Log
 
+## 3.0.2
+
+### Patch Changes
+
+- [#125](https://github.com/apolyanov/impulse-ui/pull/125) [`c6b040d`](https://github.com/apolyanov/impulse-ui/commit/c6b040d36620ff62d8cb4f8745b7c8643b0a1279) Thanks [@apolyanov](https://github.com/apolyanov)! - Fixing faulty bundling due to circlular dependency in @impulse-ui/core
+
+- Updated dependencies [[`c6b040d`](https://github.com/apolyanov/impulse-ui/commit/c6b040d36620ff62d8cb4f8745b7c8643b0a1279)]:
+  - @impulse-ui/input@3.0.2
+  - @impulse-ui/core@3.0.2
+  - @impulse-ui/auto-complete@3.0.2
+  - @impulse-ui/avatar@3.0.2
+  - @impulse-ui/buttons@3.0.2
+  - @impulse-ui/colours@3.0.2
+  - @impulse-ui/icon@3.0.2
+  - @impulse-ui/layout@3.0.2
+  - @impulse-ui/loader@3.0.2
+  - @impulse-ui/ocr@3.0.2
+  - @impulse-ui/qr@3.0.2
+  - @impulse-ui/scanner-core@3.0.2
+  - @impulse-ui/sidebar@3.0.2
+  - @impulse-ui/table@3.0.2
+  - @impulse-ui/text@3.0.2
+
 ## 3.0.1
 
 ### Patch Changes
