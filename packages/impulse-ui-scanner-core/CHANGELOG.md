@@ -4,7 +4,7 @@
 
 ### Major Changes
 
-- [#117](https://github.com/apolyanov/impulse-ui/pull/117) [`ac93f5d`](https://github.com/apolyanov/impulse-ui/commit/ac93f5d050723558b797374713b44718e3a23db5) Thanks [@apolyanov](https://github.com/apolyanov)! - @impulse-ui/types package has been deprecated, each package now features it's own type definitions.
+- [#116](https://github.com/apolyanov/impulse-ui/pull/116) [`c9d48d0`](https://github.com/apolyanov/impulse-ui/commit/c9d48d099d4137ea5fba5b35e97a4e947095f257) Thanks [@apolyanov](https://github.com/apolyanov)! - @impulse-ui/types package has been deprecated, each package now features it's own type definitions.
 
 ## 2.12.1
 
