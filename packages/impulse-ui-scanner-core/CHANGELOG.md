@@ -1,5 +1,11 @@
 # @impulse-ui/scanner-core
 
+## 3.0.3
+
+### Patch Changes
+
+- [#129](https://github.com/apolyanov/impulse-ui/pull/129) [`1349d65`](https://github.com/apolyanov/impulse-ui/commit/1349d65d6c049d8270dab4cbf402e0ed875f13fe) Thanks [@apolyanov](https://github.com/apolyanov)! - feat: Removing inputs margin
+
 ## 3.0.2
 
 ### Patch Changes
