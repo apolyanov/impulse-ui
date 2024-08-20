@@ -8,7 +8,6 @@ const textInputStyle: Partial<TextInputStyle<{}>> = {
       width: '100%',
       maxWidth: 250,
       minWidth: 128,
-      margin: '8px 0',
       padding: 0,
     },
   },
