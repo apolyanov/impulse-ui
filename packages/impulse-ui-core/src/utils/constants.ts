@@ -1,6 +1,6 @@
 import { CssMapKeys, ThemeMode } from '../types';
 
-import { borderTransform, noTransform, spacingTransform } from '../utils';
+import { borderTransform, noTransform, spacingTransform } from './transforms';
 
 const LIGHT: ThemeMode = 'light';
 const DARK: ThemeMode = 'dark';

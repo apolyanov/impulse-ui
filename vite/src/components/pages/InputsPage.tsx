@@ -36,7 +36,9 @@ const InputsPage = () => {
       <Select
         value={value}
         placeholder={'Player'}
-        clearable
+        clearButton={{
+          clearable: true,
+        }}
         options={options2}
         getOptionId={(option) => option.gal}
         getOptionLabel={(option) => option.name}
