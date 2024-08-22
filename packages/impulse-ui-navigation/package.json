@@ -1,12 +1,14 @@
 {
   "name": "@impulse-ui/navigation",
-  "version": "3.0.3",
+  "version": "3.1.0",
   "license": "MIT",
   "author": "Alexander Polyanov",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "typings": "dist/index.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsup",
     "lint": "biome check ./src --write",
@@ -33,11 +35,11 @@
     "testEnvironment": "jsdom"
   },
   "dependencies": {
-    "@impulse-ui/buttons": "^3.0.3",
-    "@impulse-ui/colours": "^3.0.3",
-    "@impulse-ui/core": "^3.0.3",
-    "@impulse-ui/layout": "^3.0.3",
-    "@impulse-ui/text": "^3.0.3"
+    "@impulse-ui/buttons": "^3.1.0",
+    "@impulse-ui/colours": "^3.1.0",
+    "@impulse-ui/core": "^3.1.0",
+    "@impulse-ui/layout": "^3.1.0",
+    "@impulse-ui/text": "^3.1.0"
   },
   "peerDependencies": {
     "react": ">=16"

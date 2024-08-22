@@ -1,6 +1,6 @@
 {
   "name": "@impulse-ui/auto-complete",
-  "version": "3.0.3",
+  "version": "3.1.0",
   "license": "MIT",
   "author": "Alexander Polyanov",
   "main": "dist/index.js",
@@ -35,12 +35,12 @@
     "testEnvironment": "jsdom"
   },
   "dependencies": {
-    "@impulse-ui/colours": "^3.0.3",
-    "@impulse-ui/core": "^3.0.3",
-    "@impulse-ui/input": "^3.0.3",
-    "@impulse-ui/layout": "^3.0.3",
-    "@impulse-ui/loader": "^3.0.3",
-    "@impulse-ui/text": "^3.0.3"
+    "@impulse-ui/colours": "^3.1.0",
+    "@impulse-ui/core": "^3.1.0",
+    "@impulse-ui/input": "^3.1.0",
+    "@impulse-ui/layout": "^3.1.0",
+    "@impulse-ui/loader": "^3.1.0",
+    "@impulse-ui/text": "^3.1.0"
   },
   "peerDependencies": {
     "react": ">=16"

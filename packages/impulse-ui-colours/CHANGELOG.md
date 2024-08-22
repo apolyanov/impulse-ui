@@ -1,5 +1,11 @@
 # Change Log
 
+## 3.1.0
+
+### Minor Changes
+
+- [#132](https://github.com/apolyanov/impulse-ui/pull/132) [`588dfea`](https://github.com/apolyanov/impulse-ui/commit/588dfeaaa94d943f31a3889236ca91bf1e282a71) Thanks [@apolyanov](https://github.com/apolyanov)! - Adding items definition for the Sidebar component in navigation package.
+
 ## 3.0.3
 
 ### Patch Changes
