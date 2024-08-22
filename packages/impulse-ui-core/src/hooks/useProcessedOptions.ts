@@ -1,5 +1,5 @@
-import { UseProcessedoptionsProps } from '../types';
 import { useMemo } from 'react';
+import { UseProcessedoptionsProps } from '../types';
 
 import { processOptions } from '../utils';
 

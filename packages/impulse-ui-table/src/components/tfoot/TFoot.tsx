@@ -7,8 +7,8 @@ import { tfootComponentMap } from '../../maps';
 import { TData } from '../tdata';
 import { TRow } from '../trow';
 
-import { BaseTFoot } from './BaseTFoot.styles';
 import { TFootComponentProps } from '../../types';
+import { BaseTFoot } from './BaseTFoot.styles';
 
 const TFoot = <T extends object>({ iStyle, ...rest }: TFootComponentProps<T>) => {
   const tableState = useImpulseTable();

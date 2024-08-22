@@ -1,14 +1,12 @@
 {
-  "name": "@impulse-ui/sidebar",
+  "name": "@impulse-ui/navigation",
   "version": "3.0.3",
   "license": "MIT",
   "author": "Alexander Polyanov",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "typings": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "scripts": {
     "build": "tsup",
     "lint": "biome check ./src --write",

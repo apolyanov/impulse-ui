@@ -1,6 +1,6 @@
-import { ButtonHTMLAttributes, DetailedHTMLProps, MouseEvent } from 'react';
-import { IOStyle } from '@impulse-ui/core';
 import { IconButtonStyle } from '@impulse-ui/buttons';
+import { IOStyle } from '@impulse-ui/core';
+import { ButtonHTMLAttributes, DetailedHTMLProps, MouseEvent } from 'react';
 
 interface CheckboxProps extends CompositeCheckboxProps {
   iStyle?: Partial<CheckboxStyle>;

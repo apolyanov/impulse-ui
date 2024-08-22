@@ -1,6 +1,6 @@
 import { extractCssProps, polymorphicForwardRef } from '@impulse-ui/core';
-import { TypographyProps } from '../../types';
 import { PropsWithChildren } from 'react';
+import { TypographyProps } from '../../types';
 
 import BaseTypography from './BaseTypography.styles';
 

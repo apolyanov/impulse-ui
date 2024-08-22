@@ -1,6 +1,6 @@
-import { ScannerRestProps, UseScannerReturnType } from '@impulse-ui/scanner-core';
-import { IOStyle } from '@impulse-ui/core';
 import { IconButtonStyle } from '@impulse-ui/buttons';
+import { IOStyle } from '@impulse-ui/core';
+import { ScannerRestProps, UseScannerReturnType } from '@impulse-ui/scanner-core';
 
 interface QRScannerProps extends QRScannerRestProps {
   iStyle?: Partial<QRScannerStyle>;

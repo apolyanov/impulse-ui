@@ -1,15 +1,15 @@
-import { TableHeader } from '../table-header';
-import { Table } from '../table';
-import { THead } from '../thead';
-import { TBody } from '../tbody';
-import { TFoot } from '../tfoot';
-import { TableFooter } from '../table-footer';
-import { Container } from '@impulse-ui/layout';
 import { useComponentStyle } from '@impulse-ui/core';
+import { Container } from '@impulse-ui/layout';
+import { useImpulseTable } from '../../hooks';
 import { impulseTableComponentMap } from '../../maps';
 import { impulseTableStyles } from '../../styles';
 import { ImpulseTableProps } from '../../types';
-import { useImpulseTable } from '../../hooks';
+import { Table } from '../table';
+import { TableFooter } from '../table-footer';
+import { TableHeader } from '../table-header';
+import { TBody } from '../tbody';
+import { TFoot } from '../tfoot';
+import { THead } from '../thead';
 
 const ImpulseTableWrapper = <T extends object>({ iStyle, ...tableProps }: ImpulseTableProps<T>) => {
   const tableState = useImpulseTable();

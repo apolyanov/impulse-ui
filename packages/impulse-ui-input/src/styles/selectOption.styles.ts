@@ -1,6 +1,6 @@
 import { neutral } from '@impulse-ui/colours';
-import { SelectOptionStyle } from '../types';
 import { BackgroundColor } from '@impulse-ui/core';
+import { SelectOptionStyle } from '../types';
 
 const selectOption: Partial<SelectOptionStyle> = {
   mainContainerStyle: {

@@ -1,9 +1,9 @@
 import { dustRed, geekBlue, polarGreen, sunriseYellow } from '@impulse-ui/colours';
 import { Property } from 'csstype';
 
-import { ERROR, INFO, SUCCESS, WARNING } from '../utils';
-import { FieldMessageComponentStyle, FieldMessageStyle, FieldMessageType } from '../types';
 import { IOStyle } from '@impulse-ui/core';
+import { FieldMessageComponentStyle, FieldMessageStyle, FieldMessageType } from '../types';
+import { ERROR, INFO, SUCCESS, WARNING } from '../utils';
 
 const fieldMessageColor = (type: FieldMessageType): Property.Color => {
   switch (type) {

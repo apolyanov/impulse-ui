@@ -21,8 +21,8 @@ import {
 import { textInputComponentMap } from '../../maps';
 import { textInputStyle } from '../../styles';
 
-import BaseTextInput from './BaseTextInput.styles';
 import { TextInputProps } from '../../types';
+import BaseTextInput from './BaseTextInput.styles';
 
 const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
   ({ iStyle, ...rest }, ref?: ForwardedRef<HTMLInputElement>) => {

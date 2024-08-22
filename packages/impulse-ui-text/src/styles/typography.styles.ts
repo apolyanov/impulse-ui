@@ -1,6 +1,6 @@
 import { neutral } from '@impulse-ui/colours';
-import { TypographyHTMLProps } from '../types';
 import { IStyle } from '@impulse-ui/core';
+import { TypographyHTMLProps } from '../types';
 
 const typography: IStyle<TypographyHTMLProps> = {
   iColorTheme: {

@@ -1,7 +1,7 @@
 import { extractCssProps } from '@impulse-ui/core';
-import { DividerProps } from '../../types';
 import React from 'react';
 import { FunctionComponent } from 'react';
+import { DividerProps } from '../../types';
 
 import { BaseDivider } from '../divider';
 

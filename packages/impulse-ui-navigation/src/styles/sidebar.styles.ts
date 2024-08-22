@@ -8,15 +8,16 @@ const defaultSidebarStyle: Partial<SidebarStyle> = {
         backgroundColor: neutral[10],
       },
     },
-    iCss: {
+    iCss: ({ collapsed }) => ({
       maxWidth: 300,
       minWidth: 'fit-content',
-      width: 220,
+      width: collapsed ? 46 : 220,
       height: '100vh',
       padding: '2px 8px',
       filter: 'drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2))',
       alignItems: 'center',
-    },
+      overflow: 'hidden',
+    }),
   },
 };
 

@@ -1,12 +1,12 @@
-import { IThemeContext, IThemeProviderProps, ThemeMode } from '../types';
 import { FunctionComponent, PropsWithChildren, createContext, useState } from 'react';
 import { ThemeProvider } from 'styled-components';
+import { IThemeContext, IThemeProviderProps, ThemeMode } from '../types';
 
 import '../css/font.css';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 
-import { LIGHT } from '../utils';
 import { GlobalStyle } from '../components';
+import { LIGHT } from '../utils';
 
 const ITheme = createContext<IThemeContext | undefined>(undefined);
 

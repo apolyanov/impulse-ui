@@ -1,5 +1,5 @@
-import { UseOutsideClickFn } from '../types';
 import { useCallback, useEffect } from 'react';
+import { UseOutsideClickFn } from '../types';
 
 const useOutsideClick: UseOutsideClickFn = (callback, htmlDeps) => {
   const isEventContained = useCallback(

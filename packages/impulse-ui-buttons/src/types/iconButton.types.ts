@@ -2,13 +2,13 @@ import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
 import { IOStyle } from '@impulse-ui/core';
 
-import { ButtonHTMLProps } from './button.types';
+import { ButtonRestProps } from './button.types';
 
 interface IconButtonProps extends IconButtonRestProps {
   iStyle?: Partial<IconButtonStyle<any>>;
 }
 
-interface IconButtonRestProps extends ButtonHTMLProps {
+interface IconButtonRestProps extends ButtonRestProps {
   icon: IconDefinition;
   loading?: boolean;
 }

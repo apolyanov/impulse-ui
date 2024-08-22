@@ -5,8 +5,8 @@ import { Typography } from '@impulse-ui/text';
 import { useImpulseTable } from '../../hooks';
 import { tableFooterComponentMap } from '../../maps';
 import { tableFooterStyles } from '../../styles';
-import { Pagination } from '../pagination';
 import { TableFooterProps } from '../../types';
+import { Pagination } from '../pagination';
 
 const TableFooter = <T extends object>({ iStyle }: TableFooterProps<T>) => {
   const tableState = useImpulseTable();

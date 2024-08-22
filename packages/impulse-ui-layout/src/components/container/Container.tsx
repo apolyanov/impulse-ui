@@ -1,6 +1,6 @@
 import { extractCssProps, polymorphicForwardRef } from '@impulse-ui/core';
-import { ContainerProps } from '../../types';
 import { PropsWithChildren } from 'react';
+import { ContainerProps } from '../../types';
 
 import { BaseContainer } from '../container';
 

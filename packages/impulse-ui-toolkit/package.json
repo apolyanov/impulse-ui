@@ -6,9 +6,7 @@
   "main": "dist/index.js",
   "module": "dist/index.js",
   "typings": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "scripts": {
     "build": "tsup",
     "lint": "biome check ./src --write",
@@ -44,7 +42,7 @@
     "@impulse-ui/qr": "^3.0.3",
     "@impulse-ui/scanner-core": "^3.0.3",
     "@impulse-ui/ocr": "^3.0.3",
-    "@impulse-ui/sidebar": "^3.0.3",
+    "@impulse-ui/navigation": "^3.0.3",
     "@impulse-ui/table": "^3.0.3",
     "@impulse-ui/text": "^3.0.3"
   },

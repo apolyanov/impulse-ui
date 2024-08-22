@@ -1,5 +1,5 @@
-import { IconButton } from '@impulse-ui/buttons';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
+import { IconButton } from '@impulse-ui/buttons';
 import { ClearButtonProps } from '../../types/clear-button.ts';
 
 const ClearButton = ({ clearable, focusable, clearIcon, ...rest }: ClearButtonProps) => {

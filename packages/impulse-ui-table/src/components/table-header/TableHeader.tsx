@@ -1,15 +1,15 @@
 import { faFilter, faMagnifyingGlass, faSliders } from '@fortawesome/free-solid-svg-icons';
 import { ChangeEvent } from 'react';
 
+import { IconButton } from '@impulse-ui/buttons';
+import { useComponentStyle } from '@impulse-ui/core';
+import { TextInput } from '@impulse-ui/input';
+import { Container } from '@impulse-ui/layout';
+import { Typography } from '@impulse-ui/text';
 import { useImpulseTable } from '../../hooks';
 import { tableHeaderComponentMap } from '../../maps';
 import { tableHeaderStyle } from '../../styles';
 import { TableHeaderProps } from '../../types';
-import { Container } from '@impulse-ui/layout';
-import { Typography } from '@impulse-ui/text';
-import { TextInput } from '@impulse-ui/input';
-import { useComponentStyle } from '@impulse-ui/core';
-import { IconButton } from '@impulse-ui/buttons';
 
 const TableHeader = <T extends object>({ iStyle, ...rest }: TableHeaderProps<T>) => {
   const tableState = useImpulseTable();

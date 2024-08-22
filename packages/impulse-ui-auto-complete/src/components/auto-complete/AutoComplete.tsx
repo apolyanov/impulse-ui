@@ -8,9 +8,9 @@ import { useAutoComplete } from '../../hooks';
 import { autoCompleteComponentMap } from '../../maps';
 import { defaultAutoCompleteStyle } from '../../styles';
 
-import { AutoCompleteItem } from './auto-complete-item';
-import { AutoCompleteProps } from '../../types';
 import { TextInput } from '@impulse-ui/input';
+import { AutoCompleteProps } from '../../types';
+import { AutoCompleteItem } from './auto-complete-item';
 
 const AutoComplete = <T extends object>({ iStyle, ...rest }: AutoCompleteProps<T>) => {
   const {

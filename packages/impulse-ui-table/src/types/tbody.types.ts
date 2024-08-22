@@ -1,11 +1,11 @@
+import { IOStyle } from '@impulse-ui/core';
+import { IconHTMLProps } from '@impulse-ui/icon';
+import { ContainerHTMLProps } from '@impulse-ui/layout';
+import { TypographyHTMLProps } from '@impulse-ui/text';
 import { JSX } from 'react';
 import { ImpulseTableState } from './impulseTableProvider.types';
 import { TDataHTMLProps } from './tdata.types';
 import { TRowHTMLProps } from './trow.types';
-import { IOStyle } from '@impulse-ui/core';
-import { IconHTMLProps } from '@impulse-ui/icon';
-import { TypographyHTMLProps } from '@impulse-ui/text';
-import { ContainerHTMLProps } from '@impulse-ui/layout';
 
 type TBodyHTMLProps = JSX.IntrinsicElements['tbody'];
 

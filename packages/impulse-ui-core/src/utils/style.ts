@@ -1,3 +1,6 @@
+import { SimplePseudos } from 'csstype';
+import merge from 'lodash-es/merge';
+import { css } from 'styled-components';
 import {
   AnimationHelper,
   ColorsKeysValues,
@@ -12,9 +15,6 @@ import {
   Padding,
   ThemeMode,
 } from '../types';
-import { SimplePseudos } from 'csstype';
-import merge from 'lodash-es/merge';
-import { css } from 'styled-components';
 
 import { LIGHT, cssPropsMap } from '../utils';
 

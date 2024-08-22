@@ -1,5 +1,5 @@
-import { UseItemSelectionOptions } from '../types';
 import { useCallback, useMemo, useState } from 'react';
+import { UseItemSelectionOptions } from '../types';
 
 const defaultOptions: UseItemSelectionOptions<any> = {
   getItemId: (item: any) => item.id,

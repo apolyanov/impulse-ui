@@ -9,9 +9,9 @@ import { useSelect } from '../../hooks';
 import { selectComponentMap } from '../../maps';
 import { select } from '../../styles';
 
-import { SelectOption } from './select-option';
-import { ClearButton } from '../common';
 import { SelectProps } from '../../types';
+import { ClearButton } from '../common';
+import { SelectOption } from './select-option';
 
 const Select = <T extends object>({ iStyle, ...rest }: SelectProps<T>) => {
   const {

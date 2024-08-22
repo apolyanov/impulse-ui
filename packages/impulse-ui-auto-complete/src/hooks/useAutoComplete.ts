@@ -1,5 +1,5 @@
 import { autoUpdate, offset, size, useFloating } from '@floating-ui/react-dom';
-import { optionProcessor, SimpleOption, useItemSelection, useOutsideClick, useVirtualizedList } from '@impulse-ui/core';
+import { SimpleOption, optionProcessor, useItemSelection, useOutsideClick, useVirtualizedList } from '@impulse-ui/core';
 import { useProcessedOptions } from '@impulse-ui/core';
 import {
   ChangeEvent,
