@@ -1,9 +1,9 @@
 import { JSX } from 'react';
 
+import { IOStyle } from '@impulse-ui/core';
 import { ImpulseTableState } from './impulseTableProvider.types';
 import { TDataHTMLProps } from './tdata.types';
 import { TRowHTMLProps } from './trow.types';
-import { IOStyle } from '@impulse-ui/core';
 
 type TFootHTMLProps = JSX.IntrinsicElements['tfoot'];
 

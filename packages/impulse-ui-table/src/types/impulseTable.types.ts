@@ -1,12 +1,12 @@
 import { TableOptions } from '@tanstack/react-table';
 
+import { IOStyle } from '@impulse-ui/core';
 import { ImpulseTableState } from './impulseTableProvider.types';
 import { TableFooterStyle } from './tableFooter.types';
 import { TableHeaderRestProps, TableHeaderStyle } from './tableHeader.types';
 import { TBodyStyle } from './tbody.types';
 import { TFootStyle } from './tfoot.types';
 import { THeadStyle } from './thead.types';
-import { IOStyle } from '@impulse-ui/core';
 
 interface ImpulseTableProps<T> extends ImpulseTableRestProps<T> {
   iStyle?: Partial<ImpulseTableStyle<ImpulseTableState<T>>>;

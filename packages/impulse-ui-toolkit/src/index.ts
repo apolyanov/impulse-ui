@@ -10,6 +10,6 @@ export * from '@impulse-ui/loader';
 export * from '@impulse-ui/qr';
 export * from '@impulse-ui/ocr';
 export * from '@impulse-ui/scanner-core';
-export * from '@impulse-ui/sidebar';
+export * from '@impulse-ui/navigation';
 export * from '@impulse-ui/table';
 export * from '@impulse-ui/text';

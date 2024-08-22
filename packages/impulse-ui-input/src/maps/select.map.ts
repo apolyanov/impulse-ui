@@ -1,7 +1,7 @@
 import { ComponentMap } from '@impulse-ui/core';
 
-import { selectOptionMap } from './selectOption.map';
 import { iconButtonComponentMap } from '@impulse-ui/buttons';
+import { selectOptionMap } from './selectOption.map';
 
 const selectComponentMap: ComponentMap[] = [
   { key: 'mainContainer' },

@@ -1,8 +1,8 @@
+import { IconButtonStyle } from '@impulse-ui/buttons';
 import { IOStyle } from '@impulse-ui/core';
+import { TextInputStyle } from '@impulse-ui/input';
 import { ContainerHTMLProps } from '@impulse-ui/layout';
 import { TypographyHTMLProps } from '@impulse-ui/text';
-import { TextInputStyle } from '@impulse-ui/input';
-import { IconButtonStyle } from '@impulse-ui/buttons';
 import { ImpulseTableState } from './impulseTableProvider.types.ts';
 
 interface TableHeaderProps<T> extends TableHeaderRestProps {

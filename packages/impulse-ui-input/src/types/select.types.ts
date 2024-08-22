@@ -1,8 +1,8 @@
-import { SelectOptionStyle } from './select-option.types';
+import { IconButtonStyle } from '@impulse-ui/buttons';
 import { IOStyle, SimpleOption, UseProcessedoptionsProps } from '@impulse-ui/core';
 import { ContainerHTMLProps } from '@impulse-ui/layout';
 import { ClearButtonProps } from './clear-button.ts';
-import { IconButtonStyle } from '@impulse-ui/buttons';
+import { SelectOptionStyle } from './select-option.types';
 
 interface SelectProps<T> extends SelectRestProps<T> {
   iStyle?: Partial<SelectStyle<T>>;

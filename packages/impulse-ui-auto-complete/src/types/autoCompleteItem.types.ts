@@ -1,5 +1,5 @@
-import { ContainerHTMLProps } from '@impulse-ui/layout';
 import { IOStyle } from '@impulse-ui/core';
+import { ContainerHTMLProps } from '@impulse-ui/layout';
 
 interface AutoCompleteItemProps extends AutoCompleteItemRestProps {
   iStyle?: Partial<AutoCompleteItemStyle>;

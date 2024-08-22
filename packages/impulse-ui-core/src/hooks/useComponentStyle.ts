@@ -1,5 +1,5 @@
-import { ComponentMap, IOStyle } from '../types';
 import { useMemo } from 'react';
+import { ComponentMap, IOStyle } from '../types';
 
 import { mergePartialThemes } from '../utils';
 

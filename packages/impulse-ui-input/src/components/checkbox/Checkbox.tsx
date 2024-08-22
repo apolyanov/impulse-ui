@@ -2,8 +2,8 @@ import { IconButton } from '@impulse-ui/buttons';
 import { useComponentStyle } from '@impulse-ui/core';
 import { Container } from '@impulse-ui/layout';
 import { Typography } from '@impulse-ui/text';
-import { CheckboxProps } from '../../types';
 import { FunctionComponent, useMemo } from 'react';
+import { CheckboxProps } from '../../types';
 
 import { useCheckbox } from '../../hooks';
 import { checkboxChecked, checkboxUnchecked } from '../../icons';

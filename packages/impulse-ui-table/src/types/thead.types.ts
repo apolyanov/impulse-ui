@@ -1,11 +1,11 @@
 import { JSX } from 'react';
 
+import { IconButtonStyle } from '@impulse-ui/buttons';
+import { IOStyle } from '@impulse-ui/core';
+import { TypographyHTMLProps } from '@impulse-ui/text';
 import { ImpulseTableState } from './impulseTableProvider.types';
 import { THeaderHTMLProps } from './theader.types';
 import { TRowHTMLProps } from './trow.types';
-import { IOStyle } from '@impulse-ui/core';
-import { IconButtonStyle } from '@impulse-ui/buttons';
-import { TypographyHTMLProps } from '@impulse-ui/text';
 
 type THeadHTMLProps = JSX.IntrinsicElements['thead'];
 

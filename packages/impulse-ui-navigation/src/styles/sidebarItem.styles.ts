@@ -1,9 +1,11 @@
 import { neutral } from '@impulse-ui/colours';
-import { SidebarItemStyle } from '../types';
+import { SidebarItemRestProps, SidebarItemStyle } from '../types';
 
-const defaultSidebarItemStyle: Partial<SidebarItemStyle> = {
+const defaultSidebarItemStyle: Partial<SidebarItemStyle<SidebarItemRestProps>> = {
   buttonStyle: {
-    iColorTheme: { light: { backgroundColor: neutral[10], ':hover': { backgroundColor: neutral[40] } } },
+    iColorTheme: {
+      light: { backgroundColor: neutral[10], color: neutral[200], ':hover': { backgroundColor: neutral[40] } },
+    },
     iCss: ({ getThemeColor, active }) => ({
       justifyContent: 'flex-start',
       textTransform: 'capitalize',
@@ -13,15 +15,15 @@ const defaultSidebarItemStyle: Partial<SidebarItemStyle> = {
       filter: 'unset',
       minWidth: 'fit-content',
       width: '100%',
+      height: 46,
       backgroundColor: active ? getThemeColor('backgroundColor', ':hover') : getThemeColor('backgroundColor'),
     }),
   },
   iconStyle: {
-    iCss: {
-      marginRight: '4px',
-    },
+    iCss: ({ collapsed }) => ({
+      marginRight: collapsed ? 0 : 4,
+    }),
   },
-  typographyStyle: { iCss: { display: 'inline-block' } },
 };
 
 export { defaultSidebarItemStyle };

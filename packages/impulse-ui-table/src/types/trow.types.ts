@@ -1,5 +1,5 @@
-import { JSX } from 'react';
 import { IComponent } from '@impulse-ui/core';
+import { JSX } from 'react';
 
 type TRowHTMLProps = JSX.IntrinsicElements['tr'];
 type TRowProps = IComponent & TRowHTMLProps;

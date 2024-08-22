@@ -1,8 +1,8 @@
 import { autoUpdate, offset, size, useFloating } from '@floating-ui/react-dom';
 import { faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
 import {
-  optionProcessor,
   SimpleOption,
+  optionProcessor,
   useItemSelection,
   useOutsideClick,
   useProcessedOptions,

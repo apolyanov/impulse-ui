@@ -1,8 +1,8 @@
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
-import { ChangeEvent, JSX, RefObject } from 'react';
-import { IOStyle } from '@impulse-ui/core';
 import { IconButtonStyle } from '@impulse-ui/buttons';
+import { IOStyle } from '@impulse-ui/core';
 import { FieldMessageStyle } from '@impulse-ui/text';
+import { ChangeEvent, JSX, RefObject } from 'react';
 
 type InputHTMLProps = JSX.IntrinsicElements['input'];
 

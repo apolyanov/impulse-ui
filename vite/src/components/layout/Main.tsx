@@ -1,6 +1,5 @@
 import { GlobalStyle } from '@impulse-ui/core';
 import { Container } from '@impulse-ui/layout';
-import React from 'react';
 import { Outlet } from 'react-router-dom';
 
 import Navigation from './Navigation';

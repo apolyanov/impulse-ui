@@ -1,8 +1,8 @@
-import { PaginationStyle } from './pagination.types';
 import { IOStyle } from '@impulse-ui/core';
 import { ContainerHTMLProps } from '@impulse-ui/layout';
 import { TypographyHTMLProps } from '@impulse-ui/text';
 import { ImpulseTableState } from './impulseTableProvider.types.ts';
+import { PaginationStyle } from './pagination.types';
 
 interface TableFooterProps<T extends object> {
   iStyle?: Partial<TableFooterStyle<ImpulseTableState<T>>>;

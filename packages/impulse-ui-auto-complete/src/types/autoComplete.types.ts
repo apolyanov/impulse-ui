@@ -1,6 +1,6 @@
-import { ContainerProps } from '@impulse-ui/layout';
 import { IComponent, IOStyle, SimpleOption, UseProcessedoptionsProps } from '@impulse-ui/core';
 import { TextInputCompositeProps, TextInputStyle } from '@impulse-ui/input';
+import { ContainerProps } from '@impulse-ui/layout';
 import { AutoCompleteItemStyle } from './autoCompleteItem.types.ts';
 
 interface AutoCompleteProps<T> extends AutoCompleteRestProps<T> {

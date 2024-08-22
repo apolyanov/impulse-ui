@@ -12,8 +12,8 @@ import { tbody } from '../../styles';
 import { TData } from '../tdata';
 import { TRow } from '../trow';
 
-import { BaseTBody } from './BaseTBody.styles';
 import { TBodyComponentProps } from '../../types';
+import { BaseTBody } from './BaseTBody.styles';
 
 const TBody = <T extends object>({ iStyle, ...rest }: TBodyComponentProps<T>) => {
   const tableState = useImpulseTable();

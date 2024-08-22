@@ -1,5 +1,5 @@
-import React from 'react';
 import { IOStyle } from '@impulse-ui/core';
+import React from 'react';
 
 interface AvatarProps extends AvatarRestProps {
   iStyle?: Partial<AvatarStyle>;

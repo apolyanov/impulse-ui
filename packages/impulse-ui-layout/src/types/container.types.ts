@@ -13,8 +13,7 @@ import {
 } from '@impulse-ui/core';
 
 type ContainerHTMLProps = PropsWithoutRef<JSX.IntrinsicElements['div']>;
-type ContainerProps = IComponent &
-  Partial<SpacingCssProps> &
+type ContainerCSSProps = Partial<SpacingCssProps> &
   Partial<SpacingAliasCssProps> &
   Partial<BordersCssProps> &
   Partial<FlexboxCssProps> &
@@ -22,5 +21,6 @@ type ContainerProps = IComponent &
   Partial<PositionsCssProps> &
   Partial<SizingCssProps> &
   Partial<DisplayCssProps>;
+type ContainerProps = IComponent & ContainerCSSProps;
 
-export type { ContainerHTMLProps, ContainerProps };
+export type { ContainerHTMLProps, ContainerProps, ContainerCSSProps };

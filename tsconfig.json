@@ -39,7 +39,7 @@
       "path": "./packages/impulse-ui-auto-complete"
     },
     {
-      "path": "./packages/impulse-ui-sidebar"
+      "path": "./packages/impulse-ui-navigation"
     },
     {
       "path": "./packages/impulse-ui-avatar"

@@ -1,5 +1,5 @@
-import { CameraCapabilities, UseScannerProps } from '../types';
 import { useCallback, useRef, useState } from 'react';
+import { CameraCapabilities, UseScannerProps } from '../types';
 
 import { Scanner } from '../scanner';
 

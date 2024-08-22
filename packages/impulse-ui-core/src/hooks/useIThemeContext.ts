@@ -1,5 +1,5 @@
-import { UseIThemeContextFn } from '../types';
 import { useContext } from 'react';
+import { UseIThemeContextFn } from '../types';
 
 import { ITheme } from '../components';
 

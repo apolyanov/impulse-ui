@@ -1,5 +1,5 @@
-import { UseElementDimensionsFn } from '../types';
 import { useEffect, useState } from 'react';
+import { UseElementDimensionsFn } from '../types';
 
 const useElementDimensions: UseElementDimensionsFn = (element) => {
   const [width, setWidth] = useState<number>(0);

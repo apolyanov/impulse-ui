@@ -1,6 +1,6 @@
 import { iconButtonComponentMap } from '@impulse-ui/buttons';
-import { textInputComponentMap } from '@impulse-ui/input';
 import { ComponentMap } from '@impulse-ui/core';
+import { textInputComponentMap } from '@impulse-ui/input';
 
 const tableHeaderComponentMap: ComponentMap[] = [
   { key: 'container' },

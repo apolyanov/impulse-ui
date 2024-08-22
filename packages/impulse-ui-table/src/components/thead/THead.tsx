@@ -9,8 +9,8 @@ import { SortingButton } from '../sorting-button';
 import { THeader } from '../theader';
 import { TRow } from '../trow';
 
-import { BaseTHead } from './BaseTHead.styles';
 import { THeadComponentProps } from '../../types';
+import { BaseTHead } from './BaseTHead.styles';
 
 const THead = <T extends object>({ iStyle, ...rest }: THeadComponentProps<T>) => {
   const tableState = useImpulseTable();

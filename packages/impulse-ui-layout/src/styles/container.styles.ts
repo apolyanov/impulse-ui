@@ -1,6 +1,6 @@
 import { neutral } from '@impulse-ui/colours';
-import { ContainerHTMLProps } from '../types';
 import { IStyle } from '@impulse-ui/core';
+import { ContainerHTMLProps } from '../types';
 
 const container: IStyle<ContainerHTMLProps> = {
   iColorTheme: {

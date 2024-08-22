@@ -1,6 +1,6 @@
-import { autoCompleteItemComponentMap } from './autoCompleteItem.map';
-import { textInputComponentMap } from '@impulse-ui/input';
 import { ComponentMap } from '@impulse-ui/core';
+import { textInputComponentMap } from '@impulse-ui/input';
+import { autoCompleteItemComponentMap } from './autoCompleteItem.map';
 
 const autoCompleteComponentMap: ComponentMap[] = [
   { key: 'mainContainer' },

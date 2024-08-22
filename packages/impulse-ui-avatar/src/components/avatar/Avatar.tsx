@@ -3,8 +3,8 @@ import { useComponentStyle } from '@impulse-ui/core';
 import { Icon } from '@impulse-ui/icon';
 import { Container } from '@impulse-ui/layout';
 import { Typography } from '@impulse-ui/text';
-import { AvatarProps } from '../../types';
 import { FunctionComponent, useMemo } from 'react';
+import { AvatarProps } from '../../types';
 
 import { avatarComponentMap } from '../../maps';
 import { defaultAvatarStyle } from '../../styles';
