@@ -2,6 +2,7 @@ import { JSX, PropsWithoutRef } from 'react';
 
 import {
   BordersCssProps,
+  ColorsCssProps,
   DisplayCssProps,
   FlexboxCssProps,
   GridCssProps,
@@ -10,6 +11,7 @@ import {
   SizingCssProps,
   SpacingAliasCssProps,
   SpacingCssProps,
+  TypographyCssProps,
 } from '@impulse-ui/core';
 
 type ContainerHTMLProps = PropsWithoutRef<JSX.IntrinsicElements['div']>;
@@ -20,7 +22,9 @@ type ContainerCSSProps = Partial<SpacingCssProps> &
   Partial<GridCssProps> &
   Partial<PositionsCssProps> &
   Partial<SizingCssProps> &
-  Partial<DisplayCssProps>;
+  Partial<DisplayCssProps> &
+  Partial<ColorsCssProps> &
+  Partial<TypographyCssProps>;
 type ContainerProps = IComponent & ContainerCSSProps;
 
 export type { ContainerHTMLProps, ContainerProps, ContainerCSSProps };

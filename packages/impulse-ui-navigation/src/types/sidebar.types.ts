@@ -10,6 +10,7 @@ interface SidebarProps extends SidebarRestProps {
 interface SidebarRestProps extends ContainerHTMLProps, ContainerCSSProps {
   items?: SidebarItems;
   collapsed?: boolean;
+  canCollapse?: boolean;
 }
 
 type SidebarItems = (
