@@ -14,7 +14,7 @@ import {
   TypographyCssProps,
 } from '@impulse-ui/core';
 
-type ContainerHTMLProps = PropsWithoutRef<JSX.IntrinsicElements['div']>;
+type ContainerHTMLProps = Omit<PropsWithoutRef<JSX.IntrinsicElements['div']>, keyof ColorsCssProps>;
 type ContainerCSSProps = Partial<SpacingCssProps> &
   Partial<SpacingAliasCssProps> &
   Partial<BordersCssProps> &
