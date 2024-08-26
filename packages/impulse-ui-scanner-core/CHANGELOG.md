@@ -1,5 +1,11 @@
 # @impulse-ui/scanner-core
 
+## 3.1.1
+
+### Patch Changes
+
+- [#134](https://github.com/apolyanov/impulse-ui/pull/134) [`1723cc9`](https://github.com/apolyanov/impulse-ui/commit/1723cc9c17fc420d1288e8c4dd2c01d2722bbe38) Thanks [@apolyanov](https://github.com/apolyanov)! - fix: Adding missing css props to Container component
+
 ## 3.1.0
 
 ### Minor Changes
