@@ -2,7 +2,7 @@ import { MouseEvent, MouseEventHandler, useCallback, useState } from 'react';
 import { SidebarRestProps } from '../types';
 
 const useSidebar = (props: SidebarRestProps) => {
-  const { items, ...containerProps } = props;
+  const { items, canCollapse, ...containerProps } = props;
   const [collapsed, setCollapsed] = useState<boolean>(false);
 
   const toggleCollapse = useCallback(() => setCollapsed((prevState) => !prevState), []);
@@ -10,11 +10,11 @@ const useSidebar = (props: SidebarRestProps) => {
   const handleHeaderClick = useCallback(
     (onClick?: MouseEventHandler<HTMLButtonElement>, isHeader?: boolean) => {
       return (event: MouseEvent<HTMLButtonElement>) => {
-        isHeader && toggleCollapse();
+        canCollapse && isHeader && toggleCollapse();
         onClick?.(event);
       };
     },
-    [toggleCollapse],
+    [toggleCollapse, canCollapse],
   );
 
   return {
@@ -22,6 +22,7 @@ const useSidebar = (props: SidebarRestProps) => {
     toggleCollapse,
     handleHeaderClick,
     items,
+    canCollapse,
     containerProps,
   };
 };

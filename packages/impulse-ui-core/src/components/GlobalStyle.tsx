@@ -33,6 +33,8 @@ const GlobalStyle = createGlobalStyle`
     border-spacing: 0;
   }
 
+  ul,
+  ol,
   ul[role='list'],
   ol[role='list'] {
     list-style: none;
