@@ -1,4 +1,4 @@
-import { ScannerRestProps, ScanningFn } from '../types';
+import { LoopID, ScannerRestProps, ScanningFn } from '../types';
 
 import {
   NavigatorSupportException,
@@ -13,7 +13,7 @@ import { VideoContext } from './VideoContext';
 export class Scanner {
   private _isScanning: boolean = false;
   private _paused: boolean = false;
-  private _scanningLoopId?: NodeJS.Timeout;
+  private _scanningLoopId?: LoopID;
   private _scanningInterval: number;
   private _onSuccess?: ScannerRestProps['onSuccess'];
   private _onError?: ScannerRestProps['onError'];
@@ -80,11 +80,11 @@ export class Scanner {
     this.startScanLoop();
   }
 
-  get scanningLoopId(): NodeJS.Timeout | undefined {
+  get scanningLoopId(): LoopID | undefined {
     return this._scanningLoopId;
   }
 
-  set scanningLoopId(value: NodeJS.Timeout) {
+  set scanningLoopId(value: LoopID) {
     this._scanningLoopId = value;
   }
 

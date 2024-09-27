@@ -1,5 +1,4 @@
 import { extractCssProps } from '@impulse-ui/core';
-import React from 'react';
 import { FunctionComponent } from 'react';
 
 import { TableProps } from '../../types';

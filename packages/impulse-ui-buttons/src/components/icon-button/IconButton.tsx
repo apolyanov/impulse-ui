@@ -1,7 +1,6 @@
 import { extractCssProps, useComponentStyle } from '@impulse-ui/core';
 import { Icon } from '@impulse-ui/icon';
 import { Spinner } from '@impulse-ui/loader';
-import React from 'react';
 import { FunctionComponent } from 'react';
 import { IconButtonProps } from '../../types';
 

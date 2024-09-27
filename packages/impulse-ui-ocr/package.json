@@ -2,15 +2,23 @@
   "name": "@impulse-ui/ocr",
   "version": "3.1.1",
   "license": "MIT",
+  "type": "module",
   "author": "Alexander Polyanov",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
-  "typings": "dist/index.d.ts",
+  "main": "./dist/index.umd.js",
+  "module": "./dist/index.es.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.umd.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
   "scripts": {
-    "build": "tsup",
+    "build": "tsc && vite build",
     "lint": "biome check src --write",
     "start": "tsup --watch",
     "test": "dts test --passWithNoTests"
@@ -40,7 +48,8 @@
     "@impulse-ui/core": "^3.1.1",
     "@impulse-ui/icon": "^3.1.1",
     "@impulse-ui/layout": "^3.1.1",
-    "@impulse-ui/scanner-core": "^3.1.1"
+    "@impulse-ui/scanner-core": "^3.1.1",
+    "tesseract.js": "5.1.1"
   },
   "peerDependencies": {
     "react": ">=16"

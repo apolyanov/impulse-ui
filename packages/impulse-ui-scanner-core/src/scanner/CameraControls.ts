@@ -36,12 +36,8 @@ export class CameraControls {
     throw new NoMediaTrackException();
   }
 
-  private getConstraints() {
-    return this.videoTrack.getConstraints() as CameraCapabilities;
-  }
-
   private getSettings() {
-    return this.videoTrack.getSettings() as CameraCapabilities;
+    return this.videoTrack.getSettings() as unknown as CameraCapabilities;
   }
 
   set videoTrack(value: MediaStreamTrack | undefined) {

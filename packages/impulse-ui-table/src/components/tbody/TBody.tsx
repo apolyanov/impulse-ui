@@ -4,7 +4,6 @@ import { Icon } from '@impulse-ui/icon';
 import { Spinner } from '@impulse-ui/loader';
 import { Typography } from '@impulse-ui/text';
 import { flexRender } from '@tanstack/react-table';
-import { FunctionComponent } from 'react';
 
 import { useImpulseTable } from '../../hooks';
 import { tbodyComponentMap } from '../../maps';

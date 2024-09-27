@@ -2,9 +2,6 @@ import { FunctionComponent, PropsWithChildren, createContext, useState } from 'r
 import { ThemeProvider } from 'styled-components';
 import { IThemeContext, IThemeProviderProps, ThemeMode } from '../types';
 
-import '../css/font.css';
-import '@fortawesome/fontawesome-svg-core/styles.css';
-
 import { GlobalStyle } from '../components';
 import { LIGHT } from '../utils';
 
