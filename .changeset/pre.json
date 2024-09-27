@@ -20,6 +20,7 @@
     "@impulse-ui/toolkit": "3.1.1"
   },
   "changesets": [
-    "cold-years-study"
+    "cold-years-study",
+    "twenty-cows-battle"
   ]
 }
