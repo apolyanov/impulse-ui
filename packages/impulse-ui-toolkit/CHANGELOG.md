@@ -1,5 +1,28 @@
 # Change Log
 
+## 3.2.0-next.1
+
+### Patch Changes
+
+- [#138](https://github.com/apolyanov/impulse-ui/pull/138) [`3768374`](https://github.com/apolyanov/impulse-ui/commit/37683748594ca8d291e6ba9c7afc3b8fe27827e7) Thanks [@apolyanov](https://github.com/apolyanov)! - fix: Fautly toolkiy package.json
+
+- Updated dependencies []:
+  - @impulse-ui/auto-complete@3.2.0-next.1
+  - @impulse-ui/avatar@3.2.0-next.1
+  - @impulse-ui/buttons@3.2.0-next.1
+  - @impulse-ui/colours@3.2.0-next.1
+  - @impulse-ui/core@3.2.0-next.1
+  - @impulse-ui/icon@3.2.0-next.1
+  - @impulse-ui/input@3.2.0-next.1
+  - @impulse-ui/layout@3.2.0-next.1
+  - @impulse-ui/loader@3.2.0-next.1
+  - @impulse-ui/navigation@3.2.0-next.1
+  - @impulse-ui/ocr@3.2.0-next.1
+  - @impulse-ui/qr@3.2.0-next.1
+  - @impulse-ui/scanner-core@3.2.0-next.1
+  - @impulse-ui/table@3.2.0-next.1
+  - @impulse-ui/text@3.2.0-next.1
+
 ## 3.2.0-next.0
 
 ### Minor Changes
