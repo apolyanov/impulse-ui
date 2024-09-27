@@ -1,5 +1,19 @@
 # Change Log
 
+## 3.2.0-next.0
+
+### Minor Changes
+
+- [#136](https://github.com/apolyanov/impulse-ui/pull/136) [`83a69e3`](https://github.com/apolyanov/impulse-ui/commit/83a69e312dbd20991c3efc1af992cdb7dfbe0ca6) Thanks [@apolyanov](https://github.com/apolyanov)! - feat: Migrating to vite library mode
+
+### Patch Changes
+
+- Updated dependencies [[`83a69e3`](https://github.com/apolyanov/impulse-ui/commit/83a69e312dbd20991c3efc1af992cdb7dfbe0ca6)]:
+  - @impulse-ui/colours@3.2.0-next.0
+  - @impulse-ui/loader@3.2.0-next.0
+  - @impulse-ui/core@3.2.0-next.0
+  - @impulse-ui/icon@3.2.0-next.0
+
 ## 3.1.1
 
 ### Patch Changes
