@@ -51,6 +51,8 @@ interface ScannerRestProps<T = any> {
   onError?: (error: Error) => void;
 }
 
+type LoopID = ReturnType<typeof setInterval>;
+
 export type {
   CanvasData,
   QRCode,
@@ -62,4 +64,5 @@ export type {
   CameraCapabilities,
   MinMaxCapability,
   UseScannerReturnType,
+  LoopID,
 };

@@ -14,14 +14,14 @@ interface ScrollToFn {
   (index: number, options?: ScrollToOptions): void;
 }
 
-interface ListItemStyleFn<T extends Element> {
-  (virtualRow: VirtualItem<T>): CSSProperties;
+interface ListItemStyleFn {
+  (virtualRow: VirtualItem): CSSProperties;
 }
 
-interface UserVirtualizedListFnProps<T extends Element> {
-  getVirtualItems: () => VirtualItem<T>[];
+interface UserVirtualizedListFnProps {
+  getVirtualItems: () => VirtualItem[];
   listContainerStyle: CSSProperties;
-  listItemStyle: ListItemStyleFn<T>;
+  listItemStyle: ListItemStyleFn;
   scrollToIndex: ScrollToFn;
 }
 
@@ -30,7 +30,7 @@ interface UseVirtualizedListFn {
     scrollElement: T | null,
     elementHeight: number,
     elementsCount: number,
-  ): UserVirtualizedListFnProps<T>;
+  ): UserVirtualizedListFnProps;
 }
 
 export type {

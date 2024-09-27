@@ -1,5 +1,5 @@
 import { neutral } from '@impulse-ui/colours';
-import { ImpulseTableRestProps, ImpulseTableState, ImpulseTableStyle } from '../types';
+import { ImpulseTableState, ImpulseTableStyle } from '../types';
 
 const impulseTableStyles = <T>(): Partial<ImpulseTableStyle<ImpulseTableState<T>>> => ({
   tableContainerStyle: {

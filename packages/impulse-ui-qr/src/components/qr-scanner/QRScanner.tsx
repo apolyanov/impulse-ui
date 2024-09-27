@@ -3,7 +3,6 @@ import { IconButton } from '@impulse-ui/buttons';
 import { useComponentStyle } from '@impulse-ui/core';
 import { Icon } from '@impulse-ui/icon';
 import { Container } from '@impulse-ui/layout';
-import React from 'react';
 
 import { useQrScanner } from '../../hooks';
 import { qrScannerComponentMap } from '../../maps';

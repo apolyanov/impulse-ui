@@ -1,2 +1,2 @@
-export * from 'types/autoComplete.types.ts';
-export * from 'types/autoCompleteItem.types.ts';
+export * from './autoComplete.types';
+export * from './autoCompleteItem.types.ts';

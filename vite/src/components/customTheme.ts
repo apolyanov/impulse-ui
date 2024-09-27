@@ -1,4 +1,4 @@
-import { CustomITheme } from '@impulse-ui/types';
+import { CustomITheme } from "@impulse-ui/core";
 
 const customTheme: CustomITheme = {};
 

@@ -31,6 +31,7 @@ interface ComponentsThemes {
   button: IOStyle<JSX.IntrinsicElements['button']>;
   container: IOStyle<JSX.IntrinsicElements['div']>;
   spinnerLoader: IOStyle<JSX.IntrinsicElements['div']>;
+  dotsLoader: IOStyle<JSX.IntrinsicElements['div']>;
   input: IOStyle<JSX.IntrinsicElements['input']>;
   textButton: IOStyle<JSX.IntrinsicElements['button']>;
   typography: IOStyle<JSX.IntrinsicElements['p']>;
