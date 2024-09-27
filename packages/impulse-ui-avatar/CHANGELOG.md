@@ -1,5 +1,18 @@
 # Change Log
 
+## 3.2.0-next.2
+
+### Patch Changes
+
+- [#140](https://github.com/apolyanov/impulse-ui/pull/140) [`a306596`](https://github.com/apolyanov/impulse-ui/commit/a30659623aca08b12dcd054e3bb45a8c7fbb5b48) Thanks [@apolyanov](https://github.com/apolyanov)! - fix: Flash of unstyled for fontawesome icons
+
+- Updated dependencies [[`a306596`](https://github.com/apolyanov/impulse-ui/commit/a30659623aca08b12dcd054e3bb45a8c7fbb5b48)]:
+  - @impulse-ui/colours@3.2.0-next.2
+  - @impulse-ui/layout@3.2.0-next.2
+  - @impulse-ui/core@3.2.0-next.2
+  - @impulse-ui/icon@3.2.0-next.2
+  - @impulse-ui/text@3.2.0-next.2
+
 ## 3.2.0-next.1
 
 ### Patch Changes
