@@ -1,5 +1,7 @@
 # Change Log
 
+## 3.2.0-next.1
+
 ## 3.2.0-next.0
 
 ### Minor Changes

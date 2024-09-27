@@ -1,5 +1,18 @@
 # Change Log
 
+## 3.2.0-next.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @impulse-ui/buttons@3.2.0-next.1
+  - @impulse-ui/colours@3.2.0-next.1
+  - @impulse-ui/core@3.2.0-next.1
+  - @impulse-ui/input@3.2.0-next.1
+  - @impulse-ui/layout@3.2.0-next.1
+  - @impulse-ui/loader@3.2.0-next.1
+  - @impulse-ui/text@3.2.0-next.1
+
 ## 3.2.0-next.0
 
 ### Minor Changes
