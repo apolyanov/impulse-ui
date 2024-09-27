@@ -8,6 +8,7 @@ export const baseConfig = (name: string, externalPackages?: ExternalOption) => {
     "react-dom",
     "styled-components",
     /^@fontsource\/montserrat\/?.*$/,
+    "stylis",
   ];
 
   if (Array.isArray(externalPackages)) {
