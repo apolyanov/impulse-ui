@@ -19,5 +19,7 @@
     "@impulse-ui/text": "3.1.1",
     "@impulse-ui/toolkit": "3.1.1"
   },
-  "changesets": []
+  "changesets": [
+    "cold-years-study"
+  ]
 }
