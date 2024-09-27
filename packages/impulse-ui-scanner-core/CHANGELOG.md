@@ -1,5 +1,11 @@
 # @impulse-ui/scanner-core
 
+## 3.2.0-next.0
+
+### Minor Changes
+
+- [#136](https://github.com/apolyanov/impulse-ui/pull/136) [`83a69e3`](https://github.com/apolyanov/impulse-ui/commit/83a69e312dbd20991c3efc1af992cdb7dfbe0ca6) Thanks [@apolyanov](https://github.com/apolyanov)! - feat: Migrating to vite library mode
+
 ## 3.1.1
 
 ### Patch Changes
