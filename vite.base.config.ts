@@ -7,7 +7,9 @@ export const baseConfig = (name: string, externalPackages?: ExternalOption) => {
     "react",
     "react-dom",
     "styled-components",
+    "@fortawesome/fontawesome-svg-core/styles.css",
     /^@fontsource\/montserrat\/?.*$/,
+    /@impulse-ui\/(.*)/,
     "stylis",
   ];
 
@@ -23,6 +25,7 @@ export const baseConfig = (name: string, externalPackages?: ExternalOption) => {
         name: name,
         fileName: (format) => `index.${format}.js`,
       },
+      outDir: "./dist",
       rollupOptions: {
         external,
         output: {
