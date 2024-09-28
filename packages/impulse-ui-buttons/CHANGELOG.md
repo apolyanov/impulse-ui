@@ -1,5 +1,17 @@
 # Change Log
 
+## 3.2.0-next.3
+
+### Patch Changes
+
+- [#142](https://github.com/apolyanov/impulse-ui/pull/142) [`15602c2`](https://github.com/apolyanov/impulse-ui/commit/15602c25689cabec3da92d534e8ac7d6b81abcd6) Thanks [@apolyanov](https://github.com/apolyanov)! - fix: External libraries list
+
+- Updated dependencies [[`15602c2`](https://github.com/apolyanov/impulse-ui/commit/15602c25689cabec3da92d534e8ac7d6b81abcd6)]:
+  - @impulse-ui/colours@3.2.0-next.3
+  - @impulse-ui/loader@3.2.0-next.3
+  - @impulse-ui/core@3.2.0-next.3
+  - @impulse-ui/icon@3.2.0-next.3
+
 ## 3.2.0-next.2
 
 ### Patch Changes
