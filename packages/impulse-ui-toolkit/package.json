@@ -1,6 +1,6 @@
 {
   "name": "@impulse-ui/toolkit",
-  "version": "3.2.0-next.4",
+  "version": "3.2.0-next.5",
   "license": "MIT",
   "type": "module",
   "author": "Alexander Polyanov",
@@ -40,21 +40,21 @@
     "bracketSpacing": true
   },
   "dependencies": {
-    "@impulse-ui/auto-complete": "^3.2.0-next.4",
-    "@impulse-ui/avatar": "^3.2.0-next.4",
-    "@impulse-ui/buttons": "^3.2.0-next.4",
-    "@impulse-ui/colours": "^3.2.0-next.4",
-    "@impulse-ui/core": "^3.2.0-next.4",
-    "@impulse-ui/icon": "^3.2.0-next.4",
-    "@impulse-ui/input": "^3.2.0-next.4",
-    "@impulse-ui/layout": "^3.2.0-next.4",
-    "@impulse-ui/loader": "^3.2.0-next.4",
-    "@impulse-ui/qr": "^3.2.0-next.4",
-    "@impulse-ui/scanner-core": "^3.2.0-next.4",
-    "@impulse-ui/ocr": "^3.2.0-next.4",
-    "@impulse-ui/navigation": "^3.2.0-next.4",
-    "@impulse-ui/table": "^3.2.0-next.4",
-    "@impulse-ui/text": "^3.2.0-next.4"
+    "@impulse-ui/auto-complete": "^3.2.0-next.5",
+    "@impulse-ui/avatar": "^3.2.0-next.5",
+    "@impulse-ui/buttons": "^3.2.0-next.5",
+    "@impulse-ui/colours": "^3.2.0-next.5",
+    "@impulse-ui/core": "^3.2.0-next.5",
+    "@impulse-ui/icon": "^3.2.0-next.5",
+    "@impulse-ui/input": "^3.2.0-next.5",
+    "@impulse-ui/layout": "^3.2.0-next.5",
+    "@impulse-ui/loader": "^3.2.0-next.5",
+    "@impulse-ui/qr": "^3.2.0-next.5",
+    "@impulse-ui/scanner-core": "^3.2.0-next.5",
+    "@impulse-ui/ocr": "^3.2.0-next.5",
+    "@impulse-ui/navigation": "^3.2.0-next.5",
+    "@impulse-ui/table": "^3.2.0-next.5",
+    "@impulse-ui/text": "^3.2.0-next.5"
   },
   "jest": {
     "testEnvironment": "jsdom"

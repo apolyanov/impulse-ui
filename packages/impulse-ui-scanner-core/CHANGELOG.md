@@ -1,5 +1,11 @@
 # @impulse-ui/scanner-core
 
+## 3.2.0-next.5
+
+### Patch Changes
+
+- [#146](https://github.com/apolyanov/impulse-ui/pull/146) [`85598dd`](https://github.com/apolyanov/impulse-ui/commit/85598dd7e2494c34493b860f53a32ea938d74c83) Thanks [@apolyanov](https://github.com/apolyanov)! - fix: Fixing bundles names and toolkit directives
+
 ## 3.2.0-next.4
 
 ### Patch Changes
