@@ -4,16 +4,16 @@
   "license": "MIT",
   "type": "module",
   "author": "Alexander Polyanov",
-  "main": "./dist/index.umd.js",
-  "module": "./dist/index.es.js",
+  "main": "./dist/layout.umd.js",
+  "module": "./dist/layout.es.js",
   "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
   "exports": {
     ".": {
-      "import": "./dist/index.es.js",
-      "require": "./dist/index.umd.js",
+      "import": "./dist/layout.es.js",
+      "require": "./dist/layout.umd.js",
       "types": "./dist/index.d.ts"
     }
   },
