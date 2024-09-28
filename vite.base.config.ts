@@ -1,6 +1,11 @@
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 
+const serverSafePackages = ["toolkit", "colours"];
+
+const capitalize = (str: string) =>
+  `${str.charAt(0).toUpperCase()}${str.slice(1)}`;
+
 export const baseConfig = (name: string) => {
   const external = [
     "react",
@@ -16,14 +21,16 @@ export const baseConfig = (name: string) => {
     build: {
       lib: {
         entry: "./src/index.ts",
-        name: name,
-        fileName: (format) => `index.${format}.js`,
+        name: `impulse${capitalize(name)}`,
+        fileName: (format) => `${name}.${format}.js`,
       },
       outDir: "./dist",
       rollupOptions: {
         external,
         output: {
-          banner: "'use client'",
+          banner: () => {
+            if (!serverSafePackages.includes(name)) return "'use client'";
+          },
           globals: {
             react: "React",
             "react-dom": "ReactDOM",

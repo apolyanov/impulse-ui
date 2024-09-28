@@ -4,16 +4,16 @@
   "license": "MIT",
   "type": "module",
   "author": "Alexander Polyanov",
-  "main": "./dist/index.umd.js",
-  "module": "./dist/index.es.js",
+  "main": "./dist/scannerCore.umd.js",
+  "module": "./dist/scannerCore.es.js",
   "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
   "exports": {
     ".": {
-      "import": "./dist/index.es.js",
-      "require": "./dist/index.umd.js",
+      "import": "./dist/scannerCore.es.js",
+      "require": "./dist/scannerCore.umd.js",
       "types": "./dist/index.d.ts"
     }
   },
