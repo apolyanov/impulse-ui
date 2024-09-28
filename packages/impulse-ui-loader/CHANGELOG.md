@@ -1,5 +1,16 @@
 # Change Log
 
+## 3.2.0-next.4
+
+### Patch Changes
+
+- [#144](https://github.com/apolyanov/impulse-ui/pull/144) [`5908381`](https://github.com/apolyanov/impulse-ui/commit/590838164559d821d139e0d33f3699ea88768a0b) Thanks [@apolyanov](https://github.com/apolyanov)! - fix: Adding external packages from workspace to minimize bundle outputs and node modules weight
+
+- Updated dependencies [[`5908381`](https://github.com/apolyanov/impulse-ui/commit/590838164559d821d139e0d33f3699ea88768a0b)]:
+  - @impulse-ui/colours@3.2.0-next.4
+  - @impulse-ui/layout@3.2.0-next.4
+  - @impulse-ui/core@3.2.0-next.4
+
 ## 3.2.0-next.3
 
 ### Patch Changes
