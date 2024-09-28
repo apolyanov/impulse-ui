@@ -1,6 +1,6 @@
 {
   "name": "@impulse-ui/table",
-  "version": "3.2.0-next.4",
+  "version": "3.2.0-next.5",
   "license": "MIT",
   "type": "module",
   "author": "Alexander Polyanov",
@@ -43,13 +43,13 @@
     "testEnvironment": "jsdom"
   },
   "dependencies": {
-    "@impulse-ui/buttons": "^3.2.0-next.4",
-    "@impulse-ui/colours": "^3.2.0-next.4",
-    "@impulse-ui/core": "^3.2.0-next.4",
-    "@impulse-ui/input": "^3.2.0-next.4",
-    "@impulse-ui/layout": "^3.2.0-next.4",
-    "@impulse-ui/loader": "^3.2.0-next.4",
-    "@impulse-ui/text": "^3.2.0-next.4",
+    "@impulse-ui/buttons": "^3.2.0-next.5",
+    "@impulse-ui/colours": "^3.2.0-next.5",
+    "@impulse-ui/core": "^3.2.0-next.5",
+    "@impulse-ui/input": "^3.2.0-next.5",
+    "@impulse-ui/layout": "^3.2.0-next.5",
+    "@impulse-ui/loader": "^3.2.0-next.5",
+    "@impulse-ui/text": "^3.2.0-next.5",
     "@tanstack/react-table": "8.20.5"
   },
   "peerDependencies": {
