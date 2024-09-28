@@ -44,8 +44,7 @@
   },
   "peerDependencies": {
     "react": ">=16",
-    "styled-components": "6.1.13",
-    "stylis": "^4.3.4"
+    "styled-components": "6.1.13"
   },
   "engines": {
     "node": ">=12"
