@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { BaseIComponent, createBaseComponentStyle } from '@impulse-ui/core';
 import styled from 'styled-components';
+import '@fortawesome/fontawesome-svg-core/styles.css';
 
 import { icon } from '../styles';
 
