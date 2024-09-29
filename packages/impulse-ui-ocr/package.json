@@ -1,6 +1,6 @@
 {
   "name": "@impulse-ui/ocr",
-  "version": "3.2.0-next.5",
+  "version": "3.2.0",
   "license": "MIT",
   "type": "module",
   "author": "Alexander Polyanov",
@@ -43,12 +43,12 @@
     "testEnvironment": "jsdom"
   },
   "dependencies": {
-    "@impulse-ui/buttons": "^3.2.0-next.5",
-    "@impulse-ui/colours": "^3.2.0-next.5",
-    "@impulse-ui/core": "^3.2.0-next.5",
-    "@impulse-ui/icon": "^3.2.0-next.5",
-    "@impulse-ui/layout": "^3.2.0-next.5",
-    "@impulse-ui/scanner-core": "^3.2.0-next.5",
+    "@impulse-ui/buttons": "^3.2.0",
+    "@impulse-ui/colours": "^3.2.0",
+    "@impulse-ui/core": "^3.2.0",
+    "@impulse-ui/icon": "^3.2.0",
+    "@impulse-ui/layout": "^3.2.0",
+    "@impulse-ui/scanner-core": "^3.2.0",
     "tesseract.js": "5.1.1"
   },
   "peerDependencies": {
