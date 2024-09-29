@@ -1,5 +1,29 @@
 # Change Log
 
+## 3.2.0
+
+### Minor Changes
+
+- [#136](https://github.com/apolyanov/impulse-ui/pull/136) [`83a69e3`](https://github.com/apolyanov/impulse-ui/commit/83a69e312dbd20991c3efc1af992cdb7dfbe0ca6) Thanks [@apolyanov](https://github.com/apolyanov)! - feat: Migrating to vite library mode
+
+### Patch Changes
+
+- [#148](https://github.com/apolyanov/impulse-ui/pull/148) [`98102b5`](https://github.com/apolyanov/impulse-ui/commit/98102b5beac39af542757cdce63d370ee2330e5a) Thanks [@apolyanov](https://github.com/apolyanov)! - feat: Finishing nextjs integration phase 1
+
+- [#142](https://github.com/apolyanov/impulse-ui/pull/142) [`15602c2`](https://github.com/apolyanov/impulse-ui/commit/15602c25689cabec3da92d534e8ac7d6b81abcd6) Thanks [@apolyanov](https://github.com/apolyanov)! - fix: External libraries list
+
+- [#140](https://github.com/apolyanov/impulse-ui/pull/140) [`a306596`](https://github.com/apolyanov/impulse-ui/commit/a30659623aca08b12dcd054e3bb45a8c7fbb5b48) Thanks [@apolyanov](https://github.com/apolyanov)! - fix: Flash of unstyled for fontawesome icons
+
+- [#144](https://github.com/apolyanov/impulse-ui/pull/144) [`5908381`](https://github.com/apolyanov/impulse-ui/commit/590838164559d821d139e0d33f3699ea88768a0b) Thanks [@apolyanov](https://github.com/apolyanov)! - fix: Adding external packages from workspace to minimize bundle outputs and node modules weight
+
+- [#146](https://github.com/apolyanov/impulse-ui/pull/146) [`85598dd`](https://github.com/apolyanov/impulse-ui/commit/85598dd7e2494c34493b860f53a32ea938d74c83) Thanks [@apolyanov](https://github.com/apolyanov)! - fix: Fixing bundles names and toolkit directives
+
+- Updated dependencies [[`83a69e3`](https://github.com/apolyanov/impulse-ui/commit/83a69e312dbd20991c3efc1af992cdb7dfbe0ca6), [`98102b5`](https://github.com/apolyanov/impulse-ui/commit/98102b5beac39af542757cdce63d370ee2330e5a), [`15602c2`](https://github.com/apolyanov/impulse-ui/commit/15602c25689cabec3da92d534e8ac7d6b81abcd6), [`a306596`](https://github.com/apolyanov/impulse-ui/commit/a30659623aca08b12dcd054e3bb45a8c7fbb5b48), [`5908381`](https://github.com/apolyanov/impulse-ui/commit/590838164559d821d139e0d33f3699ea88768a0b), [`85598dd`](https://github.com/apolyanov/impulse-ui/commit/85598dd7e2494c34493b860f53a32ea938d74c83)]:
+  - @impulse-ui/colours@3.2.0
+  - @impulse-ui/layout@3.2.0
+  - @impulse-ui/core@3.2.0
+  - @impulse-ui/icon@3.2.0
+
 ## 3.2.0-next.5
 
 ### Patch Changes
