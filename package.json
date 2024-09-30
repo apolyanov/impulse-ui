@@ -22,7 +22,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "dts lint"
+      "pre-commit": "turbo run lint"
     }
   },
   "jest": {
