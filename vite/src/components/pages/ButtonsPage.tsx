@@ -10,9 +10,11 @@ const ButtonsPage = () => {
 
   return (
     <Container>
-      <Typography>Button здравей</Typography>
-      <Button onClick={() => console.log("clicked")}>Buttons</Button>
-      <Button loading onClick={() => console.log("clicked")}></Button>
+      <Typography onClick={(event) => console.log(event)}>
+        Button здравей
+      </Typography>
+      <Button onClick={(event) => console.log(event)}>Buttons</Button>
+      <Button ml={16} loading onClick={() => console.log("clicked")}></Button>
       <Button disabled onClick={() => console.log("clicked")}>
         Buttons
       </Button>

@@ -9,7 +9,8 @@ import { defaultIconButtonStyle } from '../../styles';
 import { BaseButton } from '../button';
 
 const IconButton = polymorphicForwardRef<'button', PropsWithChildren<IconButtonProps>>(({ iStyle, ...rest }, ref) => {
-  const { icon, loading, ...buttonProps } = rest;
+  const { cssProps, componentProps } = extractCssProps(rest);
+  const { loading, children, icon, ...buttonProps } = componentProps;
 
   const { buttonStyle, iconStyle, loaderStyle } = useComponentStyle(
     iconButtonComponentMap,
@@ -19,11 +20,11 @@ const IconButton = polymorphicForwardRef<'button', PropsWithChildren<IconButtonP
   );
 
   return (
-    <BaseButton ref={ref} $iStyle={buttonStyle} $cssProps={extractCssProps(buttonProps)} {...buttonProps}>
+    <BaseButton ref={ref} $iStyle={buttonStyle} $cssProps={cssProps} {...buttonProps}>
       {loading ? (
-        <Spinner data-disabled={buttonProps.disabled} iStyle={loaderStyle} />
+        <Spinner data-disabled={componentProps.disabled} iStyle={loaderStyle} />
       ) : (
-        <Icon data-disabled={buttonProps.disabled} icon={icon} iStyle={iconStyle} />
+        <Icon data-disabled={componentProps.disabled} icon={icon} iStyle={iconStyle} />
       )}
     </BaseButton>
   );

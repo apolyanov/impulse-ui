@@ -1,4 +1,4 @@
-import { JSX } from 'react';
+import { ComponentPropsWithoutRef } from 'react';
 
 import {
   BordersCssProps,
@@ -12,22 +12,25 @@ import {
   SpacingCssProps,
 } from '@impulse-ui/core';
 
-type ButtonHTMLProps = JSX.IntrinsicElements['button'];
+type ButtonHTMLProps = ComponentPropsWithoutRef<'button'>;
+
+interface ButtonCSSProps
+  extends SpacingCssProps,
+    SpacingAliasCssProps,
+    BordersCssProps,
+    FlexboxCssProps,
+    GridCssProps,
+    PositionsCssProps,
+    SizingCssProps,
+    DisplayCssProps {}
+
+type PartialButtonCssProps = Partial<ButtonCSSProps>;
 
 interface ButtonProps extends ButtonRestProps {
   iStyle?: Partial<ButtonStyle>;
 }
 
-interface ButtonRestProps
-  extends ButtonHTMLProps,
-    Partial<SpacingCssProps>,
-    Partial<SpacingAliasCssProps>,
-    Partial<BordersCssProps>,
-    Partial<FlexboxCssProps>,
-    Partial<GridCssProps>,
-    Partial<PositionsCssProps>,
-    Partial<SizingCssProps>,
-    Partial<DisplayCssProps> {
+interface ButtonRestProps extends ButtonHTMLProps, PartialButtonCssProps {
   loading?: boolean;
 }
 

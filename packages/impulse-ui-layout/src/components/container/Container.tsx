@@ -4,8 +4,10 @@ import { ContainerProps } from '../../types';
 
 import { BaseContainer } from '../container';
 
-const Container = polymorphicForwardRef<'div', PropsWithChildren<ContainerProps>>(({ iStyle, ...rest }, ref) => (
-  <BaseContainer ref={ref} $iStyle={iStyle} $cssProps={extractCssProps(rest)} {...rest} />
-));
+const Container = polymorphicForwardRef<'div', PropsWithChildren<ContainerProps>>(({ iStyle, ...rest }, ref) => {
+  const { cssProps, componentProps } = extractCssProps(rest);
+
+  return <BaseContainer ref={ref} $iStyle={iStyle} $cssProps={cssProps} {...componentProps} />;
+});
 
 export { Container };

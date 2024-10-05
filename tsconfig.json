@@ -21,7 +21,8 @@
     "strict": false,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "strictFunctionTypes": true
   },
   "include": ["src", "types", "scripts"],
   "exclude": ["dist"],

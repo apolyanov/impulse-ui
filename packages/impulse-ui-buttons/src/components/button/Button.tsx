@@ -9,12 +9,14 @@ import { button } from '../../styles';
 import { BaseButton } from './BaseButton.styles';
 
 const Button = polymorphicForwardRef<'button', PropsWithChildren<ButtonProps>>(({ iStyle, ...rest }, ref) => {
-  const { children, loading, ...buttonProps } = rest;
+  const { cssProps, componentProps } = extractCssProps(rest);
+  const { loading, children, ...buttonProps } = componentProps;
+
   const { buttonStyle, loaderStyle } = useComponentStyle(buttonComponentMap, rest, button, iStyle);
 
   return (
-    <BaseButton ref={ref} $iStyle={buttonStyle} $cssProps={extractCssProps(buttonProps)} {...buttonProps}>
-      {loading ? <Spinner data-disabled={buttonProps.disabled} iStyle={loaderStyle} /> : children}
+    <BaseButton ref={ref} $iStyle={buttonStyle} $cssProps={cssProps} {...buttonProps}>
+      {loading ? <Spinner data-disabled={componentProps.disabled} iStyle={loaderStyle} /> : children}
     </BaseButton>
   );
 });

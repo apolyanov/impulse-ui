@@ -4,8 +4,10 @@ import { TypographyProps } from '../../types';
 
 import BaseTypography from './BaseTypography.styles';
 
-const Typography = polymorphicForwardRef<'p', PropsWithChildren<TypographyProps>>(({ iStyle, ...rest }, ref) => (
-  <BaseTypography ref={ref} $iStyle={iStyle} $cssProps={extractCssProps(rest)} {...rest} />
-));
+const Typography = polymorphicForwardRef<'p', PropsWithChildren<TypographyProps>>(({ iStyle, ...rest }, ref) => {
+  const { cssProps, componentProps } = extractCssProps(rest);
+
+  return <BaseTypography ref={ref} $iStyle={iStyle} $cssProps={cssProps} {...componentProps} />;
+});
 
 export { Typography };

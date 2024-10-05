@@ -1,5 +1,6 @@
 import {
   BordersCssProps,
+  ColorsCssProps,
   DisplayCssProps,
   FlexboxCssProps,
   GridCssProps,
@@ -10,14 +11,19 @@ import {
   SpacingCssProps,
 } from '@impulse-ui/core';
 
-type SpinnerLoaderProps = IComponent &
-  Partial<SpacingCssProps> &
-  Partial<SpacingAliasCssProps> &
-  Partial<BordersCssProps> &
-  Partial<FlexboxCssProps> &
-  Partial<GridCssProps> &
-  Partial<PositionsCssProps> &
-  Partial<SizingCssProps> &
-  Partial<DisplayCssProps>;
+interface SpinnerLoaderCSSProps
+  extends SpacingCssProps,
+    SpacingAliasCssProps,
+    BordersCssProps,
+    FlexboxCssProps,
+    GridCssProps,
+    PositionsCssProps,
+    SizingCssProps,
+    DisplayCssProps,
+    ColorsCssProps {}
+
+type PartialSpinnerLoaderCSSProps = Partial<SpinnerLoaderCSSProps>;
+
+interface SpinnerLoaderProps extends IComponent, PartialSpinnerLoaderCSSProps {}
 
 export type { SpinnerLoaderProps };

@@ -8,11 +8,12 @@ import { TData } from '../tdata';
 import { TRow } from '../trow';
 
 import { TFootComponentProps } from '../../types';
-import { BaseTFoot } from './BaseTFoot.styles';
+import { BaseTFoot } from './BaseTFoot.styles.tsx';
 
 const TFoot = <T extends object>({ iStyle, ...rest }: TFootComponentProps<T>) => {
   const tableState = useImpulseTable();
   const { getFooterGroups } = tableState;
+  const { cssProps, componentProps } = extractCssProps(rest);
   const { tfootStyle, trowStyle, tdataStyle } = useComponentStyle(tfootComponentMap, tableState, undefined, iStyle);
 
   const shouldRenderFooter = useMemo(
@@ -27,7 +28,7 @@ const TFoot = <T extends object>({ iStyle, ...rest }: TFootComponentProps<T>) =>
   return (
     <Fragment>
       {shouldRenderFooter && (
-        <BaseTFoot $iStyle={tfootStyle} $cssProps={extractCssProps(rest)} {...rest}>
+        <BaseTFoot $iStyle={tfootStyle} $cssProps={cssProps} {...componentProps}>
           {getFooterGroups().map((footerGroup) => (
             <TRow iStyle={trowStyle} key={footerGroup.id}>
               {footerGroup.headers.map((footer) => (

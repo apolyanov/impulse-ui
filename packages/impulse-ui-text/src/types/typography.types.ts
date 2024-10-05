@@ -14,15 +14,20 @@ import {
 } from '@impulse-ui/core';
 
 type TypographyHTMLProps = PropsWithoutRef<JSX.IntrinsicElements['p']>;
-type TypographyProps = IComponent &
-  Partial<SpacingCssProps> &
-  Partial<SpacingAliasCssProps> &
-  Partial<BordersCssProps> &
-  Partial<FlexboxCssProps> &
-  Partial<GridCssProps> &
-  Partial<PositionsCssProps> &
-  Partial<SizingCssProps> &
-  Partial<DisplayCssProps> &
-  Partial<TypographyCssProps>;
+
+interface TypographyCSSProps
+  extends SpacingCssProps,
+    SpacingAliasCssProps,
+    BordersCssProps,
+    FlexboxCssProps,
+    GridCssProps,
+    PositionsCssProps,
+    SizingCssProps,
+    DisplayCssProps,
+    TypographyCssProps {}
+
+type PartialTypographyCSSProps = Partial<TypographyCSSProps>;
+
+interface TypographyProps extends IComponent, PartialTypographyCSSProps {}
 
 export type { TypographyHTMLProps, TypographyProps };

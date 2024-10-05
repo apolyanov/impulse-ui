@@ -12,9 +12,10 @@ import { TData } from '../tdata';
 import { TRow } from '../trow';
 
 import { TBodyComponentProps } from '../../types';
-import { BaseTBody } from './BaseTBody.styles';
+import { BaseTBody } from './BaseTBody.styles.tsx';
 
 const TBody = <T extends object>({ iStyle, ...rest }: TBodyComponentProps<T>) => {
+  const { cssProps, componentProps } = extractCssProps(rest);
   const tableState = useImpulseTable();
   const {
     tbodyStyle,
@@ -30,7 +31,7 @@ const TBody = <T extends object>({ iStyle, ...rest }: TBodyComponentProps<T>) =>
 
   if (tableState.showNoData()) {
     return (
-      <BaseTBody $iStyle={noContentTbodyStyle} $cssProps={extractCssProps(rest)} {...rest}>
+      <BaseTBody $iStyle={noContentTbodyStyle} $cssProps={cssProps} {...componentProps}>
         {tableState.loading && <Spinner as='tr' iStyle={loaderSpinnerStyle} />}
         {!tableState.loading && (
           <TRow iStyle={noContentTrowStyle}>
@@ -45,7 +46,7 @@ const TBody = <T extends object>({ iStyle, ...rest }: TBodyComponentProps<T>) =>
   }
 
   return (
-    <BaseTBody $iStyle={tbodyStyle} $cssProps={extractCssProps(rest)} {...rest}>
+    <BaseTBody $iStyle={tbodyStyle} $cssProps={cssProps} {...componentProps}>
       {tableState.loading && <Spinner as='tr' iStyle={loaderSpinnerStyle} />}
       {tableState.getRowModel().rows.map((row) => (
         <TRow
