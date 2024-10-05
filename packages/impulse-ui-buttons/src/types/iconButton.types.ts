@@ -5,7 +5,7 @@ import { IOStyle } from '@impulse-ui/core';
 import { ButtonRestProps } from './button.types';
 
 interface IconButtonProps extends IconButtonRestProps {
-  iStyle?: Partial<IconButtonStyle<any>>;
+  iStyle?: Partial<IconButtonStyle>;
 }
 
 interface IconButtonRestProps extends ButtonRestProps {
@@ -13,7 +13,7 @@ interface IconButtonRestProps extends ButtonRestProps {
   loading?: boolean;
 }
 
-interface IconButtonStyle<T = {}> {
+interface IconButtonStyle<T = any> {
   buttonStyle: IOStyle<IconButtonRestProps & T>;
   iconStyle: IOStyle<IconButtonRestProps & T>;
   loaderStyle: IOStyle<IconButtonRestProps & T>;

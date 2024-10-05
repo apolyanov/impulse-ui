@@ -15,17 +15,19 @@ import { ButtonHTMLProps } from './button.types';
 interface TextButtonProps extends TextButtonRestProps {
   iStyle?: Partial<TextButtonStyle>;
 }
+interface TextButtonCSSProps
+  extends SpacingCssProps,
+    SpacingAliasCssProps,
+    BordersCssProps,
+    FlexboxCssProps,
+    GridCssProps,
+    PositionsCssProps,
+    SizingCssProps,
+    DisplayCssProps {}
 
-interface TextButtonRestProps
-  extends ButtonHTMLProps,
-    Partial<SpacingCssProps>,
-    Partial<SpacingAliasCssProps>,
-    Partial<BordersCssProps>,
-    Partial<FlexboxCssProps>,
-    Partial<GridCssProps>,
-    Partial<PositionsCssProps>,
-    Partial<SizingCssProps>,
-    Partial<DisplayCssProps> {
+type PartialTextButtonCSSProps = Partial<TextButtonCSSProps>;
+
+interface TextButtonRestProps extends ButtonHTMLProps, PartialTextButtonCSSProps {
   loading?: boolean;
 }
 

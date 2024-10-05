@@ -46,6 +46,7 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
       ...inputProps
     } = rest;
 
+    const { cssProps, componentProps } = extractCssProps(inputProps);
     const { mainContainerStyle, inputContainerStyle, inputStyle, iconStyle, fieldMessageStyle, clearIconStyle } =
       useComponentStyle(textInputComponentMap, rest, textInputStyle, iStyle);
 
@@ -103,9 +104,9 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
           {icon && <Icon data-disabled={inputProps.disabled} iStyle={iconStyle} icon={icon} />}
           <BaseTextInput
             ref={innerRef}
-            {...inputProps}
+            {...componentProps}
             $iStyle={inputStyle}
-            $cssProps={extractCssProps(inputProps)}
+            $cssProps={cssProps}
             name={name}
             value={value ?? innerValue}
             onChange={handleInput}

@@ -1,5 +1,6 @@
 import {
   BordersCssProps,
+  ColorsCssProps,
   DisplayCssProps,
   FlexboxCssProps,
   GridCssProps,
@@ -8,16 +9,24 @@ import {
   SizingCssProps,
   SpacingAliasCssProps,
   SpacingCssProps,
+  TypographyCssProps,
 } from '@impulse-ui/core';
+import { ContainerHTMLProps } from './container.types.ts';
 
-type DividerProps = IComponent &
-  Partial<SpacingCssProps> &
-  Partial<SpacingAliasCssProps> &
-  Partial<BordersCssProps> &
-  Partial<FlexboxCssProps> &
-  Partial<GridCssProps> &
-  Partial<PositionsCssProps> &
-  Partial<SizingCssProps> &
-  Partial<DisplayCssProps>;
+interface DividerCSSProps
+  extends SpacingCssProps,
+    SpacingAliasCssProps,
+    BordersCssProps,
+    FlexboxCssProps,
+    GridCssProps,
+    PositionsCssProps,
+    SizingCssProps,
+    DisplayCssProps,
+    ColorsCssProps,
+    TypographyCssProps {}
+
+type PartialDividerCSSProps = Partial<DividerCSSProps>;
+
+interface DividerProps extends IComponent, ContainerHTMLProps, PartialDividerCSSProps {}
 
 export type { DividerProps };

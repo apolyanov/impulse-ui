@@ -2,9 +2,9 @@ import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { IconButtonStyle } from '@impulse-ui/buttons';
 import { IOStyle } from '@impulse-ui/core';
 import { FieldMessageStyle } from '@impulse-ui/text';
-import { ChangeEvent, JSX, RefObject } from 'react';
+import { ChangeEvent, ComponentPropsWithoutRef, RefObject } from 'react';
 
-type InputHTMLProps = JSX.IntrinsicElements['input'];
+type InputHTMLProps = ComponentPropsWithoutRef<'input'>;
 
 interface TextInputProps<T = any> extends TextInputCompositeProps {
   iStyle?: Partial<TextInputStyle<T>>;

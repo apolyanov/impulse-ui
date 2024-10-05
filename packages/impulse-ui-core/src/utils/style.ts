@@ -1,6 +1,6 @@
 import { SimplePseudos } from 'csstype';
 import merge from 'lodash-es/merge';
-import { css } from 'styled-components';
+import { css, StyledObject } from 'styled-components';
 import {
   AnimationHelper,
   ColorsKeysValues,
@@ -18,15 +18,16 @@ import {
 
 import { LIGHT, cssPropsMap } from '../utils';
 
-const extractCssProps = (props: any) => {
-  const cssProps: any = {};
+const extractCssProps = <T>(props: T) => {
+  const cssProps: StyledObject = {};
+  const componentProps: Omit<T, keyof typeof cssPropsMap> = { ...props };
 
-  if (props) {
-    Object.entries(props).forEach(([key, value]) => {
+  if (componentProps) {
+    Object.entries(componentProps).forEach(([key, value]) => {
       const newCssPropData = cssPropsMap[key as keyof typeof cssPropsMap]?.(value, key);
 
       if (newCssPropData) {
-        delete props[key];
+        delete componentProps[key];
 
         if (Array.isArray(newCssPropData)) {
           newCssPropData.forEach(([key, value]: [string, string | number]) => (cssProps[key] = value));
@@ -39,7 +40,7 @@ const extractCssProps = (props: any) => {
     });
   }
 
-  return cssProps;
+  return { cssProps, componentProps };
 };
 
 const createBaseComponentStyle: CreateBaseComponentStyle = ({
@@ -50,11 +51,12 @@ const createBaseComponentStyle: CreateBaseComponentStyle = ({
   rest,
 }) => {
   const cssProps = rest?.$cssProps;
-  const { iColorTheme, iCss } = mergeThemes({
+  const themeMode = getThemeMode(mode);
+
+  const { iColorTheme, iCss } = mergeThemes<typeof rest>({
     defaultTheme: mergeThemes({ defaultTheme: baseTheme, overridingTheme: globalTheme }),
     overridingTheme: overridingTheme,
   });
-  const themeMode = getThemeMode(mode);
 
   return css({
     ...iCss({
@@ -63,10 +65,6 @@ const createBaseComponentStyle: CreateBaseComponentStyle = ({
     }),
     ...cssProps,
   });
-};
-
-const shouldRenderCssProp = <T>(shouldRender: boolean | undefined, cssProp: T): T | undefined => {
-  if (shouldRender) return cssProp;
 };
 
 const getThemeColor =
@@ -190,5 +188,4 @@ export {
   padding,
   paddingX,
   paddingY,
-  shouldRenderCssProp,
 };

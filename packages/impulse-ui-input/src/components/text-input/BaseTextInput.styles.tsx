@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { input } from '../../styles';
 
-const BaseTextInput = styled.input<BaseIComponent>(({ theme: { mode, themes }, $iStyle, ...rest }) =>
+const BaseTextInput = styled.input<BaseIComponent<object>>(({ theme: { mode, themes }, $iStyle, ...rest }) =>
   createBaseComponentStyle({
     baseTheme: input,
     globalTheme: themes?.input,
