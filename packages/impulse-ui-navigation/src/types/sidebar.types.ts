@@ -1,5 +1,5 @@
 import { IOStyle } from '@impulse-ui/core';
-import { ContainerCSSProps, ContainerHTMLProps } from '@impulse-ui/layout';
+import { ContainerRestProps } from '@impulse-ui/layout';
 import { SidebarItemProps, SidebarItemStyle } from './sidebarItem.types';
 import { SidebarSectionDividerProps } from './sidebarSectionDivider.types.ts';
 
@@ -7,7 +7,7 @@ interface SidebarProps extends SidebarRestProps {
   iStyle?: Partial<SidebarStyle>;
 }
 
-interface SidebarRestProps extends ContainerHTMLProps, ContainerCSSProps {
+interface SidebarRestProps extends ContainerRestProps {
   items?: SidebarItems;
   collapsed?: boolean;
   canCollapse?: boolean;

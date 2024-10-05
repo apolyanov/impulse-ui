@@ -5,7 +5,9 @@ import { DividerProps } from '../../types';
 import { BaseDivider } from '../divider';
 
 const Divider: FunctionComponent<DividerProps> = ({ iStyle, ...rest }) => {
-  return <BaseDivider $iStyle={iStyle} $cssProps={extractCssProps(rest)} {...rest} />;
+  const { cssProps, componentProps } = extractCssProps(rest);
+
+  return <BaseDivider $iStyle={iStyle} $cssProps={cssProps} {...componentProps} />;
 };
 
 export { Divider };

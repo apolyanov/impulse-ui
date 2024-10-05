@@ -1,10 +1,10 @@
 import { IOStyle } from '@impulse-ui/core';
-import { ContainerHTMLProps, ContainerProps } from '@impulse-ui/layout';
+import { ContainerRestProps } from '@impulse-ui/layout';
 
 interface SidebarSectionDividerProps extends SidebarSectionDividerRestProps {
   iStyle?: IOStyle<SidebarSectionDividerRestProps>;
 }
 
-interface SidebarSectionDividerRestProps extends ContainerProps, ContainerHTMLProps {}
+interface SidebarSectionDividerRestProps extends ContainerRestProps {}
 
 export type { SidebarSectionDividerProps };

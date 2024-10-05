@@ -7,7 +7,7 @@ interface AutoCompleteProps<T> extends AutoCompleteRestProps<T> {
   iStyle?: Partial<AutoCompleteStyle<T>>;
 }
 
-interface AutoCompleteRestProps<T> extends Omit<ContainerProps, keyof IComponent>, UseProcessedoptionsProps<T> {
+interface AutoCompleteRestProps<T> extends Omit<ContainerProps, keyof IComponent<object>>, UseProcessedoptionsProps<T> {
   selectOnBlur?: boolean;
   loading?: boolean;
   disableAutoFiltering?: boolean;

@@ -49,4 +49,5 @@ export type {
   GetFieldMessageIcon,
   UseFieldMessageStyleFn,
   UseFieldMessageStyleFnProps,
+  FieldMessageRestProps,
 };

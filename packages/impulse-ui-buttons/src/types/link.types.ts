@@ -1,4 +1,4 @@
-import { JSX } from 'react';
+import { ComponentPropsWithRef } from 'react';
 
 import {
   BordersCssProps,
@@ -12,17 +12,21 @@ import {
   SpacingCssProps,
 } from '@impulse-ui/core';
 
-type LinkHTMLProps = JSX.IntrinsicElements['a'];
+type LinkHTMLProps = ComponentPropsWithRef<'a'>;
 
-type LinkProps = IComponent &
-  LinkHTMLProps &
-  Partial<SpacingCssProps> &
-  Partial<SpacingAliasCssProps> &
-  Partial<BordersCssProps> &
-  Partial<FlexboxCssProps> &
-  Partial<GridCssProps> &
-  Partial<PositionsCssProps> &
-  Partial<SizingCssProps> &
-  Partial<DisplayCssProps>;
+interface LinkCSSProps
+  extends LinkHTMLProps,
+    SpacingCssProps,
+    SpacingAliasCssProps,
+    BordersCssProps,
+    FlexboxCssProps,
+    GridCssProps,
+    PositionsCssProps,
+    SizingCssProps,
+    DisplayCssProps {}
+
+type PartialLinkCSSProps = Partial<LinkCSSProps>;
+
+type LinkProps = IComponent & PartialLinkCSSProps;
 
 export type { LinkHTMLProps, LinkProps };

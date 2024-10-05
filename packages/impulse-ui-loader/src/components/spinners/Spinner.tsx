@@ -4,8 +4,10 @@ import { SpinnerLoaderProps } from '../../types';
 
 import BaseSpinner from './BaseSpinner.styles';
 
-const Spinner = polymorphicForwardRef<'div', PropsWithChildren<SpinnerLoaderProps>>(({ iStyle, ...rest }, ref) => (
-  <BaseSpinner data-component='spinner' ref={ref} $iStyle={iStyle} $cssProps={extractCssProps(rest)} {...rest} />
-));
+const Spinner = polymorphicForwardRef<'div', PropsWithChildren<SpinnerLoaderProps>>(({ iStyle, ...rest }, ref) => {
+  const { cssProps, componentProps } = extractCssProps(rest);
+
+  return <BaseSpinner data-component='spinner' ref={ref} $iStyle={iStyle} $cssProps={cssProps} {...componentProps} />;
+});
 
 export { Spinner };

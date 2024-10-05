@@ -2,10 +2,12 @@ import { extractCssProps } from '@impulse-ui/core';
 import { FunctionComponent } from 'react';
 
 import { THeaderProps } from '../../types';
-import { BaseTHeader } from './BaseTHeader.styles';
+import { BaseTHeader } from './BaseTHeader.styles.tsx';
 
 const THeader: FunctionComponent<THeaderProps> = ({ iStyle, ...rest }) => {
-  return <BaseTHeader $iStyle={iStyle} $cssProps={extractCssProps(rest)} {...rest} />;
+  const { cssProps, componentProps } = extractCssProps(rest);
+
+  return <BaseTHeader $iStyle={iStyle} $cssProps={cssProps} {...componentProps} />;
 };
 
 export { THeader };

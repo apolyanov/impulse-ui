@@ -1,9 +1,10 @@
-import { JSX, PropsWithoutRef } from 'react';
+import { ComponentPropsWithoutRef } from 'react';
 
 import {
   BordersCssProps,
   ColorsCssProps,
   DisplayCssProps,
+  FastOmit,
   FlexboxCssProps,
   GridCssProps,
   IComponent,
@@ -14,17 +15,24 @@ import {
   TypographyCssProps,
 } from '@impulse-ui/core';
 
-type ContainerHTMLProps = Omit<PropsWithoutRef<JSX.IntrinsicElements['div']>, keyof ColorsCssProps>;
-type ContainerCSSProps = Partial<SpacingCssProps> &
-  Partial<SpacingAliasCssProps> &
-  Partial<BordersCssProps> &
-  Partial<FlexboxCssProps> &
-  Partial<GridCssProps> &
-  Partial<PositionsCssProps> &
-  Partial<SizingCssProps> &
-  Partial<DisplayCssProps> &
-  Partial<ColorsCssProps> &
-  Partial<TypographyCssProps>;
-type ContainerProps = IComponent & ContainerCSSProps;
+type ContainerHTMLProps = FastOmit<ComponentPropsWithoutRef<'div'>, 'color'>;
 
-export type { ContainerHTMLProps, ContainerProps, ContainerCSSProps };
+interface ContainerCSSProps
+  extends SpacingCssProps,
+    SpacingAliasCssProps,
+    BordersCssProps,
+    FlexboxCssProps,
+    GridCssProps,
+    PositionsCssProps,
+    SizingCssProps,
+    DisplayCssProps,
+    ColorsCssProps,
+    TypographyCssProps {}
+
+type PartialContainerCSSProps = Partial<ContainerCSSProps>;
+
+interface ContainerRestProps extends ContainerHTMLProps, PartialContainerCSSProps {}
+
+type ContainerProps = IComponent & ContainerRestProps;
+
+export type { ContainerHTMLProps, ContainerProps, ContainerCSSProps, ContainerRestProps };

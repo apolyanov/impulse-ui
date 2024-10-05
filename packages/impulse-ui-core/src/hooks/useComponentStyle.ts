@@ -26,8 +26,8 @@ const constructComplexTheme = <T extends object, E extends object>(
 
     if (!themeComponent.subKeys) {
       newObject[componentKey] = mergePartialThemes({
-        defaultTheme: defaultTheme?.[componentKey as keyof T] as IOStyle,
-        overridingTheme: overridingTheme?.[componentKey as keyof T] as IOStyle,
+        defaultTheme: defaultTheme?.[componentKey as keyof T] as IOStyle<E>,
+        overridingTheme: overridingTheme?.[componentKey as keyof T] as IOStyle<E>,
         props,
       });
     }

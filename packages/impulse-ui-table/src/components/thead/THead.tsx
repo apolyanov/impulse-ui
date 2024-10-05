@@ -10,11 +10,12 @@ import { THeader } from '../theader';
 import { TRow } from '../trow';
 
 import { THeadComponentProps } from '../../types';
-import { BaseTHead } from './BaseTHead.styles';
+import { BaseTHead } from './BaseTHead.styles.tsx';
 
 const THead = <T extends object>({ iStyle, ...rest }: THeadComponentProps<T>) => {
   const tableState = useImpulseTable();
   const { getHeaderGroups, loading } = tableState;
+  const { cssProps, componentProps } = extractCssProps(rest);
 
   const { theadStyle, theaderStyle, trowStyle, theaderTypographyStyle, theaderSortButtonStyle } = useComponentStyle(
     theadComponentMap,
@@ -36,7 +37,7 @@ const THead = <T extends object>({ iStyle, ...rest }: THeadComponentProps<T>) =>
   };
 
   return (
-    <BaseTHead $iStyle={theadStyle} $cssProps={extractCssProps(rest)} {...rest}>
+    <BaseTHead $iStyle={theadStyle} $cssProps={cssProps} {...componentProps}>
       {getHeaderGroups().map((headerGroup) => (
         <TRow iStyle={trowStyle} key={headerGroup.id}>
           {headerGroup.headers.map((header, index, array) => (
