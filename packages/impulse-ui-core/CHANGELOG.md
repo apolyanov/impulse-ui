@@ -1,5 +1,11 @@
 # Change Log
 
+## 3.2.1-next.1
+
+### Patch Changes
+
+- [`e75287c`](https://github.com/apolyanov/impulse-ui/commit/e75287c3a197a03ba92a4a98052bcd0eac62761e) Thanks [@apolyanov](https://github.com/apolyanov)! - feat: Types improvement across packages
+
 ## 3.2.1-next.0
 
 ### Patch Changes
