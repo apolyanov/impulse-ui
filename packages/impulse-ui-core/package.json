@@ -1,6 +1,6 @@
 {
   "name": "@impulse-ui/core",
-  "version": "3.2.1-next.1",
+  "version": "3.2.1",
   "license": "MIT",
   "type": "module",
   "author": "Alexander Polyanov",
