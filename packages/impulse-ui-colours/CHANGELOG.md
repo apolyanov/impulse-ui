@@ -1,5 +1,15 @@
 # Change Log
 
+## 3.2.1
+
+### Patch Changes
+
+- [`e75287c`](https://github.com/apolyanov/impulse-ui/commit/e75287c3a197a03ba92a4a98052bcd0eac62761e) Thanks [@apolyanov](https://github.com/apolyanov)! - feat: Types improvement across packages
+
+- [#151](https://github.com/apolyanov/impulse-ui/pull/151) [`ce6dc41`](https://github.com/apolyanov/impulse-ui/commit/ce6dc41f57abf2d91a4c9423c84d07bda06a7029) Thanks [@apolyanov](https://github.com/apolyanov)! - feat: Polymorphic properties added to button components
+
+- [`bd71e3a`](https://github.com/apolyanov/impulse-ui/commit/bd71e3ae51d70f4732ffe3438107ee47badda86c) Thanks [@apolyanov](https://github.com/apolyanov)! - 3.2.1 release
+
 ## 3.2.1-next.1
 
 ### Patch Changes
