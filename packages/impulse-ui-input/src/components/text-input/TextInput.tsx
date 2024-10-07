@@ -105,7 +105,8 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
           <BaseTextInput
             ref={innerRef}
             {...componentProps}
-            $iStyle={inputStyle}
+            $iCss={inputStyle.iCss}
+            $iTheme={inputStyle.iTheme}
             $cssProps={cssProps}
             name={name}
             value={value ?? innerValue}

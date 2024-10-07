@@ -20,7 +20,7 @@ const IconButton = polymorphicForwardRef<'button', PropsWithChildren<IconButtonP
   );
 
   return (
-    <BaseButton ref={ref} $iStyle={buttonStyle} $cssProps={cssProps} {...buttonProps}>
+    <BaseButton ref={ref} $iCss={buttonStyle?.iCss} $iTheme={buttonStyle?.iTheme} $cssProps={cssProps} {...buttonProps}>
       {loading ? (
         <Spinner data-disabled={componentProps.disabled} iStyle={loaderStyle} />
       ) : (

@@ -15,7 +15,13 @@ const TextButton = polymorphicForwardRef<'button', PropsWithChildren<TextButtonP
   const { buttonStyle, loaderStyle } = useComponentStyle(textButtonComponentMap, rest, textButton, iStyle);
 
   return (
-    <BaseTextButton ref={ref} $iStyle={buttonStyle} $cssProps={cssProps} {...buttonProps}>
+    <BaseTextButton
+      ref={ref}
+      $iCss={buttonStyle?.iCss}
+      $iTheme={buttonStyle?.iTheme}
+      $cssProps={cssProps}
+      {...buttonProps}
+    >
       {loading ? <Spinner data-disabled={componentProps.disabled} iStyle={loaderStyle} /> : children}
     </BaseTextButton>
   );

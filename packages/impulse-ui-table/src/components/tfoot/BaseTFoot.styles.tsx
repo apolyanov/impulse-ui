@@ -3,11 +3,11 @@ import styled from 'styled-components';
 
 import { tfoot } from '../../styles';
 
-const BaseTFoot = styled.tfoot<BaseIComponent>(({ theme: { themes, mode }, $iStyle, ...rest }) =>
+const BaseTFoot = styled.tfoot<BaseIComponent>(({ theme: { themes, mode }, $iCss, $iTheme, ...rest }) =>
   createBaseComponentStyle({
     baseTheme: tfoot,
     globalTheme: themes?.tfoot,
-    overridingTheme: $iStyle,
+    overridingTheme: { iCss: $iCss, iTheme: $iTheme },
     mode,
     rest,
   }),

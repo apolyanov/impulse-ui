@@ -3,11 +3,11 @@ import styled from 'styled-components';
 
 import { trow } from '../../styles';
 
-const BaseTRow = styled.tr<BaseIComponent>(({ theme: { mode, themes }, $iStyle, ...rest }) =>
+const BaseTRow = styled.tr<BaseIComponent>(({ theme: { mode, themes }, $iCss, $iTheme, ...rest }) =>
   createBaseComponentStyle({
     baseTheme: trow,
     globalTheme: themes?.trow,
-    overridingTheme: $iStyle,
+    overridingTheme: { iCss: $iCss, iTheme: $iTheme },
     mode,
     rest,
   }),

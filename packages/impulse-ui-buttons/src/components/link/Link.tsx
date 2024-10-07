@@ -7,7 +7,7 @@ import { BaseLink } from './BaseLink.styles';
 const Link = polymorphicForwardRef<'a', PropsWithChildren<LinkProps>>(({ iStyle, ...rest }, ref) => {
   const { cssProps, componentProps } = extractCssProps(rest);
 
-  return <BaseLink ref={ref} $iStyle={iStyle} $cssProps={cssProps} {...componentProps} />;
+  return <BaseLink ref={ref} $iCss={iStyle?.iCss} $iTheme={iStyle?.iTheme} $cssProps={cssProps} {...componentProps} />;
 });
 
 export { Link };
