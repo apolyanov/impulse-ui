@@ -3,7 +3,7 @@ import { IStyle, paddingX, paddingY } from '@impulse-ui/core';
 import { TFootHTMLProps } from '../types';
 
 const tfoot: IStyle<TFootHTMLProps> = {
-  iColorTheme: {
+  iTheme: {
     light: {
       backgroundColor: neutral[10],
       borderColor: 'transparent',

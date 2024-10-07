@@ -3,7 +3,7 @@ import { IStyle } from '@impulse-ui/core';
 import { ContainerHTMLProps } from '../types';
 
 const divider: IStyle<ContainerHTMLProps> = {
-  iColorTheme: {
+  iTheme: {
     light: {
       backgroundColor: 'transparent',
       borderColor: neutral[100],
@@ -15,12 +15,12 @@ const divider: IStyle<ContainerHTMLProps> = {
       color: 'transparent',
     },
   },
-  iCss: ({ iColorTheme }) => ({
-    backgroundColor: iColorTheme.backgroundColor,
-    color: iColorTheme.color,
+  iCss: ({ iTheme }) => ({
+    backgroundColor: iTheme.backgroundColor,
+    color: iTheme.color,
     borderRadius: 8,
     width: '100%',
-    border: `1px solid ${iColorTheme.borderColor}`,
+    border: `1px solid ${iTheme.borderColor}`,
     padding: '0',
     margin: '4px 0',
   }),

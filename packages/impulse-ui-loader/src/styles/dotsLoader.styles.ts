@@ -6,7 +6,7 @@ import { keyframes } from 'styled-components';
 const spinnerAnimation = keyframes`100% {transform: rotate(1turn)}`;
 
 const dotsLoader: IStyle<ContainerHTMLProps> = {
-  iColorTheme: {
+  iTheme: {
     light: {
       backgroundColor: neutral[300],
       color: neutral[100],

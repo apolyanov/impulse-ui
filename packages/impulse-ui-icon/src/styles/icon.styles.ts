@@ -3,7 +3,7 @@ import { IStyle } from '@impulse-ui/core';
 import { IconHTMLProps } from '../types';
 
 const icon: IStyle<IconHTMLProps> = {
-  iColorTheme: {
+  iTheme: {
     light: {
       color: neutral[100],
     },

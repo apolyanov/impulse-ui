@@ -3,7 +3,7 @@ import { SidebarItemRestProps, SidebarItemStyle } from '../types';
 
 const defaultSidebarItemStyle: Partial<SidebarItemStyle<SidebarItemRestProps>> = {
   buttonStyle: {
-    iColorTheme: {
+    iTheme: {
       light: { backgroundColor: neutral[10], color: neutral[200], ':hover': { backgroundColor: neutral[40] } },
     },
     iCss: ({ getThemeColor, active }) => ({

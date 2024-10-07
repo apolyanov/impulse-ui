@@ -12,7 +12,7 @@ const defaultAutoCompleteStyle: Partial<AutoCompleteStyle<any>> = {
     },
   },
   autoCompleteItemsContainerStyle: {
-    iColorTheme: {
+    iTheme: {
       light: {
         backgroundColor: neutral[10],
       },
@@ -32,7 +32,7 @@ const defaultAutoCompleteStyle: Partial<AutoCompleteStyle<any>> = {
     }),
   },
   loadingSpinnerStyle: {
-    iColorTheme: {
+    iTheme: {
       light: {
         borderColor: volcano[60],
       },

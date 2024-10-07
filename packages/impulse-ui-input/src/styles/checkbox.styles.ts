@@ -13,7 +13,7 @@ const checkboxStyle: Partial<CheckboxStyle> = {
   },
   iconButtonStyle: {
     buttonStyle: {
-      iColorTheme: { light: { backgroundColor: 'transparent', ':hover': { backgroundColor: 'transparent' } } },
+      iTheme: { light: { backgroundColor: 'transparent', ':hover': { backgroundColor: 'transparent' } } },
       iCss: {
         backgroundColor: 'unset',
         '&:disabled': {
@@ -29,7 +29,7 @@ const checkboxStyle: Partial<CheckboxStyle> = {
       },
     },
     iconStyle: {
-      iColorTheme: {
+      iTheme: {
         light: {
           iconPrimaryColor: volcano[60],
           iconSecondaryColor: volcano[10],

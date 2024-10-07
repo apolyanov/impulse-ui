@@ -26,7 +26,7 @@ const defaultContainerStyle: IOStyle = {
 
 const defaultTypographyStyle = (type: FieldMessageType): IOStyle => {
   return {
-    iColorTheme: {
+    iTheme: {
       light: { color: fieldMessageColor(type) },
       dark: { color: fieldMessageColor(type) },
     },
@@ -36,7 +36,7 @@ const defaultTypographyStyle = (type: FieldMessageType): IOStyle => {
 
 const defaultIconStyle = (type: FieldMessageType): IOStyle => {
   return {
-    iColorTheme: {
+    iTheme: {
       light: { color: fieldMessageColor(type) },
       dark: { color: fieldMessageColor(type) },
     },

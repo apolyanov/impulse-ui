@@ -3,7 +3,7 @@ import { IStyle } from '@impulse-ui/core';
 import { THeaderHTMLProps } from '../types';
 
 const theader: IStyle<THeaderHTMLProps> = {
-  iColorTheme: {
+  iTheme: {
     light: {
       backgroundColor: 'transparent',
       borderColor: 'transparent',

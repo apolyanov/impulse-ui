@@ -3,7 +3,7 @@ import { IStyle } from '@impulse-ui/core';
 import { LinkHTMLProps } from '../types';
 
 const link: IStyle<LinkHTMLProps> = {
-  iColorTheme: {
+  iTheme: {
     light: {
       backgroundColor: 'transparent',
       color: volcano[60],

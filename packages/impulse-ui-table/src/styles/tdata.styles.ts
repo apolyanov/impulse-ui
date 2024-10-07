@@ -3,7 +3,7 @@ import { IStyle } from '@impulse-ui/core';
 import { TDataHTMLProps } from '../types';
 
 const tdata: IStyle<TDataHTMLProps> = {
-  iColorTheme: {
+  iTheme: {
     light: {
       backgroundColor: 'transparent',
       borderColor: 'transparent',

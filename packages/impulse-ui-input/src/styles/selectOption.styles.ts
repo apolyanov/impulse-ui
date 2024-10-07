@@ -4,7 +4,7 @@ import { SelectOptionStyle } from '../types';
 
 const selectOption: Partial<SelectOptionStyle> = {
   mainContainerStyle: {
-    iColorTheme: { light: { backgroundColor: 'transparent' } },
+    iTheme: { light: { backgroundColor: 'transparent' } },
     iCss: ({ selected, highlighted }) => ({
       padding: '6px',
       height: '34px',

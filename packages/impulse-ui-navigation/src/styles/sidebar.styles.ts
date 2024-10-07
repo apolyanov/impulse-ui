@@ -3,7 +3,7 @@ import { SidebarStyle } from '../types';
 
 const defaultSidebarStyle: Partial<SidebarStyle> = {
   containerStyle: {
-    iColorTheme: {
+    iTheme: {
       light: {
         backgroundColor: neutral[10],
       },
