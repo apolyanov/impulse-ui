@@ -3,11 +3,11 @@ import styled from 'styled-components';
 
 import { typography } from '../../styles';
 
-const BaseTypography = styled.p<BaseIComponent<object>>(({ theme: { mode, themes }, $iStyle, ...rest }) =>
+const BaseTypography = styled.p<BaseIComponent<object>>(({ theme: { mode, themes }, $iCss, $iTheme, ...rest }) =>
   createBaseComponentStyle({
     baseTheme: typography,
     globalTheme: themes?.typography,
-    overridingTheme: $iStyle,
+    overridingTheme: { iCss: $iCss, iTheme: $iTheme },
     mode,
     rest,
   }),

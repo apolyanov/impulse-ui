@@ -7,7 +7,9 @@ import BaseTypography from './BaseTypography.styles';
 const Typography = polymorphicForwardRef<'p', PropsWithChildren<TypographyProps>>(({ iStyle, ...rest }, ref) => {
   const { cssProps, componentProps } = extractCssProps(rest);
 
-  return <BaseTypography ref={ref} $iStyle={iStyle} $cssProps={cssProps} {...componentProps} />;
+  return (
+    <BaseTypography ref={ref} $iCss={iStyle?.iCss} $iTheme={iStyle?.iTheme} $cssProps={cssProps} {...componentProps} />
+  );
 });
 
 export { Typography };

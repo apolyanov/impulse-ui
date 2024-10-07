@@ -6,7 +6,16 @@ import { BaseDots } from './BaseDots.styles.tsx';
 const Dots = polymorphicForwardRef<'div', PropsWithChildren<SpinnerLoaderProps>>(({ iStyle, ...rest }, ref) => {
   const { cssProps, componentProps } = extractCssProps(rest);
 
-  return <BaseDots data-component='dots' ref={ref} $iStyle={iStyle} $cssProps={cssProps} {...componentProps} />;
+  return (
+    <BaseDots
+      data-component='dots'
+      ref={ref}
+      $iCss={iStyle?.iCss}
+      $iTheme={iStyle?.iTheme}
+      $cssProps={cssProps}
+      {...componentProps}
+    />
+  );
 });
 
 export { Dots };

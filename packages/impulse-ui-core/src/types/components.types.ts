@@ -4,7 +4,8 @@ import { StyledObject } from 'styled-components';
 import { ColorsKeysValues, ComponentColors, DataAttribute } from '../types';
 
 type BaseIComponent<T = any> = {
-  $iStyle?: IOStyle<T>;
+  $iCss?: IOCss<T>;
+  $iTheme?: IColorTheme;
   $cssProps?: StyledObject;
 } & T;
 
