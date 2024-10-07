@@ -3,7 +3,7 @@ import { SelectStyle } from '../types';
 
 const select: Partial<SelectStyle<any>> = {
   mainContainerStyle: {
-    iColorTheme: {
+    iTheme: {
       light: {
         backgroundColor: neutral[10],
         borderColor: volcano[60],
@@ -30,7 +30,7 @@ const select: Partial<SelectStyle<any>> = {
   },
   clearButtonStyle: {
     buttonStyle: {
-      iColorTheme: {
+      iTheme: {
         light: {
           backgroundColor: neutral[10],
           ':focus': {
@@ -53,7 +53,7 @@ const select: Partial<SelectStyle<any>> = {
       }),
     },
     iconStyle: {
-      iColorTheme: {
+      iTheme: {
         light: {
           color: neutral[60],
         },
@@ -69,7 +69,7 @@ const select: Partial<SelectStyle<any>> = {
     },
   },
   selectPlaceholderStyle: {
-    iColorTheme: {
+    iTheme: {
       light: {
         color: neutral[80],
       },
@@ -85,7 +85,7 @@ const select: Partial<SelectStyle<any>> = {
     typographyStyle: { iCss: { textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap', lineHeight: 1.5 } },
   },
   dropdownIconStyle: {
-    iColorTheme: {
+    iTheme: {
       light: {
         color: neutral[60],
         backgroundColor: neutral[10],
@@ -102,7 +102,7 @@ const select: Partial<SelectStyle<any>> = {
     },
   },
   selectOptionsContainerStyle: {
-    iColorTheme: {
+    iTheme: {
       light: {
         backgroundColor: neutral[10],
       },
@@ -122,7 +122,7 @@ const select: Partial<SelectStyle<any>> = {
     }),
   },
   loadingSpinnerStyle: {
-    iColorTheme: {
+    iTheme: {
       light: {
         borderRightColor: volcano[60],
       },

@@ -3,7 +3,7 @@ import { IStyle } from '@impulse-ui/core';
 import { TRowHTMLProps } from '../types';
 
 const trow: IStyle<TRowHTMLProps> = {
-  iColorTheme: {
+  iTheme: {
     light: {
       backgroundColor: 'transparent',
       borderColor: 'transparent',

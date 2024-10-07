@@ -12,7 +12,7 @@ const textInputStyle: Partial<TextInputStyle<{}>> = {
     },
   },
   inputContainerStyle: {
-    iColorTheme: {
+    iTheme: {
       light: {
         backgroundColor: neutral[10],
         borderColor: volcano[60],
@@ -41,7 +41,7 @@ const textInputStyle: Partial<TextInputStyle<{}>> = {
     }),
   },
   iconStyle: {
-    iColorTheme: {
+    iTheme: {
       light: {
         color: neutral[80],
         ':disabled': {
@@ -60,7 +60,7 @@ const textInputStyle: Partial<TextInputStyle<{}>> = {
   },
   clearIconStyle: {
     buttonStyle: {
-      iColorTheme: {
+      iTheme: {
         light: {
           backgroundColor: neutral[10],
           ':focus': {
@@ -85,7 +85,7 @@ const textInputStyle: Partial<TextInputStyle<{}>> = {
       }),
     },
     iconStyle: {
-      iColorTheme: {
+      iTheme: {
         light: {
           color: neutral[60],
         },
@@ -95,7 +95,7 @@ const textInputStyle: Partial<TextInputStyle<{}>> = {
 };
 
 const input: IStyle<TextInputCompositeProps> = {
-  iColorTheme: {
+  iTheme: {
     light: {
       backgroundColor: 'transparent',
       borderColor: 'transparent',

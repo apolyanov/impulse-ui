@@ -53,15 +53,15 @@ const createBaseComponentStyle: CreateBaseComponentStyle = ({
   const cssProps = rest?.$cssProps;
   const themeMode = getThemeMode(mode);
 
-  const { iColorTheme, iCss } = mergeThemes<typeof rest>({
+  const { iTheme, iCss } = mergeThemes<typeof rest>({
     defaultTheme: mergeThemes({ defaultTheme: baseTheme, overridingTheme: globalTheme }),
     overridingTheme: overridingTheme,
   });
 
   return css({
     ...iCss({
-      iColorTheme: iColorTheme[themeMode],
-      getThemeColor: getThemeColor(iColorTheme[themeMode]),
+      iTheme: iTheme[themeMode],
+      getThemeColor: getThemeColor(iTheme[themeMode]),
     }),
     ...cssProps,
   });
@@ -74,9 +74,9 @@ const getThemeColor =
     return componentColors?.[colorKey];
   };
 
-const constructICss = <T>(iColorTheme: ComponentColors, props?: T | any, iCss?: IOCss<T>) => {
+const constructICss = <T>(iTheme: ComponentColors, props?: T | any, iCss?: IOCss<T>) => {
   if (typeof iCss === 'function') {
-    return iCss({ iColorTheme, getThemeColor: getThemeColor(iColorTheme), ...props });
+    return iCss({ iTheme, getThemeColor: getThemeColor(iTheme), ...props });
   }
 
   return { ...iCss };
@@ -85,14 +85,14 @@ const constructICss = <T>(iColorTheme: ComponentColors, props?: T | any, iCss?: 
 const mergeThemes = <T>({ defaultTheme, overridingTheme, props }: MergeThemesFnArgs<T>): IStyle => {
   if (overridingTheme) {
     return {
-      iCss: ({ iColorTheme, ...rest }) =>
+      iCss: ({ iTheme, ...rest }) =>
         merge(
-          defaultTheme.iCss({ iColorTheme, getThemeColor: getThemeColor(iColorTheme), ...rest, ...props }),
-          constructICss(iColorTheme, props, overridingTheme?.iCss),
+          defaultTheme.iCss({ iTheme, getThemeColor: getThemeColor(iTheme), ...rest, ...props }),
+          constructICss(iTheme, props, overridingTheme?.iCss),
         ),
-      iColorTheme: {
-        light: { ...defaultTheme.iColorTheme.light, ...overridingTheme.iColorTheme?.light },
-        dark: { ...defaultTheme.iColorTheme.dark, ...overridingTheme.iColorTheme?.dark },
+      iTheme: {
+        light: { ...defaultTheme.iTheme.light, ...overridingTheme.iTheme?.light },
+        dark: { ...defaultTheme.iTheme.dark, ...overridingTheme.iTheme?.dark },
       },
     };
   }
@@ -109,7 +109,7 @@ const mergePartialThemes = <T>({
     if (props) {
       return {
         ...overridingTheme,
-        iCss: ({ iColorTheme }) => constructICss(iColorTheme, props, overridingTheme?.iCss),
+        iCss: ({ iTheme }) => constructICss(iTheme, props, overridingTheme?.iCss),
       };
     }
 
@@ -120,7 +120,7 @@ const mergePartialThemes = <T>({
     if (props) {
       return {
         ...defaultTheme,
-        iCss: ({ iColorTheme }) => constructICss(iColorTheme, props, defaultTheme?.iCss),
+        iCss: ({ iTheme }) => constructICss(iTheme, props, defaultTheme?.iCss),
       };
     }
 
@@ -129,13 +129,13 @@ const mergePartialThemes = <T>({
 
   if (overridingTheme && defaultTheme) {
     return {
-      iCss: ({ iColorTheme }) => {
+      iCss: ({ iTheme }) => {
         return merge(
-          constructICss(iColorTheme, props, defaultTheme?.iCss),
-          constructICss(iColorTheme, props, overridingTheme?.iCss),
+          constructICss(iTheme, props, defaultTheme?.iCss),
+          constructICss(iTheme, props, overridingTheme?.iCss),
         );
       },
-      iColorTheme: merge(defaultTheme.iColorTheme, overridingTheme.iColorTheme),
+      iTheme: merge(defaultTheme.iTheme, overridingTheme.iTheme),
     };
   }
 };

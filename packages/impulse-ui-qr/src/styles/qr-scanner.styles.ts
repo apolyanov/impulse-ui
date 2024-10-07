@@ -20,7 +20,7 @@ const qrScannerStyle: Partial<QRScannerStyle> = {
     },
   },
   topLeftQRCornerStyle: {
-    iColorTheme: {
+    iTheme: {
       light: {
         borderTopColor: volcano[60],
         borderLeftColor: volcano[60],
@@ -38,7 +38,7 @@ const qrScannerStyle: Partial<QRScannerStyle> = {
     }),
   },
   topRightQRCornerStyle: {
-    iColorTheme: {
+    iTheme: {
       light: {
         borderTopColor: volcano[60],
         borderRightColor: volcano[60],
@@ -56,7 +56,7 @@ const qrScannerStyle: Partial<QRScannerStyle> = {
     }),
   },
   bottomLeftQRCornerStyle: {
-    iColorTheme: {
+    iTheme: {
       light: {
         borderLeftColor: volcano[60],
         borderBottomColor: volcano[60],
@@ -74,7 +74,7 @@ const qrScannerStyle: Partial<QRScannerStyle> = {
     }),
   },
   bottomRightQRCornerStyle: {
-    iColorTheme: {
+    iTheme: {
       light: {
         borderRightColor: volcano[60],
         borderBottomColor: volcano[60],

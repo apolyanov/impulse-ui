@@ -3,9 +3,9 @@ import { AvatarStyle } from '../types';
 
 const defaultAvatarStyle: Partial<AvatarStyle> = {
   mainContainerStyle: {
-    iColorTheme: { light: { borderColor: volcano[60], backgroundColor: volcano[10] } },
-    iCss: ({ iColorTheme }) => ({
-      border: `2px solid ${iColorTheme.borderColor}`,
+    iTheme: { light: { borderColor: volcano[60], backgroundColor: volcano[10] } },
+    iCss: ({ iTheme }) => ({
+      border: `2px solid ${iTheme.borderColor}`,
       width: '48px',
       margin: 0,
       height: '48px',

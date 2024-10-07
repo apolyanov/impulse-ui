@@ -41,7 +41,7 @@ const thead = <T>(): Partial<THeadStyle<ImpulseTableState<T>>> => ({
   },
   theaderSortButtonStyle: {
     buttonStyle: {
-      iColorTheme: {
+      iTheme: {
         light: {
           backgroundColor: neutral[10],
           ':hover': {
@@ -63,7 +63,7 @@ const thead = <T>(): Partial<THeadStyle<ImpulseTableState<T>>> => ({
       },
     },
     iconStyle: {
-      iColorTheme: {
+      iTheme: {
         light: {
           color: neutral[60],
           ':hover': {
@@ -79,7 +79,7 @@ const thead = <T>(): Partial<THeadStyle<ImpulseTableState<T>>> => ({
 });
 
 const baseTHead: IStyle<THeadHTMLProps> = {
-  iColorTheme: {
+  iTheme: {
     light: {
       backgroundColor: neutral[10],
       borderColor: 'transparent',

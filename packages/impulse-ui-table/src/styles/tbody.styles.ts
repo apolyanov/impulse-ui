@@ -3,7 +3,7 @@ import { IStyle } from '@impulse-ui/core';
 import { ImpulseTableState, TBodyStyle } from '../types';
 
 const baseTBody: IStyle<ImpulseTableState<any>> = {
-  iColorTheme: {
+  iTheme: {
     light: {
       backgroundColor: 'transparent',
       borderColor: 'transparent',
@@ -36,10 +36,10 @@ const tbody: Partial<TBodyStyle<any>> = {
   },
   noContentTrowStyle: { iCss: ({ loading }) => ({ opacity: loading ? 0.2 : 1 }) },
   trowStyle: { iCss: ({ loading }) => ({ opacity: loading ? 0.2 : 1 }) },
-  noContentIconStyle: { iColorTheme: { light: { color: neutral[80] } }, iCss: { fontSize: 56 } },
+  noContentIconStyle: { iTheme: { light: { color: neutral[80] } }, iCss: { fontSize: 56 } },
   noContentTypographyStyle: { iCss: { marginTop: 8 } },
   loaderSpinnerStyle: {
-    iColorTheme: {
+    iTheme: {
       light: {
         borderRightColor: volcano[60],
       },

@@ -3,7 +3,7 @@ import { IconButtonStyle } from '../types';
 
 const defaultIconButtonStyle: Partial<IconButtonStyle> = {
   iconStyle: {
-    iColorTheme: { light: { color: neutral[10], ':disabled': { color: volcano[40] } } },
+    iTheme: { light: { color: neutral[10], ':disabled': { color: volcano[40] } } },
     iCss: ({ getThemeColor }) => ({
       color: getThemeColor('color'),
       '&[data-disabled="true"]': { color: getThemeColor('color', ':disabled') },
@@ -22,7 +22,7 @@ const defaultIconButtonStyle: Partial<IconButtonStyle> = {
     },
   },
   loaderStyle: {
-    iColorTheme: {
+    iTheme: {
       light: {
         borderRightColor: neutral[10],
         ':disabled': {

@@ -3,7 +3,7 @@ import { IStyle } from '@impulse-ui/core';
 import { ImpulseTableState } from '../types';
 
 const table: IStyle<ImpulseTableState<any>> = {
-  iColorTheme: {
+  iTheme: {
     light: {
       backgroundColor: neutral[10],
       borderColor: 'transparent',

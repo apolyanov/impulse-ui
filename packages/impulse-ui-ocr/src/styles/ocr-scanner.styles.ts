@@ -20,7 +20,7 @@ const ocrScannerStyle: Partial<OCRScannerStyle> = {
     },
   },
   topLeftQRCornerStyle: {
-    iColorTheme: {
+    iTheme: {
       light: {
         borderTopColor: volcano[60],
         borderLeftColor: volcano[60],
@@ -38,7 +38,7 @@ const ocrScannerStyle: Partial<OCRScannerStyle> = {
     }),
   },
   topRightQRCornerStyle: {
-    iColorTheme: {
+    iTheme: {
       light: {
         borderTopColor: volcano[60],
         borderRightColor: volcano[60],
@@ -56,7 +56,7 @@ const ocrScannerStyle: Partial<OCRScannerStyle> = {
     }),
   },
   bottomLeftQRCornerStyle: {
-    iColorTheme: {
+    iTheme: {
       light: {
         borderLeftColor: volcano[60],
         borderBottomColor: volcano[60],
@@ -74,7 +74,7 @@ const ocrScannerStyle: Partial<OCRScannerStyle> = {
     }),
   },
   bottomRightQRCornerStyle: {
-    iColorTheme: {
+    iTheme: {
       light: {
         borderRightColor: volcano[60],
         borderBottomColor: volcano[60],

@@ -4,7 +4,7 @@ import { AutoCompleteItemStyle } from '../types';
 
 const defaultAutoCompleteItemStyle: Partial<AutoCompleteItemStyle> = {
   mainContainerStyle: {
-    iColorTheme: { light: { backgroundColor: 'transparent' } },
+    iTheme: { light: { backgroundColor: 'transparent' } },
     iCss: ({ selected, highlighted }) => ({
       padding: '6px',
       height: '34px',

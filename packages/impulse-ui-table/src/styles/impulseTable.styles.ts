@@ -3,7 +3,7 @@ import { ImpulseTableState, ImpulseTableStyle } from '../types';
 
 const impulseTableStyles = <T>(): Partial<ImpulseTableStyle<ImpulseTableState<T>>> => ({
   tableContainerStyle: {
-    iColorTheme: { light: { backgroundColor: neutral[10] } },
+    iTheme: { light: { backgroundColor: neutral[10] } },
     iCss: {
       width: 'fit-content',
       borderRadius: 4,

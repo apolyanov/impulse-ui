@@ -13,7 +13,7 @@ interface IComponent<T = any> {
 }
 
 type ICssArgs<T = any> = {
-  iColorTheme: ComponentColors;
+  iTheme: ComponentColors;
   getThemeColor: GetThemeColorInnerFn;
 } & T;
 
@@ -36,12 +36,12 @@ interface ComponentMap {
 }
 
 interface IStyle<T = any> {
-  iColorTheme: IColorTheme;
+  iTheme: IColorTheme;
   iCss: ICss<T>;
 }
 
 interface IOStyle<T = any> {
-  iColorTheme?: IColorTheme;
+  iTheme?: IColorTheme;
   iCss?: IOCss<T>;
 }
 

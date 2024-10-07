@@ -3,7 +3,7 @@ import { IStyle } from '@impulse-ui/core';
 import { ButtonHTMLProps, ButtonStyle } from '../types';
 
 const baseButton: IStyle<ButtonHTMLProps> = {
-  iColorTheme: {
+  iTheme: {
     light: {
       backgroundColor: volcano[60],
       borderColor: volcano[60],
@@ -57,7 +57,7 @@ const baseButton: IStyle<ButtonHTMLProps> = {
 
 const button: Partial<ButtonStyle> = {
   loaderStyle: {
-    iColorTheme: {
+    iTheme: {
       light: {
         borderRightColor: neutral[10],
         ':disabled': {
