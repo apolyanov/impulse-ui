@@ -1,5 +1,4 @@
 import { SimplePseudos } from 'csstype';
-import merge from 'lodash-es/merge';
 import { css, StyledObject } from 'styled-components';
 import {
   AnimationHelper,
@@ -17,6 +16,7 @@ import {
 } from '../types';
 
 import { LIGHT, cssPropsMap } from '../utils';
+import { merge } from './deepmerge.ts';
 
 const extractCssProps = <T>(props: T) => {
   const cssProps: StyledObject = {};
@@ -129,15 +129,13 @@ const mergePartialThemes = <T>({
 
   if (overridingTheme && defaultTheme) {
     return {
-      iCss: ({ iColorTheme }) =>
-        merge(
+      iCss: ({ iColorTheme }) => {
+        return merge(
           constructICss(iColorTheme, props, defaultTheme?.iCss),
           constructICss(iColorTheme, props, overridingTheme?.iCss),
-        ),
-      iColorTheme: {
-        light: { ...defaultTheme.iColorTheme?.light, ...overridingTheme.iColorTheme?.light },
-        dark: { ...defaultTheme.iColorTheme?.dark, ...overridingTheme.iColorTheme?.dark },
+        );
       },
+      iColorTheme: merge(defaultTheme.iColorTheme, overridingTheme.iColorTheme),
     };
   }
 };

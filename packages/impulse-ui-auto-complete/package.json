@@ -20,7 +20,7 @@
   "scripts": {
     "build": "tsc && vite build",
     "lint": "biome check ./src --write",
-    "start": "tsup --watch",
+    "start": "vite build --watch",
     "test": "dts test --passWithNoTests"
   },
   "husky": {
