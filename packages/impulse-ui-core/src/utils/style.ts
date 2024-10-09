@@ -90,10 +90,7 @@ const mergeThemes = <T>({ defaultTheme, overridingTheme, props }: MergeThemesFnA
           defaultTheme.iCss({ iTheme, getThemeColor: getThemeColor(iTheme), ...rest, ...props }),
           constructICss(iTheme, props, overridingTheme?.iCss),
         ),
-      iTheme: {
-        light: { ...defaultTheme.iTheme.light, ...overridingTheme.iTheme?.light },
-        dark: { ...defaultTheme.iTheme.dark, ...overridingTheme.iTheme?.dark },
-      },
+      iTheme: merge(defaultTheme?.iTheme, overridingTheme?.iTheme),
     };
   }
 
@@ -135,7 +132,7 @@ const mergePartialThemes = <T>({
           constructICss(iTheme, props, overridingTheme?.iCss),
         );
       },
-      iTheme: merge(defaultTheme.iTheme, overridingTheme.iTheme),
+      iTheme: merge(defaultTheme?.iTheme, overridingTheme?.iTheme),
     };
   }
 };
