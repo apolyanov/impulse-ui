@@ -5,7 +5,6 @@ const IsolatedPage = () => {
   return (
     <div style={{ margin: 64 }}>
       <IconButton
-        as="span"
         onClick={(event) => console.log(event)}
         disabled
         loading
