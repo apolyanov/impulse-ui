@@ -18,6 +18,8 @@ import {
 import { LIGHT, cssPropsMap } from '../utils';
 import { merge } from './deepmerge.ts';
 
+const isNullOrUndefined = (value: any) => value === undefined || value === null;
+
 const extractCssProps = <T>(props: T) => {
   const cssProps: StyledObject = {};
   const componentProps: Omit<T, keyof typeof cssPropsMap> = { ...props };
@@ -26,7 +28,7 @@ const extractCssProps = <T>(props: T) => {
     Object.entries(componentProps).forEach(([key, value]) => {
       const newCssPropData = cssPropsMap[key as keyof typeof cssPropsMap]?.(value, key);
 
-      if (newCssPropData) {
+      if (!isNullOrUndefined(newCssPropData)) {
         delete componentProps[key];
 
         if (Array.isArray(newCssPropData)) {

@@ -24,9 +24,9 @@ const ImpulseTableWrapper = <T extends object>({ iStyle, ...tableProps }: Impuls
   );
 
   return (
-    <Container iStyle={tableContainerStyle}>
+    <Container {...tableContainerStyle}>
       <TableHeader iStyle={iStyle?.tableHeaderStyle} {...tableHeaderProps} />
-      <Table iStyle={tableStyle}>
+      <Table {...tableStyle}>
         <THead iStyle={iStyle?.theadStyle} />
         <TBody iStyle={iStyle?.tbodyStyle} />
         <TFoot iStyle={iStyle?.tfootStyle} />

@@ -48,11 +48,11 @@ const AutoComplete = <T extends object>({ iStyle, ...rest }: AutoCompleteProps<T
   const optionsContainerRenderer = useMemo((): ReactNode | undefined => {
     if (showOptions) {
       if (loading) {
-        return <Spinner iStyle={loadingSpinnerStyle} />;
+        return <Spinner {...loadingSpinnerStyle} />;
       }
 
       if (getOptionsToShow.length === 0) {
-        return <Typography iStyle={noOptionsTypographyStyle}>No options</Typography>;
+        return <Typography {...noOptionsTypographyStyle}>No options</Typography>;
       }
 
       return (
@@ -88,7 +88,7 @@ const AutoComplete = <T extends object>({ iStyle, ...rest }: AutoCompleteProps<T
 
   return (
     <Fragment>
-      <Container {...mainContainerProps} ref={containerRefSetter} iStyle={mainContainerStyle}>
+      <Container {...mainContainerProps} ref={containerRefSetter} {...mainContainerStyle}>
         <TextInput
           {...inputProps}
           ref={inputRef}
@@ -101,7 +101,7 @@ const AutoComplete = <T extends object>({ iStyle, ...rest }: AutoCompleteProps<T
         />
       </Container>
       {showOptions && (
-        <Container style={{ ...floatingStyles }} ref={dropdownRefSetter} iStyle={autoCompleteItemsContainerStyle}>
+        <Container style={{ ...floatingStyles }} ref={dropdownRefSetter} {...autoCompleteItemsContainerStyle}>
           {optionsContainerRenderer}
         </Container>
       )}

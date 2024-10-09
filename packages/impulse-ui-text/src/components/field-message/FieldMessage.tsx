@@ -13,9 +13,11 @@ const FieldMessage: FunctionComponent<FieldMessageProps> = ({ iStyle, ...rest })
   const { mainContainerStyle, iconStyle, typographyStyle, getFieldMessageIcon } = useFieldMessageStyle(rest, iStyle);
 
   return (
-    <Container iStyle={mainContainerStyle}>
-      <Icon iStyle={iconStyle} icon={getFieldMessageIcon(type, icon)} />
-      <Typography iStyle={typographyStyle}>{message}</Typography>
+    <Container iCss={mainContainerStyle.iCss} iTheme={mainContainerStyle.iTheme}>
+      <Icon iCss={iconStyle.iCss} iTheme={iconStyle.iTheme} icon={getFieldMessageIcon(type, icon)} />
+      <Typography iCss={typographyStyle.iCss} iTheme={typographyStyle.iTheme}>
+        {message}
+      </Typography>
     </Container>
   );
 };

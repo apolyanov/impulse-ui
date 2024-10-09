@@ -21,18 +21,22 @@ const Avatar: FunctionComponent<AvatarProps> = ({ iStyle, ...rest }) => {
 
   const renderAvatarContent = useMemo(() => {
     if (imageUrl) {
-      return <Container iStyle={imageContainerStyle} />;
+      return <Container iCss={imageContainerStyle.iCss} iTheme={imageContainerStyle.iTheme} />;
     }
 
     if (name) {
-      return <Typography iStyle={typographyStyle}>{name}</Typography>;
+      return (
+        <Typography iCss={typographyStyle.iCss} iTheme={typographyStyle.iTheme}>
+          {name}
+        </Typography>
+      );
     }
 
-    return <Icon icon={faUser} iStyle={iconStyle} />;
+    return <Icon icon={faUser} iCss={iconStyle.iCss} iTheme={iconStyle.iTheme} />;
   }, [iconStyle, imageContainerStyle, imageUrl, name, typographyStyle]);
 
   return (
-    <Container iStyle={mainContainerStyle} {...containerProps}>
+    <Container iCss={mainContainerStyle.iCss} iTheme={mainContainerStyle.iTheme} {...containerProps}>
       {renderAvatarContent}
     </Container>
   );

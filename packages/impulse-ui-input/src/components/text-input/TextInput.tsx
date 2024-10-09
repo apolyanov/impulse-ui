@@ -99,9 +99,9 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
     };
 
     return (
-      <Container iStyle={mainContainerStyle}>
-        <Container data-disabled={inputProps.disabled} iStyle={inputContainerStyle}>
-          {icon && <Icon data-disabled={inputProps.disabled} iStyle={iconStyle} icon={icon} />}
+      <Container {...mainContainerStyle}>
+        <Container data-disabled={inputProps.disabled} {...inputContainerStyle}>
+          {icon && <Icon data-disabled={inputProps.disabled} {...iconStyle} icon={icon} />}
           <BaseTextInput
             ref={innerRef}
             {...componentProps}

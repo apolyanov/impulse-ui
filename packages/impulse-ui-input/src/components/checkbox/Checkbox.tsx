@@ -25,11 +25,11 @@ const Checkbox: FunctionComponent<CheckboxProps> = ({ iStyle, children, ...rest 
       return children;
     }
 
-    return <Typography iStyle={typographyStyle}>{label}</Typography>;
+    return <Typography {...typographyStyle}>{label}</Typography>;
   }, [children, label, typographyStyle]);
 
   return (
-    <Container iStyle={mainContainerStyle}>
+    <Container {...mainContainerStyle}>
       <IconButton
         iStyle={iconButtonStyle}
         onClick={toggleCheckbox}

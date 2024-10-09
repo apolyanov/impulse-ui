@@ -54,11 +54,11 @@ const Select = <T extends object>({ iStyle, ...rest }: SelectProps<T>) => {
   const optionsContainerRenderer = useMemo((): ReactNode | undefined => {
     if (showOptions) {
       if (loading) {
-        return <Spinner iStyle={loadingSpinnerStyle} />;
+        return <Spinner {...loadingSpinnerStyle} />;
       }
 
       if (processedOptions.length === 0) {
-        return <Typography iStyle={noOptionsTypographyStyle}>No options</Typography>;
+        return <Typography {...noOptionsTypographyStyle}>No options</Typography>;
       }
 
       return (
@@ -99,11 +99,11 @@ const Select = <T extends object>({ iStyle, ...rest }: SelectProps<T>) => {
         role={'combobox'}
         onKeyDown={handleKeyDown}
         onMouseDown={onMouseDown}
-        iStyle={mainContainerStyle}
+        {...mainContainerStyle}
         ref={containerRefSetter}
       >
-        {placeholder && !selectedItem && <Typography iStyle={selectPlaceholderStyle}>{placeholder}</Typography>}
-        {selectedItem && <Typography iStyle={selectedItemTypographyStyle}>{selectedItem.label}</Typography>}
+        {placeholder && !selectedItem && <Typography {...selectPlaceholderStyle}>{placeholder}</Typography>}
+        {selectedItem && <Typography {...selectedItemTypographyStyle}>{selectedItem.label}</Typography>}
         <ClearButton
           onMouseDown={handleSelectClear}
           iStyle={clearButtonStyle}
@@ -111,10 +111,10 @@ const Select = <T extends object>({ iStyle, ...rest }: SelectProps<T>) => {
           focusable={clearButton?.focusable}
           clearIcon={clearButton?.clearIcon}
         />
-        <Icon iStyle={dropdownIconStyle} icon={getDropdownIcon()} />
+        <Icon {...dropdownIconStyle} icon={getDropdownIcon()} />
       </Container>
       {showOptions && (
-        <Container style={{ ...floatingStyles }} iStyle={selectOptionsContainerStyle} ref={dropdownRefSetter}>
+        <Container style={{ ...floatingStyles }} {...selectOptionsContainerStyle} ref={dropdownRefSetter}>
           {optionsContainerRenderer}
         </Container>
       )}

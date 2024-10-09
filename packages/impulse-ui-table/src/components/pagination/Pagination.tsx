@@ -32,8 +32,8 @@ const Pagination = <T extends object>({ iStyle }: PaginationProps<T>) => {
   const handleClickFirstPage = () => setPageIndex(0);
 
   return (
-    <Container iStyle={containerStyle}>
-      <Typography iStyle={pageCounterStyle}>{`Page ${
+    <Container {...containerStyle}>
+      <Typography {...pageCounterStyle}>{`Page ${
         getState().pagination.pageIndex + 1
       } of ${getPageCount()}`}</Typography>
       <IconButton

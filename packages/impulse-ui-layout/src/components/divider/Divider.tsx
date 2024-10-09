@@ -4,10 +4,10 @@ import { DividerProps } from '../../types';
 
 import { BaseDivider } from '../divider';
 
-const Divider: FunctionComponent<DividerProps> = ({ iStyle, ...rest }) => {
+const Divider: FunctionComponent<DividerProps> = ({ iCss, iTheme, ...rest }) => {
   const { cssProps, componentProps } = extractCssProps(rest);
 
-  return <BaseDivider $iCss={iStyle?.iCss} $iTheme={iStyle?.iTheme} $cssProps={cssProps} {...componentProps} />;
+  return <BaseDivider $iCss={iCss} $iTheme={iTheme} $cssProps={cssProps} {...componentProps} />;
 };
 
 export { Divider };

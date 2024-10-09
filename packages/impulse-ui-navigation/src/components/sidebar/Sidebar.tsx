@@ -38,7 +38,7 @@ const Sidebar: FunctionComponent<PropsWithChildren<SidebarProps>> = ({ iStyle, c
   }, [items, sectionDividerStyle, itemStyle, handleHeaderClick, collapsed]);
 
   return (
-    <Container iStyle={containerStyle} {...containerProps}>
+    <Container iCss={containerStyle.iCss} iTheme={containerStyle.iTheme} {...containerProps}>
       {sidebarItems}
       {children}
     </Container>

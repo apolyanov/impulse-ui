@@ -13,13 +13,11 @@ const OCRScannerPage = () => {
 
   return (
     <Container
-      iStyle={{
-        iCss: {
-          display: "flex",
-          alignItems: "center",
-          flexDirection: "column",
-          padding: 4,
-        },
+      iCss={{
+        display: "flex",
+        alignItems: "center",
+        flexDirection: "column",
+        padding: 4,
       }}
     >
       <OCRScanner scanningInterval={50} onSuccess={onSuccess} />

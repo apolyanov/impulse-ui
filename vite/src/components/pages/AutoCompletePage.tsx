@@ -1,18 +1,25 @@
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import { AutoComplete } from '@impulse-ui/auto-complete';
-import { Button } from '@impulse-ui/buttons';
-import { Container } from '@impulse-ui/layout';
-import { Box } from '@mui/material';
-import { useState } from 'react';
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { AutoComplete } from "@impulse-ui/auto-complete";
+import { Button } from "@impulse-ui/buttons";
+import { Container } from "@impulse-ui/layout";
+import { Box } from "@mui/material";
+import { useState } from "react";
 
-import { humans } from '../mocks/autoCompleteMock';
+import { humans } from "../mocks/autoCompleteMock";
 
 const AutoCompletePage = () => {
   const [options] = useState<{ name: string; gal: string }[]>(() => humans());
   const [_, setState] = useState<string>();
 
   return (
-    <Container iStyle={{ iCss: { flexDirection: 'row', height: '700px', width: '100%', gap: '16px' } }}>
+    <Container
+      iCss={{
+        flexDirection: "row",
+        height: "700px",
+        width: "100%",
+        gap: "16px",
+      }}
+    >
       <Box />
       <AutoComplete
         iStyle={{
@@ -42,7 +49,7 @@ const AutoCompletePage = () => {
       />
       <Button
         onClick={() => {
-          setState('splicedOptions');
+          setState("splicedOptions");
           // setOptions(splicedOptions);
         }}
       >

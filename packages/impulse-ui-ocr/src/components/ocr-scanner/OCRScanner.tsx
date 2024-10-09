@@ -29,16 +29,16 @@ const OCRScanner = ({ iStyle, ...rest }: OCRScannerProps) => {
   } = useComponentStyle(ocrScannerComponentMap, stylesProps, iStyle, ocrScannerStyle);
 
   return (
-    <Container iStyle={mainContainerStyle}>
-      <Container iStyle={qrScannerContainerStyle}>
-        <Container iStyle={topLeftQRCornerStyle} />
-        <Container iStyle={topRightQRCornerStyle} />
-        <Container iStyle={bottomLeftQRCornerStyle} />
-        <Container iStyle={bottomRightQRCornerStyle} />
-        {!isScanning && <Icon iStyle={placeholderIconStyle} icon={faQrcode} />}
-        <Container iStyle={videoStyle} as='video' ref={mountVideoElement} />
+    <Container {...mainContainerStyle}>
+      <Container {...qrScannerContainerStyle}>
+        <Container {...topLeftQRCornerStyle} />
+        <Container {...topRightQRCornerStyle} />
+        <Container {...bottomLeftQRCornerStyle} />
+        <Container {...bottomRightQRCornerStyle} />
+        {!isScanning && <Icon {...placeholderIconStyle} icon={faQrcode} />}
+        <Container {...videoStyle} as='video' ref={mountVideoElement} />
       </Container>
-      <Container iStyle={buttonsContainerStyle}>
+      <Container {...buttonsContainerStyle}>
         <IconButton iStyle={toggleScanningButtonStyle} onClick={toggleScanning} icon={faQrcode} />
         {canUseTorch && isScanning && (
           <IconButton iStyle={toggleTorchButtonStyle} onClick={toggleTorch} icon={faLightbulb} />
