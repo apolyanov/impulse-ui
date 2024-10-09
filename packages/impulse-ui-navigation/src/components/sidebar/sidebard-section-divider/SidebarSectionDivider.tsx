@@ -12,7 +12,7 @@ const SidebarSectionDivider: FunctionComponent<SidebarSectionDividerProps> = ({ 
     props: rest,
   });
 
-  return <Divider iStyle={dividerStyle} />;
+  return <Divider iCss={dividerStyle.iCss} iTheme={dividerStyle.iTheme} />;
 };
 
 export { SidebarSectionDivider };

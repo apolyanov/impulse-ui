@@ -23,9 +23,9 @@ const TableFooter = <T extends object>({ iStyle }: TableFooterProps<T>) => {
   const getSelectedRowsCount = () => Object.keys(getState().rowSelection).length;
 
   return (
-    <Container iStyle={containerStyle}>
+    <Container {...containerStyle}>
       {getSelectedRowsCount() > 0 && (
-        <Typography iStyle={selectedRowsStyle}>{`Selected rows ${getSelectedRowsCount()}`}</Typography>
+        <Typography {...selectedRowsStyle}>{`Selected rows ${getSelectedRowsCount()}`}</Typography>
       )}
       {getState().pagination && !showNoData() && <Pagination iStyle={paginationStyle} />}
     </Container>

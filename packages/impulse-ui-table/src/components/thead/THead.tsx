@@ -39,11 +39,11 @@ const THead = <T extends object>({ iStyle, ...rest }: THeadComponentProps<T>) =>
   return (
     <BaseTHead $iStyle={theadStyle} $cssProps={cssProps} {...componentProps}>
       {getHeaderGroups().map((headerGroup) => (
-        <TRow iStyle={trowStyle} key={headerGroup.id}>
+        <TRow {...trowStyle} key={headerGroup.id}>
           {headerGroup.headers.map((header, index, array) => (
-            <THeader style={{ width: header.column.getSize() }} iStyle={theaderStyle} key={header.id}>
+            <THeader style={{ width: header.column.getSize() }} {...theaderStyle} key={header.id}>
               <Typography
-                iStyle={theaderTypographyStyle}
+                {...theaderTypographyStyle}
                 data-table-element={`column-header${isFirstOrLastColumnHeader(index, array.length)}`}
               >
                 {flexRender(header.column.columnDef.header, header.getContext())}

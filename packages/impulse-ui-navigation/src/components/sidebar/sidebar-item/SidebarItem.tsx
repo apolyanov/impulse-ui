@@ -13,7 +13,7 @@ const SidebarItem: FunctionComponent<PropsWithChildren<SidebarItemProps>> = ({ i
 
   return (
     <BaseButton onClick={onClick} $iCss={buttonStyle?.iCss} $iTheme={buttonStyle?.iTheme}>
-      {icon && <Icon icon={icon} iStyle={iconStyle} />}
+      {icon && <Icon icon={icon} iCss={iconStyle.iCss} iTheme={iconStyle.iTheme} />}
       {!collapsed && label}
     </BaseButton>
   );

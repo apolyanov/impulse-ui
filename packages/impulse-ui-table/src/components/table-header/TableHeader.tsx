@@ -22,8 +22,8 @@ const TableHeader = <T extends object>({ iStyle, ...rest }: TableHeaderProps<T>)
   const handleOnClearSearch = () => setGlobalFilter;
 
   return (
-    <Container iStyle={containerStyle}>
-      <Typography iStyle={tableNameStyle}>{tableName}</Typography>
+    <Container {...containerStyle}>
+      <Typography {...tableNameStyle}>{tableName}</Typography>
       {showTableSearch && (
         <TextInput
           debounced

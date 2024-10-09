@@ -18,8 +18,8 @@ const AutoCompleteItem: FunctionComponent<AutoCompleteItemProps> = ({ iStyle, ..
   );
 
   return (
-    <Container iStyle={mainContainerStyle} {...mainContainerProps}>
-      <Typography iStyle={typographyStyle}>{itemText}</Typography>
+    <Container {...mainContainerStyle} {...mainContainerProps}>
+      <Typography {...typographyStyle}>{itemText}</Typography>
     </Container>
   );
 };

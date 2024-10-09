@@ -30,9 +30,9 @@ const TFoot = <T extends object>({ iStyle, ...rest }: TFootComponentProps<T>) =>
       {shouldRenderFooter && (
         <BaseTFoot $iStyle={tfootStyle} $cssProps={cssProps} {...componentProps}>
           {getFooterGroups().map((footerGroup) => (
-            <TRow iStyle={trowStyle} key={footerGroup.id}>
+            <TRow {...trowStyle} key={footerGroup.id}>
               {footerGroup.headers.map((footer) => (
-                <TData iStyle={tdataStyle} key={footer.id}>
+                <TData {...tdataStyle} key={footer.id}>
                   {flexRender(footer.column.columnDef.footer, footer.getContext())}
                 </TData>
               ))}

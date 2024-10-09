@@ -22,7 +22,7 @@ const TextButton = polymorphicForwardRef<'button', PropsWithChildren<TextButtonP
       $cssProps={cssProps}
       {...buttonProps}
     >
-      {loading ? <Spinner data-disabled={componentProps.disabled} iStyle={loaderStyle} /> : children}
+      {loading ? <Spinner data-disabled={componentProps.disabled} {...loaderStyle} /> : children}
     </BaseTextButton>
   );
 });

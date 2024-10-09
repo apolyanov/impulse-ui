@@ -13,8 +13,8 @@ const SelectOption: FunctionComponent<SelectOptionProps> = ({ iStyle, ...rest })
   const { mainContainerStyle, typographyStyle } = useComponentStyle(selectOptionMap, rest, selectOption, iStyle);
 
   return (
-    <Container iStyle={mainContainerStyle} {...mainContainerProps}>
-      <Typography iStyle={typographyStyle}>{itemText}</Typography>
+    <Container {...mainContainerStyle} {...mainContainerProps}>
+      <Typography {...typographyStyle}>{itemText}</Typography>
     </Container>
   );
 };

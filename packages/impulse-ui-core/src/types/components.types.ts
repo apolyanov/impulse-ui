@@ -10,7 +10,8 @@ type BaseIComponent<T = any> = {
 } & T;
 
 interface IComponent<T = any> {
-  iStyle?: IOStyle<T>;
+  iCss?: IOCss<T>;
+  iTheme?: IColorTheme;
 }
 
 type ICssArgs<T = any> = {

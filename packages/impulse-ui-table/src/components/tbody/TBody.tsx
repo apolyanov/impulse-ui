@@ -32,12 +32,12 @@ const TBody = <T extends object>({ iStyle, ...rest }: TBodyComponentProps<T>) =>
   if (tableState.showNoData()) {
     return (
       <BaseTBody $iStyle={noContentTbodyStyle} $cssProps={cssProps} {...componentProps}>
-        {tableState.loading && <Spinner as='tr' iStyle={loaderSpinnerStyle} />}
+        {tableState.loading && <Spinner as='tr' {...loaderSpinnerStyle} />}
         {!tableState.loading && (
-          <TRow iStyle={noContentTrowStyle}>
-            <TData colSpan={tableState.getHeaderGroups()?.[0]?.headers?.length ?? 0} iStyle={noContentTdataStyle}>
-              <Icon iStyle={noContentIconStyle} icon={faDatabase} />
-              <Typography iStyle={noContentTypographyStyle}>No data</Typography>
+          <TRow {...noContentTrowStyle}>
+            <TData colSpan={tableState.getHeaderGroups()?.[0]?.headers?.length ?? 0} {...noContentTdataStyle}>
+              <Icon {...noContentIconStyle} icon={faDatabase} />
+              <Typography {...noContentTypographyStyle}>No data</Typography>
             </TData>
           </TRow>
         )}
@@ -47,17 +47,17 @@ const TBody = <T extends object>({ iStyle, ...rest }: TBodyComponentProps<T>) =>
 
   return (
     <BaseTBody $iStyle={tbodyStyle} $cssProps={cssProps} {...componentProps}>
-      {tableState.loading && <Spinner as='tr' iStyle={loaderSpinnerStyle} />}
+      {tableState.loading && <Spinner as='tr' {...loaderSpinnerStyle} />}
       {tableState.getRowModel().rows.map((row) => (
         <TRow
           aria-selected={row.getIsSelected()}
           data-row-type={'body-row'}
           data-row-id={row.id}
-          iStyle={trowStyle}
+          {...trowStyle}
           key={row.id}
         >
           {row.getVisibleCells().map((cell) => (
-            <TData data-cell-id={cell.id} iStyle={tdataStyle} key={cell.id}>
+            <TData data-cell-id={cell.id} {...tdataStyle} key={cell.id}>
               {flexRender(cell.column.columnDef.cell, cell.getContext())}
             </TData>
           ))}
