@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { ComponentMap, IOStyle } from '../types';
+import { ComponentMap } from '../types';
 
 import { mergePartialThemes } from '../utils';
 
@@ -26,8 +26,8 @@ const constructComplexTheme = <T extends object, E extends object>(
 
     if (!themeComponent.subKeys) {
       newObject[componentKey] = mergePartialThemes({
-        defaultTheme: defaultTheme?.[componentKey as keyof T] as IOStyle<E>,
-        overridingTheme: overridingTheme?.[componentKey as keyof T] as IOStyle<E>,
+        defaultTheme: defaultTheme?.[componentKey],
+        overridingTheme: overridingTheme?.[componentKey],
         props,
       });
     }
@@ -36,8 +36,8 @@ const constructComplexTheme = <T extends object, E extends object>(
       newObject[componentKey] = constructComplexTheme(
         themeComponent.subKeys,
         props,
-        defaultTheme?.[componentKey as keyof T] as T,
-        overridingTheme?.[componentKey as keyof T] as T,
+        defaultTheme?.[componentKey],
+        overridingTheme?.[componentKey],
       );
     }
   });
