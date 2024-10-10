@@ -1,5 +1,21 @@
 # Change Log
 
+## 4.0.0
+
+### Major Changes
+
+- [#158](https://github.com/apolyanov/impulse-ui/pull/158) [`fa48319`](https://github.com/apolyanov/impulse-ui/commit/fa48319e8e6b24b7fd996196ab9913f4c7ffcf7e) Thanks [@apolyanov](https://github.com/apolyanov)! - Major styling refactor
+
+### Patch Changes
+
+- Updated dependencies [[`fa48319`](https://github.com/apolyanov/impulse-ui/commit/fa48319e8e6b24b7fd996196ab9913f4c7ffcf7e)]:
+  - @impulse-ui/colours@4.0.0
+  - @impulse-ui/layout@4.0.0
+  - @impulse-ui/loader@4.0.0
+  - @impulse-ui/input@4.0.0
+  - @impulse-ui/core@4.0.0
+  - @impulse-ui/text@4.0.0
+
 ## 3.2.1
 
 ### Patch Changes

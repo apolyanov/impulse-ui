@@ -1,6 +1,6 @@
 {
   "name": "@impulse-ui/icon",
-  "version": "3.2.1",
+  "version": "4.0.0",
   "license": "MIT",
   "type": "module",
   "author": "Alexander Polyanov",
@@ -43,8 +43,8 @@
     "testEnvironment": "jsdom"
   },
   "dependencies": {
-    "@impulse-ui/colours": "^3.2.1",
-    "@impulse-ui/core": "^3.2.1",
+    "@impulse-ui/colours": "^4.0.0",
+    "@impulse-ui/core": "^4.0.0",
     "@fortawesome/fontawesome-svg-core": "6.6.0",
     "@fortawesome/free-brands-svg-icons": "6.6.0",
     "@fortawesome/free-regular-svg-icons": "6.6.0",
