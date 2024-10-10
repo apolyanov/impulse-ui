@@ -1,6 +1,6 @@
 {
   "name": "@impulse-ui/layout",
-  "version": "3.2.1",
+  "version": "4.0.0",
   "license": "MIT",
   "type": "module",
   "author": "Alexander Polyanov",
@@ -43,8 +43,8 @@
     "testEnvironment": "jsdom"
   },
   "dependencies": {
-    "@impulse-ui/colours": "^3.2.1",
-    "@impulse-ui/core": "^3.2.1"
+    "@impulse-ui/colours": "^4.0.0",
+    "@impulse-ui/core": "^4.0.0"
   },
   "peerDependencies": {
     "react": ">=16"
