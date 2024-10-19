@@ -4,16 +4,41 @@ import { Checkbox } from "@impulse-ui/input";
 import { Container } from "@impulse-ui/layout";
 import { Typography } from "@impulse-ui/text";
 import { useState } from "react";
+import { Spinner } from "@impulse-ui/loader";
+import { getComponentRef } from "@impulse-ui/core";
 
 const ButtonsPage = () => {
   const [check, setCheck] = useState<boolean>(false);
 
   return (
     <Container>
-      <Typography onClick={(event) => console.log(event)}>
+      <Typography
+        iCss={({ getMediaQuery }) => ({
+          [getMediaQuery("xxs")]: { backgroundColor: "red" },
+          [getMediaQuery("xs")]: { backgroundColor: "blue" },
+          [getMediaQuery("sm")]: { backgroundColor: "green" },
+          [getMediaQuery("md")]: { backgroundColor: "yellow" },
+          [getMediaQuery("lg")]: { backgroundColor: "purple" },
+          [getMediaQuery("xl")]: { backgroundColor: "gray" },
+          [getMediaQuery("xxl")]: { backgroundColor: "orange" },
+        })}
+        onClick={(event) => console.log(event)}
+      >
         Button здравей
       </Typography>
-      <Button onClick={(event) => console.log(event)}>Buttons</Button>
+      <Button
+        loading
+        iStyle={{
+          buttonStyle: {
+            iCss: {
+              [getComponentRef(Spinner)]: { backgroundColor: "red" },
+            },
+          },
+        }}
+        onClick={(event) => console.log(event)}
+      >
+        Buttons
+      </Button>
       <Button ml={16} loading onClick={() => console.log("clicked")}></Button>
       <Button disabled onClick={() => console.log("clicked")}>
         Buttons

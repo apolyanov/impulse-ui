@@ -1,21 +1,20 @@
-import { SimplePseudos } from 'csstype';
 import { css, StyledObject } from 'styled-components';
 import {
   AnimationHelper,
-  ColorsKeysValues,
   ComponentColors,
   CreateBaseComponentStyle,
+  GetComponentRefFn,
+  GetMediaQueryFn,
+  GetThemeColorFn,
   IOCss,
   IOStyle,
   IStyle,
-  Margin,
   MergePartialThemesFnArgs,
   MergeThemesFnArgs,
-  Padding,
   ThemeMode,
 } from '../types';
 
-import { LIGHT, cssPropsMap } from '../utils';
+import { LIGHT, cssPropsMap, DEFAULT_MEDIA_QUERIES } from '../utils';
 import { merge } from './deepmerge.ts';
 
 const isNullOrUndefined = (value: any) => value === undefined || value === null;
@@ -64,21 +63,22 @@ const createBaseComponentStyle: CreateBaseComponentStyle = ({
     ...iCss({
       iTheme: iTheme[themeMode],
       getThemeColor: getThemeColor(iTheme[themeMode]),
+      getMediaQuery,
+      getComponentRef,
     }),
     ...cssProps,
   });
 };
 
-const getThemeColor =
-  (componentColors?: ComponentColors) => (colorKey: keyof ColorsKeysValues, stateKey?: SimplePseudos) => {
-    if (stateKey) return componentColors?.[stateKey]?.[colorKey];
+const getThemeColor: GetThemeColorFn = (componentColors) => (colorKey, stateKey) => {
+  if (stateKey) return componentColors?.[stateKey]?.[colorKey];
 
-    return componentColors?.[colorKey];
-  };
+  return componentColors?.[colorKey];
+};
 
 const constructICss = <T>(iTheme: ComponentColors, props?: T | any, iCss?: IOCss<T>) => {
   if (typeof iCss === 'function') {
-    return iCss({ iTheme, getThemeColor: getThemeColor(iTheme), ...props });
+    return iCss({ iTheme, getThemeColor: getThemeColor(iTheme), getMediaQuery, getComponentRef, ...props });
   }
 
   return { ...iCss };
@@ -89,7 +89,14 @@ const mergeThemes = <T>({ defaultTheme, overridingTheme, props }: MergeThemesFnA
     return {
       iCss: ({ iTheme, ...rest }) =>
         merge(
-          defaultTheme.iCss({ iTheme, getThemeColor: getThemeColor(iTheme), ...rest, ...props }),
+          defaultTheme.iCss({
+            iTheme,
+            getThemeColor: getThemeColor(iTheme),
+            getMediaQuery,
+            getComponentRef,
+            ...rest,
+            ...props,
+          }),
           constructICss(iTheme, props, overridingTheme?.iCss),
         ),
       iTheme: merge(defaultTheme?.iTheme, overridingTheme?.iTheme),
@@ -139,33 +146,9 @@ const mergePartialThemes = <T>({
   }
 };
 
-const margin = (value: Margin) => ({
-  margin: value,
-});
+const getComponentRef: GetComponentRefFn = (component) => `.${component.toString()}`;
 
-const marginX = (value: Margin) => ({
-  marginLeft: value,
-  marginRight: value,
-});
-
-const marginY = (value: Margin) => ({
-  marginTop: value,
-  marginBottom: value,
-});
-
-const padding = (value: Padding) => ({
-  padding: value,
-});
-
-const paddingX = (value: Padding) => ({
-  paddingLeft: value,
-  paddingRight: value,
-});
-
-const paddingY = (value: Padding) => ({
-  paddingTop: value,
-  paddingBottom: value,
-});
+const getMediaQuery: GetMediaQueryFn = (query) => `@media screen and (min-width: ${DEFAULT_MEDIA_QUERIES[query]}px)`;
 
 const animationHelper = css as unknown as AnimationHelper;
 
@@ -176,13 +159,8 @@ export {
   createBaseComponentStyle,
   extractCssProps,
   getThemeColor,
+  getComponentRef,
   getThemeMode,
-  margin,
-  marginX,
-  marginY,
   mergePartialThemes,
   mergeThemes,
-  padding,
-  paddingX,
-  paddingY,
 };

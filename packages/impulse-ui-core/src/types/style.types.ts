@@ -26,9 +26,6 @@ type MergePartialThemesFnArgs<T = any> = {
   props?: T;
 };
 
-type Margin = Property.Margin<number>;
-type Padding = Property.Padding<number>;
-
 interface AnimationHelper {
   (
     styles: NoInfer<TemplateStringsArray | StyledObject<object> | StyleFunction<object>>,
@@ -36,4 +33,4 @@ interface AnimationHelper {
   ): Property.Animation<string & {}> | undefined;
 }
 
-export type { AnimationHelper, CreateBaseComponentStyle, Margin, MergePartialThemesFnArgs, MergeThemesFnArgs, Padding };
+export type { AnimationHelper, CreateBaseComponentStyle, MergePartialThemesFnArgs, MergeThemesFnArgs };

@@ -1,4 +1,3 @@
-import { paddingX } from '@impulse-ui/core';
 import { ImpulseTableState, TableHeaderStyle } from '../types';
 
 const tableHeaderStyle = <T>(): Partial<TableHeaderStyle<ImpulseTableState<T>>> => ({
@@ -7,7 +6,8 @@ const tableHeaderStyle = <T>(): Partial<TableHeaderStyle<ImpulseTableState<T>>> 
       display: 'flex',
       flexDirection: 'row',
       alignItems: 'center',
-      ...paddingX(8),
+      paddingLeft: 8,
+      paddingRight: 8,
       gap: '8px',
     },
   },

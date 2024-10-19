@@ -10,4 +10,6 @@ const Link = polymorphicForwardRef<'a', PropsWithChildren<LinkProps>>(({ iCss, i
   return <BaseLink ref={ref} $iCss={iCss} $iTheme={iTheme} $cssProps={cssProps} {...componentProps} />;
 });
 
+Link.toString = () => BaseLink.styledComponentId;
+
 export { Link };

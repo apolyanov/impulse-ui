@@ -1,7 +1,7 @@
 import { SimplePseudos } from 'csstype';
 import { StyledObject } from 'styled-components';
 
-import { ColorsKeysValues, ComponentColors, DataAttribute } from '../types';
+import { ColorsKeysValues, ComponentColors, DataAttribute, MediaQueries } from '../types';
 
 type BaseIComponent<T = any> = {
   $iCss?: IOCss<T>;
@@ -17,11 +17,17 @@ interface IComponent<T = any> {
 type ICssArgs<T = any> = {
   iTheme: ComponentColors;
   getThemeColor: GetThemeColorInnerFn;
+  getMediaQuery: MediaQueries;
+  getComponentRef: GetComponentRefFn;
 } & T;
 
 type IOCss<T = any> = ((args: ICssArgs<T>) => StyledObject<object> | undefined) | StyledObject<object>;
 
 type ICss<T = any> = (args: ICssArgs<T>) => StyledObject<object>;
+
+interface GetComponentRefFn {
+  (component: Function): string;
+}
 
 interface GetThemeColorInnerFn {
   (colorKey: keyof ColorsKeysValues, stateKey?: SimplePseudos | DataAttribute): string;
@@ -29,6 +35,10 @@ interface GetThemeColorInnerFn {
 
 interface GetThemeColorFn {
   (componentColors?: ComponentColors): GetThemeColorInnerFn;
+}
+
+interface GetMediaQueryFn {
+  (query: keyof MediaQueries): string;
 }
 
 interface ComponentMap {
@@ -57,7 +67,9 @@ export type {
   ComponentMap,
   GetThemeColorFn,
   GetThemeColorInnerFn,
+  GetComponentRefFn,
   IColorTheme,
+  GetMediaQueryFn,
   IComponent,
   ICss,
   ICssArgs,

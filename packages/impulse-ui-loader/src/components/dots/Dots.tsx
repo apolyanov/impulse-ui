@@ -11,4 +11,6 @@ const Dots = polymorphicForwardRef<'div', PropsWithChildren<SpinnerLoaderProps>>
   );
 });
 
+Dots.toString = () => BaseDots.styledComponentId;
+
 export { Dots };

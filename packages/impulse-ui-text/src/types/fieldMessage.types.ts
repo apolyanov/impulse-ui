@@ -10,7 +10,6 @@ interface FieldMessageProps extends FieldMessageRestProps {
 interface FieldMessageRestProps {
   type?: FieldMessageType;
   icon?: IconDefinition;
-  message: string;
 }
 
 interface FieldMessageStyle {

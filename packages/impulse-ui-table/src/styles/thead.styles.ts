@@ -1,5 +1,5 @@
 import { neutral } from '@impulse-ui/colours';
-import { IStyle, marginY, paddingX } from '@impulse-ui/core';
+import { IStyle } from '@impulse-ui/core';
 import { ImpulseTableState, THeadHTMLProps, THeadStyle } from '../types';
 
 const thead = <T>(): Partial<THeadStyle<ImpulseTableState<T>>> => ({
@@ -34,8 +34,10 @@ const thead = <T>(): Partial<THeadStyle<ImpulseTableState<T>>> => ({
       fontSize: 14,
       height: 'calc(100% - 16px)',
       gap: 4,
-      ...paddingX(8),
-      ...marginY(8),
+      paddingLeft: 8,
+      paddingRight: 8,
+      marginTop: 8,
+      marginBottom: 8,
       border: '1px solid transparent',
     },
   },

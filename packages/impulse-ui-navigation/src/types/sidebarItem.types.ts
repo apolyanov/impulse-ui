@@ -2,7 +2,7 @@ import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { ButtonRestProps } from '@impulse-ui/buttons';
 import { IOStyle } from '@impulse-ui/core';
 
-interface SidebarItemProps<T = any> extends SidebarItemRestProps {
+interface SidebarItemProps<T = object> extends SidebarItemRestProps {
   iStyle?: Partial<SidebarItemStyle<T>>;
 }
 

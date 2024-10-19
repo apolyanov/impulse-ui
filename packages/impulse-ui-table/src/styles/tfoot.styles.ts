@@ -1,5 +1,5 @@
 import { neutral } from '@impulse-ui/colours';
-import { IStyle, paddingX, paddingY } from '@impulse-ui/core';
+import { IStyle } from '@impulse-ui/core';
 import { TFootHTMLProps } from '../types';
 
 const tfoot: IStyle<TFootHTMLProps> = {
@@ -19,8 +19,10 @@ const tfoot: IStyle<TFootHTMLProps> = {
     backgroundColor: getThemeColor('backgroundColor'),
     filter: 'drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2))',
     '& td': {
-      ...paddingY(8),
-      ...paddingX(10),
+      paddingTop: 8,
+      paddingBottom: 8,
+      paddingLeft: 10,
+      paddingRight: 10,
       textAlign: 'start',
     },
     '& td:first-of-type': {

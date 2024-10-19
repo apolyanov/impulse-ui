@@ -1,5 +1,4 @@
 import { volcano } from '@impulse-ui/colours';
-import { padding } from '@impulse-ui/core';
 import { QRScannerStyle } from '../types';
 
 const qrScannerStyle: Partial<QRScannerStyle> = {
@@ -16,7 +15,7 @@ const qrScannerStyle: Partial<QRScannerStyle> = {
     iCss: {
       position: 'relative',
       display: 'flex',
-      ...padding(16),
+      padding: 16,
     },
   },
   topLeftQRCornerStyle: {

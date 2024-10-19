@@ -123,7 +123,11 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
             />
           )}
         </Container>
-        {error && <FieldMessage iStyle={fieldMessageStyle} type={ERROR} message={errorMessage} />}
+        {error && (
+          <FieldMessage iStyle={fieldMessageStyle} type={ERROR}>
+            {errorMessage}
+          </FieldMessage>
+        )}
       </Container>
     );
   },

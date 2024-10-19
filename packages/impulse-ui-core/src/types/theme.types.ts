@@ -47,7 +47,19 @@ interface ComponentsThemes {
   tdata: IOStyle<JSX.IntrinsicElements['td']>;
 }
 
-type CustomITheme = Partial<ComponentsThemes>;
+interface MediaQueries {
+  xxs: number;
+  xs: number;
+  sm: number;
+  md: number;
+  lg: number;
+  xl: number;
+  xxl: number;
+}
+
+type CustomITheme = Partial<ComponentsThemes> & {
+  mediaQueries: Partial<MediaQueries>;
+};
 
 interface AppTheme {
   mode: ThemeMode;
@@ -79,4 +91,5 @@ export type {
   IThemeProviderProps,
   ThemeMode,
   UseIThemeContextFn,
+  MediaQueries,
 };

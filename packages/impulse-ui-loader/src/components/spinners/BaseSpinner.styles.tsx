@@ -14,4 +14,4 @@ const BaseSpinner = styled(BaseContainer)(({ theme: { mode, themes }, $iCss, $iT
   }),
 );
 
-export default BaseSpinner;
+export { BaseSpinner };

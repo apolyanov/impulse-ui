@@ -27,4 +27,6 @@ const TextButton = polymorphicForwardRef<'button', PropsWithChildren<TextButtonP
   );
 });
 
+TextButton.toString = () => BaseTextButton.styledComponentId;
+
 export { TextButton };
