@@ -15,10 +15,10 @@ const container: IStyle<ContainerHTMLProps> = {
       color: neutral[200],
     },
   },
-  iCss: ({ iTheme }) => ({
-    backgroundColor: iTheme.backgroundColor,
-    color: iTheme.color,
-    borderColor: iTheme.borderColor,
+  iCss: ({ getThemeColor }) => ({
+    backgroundColor: getThemeColor('backgroundColor'),
+    color: getThemeColor('color'),
+    borderColor: getThemeColor('borderColor'),
   }),
 };
 

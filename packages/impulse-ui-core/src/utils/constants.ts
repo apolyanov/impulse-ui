@@ -5,7 +5,6 @@ import { borderTransform, noTransform, spacingTransform } from './transforms';
 const LIGHT: ThemeMode = 'light';
 const DARK: ThemeMode = 'dark';
 
-const COMPONENT_ID = 'styledComponentId';
 const DEFAULT_MEDIA_QUERIES: MediaQueries = { xxs: 360, xs: 480, sm: 640, md: 768, lg: 1024, xl: 1280, xxl: 1600 };
 
 const cssPropsMap: Record<CssMapKeys, Function> = {
@@ -113,4 +112,4 @@ const cssPropsMap: Record<CssMapKeys, Function> = {
   color: noTransform,
 };
 
-export { cssPropsMap, DARK, LIGHT, DEFAULT_MEDIA_QUERIES, COMPONENT_ID };
+export { cssPropsMap, DARK, LIGHT, DEFAULT_MEDIA_QUERIES };

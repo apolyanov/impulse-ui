@@ -1,11 +1,11 @@
 import { css, StyledObject } from 'styled-components';
 import {
   AnimationHelper,
-  ComponentColors,
-  CreateBaseComponentStyle,
+  CreateBaseComponentStyleArgs,
   GetComponentRefFn,
   GetMediaQueryFn,
   GetThemeColorFn,
+  IColorTheme,
   IOCss,
   IOStyle,
   IStyle,
@@ -44,13 +44,13 @@ const extractCssProps = <T>(props: T) => {
   return { cssProps, componentProps };
 };
 
-const createBaseComponentStyle: CreateBaseComponentStyle = ({
+const createBaseComponentStyle = <Props extends object>({
   baseTheme,
   overridingTheme,
   globalTheme,
   mode,
   rest,
-}) => {
+}: CreateBaseComponentStyleArgs<Props>) => {
   const cssProps = rest?.$cssProps;
   const themeMode = getThemeMode(mode);
 
@@ -65,26 +65,41 @@ const createBaseComponentStyle: CreateBaseComponentStyle = ({
       getThemeColor: getThemeColor(iTheme[themeMode]),
       getMediaQuery,
       getComponentRef,
+      ...rest,
     }),
     ...cssProps,
   });
 };
 
-const getThemeColor: GetThemeColorFn = (componentColors) => (colorKey, stateKey) => {
-  if (stateKey) return componentColors?.[stateKey]?.[colorKey];
+const getThemeColor: GetThemeColorFn = (componentColors) => (colorKey, state) => {
+  if (state) return componentColors?.[state]?.[colorKey];
 
   return componentColors?.[colorKey];
 };
 
-const constructICss = <T>(iTheme: ComponentColors, props?: T | any, iCss?: IOCss<T>) => {
+const constructICss = <Props extends object>(
+  iTheme: IColorTheme['light' | 'dark'],
+  props?: Props | any,
+  iCss?: IOCss<Props>,
+) => {
   if (typeof iCss === 'function') {
-    return iCss({ iTheme, getThemeColor: getThemeColor(iTheme), getMediaQuery, getComponentRef, ...props });
+    return iCss({
+      iTheme,
+      getThemeColor: getThemeColor(iTheme),
+      getMediaQuery,
+      getComponentRef,
+      ...props,
+    });
   }
 
   return { ...iCss };
 };
 
-const mergeThemes = <T>({ defaultTheme, overridingTheme, props }: MergeThemesFnArgs<T>): IStyle => {
+const mergeThemes = <Props extends object>({
+  defaultTheme,
+  overridingTheme,
+  props,
+}: MergeThemesFnArgs<Props>): IStyle<Props> => {
   if (overridingTheme) {
     return {
       iCss: ({ iTheme, ...rest }) =>
@@ -106,11 +121,11 @@ const mergeThemes = <T>({ defaultTheme, overridingTheme, props }: MergeThemesFnA
   return defaultTheme;
 };
 
-const mergePartialThemes = <T>({
+const mergePartialThemes = <Props extends object>({
   defaultTheme,
   overridingTheme,
   props,
-}: MergePartialThemesFnArgs<T>): IOStyle<T> | undefined => {
+}: MergePartialThemesFnArgs<Props>): IOStyle<Props> | undefined => {
   if (overridingTheme && !defaultTheme) {
     if (props) {
       return {

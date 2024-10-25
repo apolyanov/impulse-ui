@@ -5,7 +5,7 @@ import {
   DisplayCssProps,
   FlexboxCssProps,
   GridCssProps,
-  IOStyle,
+  IComponent,
   PositionsCssProps,
   SizingCssProps,
   SpacingAliasCssProps,
@@ -26,17 +26,10 @@ interface ButtonCSSProps
 
 type PartialButtonCssProps = Partial<ButtonCSSProps>;
 
-interface ButtonProps extends ButtonRestProps {
-  iStyle?: Partial<ButtonStyle>;
-}
+interface ButtonProps extends ButtonRestProps, IComponent<ButtonRestProps> {}
 
 interface ButtonRestProps extends ButtonHTMLProps, PartialButtonCssProps {
   loading?: boolean;
 }
 
-interface ButtonStyle {
-  buttonStyle: IOStyle<ButtonRestProps>;
-  loaderStyle: IOStyle<ButtonRestProps>;
-}
-
-export type { ButtonHTMLProps, ButtonProps, ButtonRestProps, ButtonStyle };
+export type { ButtonHTMLProps, ButtonProps, ButtonRestProps };

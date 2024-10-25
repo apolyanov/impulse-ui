@@ -1,8 +1,8 @@
 import { neutral } from '@impulse-ui/colours';
 import { IStyle } from '@impulse-ui/core';
-import { IconHTMLProps } from '../types';
+import { FontAwesomeIconProps } from '@fortawesome/react-fontawesome';
 
-const icon: IStyle<IconHTMLProps> = {
+const icon: IStyle<FontAwesomeIconProps> = {
   iTheme: {
     light: {
       color: neutral[100],

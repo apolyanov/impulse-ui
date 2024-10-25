@@ -15,12 +15,12 @@ const divider: IStyle<ContainerHTMLProps> = {
       color: 'transparent',
     },
   },
-  iCss: ({ iTheme }) => ({
-    backgroundColor: iTheme.backgroundColor,
-    color: iTheme.color,
+  iCss: ({ getThemeColor }) => ({
+    backgroundColor: getThemeColor('backgroundColor'),
+    color: getThemeColor('color'),
     borderRadius: 8,
     width: '100%',
-    border: `1px solid ${iTheme.borderColor}`,
+    border: `1px solid ${getThemeColor('borderColor')}`,
     padding: '0',
     margin: '4px 0',
   }),

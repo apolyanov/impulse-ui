@@ -3,7 +3,7 @@ import {
   DisplayCssProps,
   FlexboxCssProps,
   GridCssProps,
-  IOStyle,
+  IComponent,
   PositionsCssProps,
   SizingCssProps,
   SpacingAliasCssProps,
@@ -12,9 +12,7 @@ import {
 
 import { ButtonHTMLProps } from './button.types';
 
-interface TextButtonProps extends TextButtonRestProps {
-  iStyle?: Partial<TextButtonStyle>;
-}
+interface TextButtonProps extends TextButtonRestProps, IComponent {}
 interface TextButtonCSSProps
   extends SpacingCssProps,
     SpacingAliasCssProps,
@@ -31,9 +29,4 @@ interface TextButtonRestProps extends ButtonHTMLProps, PartialTextButtonCSSProps
   loading?: boolean;
 }
 
-interface TextButtonStyle {
-  buttonStyle: IOStyle<TextButtonRestProps>;
-  loaderStyle: IOStyle<TextButtonRestProps>;
-}
-
-export type { TextButtonProps, TextButtonRestProps, TextButtonStyle };
+export type { TextButtonProps, TextButtonRestProps };

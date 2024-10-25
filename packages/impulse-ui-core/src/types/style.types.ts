@@ -2,28 +2,24 @@ import { Property } from 'csstype';
 import { Interpolation, StyleFunction, StyledObject } from 'styled-components';
 import { IOStyle, IStyle, ThemeMode } from '../types';
 
-type CreateBaseComponentStyleArgs = {
-  globalTheme?: IOStyle;
-  baseTheme: IStyle;
-  overridingTheme?: IOStyle;
+type CreateBaseComponentStyleArgs<Props extends object = {}> = {
+  globalTheme?: IOStyle<Props>;
+  baseTheme: IStyle<Props>;
+  overridingTheme?: IOStyle<Props>;
   mode: ThemeMode;
-  rest?: any;
+  rest?: Props & { $cssProps?: StyledObject };
 };
 
-interface CreateBaseComponentStyle {
-  (args: CreateBaseComponentStyleArgs): Interpolation<object>[];
-}
-
-type MergeThemesFnArgs<T = any> = {
-  defaultTheme: IStyle<T>;
-  overridingTheme?: IOStyle<T>;
-  props?: T;
+type MergeThemesFnArgs<Props extends object = {}> = {
+  defaultTheme: IStyle<Props>;
+  overridingTheme?: IOStyle<Props>;
+  props?: Props;
 };
 
-type MergePartialThemesFnArgs<T = any> = {
-  defaultTheme?: IOStyle<T>;
-  overridingTheme?: IOStyle<T>;
-  props?: T;
+type MergePartialThemesFnArgs<Props extends object = {}> = {
+  defaultTheme?: IOStyle<Props>;
+  overridingTheme?: IOStyle<Props>;
+  props?: Props;
 };
 
 interface AnimationHelper {
@@ -33,4 +29,4 @@ interface AnimationHelper {
   ): Property.Animation<string & {}> | undefined;
 }
 
-export type { AnimationHelper, CreateBaseComponentStyle, MergePartialThemesFnArgs, MergeThemesFnArgs };
+export type { AnimationHelper, MergePartialThemesFnArgs, MergeThemesFnArgs, CreateBaseComponentStyleArgs };

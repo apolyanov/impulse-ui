@@ -7,3 +7,4 @@ export * from './useIThemeContext';
 export * from './useOutsideClick';
 export * from './useProcessedOptions';
 export * from './useVirtualizedList';
+export * from './useStyle';

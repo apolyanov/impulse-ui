@@ -1,4 +1,4 @@
-import { ComponentPropsWithRef } from 'react';
+import { ComponentPropsWithoutRef } from 'react';
 
 import {
   BordersCssProps,
@@ -12,7 +12,7 @@ import {
   SpacingCssProps,
 } from '@impulse-ui/core';
 
-type LinkHTMLProps = ComponentPropsWithRef<'a'>;
+type LinkHTMLProps = ComponentPropsWithoutRef<'a'>;
 
 interface LinkCSSProps
   extends LinkHTMLProps,

@@ -1,42 +1,44 @@
 import { neutral, volcano } from '@impulse-ui/colours';
-import { IconButtonStyle } from '../types';
+import { IOStyle } from '@impulse-ui/core';
+import { IconButtonRestProps } from '../types';
+import { Spinner } from '@impulse-ui/loader';
+import { Icon } from '@impulse-ui/icon';
 
-const defaultIconButtonStyle: Partial<IconButtonStyle> = {
-  iconStyle: {
-    iTheme: { light: { color: neutral[10], ':disabled': { color: volcano[40] } } },
-    iCss: ({ getThemeColor }) => ({
+const defaultIconButtonStyle: IOStyle<IconButtonRestProps> = {
+  iTheme: {
+    light: {
+      color: neutral[10],
+      loaderColor: neutral[10],
+      ':disabled': {
+        color: volcano[40],
+        loaderColor: volcano[40],
+      },
+    },
+  },
+  iCss: ({ getComponentRef, getThemeColor }) => ({
+    padding: 0,
+    minWidth: 'unset',
+    aspectRatio: '1',
+    height: '38px',
+    width: '38px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    [getComponentRef(Spinner)]: {
+      borderRightColor: getThemeColor('loaderColor'),
+    },
+    [getComponentRef(Icon)]: {
       color: getThemeColor('color'),
-      '&[data-disabled="true"]': { color: getThemeColor('color', ':disabled') },
-    }),
-  },
-  buttonStyle: {
-    iCss: {
-      padding: 0,
-      minWidth: 'unset',
-      aspectRatio: '1',
-      height: '38px',
-      width: '38px',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
     },
-  },
-  loaderStyle: {
-    iTheme: {
-      light: {
-        borderRightColor: neutral[10],
-        ':disabled': {
-          borderRightColor: volcano[40],
-        },
+    '&:disabled': {
+      [getComponentRef(Spinner)]: {
+        borderRightColor: getThemeColor('loaderColor', ':disabled'),
+      },
+      [getComponentRef(Icon)]: {
+        color: getThemeColor('color', ':disabled'),
       },
     },
-    iCss: ({ getThemeColor }) => ({
-      borderRightColor: getThemeColor('borderRightColor'),
-      '&[data-disabled="true"]': {
-        borderRightColor: getThemeColor('borderRightColor', ':disabled'),
-      },
-    }),
-  },
+  }),
 };
 
 export { defaultIconButtonStyle };

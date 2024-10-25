@@ -1,31 +1,8 @@
-import { SimplePseudos } from 'csstype';
 import { Dispatch, JSX, SetStateAction } from 'react';
 
-import { BackgroundColor, BorderColor, Color, IOStyle, OutlineColor } from '../types';
+import { IOStyle } from '../types';
 
 type ThemeMode = 'light' | 'dark';
-
-type DataAttribute = `data-${string}`;
-
-type ColorsKeysValues = {
-  color: Color;
-  backgroundColor: BackgroundColor;
-  borderColor: BorderColor;
-  outlineColor: OutlineColor;
-  borderRightColor: BorderColor;
-  borderLeftColor: BorderColor;
-  borderTopColor: BorderColor;
-  borderBottomColor: BorderColor;
-  textShadowColor: Color;
-  iconPrimaryColor: Color;
-  iconSecondaryColor: Color;
-};
-
-type ComponentColors = Partial<
-  ColorsKeysValues & {
-    [T in SimplePseudos]: Partial<ColorsKeysValues>;
-  } & { [T in DataAttribute]: Partial<ColorsKeysValues> }
->;
 
 interface ComponentsThemes {
   button: IOStyle<JSX.IntrinsicElements['button']>;
@@ -82,11 +59,8 @@ interface UseIThemeContextFn {
 
 export type {
   AppTheme,
-  ColorsKeysValues,
-  ComponentColors,
   ComponentsThemes,
   CustomITheme,
-  DataAttribute,
   IThemeContext,
   IThemeProviderProps,
   ThemeMode,

@@ -1,40 +1,44 @@
-import { SimplePseudos } from 'csstype';
 import { StyledObject } from 'styled-components';
 
-import { ColorsKeysValues, ComponentColors, DataAttribute, MediaQueries } from '../types';
+import { MediaQueries } from '../types';
+import { DataType, SimplePseudos, AdvancedPseudos } from 'csstype';
 
-type BaseIComponent<T = any> = {
-  $iCss?: IOCss<T>;
+type BaseIComponent<Props extends object = any> = {
+  $iCss?: IOCss<Props>;
   $iTheme?: IColorTheme;
-  $cssProps?: StyledObject;
-} & T;
+  $cssProps?: StyledObject<object>;
+} & Props;
 
-interface IComponent<T = any> {
-  iCss?: IOCss<T>;
+interface IComponent<Props extends object = any> {
+  iCss?: IOCss<Props>;
   iTheme?: IColorTheme;
 }
 
-type ICssArgs<T = any> = {
-  iTheme: ComponentColors;
-  getThemeColor: GetThemeColorInnerFn;
-  getMediaQuery: MediaQueries;
+type ICssArgs<Props extends object = {}> = {
+  iTheme: IColorTheme['light' | 'dark'];
+  getThemeColor: GetThemeColorInnerFn<IColorTheme['light' | 'dark']>;
+  getMediaQuery: GetMediaQueryFn;
   getComponentRef: GetComponentRefFn;
-} & T;
+} & Props;
 
-type IOCss<T = any> = ((args: ICssArgs<T>) => StyledObject<object> | undefined) | StyledObject<object>;
+type IOCss<Props extends object = {}> =
+  | ((args: ICssArgs<Props>) => StyledObject<object> | undefined)
+  | StyledObject<object>;
 
-type ICss<T = any> = (args: ICssArgs<T>) => StyledObject<object>;
+type ICss<Props extends object = {}> = (args: ICssArgs<Props>) => StyledObject<object>;
 
 interface GetComponentRefFn {
   (component: Function): string;
 }
 
-interface GetThemeColorInnerFn {
-  (colorKey: keyof ColorsKeysValues, stateKey?: SimplePseudos | DataAttribute): string;
+type DataAttribute = `data-${string}`;
+
+interface GetThemeColorInnerFn<Theme extends IColorTheme['light' | 'dark']> {
+  (colorKey: keyof Theme, state?: SimplePseudos | AdvancedPseudos | DataAttribute): DataType.Color;
 }
 
-interface GetThemeColorFn {
-  (componentColors?: ComponentColors): GetThemeColorInnerFn;
+interface GetThemeColorFn<Theme extends IColorTheme = IColorTheme> {
+  (componentColors?: Theme['light' | 'dark']): GetThemeColorInnerFn<typeof componentColors>;
 }
 
 interface GetMediaQueryFn {
@@ -47,19 +51,19 @@ interface ComponentMap {
   prefix?: string;
 }
 
-interface IStyle<T = any> {
+interface IStyle<Props extends object = {}> {
   iTheme: IColorTheme;
-  iCss: ICss<T>;
+  iCss: ICss<Props>;
 }
 
-interface IOStyle<T = any> {
+interface IOStyle<Props extends object = {}> {
   iTheme?: IColorTheme;
-  iCss?: IOCss<T>;
+  iCss?: IOCss<Props>;
 }
 
 interface IColorTheme {
-  light?: ComponentColors;
-  dark?: ComponentColors;
+  light?: Record<string, DataType.Color | Record<string, DataType.Color>>;
+  dark?: Record<string, DataType.Color | Record<string, DataType.Color>>;
 }
 
 export type {

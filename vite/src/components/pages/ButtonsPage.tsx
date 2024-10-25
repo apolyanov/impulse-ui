@@ -5,7 +5,6 @@ import { Container } from "@impulse-ui/layout";
 import { Typography } from "@impulse-ui/text";
 import { useState } from "react";
 import { Spinner } from "@impulse-ui/loader";
-import { getComponentRef } from "@impulse-ui/core";
 
 const ButtonsPage = () => {
   const [check, setCheck] = useState<boolean>(false);
@@ -27,19 +26,21 @@ const ButtonsPage = () => {
         Button здравей
       </Typography>
       <Button
-        loading
-        iStyle={{
-          buttonStyle: {
-            iCss: {
-              [getComponentRef(Spinner)]: { backgroundColor: "red" },
-            },
-          },
-        }}
+        iCss={({ getComponentRef }) => ({
+          [getComponentRef(Spinner)]: { backgroundColor: "red" },
+        })}
         onClick={(event) => console.log(event)}
       >
         Buttons
       </Button>
-      <Button ml={16} loading onClick={() => console.log("clicked")}></Button>
+      <Button
+        iCss={({ getComponentRef }) => ({
+          [getComponentRef(Spinner)]: { backgroundColor: "red" },
+        })}
+        ml={16}
+        loading
+        onClick={() => console.log("clicked")}
+      ></Button>
       <Button disabled onClick={() => console.log("clicked")}>
         Buttons
       </Button>

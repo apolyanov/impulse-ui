@@ -1,10 +1,9 @@
-import { createBaseComponentStyle } from '@impulse-ui/core';
-import { BaseContainer } from '@impulse-ui/layout';
+import { BaseIComponent, createBaseComponentStyle } from '@impulse-ui/core';
 import styled from 'styled-components';
 
 import { spinnerLoader } from '../../styles';
 
-const BaseSpinner = styled(BaseContainer)(({ theme: { mode, themes }, $iCss, $iTheme, ...rest }) =>
+const BaseSpinner = styled.div<BaseIComponent>(({ theme: { mode, themes }, $iCss, $iTheme, ...rest }) =>
   createBaseComponentStyle({
     baseTheme: spinnerLoader,
     globalTheme: themes?.spinnerLoader,

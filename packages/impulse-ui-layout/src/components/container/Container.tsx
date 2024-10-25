@@ -10,4 +10,6 @@ const Container = polymorphicForwardRef<'div', PropsWithChildren<ContainerProps>
   return <BaseContainer ref={ref} $iCss={iCss} $iTheme={iTheme} $cssProps={cssProps} {...componentProps} />;
 });
 
+Container.toString = () => BaseContainer.styledComponentId;
+
 export { Container };

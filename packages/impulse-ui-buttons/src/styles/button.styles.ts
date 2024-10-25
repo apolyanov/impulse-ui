@@ -1,6 +1,7 @@
 import { neutral, volcano } from '@impulse-ui/colours';
-import { IStyle } from '@impulse-ui/core';
-import { ButtonHTMLProps, ButtonStyle } from '../types';
+import { IOStyle, IStyle } from '@impulse-ui/core';
+import { ButtonHTMLProps, ButtonRestProps } from '../types';
+import { Spinner } from '@impulse-ui/loader';
 
 const baseButton: IStyle<ButtonHTMLProps> = {
   iTheme: {
@@ -55,23 +56,25 @@ const baseButton: IStyle<ButtonHTMLProps> = {
   }),
 };
 
-const button: Partial<ButtonStyle> = {
-  loaderStyle: {
-    iTheme: {
-      light: {
-        borderRightColor: neutral[10],
-        ':disabled': {
-          borderRightColor: volcano[40],
-        },
+const button: IOStyle<ButtonRestProps> = {
+  iTheme: {
+    light: {
+      loaderColor: neutral[10],
+      ':disabled': {
+        loaderColor: volcano[40],
       },
     },
-    iCss: ({ getThemeColor }) => ({
-      borderRightColor: getThemeColor('borderRightColor'),
-      '&[data-disabled="true"]': {
-        borderRightColor: getThemeColor('borderRightColor', ':disabled'),
-      },
-    }),
   },
+  iCss: ({ getComponentRef, getThemeColor }) => ({
+    [getComponentRef(Spinner)]: {
+      borderRightColor: getThemeColor('loaderColor'),
+    },
+    '&:disabled': {
+      [getComponentRef(Spinner)]: {
+        borderRightColor: getThemeColor('loaderColor', ':disabled'),
+      },
+    },
+  }),
 };
 
 export { baseButton, button };

@@ -1,26 +1,27 @@
-import { extractCssProps, polymorphicForwardRef, useComponentStyle } from '@impulse-ui/core';
+import { extractCssProps, polymorphicForwardRef, useStyle } from '@impulse-ui/core';
 import { Spinner } from '@impulse-ui/loader';
 import { PropsWithChildren } from 'react';
 import { ButtonProps } from '../../types';
 
-import { buttonComponentMap } from '../../maps';
 import { button } from '../../styles';
 
 import { BaseButton } from './BaseButton.styles';
 
-const Button = polymorphicForwardRef<'button', PropsWithChildren<ButtonProps>>(({ iStyle, ...rest }, ref) => {
+const Button = polymorphicForwardRef<'button', PropsWithChildren<ButtonProps>>(({ iCss, iTheme, ...rest }, ref) => {
   const { cssProps, componentProps } = extractCssProps(rest);
   const { loading, children, ...buttonProps } = componentProps;
-
-  const { buttonStyle, loaderStyle } = useComponentStyle(buttonComponentMap, rest, button, iStyle);
+  const iStyle = useStyle(rest, button, iCss, iTheme);
 
   return (
-    <BaseButton ref={ref} $iCss={buttonStyle?.iCss} $iTheme={buttonStyle?.iTheme} $cssProps={cssProps} {...buttonProps}>
-      {loading ? <Spinner data-disabled={componentProps.disabled} {...loaderStyle} /> : children}
+    <BaseButton ref={ref} $iCss={iStyle?.iCss} $iTheme={iStyle?.iTheme} $cssProps={cssProps} {...buttonProps}>
+      {loading ? <Spinner data-disabled={componentProps.disabled} /> : children}
     </BaseButton>
   );
 });
 
-Button.toString = () => BaseButton.styledComponentId;
+Button.toString = function () {
+  console.log(this);
+  return BaseButton.styledComponentId;
+};
 
 export { Button };

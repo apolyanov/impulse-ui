@@ -1,6 +1,7 @@
 import { volcano } from '@impulse-ui/colours';
-import { IStyle } from '@impulse-ui/core';
-import { ButtonHTMLProps, TextButtonStyle } from '../types';
+import { IOStyle, IStyle } from '@impulse-ui/core';
+import { ButtonHTMLProps, TextButtonRestProps } from '../types';
+import { Spinner } from '@impulse-ui/loader';
 
 const baseTextButton: IStyle<ButtonHTMLProps> = {
   iTheme: {
@@ -64,23 +65,20 @@ const baseTextButton: IStyle<ButtonHTMLProps> = {
   }),
 };
 
-const textButton: Partial<TextButtonStyle> = {
-  loaderStyle: {
-    iTheme: {
-      light: {
-        borderRightColor: volcano[60],
-        ':disabled': {
-          borderRightColor: volcano[40],
-        },
+const textButton: IOStyle<TextButtonRestProps> = {
+  iTheme: {
+    light: {
+      loaderColor: volcano[60],
+      ':disabled': {
+        loaderColor: volcano[40],
       },
     },
-    iCss: ({ getThemeColor }) => ({
-      borderRightColor: getThemeColor('borderRightColor'),
-      '&[data-disabled="true"]': {
-        borderRightColor: getThemeColor('borderRightColor', ':disabled'),
-      },
-    }),
   },
+  iCss: ({ getComponentRef, getThemeColor }) => ({
+    [getComponentRef(Spinner)]: {
+      borderRightColor: getThemeColor('loaderColor'),
+    },
+  }),
 };
 
 export { baseTextButton, textButton };

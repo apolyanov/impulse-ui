@@ -8,4 +8,6 @@ const Icon = polymorphicForwardRef<'svg', IconProps>(({ icon, iCss, iTheme, ...r
   return <BaseIcon ref={ref} icon={icon} $iCss={iCss} $iTheme={iTheme} $cssProps={cssProps} {...componentProps} />;
 });
 
+Icon.toString = () => BaseIcon.styledComponentId;
+
 export { Icon };
