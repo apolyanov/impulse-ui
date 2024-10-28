@@ -2,6 +2,7 @@ import { css, StyledObject } from 'styled-components';
 import {
   AnimationHelper,
   CreateBaseComponentStyleArgs,
+  ExtractCssPropsFnData,
   GetComponentRefFn,
   GetMediaQueryFn,
   GetThemeColorFn,
@@ -19,9 +20,9 @@ import { merge } from './deepmerge.ts';
 
 const isNullOrUndefined = (value: any) => value === undefined || value === null;
 
-const extractCssProps = <T>(props: T) => {
+const extractCssProps = <Props extends object>(props: Props): ExtractCssPropsFnData<Props> => {
   const cssProps: StyledObject = {};
-  const componentProps: Omit<T, keyof typeof cssPropsMap> = { ...props };
+  const componentProps = { ...props };
 
   if (componentProps) {
     Object.entries(componentProps).forEach(([key, value]) => {

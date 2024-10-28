@@ -3,13 +3,13 @@ import { StyledObject } from 'styled-components';
 import { MediaQueries } from '../types';
 import { DataType, SimplePseudos, AdvancedPseudos } from 'csstype';
 
-type BaseIComponent<Props extends object = any> = {
+type BaseIComponent<Props extends object = object> = {
   $iCss?: IOCss<Props>;
   $iTheme?: IColorTheme;
   $cssProps?: StyledObject<object>;
 } & Props;
 
-interface IComponent<Props extends object = any> {
+interface IComponent<Props extends object = object> {
   iCss?: IOCss<Props>;
   iTheme?: IColorTheme;
 }

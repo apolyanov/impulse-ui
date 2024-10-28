@@ -1,4 +1,5 @@
 export * from './constants';
+export * from './classnames.tsx';
 export * from './polymorphic';
 export * from './processOptions';
 export * from './style';

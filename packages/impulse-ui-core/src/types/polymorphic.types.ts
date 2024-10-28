@@ -1,9 +1,9 @@
 import {
+  ComponentPropsWithoutRef,
   ComponentPropsWithRef,
   ForwardRefExoticComponent,
   ForwardRefRenderFunction,
   ReactElement,
-  ComponentPropsWithoutRef,
 } from 'react';
 import { CssMapKeys } from './cssProps.types.ts';
 

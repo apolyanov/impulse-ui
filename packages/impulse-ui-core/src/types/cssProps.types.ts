@@ -1,6 +1,10 @@
 import { PropertiesFallback } from 'csstype';
+import { FastOmit } from './polymorphic.types.ts';
+import { cssPropsMap } from '../utils';
+import { StyledObject } from 'styled-components';
 
-export type StandardCSSProperties = PropertiesFallback<number | string>;
+type ClassName = string | boolean | null | undefined;
+type StandardCSSProperties = PropertiesFallback<number | string>;
 
 export interface AliasesCSSProperties {
   m?: StandardCSSProperties['margin'];
@@ -196,6 +200,15 @@ type CssMapKeys =
   | TypographyRawKeys
   | Colors;
 
+interface ExtractCssPropsFn<Props extends object> {
+  (props: Props): ExtractCssPropsFnData<Props>;
+}
+
+interface ExtractCssPropsFnData<Props extends object> {
+  cssProps: StyledObject;
+  componentProps: FastOmit<Props, keyof typeof cssPropsMap>;
+}
+
 export type {
   Borders,
   BordersCssProps,
@@ -227,4 +240,8 @@ export type {
   TypographyRawKeys,
   TypographyCssProps,
   TypographyKeys,
+  StandardCSSProperties,
+  ClassName,
+  ExtractCssPropsFn,
+  ExtractCssPropsFnData,
 };

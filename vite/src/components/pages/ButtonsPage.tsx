@@ -26,6 +26,7 @@ const ButtonsPage = () => {
         Button здравей
       </Typography>
       <Button
+        as="span"
         iCss={({ getComponentRef }) => ({
           [getComponentRef(Spinner)]: { backgroundColor: "red" },
         })}
