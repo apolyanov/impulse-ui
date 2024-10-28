@@ -10,6 +10,7 @@ import {
   SpacingAliasCssProps,
   SpacingCssProps,
 } from '@impulse-ui/core';
+import { ContainerHTMLProps } from '@impulse-ui/layout';
 
 interface SpinnerLoaderCSSProps
   extends SpacingCssProps,
@@ -24,6 +25,6 @@ interface SpinnerLoaderCSSProps
 
 type PartialSpinnerLoaderCSSProps = Partial<SpinnerLoaderCSSProps>;
 
-interface SpinnerLoaderProps extends IComponent, PartialSpinnerLoaderCSSProps {}
+interface SpinnerLoaderProps extends ContainerHTMLProps, IComponent<ContainerHTMLProps>, PartialSpinnerLoaderCSSProps {}
 
 export type { SpinnerLoaderProps };

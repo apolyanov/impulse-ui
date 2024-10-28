@@ -10,7 +10,7 @@ import { BaseButton } from './BaseButton.styles';
 const Button = polymorphicForwardRef<'button', PropsWithChildren<ButtonProps>>(({ iCss, iTheme, ...rest }, ref) => {
   const { cssProps, componentProps } = extractCssProps(rest);
   const { loading, children, ...buttonProps } = componentProps;
-  const className = classnames('IMUI-IButton', componentProps.className);
+  const className = classnames('IMUI-Button', componentProps.className);
   const iStyle = useStyle(rest, button, iCss, iTheme);
 
   return (

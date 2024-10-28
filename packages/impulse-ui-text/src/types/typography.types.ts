@@ -1,4 +1,4 @@
-import { JSX, PropsWithoutRef } from 'react';
+import { ComponentPropsWithoutRef } from 'react';
 
 import {
   BordersCssProps,
@@ -13,7 +13,7 @@ import {
   TypographyCssProps,
 } from '@impulse-ui/core';
 
-type TypographyHTMLProps = PropsWithoutRef<JSX.IntrinsicElements['p']>;
+type TypographyHTMLProps = ComponentPropsWithoutRef<'p'>;
 
 interface TypographyCSSProps
   extends SpacingCssProps,
@@ -28,6 +28,6 @@ interface TypographyCSSProps
 
 type PartialTypographyCSSProps = Partial<TypographyCSSProps>;
 
-interface TypographyProps extends IComponent, PartialTypographyCSSProps {}
+interface TypographyProps extends IComponent<TypographyHTMLProps>, TypographyHTMLProps, PartialTypographyCSSProps {}
 
 export type { TypographyHTMLProps, TypographyProps };

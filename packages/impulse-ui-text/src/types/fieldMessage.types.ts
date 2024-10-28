@@ -1,5 +1,6 @@
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { IOStyle } from '@impulse-ui/core';
+import { ContainerHTMLProps } from '@impulse-ui/layout';
 
 type FieldMessageType = 'success' | 'warning' | 'info' | 'error';
 
@@ -7,7 +8,7 @@ interface FieldMessageProps extends FieldMessageRestProps {
   iStyle?: Partial<FieldMessageStyle>;
 }
 
-interface FieldMessageRestProps {
+interface FieldMessageRestProps extends ContainerHTMLProps {
   type?: FieldMessageType;
   icon?: IconDefinition;
 }
