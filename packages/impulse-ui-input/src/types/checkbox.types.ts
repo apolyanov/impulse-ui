@@ -1,10 +1,7 @@
-import { IconButtonStyle } from '@impulse-ui/buttons';
-import { IOStyle } from '@impulse-ui/core';
+import { IComponent } from '@impulse-ui/core';
 import { ComponentPropsWithRef, MouseEvent } from 'react';
 
-interface CheckboxProps extends CompositeCheckboxProps {
-  iStyle?: Partial<CheckboxStyle>;
-}
+interface CheckboxProps extends CompositeCheckboxProps, IComponent<CompositeCheckboxProps> {}
 
 type CompositeCheckboxProps = CheckboxRestProps & Omit<ComponentPropsWithRef<'button'>, keyof CheckboxRestProps>;
 
@@ -19,10 +16,4 @@ interface OnClickCheckboxEvent {
   value: boolean;
 }
 
-interface CheckboxStyle {
-  mainContainerStyle: IOStyle<CheckboxRestProps>;
-  iconButtonStyle: Partial<IconButtonStyle>;
-  typographyStyle: IOStyle<CheckboxRestProps>;
-}
-
-export type { CheckboxProps, CheckboxRestProps, CheckboxStyle, CompositeCheckboxProps };
+export type { CheckboxProps, CheckboxRestProps, CompositeCheckboxProps };

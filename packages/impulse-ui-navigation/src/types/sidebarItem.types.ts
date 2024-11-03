@@ -1,10 +1,8 @@
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { ButtonRestProps } from '@impulse-ui/buttons';
-import { IOStyle } from '@impulse-ui/core';
+import { IComponent } from '@impulse-ui/core';
 
-interface SidebarItemProps<T = object> extends SidebarItemRestProps {
-  iStyle?: Partial<SidebarItemStyle<T>>;
-}
+interface SidebarItemProps extends SidebarItemRestProps, IComponent<SidebarItemRestProps> {}
 
 interface SidebarItemRestProps extends ButtonRestProps {
   active?: boolean;
@@ -14,9 +12,4 @@ interface SidebarItemRestProps extends ButtonRestProps {
   collapsed?: boolean;
 }
 
-interface SidebarItemStyle<T> {
-  buttonStyle: IOStyle<T>;
-  iconStyle: IOStyle<T>;
-}
-
-export type { SidebarItemProps, SidebarItemRestProps, SidebarItemStyle };
+export type { SidebarItemProps, SidebarItemRestProps };

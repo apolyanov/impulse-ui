@@ -1,6 +1,4 @@
-import { ImpulseTableState, TableHeaderStyle } from '../types';
-
-const tableHeaderStyle = <T>(): Partial<TableHeaderStyle<ImpulseTableState<T>>> => ({
+const tableHeaderStyle = () => ({
   containerStyle: {
     iCss: {
       display: 'flex',

@@ -1,48 +1,32 @@
 import { faLightbulb, faQrcode } from '@fortawesome/free-solid-svg-icons';
 import { IconButton } from '@impulse-ui/buttons';
-import { useComponentStyle } from '@impulse-ui/core';
+import { useStyle } from '@impulse-ui/core';
 import { Icon } from '@impulse-ui/icon';
 import { Container } from '@impulse-ui/layout';
 
 import { useQrScanner } from '../../hooks';
-import { qrScannerComponentMap } from '../../maps';
-import { qrScannerStyle } from '../../styles';
 import { QRScannerProps } from '../../types';
+import { ocrScannerStyle } from '@impulse-ui/ocr';
 
-const QRScanner = ({ iStyle, ...rest }: QRScannerProps) => {
+const QRScanner = ({ iCss, iTheme, ...rest }: QRScannerProps) => {
   const qrScannerProps = useQrScanner(rest);
-  const { isScanning, toggleScanning, toggleTorch, canUseTorch, isTorchOn, mountVideoElement } = qrScannerProps;
-  const stylesProps = { ...rest, isScanning, canUseTorch, isTorchOn };
+  const { isScanning, toggleScanning, toggleTorch, canUseTorch, mountVideoElement } = qrScannerProps;
 
-  const {
-    mainContainerStyle,
-    qrScannerContainerStyle,
-    topLeftQRCornerStyle,
-    topRightQRCornerStyle,
-    bottomLeftQRCornerStyle,
-    bottomRightQRCornerStyle,
-    videoStyle,
-    placeholderIconStyle,
-    buttonsContainerStyle,
-    toggleScanningButtonStyle,
-    toggleTorchButtonStyle,
-  } = useComponentStyle(qrScannerComponentMap, stylesProps, iStyle, qrScannerStyle);
+  const iStyle = useStyle({ ...rest, ...qrScannerProps }, ocrScannerStyle, iCss, iTheme);
 
   return (
-    <Container {...mainContainerStyle}>
-      <Container {...qrScannerContainerStyle}>
-        <Container {...topLeftQRCornerStyle} />
-        <Container {...topRightQRCornerStyle} />
-        <Container {...bottomLeftQRCornerStyle} />
-        <Container {...bottomRightQRCornerStyle} />
-        {!isScanning && <Icon {...placeholderIconStyle} icon={faQrcode} />}
-        <Container {...videoStyle} as='video' ref={mountVideoElement} />
+    <Container iCss={iStyle?.iCss} iTheme={iStyle?.iTheme} className='IMUI-OCRScanner-root'>
+      <Container className='IMUI-OCRScanner-video'>
+        <Container className='IMUI-OCRScanner-constraint top-left' />
+        <Container className='IMUI-OCRScanner-constraint top-right' />
+        <Container className='IMUI-OCRScanner-constraint bottom-left' />
+        <Container className='IMUI-OCRScanner-constraint top-right' />
+        {!isScanning && <Icon className='IMUI-OCRScanner-placeholder-icon' icon={faQrcode} />}
+        <Container className='IMUI-OCRScanner-video' as='video' ref={mountVideoElement} />
       </Container>
-      <Container {...buttonsContainerStyle}>
-        <IconButton iStyle={toggleScanningButtonStyle} onClick={toggleScanning} icon={faQrcode} />
-        {canUseTorch && isScanning && (
-          <IconButton iStyle={toggleTorchButtonStyle} onClick={toggleTorch} icon={faLightbulb} />
-        )}
+      <Container className='IMUI-OCRScanner-actions'>
+        <IconButton className='toggle-scanning' onClick={toggleScanning} icon={faQrcode} />
+        {canUseTorch && isScanning && <IconButton className='toggle-torch' onClick={toggleTorch} icon={faLightbulb} />}
       </Container>
     </Container>
   );

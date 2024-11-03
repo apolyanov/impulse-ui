@@ -1,17 +1,17 @@
-import { BaseIComponent, createBaseComponentStyle } from '@impulse-ui/core';
+import { createBaseComponentStyle } from '@impulse-ui/core';
 import styled from 'styled-components';
 
 import { baseTBody } from '../../styles';
-import { ImpulseTableState } from '../../types';
+import { TableBaseIComponent, TBodyHTMLProps } from '../../types';
 
-const BaseTBody = styled.tbody<BaseIComponent<ImpulseTableState<any>>>(
-  ({ theme: { mode, themes }, $iCss, $iTheme, ...rest }) =>
-    createBaseComponentStyle<ImpulseTableState<any>>({
+const BaseTBody = styled.tbody<TableBaseIComponent<TBodyHTMLProps>>(
+  ({ theme: { mode, themes }, $iCss, $iTheme, $tableProps, ...rest }) =>
+    createBaseComponentStyle({
       baseTheme: baseTBody,
       globalTheme: themes?.tbody,
       overridingTheme: { iCss: $iCss, iTheme: $iTheme },
       mode,
-      rest,
+      rest: { ...rest, ...$tableProps },
     }),
 );
 

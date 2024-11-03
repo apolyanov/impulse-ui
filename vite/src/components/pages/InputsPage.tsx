@@ -20,6 +20,7 @@ const InputsPage = () => {
         error
         type={"email"}
         debounced
+        clearablegray
         onDebouncedChange={(event) => console.log(event.target.value)}
         onChange={(event) => console.log(event.target.value)}
         placeholder={"Email"}
@@ -68,10 +69,10 @@ const InputsPage = () => {
           asdasdasd asd asd asd asdasdasdasdas dasdasdasdas adsdasdas
         </Typography>
       </Container>
-      <FieldMessage message={"Success"} type={"success"} />
-      <FieldMessage message={"Warning"} type={"warning"} />
-      <FieldMessage message={"Error"} type={"error"} />
-      <FieldMessage message={"Info"} type={"info"} />
+      <FieldMessage type={"success"}>Success</FieldMessage>
+      <FieldMessage type={"warning"}>Warning</FieldMessage>
+      <FieldMessage type={"error"}>Error</FieldMessage>
+      <FieldMessage type={"info"}>Info</FieldMessage>
     </Container>
   );
 };

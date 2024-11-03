@@ -1,7 +1,6 @@
 import { neutral, volcano } from '@impulse-ui/colours';
-import { AutoCompleteStyle } from '../types';
 
-const defaultAutoCompleteStyle: Partial<AutoCompleteStyle<any>> = {
+const defaultAutoCompleteStyle = {
   mainContainerStyle: {
     iCss: {
       width: '100%',

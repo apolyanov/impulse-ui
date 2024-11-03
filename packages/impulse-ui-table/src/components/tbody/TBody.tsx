@@ -1,43 +1,30 @@
 import { faDatabase } from '@fortawesome/free-solid-svg-icons';
-import { extractCssProps, useComponentStyle } from '@impulse-ui/core';
+import { extractCssProps } from '@impulse-ui/core';
 import { Icon } from '@impulse-ui/icon';
 import { Spinner } from '@impulse-ui/loader';
 import { Typography } from '@impulse-ui/text';
 import { flexRender } from '@tanstack/react-table';
 
 import { useImpulseTable } from '../../hooks';
-import { tbodyComponentMap } from '../../maps';
-import { tbody } from '../../styles';
 import { TData } from '../tdata';
 import { TRow } from '../trow';
 
 import { TBodyComponentProps } from '../../types';
 import { BaseTBody } from './BaseTBody.styles.tsx';
 
-const TBody = <T extends object>({ iStyle, ...rest }: TBodyComponentProps<T>) => {
+const TBody = ({ ...rest }: TBodyComponentProps) => {
   const { cssProps, componentProps } = extractCssProps(rest);
-  const tableState = useImpulseTable();
-  const {
-    tbodyStyle,
-    trowStyle,
-    tdataStyle,
-    noContentTdataStyle,
-    noContentIconStyle,
-    noContentTrowStyle,
-    noContentTypographyStyle,
-    noContentTbodyStyle,
-    loaderSpinnerStyle,
-  } = useComponentStyle(tbodyComponentMap, tableState, tbody, iStyle);
+  const tableProps = useImpulseTable();
 
-  if (tableState.showNoData()) {
+  if (tableProps.showNoData()) {
     return (
-      <BaseTBody $iStyle={noContentTbodyStyle} $cssProps={cssProps} {...componentProps}>
-        {tableState.loading && <Spinner as='tr' {...loaderSpinnerStyle} />}
-        {!tableState.loading && (
-          <TRow {...noContentTrowStyle}>
-            <TData colSpan={tableState.getHeaderGroups()?.[0]?.headers?.length ?? 0} {...noContentTdataStyle}>
-              <Icon {...noContentIconStyle} icon={faDatabase} />
-              <Typography {...noContentTypographyStyle}>No data</Typography>
+      <BaseTBody $cssProps={cssProps} $tableProps={tableProps} {...componentProps}>
+        {tableProps.loading && <Spinner as='tr' />}
+        {!tableProps.loading && (
+          <TRow>
+            <TData colSpan={tableProps.getHeaderGroups()?.[0]?.headers?.length ?? 0}>
+              <Icon icon={faDatabase} />
+              <Typography>No data</Typography>
             </TData>
           </TRow>
         )}
@@ -46,18 +33,12 @@ const TBody = <T extends object>({ iStyle, ...rest }: TBodyComponentProps<T>) =>
   }
 
   return (
-    <BaseTBody $iStyle={tbodyStyle} $cssProps={cssProps} {...componentProps}>
-      {tableState.loading && <Spinner as='tr' {...loaderSpinnerStyle} />}
-      {tableState.getRowModel().rows.map((row) => (
-        <TRow
-          aria-selected={row.getIsSelected()}
-          data-row-type={'body-row'}
-          data-row-id={row.id}
-          {...trowStyle}
-          key={row.id}
-        >
+    <BaseTBody $cssProps={cssProps} $tableProps={tableProps} {...componentProps}>
+      {tableProps.loading && <Spinner as='tr' />}
+      {tableProps.getRowModel().rows.map((row) => (
+        <TRow aria-selected={row.getIsSelected()} data-row-type={'body-row'} data-row-id={row.id} key={row.id}>
           {row.getVisibleCells().map((cell) => (
-            <TData data-cell-id={cell.id} {...tdataStyle} key={cell.id}>
+            <TData data-cell-id={cell.id} key={cell.id}>
               {flexRender(cell.column.columnDef.cell, cell.getContext())}
             </TData>
           ))}

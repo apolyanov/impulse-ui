@@ -5,7 +5,7 @@ import { FunctionComponent } from 'react';
 import { useImpulseTable } from '../../hooks';
 import { SortingButtonProps } from '../../types';
 
-const SortingButton: FunctionComponent<SortingButtonProps> = ({ iStyle, columnId, ...rest }) => {
+const SortingButton: FunctionComponent<SortingButtonProps> = ({ columnId, ...rest }) => {
   const { getColumn } = useImpulseTable();
   const column = getColumn(columnId);
 
@@ -27,7 +27,6 @@ const SortingButton: FunctionComponent<SortingButtonProps> = ({ iStyle, columnId
       data-button-type={'sorting-button'}
       onClick={column?.getToggleSortingHandler()}
       icon={getSortingIcon()}
-      iStyle={iStyle}
       {...rest}
     />
   );

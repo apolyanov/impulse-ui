@@ -1,10 +1,10 @@
 import { neutral, volcano } from '@impulse-ui/colours';
 import { IOStyle } from '@impulse-ui/core';
-import { IconButtonRestProps } from '../types';
+import { ButtonRestProps, IconButtonRestProps } from '../types';
 import { Spinner } from '@impulse-ui/loader';
 import { Icon } from '@impulse-ui/icon';
 
-const defaultIconButtonStyle: IOStyle<IconButtonRestProps> = {
+const defaultIconButtonStyle: IOStyle<IconButtonRestProps | ButtonRestProps> = {
   iTheme: {
     light: {
       color: neutral[10],

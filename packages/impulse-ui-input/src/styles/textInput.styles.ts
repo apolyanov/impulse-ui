@@ -1,27 +1,33 @@
 import { neutral, volcano } from '@impulse-ui/colours';
-import { IStyle } from '@impulse-ui/core';
-import { TextInputCompositeProps, TextInputStyle } from '../types';
+import { IOStyle, IStyle } from '@impulse-ui/core';
+import { TextInputCompositeProps } from '../types';
 
-const textInputStyle: Partial<TextInputStyle<{}>> = {
-  mainContainerStyle: {
-    iCss: {
-      width: '100%',
-      maxWidth: 250,
-      minWidth: 128,
-      padding: 0,
-    },
-  },
-  inputContainerStyle: {
-    iTheme: {
-      light: {
-        backgroundColor: neutral[10],
-        borderColor: volcano[60],
-        ':disabled': {
-          borderColor: volcano[20],
-        },
+const textInputStyle: IOStyle<TextInputCompositeProps> = {
+  iTheme: {
+    light: {
+      backgroundColor: neutral[10],
+      borderColor: volcano[60],
+      iconColor: neutral[80],
+      clearButtonBackgroundColor: neutral[10],
+      ':focus': {
+        clearButtonBackgroundColor: neutral[40],
+      },
+      ':hover': {
+        clearButtonBackgroundColor: neutral[40],
+      },
+      ':disabled': {
+        borderColor: volcano[20],
+        iconColor: neutral[60],
       },
     },
-    iCss: ({ getThemeColor }) => ({
+  },
+  iCss: ({ getThemeColor, clearable }) => ({
+    width: '100%',
+    maxWidth: 250,
+    minWidth: 128,
+    padding: 0,
+    '.IMUI-TextInput-container': {
+      position: 'relative',
       display: 'flex',
       flexDirection: 'row',
       alignItems: 'center',
@@ -30,48 +36,24 @@ const textInputStyle: Partial<TextInputStyle<{}>> = {
       height: 38,
       borderRadius: 4,
       borderWidth: 1,
+      backgroundColor: getThemeColor('backgroundColor'),
+      borderColor: getThemeColor('borderColor'),
       '&[data-disabled="true"]': {
         borderColor: getThemeColor('borderColor', ':disabled'),
       },
-    }),
-  },
-  inputStyle: {
-    iCss: ({ clearable }) => ({
-      marginRight: clearable ? 26 : 0,
-    }),
-  },
-  iconStyle: {
-    iTheme: {
-      light: {
-        color: neutral[80],
-        ':disabled': {
-          color: neutral[60],
+      '.IMUI-TextInput-input': {
+        marginRight: clearable ? 26 : 0,
+      },
+      '.IMUI-TextInput-icon': {
+        fontSize: 16,
+        width: 16,
+        marginRight: 4,
+        color: getThemeColor('iconColor'),
+        '&[data-disabled="true"]': {
+          color: getThemeColor('iconColor', ':disabled'),
         },
       },
-    },
-    iCss: ({ getThemeColor }) => ({
-      fontSize: 16,
-      width: 16,
-      marginRight: 4,
-      '&[data-disabled="true"]': {
-        color: getThemeColor('color', ':disabled'),
-      },
-    }),
-  },
-  clearIconStyle: {
-    buttonStyle: {
-      iTheme: {
-        light: {
-          backgroundColor: neutral[10],
-          ':focus': {
-            backgroundColor: neutral[40],
-          },
-          ':hover': {
-            backgroundColor: neutral[40],
-          },
-        },
-      },
-      iCss: ({ getThemeColor }) => ({
+      '.IMUI-TextInput-clear-button': {
         position: 'absolute',
         filter: 'unset',
         marginRight: 'auto',
@@ -79,19 +61,19 @@ const textInputStyle: Partial<TextInputStyle<{}>> = {
         right: 8,
         width: 20,
         minHeight: 'unset',
-        '&:focus': {
-          background: getThemeColor('backgroundColor', ':focus'),
+        '.IMUI-Icon': {
+          color: getThemeColor('iconColor'),
         },
-      }),
-    },
-    iconStyle: {
-      iTheme: {
-        light: {
-          color: neutral[60],
+        background: getThemeColor('clearButtonBackgroundColor'),
+        '&:focus': {
+          background: getThemeColor('clearButtonBackgroundColor', ':focus'),
+        },
+        '&:hover': {
+          background: getThemeColor('clearButtonBackgroundColor', ':hover'),
         },
       },
     },
-  },
+  }),
 };
 
 const input: IStyle<TextInputCompositeProps> = {

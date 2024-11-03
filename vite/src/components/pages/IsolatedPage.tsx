@@ -1,15 +1,17 @@
-import { faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
-import { IconButton } from "@impulse-ui/buttons";
+import { OCRScanner } from "@impulse-ui/ocr";
+import { useCallback, useState } from "react";
+import { RecognizeResult } from "tesseract.js";
 
 const IsolatedPage = () => {
+  const [result, setResult] = useState<RecognizeResult>();
+
+  const onSuccess = useCallback((result: RecognizeResult) => {
+    setResult(result);
+  }, []);
+
   return (
     <div style={{ margin: 64 }}>
-      <IconButton
-        onClick={(event) => console.log(event)}
-        disabled
-        loading
-        icon={faArrowRightFromBracket}
-      />
+      <OCRScanner scanningInterval={50} onSuccess={onSuccess} />
     </div>
   );
 };

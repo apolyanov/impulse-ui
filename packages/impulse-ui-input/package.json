@@ -18,7 +18,7 @@
     }
   },
   "scripts": {
-    "build": "tsc && vite build",
+    "build": "vite build",
     "lint": "biome check ./src --write",
     "start": "vite build --watch",
     "test": "dts test --passWithNoTests"

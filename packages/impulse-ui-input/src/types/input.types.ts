@@ -1,14 +1,10 @@
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
-import { IconButtonStyle } from '@impulse-ui/buttons';
-import { IOStyle } from '@impulse-ui/core';
-import { FieldMessageStyle } from '@impulse-ui/text';
 import { ChangeEvent, ComponentPropsWithoutRef, RefObject } from 'react';
+import { IComponent } from '@impulse-ui/core';
 
 type InputHTMLProps = ComponentPropsWithoutRef<'input'>;
 
-interface TextInputProps<T = any> extends TextInputCompositeProps {
-  iStyle?: Partial<TextInputStyle<T>>;
-}
+interface TextInputProps extends TextInputCompositeProps, IComponent<TextInputCompositeProps> {}
 
 type TextInputCompositeProps = TextInputRestProps & Omit<InputHTMLProps, keyof TextInputRestProps>;
 
@@ -27,13 +23,4 @@ interface TextInputRestProps {
   errorMessage?: string;
 }
 
-interface TextInputStyle<T> {
-  mainContainerStyle: IOStyle<TextInputRestProps & T>;
-  inputContainerStyle: IOStyle<TextInputRestProps & T>;
-  iconStyle: IOStyle<TextInputRestProps & T>;
-  clearIconStyle: Partial<IconButtonStyle & T>;
-  inputStyle: IOStyle<TextInputRestProps & T>;
-  fieldMessageStyle: FieldMessageStyle;
-}
-
-export type { InputHTMLProps, TextInputCompositeProps, TextInputProps, TextInputRestProps, TextInputStyle };
+export type { InputHTMLProps, TextInputCompositeProps, TextInputProps, TextInputRestProps };

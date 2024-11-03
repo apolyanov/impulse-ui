@@ -1,9 +1,7 @@
-import { IOStyle } from '@impulse-ui/core';
+import { IComponent } from '@impulse-ui/core';
 import { ContainerHTMLProps } from '@impulse-ui/layout';
 
-interface AutoCompleteItemProps extends AutoCompleteItemRestProps {
-  iStyle?: Partial<AutoCompleteItemStyle>;
-}
+interface AutoCompleteItemProps extends AutoCompleteItemRestProps, IComponent<AutoCompleteItemRestProps> {}
 
 interface AutoCompleteItemRestProps extends ContainerHTMLProps {
   externalScroll?: boolean;
@@ -12,9 +10,4 @@ interface AutoCompleteItemRestProps extends ContainerHTMLProps {
   itemText: string | number;
 }
 
-interface AutoCompleteItemStyle {
-  mainContainerStyle: IOStyle<AutoCompleteItemRestProps>;
-  typographyStyle: IOStyle<AutoCompleteItemRestProps>;
-}
-
-export type { AutoCompleteItemProps, AutoCompleteItemRestProps, AutoCompleteItemStyle };
+export type { AutoCompleteItemProps, AutoCompleteItemRestProps };

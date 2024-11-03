@@ -1,13 +1,23 @@
-import { extractCssProps } from '@impulse-ui/core';
-import { FunctionComponent } from 'react';
+import { extractCssProps, useStyle } from '@impulse-ui/core';
 
 import { TDataProps } from '../../types';
 import { BaseTData } from './BaseTData.styles.tsx';
+import { useImpulseTable } from '../../hooks';
 
-const TData: FunctionComponent<TDataProps> = ({ iCss, iTheme, ...rest }) => {
+const TData = ({ iCss, iTheme, ...rest }: TDataProps) => {
   const { cssProps, componentProps } = extractCssProps(rest);
+  const tableProps = useImpulseTable();
+  const iStyle = useStyle({ tableProps, ...rest }, {}, iCss, iTheme);
 
-  return <BaseTData $iCss={iCss} $iTheme={iTheme} $cssProps={cssProps} {...componentProps} />;
+  return (
+    <BaseTData
+      $iCss={iStyle?.iCss}
+      $iTheme={iStyle?.iTheme}
+      $cssProps={cssProps}
+      $tableProps={tableProps}
+      {...componentProps}
+    />
+  );
 };
 
 export { TData };

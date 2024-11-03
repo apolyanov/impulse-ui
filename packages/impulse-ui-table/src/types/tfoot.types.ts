@@ -1,20 +1,8 @@
-import { JSX } from 'react';
+import { ComponentPropsWithoutRef } from 'react';
+import { TableIComponent } from './impulseTable.types.ts';
 
-import { IOStyle } from '@impulse-ui/core';
-import { ImpulseTableState } from './impulseTableProvider.types';
-import { TDataHTMLProps } from './tdata.types';
-import { TRowHTMLProps } from './trow.types';
+type TFootHTMLProps = ComponentPropsWithoutRef<'tfoot'>;
 
-type TFootHTMLProps = JSX.IntrinsicElements['tfoot'];
+interface TFootComponentProps extends TFootHTMLProps, TableIComponent<TFootHTMLProps> {}
 
-interface TFootComponentProps<T> extends TFootHTMLProps {
-  iStyle?: Partial<TFootStyle<ImpulseTableState<T>>>;
-}
-
-interface TFootStyle<T> {
-  tfootStyle: IOStyle<TFootHTMLProps & T>;
-  trowStyle: IOStyle<TRowHTMLProps & T>;
-  tdataStyle: IOStyle<TDataHTMLProps & T>;
-}
-
-export type { TFootComponentProps, TFootHTMLProps, TFootStyle };
+export type { TFootComponentProps, TFootHTMLProps };

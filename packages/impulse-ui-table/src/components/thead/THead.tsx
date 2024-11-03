@@ -1,10 +1,8 @@
-import { extractCssProps, useComponentStyle } from '@impulse-ui/core';
+import { extractCssProps } from '@impulse-ui/core';
 import { Typography } from '@impulse-ui/text';
 import { flexRender } from '@tanstack/react-table';
 
 import { useImpulseTable } from '../../hooks';
-import { theadComponentMap } from '../../maps';
-import { thead } from '../../styles';
 import { SortingButton } from '../sorting-button';
 import { THeader } from '../theader';
 import { TRow } from '../trow';
@@ -12,17 +10,10 @@ import { TRow } from '../trow';
 import { THeadComponentProps } from '../../types';
 import { BaseTHead } from './BaseTHead.styles.tsx';
 
-const THead = <T extends object>({ iStyle, ...rest }: THeadComponentProps<T>) => {
-  const tableState = useImpulseTable();
-  const { getHeaderGroups, loading } = tableState;
+const THead = ({ iCss, iTheme, ...rest }: THeadComponentProps) => {
+  const tableProps = useImpulseTable();
+  const { getHeaderGroups, loading } = tableProps;
   const { cssProps, componentProps } = extractCssProps(rest);
-
-  const { theadStyle, theaderStyle, trowStyle, theaderTypographyStyle, theaderSortButtonStyle } = useComponentStyle(
-    theadComponentMap,
-    tableState,
-    thead<T>(),
-    iStyle,
-  );
 
   const isFirstOrLastColumnHeader = (index: number, arrLength: number) => {
     if (index === 0) {
@@ -37,17 +28,14 @@ const THead = <T extends object>({ iStyle, ...rest }: THeadComponentProps<T>) =>
   };
 
   return (
-    <BaseTHead $iStyle={theadStyle} $cssProps={cssProps} {...componentProps}>
+    <BaseTHead $cssProps={cssProps} $tableProps={tableProps} {...componentProps}>
       {getHeaderGroups().map((headerGroup) => (
-        <TRow {...trowStyle} key={headerGroup.id}>
+        <TRow key={headerGroup.id}>
           {headerGroup.headers.map((header, index, array) => (
-            <THeader style={{ width: header.column.getSize() }} {...theaderStyle} key={header.id}>
-              <Typography
-                {...theaderTypographyStyle}
-                data-table-element={`column-header${isFirstOrLastColumnHeader(index, array.length)}`}
-              >
+            <THeader style={{ width: header.column.getSize() }} key={header.id}>
+              <Typography data-table-element={`column-header${isFirstOrLastColumnHeader(index, array.length)}`}>
                 {flexRender(header.column.columnDef.header, header.getContext())}
-                <SortingButton disabled={loading} iStyle={theaderSortButtonStyle} columnId={header.column.id} />
+                <SortingButton disabled={loading} columnId={header.column.id} />
               </Typography>
             </THeader>
           ))}

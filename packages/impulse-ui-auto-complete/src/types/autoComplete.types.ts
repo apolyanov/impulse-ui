@@ -1,11 +1,8 @@
-import { IComponent, IOStyle, SimpleOption, UseProcessedoptionsProps } from '@impulse-ui/core';
-import { TextInputCompositeProps, TextInputStyle } from '@impulse-ui/input';
+import { IComponent, SimpleOption, UseProcessedoptionsProps } from '@impulse-ui/core';
+import { TextInputCompositeProps } from '@impulse-ui/input';
 import { ContainerProps } from '@impulse-ui/layout';
-import { AutoCompleteItemStyle } from './autoCompleteItem.types.ts';
 
-interface AutoCompleteProps<T> extends AutoCompleteRestProps<T> {
-  iStyle?: Partial<AutoCompleteStyle<T>>;
-}
+interface AutoCompleteProps<T> extends AutoCompleteRestProps<T>, IComponent<AutoCompleteRestProps<T>> {}
 
 interface AutoCompleteRestProps<T> extends Omit<ContainerProps, keyof IComponent<object>>, UseProcessedoptionsProps<T> {
   selectOnBlur?: boolean;
@@ -15,13 +12,4 @@ interface AutoCompleteRestProps<T> extends Omit<ContainerProps, keyof IComponent
   onOptionSelect?: (optionValue: SimpleOption | null) => void;
 }
 
-interface AutoCompleteStyle<T> {
-  mainContainerStyle: IOStyle<AutoCompleteRestProps<T>>;
-  textInputStyle: Partial<TextInputStyle<T>>;
-  autoCompleteItemsContainerStyle: IOStyle<AutoCompleteRestProps<T>>;
-  autoCompleteItemStyle: Partial<AutoCompleteItemStyle>;
-  loadingSpinnerStyle: IOStyle<AutoCompleteRestProps<T>>;
-  noOptionsTypographyStyle: IOStyle<AutoCompleteRestProps<T>>;
-}
-
-export type { AutoCompleteProps, AutoCompleteRestProps, AutoCompleteStyle };
+export type { AutoCompleteProps, AutoCompleteRestProps };

@@ -1,6 +1,4 @@
-import { ImpulseTableState, PaginationStyle } from '../types';
-
-const paginationStyles = <T>(): Partial<PaginationStyle<ImpulseTableState<T>>> => ({
+const paginationStyles = () => ({
   containerStyle: { iCss: { marginLeft: 'auto', display: 'flex', gap: 4, alignItems: 'center' } },
   pageInputStyle: { mainContainerStyle: { iCss: { maxWidth: 62, textAlign: 'center' } } },
   pageCounterStyle: { iCss: { flexShrink: 0 } },

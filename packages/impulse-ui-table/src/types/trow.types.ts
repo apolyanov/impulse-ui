@@ -1,7 +1,7 @@
-import { IComponent } from '@impulse-ui/core';
-import { JSX } from 'react';
+import { ComponentPropsWithoutRef } from 'react';
+import { TableIComponent } from './impulseTable.types.ts';
 
-type TRowHTMLProps = JSX.IntrinsicElements['tr'];
-type TRowProps = IComponent & TRowHTMLProps;
+type TRowHTMLProps = ComponentPropsWithoutRef<'tr'>;
+interface TRowProps extends TRowHTMLProps, TableIComponent<TRowHTMLProps> {}
 
 export type { TRowHTMLProps, TRowProps };

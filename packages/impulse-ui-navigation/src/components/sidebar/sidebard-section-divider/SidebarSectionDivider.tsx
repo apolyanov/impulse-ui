@@ -1,18 +1,14 @@
-import { mergePartialThemes } from '@impulse-ui/core';
+import { useStyle } from '@impulse-ui/core';
 import { Divider } from '@impulse-ui/layout';
 import { FunctionComponent } from 'react';
 
 import { defaultSidebarSectionDividerStyle } from '../../../styles';
 import { SidebarSectionDividerProps } from '../../../types';
 
-const SidebarSectionDivider: FunctionComponent<SidebarSectionDividerProps> = ({ iStyle, ...rest }) => {
-  const dividerStyle = mergePartialThemes({
-    defaultTheme: defaultSidebarSectionDividerStyle,
-    overridingTheme: iStyle,
-    props: rest,
-  });
+const SidebarSectionDivider: FunctionComponent<SidebarSectionDividerProps> = ({ iCss, iTheme, ...rest }) => {
+  const iStyle = useStyle(rest, defaultSidebarSectionDividerStyle, iCss, iTheme);
 
-  return <Divider iCss={dividerStyle.iCss} iTheme={dividerStyle.iTheme} />;
+  return <Divider iCss={iStyle?.iCss} iTheme={iStyle?.iTheme} />;
 };
 
 export { SidebarSectionDivider };

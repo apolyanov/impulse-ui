@@ -1,139 +1,127 @@
 import { neutral, volcano } from '@impulse-ui/colours';
-import { SelectStyle } from '../types';
+import { IOStyle } from '@impulse-ui/core';
+import { SelectRestProps } from '../types';
 
-const select: Partial<SelectStyle<any>> = {
-  mainContainerStyle: {
-    iTheme: {
-      light: {
-        backgroundColor: neutral[10],
-        borderColor: volcano[60],
+const select: IOStyle<SelectRestProps<any>> = {
+  iTheme: {
+    light: {
+      backgroundColor: neutral[10],
+      borderColor: volcano[60],
+      iconColor: neutral[80],
+      clearButtonBackgroundColor: neutral[10],
+      ':focus': {
+        clearButtonBackgroundColor: neutral[40],
       },
-    },
-    iCss: {
-      display: 'flex',
-      flexDirection: 'row',
-      alignItems: 'center',
-      paddingLeft: 8,
-      paddingRight: 28,
-      position: 'relative',
-      borderStyle: 'solid',
-      height: 38,
-      maxWidth: 250,
-      width: '100%',
-      minWidth: 128,
-      borderRadius: 4,
-      borderWidth: 1,
-      '&:hover': {
-        cursor: 'pointer',
+      ':hover': {
+        clearButtonBackgroundColor: neutral[40],
+      },
+      ':disabled': {
+        borderColor: volcano[20],
+        iconColor: neutral[60],
       },
     },
   },
-  clearButtonStyle: {
-    buttonStyle: {
-      iTheme: {
-        light: {
-          backgroundColor: neutral[10],
-          ':focus': {
-            backgroundColor: neutral[40],
-          },
-          ':hover': {
-            backgroundColor: neutral[40],
-          },
-        },
-      },
-      iCss: ({ getThemeColor }) => ({
-        filter: 'unset',
-        height: 20,
-        marginLeft: 'auto',
-        width: 20,
-        minHeight: 'unset',
-        '&:focus': {
-          background: getThemeColor('backgroundColor', ':focus'),
-        },
-      }),
+  iCss: ({ getThemeColor }) => ({
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingLeft: 8,
+    paddingRight: 28,
+    position: 'relative',
+    borderStyle: 'solid',
+    height: 38,
+    maxWidth: 250,
+    width: '100%',
+    minWidth: 128,
+    borderRadius: 4,
+    borderWidth: 1,
+    '&:hover': {
+      cursor: 'pointer',
     },
-    iconStyle: {
-      iTheme: {
-        light: {
-          color: neutral[60],
-        },
-      },
+    backgroundColor: getThemeColor('backgroundColor'),
+    borderColor: getThemeColor('borderColor'),
+    '&[data-disabled="true"]': {
+      borderColor: getThemeColor('borderColor', ':disabled'),
     },
-  },
-  selectedItemTypographyStyle: {
-    iCss: {
+    '.IMUI-Select-selected-value': {
       textOverflow: 'ellipsis',
       overflow: 'hidden',
       whiteSpace: `nowrap`,
       lineHeight: 1.5,
     },
-  },
-  selectPlaceholderStyle: {
-    iTheme: {
-      light: {
-        color: neutral[80],
-      },
-    },
-    iCss: {
-      textOverflow: 'ellipsis',
-      overflow: 'hidden',
-      whiteSpace: `nowrap`,
-      lineHeight: 1.5,
-    },
-  },
-  selectOptionStyle: {
-    typographyStyle: { iCss: { textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap', lineHeight: 1.5 } },
-  },
-  dropdownIconStyle: {
-    iTheme: {
-      light: {
-        color: neutral[60],
-        backgroundColor: neutral[10],
-      },
-    },
-    iCss: {
+    '.IMUI-Select-clear-button': {
       position: 'absolute',
       filter: 'unset',
       marginRight: 'auto',
-      height: 16,
+      height: 20,
       right: 8,
-      width: 16,
+      width: 20,
       minHeight: 'unset',
-    },
-  },
-  selectOptionsContainerStyle: {
-    iTheme: {
-      light: {
-        backgroundColor: neutral[10],
+      '.IMUI-Icon': {
+        color: getThemeColor('iconColor'),
+      },
+      background: getThemeColor('clearButtonBackgroundColor'),
+      '&:focus': {
+        background: getThemeColor('clearButtonBackgroundColor', ':focus'),
+      },
+      '&:hover': {
+        background: getThemeColor('clearButtonBackgroundColor', ':hover'),
       },
     },
-    iCss: ({ loading }) => ({
-      zIndex: 99,
-      padding: loading ? 8 : '0 2px',
-      display: 'block',
-      maxHeight: 304,
-      overflowY: loading ? 'hidden' : 'auto',
-      borderRadius: 4,
-      filter: 'drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2))',
-      '&[data-popper-reference-hidden=true]': {
-        visibility: 'hidden',
-        pointerEvents: 'none',
-      },
-    }),
-  },
-  loadingSpinnerStyle: {
-    iTheme: {
-      light: {
-        borderRightColor: volcano[60],
-      },
-    },
-    iCss: {
-      margin: 'auto',
-    },
-  },
-  noOptionsTypographyStyle: {
-    iCss: { textAlign: 'center', padding: 8 },
-  },
+  }),
+  // selectOptionStyle: {
+  //   typographyStyle: { iCss: { textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap', lineHeight: 1.5 } },
+  // },
+  // dropdownIconStyle: {
+  //   iTheme: {
+  //     light: {
+  //       color: neutral[60],
+  //       backgroundColor: neutral[10],
+  //     },
+  //   },
+  //   iCss: {
+  //     position: 'absolute',
+  //     filter: 'unset',
+  //     marginRight: 'auto',
+  //     height: 16,
+  //     right: 8,
+  //     width: 16,
+  //     minHeight: 'unset',
+  //   },
+  // },
+  // selectOptionsContainerStyle: {
+  //   iTheme: {
+  //     light: {
+  //       backgroundColor: neutral[10],
+  //     },
+  //   },
+  //   iCss: ({ loading }) => ({
+  //     zIndex: 99,
+  //     padding: loading ? 8 : '0 2px',
+  //     display: 'block',
+  //     maxHeight: 304,
+  //     overflowY: loading ? 'hidden' : 'auto',
+  //     borderRadius: 4,
+  //     filter: 'drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2))',
+  //     '&[data-popper-reference-hidden=true]': {
+  //       visibility: 'hidden',
+  //       pointerEvents: 'none',
+  //     },
+  //   }),
+  // },
+  // loadingSpinnerStyle: {
+  //   iTheme: {
+  //     light: {
+  //       borderRightColor: volcano[60],
+  //     },
+  //   },
+  //   iCss: {
+  //     margin: 'auto',
+  //   },
+  // },
+  // noOptionsTypographyStyle: {
+  //   iCss: { textAlign: 'center', padding: 8 },
+  // },
 };
 
 export { select };

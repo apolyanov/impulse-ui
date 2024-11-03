@@ -1,8 +1,8 @@
 import { neutral } from '@impulse-ui/colours';
 import { IStyle } from '@impulse-ui/core';
-import { ImpulseTableState } from '../types';
+import { ImpulseTableState, TableHTMLProps } from '../types';
 
-const table: IStyle<ImpulseTableState<any>> = {
+const table: IStyle<{ tableProps?: ImpulseTableState<any> } & TableHTMLProps> = {
   iTheme: {
     light: {
       backgroundColor: neutral[10],

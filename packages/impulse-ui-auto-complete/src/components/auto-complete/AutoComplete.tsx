@@ -1,27 +1,15 @@
-import { useComponentStyle } from '@impulse-ui/core';
 import { Container } from '@impulse-ui/layout';
 import { Spinner } from '@impulse-ui/loader';
 import { Typography } from '@impulse-ui/text';
 import { Fragment, ReactNode, useMemo } from 'react';
 
 import { useAutoComplete } from '../../hooks';
-import { autoCompleteComponentMap } from '../../maps';
-import { defaultAutoCompleteStyle } from '../../styles';
 
 import { TextInput } from '@impulse-ui/input';
 import { AutoCompleteProps } from '../../types';
 import { AutoCompleteItem } from './auto-complete-item';
 
-const AutoComplete = <T extends object>({ iStyle, ...rest }: AutoCompleteProps<T>) => {
-  const {
-    mainContainerStyle,
-    textInputStyle,
-    autoCompleteItemsContainerStyle,
-    autoCompleteItemStyle,
-    loadingSpinnerStyle,
-    noOptionsTypographyStyle,
-  } = useComponentStyle(autoCompleteComponentMap, rest, defaultAutoCompleteStyle, iStyle);
-
+const AutoComplete = <T extends object>({ iCss, iTheme, ...rest }: AutoCompleteProps<T>) => {
   const {
     containerRefSetter,
     dropdownRefSetter,
@@ -48,11 +36,11 @@ const AutoComplete = <T extends object>({ iStyle, ...rest }: AutoCompleteProps<T
   const optionsContainerRenderer = useMemo((): ReactNode | undefined => {
     if (showOptions) {
       if (loading) {
-        return <Spinner {...loadingSpinnerStyle} />;
+        return <Spinner />;
       }
 
       if (getOptionsToShow.length === 0) {
-        return <Typography {...noOptionsTypographyStyle}>No options</Typography>;
+        return <Typography>No options</Typography>;
       }
 
       return (
@@ -63,7 +51,6 @@ const AutoComplete = <T extends object>({ iStyle, ...rest }: AutoCompleteProps<T
                 highlighted={highlightedIndex === virtualRow.index}
                 selected={isItemSelected(getOptionsToShow[virtualRow.index])}
                 onClick={() => handleOptionSelect(getOptionsToShow[virtualRow.index])}
-                iStyle={autoCompleteItemStyle}
                 itemText={getOptionsToShow[virtualRow.index].label}
               />
             </Container>
@@ -77,18 +64,15 @@ const AutoComplete = <T extends object>({ iStyle, ...rest }: AutoCompleteProps<T
     getOptionsToShow,
     listContainerStyle,
     getVirtualItems,
-    loadingSpinnerStyle,
-    noOptionsTypographyStyle,
     listItemStyle,
     highlightedIndex,
     isItemSelected,
-    autoCompleteItemStyle,
     handleOptionSelect,
   ]);
 
   return (
     <Fragment>
-      <Container {...mainContainerProps} ref={containerRefSetter} {...mainContainerStyle}>
+      <Container {...mainContainerProps} ref={containerRefSetter}>
         <TextInput
           {...inputProps}
           ref={inputRef}
@@ -97,11 +81,10 @@ const AutoComplete = <T extends object>({ iStyle, ...rest }: AutoCompleteProps<T
           onKeyDown={handleKeyDown}
           onMouseDown={onMouseDown}
           onClear={handleInputClear}
-          iStyle={textInputStyle}
         />
       </Container>
       {showOptions && (
-        <Container style={{ ...floatingStyles }} ref={dropdownRefSetter} {...autoCompleteItemsContainerStyle}>
+        <Container style={{ ...floatingStyles }} ref={dropdownRefSetter}>
           {optionsContainerRenderer}
         </Container>
       )}

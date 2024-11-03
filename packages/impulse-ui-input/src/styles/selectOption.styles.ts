@@ -1,8 +1,7 @@
 import { neutral } from '@impulse-ui/colours';
 import { BackgroundColor } from '@impulse-ui/core';
-import { SelectOptionStyle } from '../types';
 
-const selectOption: Partial<SelectOptionStyle> = {
+const selectOption = {
   mainContainerStyle: {
     iTheme: { light: { backgroundColor: 'transparent' } },
     iCss: ({ selected, highlighted }) => ({

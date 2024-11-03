@@ -1,8 +1,6 @@
 import { neutral, volcano } from '@impulse-ui/colours';
-import { IStyle } from '@impulse-ui/core';
-import { ImpulseTableState, TBodyStyle } from '../types';
 
-const baseTBody: IStyle<ImpulseTableState<any>> = {
+const baseTBody = {
   iTheme: {
     light: {
       backgroundColor: 'transparent',
@@ -20,7 +18,7 @@ const baseTBody: IStyle<ImpulseTableState<any>> = {
   }),
 };
 
-const tbody: Partial<TBodyStyle<any>> = {
+const tbody = {
   noContentTdataStyle: {
     iCss: {
       width: '100%',

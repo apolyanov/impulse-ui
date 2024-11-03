@@ -1,13 +1,23 @@
-import { extractCssProps } from '@impulse-ui/core';
-import { FunctionComponent } from 'react';
+import { extractCssProps, useStyle } from '@impulse-ui/core';
 
 import { TRowProps } from '../../types';
 import { BaseTRow } from './BaseTRow.styles.tsx';
+import { useImpulseTable } from '../../hooks';
 
-const TRow: FunctionComponent<TRowProps> = ({ iCss, iTheme, ...rest }) => {
+const TRow = ({ iCss, iTheme, ...rest }: TRowProps) => {
   const { cssProps, componentProps } = extractCssProps(rest);
+  const tableProps = useImpulseTable();
+  const iStyle = useStyle({ ...rest, tableProps }, undefined, iCss, iTheme);
 
-  return <BaseTRow $iCss={iCss} $iTheme={iTheme} $cssProps={cssProps} {...componentProps} />;
+  return (
+    <BaseTRow
+      $iCss={iStyle?.iCss}
+      $iTheme={iStyle?.iTheme}
+      $tableProps={tableProps}
+      $cssProps={cssProps}
+      {...componentProps}
+    />
+  );
 };
 
 export { TRow };

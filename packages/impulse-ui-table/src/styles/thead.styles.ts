@@ -1,8 +1,8 @@
 import { neutral } from '@impulse-ui/colours';
 import { IStyle } from '@impulse-ui/core';
-import { ImpulseTableState, THeadHTMLProps, THeadStyle } from '../types';
+import { THeadHTMLProps } from '../types';
 
-const thead = <T>(): Partial<THeadStyle<ImpulseTableState<T>>> => ({
+const thead = () => ({
   trowStyle: {
     iCss: {
       '&:hover [data-table-element="column-header"]': {

@@ -1,16 +1,18 @@
-import { BaseIComponent, createBaseComponentStyle } from '@impulse-ui/core';
+import { createBaseComponentStyle } from '@impulse-ui/core';
 import styled from 'styled-components';
 
 import { trow } from '../../styles';
+import { TableBaseIComponent, TRowHTMLProps } from '../../types';
 
-const BaseTRow = styled.tr<BaseIComponent>(({ theme: { mode, themes }, $iCss, $iTheme, ...rest }) =>
-  createBaseComponentStyle({
-    baseTheme: trow,
-    globalTheme: themes?.trow,
-    overridingTheme: { iCss: $iCss, iTheme: $iTheme },
-    mode,
-    rest,
-  }),
+const BaseTRow = styled.tr<TableBaseIComponent<TRowHTMLProps>>(
+  ({ theme: { mode, themes }, $iCss, $iTheme, $tableProps, ...rest }) =>
+    createBaseComponentStyle({
+      baseTheme: trow,
+      globalTheme: themes?.trow,
+      overridingTheme: { iCss: $iCss, iTheme: $iTheme },
+      mode,
+      rest: { ...rest, ...$tableProps },
+    }),
 );
 
 export { BaseTRow };

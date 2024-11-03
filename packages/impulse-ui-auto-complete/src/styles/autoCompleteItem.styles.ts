@@ -1,8 +1,7 @@
 import { neutral } from '@impulse-ui/colours';
 import { BackgroundColor } from '@impulse-ui/core';
-import { AutoCompleteItemStyle } from '../types';
 
-const defaultAutoCompleteItemStyle: Partial<AutoCompleteItemStyle> = {
+const defaultAutoCompleteItemStyle = {
   mainContainerStyle: {
     iTheme: { light: { backgroundColor: 'transparent' } },
     iCss: ({ selected, highlighted }) => ({

@@ -11,4 +11,3 @@ export * from './tfoot.types';
 export * from './thead.types';
 export * from './theader.types';
 export * from './trow.types';
-export * from './tsegment.types';

@@ -1,6 +1,6 @@
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { IconButton } from '@impulse-ui/buttons';
-import { extractCssProps, useComponentStyle } from '@impulse-ui/core';
+import { classnames, extractCssProps, useStyle } from '@impulse-ui/core';
 import { Icon } from '@impulse-ui/icon';
 import { Container } from '@impulse-ui/layout';
 import { ERROR, FieldMessage } from '@impulse-ui/text';
@@ -18,14 +18,12 @@ import {
   useState,
 } from 'react';
 
-import { textInputComponentMap } from '../../maps';
-import { textInputStyle } from '../../styles';
-
 import { TextInputProps } from '../../types';
 import BaseTextInput from './BaseTextInput.styles';
+import { textInputStyle } from '../../styles';
 
 const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
-  ({ iStyle, ...rest }, ref?: ForwardedRef<HTMLInputElement>) => {
+  ({ iCss, iTheme, ...rest }, ref?: ForwardedRef<HTMLInputElement>) => {
     const {
       value,
       onChange,
@@ -47,9 +45,9 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
     } = rest;
 
     const { cssProps, componentProps } = extractCssProps(inputProps);
-    const { mainContainerStyle, inputContainerStyle, inputStyle, iconStyle, fieldMessageStyle, clearIconStyle } =
-      useComponentStyle(textInputComponentMap, rest, textInputStyle, iStyle);
 
+    const iStyle = useStyle(rest, textInputStyle, iCss, iTheme);
+    const className = classnames('IMUI-TextInput-root', rest.className);
     const [innerValue, setInnerValue] = useState<InputHTMLAttributes<HTMLInputElement>['value']>(defaultValue ?? '');
     const innerRef = useRef<HTMLInputElement | null>(null);
 
@@ -99,14 +97,13 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
     };
 
     return (
-      <Container {...mainContainerStyle}>
-        <Container data-disabled={inputProps.disabled} {...inputContainerStyle}>
-          {icon && <Icon data-disabled={inputProps.disabled} {...iconStyle} icon={icon} />}
+      <Container iCss={iStyle?.iCss} iTheme={iStyle?.iTheme} className={className}>
+        <Container data-disabled={inputProps.disabled} className='IMUI-TextInput-container'>
+          {icon && <Icon data-disabled={inputProps.disabled} icon={icon} className='IMUI-TextInput-icon' />}
           <BaseTextInput
             ref={innerRef}
             {...componentProps}
-            $iCss={inputStyle.iCss}
-            $iTheme={inputStyle.iTheme}
+            className='IMUI-TextInput-input'
             $cssProps={cssProps}
             name={name}
             value={value ?? innerValue}
@@ -118,16 +115,12 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
             <IconButton
               tabIndex={isClearIconFocusable ? 0 : -1}
               onClick={handleClear}
-              iStyle={clearIconStyle}
               icon={clearIcon ?? faXmark}
+              className='IMUI-TextInput-clear-button'
             />
           )}
         </Container>
-        {error && (
-          <FieldMessage iStyle={fieldMessageStyle} type={ERROR}>
-            {errorMessage}
-          </FieldMessage>
-        )}
+        {error && <FieldMessage type={ERROR}>{errorMessage}</FieldMessage>}
       </Container>
     );
   },

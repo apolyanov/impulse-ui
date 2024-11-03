@@ -1,45 +1,46 @@
 import { volcano } from '@impulse-ui/colours';
-import { CheckboxStyle } from '../types';
+import { IOStyle } from '@impulse-ui/core';
+import { CompositeCheckboxProps } from '../types';
 
-const checkboxStyle: Partial<CheckboxStyle> = {
-  mainContainerStyle: {
-    iCss: {
-      display: 'flex',
-      flexDirection: 'row',
-      alignItems: 'center',
-      padding: 0,
-      margin: '8px 0',
+const checkboxStyle: IOStyle<CompositeCheckboxProps> = {
+  iTheme: {
+    light: {
+      iconPrimaryColor: volcano[60],
+      iconSecondaryColor: volcano[10],
+      ':hover': { backgroundColor: 'transparent' },
+      ':disabled': {
+        backgroundColor: 'transparent',
+        iconPrimaryColor: volcano[40],
+        iconSecondaryColor: volcano[10],
+      },
     },
   },
-  iconButtonStyle: {
-    buttonStyle: {
-      iTheme: { light: { backgroundColor: 'transparent', ':hover': { backgroundColor: 'transparent' } } },
-      iCss: {
-        backgroundColor: 'unset',
-        '&:disabled': {
-          backgroundColor: 'unset',
-          cursor: 'not-allowed',
-        },
-        minWidth: 'unset',
-        width: 'unset',
-        minHeight: 'unset',
-        height: 'unset',
-        padding: 0,
-        margin: 0,
+  iCss: ({ getThemeColor }) => ({
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 0,
+    margin: '8px 0',
+    '.IMUI-Checkbox-label': { fontSize: 14, margin: '0 6px' },
+    '.IMUI-Checkbox-icon-button': {
+      backgroundColor: 'unset',
+      minWidth: 'unset',
+      width: 'unset',
+      maxWidth: 'unset',
+      minHeight: 'unset',
+      height: 'unset',
+      maxHeight: 'unset',
+      '&:hover': {
+        backgroundColor: 'transparent',
       },
-    },
-    iconStyle: {
-      iTheme: {
-        light: {
-          iconPrimaryColor: volcano[60],
-          iconSecondaryColor: volcano[10],
-          ':disabled': {
-            iconPrimaryColor: volcano[40],
-            iconSecondaryColor: volcano[10],
-          },
+      '&:disabled': {
+        backgroundColor: 'transparent',
+        '.IMUI-Icon': {
+          '--fa-primary-color': getThemeColor('iconPrimaryColor', ':disabled'),
+          '--fa-secondary-color': getThemeColor('iconSecondaryColor', ':disabled'),
         },
       },
-      iCss: ({ getThemeColor }) => ({
+      '.IMUI-Icon': {
         fontSize: 24,
         '--fa-primaty-opacity': 1,
         '--fa-primary-color': getThemeColor('iconPrimaryColor'),
@@ -48,14 +49,9 @@ const checkboxStyle: Partial<CheckboxStyle> = {
         '& .fa-secondary': {
           filter: `drop-shadow(0 0 36px rgba(0, 0, 0, 0.2))`,
         },
-        '&[data-disabled="true"]': {
-          '--fa-primary-color': getThemeColor('iconPrimaryColor', ':disabled'),
-          '--fa-secondary-color': getThemeColor('iconSecondaryColor', ':disabled'),
-        },
-      }),
+      },
     },
-  },
-  typographyStyle: { iCss: { fontSize: 14, margin: '0 6px' } },
+  }),
 };
 
 export { checkboxStyle };

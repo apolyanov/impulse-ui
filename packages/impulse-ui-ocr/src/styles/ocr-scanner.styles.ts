@@ -1,108 +1,73 @@
 import { volcano } from '@impulse-ui/colours';
-import { OCRScannerStyle } from '../types';
+import { IOStyle } from '@impulse-ui/core';
+import { OCRScannerRestProps } from '../types';
+import { UseScannerReturnType } from '@impulse-ui/scanner-core';
 
-const ocrScannerStyle: Partial<OCRScannerStyle> = {
-  mainContainerStyle: {
-    iCss: {
-      width: 320,
-      height: 'fit-content',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
+const ocrScannerStyle: IOStyle<OCRScannerRestProps & UseScannerReturnType> = {
+  iTheme: {
+    light: {
+      constraintColor: volcano[60],
     },
   },
-  qrScannerContainerStyle: {
-    iCss: {
+  iCss: ({ getThemeColor, isScanning }) => ({
+    width: 320,
+    height: 'fit-content',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    '.IMUI-OCRScanner-actions': {
+      margin: 'auto',
+      display: 'flex',
+      gap: 8,
+    },
+    '.IMUI-OCRScanner-video': {
       position: 'relative',
       display: 'flex',
       padding: 16,
-    },
-  },
-  topLeftQRCornerStyle: {
-    iTheme: {
-      light: {
-        borderTopColor: volcano[60],
-        borderLeftColor: volcano[60],
+      '.IMUI-OCRScanner-video': {
+        objectFit: 'cover',
+        borderRadius: 4,
+        width: '100%',
+        aspectRatio: '1',
+        display: isScanning ? 'block' : 'none',
+      },
+      '.IMUI-OCRScanner-placeholder-icon': {
+        width: 288,
+        height: '100%',
+        aspectRatio: '1',
+      },
+      '.IMUI-OCRScanner-constraint': {
+        position: 'absolute',
+        width: 50,
+        height: 50,
+        borderRadius: 4,
+        '.top-left': {
+          top: 0,
+          left: 0,
+          borderTop: `4px solid ${getThemeColor('constraintColor')}`,
+          borderLeft: `4px solid ${getThemeColor('constraintColor')}`,
+        },
+        '.top-right': {
+          top: 0,
+          right: 0,
+          borderTop: `4px solid ${getThemeColor('constraintColor')}`,
+          borderLeft: `4px solid ${getThemeColor('constraintColor')}`,
+        },
+        '.bottom-left': {
+          bottom: 0,
+          left: 0,
+          borderTop: `4px solid ${getThemeColor('constraintColor')}`,
+          borderLeft: `4px solid ${getThemeColor('constraintColor')}`,
+        },
+        '.bottom-right': {
+          bottom: 0,
+          right: 0,
+          borderTop: `4px solid ${getThemeColor('borderTopColor')}`,
+          borderLeft: `4px solid ${getThemeColor('borderLeftColor')}`,
+        },
       },
     },
-    iCss: ({ getThemeColor }) => ({
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      width: 50,
-      height: 50,
-      borderRadius: 4,
-      borderTop: `4px solid ${getThemeColor('borderTopColor')}`,
-      borderLeft: `4px solid ${getThemeColor('borderLeftColor')}`,
-    }),
-  },
-  topRightQRCornerStyle: {
-    iTheme: {
-      light: {
-        borderTopColor: volcano[60],
-        borderRightColor: volcano[60],
-      },
-    },
-    iCss: ({ getThemeColor }) => ({
-      position: 'absolute',
-      top: 0,
-      right: 0,
-      width: 50,
-      height: 50,
-      borderRadius: 4,
-      borderTop: `4px solid ${getThemeColor('borderTopColor')}`,
-      borderRight: `4px solid ${getThemeColor('borderRightColor')}`,
-    }),
-  },
-  bottomLeftQRCornerStyle: {
-    iTheme: {
-      light: {
-        borderLeftColor: volcano[60],
-        borderBottomColor: volcano[60],
-      },
-    },
-    iCss: ({ getThemeColor }) => ({
-      position: 'absolute',
-      left: 0,
-      bottom: 0,
-      width: 50,
-      height: 50,
-      borderRadius: 4,
-      borderLeft: `4px solid ${getThemeColor('borderLeftColor')}`,
-      borderBottom: `4px solid ${getThemeColor('borderBottomColor')}`,
-    }),
-  },
-  bottomRightQRCornerStyle: {
-    iTheme: {
-      light: {
-        borderRightColor: volcano[60],
-        borderBottomColor: volcano[60],
-      },
-    },
-    iCss: ({ getThemeColor }) => ({
-      position: 'absolute',
-      right: 0,
-      bottom: 0,
-      width: 50,
-      height: 50,
-      borderRadius: 4,
-      borderRight: `4px solid ${getThemeColor('borderRightColor')}`,
-      borderBottom: `4px solid ${getThemeColor('borderBottomColor')}`,
-    }),
-  },
-  videoStyle: {
-    iCss: ({ isScanning }) => ({
-      objectFit: 'cover',
-      borderRadius: 4,
-      width: '100%',
-      aspectRatio: '1',
-      display: isScanning ? 'block' : 'none',
-    }),
-  },
-  placeholderIconStyle: {
-    iCss: { width: 288, height: '100%', aspectRatio: '1' },
-  },
-  buttonsContainerStyle: { iCss: { margin: 'auto', display: 'flex', gap: 8 } },
+  }),
 };
 
 export { ocrScannerStyle };

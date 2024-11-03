@@ -1,4 +1,3 @@
-import { useComponentStyle } from '@impulse-ui/core';
 import { Icon } from '@impulse-ui/icon';
 import { Container } from '@impulse-ui/layout';
 import { Spinner } from '@impulse-ui/loader';
@@ -6,14 +5,14 @@ import { Typography } from '@impulse-ui/text';
 import { Fragment, ReactNode, useMemo } from 'react';
 
 import { useSelect } from '../../hooks';
-import { selectComponentMap } from '../../maps';
-import { select } from '../../styles';
 
 import { SelectProps } from '../../types';
 import { ClearButton } from '../common';
 import { SelectOption } from './select-option';
+import { classnames, useStyle } from '@impulse-ui/core';
+import { select } from '../../styles';
 
-const Select = <T extends object>({ iStyle, ...rest }: SelectProps<T>) => {
+const Select = <T extends object>({ iCss, iTheme, ...rest }: SelectProps<T>) => {
   const {
     showOptions,
     floatingStyles,
@@ -39,26 +38,17 @@ const Select = <T extends object>({ iStyle, ...rest }: SelectProps<T>) => {
     ...containerProps
   } = useSelect(rest);
 
-  const {
-    selectOptionStyle,
-    noOptionsTypographyStyle,
-    loadingSpinnerStyle,
-    selectOptionsContainerStyle,
-    selectPlaceholderStyle,
-    mainContainerStyle,
-    selectedItemTypographyStyle,
-    dropdownIconStyle,
-    clearButtonStyle,
-  } = useComponentStyle(selectComponentMap, rest, iStyle, select);
+  const className = classnames('IMUI-Select-root', rest.className);
+  const iStyle = useStyle(rest, select, iCss, iTheme);
 
   const optionsContainerRenderer = useMemo((): ReactNode | undefined => {
     if (showOptions) {
       if (loading) {
-        return <Spinner {...loadingSpinnerStyle} />;
+        return <Spinner />;
       }
 
       if (processedOptions.length === 0) {
-        return <Typography {...noOptionsTypographyStyle}>No options</Typography>;
+        return <Typography>No options</Typography>;
       }
 
       return (
@@ -69,7 +59,6 @@ const Select = <T extends object>({ iStyle, ...rest }: SelectProps<T>) => {
                 highlighted={highlightedIndex === virtualRow.index}
                 selected={isItemSelected(processedOptions[virtualRow.index])}
                 onClick={() => handleOptionSelect(processedOptions[virtualRow.index])}
-                iStyle={selectOptionStyle}
                 itemText={processedOptions[virtualRow.index].label}
               />
             </Container>
@@ -83,38 +72,37 @@ const Select = <T extends object>({ iStyle, ...rest }: SelectProps<T>) => {
     processedOptions,
     listContainerStyle,
     getVirtualItems,
-    loadingSpinnerStyle,
-    noOptionsTypographyStyle,
     listItemStyle,
     highlightedIndex,
     isItemSelected,
-    selectOptionStyle,
     handleOptionSelect,
   ]);
 
   return (
     <Fragment>
       <Container
+        iCss={iStyle?.iCss}
+        iTheme={iStyle?.iTheme}
         {...containerProps}
+        className={className}
         role={'combobox'}
         onKeyDown={handleKeyDown}
         onMouseDown={onMouseDown}
-        {...mainContainerStyle}
         ref={containerRefSetter}
       >
-        {placeholder && !selectedItem && <Typography {...selectPlaceholderStyle}>{placeholder}</Typography>}
-        {selectedItem && <Typography {...selectedItemTypographyStyle}>{selectedItem.label}</Typography>}
+        {placeholder && !selectedItem && <Typography>{placeholder}</Typography>}
+        {selectedItem && <Typography className='IMUI-Select-selected-value'>{selectedItem.label}</Typography>}
         <ClearButton
+          className='IMUI-Select-clear-button'
           onMouseDown={handleSelectClear}
-          iStyle={clearButtonStyle}
           clearable={isInputClearable()}
           focusable={clearButton?.focusable}
           clearIcon={clearButton?.clearIcon}
         />
-        <Icon {...dropdownIconStyle} icon={getDropdownIcon()} />
+        <Icon icon={getDropdownIcon()} />
       </Container>
       {showOptions && (
-        <Container style={{ ...floatingStyles }} {...selectOptionsContainerStyle} ref={dropdownRefSetter}>
+        <Container style={{ ...floatingStyles }} ref={dropdownRefSetter}>
           {optionsContainerRenderer}
         </Container>
       )}

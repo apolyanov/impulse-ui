@@ -1,9 +1,7 @@
-import { IOStyle } from '@impulse-ui/core';
+import { IComponent } from '@impulse-ui/core';
 import { ContainerHTMLProps } from '@impulse-ui/layout';
 
-interface SelectOptionProps extends SelectOptionRestProps {
-  iStyle?: Partial<SelectOptionStyle>;
-}
+interface SelectOptionProps extends SelectOptionRestProps, IComponent<SelectOptionRestProps> {}
 
 interface SelectOptionRestProps extends ContainerHTMLProps {
   externalScroll?: boolean;
@@ -12,9 +10,4 @@ interface SelectOptionRestProps extends ContainerHTMLProps {
   itemText: string | number;
 }
 
-interface SelectOptionStyle {
-  mainContainerStyle: IOStyle<SelectOptionRestProps>;
-  typographyStyle: IOStyle<SelectOptionRestProps>;
-}
-
-export type { SelectOptionProps, SelectOptionRestProps, SelectOptionStyle };
+export type { SelectOptionProps, SelectOptionRestProps };
