@@ -12,31 +12,45 @@ const useScanner = <T>(options: UseScannerProps<T>) => {
   const [isScanning, setIsScanning] = useState<boolean>(false);
   const [isTorchOn, setIsTorchOn] = useState<boolean>(false);
 
-  const toggleScanning = async () => {
+  const toggleScanning = () => {
+    if (canStartScanning()) {
+      startScanning();
+    } else {
+      pauseScanning();
+    }
+  };
+
+  const startScanning = () => {
     if (qrScanner.current.paused) {
       setIsScanning(true);
       return qrScanner.current.resume();
     }
-
-    if (!isScanning && videoElement.current) {
+    if (canStartScanning()) {
       qrScanner.current.scan(videoElement.current, scanningFn, onSuccess, onError).then((camera) => {
         setCameraCapabilities(camera);
         setIsScanning(true);
       });
-    } else {
-      stopScanning();
     }
   };
 
-  const stopScanning = () => {
+  const pauseScanning = () => {
     qrScanner.current.pause();
     setIsScanning(false);
   };
 
-  const toggleTorch = () => {
-    const newTorchState = !isTorchOn;
+  const stopScanning = () => {
+    qrScanner.current.stop();
+    setIsScanning(false);
+  };
 
-    qrScanner.current.video.toggleTorch().then(() => setIsTorchOn(newTorchState));
+  const canStartScanning = () => !isScanning && videoElement.current;
+
+  const toggleTorch = () => {
+    if (isTorchOn) {
+      qrScanner.current.video.turnTorchOff().then(() => setIsTorchOn(false));
+    } else {
+      qrScanner.current.video.turnTorchOn().then(() => setIsTorchOn(true));
+    }
   };
 
   const canUseTorch = cameraCapabilities?.torch;
@@ -48,9 +62,12 @@ const useScanner = <T>(options: UseScannerProps<T>) => {
   }, []);
 
   return {
-    videoElement,
     toggleScanning,
     toggleTorch,
+    stopScanning,
+    startScanning,
+    canStartScanning,
+    videoElement,
     cameraCapabilities,
     canUseTorch,
     isScanning,
