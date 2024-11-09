@@ -1,5 +1,11 @@
 # @impulse-ui/scanner-core
 
+## 4.0.1
+
+### Patch Changes
+
+- [#160](https://github.com/apolyanov/impulse-ui/pull/160) [`879b9c8`](https://github.com/apolyanov/impulse-ui/commit/879b9c8079a8643a00e9c86bf9e5267e1ed9e8a9) Thanks [@apolyanov](https://github.com/apolyanov)! - feat: Introducing new functions for useScanner hook
+
 ## 4.0.0
 
 ### Major Changes
