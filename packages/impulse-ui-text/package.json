@@ -1,6 +1,6 @@
 {
   "name": "@impulse-ui/text",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "license": "MIT",
   "type": "module",
   "author": "Alexander Polyanov",
@@ -43,10 +43,10 @@
     "testEnvironment": "jsdom"
   },
   "dependencies": {
-    "@impulse-ui/colours": "^4.0.0",
-    "@impulse-ui/core": "^4.0.0",
-    "@impulse-ui/icon": "^4.0.0",
-    "@impulse-ui/layout": "^4.0.0"
+    "@impulse-ui/colours": "^4.0.1",
+    "@impulse-ui/core": "^4.0.1",
+    "@impulse-ui/icon": "^4.0.1",
+    "@impulse-ui/layout": "^4.0.1"
   },
   "peerDependencies": {
     "react": ">=16"

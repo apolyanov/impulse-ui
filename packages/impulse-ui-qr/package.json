@@ -1,6 +1,6 @@
 {
   "name": "@impulse-ui/qr",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "license": "MIT",
   "type": "module",
   "author": "Alexander Polyanov",
@@ -49,12 +49,12 @@
     "node": ">=12"
   },
   "dependencies": {
-    "@impulse-ui/buttons": "^4.0.0",
-    "@impulse-ui/colours": "^4.0.0",
-    "@impulse-ui/core": "^4.0.0",
-    "@impulse-ui/icon": "^4.0.0",
-    "@impulse-ui/layout": "^4.0.0",
-    "@impulse-ui/scanner-core": "^4.0.0",
+    "@impulse-ui/buttons": "^4.0.1",
+    "@impulse-ui/colours": "^4.0.1",
+    "@impulse-ui/core": "^4.0.1",
+    "@impulse-ui/icon": "^4.0.1",
+    "@impulse-ui/layout": "^4.0.1",
+    "@impulse-ui/scanner-core": "^4.0.1",
     "jsqr-es6": "1.4.0-1",
     "@shopify/react-web-worker": "5.1.6"
   }
