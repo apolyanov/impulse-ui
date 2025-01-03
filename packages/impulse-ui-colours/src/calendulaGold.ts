@@ -1,6 +1,6 @@
-import { ColorPalette } from './types';
+import { ColorPalette2 } from './types';
 
-const calendulaGold: ColorPalette = {
+const calendulaGold: ColorPalette2 = {
   10: '#fffbe6',
   20: '#fff1b8',
   30: '#ffe58f',

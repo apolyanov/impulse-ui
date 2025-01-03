@@ -1,6 +1,6 @@
-import { ColorPalette } from './types';
+import { ColorPalette2 } from './types';
 
-const magenta: ColorPalette = {
+const magenta: ColorPalette2 = {
   10: '#fff0f6',
   20: '#ffd6e7',
   30: '#ffadd2',

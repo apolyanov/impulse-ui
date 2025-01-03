@@ -53,7 +53,10 @@
     "@dnd-kit/core": "6.1.0",
     "@floating-ui/react-dom": "2.1.2",
     "@fontsource/montserrat": "^5.1.0",
-    "@tanstack/react-virtual": "3.10.8"
+    "@tanstack/react-virtual": "3.10.8",
+    "@vanilla-extract/css": "^1.17.0",
+    "@vanilla-extract/sprinkles": "^1.6.3",
+    "open-props": "^1.7.9"
   },
   "devDependencies": {
     "@types/lodash-es": "4.17.12"

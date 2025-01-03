@@ -1,6 +1,6 @@
-import { ColorPalette } from './types';
+import { ColorPalette2 } from './types';
 
-const volcano: ColorPalette = {
+const volcano: ColorPalette2 = {
   10: '#fff2e8',
   20: '#ffd8bf',
   30: '#ffbb96',

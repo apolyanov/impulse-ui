@@ -1,6 +1,6 @@
-import { ColorPalette } from './types';
+import { ColorPalette2 } from './types';
 
-const geekBlue: ColorPalette = {
+const geekBlue: ColorPalette2 = {
   10: '#f0f5ff',
   20: '#d6e4ff',
   30: '#adc6ff',

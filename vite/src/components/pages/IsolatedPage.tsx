@@ -1,15 +1,9 @@
-import { faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
-import { IconButton } from "@impulse-ui/buttons";
+import { Box } from '@impulse-ui/layout';
 
 const IsolatedPage = () => {
   return (
     <div style={{ margin: 64 }}>
-      <IconButton
-        onClick={(event) => console.log(event)}
-        disabled
-        loading
-        icon={faArrowRightFromBracket}
-      />
+      <Box flexDirection='row' padding='sm'></Box>
     </div>
   );
 };

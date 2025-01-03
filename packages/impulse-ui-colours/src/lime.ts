@@ -1,6 +1,6 @@
-import { ColorPalette } from './types';
+import { ColorPalette2 } from './types';
 
-const lime: ColorPalette = {
+const lime: ColorPalette2 = {
   10: '#fcffe6',
   20: '#f4ffb8',
   30: '#eaff8f',

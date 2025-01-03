@@ -1,6 +1,6 @@
-import { ColorPalette } from './types';
+import { ColorPalette2 } from './types';
 
-const daybreakBlue: ColorPalette = {
+const daybreakBlue: ColorPalette2 = {
   10: '#e6f4ff',
   20: '#bae0ff',
   30: '#91caff',

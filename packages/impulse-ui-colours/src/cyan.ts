@@ -1,6 +1,6 @@
-import { ColorPalette } from './types';
+import { ColorPalette2 } from './types';
 
-const cyan: ColorPalette = {
+const cyan: ColorPalette2 = {
   10: '#e6fffb',
   20: '#b5f5ec',
   30: '#87e8de',

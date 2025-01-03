@@ -1,6 +1,6 @@
-import { ColorPalette } from './types';
+import { ColorPalette2 } from './types';
 
-const goldenPurple: ColorPalette = {
+const goldenPurple: ColorPalette2 = {
   10: '#f9f0ff',
   20: '#efdbff',
   30: '#d3adf7',

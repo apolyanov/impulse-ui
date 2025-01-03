@@ -1,6 +1,6 @@
-import { ColorPalette } from './types';
+import { ColorPalette2 } from './types';
 
-const dustRed: ColorPalette = {
+const dustRed: ColorPalette2 = {
   10: '#fff1f0',
   20: '#ffccc7',
   30: '#ffa39e',

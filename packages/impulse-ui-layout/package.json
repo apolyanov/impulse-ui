@@ -7,9 +7,7 @@
   "main": "./dist/layout.umd.js",
   "module": "./dist/layout.es.js",
   "types": "./dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "exports": {
     ".": {
       "import": "./dist/layout.es.js",

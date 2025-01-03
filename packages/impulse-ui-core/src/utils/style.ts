@@ -1,5 +1,5 @@
 import { SimplePseudos } from 'csstype';
-import { css, StyledObject } from 'styled-components';
+import { StyledObject, css } from 'styled-components';
 import {
   AnimationHelper,
   ColorsKeysValues,

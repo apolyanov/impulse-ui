@@ -1,6 +1,6 @@
-import { ColorPalette } from './types';
+import { ColorPalette2 } from './types';
 
-const polarGreen: ColorPalette = {
+const polarGreen: ColorPalette2 = {
   10: '#f6ffed',
   20: '#d9f7be',
   30: '#b7eb8f',
